@@ -1,0 +1,128 @@
+{
+  "blind_id": "R03",
+  "segments": [
+    {
+      "range": [
+        0,
+        14
+      ],
+      "primary": [
+        "rider"
+      ],
+      "context": "third-person motorcycle riding; HUD present"
+    },
+    {
+      "range": [
+        14.25,
+        16.25
+      ],
+      "primary": [
+        "result_panel"
+      ],
+      "context": "objective-failed result overlay; panel is visible information target, do not confuse HUD obstruction with scene crop"
+    },
+    {
+      "range": [
+        16.5,
+        19.75
+      ],
+      "primary": [
+        "rider_restart"
+      ],
+      "context": "transition into continued/restarted riding"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rider",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          555,
+          405,
+          660,
+          530
+        ],
+        "16": [
+          540,
+          390,
+          670,
+          550
+        ],
+        "32": [
+          580,
+          400,
+          690,
+          555
+        ],
+        "48": [
+          605,
+          385,
+          720,
+          545
+        ],
+        "56": [
+          595,
+          390,
+          710,
+          550
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "result_panel",
+      "kind": "object",
+      "anchors": {
+        "57": [
+          410,
+          100,
+          875,
+          570
+        ],
+        "60": [
+          410,
+          100,
+          875,
+          570
+        ],
+        "65": [
+          410,
+          100,
+          875,
+          570
+        ]
+      }
+    },
+    {
+      "id": "rider_restart",
+      "kind": "humanoid",
+      "anchors": {
+        "66": [
+          600,
+          465,
+          720,
+          615
+        ],
+        "72": [
+          600,
+          465,
+          720,
+          615
+        ],
+        "79": [
+          600,
+          465,
+          720,
+          615
+        ]
+      },
+      "class_hint": "person"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Rapid road turns and HUD. At14.25–16.25s central results panel covers the rider, so do not interpret its mask as rider or pretend occlusion ratio is recoverable. Transition at16.5s resets subject tracking.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.9733949
+}

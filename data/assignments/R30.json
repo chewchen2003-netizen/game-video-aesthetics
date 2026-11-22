@@ -1,0 +1,165 @@
+{
+  "blind_id": "R30",
+  "segments": [
+    {
+      "range": [
+        0,
+        3.5
+      ],
+      "primary": [
+        "pink_crystal"
+      ],
+      "context": "first-person icy world near crystal formation"
+    },
+    {
+      "range": [
+        3.75,
+        7.5
+      ],
+      "primary": [
+        "floating_ice_island"
+      ],
+      "context": "looks toward layered floating ice landscape"
+    },
+    {
+      "range": [
+        7.75,
+        8.5
+      ],
+      "primary": [
+        "scan_landscape"
+      ],
+      "context": "temporary wireframe/scan presentation"
+    },
+    {
+      "range": [
+        8.75,
+        19.75
+      ],
+      "primary": [
+        "floating_ice_island"
+      ],
+      "context": "returns to RGB icy landscape and nearby creatures"
+    }
+  ],
+  "objects": [
+    {
+      "id": "pink_crystal",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          0,
+          0,
+          430,
+          300
+        ],
+        "4": [
+          420,
+          0,
+          820,
+          360
+        ],
+        "8": [
+          520,
+          0,
+          950,
+          500
+        ],
+        "12": [
+          0,
+          0,
+          520,
+          650
+        ],
+        "14": [
+          0,
+          0,
+          250,
+          550
+        ]
+      }
+    },
+    {
+      "id": "floating_ice_island",
+      "kind": "object",
+      "anchors": {
+        "15": [
+          680,
+          40,
+          1180,
+          420
+        ],
+        "16": [
+          680,
+          40,
+          1180,
+          420
+        ],
+        "24": [
+          680,
+          40,
+          1180,
+          420
+        ],
+        "30": [
+          650,
+          30,
+          1180,
+          430
+        ],
+        "35": [
+          650,
+          30,
+          1180,
+          430
+        ],
+        "48": [
+          650,
+          30,
+          1180,
+          430
+        ],
+        "64": [
+          650,
+          30,
+          1180,
+          430
+        ],
+        "79": [
+          650,
+          30,
+          1180,
+          430
+        ]
+      }
+    },
+    {
+      "id": "scan_landscape",
+      "kind": "scene_region",
+      "anchors": {
+        "31": [
+          100,
+          100,
+          1150,
+          620
+        ],
+        "34": [
+          100,
+          100,
+          1150,
+          620
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "第一人称科幻冰原，手、枪与投掷物占前景但不默认唯一主体。7.75–8.5秒进入绿色线框扫描状态，深度/分割可不可靠，不能当真实黑屏或普通缺陷。冰柱/悬空岛分层可见；指定floating_ice_island为近中部最大悬空岛，不是整个天空。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.7873752
+}

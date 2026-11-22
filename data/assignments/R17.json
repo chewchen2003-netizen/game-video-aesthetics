@@ -1,0 +1,65 @@
+{
+  "blind_id": "R17",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "hovercraft"
+      ],
+      "context": "isometric small flying craft navigates large stone/metal structures over brown ground/fog"
+    }
+  ],
+  "objects": [
+    {
+      "id": "hovercraft",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          550,
+          250,
+          720,
+          510
+        ],
+        "16": [
+          560,
+          245,
+          770,
+          500
+        ],
+        "32": [
+          505,
+          275,
+          775,
+          445
+        ],
+        "48": [
+          550,
+          280,
+          755,
+          495
+        ],
+        "64": [
+          550,
+          270,
+          755,
+          495
+        ],
+        "79": [
+          485,
+          300,
+          795,
+          475
+        ]
+      },
+      "class_hint": "boat"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Stylized nonhuman hovering craft, no person/anatomy targets. Large towers/rocks give navigation context and can occlude sections of craft; visible mask cannot recover hidden craft. Craft stays small near middle while environment changes; small scale alone is not low composition.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379297.2844238
+}

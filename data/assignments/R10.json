@@ -1,0 +1,132 @@
+{
+  "blind_id": "R10",
+  "segments": [
+    {
+      "range": [
+        0,
+        0.75
+      ],
+      "primary": [
+        "rock_slope_early"
+      ],
+      "context": "first-person exploration, nearby slope and vegetation"
+    },
+    {
+      "range": [
+        1,
+        13.75
+      ],
+      "primary": [
+        "grass_landform"
+      ],
+      "context": "open grassy rise and surrounding trees, no explicit character target"
+    },
+    {
+      "range": [
+        14,
+        19.75
+      ],
+      "primary": [
+        "rock_slope_late"
+      ],
+      "context": "view approaches and turns along sloped rock face"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rock_slope_early",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          0,
+          250,
+          1150,
+          540
+        ],
+        "3": [
+          0,
+          100,
+          1100,
+          540
+        ]
+      }
+    },
+    {
+      "id": "grass_landform",
+      "kind": "scene_region",
+      "anchors": {
+        "4": [
+          150,
+          280,
+          1150,
+          520
+        ],
+        "16": [
+          150,
+          280,
+          1150,
+          520
+        ],
+        "32": [
+          50,
+          280,
+          1100,
+          550
+        ],
+        "40": [
+          0,
+          300,
+          1100,
+          550
+        ],
+        "48": [
+          200,
+          300,
+          1150,
+          540
+        ],
+        "55": [
+          300,
+          280,
+          1150,
+          530
+        ]
+      }
+    },
+    {
+      "id": "rock_slope_late",
+      "kind": "scene_region",
+      "anchors": {
+        "56": [
+          450,
+          50,
+          1279,
+          540
+        ],
+        "64": [
+          400,
+          20,
+          1279,
+          530
+        ],
+        "72": [
+          250,
+          80,
+          1200,
+          540
+        ],
+        "79": [
+          350,
+          40,
+          1279,
+          540
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "First-person weapon is foreground reference, not default unique subject. Broad vegetation/slope regions are non-exhaustive region targets, not full semantic masks; strict QA needed if SAM chooses weapon or sky. No eye-gaze or humanoid rules should be fabricated.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.9754748
+}

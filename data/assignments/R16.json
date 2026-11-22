@@ -1,0 +1,185 @@
+{
+  "blind_id": "R16",
+  "segments": [
+    {
+      "range": [
+        0,
+        9.75
+      ],
+      "primary": [
+        "rider",
+        "horse"
+      ],
+      "context": "third-person mounted travel through woodland on rocky path"
+    },
+    {
+      "range": [
+        10,
+        11
+      ],
+      "primary": [
+        "horse"
+      ],
+      "context": "brief camera closes on horse during jump/rear; rider localization unreliable"
+    },
+    {
+      "range": [
+        11.25,
+        19.75
+      ],
+      "primary": [
+        "rider_late",
+        "horse"
+      ],
+      "context": "follow view resumes along path"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rider",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          350,
+          120,
+          485,
+          375
+        ],
+        "16": [
+          390,
+          130,
+          560,
+          450
+        ],
+        "20": [
+          330,
+          140,
+          560,
+          500
+        ],
+        "32": [
+          375,
+          135,
+          560,
+          490
+        ],
+        "39": [
+          385,
+          135,
+          555,
+          470
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "rider_late",
+      "kind": "humanoid",
+      "anchors": {
+        "45": [
+          385,
+          140,
+          560,
+          460
+        ],
+        "48": [
+          385,
+          140,
+          560,
+          460
+        ],
+        "64": [
+          375,
+          145,
+          550,
+          465
+        ],
+        "79": [
+          375,
+          145,
+          550,
+          465
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "horse",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          330,
+          250,
+          545,
+          719
+        ],
+        "16": [
+          180,
+          145,
+          610,
+          719
+        ],
+        "20": [
+          170,
+          260,
+          680,
+          719
+        ],
+        "32": [
+          180,
+          210,
+          610,
+          719
+        ],
+        "39": [
+          350,
+          260,
+          620,
+          719
+        ],
+        "40": [
+          0,
+          0,
+          650,
+          719
+        ],
+        "44": [
+          0,
+          0,
+          650,
+          719
+        ],
+        "45": [
+          350,
+          270,
+          620,
+          719
+        ],
+        "48": [
+          330,
+          270,
+          620,
+          719
+        ],
+        "64": [
+          320,
+          280,
+          620,
+          719
+        ],
+        "79": [
+          340,
+          280,
+          630,
+          719
+        ]
+      },
+      "class_hint": "horse"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Mounted player and horse separate. At10–11s camera briefly clips very close to horse; do not infer whole rider or force normal posture keypoints. Horse jumps/turns on rock path; projected screen speed alone is not world direction. Lower horse/body frame clipping may be follow-camera convention; actual impact needs review.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379297.284124
+}

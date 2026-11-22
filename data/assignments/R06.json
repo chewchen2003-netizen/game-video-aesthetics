@@ -1,0 +1,190 @@
+{
+  "blind_id": "R06",
+  "segments": [
+    {
+      "range": [
+        0,
+        0.75
+      ],
+      "primary": [
+        "elevator_gate"
+      ],
+      "context": "near elevator gate before doorway movement"
+    },
+    {
+      "range": [
+        1,
+        10.5
+      ],
+      "primary": [
+        "corridor_region"
+      ],
+      "context": "first-person hallway exploration and turns; spatial target is route/door region"
+    },
+    {
+      "range": [
+        10.75,
+        12.25
+      ],
+      "primary": [
+        "table_device"
+      ],
+      "context": "small tabletop green device is briefly focused"
+    },
+    {
+      "range": [
+        12.5,
+        19.75
+      ],
+      "primary": [
+        "dark_corridor_region"
+      ],
+      "context": "return to darker corridor; no visible person"
+    }
+  ],
+  "objects": [
+    {
+      "id": "elevator_gate",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          0,
+          0,
+          1279,
+          719
+        ],
+        "3": [
+          0,
+          0,
+          1279,
+          719
+        ]
+      }
+    },
+    {
+      "id": "corridor_region",
+      "kind": "scene_region",
+      "anchors": {
+        "4": [
+          400,
+          240,
+          1000,
+          700
+        ],
+        "8": [
+          420,
+          220,
+          930,
+          700
+        ],
+        "16": [
+          420,
+          200,
+          980,
+          700
+        ],
+        "20": [
+          0,
+          180,
+          720,
+          719
+        ],
+        "24": [
+          300,
+          200,
+          900,
+          719
+        ],
+        "32": [
+          240,
+          220,
+          1000,
+          719
+        ],
+        "40": [
+          500,
+          200,
+          1100,
+          719
+        ],
+        "42": [
+          400,
+          200,
+          1000,
+          719
+        ]
+      }
+    },
+    {
+      "id": "table_device",
+      "kind": "object",
+      "anchors": {
+        "43": [
+          540,
+          300,
+          700,
+          500
+        ],
+        "44": [
+          540,
+          300,
+          700,
+          500
+        ],
+        "46": [
+          540,
+          300,
+          710,
+          500
+        ],
+        "48": [
+          340,
+          240,
+          550,
+          480
+        ],
+        "49": [
+          250,
+          220,
+          500,
+          480
+        ]
+      }
+    },
+    {
+      "id": "dark_corridor_region",
+      "kind": "scene_region",
+      "anchors": {
+        "50": [
+          350,
+          230,
+          1000,
+          719
+        ],
+        "60": [
+          400,
+          240,
+          1000,
+          719
+        ],
+        "64": [
+          300,
+          220,
+          950,
+          719
+        ],
+        "79": [
+          450,
+          230,
+          1000,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Only environment is shown. Corridor regions turn sharply and do not correspond to one rigid object; treat their segmentation as tentative. Device is a specific tabletop object, not a person. Very dark final corridor is not automatically low composition; anatomy/gaze mostly not applicable.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.9742012
+}

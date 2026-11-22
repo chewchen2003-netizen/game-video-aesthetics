@@ -1,0 +1,225 @@
+{
+  "blind_id": "R32",
+  "segments": [
+    {
+      "range": [
+        0,
+        2.25
+      ],
+      "primary": [
+        "red_opponent"
+      ],
+      "context": "nearby red opponent briefly visible amid first-person movement"
+    },
+    {
+      "range": [
+        2.5,
+        6
+      ],
+      "primary": [
+        "interior_pickup"
+      ],
+      "context": "moves toward interior pickup room"
+    },
+    {
+      "range": [
+        6.25,
+        12.75
+      ],
+      "primary": [
+        "rock_path_region"
+      ],
+      "context": "traverses exterior rock path and portal approach"
+    },
+    {
+      "range": [
+        13,
+        19.75
+      ],
+      "primary": [
+        "portal_pillar"
+      ],
+      "context": "moves between bright portal pillars"
+    }
+  ],
+  "objects": [
+    {
+      "id": "red_opponent",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          0,
+          540,
+          60,
+          719
+        ],
+        "5": [
+          260,
+          350,
+          450,
+          680
+        ],
+        "6": [
+          250,
+          140,
+          470,
+          680
+        ],
+        "7": [
+          720,
+          30,
+          1180,
+          680
+        ],
+        "8": [
+          20,
+          130,
+          360,
+          680
+        ],
+        "9": [
+          0,
+          200,
+          210,
+          670
+        ]
+      }
+    },
+    {
+      "id": "interior_pickup",
+      "kind": "object",
+      "anchors": {
+        "12": [
+          540,
+          180,
+          600,
+          290
+        ],
+        "16": [
+          600,
+          250,
+          730,
+          400
+        ],
+        "19": [
+          500,
+          250,
+          700,
+          470
+        ],
+        "20": [
+          0,
+          370,
+          200,
+          580
+        ],
+        "24": [
+          0,
+          350,
+          100,
+          520
+        ]
+      }
+    },
+    {
+      "id": "rock_path_region",
+      "kind": "scene_region",
+      "anchors": {
+        "25": [
+          300,
+          220,
+          1100,
+          580
+        ],
+        "32": [
+          350,
+          220,
+          1020,
+          650
+        ],
+        "40": [
+          300,
+          120,
+          1000,
+          600
+        ],
+        "48": [
+          300,
+          120,
+          1100,
+          650
+        ],
+        "51": [
+          200,
+          250,
+          1050,
+          650
+        ]
+      }
+    },
+    {
+      "id": "portal_pillar",
+      "kind": "object",
+      "anchors": {
+        "52": [
+          600,
+          160,
+          920,
+          640
+        ],
+        "56": [
+          820,
+          0,
+          1180,
+          650
+        ],
+        "60": [
+          280,
+          80,
+          610,
+          650
+        ],
+        "64": [
+          520,
+          170,
+          750,
+          620
+        ],
+        "68": [
+          200,
+          110,
+          540,
+          600
+        ],
+        "72": [
+          0,
+          0,
+          330,
+          680
+        ],
+        "76": [
+          760,
+          180,
+          1000,
+          600
+        ],
+        "79": [
+          60,
+          20,
+          600,
+          640
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "科幻第一人称穿行，计分牌属于界面/场景信息，不当多画面手法。多个相似传送门出现，但不一定是同一实例；portal_pillar为阶段内当前可见门区域，需要针对转向核查，不可靠时不计算稳定单物体轨迹。初段红对手局部出画与接近交互需区分正常第一人称取景。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.787703
+}

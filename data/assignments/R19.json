@@ -1,0 +1,158 @@
+{
+  "blind_id": "R19",
+  "segments": [
+    {
+      "range": [
+        0,
+        9
+      ],
+      "primary": [
+        "cabin_wall",
+        "near_conifer"
+      ],
+      "context": "wooden cabin deck and nearby conifer scene"
+    },
+    {
+      "range": [
+        9.25,
+        19.75
+      ],
+      "primary": [
+        "conifer_region"
+      ],
+      "context": "moves off deck through branches toward valley"
+    }
+  ],
+  "objects": [
+    {
+      "id": "cabin_wall",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          0,
+          0,
+          15,
+          719
+        ],
+        "12": [
+          0,
+          0,
+          120,
+          719
+        ],
+        "16": [
+          0,
+          0,
+          220,
+          719
+        ],
+        "32": [
+          0,
+          0,
+          220,
+          719
+        ],
+        "36": [
+          0,
+          0,
+          120,
+          600
+        ]
+      }
+    },
+    {
+      "id": "near_conifer",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          650,
+          65,
+          1040,
+          600
+        ],
+        "12": [
+          280,
+          0,
+          690,
+          600
+        ],
+        "16": [
+          240,
+          0,
+          670,
+          640
+        ],
+        "32": [
+          240,
+          0,
+          670,
+          640
+        ],
+        "36": [
+          150,
+          0,
+          580,
+          580
+        ]
+      }
+    },
+    {
+      "id": "conifer_region",
+      "kind": "scene_region",
+      "anchors": {
+        "37": [
+          0,
+          50,
+          600,
+          590
+        ],
+        "48": [
+          210,
+          0,
+          830,
+          650
+        ],
+        "56": [
+          150,
+          0,
+          1279,
+          650
+        ],
+        "60": [
+          0,
+          0,
+          1279,
+          660
+        ],
+        "64": [
+          800,
+          200,
+          1100,
+          600
+        ],
+        "72": [
+          640,
+          200,
+          920,
+          600
+        ],
+        "79": [
+          0,
+          180,
+          300,
+          650
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "第一人称弩在前景，非唯一主体。0–约9秒木屋/栈台与树林；14–15.5秒树枝大面积经过前景，可能只是移动穿行，不能直接判构图遮挡差。后段远景山谷，不强行追同一棵树；conifer_region是场景区域非稳定单一树实例，需限定区域质量。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.785256
+}

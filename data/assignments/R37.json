@@ -1,0 +1,149 @@
+{
+  "blind_id": "R37",
+  "segments": [
+    {
+      "range": [
+        0,
+        2
+      ],
+      "primary": [
+        "ground_region"
+      ],
+      "context": "第一人称低头看碎石与地面物体"
+    },
+    {
+      "range": [
+        2.25,
+        13.5
+      ],
+      "primary": [
+        "navigation_region"
+      ],
+      "context": "铁路货场与木箱、蓝色便携厕所等区域，未明确持续人物目标"
+    },
+    {
+      "range": [
+        13.75,
+        19.75
+      ],
+      "primary": [
+        "passage_region"
+      ],
+      "context": "进入临时建筑与轨道附近通路"
+    }
+  ],
+  "objects": [
+    {
+      "id": "ground_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          80,
+          20,
+          750,
+          410
+        ],
+        "8": [
+          150,
+          170,
+          800,
+          450
+        ]
+      }
+    },
+    {
+      "id": "navigation_region",
+      "kind": "scene_region",
+      "anchors": {
+        "9": [
+          200,
+          170,
+          840,
+          600
+        ],
+        "16": [
+          40,
+          250,
+          600,
+          610
+        ],
+        "24": [
+          200,
+          140,
+          740,
+          610
+        ],
+        "32": [
+          100,
+          250,
+          750,
+          630
+        ],
+        "40": [
+          250,
+          270,
+          800,
+          630
+        ],
+        "48": [
+          350,
+          240,
+          820,
+          580
+        ],
+        "54": [
+          250,
+          150,
+          800,
+          560
+        ]
+      }
+    },
+    {
+      "id": "passage_region",
+      "kind": "scene_region",
+      "anchors": {
+        "55": [
+          200,
+          200,
+          750,
+          650
+        ],
+        "60": [
+          500,
+          220,
+          820,
+          610
+        ],
+        "64": [
+          550,
+          240,
+          1000,
+          610
+        ],
+        "72": [
+          400,
+          100,
+          850,
+          600
+        ],
+        "79": [
+          350,
+          170,
+          800,
+          600
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": [
+    "不把枪械默认唯一主体，评价范围为当前通路和货场区域。",
+    "镜头朝向频繁变化且有换弹动作；区域提示是定位候选，不能当精确语义分割，错误须拒绝。",
+    "没有可持续指定的人物、头顶或视线测量对象。"
+  ],
+  "assignment_source": "assistant RGB review of overview and both 4FPS contact sheets; no human answers",
+  "assignment_epoch": 1795379349.3812091,
+  "depth_exclusions": []
+}

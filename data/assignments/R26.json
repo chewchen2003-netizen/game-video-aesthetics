@@ -1,0 +1,195 @@
+{
+  "blind_id": "R26",
+  "segments": [
+    {
+      "range": [
+        0,
+        4.5
+      ],
+      "primary": [
+        "gridded_window"
+      ],
+      "context": "dark warehouse window/room region"
+    },
+    {
+      "range": [
+        4.75,
+        10.75
+      ],
+      "primary": [
+        "rollup_door"
+      ],
+      "context": "turning along rollup door toward stairs"
+    },
+    {
+      "range": [
+        11,
+        17
+      ],
+      "primary": [
+        "forklift"
+      ],
+      "context": "warehouse floor and forklift visible"
+    },
+    {
+      "range": [
+        17.25,
+        19.75
+      ],
+      "primary": [
+        "gridded_window_return"
+      ],
+      "context": "returns toward window"
+    }
+  ],
+  "objects": [
+    {
+      "id": "gridded_window",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          0,
+          0,
+          930,
+          620
+        ],
+        "8": [
+          40,
+          0,
+          780,
+          650
+        ],
+        "16": [
+          0,
+          0,
+          740,
+          700
+        ],
+        "18": [
+          0,
+          0,
+          500,
+          700
+        ]
+      }
+    },
+    {
+      "id": "rollup_door",
+      "kind": "object",
+      "anchors": {
+        "19": [
+          480,
+          0,
+          1120,
+          719
+        ],
+        "24": [
+          500,
+          0,
+          1200,
+          719
+        ],
+        "32": [
+          350,
+          0,
+          1279,
+          719
+        ],
+        "40": [
+          300,
+          0,
+          1279,
+          450
+        ],
+        "43": [
+          450,
+          0,
+          1279,
+          430
+        ]
+      }
+    },
+    {
+      "id": "forklift",
+      "kind": "vehicle",
+      "anchors": {
+        "44": [
+          150,
+          270,
+          360,
+          620
+        ],
+        "48": [
+          80,
+          290,
+          300,
+          650
+        ],
+        "52": [
+          40,
+          280,
+          270,
+          650
+        ],
+        "56": [
+          0,
+          260,
+          260,
+          650
+        ],
+        "60": [
+          0,
+          240,
+          260,
+          650
+        ],
+        "64": [
+          0,
+          240,
+          260,
+          650
+        ],
+        "68": [
+          0,
+          270,
+          250,
+          650
+        ]
+      }
+    },
+    {
+      "id": "gridded_window_return",
+      "kind": "object",
+      "anchors": {
+        "69": [
+          0,
+          0,
+          780,
+          680
+        ],
+        "72": [
+          0,
+          0,
+          800,
+          700
+        ],
+        "79": [
+          0,
+          0,
+          970,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "暗仓库第一人称探索，没有画面内人物主体。窗格、卷帘门、叉车按阶段指定；照明暗不直接算构图问题。卷帘门可能SAM与墙合并，窗框也可能仅分出玻璃局部，需要依据叠加图判测量范围，不能当整体主体精确掩码。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.786806
+}

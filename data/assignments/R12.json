@@ -1,0 +1,172 @@
+{
+  "blind_id": "R12",
+  "segments": [
+    {
+      "range": [
+        0,
+        2.75
+      ],
+      "primary": [
+        "gramophone_early"
+      ],
+      "context": "close inspection of tabletop gramophone and note on wooden crate"
+    },
+    {
+      "range": [
+        3,
+        4.5
+      ],
+      "primary": [
+        "trench_scene"
+      ],
+      "context": "brief look away from gramophone into foggy trench"
+    },
+    {
+      "range": [
+        4.75,
+        18
+      ],
+      "primary": [
+        "gramophone_late"
+      ],
+      "context": "returns to gramophone; view becomes steady"
+    },
+    {
+      "range": [
+        18.25,
+        19.75
+      ],
+      "primary": [
+        "campfire"
+      ],
+      "context": "view turns toward fire and ruined trench"
+    }
+  ],
+  "objects": [
+    {
+      "id": "gramophone_early",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          590,
+          155,
+          830,
+          610
+        ],
+        "8": [
+          590,
+          155,
+          830,
+          610
+        ],
+        "11": [
+          250,
+          250,
+          600,
+          600
+        ]
+      }
+    },
+    {
+      "id": "trench_scene",
+      "kind": "scene_region",
+      "anchors": {
+        "12": [
+          350,
+          150,
+          1150,
+          600
+        ],
+        "18": [
+          250,
+          100,
+          1150,
+          620
+        ]
+      }
+    },
+    {
+      "id": "gramophone_late",
+      "kind": "object",
+      "anchors": {
+        "19": [
+          350,
+          330,
+          650,
+          600
+        ],
+        "20": [
+          330,
+          360,
+          600,
+          610
+        ],
+        "24": [
+          450,
+          220,
+          780,
+          610
+        ],
+        "28": [
+          500,
+          150,
+          830,
+          610
+        ],
+        "32": [
+          500,
+          150,
+          830,
+          610
+        ],
+        "48": [
+          500,
+          150,
+          830,
+          610
+        ],
+        "64": [
+          500,
+          150,
+          830,
+          610
+        ],
+        "72": [
+          500,
+          150,
+          830,
+          610
+        ]
+      }
+    },
+    {
+      "id": "campfire",
+      "kind": "object",
+      "anchors": {
+        "73": [
+          250,
+          50,
+          740,
+          560
+        ],
+        "76": [
+          250,
+          20,
+          740,
+          560
+        ],
+        "79": [
+          250,
+          20,
+          740,
+          560
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Fog and fire glow are not automatically composition defects. Gramophone is a specific nonhuman subject and remains evaluable despite long similar frames. Fire is transparent/emissive and unreliable for masks/depth; preserve null/uncertain if segmentation selects smoke or bright ground.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.975998
+}

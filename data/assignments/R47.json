@@ -1,0 +1,167 @@
+{
+  "blind_id": "R47",
+  "segments": [
+    {
+      "range": [
+        0,
+        11.75
+      ],
+      "primary": [
+        "rock_path_region"
+      ],
+      "context": "第一人称穿过白色岩地与紫色植物；远处紫色烟雾/生物难可靠定位"
+    },
+    {
+      "range": [
+        12,
+        15.75
+      ],
+      "primary": [
+        "orange_flower"
+      ],
+      "context": "靠近橙色杯状植物并进行手部交互"
+    },
+    {
+      "range": [
+        16,
+        19.75
+      ],
+      "primary": [
+        "pillar_region"
+      ],
+      "context": "转向岩柱与通路"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rock_path_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          250,
+          350,
+          850,
+          719
+        ],
+        "16": [
+          300,
+          350,
+          900,
+          719
+        ],
+        "32": [
+          250,
+          350,
+          900,
+          719
+        ],
+        "40": [
+          300,
+          350,
+          900,
+          719
+        ],
+        "47": [
+          300,
+          350,
+          900,
+          719
+        ]
+      }
+    },
+    {
+      "id": "orange_flower",
+      "kind": "object",
+      "anchors": {
+        "48": [
+          720,
+          250,
+          1000,
+          560
+        ],
+        "52": [
+          650,
+          250,
+          1050,
+          650
+        ],
+        "56": [
+          250,
+          100,
+          1000,
+          719
+        ],
+        "60": [
+          220,
+          50,
+          1000,
+          719
+        ],
+        "63": [
+          250,
+          60,
+          950,
+          719
+        ]
+      }
+    },
+    {
+      "id": "pillar_region",
+      "kind": "object",
+      "anchors": {
+        "64": [
+          440,
+          0,
+          920,
+          660
+        ],
+        "70": [
+          430,
+          0,
+          1000,
+          660
+        ],
+        "79": [
+          130,
+          0,
+          600,
+          660
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": [
+    "左右持物的正常第一人称裁切，不直接判不合理。",
+    "0–约6秒紫色烟雾、发光粒子遮住远物，不把烟雾边界当真实实体轮廓或可靠深度。",
+    "橙色植物只有接近交互阶段单独指定，不在远景中追踪身份；岩地/岩柱的SAM区域可能与武器混连，需QA。"
+  ],
+  "assignment_source": "assistant RGB review of overview and both 4FPS contact sheets; no human answers",
+  "assignment_epoch": 1795379349.382901,
+  "depth_exclusions": [
+    {
+      "time_range": [
+        0,
+        19.75
+      ],
+      "regions": [
+        "sky",
+        "fog",
+        "transparent_effects"
+      ],
+      "reason": "天空、雾和透明效果不作物理三维深度证据。"
+    },
+    {
+      "time_range": [
+        0,
+        6.25
+      ],
+      "regions": [
+        "purple_smoke",
+        "particles"
+      ],
+      "reason": "紫色烟雾遮挡，不恢复隐藏物体形状或深度。"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "batch": "stratified-20261123-v1",
+  "seed": 20261123,
+  "prng": "Python random.Random (MT19937); sample/randint on sorted candidate pools",
+  "candidate_metadata_sha256": "f75d7ebb6bd5699db3bb868be228bacd6bd86fe23c0592908107e1add4ec2c9d",
+  "candidate_file_index_sha256": "32b211d1c1f1bd782c43b775f35b49f7a378832e4949b8f410d1ec5a7aa796a5",
+  "candidate_sessions": 169,
+  "games": 20,
+  "clips_per_game": 5,
+  "clip_seconds": 20,
+  "time_layer_counts": {
+    "late": 34,
+    "early": 33,
+    "middle": 33
+  },
+  "selection": "Within game: five distinct sessions without replacement. Randomly assign early/middle/late counts 2/2/1, with minority layer rotated in randomly permuted game order. Uniform integer-frame start within full layer. Final display order shuffled. No content-based exclusion.",
+  "technical_replacement_rule": "Retry original selection first. If irrecoverably missing/corrupt, record failure and draw replacement within same game and time layer using continued seeded RNG; no replacements for quality/loading/menu/static/inapplicability."
+}

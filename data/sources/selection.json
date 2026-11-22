@@ -1,0 +1,402 @@
+[
+  {
+    "blind_id": "R01",
+    "sample_number": 12,
+    "id": "ffee9070-85ae-440b-b257-212fa249f7f1__f201193",
+    "video": "randomized-20261123/videos/ffee9070-85ae-440b-b257-212fa249f7f1__f201193.mp4",
+    "source_start": 3353.2166666666667,
+    "game": "Game 17"
+  },
+  {
+    "blind_id": "R02",
+    "sample_number": 13,
+    "id": "e8064c05-08a4-4700-af1d-7300f3ec9a45__f83972",
+    "video": "randomized-20261123/videos/e8064c05-08a4-4700-af1d-7300f3ec9a45__f83972.mp4",
+    "source_start": 1399.5333333333333,
+    "game": "Game 9"
+  },
+  {
+    "blind_id": "R03",
+    "sample_number": 14,
+    "id": "b702e83a-3409-4171-9dac-be6f83cf5441__f26483",
+    "video": "randomized-20261123/videos/b702e83a-3409-4171-9dac-be6f83cf5441__f26483.mp4",
+    "source_start": 441.3833333333333,
+    "game": "Game 20"
+  },
+  {
+    "blind_id": "R04",
+    "sample_number": 15,
+    "id": "9b58f353-1c99-49eb-9f52-a9bd63bba894__f46070",
+    "video": "randomized-20261123/videos/9b58f353-1c99-49eb-9f52-a9bd63bba894__f46070.mp4",
+    "source_start": 767.8333333333334,
+    "game": "Game 11"
+  },
+  {
+    "blind_id": "R05",
+    "sample_number": 18,
+    "id": "0f312b7f-6acd-42fe-9e43-979c82779b2d__f63727",
+    "video": "randomized-20261123/videos/0f312b7f-6acd-42fe-9e43-979c82779b2d__f63727.mp4",
+    "source_start": 1062.1166666666666,
+    "game": "Game 6"
+  },
+  {
+    "blind_id": "R06",
+    "sample_number": 22,
+    "id": "231843b1-caa8-4b66-90bb-fbd34ad1c797__f50715",
+    "video": "randomized-20261123/videos/231843b1-caa8-4b66-90bb-fbd34ad1c797__f50715.mp4",
+    "source_start": 845.25,
+    "game": "Game 18"
+  },
+  {
+    "blind_id": "R07",
+    "sample_number": 23,
+    "id": "0877afa4-0174-4801-9eba-5c65a109ecf5__f123498",
+    "video": "randomized-20261123/videos/0877afa4-0174-4801-9eba-5c65a109ecf5__f123498.mp4",
+    "source_start": 2058.3,
+    "game": "Game 6"
+  },
+  {
+    "blind_id": "R08",
+    "sample_number": 24,
+    "id": "7d782b60-45b1-4746-b50e-e0cb2d5da5b4__f168512",
+    "video": "randomized-20261123/videos/7d782b60-45b1-4746-b50e-e0cb2d5da5b4__f168512.mp4",
+    "source_start": 2808.5333333333333,
+    "game": "Game 3"
+  },
+  {
+    "blind_id": "R09",
+    "sample_number": 25,
+    "id": "17099972-f9f4-498e-ac1b-852aeeccef9c__f68790",
+    "video": "randomized-20261123/videos/17099972-f9f4-498e-ac1b-852aeeccef9c__f68790.mp4",
+    "source_start": 1146.5,
+    "game": "Game 13"
+  },
+  {
+    "blind_id": "R10",
+    "sample_number": 26,
+    "id": "1b653571-6e19-4932-b4d7-4268d955a679__f205906",
+    "video": "randomized-20261123/videos/1b653571-6e19-4932-b4d7-4268d955a679__f205906.mp4",
+    "source_start": 3431.766666666667,
+    "game": "Game 19"
+  },
+  {
+    "blind_id": "R11",
+    "sample_number": 27,
+    "id": "fed42e62-4f21-4f28-a313-4602cf53cc2b__f64544",
+    "video": "randomized-20261123/videos/fed42e62-4f21-4f28-a313-4602cf53cc2b__f64544.mp4",
+    "source_start": 1075.7333333333333,
+    "game": "Game 17"
+  },
+  {
+    "blind_id": "R12",
+    "sample_number": 29,
+    "id": "7cad3c52-353b-423a-b8ba-a4515418ba7e__f8427",
+    "video": "randomized-20261123/videos/7cad3c52-353b-423a-b8ba-a4515418ba7e__f8427.mp4",
+    "source_start": 140.45,
+    "game": "Game 18"
+  },
+  {
+    "blind_id": "R13",
+    "sample_number": 30,
+    "id": "92a8615c-f274-487b-8f37-7eb96952f472__f118459",
+    "video": "randomized-20261123/videos/92a8615c-f274-487b-8f37-7eb96952f472__f118459.mp4",
+    "source_start": 1974.3166666666666,
+    "game": "Game 7"
+  },
+  {
+    "blind_id": "R14",
+    "sample_number": 31,
+    "id": "3089f6ff-beeb-42d5-8e41-5d4f4f0d81dc__f30939",
+    "video": "randomized-20261123/videos/3089f6ff-beeb-42d5-8e41-5d4f4f0d81dc__f30939.mp4",
+    "source_start": 515.65,
+    "game": "Game 6"
+  },
+  {
+    "blind_id": "R15",
+    "sample_number": 32,
+    "id": "534f1d50-de1e-4405-9b4c-7e67b8562466__f4590",
+    "video": "randomized-20261123/videos/534f1d50-de1e-4405-9b4c-7e67b8562466__f4590.mp4",
+    "source_start": 76.5,
+    "game": "Game 12"
+  },
+  {
+    "blind_id": "R16",
+    "sample_number": 36,
+    "id": "213ab61c-41b9-46a8-8a56-d9456c5b726a__f64251",
+    "video": "randomized-20261123/videos/213ab61c-41b9-46a8-8a56-d9456c5b726a__f64251.mp4",
+    "source_start": 1070.85,
+    "game": "Game 12"
+  },
+  {
+    "blind_id": "R17",
+    "sample_number": 40,
+    "id": "b8e80a11-b265-4996-88b0-34d110366256__f194684",
+    "video": "randomized-20261123/videos/b8e80a11-b265-4996-88b0-34d110366256__f194684.mp4",
+    "source_start": 3244.733333333333,
+    "game": "Game 15"
+  },
+  {
+    "blind_id": "R18",
+    "sample_number": 41,
+    "id": "8e18522e-266a-48b3-b5f5-5626f1502c3e__f25996",
+    "video": "randomized-20261123/videos/8e18522e-266a-48b3-b5f5-5626f1502c3e__f25996.mp4",
+    "source_start": 433.26666666666665,
+    "game": "Game 13"
+  },
+  {
+    "blind_id": "R19",
+    "sample_number": 42,
+    "id": "9cffe04d-14c5-45ab-80ca-bee9684d19f7__f136684",
+    "video": "randomized-20261123/videos/9cffe04d-14c5-45ab-80ca-bee9684d19f7__f136684.mp4",
+    "source_start": 2278.0666666666666,
+    "game": "Game 17"
+  },
+  {
+    "blind_id": "R20",
+    "sample_number": 44,
+    "id": "90e3e9bd-2d22-4571-9c65-a60f11d10fa0__f67690",
+    "video": "randomized-20261123/videos/90e3e9bd-2d22-4571-9c65-a60f11d10fa0__f67690.mp4",
+    "source_start": 1128.1666666666667,
+    "game": "Game 14"
+  },
+  {
+    "blind_id": "R21",
+    "sample_number": 45,
+    "id": "50f28303-10ff-47dc-9c5d-06c4b1a7d51b__f188372",
+    "video": "randomized-20261123/videos/50f28303-10ff-47dc-9c5d-06c4b1a7d51b__f188372.mp4",
+    "source_start": 3139.5333333333333,
+    "game": "Game 4"
+  },
+  {
+    "blind_id": "R22",
+    "sample_number": 47,
+    "id": "b8eadc12-a40d-4da8-98ab-d6c839ccd8c0__f92963",
+    "video": "randomized-20261123/videos/b8eadc12-a40d-4da8-98ab-d6c839ccd8c0__f92963.mp4",
+    "source_start": 1549.3833333333334,
+    "game": "Game 20"
+  },
+  {
+    "blind_id": "R23",
+    "sample_number": 48,
+    "id": "f7e52a26-6d52-4105-8c17-142c593aa4db__f141280",
+    "video": "randomized-20261123/videos/f7e52a26-6d52-4105-8c17-142c593aa4db__f141280.mp4",
+    "source_start": 2354.6666666666665,
+    "game": "Game 9"
+  },
+  {
+    "blind_id": "R24",
+    "sample_number": 49,
+    "id": "8a02a949-0e34-479e-adfe-8914ff2bddf8__f31190",
+    "video": "randomized-20261123/videos/8a02a949-0e34-479e-adfe-8914ff2bddf8__f31190.mp4",
+    "source_start": 519.8333333333334,
+    "game": "Game 4"
+  },
+  {
+    "blind_id": "R25",
+    "sample_number": 51,
+    "id": "dac61c5c-1596-47a3-9f56-279e81816fc3__f7456",
+    "video": "randomized-20261123/videos/dac61c5c-1596-47a3-9f56-279e81816fc3__f7456.mp4",
+    "source_start": 124.26666666666667,
+    "game": "Game 9"
+  },
+  {
+    "blind_id": "R26",
+    "sample_number": 53,
+    "id": "b3d39473-87f7-428b-ab67-fd50e4a1d10b__f137333",
+    "video": "randomized-20261123/videos/b3d39473-87f7-428b-ab67-fd50e4a1d10b__f137333.mp4",
+    "source_start": 2288.883333333333,
+    "game": "Game 8"
+  },
+  {
+    "blind_id": "R27",
+    "sample_number": 55,
+    "id": "7a85b05b-2399-4eeb-a43c-414cbc8ee504__f34642",
+    "video": "randomized-20261123/videos/7a85b05b-2399-4eeb-a43c-414cbc8ee504__f34642.mp4",
+    "source_start": 577.3666666666667,
+    "game": "Game 11"
+  },
+  {
+    "blind_id": "R28",
+    "sample_number": 56,
+    "id": "aceb8bef-7ab4-4f4a-a85b-d2d50e55df58__f174857",
+    "video": "randomized-20261123/videos/aceb8bef-7ab4-4f4a-a85b-d2d50e55df58__f174857.mp4",
+    "source_start": 2914.2833333333333,
+    "game": "Game 1"
+  },
+  {
+    "blind_id": "R29",
+    "sample_number": 57,
+    "id": "ab646869-6c9c-4c2b-a657-757218dbcc91__f65269",
+    "video": "randomized-20261123/videos/ab646869-6c9c-4c2b-a657-757218dbcc91__f65269.mp4",
+    "source_start": 1087.8166666666666,
+    "game": "Game 7"
+  },
+  {
+    "blind_id": "R30",
+    "sample_number": 58,
+    "id": "74eee8e6-4ca2-4fac-8169-20b428d26029__f124943",
+    "video": "randomized-20261123/videos/74eee8e6-4ca2-4fac-8169-20b428d26029__f124943.mp4",
+    "source_start": 2082.383333333333,
+    "game": "Game 5"
+  },
+  {
+    "blind_id": "R31",
+    "sample_number": 60,
+    "id": "9b648692-b362-48b2-a900-f7fe356b7cc1__f67141",
+    "video": "randomized-20261123/videos/9b648692-b362-48b2-a900-f7fe356b7cc1__f67141.mp4",
+    "source_start": 1119.0166666666667,
+    "game": "Game 2"
+  },
+  {
+    "blind_id": "R32",
+    "sample_number": 68,
+    "id": "9ec9e8ca-68ef-4a78-90fd-7ba565f34a7e__f209026",
+    "video": "randomized-20261123/videos/9ec9e8ca-68ef-4a78-90fd-7ba565f34a7e__f209026.mp4",
+    "source_start": 3483.766666666667,
+    "game": "Game 14"
+  },
+  {
+    "blind_id": "R33",
+    "sample_number": 70,
+    "id": "f5eebd6b-deca-41ef-a547-2880b99fe13b__f96624",
+    "video": "randomized-20261123/videos/f5eebd6b-deca-41ef-a547-2880b99fe13b__f96624.mp4",
+    "source_start": 1610.4,
+    "game": "Game 10"
+  },
+  {
+    "blind_id": "R34",
+    "sample_number": 71,
+    "id": "d162de48-8fcc-403b-a8d4-d344c235eb56__f162719",
+    "video": "randomized-20261123/videos/d162de48-8fcc-403b-a8d4-d344c235eb56__f162719.mp4",
+    "source_start": 2711.983333333333,
+    "game": "Game 11"
+  },
+  {
+    "blind_id": "R35",
+    "sample_number": 72,
+    "id": "1f58af81-72c5-4abe-a8a9-335d2c02357c__f196803",
+    "video": "randomized-20261123/videos/1f58af81-72c5-4abe-a8a9-335d2c02357c__f196803.mp4",
+    "source_start": 3280.05,
+    "game": "Game 16"
+  },
+  {
+    "blind_id": "R36",
+    "sample_number": 75,
+    "id": "f1b71992-377f-491a-955a-6d61a8322554__f43310",
+    "video": "randomized-20261123/videos/f1b71992-377f-491a-955a-6d61a8322554__f43310.mp4",
+    "source_start": 721.8333333333334,
+    "game": "Game 7"
+  },
+  {
+    "blind_id": "R37",
+    "sample_number": 76,
+    "id": "cc9d36f4-8a2d-4324-9d4f-ae9aa3f7e1be__f139862",
+    "video": "randomized-20261123/videos/cc9d36f4-8a2d-4324-9d4f-ae9aa3f7e1be__f139862.mp4",
+    "source_start": 2331.0333333333333,
+    "game": "Game 10"
+  },
+  {
+    "blind_id": "R38",
+    "sample_number": 78,
+    "id": "4761ec34-d8f4-4279-9b87-9ba1062584a0__f32673",
+    "video": "randomized-20261123/videos/4761ec34-d8f4-4279-9b87-9ba1062584a0__f32673.mp4",
+    "source_start": 544.55,
+    "game": "Game 12"
+  },
+  {
+    "blind_id": "R39",
+    "sample_number": 82,
+    "id": "0a2b90e7-27f5-4a90-968e-d160479230b0__f185532",
+    "video": "randomized-20261123/videos/0a2b90e7-27f5-4a90-968e-d160479230b0__f185532.mp4",
+    "source_start": 3092.2,
+    "game": "Game 19"
+  },
+  {
+    "blind_id": "R40",
+    "sample_number": 84,
+    "id": "c31ee9c2-d5cf-48dc-b06b-dd111910cc3c__f201137",
+    "video": "randomized-20261123/videos/c31ee9c2-d5cf-48dc-b06b-dd111910cc3c__f201137.mp4",
+    "source_start": 3352.2833333333333,
+    "game": "Game 15"
+  },
+  {
+    "blind_id": "R41",
+    "sample_number": 85,
+    "id": "ddf3e06e-17d5-4e86-a1ac-3cb2cfe2c776__f110562",
+    "video": "randomized-20261123/videos/ddf3e06e-17d5-4e86-a1ac-3cb2cfe2c776__f110562.mp4",
+    "source_start": 1842.7,
+    "game": "Game 3"
+  },
+  {
+    "blind_id": "R42",
+    "sample_number": 87,
+    "id": "f6bb566f-d53d-402a-830c-6d829b5278cf__f36907",
+    "video": "randomized-20261123/videos/f6bb566f-d53d-402a-830c-6d829b5278cf__f36907.mp4",
+    "source_start": 615.1166666666667,
+    "game": "Game 10"
+  },
+  {
+    "blind_id": "R43",
+    "sample_number": 89,
+    "id": "d3add06b-b66f-4428-aa7f-897e1ee4ce10__f123123",
+    "video": "randomized-20261123/videos/d3add06b-b66f-4428-aa7f-897e1ee4ce10__f123123.mp4",
+    "source_start": 2052.05,
+    "game": "Game 16"
+  },
+  {
+    "blind_id": "R44",
+    "sample_number": 90,
+    "id": "3f0bf11d-1c61-4c17-af2b-074ff174da3d__f191384",
+    "video": "randomized-20261123/videos/3f0bf11d-1c61-4c17-af2b-074ff174da3d__f191384.mp4",
+    "source_start": 3189.733333333333,
+    "game": "Game 20"
+  },
+  {
+    "blind_id": "R45",
+    "sample_number": 91,
+    "id": "6706cc7a-208e-4712-a145-a24f380f76ca__f14951",
+    "video": "randomized-20261123/videos/6706cc7a-208e-4712-a145-a24f380f76ca__f14951.mp4",
+    "source_start": 249.18333333333334,
+    "game": "Game 1"
+  },
+  {
+    "blind_id": "R46",
+    "sample_number": 93,
+    "id": "6da51243-f978-48b1-87b9-1fe90a67cdc5__f97682",
+    "video": "randomized-20261123/videos/6da51243-f978-48b1-87b9-1fe90a67cdc5__f97682.mp4",
+    "source_start": 1628.0333333333333,
+    "game": "Game 1"
+  },
+  {
+    "blind_id": "R47",
+    "sample_number": 94,
+    "id": "79b85708-23d8-4a22-8ab6-9f566a8c88a6__f27579",
+    "video": "randomized-20261123/videos/79b85708-23d8-4a22-8ab6-9f566a8c88a6__f27579.mp4",
+    "source_start": 459.65,
+    "game": "Game 5"
+  },
+  {
+    "blind_id": "R48",
+    "sample_number": 98,
+    "id": "388c771b-ce72-42f1-ba1c-8d817075f84c__f147618",
+    "video": "randomized-20261123/videos/388c771b-ce72-42f1-ba1c-8d817075f84c__f147618.mp4",
+    "source_start": 2460.3,
+    "game": "Game 14"
+  },
+  {
+    "blind_id": "R49",
+    "sample_number": 99,
+    "id": "ee125ef1-36ec-4b7e-96f5-a49998cacb64__f213189",
+    "video": "randomized-20261123/videos/ee125ef1-36ec-4b7e-96f5-a49998cacb64__f213189.mp4",
+    "source_start": 3553.15,
+    "game": "Game 4"
+  },
+  {
+    "blind_id": "R50",
+    "sample_number": 100,
+    "id": "d5389dcf-d386-4f62-943c-478593f202cc__f18195",
+    "video": "randomized-20261123/videos/d5389dcf-d386-4f62-943c-478593f202cc__f18195.mp4",
+    "source_start": 303.25,
+    "game": "Game 15"
+  }
+]

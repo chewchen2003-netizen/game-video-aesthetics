@@ -1,0 +1,125 @@
+{
+  "blind_id": "R15",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "player",
+        "lantern"
+      ],
+      "context": "third-person standing character faces floor lantern and timber wall; partial secondary figure at right after~12s is context"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          170,
+          160,
+          575,
+          719
+        ],
+        "16": [
+          170,
+          160,
+          575,
+          719
+        ],
+        "32": [
+          170,
+          160,
+          575,
+          719
+        ],
+        "48": [
+          210,
+          170,
+          590,
+          719
+        ],
+        "64": [
+          215,
+          180,
+          590,
+          719
+        ],
+        "79": [
+          215,
+          180,
+          590,
+          719
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "lantern",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          630,
+          115,
+          670,
+          170
+        ],
+        "32": [
+          630,
+          115,
+          670,
+          170
+        ],
+        "48": [
+          700,
+          135,
+          730,
+          180
+        ],
+        "64": [
+          720,
+          130,
+          755,
+          175
+        ],
+        "79": [
+          720,
+          130,
+          755,
+          175
+        ]
+      }
+    }
+  ],
+  "head_hints": {
+    "0": {
+      "player": {
+        "box": [
+          225,
+          165,
+          360,
+          330
+        ],
+        "direction": null
+      }
+    },
+    "64": {
+      "player": {
+        "box": [
+          270,
+          180,
+          400,
+          355
+        ],
+        "direction": null
+      }
+    }
+  },
+  "direction_evidence": [],
+  "visual_notes": "Character lower legs are out of frame in a normal third-person composition. Lantern is tiny but visible localized light/object, not an amodal mask. Late right-edge partial NPC should not be confused with the player or force a full-person crop penalty.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379248.721987
+}

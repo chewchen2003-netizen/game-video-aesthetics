@@ -1,0 +1,207 @@
+{
+  "blind_id": "R27",
+  "segments": [
+    {
+      "range": [
+        0,
+        2.75
+      ],
+      "primary": [
+        "bed_region"
+      ],
+      "context": "looking around cabin interior"
+    },
+    {
+      "range": [
+        3,
+        4.5
+      ],
+      "primary": [
+        "blue_door"
+      ],
+      "context": "moving through highlighted doorway"
+    },
+    {
+      "range": [
+        4.75,
+        9.5
+      ],
+      "primary": [
+        "drying_rack"
+      ],
+      "context": "outside camp interaction with drying rack"
+    },
+    {
+      "range": [
+        9.75,
+        19.75
+      ],
+      "primary": [
+        "cooking_pot"
+      ],
+      "context": "looks down at cooking pot/campfire"
+    }
+  ],
+  "objects": [
+    {
+      "id": "bed_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          0,
+          0,
+          900,
+          550
+        ],
+        "4": [
+          100,
+          100,
+          750,
+          560
+        ],
+        "8": [
+          420,
+          300,
+          800,
+          600
+        ],
+        "11": [
+          580,
+          300,
+          950,
+          620
+        ]
+      }
+    },
+    {
+      "id": "blue_door",
+      "kind": "object",
+      "anchors": {
+        "12": [
+          770,
+          0,
+          1060,
+          700
+        ],
+        "14": [
+          120,
+          0,
+          820,
+          719
+        ],
+        "16": [
+          0,
+          0,
+          830,
+          719
+        ],
+        "18": [
+          0,
+          0,
+          360,
+          719
+        ]
+      }
+    },
+    {
+      "id": "drying_rack",
+      "kind": "object",
+      "anchors": {
+        "19": [
+          300,
+          310,
+          600,
+          600
+        ],
+        "24": [
+          380,
+          320,
+          650,
+          650
+        ],
+        "28": [
+          75,
+          120,
+          790,
+          719
+        ],
+        "32": [
+          110,
+          80,
+          780,
+          719
+        ],
+        "36": [
+          0,
+          40,
+          620,
+          660
+        ],
+        "38": [
+          50,
+          50,
+          650,
+          690
+        ]
+      }
+    },
+    {
+      "id": "cooking_pot",
+      "kind": "object",
+      "anchors": {
+        "39": [
+          560,
+          260,
+          770,
+          500
+        ],
+        "44": [
+          700,
+          210,
+          960,
+          550
+        ],
+        "48": [
+          465,
+          200,
+          720,
+          600
+        ],
+        "52": [
+          465,
+          200,
+          720,
+          600
+        ],
+        "60": [
+          450,
+          180,
+          710,
+          600
+        ],
+        "64": [
+          450,
+          180,
+          710,
+          600
+        ],
+        "79": [
+          450,
+          180,
+          710,
+          600
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "第一人称营地操作。3–4.5秒蓝色高亮门为交互状态，不自动算艺术色彩/光影。6–9秒晾晒架被高亮但依然是明确操作对象；后段锅有界面文字，SAM可能将文字或火堆圈混入，需区别锅、支架和背景。床/初始室内区域定位较不稳，不能把偶然近物当持续主体。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.786947
+}

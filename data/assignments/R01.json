@@ -1,0 +1,94 @@
+{
+  "blind_id": "R01",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "player"
+      ],
+      "context": "third-person character traversing woodland clearing; lower body naturally leaves frame; dog is context, not merged into player"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          345,
+          405,
+          660,
+          719
+        ],
+        "8": [
+          345,
+          405,
+          660,
+          719
+        ],
+        "16": [
+          335,
+          400,
+          620,
+          719
+        ],
+        "32": [
+          340,
+          405,
+          650,
+          719
+        ],
+        "48": [
+          335,
+          345,
+          630,
+          719
+        ],
+        "64": [
+          320,
+          330,
+          635,
+          719
+        ],
+        "79": [
+          330,
+          325,
+          635,
+          719
+        ]
+      },
+      "class_hint": "person"
+    }
+  ],
+  "head_hints": {
+    "48": {
+      "player": {
+        "box": [
+          445,
+          345,
+          520,
+          425
+        ],
+        "direction": null
+      }
+    },
+    "64": {
+      "player": {
+        "box": [
+          440,
+          330,
+          520,
+          420
+        ],
+        "direction": null
+      }
+    }
+  },
+  "direction_evidence": [],
+  "visual_notes": "Third-person backpacked player visible throughout. Foliage briefly overlaps at2–2.5s. Clearing opens after~2.75s. Dog appears later on left; do not infer full player extent or count normal lower-body framing as bad crop.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.972542
+}

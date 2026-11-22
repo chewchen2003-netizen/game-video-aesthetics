@@ -1,0 +1,121 @@
+{
+  "blind_id": "R18",
+  "segments": [
+    {
+      "range": [
+        0,
+        11.75
+      ],
+      "primary": [
+        "forest_ground_region"
+      ],
+      "context": "first-person wooded landscape; no single action target; weapon excluded as default"
+    },
+    {
+      "range": [
+        12,
+        19.75
+      ],
+      "primary": [
+        "right_boulder"
+      ],
+      "context": "approaching and looking around large rock formation"
+    }
+  ],
+  "objects": [
+    {
+      "id": "forest_ground_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          120,
+          270,
+          1050,
+          650
+        ],
+        "16": [
+          280,
+          320,
+          1100,
+          650
+        ],
+        "32": [
+          450,
+          350,
+          1100,
+          650
+        ],
+        "47": [
+          320,
+          320,
+          1000,
+          650
+        ]
+      }
+    },
+    {
+      "id": "right_boulder",
+      "kind": "object",
+      "anchors": {
+        "48": [
+          900,
+          120,
+          1270,
+          490
+        ],
+        "56": [
+          780,
+          30,
+          1279,
+          470
+        ],
+        "60": [
+          830,
+          5,
+          1279,
+          610
+        ],
+        "64": [
+          665,
+          0,
+          1279,
+          650
+        ],
+        "68": [
+          660,
+          10,
+          1279,
+          650
+        ],
+        "72": [
+          590,
+          25,
+          1279,
+          650
+        ],
+        "76": [
+          520,
+          80,
+          1279,
+          680
+        ],
+        "79": [
+          0,
+          250,
+          560,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "场景探索、近岩石与树林。前段没有明确单一人物目标；场景区域仅是代表性可见区域，SAM若抓取手/斧需拒绝。后段镜头转动显著，岩石提示仅限相应时段，78到79转向后不宜直接跨大位移插值。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.784939
+}

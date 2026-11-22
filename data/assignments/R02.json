@@ -1,0 +1,117 @@
+{
+  "blind_id": "R02",
+  "segments": [
+    {
+      "range": [
+        0,
+        2.75
+      ],
+      "primary": [
+        "player",
+        "teleport_pad"
+      ],
+      "context": "character stands by circular pad"
+    },
+    {
+      "range": [
+        3,
+        18.75
+      ],
+      "primary": [
+        "teleport_pad"
+      ],
+      "context": "character disappears, pad and surrounding landscape remain visible; scene still has composition"
+    },
+    {
+      "range": [
+        19,
+        19.75
+      ],
+      "primary": [
+        "player_lava"
+      ],
+      "context": "cut to lava environment with character on another pad"
+    }
+  ],
+  "objects": [
+    {
+      "id": "teleport_pad",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          280,
+          485,
+          650,
+          690
+        ],
+        "16": [
+          280,
+          485,
+          650,
+          690
+        ],
+        "40": [
+          280,
+          485,
+          650,
+          690
+        ],
+        "75": [
+          280,
+          485,
+          650,
+          690
+        ]
+      }
+    },
+    {
+      "id": "player",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          540,
+          400,
+          635,
+          640
+        ],
+        "8": [
+          535,
+          395,
+          635,
+          635
+        ],
+        "11": [
+          535,
+          395,
+          635,
+          635
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "player_lava",
+      "kind": "humanoid",
+      "anchors": {
+        "76": [
+          600,
+          405,
+          700,
+          685
+        ],
+        "79": [
+          600,
+          405,
+          700,
+          685
+        ]
+      },
+      "class_hint": "person"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Teleport transition: actor vanishes before4s; do not track phantom person across18s empty-pad view. Late scene change at~19s requires new subject ID and no interpolated tracking through transition.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.973096
+}

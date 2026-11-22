@@ -1,0 +1,7 @@
+-r requirements.txt
+scipy>=1.11,<2
+opencv-python>=4.8,<6
+torch>=2.6,<3
+torchvision>=0.21,<1
+ultralytics>=8.3,<9
+transformers>=4.46,<6

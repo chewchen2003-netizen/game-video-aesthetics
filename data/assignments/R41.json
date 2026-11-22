@@ -1,0 +1,148 @@
+{
+  "blind_id": "R41",
+  "segments": [
+    {
+      "range": [
+        0,
+        13.25
+      ],
+      "primary": [
+        "front_white_car"
+      ],
+      "context": "第一人称车内停靠或缓慢行车，前方白色车辆与道路是观察对象"
+    },
+    {
+      "range": [
+        13.5,
+        19.75
+      ],
+      "primary": [
+        "map_land_region"
+      ],
+      "context": "切到全屏地图UI；这是平面信息界面，不对单目三维深度作物理解释"
+    }
+  ],
+  "objects": [
+    {
+      "id": "front_white_car",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          620,
+          260,
+          850,
+          405
+        ],
+        "16": [
+          620,
+          260,
+          850,
+          405
+        ],
+        "32": [
+          620,
+          260,
+          850,
+          405
+        ],
+        "48": [
+          620,
+          260,
+          850,
+          405
+        ],
+        "53": [
+          620,
+          260,
+          850,
+          405
+        ]
+      },
+      "class_hint": "car"
+    },
+    {
+      "id": "dashboard_region",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          440,
+          350,
+          1100,
+          719
+        ],
+        "32": [
+          440,
+          350,
+          1100,
+          719
+        ],
+        "53": [
+          440,
+          350,
+          1100,
+          719
+        ]
+      }
+    },
+    {
+      "id": "map_land_region",
+      "kind": "scene_region",
+      "anchors": {
+        "54": [
+          0,
+          0,
+          870,
+          719
+        ],
+        "60": [
+          0,
+          0,
+          870,
+          719
+        ],
+        "68": [
+          0,
+          0,
+          870,
+          719
+        ],
+        "72": [
+          0,
+          0,
+          870,
+          719
+        ],
+        "79": [
+          0,
+          0,
+          870,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": [
+    "车内框架正常遮住部分视野，不直接等同不合理裁切。",
+    "13.5秒进入全屏地图；地图不是构图分屏或画中画，普通界面也不因无三维纵深判低。",
+    "地图区域含海岸与道路符号，分割可能不能获得稳定语义区域；请将该阶段引擎/单目深度设不适用或无效。"
+  ],
+  "assignment_source": "assistant RGB review of overview and both 4FPS contact sheets; no human answers",
+  "assignment_epoch": 1795379349.382114,
+  "depth_exclusions": [
+    {
+      "time_range": [
+        13.5,
+        19.75
+      ],
+      "objects": [
+        "map_land_region"
+      ],
+      "regions": [
+        "entire_frame"
+      ],
+      "reason": "全屏二维地图UI，深度指标不适用；不按弱三维纵深判低。"
+    }
+  ]
+}

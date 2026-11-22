@@ -1,0 +1,77 @@
+{
+  "blind_id": "R14",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "player_buggy"
+      ],
+      "context": "third-person buggy driving rocky narrow course at night"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player_buggy",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          395,
+          250,
+          865,
+          690
+        ],
+        "8": [
+          435,
+          270,
+          880,
+          719
+        ],
+        "16": [
+          430,
+          255,
+          855,
+          719
+        ],
+        "24": [
+          390,
+          295,
+          870,
+          719
+        ],
+        "32": [
+          390,
+          285,
+          875,
+          719
+        ],
+        "48": [
+          440,
+          280,
+          875,
+          719
+        ],
+        "64": [
+          450,
+          330,
+          875,
+          719
+        ],
+        "79": [
+          400,
+          300,
+          880,
+          719
+        ]
+      },
+      "class_hint": "car"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Main vehicle can be followed throughout across rock steps and cliff-side track. Large foreground vehicle and jolts correspond to follow-camera terrain traversal; no automatic anatomy rules. Nearby rocks can partially overlap vehicle without proving harmful crop. Night darkness alone does not decide composition.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379248.721803
+}

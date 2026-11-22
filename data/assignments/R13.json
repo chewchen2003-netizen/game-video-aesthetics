@@ -1,0 +1,156 @@
+{
+  "blind_id": "R13",
+  "segments": [
+    {
+      "range": [
+        0,
+        18.25
+      ],
+      "primary": [
+        "rider",
+        "horse"
+      ],
+      "context": "third-person mounted traversal in open grassland; rider and mount separate"
+    },
+    {
+      "range": [
+        18.5,
+        19.75
+      ],
+      "primary": [
+        "horse_close"
+      ],
+      "context": "camera transitions near horse side/saddle; not same framing as earlier follow"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rider",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          540,
+          270,
+          695,
+          520
+        ],
+        "16": [
+          540,
+          275,
+          695,
+          525
+        ],
+        "32": [
+          540,
+          280,
+          700,
+          535
+        ],
+        "48": [
+          565,
+          280,
+          715,
+          535
+        ],
+        "64": [
+          590,
+          260,
+          720,
+          485
+        ],
+        "72": [
+          590,
+          260,
+          720,
+          485
+        ],
+        "73": [
+          590,
+          260,
+          720,
+          485
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "horse",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          520,
+          325,
+          800,
+          690
+        ],
+        "16": [
+          520,
+          325,
+          800,
+          690
+        ],
+        "32": [
+          515,
+          330,
+          805,
+          695
+        ],
+        "48": [
+          535,
+          330,
+          815,
+          695
+        ],
+        "64": [
+          500,
+          310,
+          805,
+          590
+        ],
+        "72": [
+          500,
+          310,
+          805,
+          590
+        ],
+        "73": [
+          500,
+          310,
+          805,
+          590
+        ]
+      },
+      "class_hint": "horse"
+    },
+    {
+      "id": "horse_close",
+      "kind": "object",
+      "anchors": {
+        "74": [
+          400,
+          0,
+          1279,
+          719
+        ],
+        "76": [
+          300,
+          0,
+          1279,
+          719
+        ],
+        "79": [
+          300,
+          0,
+          1279,
+          719
+        ]
+      },
+      "class_hint": "horse"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Rider and horse remain distinct through18.25s. Late camera moves close to horse side/saddle and some player hands; do not classify large normal close framing as automatically low. Horse visible segmentation cannot provide complete hidden torso under rider.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379248.721293
+}

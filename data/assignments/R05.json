@@ -1,0 +1,146 @@
+{
+  "blind_id": "R05",
+  "segments": [
+    {
+      "range": [
+        0,
+        1.75
+      ],
+      "primary": [
+        "race_scene"
+      ],
+      "context": "wide race establishing shot; no uniquely designated player vehicle yet"
+    },
+    {
+      "range": [
+        2,
+        4.25
+      ],
+      "primary": [
+        "intro_buggy"
+      ],
+      "context": "close vehicle introduction shot with driver, deliberate close cropping possible"
+    },
+    {
+      "range": [
+        4.5,
+        19.75
+      ],
+      "primary": [
+        "player_buggy"
+      ],
+      "context": "third-person race-follow vehicle, neighboring cars remain separate"
+    }
+  ],
+  "objects": [
+    {
+      "id": "race_scene",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          100,
+          180,
+          1150,
+          650
+        ],
+        "7": [
+          100,
+          180,
+          1150,
+          650
+        ]
+      }
+    },
+    {
+      "id": "intro_buggy",
+      "kind": "vehicle",
+      "anchors": {
+        "8": [
+          230,
+          150,
+          800,
+          630
+        ],
+        "12": [
+          300,
+          140,
+          1100,
+          719
+        ],
+        "16": [
+          130,
+          180,
+          1279,
+          719
+        ],
+        "17": [
+          100,
+          180,
+          1279,
+          719
+        ]
+      },
+      "class_hint": "car"
+    },
+    {
+      "id": "player_buggy",
+      "kind": "vehicle",
+      "anchors": {
+        "18": [
+          420,
+          295,
+          780,
+          700
+        ],
+        "20": [
+          420,
+          295,
+          780,
+          700
+        ],
+        "32": [
+          400,
+          285,
+          805,
+          710
+        ],
+        "48": [
+          420,
+          295,
+          835,
+          719
+        ],
+        "60": [
+          400,
+          325,
+          850,
+          719
+        ],
+        "64": [
+          280,
+          310,
+          790,
+          719
+        ],
+        "72": [
+          450,
+          330,
+          870,
+          719
+        ],
+        "79": [
+          455,
+          325,
+          865,
+          719
+        ]
+      },
+      "class_hint": "car"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Race camera changes from distant overview to close introduction to follow. Use separate IDs; do not interpolate the large introductory vehicle into the main follow car. Other buggies approach and overlap late; no automatic occlusion ratio from visible masks.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.974005
+}

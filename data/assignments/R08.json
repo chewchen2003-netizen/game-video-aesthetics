@@ -1,0 +1,87 @@
+{
+  "blind_id": "R08",
+  "segments": [
+    {
+      "range": [
+        0,
+        10.5
+      ],
+      "primary": [
+        "taxi"
+      ],
+      "context": "third-person car driving broad boulevard"
+    },
+    {
+      "range": [
+        10.75,
+        19.75
+      ],
+      "primary": [
+        "taxi"
+      ],
+      "context": "car turns into narrow pedestrian passage, vehicle remains target"
+    }
+  ],
+  "objects": [
+    {
+      "id": "taxi",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          560,
+          350,
+          735,
+          535
+        ],
+        "16": [
+          560,
+          350,
+          735,
+          535
+        ],
+        "32": [
+          555,
+          355,
+          735,
+          540
+        ],
+        "40": [
+          555,
+          355,
+          735,
+          540
+        ],
+        "48": [
+          550,
+          370,
+          755,
+          565
+        ],
+        "56": [
+          555,
+          360,
+          735,
+          555
+        ],
+        "64": [
+          550,
+          360,
+          740,
+          555
+        ],
+        "79": [
+          550,
+          360,
+          740,
+          555
+        ]
+      },
+      "class_hint": "car"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Blue taxi stays identifiable and in frame during boulevard-to-alley turn. Do not merge nearby scooters/cars with taxi. Narrow passage is a scene choice rather than automatic lack of lead room; motion direction must not be inferred solely from screen-static follow camera.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.974891
+}

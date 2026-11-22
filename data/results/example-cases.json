@@ -1,0 +1,86 @@
+[
+  {
+    "blind_id": "R49",
+    "example_grade": "高",
+    "machine_grade": "高",
+    "review_status": "用户选入高档示例",
+    "reason": "白发角色始终是稳定的观看锚点。巷道以两侧石壁和铺路线条引向木屋，经过廊架后打开视野，俯看时又由近岩、草坡、渠岸和木桥组织出横向与远近层次。多帧可见由收窄到展开的空间变化，未见主导性的辨认或裁切问题。",
+    "evidence_frames": [
+      20,
+      48,
+      60
+    ]
+  },
+  {
+    "blind_id": "R12",
+    "example_grade": "高",
+    "machine_grade": "高",
+    "review_status": "人工与机标一致",
+    "reason": "开头深色号口成为明确焦点，末段火堆形成新的视觉重点，前、中、后景区分清楚，主体与环境层次共同组织观看。",
+    "evidence_frames": [
+      0,
+      60,
+      79
+    ]
+  },
+  {
+    "blind_id": "R04",
+    "example_grade": "高",
+    "machine_grade": "高",
+    "review_status": "补选示例，待用户复核",
+    "reason": "开场左侧暗岩与右侧藤干夹出明亮水岸，形成由近及远的视线通道。转入林地后，近处蕨叶、中间沙地与斜棕榈、后方岩林重新建立纵深。两段均有连续帧支持。末段蓝色拾取物虽小，显现后仍容易定位。全段未见持续妨碍辨认的构图问题。",
+    "evidence_frames": [
+      20,
+      60,
+      79
+    ]
+  },
+  {
+    "blind_id": "R03",
+    "example_grade": "中",
+    "machine_grade": "中",
+    "review_status": "人工与机标一致",
+    "reason": "整体以持续跟随和较远景别交代骑手及道路，基本清晰，未见足以提升到高档的突出组织效果，属于无功无过的中档。",
+    "evidence_frames": [
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "blind_id": "R35",
+    "example_grade": "中",
+    "machine_grade": "中",
+    "review_status": "人工与机标一致",
+    "reason": "第一人称枪战过程中，视角随玩家移动，主要目标及环境基本可辨，未体现突出的构图增益，整体无功无过。",
+    "evidence_frames": [
+      16,
+      48,
+      79
+    ]
+  },
+  {
+    "blind_id": "R01",
+    "example_grade": "中",
+    "machine_grade": "中",
+    "review_status": "补选示例，待用户复核",
+    "reason": "背包人物在第三人称跟拍中保持明确主次，常规下身出框未妨碍辨读。出林后，碎石空地、散石与林缘形成连贯纵深。枝叶只在开头短暂遮住人物，整体构图清楚，呈现方式较常规。",
+    "evidence_frames": [
+      8,
+      60,
+      79
+    ]
+  },
+  {
+    "blind_id": "R11",
+    "example_grade": "低",
+    "machine_grade": "低",
+    "review_status": "人工与机标一致",
+    "reason": "主体难以持续辨认，近处树叶堆叠反复遮住目标，部分阶段主要剩地面和枝叶，画面杂乱，削弱当前目标的呈现。",
+    "evidence_frames": [
+      16,
+      48,
+      60
+    ]
+  }
+]

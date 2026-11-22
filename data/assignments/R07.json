@@ -1,0 +1,65 @@
+{
+  "blind_id": "R07",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "player_buggy"
+      ],
+      "context": "third-person buggy driving on dusty course"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player_buggy",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          490,
+          340,
+          760,
+          630
+        ],
+        "16": [
+          505,
+          330,
+          780,
+          620
+        ],
+        "32": [
+          410,
+          335,
+          725,
+          650
+        ],
+        "48": [
+          505,
+          345,
+          785,
+          630
+        ],
+        "64": [
+          515,
+          330,
+          790,
+          630
+        ],
+        "79": [
+          510,
+          330,
+          790,
+          630
+        ]
+      },
+      "class_hint": "car"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Vehicle is distinct and visible throughout. Turns tilt the follow view and a short lift/jump is visible; do not count camera roll or airborne state by itself as composition harm. Surrounding rocks and track provide context, no humanoid target needed.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.974415
+}

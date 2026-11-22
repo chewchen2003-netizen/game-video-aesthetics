@@ -1,0 +1,195 @@
+{
+  "blind_id": "R22",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "main_rider",
+        "main_motorcycle"
+      ],
+      "context": "third-person moving motorcycle with nearby riders and combat gestures"
+    }
+  ],
+  "objects": [
+    {
+      "id": "main_rider",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          640,
+          400,
+          760,
+          570
+        ],
+        "16": [
+          600,
+          350,
+          735,
+          565
+        ],
+        "20": [
+          545,
+          380,
+          700,
+          575
+        ],
+        "32": [
+          625,
+          400,
+          755,
+          590
+        ],
+        "40": [
+          610,
+          360,
+          735,
+          570
+        ],
+        "48": [
+          600,
+          370,
+          740,
+          570
+        ],
+        "56": [
+          630,
+          400,
+          750,
+          575
+        ],
+        "64": [
+          610,
+          420,
+          760,
+          585
+        ],
+        "72": [
+          660,
+          380,
+          780,
+          570
+        ],
+        "79": [
+          590,
+          330,
+          780,
+          580
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "main_motorcycle",
+      "kind": "vehicle",
+      "anchors": {
+        "0": [
+          620,
+          480,
+          770,
+          710
+        ],
+        "16": [
+          590,
+          450,
+          730,
+          690
+        ],
+        "20": [
+          575,
+          470,
+          735,
+          710
+        ],
+        "32": [
+          610,
+          490,
+          760,
+          719
+        ],
+        "40": [
+          610,
+          480,
+          755,
+          700
+        ],
+        "48": [
+          595,
+          460,
+          740,
+          705
+        ],
+        "56": [
+          630,
+          495,
+          760,
+          705
+        ],
+        "64": [
+          585,
+          480,
+          765,
+          719
+        ],
+        "72": [
+          640,
+          480,
+          780,
+          710
+        ],
+        "79": [
+          600,
+          480,
+          770,
+          705
+        ]
+      },
+      "class_hint": "motorcycle"
+    }
+  ],
+  "head_hints": {
+    "32": {
+      "main_rider": {
+        "box": [
+          660,
+          406,
+          700,
+          447
+        ],
+        "direction": null
+      }
+    }
+  },
+  "direction_evidence": [
+    {
+      "object_id": "main_rider",
+      "time_range": [
+        0,
+        19.75
+      ],
+      "direction": [
+        0,
+        -1
+      ],
+      "source": "assistant visible-action coarse image-plane forward proxy; rear view riding toward road distance",
+      "evidence_frames": [
+        0,
+        32,
+        64
+      ],
+      "valid_for_geometry": true,
+      "world_direction_known": false,
+      "direction_precision": "coarse vertical projection; road turns not reconstructed"
+    }
+  ],
+  "visual_notes": "跟随主骑手，周围多辆摩托靠近与挥击。必须分开骑手与摩托可见掩码，邻车与手臂重叠不直接等于坏构图。17秒后近车较多，目标关联需检查。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.785784
+}

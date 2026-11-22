@@ -1,0 +1,151 @@
+{
+  "blind_id": "R04",
+  "segments": [
+    {
+      "range": [
+        0,
+        7.25
+      ],
+      "primary": [
+        "left_rock",
+        "vine_trunk"
+      ],
+      "context": "first-person tropical scene; rocky opening and vine-wrapped tree organize view, glowing hand is foreground context"
+    },
+    {
+      "range": [
+        7.5,
+        18.75
+      ],
+      "primary": [
+        "forest_floor_region"
+      ],
+      "context": "view turns right and downward through vegetation; no stable humanoid target"
+    },
+    {
+      "range": [
+        19,
+        19.75
+      ],
+      "primary": [
+        "blue_pickup"
+      ],
+      "context": "looking down at small glowing blue object"
+    }
+  ],
+  "objects": [
+    {
+      "id": "left_rock",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          0,
+          80,
+          610,
+          465
+        ],
+        "20": [
+          0,
+          80,
+          610,
+          465
+        ],
+        "29": [
+          0,
+          80,
+          610,
+          465
+        ]
+      }
+    },
+    {
+      "id": "vine_trunk",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          900,
+          0,
+          1090,
+          605
+        ],
+        "20": [
+          900,
+          0,
+          1090,
+          605
+        ],
+        "29": [
+          900,
+          0,
+          1090,
+          605
+        ]
+      }
+    },
+    {
+      "id": "forest_floor_region",
+      "kind": "scene_region",
+      "anchors": {
+        "30": [
+          400,
+          440,
+          1040,
+          719
+        ],
+        "40": [
+          550,
+          300,
+          1279,
+          719
+        ],
+        "48": [
+          450,
+          330,
+          1279,
+          719
+        ],
+        "60": [
+          200,
+          370,
+          1010,
+          719
+        ],
+        "70": [
+          400,
+          300,
+          1279,
+          719
+        ],
+        "75": [
+          400,
+          330,
+          1279,
+          719
+        ]
+      }
+    },
+    {
+      "id": "blue_pickup",
+      "kind": "object",
+      "anchors": {
+        "76": [
+          670,
+          465,
+          765,
+          560
+        ],
+        "79": [
+          650,
+          470,
+          750,
+          570
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "No human character visible except first-person hand. After7.5s generic ground region changes with viewpoint and is high-risk segmentation; return invalid if weapon/foliage replaces the specified ground. Do not assign anatomy/gaze to scene. Blue pickup becomes a distinct target only at end.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.973747
+}

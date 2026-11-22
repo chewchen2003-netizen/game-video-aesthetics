@@ -1,0 +1,243 @@
+{
+  "blind_id": "R20",
+  "segments": [
+    {
+      "range": [
+        0,
+        3.25
+      ],
+      "primary": [
+        "red_opponent"
+      ],
+      "context": "red humanoid opponent in doorway, moving closer"
+    },
+    {
+      "range": [
+        3.5,
+        7
+      ],
+      "primary": [
+        "fallen_character"
+      ],
+      "context": "rotated overhead/downed character view; exact event unverified"
+    },
+    {
+      "range": [
+        7.25,
+        14.75
+      ],
+      "primary": [
+        "blue_portal"
+      ],
+      "context": "first-person moves through architecture, portal shifts"
+    },
+    {
+      "range": [
+        15,
+        19.75
+      ],
+      "primary": [
+        "courtyard_column"
+      ],
+      "context": "courtyard/architectural region"
+    }
+  ],
+  "objects": [
+    {
+      "id": "red_opponent",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          460,
+          210,
+          530,
+          355
+        ],
+        "4": [
+          340,
+          170,
+          520,
+          540
+        ],
+        "5": [
+          650,
+          40,
+          860,
+          590
+        ],
+        "6": [
+          600,
+          45,
+          790,
+          560
+        ],
+        "8": [
+          80,
+          170,
+          260,
+          560
+        ],
+        "10": [
+          430,
+          120,
+          610,
+          590
+        ],
+        "12": [
+          550,
+          100,
+          730,
+          590
+        ],
+        "13": [
+          820,
+          125,
+          990,
+          560
+        ]
+      }
+    },
+    {
+      "id": "fallen_character",
+      "kind": "humanoid",
+      "anchors": {
+        "14": [
+          420,
+          230,
+          770,
+          600
+        ],
+        "16": [
+          430,
+          180,
+          800,
+          520
+        ],
+        "20": [
+          485,
+          350,
+          865,
+          650
+        ],
+        "28": [
+          485,
+          350,
+          865,
+          650
+        ]
+      }
+    },
+    {
+      "id": "blue_portal",
+      "kind": "object",
+      "anchors": {
+        "29": [
+          30,
+          140,
+          390,
+          560
+        ],
+        "32": [
+          20,
+          170,
+          375,
+          580
+        ],
+        "36": [
+          0,
+          180,
+          260,
+          530
+        ],
+        "40": [
+          400,
+          170,
+          650,
+          490
+        ],
+        "44": [
+          0,
+          0,
+          180,
+          650
+        ],
+        "48": [
+          0,
+          0,
+          150,
+          650
+        ],
+        "56": [
+          60,
+          90,
+          225,
+          510
+        ],
+        "59": [
+          700,
+          200,
+          940,
+          500
+        ]
+      }
+    },
+    {
+      "id": "courtyard_column",
+      "kind": "object",
+      "anchors": {
+        "60": [
+          760,
+          180,
+          1180,
+          620
+        ],
+        "64": [
+          0,
+          0,
+          260,
+          680
+        ],
+        "68": [
+          650,
+          100,
+          980,
+          610
+        ],
+        "72": [
+          680,
+          160,
+          1000,
+          570
+        ],
+        "79": [
+          0,
+          0,
+          710,
+          650
+        ]
+      }
+    }
+  ],
+  "head_hints": {
+    "0": {
+      "red_opponent": {
+        "box": [
+          472,
+          210,
+          501,
+          244
+        ],
+        "direction": null
+      }
+    }
+  },
+  "direction_evidence": [],
+  "visual_notes": "科幻射击场景：对手接近后有倒置俯拍角色阶段，约7.25秒回到第一人称。倒置姿态的COCO部位标签可能错误，须看叠加图而非相信confidence。后段频繁转向，门户/庭院柱的区域选择需逐段核查，不可把前景武器当门户。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.785423
+}

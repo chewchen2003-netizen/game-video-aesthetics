@@ -1,0 +1,112 @@
+{
+  "blind_id": "R24",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "farmer"
+      ],
+      "context": "overhead/isometric farming character moving among soil plots in rain"
+    }
+  ],
+  "objects": [
+    {
+      "id": "farmer",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          575,
+          300,
+          710,
+          610
+        ],
+        "8": [
+          570,
+          300,
+          710,
+          570
+        ],
+        "16": [
+          550,
+          290,
+          690,
+          530
+        ],
+        "24": [
+          565,
+          320,
+          700,
+          535
+        ],
+        "32": [
+          570,
+          320,
+          705,
+          560
+        ],
+        "40": [
+          575,
+          320,
+          710,
+          570
+        ],
+        "48": [
+          570,
+          320,
+          705,
+          570
+        ],
+        "56": [
+          560,
+          330,
+          700,
+          570
+        ],
+        "64": [
+          560,
+          335,
+          710,
+          570
+        ],
+        "72": [
+          560,
+          310,
+          700,
+          555
+        ],
+        "79": [
+          570,
+          310,
+          705,
+          555
+        ]
+      },
+      "class_hint": "person"
+    }
+  ],
+  "head_hints": {
+    "0": {
+      "farmer": {
+        "box": [
+          580,
+          295,
+          685,
+          400
+        ],
+        "direction": null
+      }
+    }
+  },
+  "direction_evidence": [],
+  "visual_notes": "俯视农作角色和规则土块阵列，角色始终在近中部。高俯视使头肩腿互相遮叠，人体姿态模型不一定可靠；不能因看不到脸判断不适用。土块规则排列是空间组织候选，不按方格均匀就判高。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.786165
+}

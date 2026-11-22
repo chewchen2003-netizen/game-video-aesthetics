@@ -1,0 +1,9 @@
+.venv*/
+__pycache__/
+*.pyc
+runs/
+raw-inputs/
+*.zip
+.env*
+.DS_Store
+node_modules/

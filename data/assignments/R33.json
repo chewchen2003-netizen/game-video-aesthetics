@@ -1,0 +1,145 @@
+{
+  "blind_id": "R33",
+  "segments": [
+    {
+      "range": [
+        0,
+        3.25
+      ],
+      "primary": [
+        "man_first"
+      ],
+      "context": "dialogue close-up of civilian"
+    },
+    {
+      "range": [
+        3.5,
+        6.25
+      ],
+      "primary": [
+        "armored_character"
+      ],
+      "context": "reverse dialogue shot of armored character"
+    },
+    {
+      "range": [
+        6.5,
+        19.75
+      ],
+      "primary": [
+        "man_return"
+      ],
+      "context": "dialogue returns to civilian close-up"
+    }
+  ],
+  "objects": [
+    {
+      "id": "man_first",
+      "kind": "humanoid",
+      "anchors": {
+        "0": [
+          180,
+          110,
+          870,
+          719
+        ],
+        "13": [
+          180,
+          110,
+          870,
+          719
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "armored_character",
+      "kind": "humanoid",
+      "anchors": {
+        "14": [
+          180,
+          0,
+          1279,
+          719
+        ],
+        "25": [
+          180,
+          0,
+          1279,
+          719
+        ]
+      },
+      "class_hint": "person"
+    },
+    {
+      "id": "man_return",
+      "kind": "humanoid",
+      "anchors": {
+        "26": [
+          180,
+          110,
+          870,
+          719
+        ],
+        "32": [
+          180,
+          110,
+          870,
+          719
+        ],
+        "48": [
+          180,
+          110,
+          870,
+          719
+        ],
+        "64": [
+          180,
+          110,
+          870,
+          719
+        ],
+        "79": [
+          180,
+          110,
+          870,
+          719
+        ]
+      },
+      "class_hint": "person"
+    }
+  ],
+  "head_hints": {
+    "0": {
+      "man_first": {
+        "box": [
+          390,
+          105,
+          700,
+          500
+        ],
+        "direction": "right"
+      }
+    },
+    "48": {
+      "man_return": {
+        "box": [
+          390,
+          105,
+          700,
+          500
+        ],
+        "direction": "right"
+      }
+    }
+  },
+  "direction_evidence": [],
+  "visual_notes": "对话正反打，有明确镜头切换，不把两人合并大框或跨切换插值。半身/胸像正常裁去下身，不按全身完整性判差。民众人物后方有车辆轮胎圆形轮廓，需核查是否造成头部背景误接而非仅按邻近程度判坏；盔甲头部视线不能从面罩直接确定。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.787835
+}

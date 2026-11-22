@@ -1,0 +1,156 @@
+{
+  "blind_id": "R09",
+  "segments": [
+    {
+      "range": [
+        0,
+        5.75
+      ],
+      "primary": [
+        "build_preview"
+      ],
+      "context": "first-person building placement, transparent green construction preview behind or near timber beams"
+    },
+    {
+      "range": [
+        6,
+        11.75
+      ],
+      "primary": [
+        "interior_region"
+      ],
+      "context": "camera turns inside timber room; no single person or moving object"
+    },
+    {
+      "range": [
+        12,
+        19.75
+      ],
+      "primary": [
+        "interior_region_late"
+      ],
+      "context": "umbrella and hook in foreground, room and opening remain spatial context"
+    }
+  ],
+  "objects": [
+    {
+      "id": "build_preview",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          500,
+          300,
+          900,
+          710
+        ],
+        "4": [
+          500,
+          300,
+          900,
+          710
+        ],
+        "8": [
+          0,
+          0,
+          1279,
+          719
+        ],
+        "16": [
+          0,
+          100,
+          1279,
+          600
+        ],
+        "20": [
+          200,
+          0,
+          1200,
+          719
+        ],
+        "23": [
+          850,
+          150,
+          1279,
+          650
+        ]
+      }
+    },
+    {
+      "id": "interior_region",
+      "kind": "scene_region",
+      "anchors": {
+        "24": [
+          200,
+          300,
+          1100,
+          719
+        ],
+        "28": [
+          250,
+          300,
+          1100,
+          719
+        ],
+        "32": [
+          650,
+          400,
+          1279,
+          719
+        ],
+        "40": [
+          200,
+          350,
+          1100,
+          719
+        ],
+        "47": [
+          200,
+          350,
+          1100,
+          719
+        ]
+      }
+    },
+    {
+      "id": "interior_region_late",
+      "kind": "scene_region",
+      "anchors": {
+        "48": [
+          100,
+          300,
+          1100,
+          719
+        ],
+        "56": [
+          300,
+          350,
+          1100,
+          719
+        ],
+        "60": [
+          100,
+          250,
+          1100,
+          719
+        ],
+        "68": [
+          200,
+          250,
+          1100,
+          719
+        ],
+        "79": [
+          100,
+          250,
+          1100,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Green object is a translucent construction preview: visible-area/depth semantics are unreliable, no solid/full shape should be fabricated. Nearby timber beams occupy much of view during placement; distinguish gameplay placement constraints from harmful crop. Generic room-region masks need strict QA and should fail if they select first-person umbrella/hand instead.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.9750972
+}

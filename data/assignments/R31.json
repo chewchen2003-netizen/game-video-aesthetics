@@ -1,0 +1,83 @@
+{
+  "blind_id": "R31",
+  "segments": [
+    {
+      "range": [
+        0,
+        19.75
+      ],
+      "primary": [
+        "bed",
+        "room_region"
+      ],
+      "context": "first-person wood cabin interior; scene layout and bed are review scope, not forced lantern-only focus"
+    }
+  ],
+  "objects": [
+    {
+      "id": "bed",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          790,
+          460,
+          1279,
+          719
+        ],
+        "79": [
+          790,
+          460,
+          1279,
+          719
+        ]
+      },
+      "class_hint": "bed"
+    },
+    {
+      "id": "lantern",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          150,
+          420,
+          375,
+          700
+        ],
+        "79": [
+          150,
+          420,
+          375,
+          700
+        ]
+      }
+    },
+    {
+      "id": "room_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          620,
+          250,
+          1279,
+          650
+        ],
+        "79": [
+          620,
+          250,
+          1279,
+          650
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "画面几乎保持同一木屋内部布局，手持灯在左、床在右、两个窗在后墙。静止不影响构图可评性；灯的正常出框手部不硬套身体完整性。room_region只是可见室内区域，用于布局，若与床/墙层级相交不能简单求和成互斥分区。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.78758
+}

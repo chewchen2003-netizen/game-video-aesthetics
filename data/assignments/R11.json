@@ -1,0 +1,215 @@
+{
+  "blind_id": "R11",
+  "segments": [
+    {
+      "range": [
+        0,
+        5.5
+      ],
+      "primary": [
+        "dog_early"
+      ],
+      "context": "first-person follows small dog among trees"
+    },
+    {
+      "range": [
+        5.75,
+        8.75
+      ],
+      "primary": [
+        "forest_context"
+      ],
+      "context": "dog obscured by conifer branches; do not hallucinate hidden dog area"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "primary": [
+        "dog_middle"
+      ],
+      "context": "dog briefly seen through gaps"
+    },
+    {
+      "range": [
+        12.25,
+        14.25
+      ],
+      "primary": [
+        "forest_context_late"
+      ],
+      "context": "foreground branches obscure view"
+    },
+    {
+      "range": [
+        14.5,
+        19.75
+      ],
+      "primary": [
+        "dog_late"
+      ],
+      "context": "dog reappears and moves ahead through woodland"
+    }
+  ],
+  "objects": [
+    {
+      "id": "dog_early",
+      "kind": "object",
+      "anchors": {
+        "0": [
+          530,
+          365,
+          610,
+          425
+        ],
+        "8": [
+          540,
+          340,
+          600,
+          400
+        ],
+        "16": [
+          535,
+          255,
+          575,
+          300
+        ],
+        "20": [
+          565,
+          260,
+          605,
+          310
+        ],
+        "22": [
+          585,
+          270,
+          635,
+          325
+        ]
+      },
+      "class_hint": "dog"
+    },
+    {
+      "id": "forest_context",
+      "kind": "scene_region",
+      "anchors": {
+        "23": [
+          200,
+          120,
+          1150,
+          540
+        ],
+        "35": [
+          200,
+          120,
+          1150,
+          540
+        ]
+      }
+    },
+    {
+      "id": "dog_middle",
+      "kind": "object",
+      "anchors": {
+        "36": [
+          550,
+          370,
+          620,
+          430
+        ],
+        "40": [
+          520,
+          310,
+          590,
+          360
+        ],
+        "44": [
+          490,
+          280,
+          565,
+          340
+        ],
+        "48": [
+          500,
+          290,
+          575,
+          350
+        ]
+      },
+      "class_hint": "dog"
+    },
+    {
+      "id": "forest_context_late",
+      "kind": "scene_region",
+      "anchors": {
+        "49": [
+          200,
+          100,
+          1150,
+          530
+        ],
+        "57": [
+          200,
+          100,
+          1150,
+          530
+        ]
+      }
+    },
+    {
+      "id": "dog_late",
+      "kind": "object",
+      "anchors": {
+        "58": [
+          570,
+          390,
+          635,
+          455
+        ],
+        "60": [
+          675,
+          370,
+          735,
+          465
+        ],
+        "64": [
+          800,
+          220,
+          870,
+          290
+        ],
+        "68": [
+          840,
+          230,
+          915,
+          300
+        ],
+        "72": [
+          700,
+          230,
+          780,
+          320
+        ],
+        "76": [
+          500,
+          270,
+          580,
+          365
+        ],
+        "79": [
+          500,
+          410,
+          640,
+          530
+        ]
+      },
+      "class_hint": "dog"
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "Dog becomes tiny and intermittently obscured by branches. Separate visible tracking intervals; do not interpolate green-mask truth through absence or derive amodal occlusion from tree mask. Gaze unknown. First-person rifle clipping is normal. Orange foreground leaves near end can obstruct dog but need actual impact review.",
+  "review_method": "Direct current-agent vision; six clear overview frames plus both 40-frame timecoded sheets. No human labels or prior predictions read.",
+  "assignment_finished_epoch": 1795379193.975772
+}

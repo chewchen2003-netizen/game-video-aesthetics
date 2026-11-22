@@ -1,0 +1,167 @@
+{
+  "blind_id": "R34",
+  "segments": [
+    {
+      "range": [
+        0,
+        6
+      ],
+      "primary": [
+        "clearing_region"
+      ],
+      "context": "first-person jungle ground and clearing"
+    },
+    {
+      "range": [
+        6.25,
+        15.75
+      ],
+      "primary": [
+        "palm_trunk"
+      ],
+      "context": "turns through palm vegetation"
+    },
+    {
+      "range": [
+        16,
+        19.75
+      ],
+      "primary": [
+        "near_boulder"
+      ],
+      "context": "foreground boulder and reveal toward water/valley"
+    }
+  ],
+  "objects": [
+    {
+      "id": "clearing_region",
+      "kind": "scene_region",
+      "anchors": {
+        "0": [
+          200,
+          300,
+          1150,
+          680
+        ],
+        "8": [
+          200,
+          350,
+          1150,
+          719
+        ],
+        "16": [
+          120,
+          260,
+          1180,
+          700
+        ],
+        "20": [
+          80,
+          300,
+          1150,
+          719
+        ],
+        "24": [
+          200,
+          300,
+          1050,
+          700
+        ]
+      }
+    },
+    {
+      "id": "palm_trunk",
+      "kind": "object",
+      "anchors": {
+        "25": [
+          520,
+          0,
+          680,
+          719
+        ],
+        "32": [
+          600,
+          0,
+          800,
+          719
+        ],
+        "40": [
+          650,
+          0,
+          840,
+          719
+        ],
+        "48": [
+          960,
+          0,
+          1110,
+          719
+        ],
+        "56": [
+          560,
+          0,
+          710,
+          719
+        ],
+        "60": [
+          540,
+          0,
+          690,
+          719
+        ],
+        "63": [
+          540,
+          0,
+          690,
+          719
+        ]
+      }
+    },
+    {
+      "id": "near_boulder",
+      "kind": "object",
+      "anchors": {
+        "64": [
+          0,
+          300,
+          950,
+          719
+        ],
+        "68": [
+          0,
+          180,
+          1000,
+          719
+        ],
+        "72": [
+          100,
+          0,
+          1150,
+          719
+        ],
+        "76": [
+          150,
+          0,
+          1250,
+          719
+        ],
+        "79": [
+          0,
+          0,
+          450,
+          719
+        ]
+      }
+    }
+  ],
+  "head_hints": {},
+  "direction_evidence": [],
+  "visual_notes": "第一人称热带林地，无明确画面内人物。近树、叶片和岩石穿过前景，并逐渐显露水边远景；不能因第一人称近物被截断就自动判景别裁切差。区域与近景目标切换快，泛clearing_region不是完整道路分割，树干/岩石跨视角关联须看叠加图。",
+  "human_answers_used": false,
+  "viewed_inputs": [
+    "overview.jpg",
+    "input-1.jpg",
+    "input-2.jpg"
+  ],
+  "assignment_saved_epoch": 1795379323.788039
+}
