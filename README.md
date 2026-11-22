@@ -7,7 +7,7 @@
 - [项目首页](https://chewchen2003-netizen.github.io/game-video-aesthetics/)
 - [完整分类标准与算子表：标签树](https://chewchen2003-netizen.github.io/game-video-aesthetics/game-tag-tree.html)
 - [50条构图机标审核：视频、截帧、批注](https://chewchen2003-netizen.github.io/game-video-aesthetics/composition-machine50-review.html)
-- [五部分说明文档](docs/report.html)
+- [六部分说明文档](docs/report.html)
 - [逐条结果表](docs/results/构图-50条结果表.html) · [分布图](docs/results/构图-结果分布.svg) · [分档示例与误判分析](docs/results/构图-分档示例与误判分析.html)
 
 网页批注只保存在当前浏览器，可导出/导入备份，不会写入他人的批注。原来file://页面的批注不会自动迁移到新域名。网页内视频是压缩预览；精确复测使用Release完整包中的原始片段。
