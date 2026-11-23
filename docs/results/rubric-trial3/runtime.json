@@ -1,0 +1,161 @@
+{
+  "device": "mps",
+  "torch": "2.15.0",
+  "config": {
+    "input_batch": "inputs",
+    "samples": [
+      "T01",
+      "T02",
+      "T03"
+    ],
+    "measurement_fps": 4,
+    "depth_fps": 1,
+    "subject_assignment": "assistant-defined regions/objects from RGB only; seed boxes are localization hints, not ground-truth masks",
+    "segmentation": "YOLO11n-seg class-associated instances, MobileSAM prompted fallback",
+    "pose": "YOLO11n-pose, COCO17, missing/low-confidence points remain unknown; no direct neck/top-of-head keypoint",
+    "depth": "Depth-Anything-V2-Small, relative monocular estimate, not engine depth or meters",
+    "parameters": {
+      "pose_confidence": 0.5,
+      "mask_background_ring_fraction_of_bbox_height": 0.05,
+      "lab_histogram_bins": [
+        8,
+        8,
+        8
+      ],
+      "contour_neighborhood_pixels": 5,
+      "contour_proximity_fraction_of_diagonal": 0.005,
+      "edge_candidate_fraction_of_frame": 0.02,
+      "low_color_JS_distance_candidate": 0.1,
+      "low_contour_Lstar_candidate": 5,
+      "screen_velocity_floor_pixels_per_second": 20
+    },
+    "parameter_status": "Diagnostic engineering defaults only; not aesthetic thresholds and not calibrated. Sensitivity reported for edge/proximity screening. No numerical grade fusion.",
+    "missing_contracts": {
+      "amodal_mask": "unavailable; never use bbox or visible mask as full object extent",
+      "engine_depth": "not present in current local review clips",
+      "world_camera_pose": "not present in current local review clips",
+      "eye_gaze": "unavailable; do not equate camera direction with gaze"
+    },
+    "human_answers_used": false,
+    "numeric_score": null,
+    "threshold_version": null
+  },
+  "code_sha256": "e4509eafc78d726cbae61ba781beab9d47f050a427267530d39ed3df464cc72e",
+  "model_files": {
+    "yolo11n-pose.pt": "869e83fcdffdc7371fa4e34cd8e51c838cc729571d1635e5141e3075e9319dc0",
+    "yolo11n-seg.pt": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "mobile_sam.pt": "6dbb90523a35330fedd7f1d3dfc66f995213d81b29a5ca8108dbcdd4e37d6c2f"
+  },
+  "depth_config": {
+    "transformers_version": "5.24.0",
+    "architectures": [
+      "DepthAnythingForDepthEstimation"
+    ],
+    "output_hidden_states": false,
+    "return_dict": true,
+    "dtype": "float32",
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "problem_type": null,
+    "backbone_config": {
+      "architectures": [
+        "Dinov2Model"
+      ],
+      "output_hidden_states": false,
+      "return_dict": true,
+      "dtype": "float32",
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "problem_type": null,
+      "hidden_size": 384,
+      "num_hidden_layers": 12,
+      "num_attention_heads": 6,
+      "mlp_ratio": 4,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.0,
+      "attention_probs_dropout_prob": 0.0,
+      "initializer_range": 0.02,
+      "layer_norm_eps": 1e-06,
+      "image_size": 518,
+      "patch_size": 14,
+      "num_channels": 3,
+      "qkv_bias": true,
+      "layerscale_value": 1.0,
+      "drop_path_rate": 0.0,
+      "use_swiglu_ffn": false,
+      "apply_layernorm": true,
+      "reshape_hidden_states": false,
+      "use_mask_token": true,
+      "stage_names": [
+        "stem",
+        "stage1",
+        "stage2",
+        "stage3",
+        "stage4",
+        "stage5",
+        "stage6",
+        "stage7",
+        "stage8",
+        "stage9",
+        "stage10",
+        "stage11",
+        "stage12"
+      ],
+      "_name_or_path": "",
+      "model_type": "dinov2",
+      "output_attentions": false,
+      "out_features": [
+        "stage3",
+        "stage6",
+        "stage9",
+        "stage12"
+      ],
+      "out_indices": [
+        3,
+        6,
+        9,
+        12
+      ]
+    },
+    "patch_size": 14,
+    "initializer_range": 0.02,
+    "reassemble_hidden_size": 384,
+    "reassemble_factors": [
+      4,
+      2,
+      1,
+      0.5
+    ],
+    "neck_hidden_sizes": [
+      48,
+      96,
+      192,
+      384
+    ],
+    "fusion_hidden_size": 64,
+    "head_in_index": -1,
+    "head_hidden_size": 32,
+    "depth_estimation_type": "relative",
+    "max_depth": 1,
+    "_name_or_path": "depth-anything/Depth-Anything-V2-Small-hf",
+    "backbone": null,
+    "model_type": "depth_anything",
+    "output_attentions": false
+  }
+}

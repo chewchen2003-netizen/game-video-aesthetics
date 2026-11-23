@@ -22,7 +22,7 @@ from src.rubric_format import load_rubric
 rubric = load_rubric("rubrics/composition_rubric.json")
 ```
 
-这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.1.1，整理文件不改变判档条件。
+上述代码仅演示加载规则，不会触发推理。新版三条试跑使用独立入口，不切换历史50条旧入口。规则版本为2.1.1，整理文件不改变判档条件。
 
 ## 固定内容
 
@@ -45,3 +45,5 @@ python3 -m unittest discover -s tests -p 'test_rubric_format.py'
 原50条预测及原执行契约保留。旧入口 `scripts/run_pipeline.py --mode review` **仍然使用旧契约** `data/standards/composition-frozen-contracts.json`，不会因新增本文件就自动成为v2评测。
 
 本次只固定标准，不运行VLM。新版输入封装、逐点输出结构、独立人工复核和同批复跑需在后续接入；未完成前不能报告v2准确率或改进幅度。
+
+执行入口与证据记录说明见 [EXECUTION.md](EXECUTION.md)。

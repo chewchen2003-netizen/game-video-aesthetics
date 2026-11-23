@@ -1,0 +1,23 @@
+[
+  {
+    "id": "T01",
+    "original_sample": 79,
+    "grade": "middle",
+    "status": "scored",
+    "reason": "依据game_video_composition v2.1.1，A—B—A三个阶段均能辨认当前人物及面部变化，上下画面区域可区分。未确认最低必要条件失败，亦未证明实质表达增强，判中。"
+  },
+  {
+    "id": "T02",
+    "original_sample": 67,
+    "grade": "middle",
+    "status": "scored",
+    "reason": "人物与所在草地持续可辨，视角转动后的树木、远景和构筑物关系可读。未确认最低必要条件失败；也没有足够上下文支持进一步关系、处境或含义表达，判中档。"
+  },
+  {
+    "id": "T03",
+    "original_sample": 17,
+    "grade": "low",
+    "status": "scored",
+    "reason": "依据game_video_composition v2.1.1。人物沿林间道路移动是持续必要内容；后半段树冠反复遮住人物及当前路径，15秒放大RGB直接支持信息丢失。已排除短暂合理前景、正常出框及局部特写解释，判低。"
+  }
+]

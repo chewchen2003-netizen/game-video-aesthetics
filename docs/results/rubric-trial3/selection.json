@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1d4542ed-91ab-4fe5-8e6e-cf772a30033e__f175452",
+    "session_id": "1d4542ed-91ab-4fe5-8e6e-cf772a30033e",
+    "game": "Game 12",
+    "path": "sessions/1d4542ed-91ab-4fe5-8e6e-cf772a30033e/video/prehud.mp4",
+    "source_size": 8984725671,
+    "size": 10504939,
+    "url": "randomized-20261123/videos/1d4542ed-91ab-4fe5-8e6e-cf772a30033e__f175452.mp4",
+    "poster": "randomized-20261123/posters/1d4542ed-91ab-4fe5-8e6e-cf772a30033e__f175452.jpg",
+    "available": true,
+    "clip_start": 2924.2,
+    "clip_start_frame": 175452,
+    "clip_duration": 20.0,
+    "source_fps": 60,
+    "source_duration": 3571.183333,
+    "time_stratum": "late",
+    "time_stratum_label": "晚段",
+    "sampling_batch": "stratified-20261123-v1",
+    "verified_streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "download_bytes": 75610369,
+    "trial_id": "T01",
+    "original_sample_number": 79,
+    "original_sha256": "798b11c4eead19d767452e5ff5b8663fa595e906b56bb98aeb8feba63f5454ca"
+  },
+  {
+    "id": "74052702-0381-4741-bc21-83c6d33740b7__f100139",
+    "session_id": "74052702-0381-4741-bc21-83c6d33740b7",
+    "game": "Game 7",
+    "path": "sessions/74052702-0381-4741-bc21-83c6d33740b7/video/prehud.mp4",
+    "source_size": 8661808581,
+    "size": 12766275,
+    "url": "randomized-20261123/videos/74052702-0381-4741-bc21-83c6d33740b7__f100139.mp4",
+    "poster": "randomized-20261123/posters/74052702-0381-4741-bc21-83c6d33740b7__f100139.jpg",
+    "available": true,
+    "clip_start": 1668.9833333333333,
+    "clip_start_frame": 100139,
+    "clip_duration": 20.0,
+    "source_fps": 60,
+    "source_duration": 3600.933333,
+    "time_stratum": "middle",
+    "time_stratum_label": "中段",
+    "sampling_batch": "stratified-20261123-v1",
+    "verified_streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "download_bytes": 71120587,
+    "trial_id": "T02",
+    "original_sample_number": 67,
+    "original_sha256": "82a5d518c4e27c16b7823bf718c9e4aec0d5f2aaa1e044a8ae6eaf717b0b1122"
+  },
+  {
+    "id": "5cf58aed-fa3a-4be1-8938-7fe1bf458d59__f55240",
+    "session_id": "5cf58aed-fa3a-4be1-8938-7fe1bf458d59",
+    "game": "Game 15",
+    "path": "sessions/5cf58aed-fa3a-4be1-8938-7fe1bf458d59/video/prehud.mp4",
+    "source_size": 8764509996,
+    "size": 10792957,
+    "url": "randomized-20261123/videos/5cf58aed-fa3a-4be1-8938-7fe1bf458d59__f55240.mp4",
+    "poster": "randomized-20261123/posters/5cf58aed-fa3a-4be1-8938-7fe1bf458d59__f55240.jpg",
+    "available": true,
+    "clip_start": 920.6666666666666,
+    "clip_start_frame": 55240,
+    "clip_duration": 20.0,
+    "source_fps": 60,
+    "source_duration": 3601.316667,
+    "time_stratum": "early",
+    "time_stratum_label": "早段",
+    "sampling_batch": "stratified-20261123-v1",
+    "verified_streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "download_bytes": 77193592,
+    "trial_id": "T03",
+    "original_sample_number": 17,
+    "original_sha256": "008a19af69ae965579b19389e1756e0a6e12de6bf2abd2ce5ba4db9e421946f8"
+  }
+]

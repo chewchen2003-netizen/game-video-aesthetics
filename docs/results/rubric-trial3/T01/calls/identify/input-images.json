@@ -1,0 +1,20 @@
+[
+  {
+    "id": "input-1.jpg",
+    "path": "input-1.jpg",
+    "sha256": "b506ac0f9adab99f651e17b2ebbe122bdc9cdf50bb3a4376c3ebc35002877638",
+    "dimensions": [
+      1280,
+      1040
+    ]
+  },
+  {
+    "id": "input-2.jpg",
+    "path": "input-2.jpg",
+    "sha256": "2cc0e97d9234c87401bcc25010f704227009f27ba0e456ed167db838d09e9e26",
+    "dimensions": [
+      1280,
+      1040
+    ]
+  }
+]

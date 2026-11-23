@@ -1,0 +1,2991 @@
+{
+  "sample_id": "T02",
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "subject_ids": [
+        "player"
+      ],
+      "supporting_element_ids": [],
+      "foreground_ids": [
+        "grass_terrain"
+      ],
+      "background_ids": [
+        "grass_terrain",
+        "distant_landscape"
+      ],
+      "necessary_information": "起始地面视角转为俯视，同一蓝衣人物保持中央附近；须能辨认人物、携带物与草地的归属。没有已确认的攻击、接触或指定观看目标。草地兼有近景和主体身后区域，不能整体视作前景。",
+      "key_stage_reason": "rgb-0000至rgb-0012建立人物连续性和俯视姿态；起始单帧并入视角变化阶段，不将正常俯视缩短误作身体缺失。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0009",
+        "rgb-0012"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        3.25,
+        19.75
+      ],
+      "subject_ids": [
+        "player"
+      ],
+      "supporting_element_ids": [],
+      "foreground_ids": [
+        "grass_terrain"
+      ],
+      "background_ids": [
+        "grass_terrain",
+        "large_tree",
+        "right_slab",
+        "distant_landscape",
+        "built_structures",
+        "overhead_shape"
+      ],
+      "necessary_information": "恢复地面第三人称取景，人物保持下方中央，镜头改变朝向，先显露大树和右侧水平物体，随后转向开阔草地、框架和塔柱。必要信息为人物及周围空间可读；未见人物与这些物体发生紧密交互，故将预分配的陪体修正为环境。大树退出和后段稳定均属同一环境展示阶段。",
+      "key_stage_reason": "rgb-0013、rgb-0020、rgb-0032至rgb-0079呈现地面视角恢复、环境转向及最终稳定关系；没有新增主体或可确认的情节关系，不另按景物进出拆阶段。",
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0033",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0073",
+        "rgb-0079"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "frame_index": 0,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "人物区域大体对应，但漏下端及携带物；不采用面积、质心、边界色差和深度统计。"
+    },
+    {
+      "frame_index": 0,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地有明显漏块，区域不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 0,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "将大块天空纳入远景；不采用派生统计。"
+    },
+    {
+      "frame_index": 4,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "覆盖主要为交叉长条装备，不能代表完整人物；不采用派生统计。"
+    },
+    {
+      "frame_index": 4,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "文本已标无效，未提供可接受的草地mask。"
+    },
+    {
+      "frame_index": 4,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "俯视近地面被错标远景；不采用派生统计。"
+    },
+    {
+      "frame_index": 8,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "仅覆盖俯视人物局部，装备和可见边缘不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 8,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "文本已标无效，无可靠草地mask。"
+    },
+    {
+      "frame_index": 8,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "将近处草地错标远景；不采用派生统计。"
+    },
+    {
+      "frame_index": 12,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "覆盖俯视人物局部，未保留完整可见人物与装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 12,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "文本已标无效，无可靠草地mask。"
+    },
+    {
+      "frame_index": 12,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "覆盖的是俯视近地面，语义错误；不采用派生统计。"
+    },
+    {
+      "frame_index": 16,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "主体大体对应，但漏下肢末端与装备；不采用完整主体派生统计。"
+    },
+    {
+      "frame_index": 16,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "可见草地区域存在大块漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 16,
+      "object_id": "large_tree",
+      "mask_accepted": false,
+      "reason": "右侧树木覆盖不完整并混入背景带；不采用派生统计。"
+    },
+    {
+      "frame_index": 16,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景仅局部覆盖，树木与背景归属混杂；不采用派生统计。"
+    },
+    {
+      "frame_index": 16,
+      "object_id": "overhead_shape",
+      "mask_accepted": false,
+      "reason": "mask覆盖天空区域，没有对应实际深蓝形状；不采用派生统计。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下肢可见区域漏分，携带物不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地漏块和主体邻接区域不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "large_tree",
+      "mask_accepted": true,
+      "reason": "树冠及树干与RGB基本对应；仅认可可见轮廓，未使用数值统计。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "right_slab",
+      "mask_accepted": true,
+      "reason": "右侧水平物体可见区域基本对应；仅作定位，不代表画外完整形体。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景覆盖零碎且漏树木区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "built_structures",
+      "mask_accepted": true,
+      "reason": "小型塔柱覆盖与RGB基本对应；仅认可该可见塔柱，不代表全部构筑物。"
+    },
+    {
+      "frame_index": 20,
+      "object_id": "overhead_shape",
+      "mask_accepted": false,
+      "reason": "覆盖天空，实际深蓝形状不在该覆盖区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下端及装备，不能作为完整可见主体区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地明显漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "large_tree",
+      "mask_accepted": true,
+      "reason": "右侧树冠、树干基本对应；仅用于质性定位。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "right_slab",
+      "mask_accepted": true,
+      "reason": "右边水平物体的可见轮廓基本对应；未采用统计。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景有较多漏分，不能代表完整环境区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "built_structures",
+      "mask_accepted": true,
+      "reason": "覆盖小塔柱基本对应；仅作局部定位。"
+    },
+    {
+      "frame_index": 24,
+      "object_id": "overhead_shape",
+      "mask_accepted": false,
+      "reason": "覆盖天空而非实际悬空形状；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下肢和携带物漏分；不采用完整主体统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地可见部分漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "large_tree",
+      "mask_accepted": false,
+      "reason": "覆盖人物后方远景与构筑物，漏掉右侧真实大树；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "right_slab",
+      "mask_accepted": false,
+      "reason": "覆盖包含背景带且物体可见部分漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景区域有明显漏分及对象混杂；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "塔柱与背景连成混合区域，边界不可靠；不采用派生统计。"
+    },
+    {
+      "frame_index": 28,
+      "object_id": "overhead_shape",
+      "mask_accepted": false,
+      "reason": "覆盖天空而非实际深蓝形状；不采用派生统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下端和装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "地面局部漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "large_tree",
+      "mask_accepted": false,
+      "reason": "错选左侧较小树，真实近处大树仍在右侧；不采用身份、位置和运动统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "覆盖零碎，远景和近树边界不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "主要选中构筑物间的背景区域，遗漏显著塔柱；不采用派生统计。"
+    },
+    {
+      "frame_index": 32,
+      "object_id": "overhead_shape",
+      "mask_accepted": false,
+      "reason": "覆盖天空而非实际物体；不采用派生统计。"
+    },
+    {
+      "frame_index": 36,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "人物末端与装备覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 36,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地区域漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 36,
+      "object_id": "distant_landscape",
+      "mask_accepted": true,
+      "reason": "树林地平线整体基本对应；仅认可粗略环境区域，不用于精确边界统计。"
+    },
+    {
+      "frame_index": 36,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "覆盖近似树形区域，不能可靠对应构筑物；不采用派生统计。"
+    },
+    {
+      "frame_index": 36,
+      "object_id": "overhead_shape",
+      "mask_accepted": true,
+      "reason": "顶部深蓝不规则形状的可见部分基本对应；性质仍不确定，未使用深度或运动统计。"
+    },
+    {
+      "frame_index": 40,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下端与携带物漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 40,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "地面存在漏分斑块；不采用派生统计。"
+    },
+    {
+      "frame_index": 40,
+      "object_id": "distant_landscape",
+      "mask_accepted": true,
+      "reason": "树林地平线基本对应；仅用于粗略定位。"
+    },
+    {
+      "frame_index": 40,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "所选区域包含树木轮廓，构筑物身份不可靠；不采用派生统计。"
+    },
+    {
+      "frame_index": 40,
+      "object_id": "overhead_shape",
+      "mask_accepted": true,
+      "reason": "顶部深蓝形状基本对应；仅认可可见部分，不确定其性质。"
+    },
+    {
+      "frame_index": 44,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "人物下端及装备覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 44,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 44,
+      "object_id": "distant_landscape",
+      "mask_accepted": true,
+      "reason": "树林远景整体对应；仅作粗略定位。"
+    },
+    {
+      "frame_index": 44,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "覆盖与树木混杂，不能可靠视为构筑物区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 44,
+      "object_id": "overhead_shape",
+      "mask_accepted": true,
+      "reason": "顶部深蓝可见形状基本对应；不推断功能或真实距离。"
+    },
+    {
+      "frame_index": 48,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "人物边缘、下端及装备漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 48,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "可见草地存在漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 48,
+      "object_id": "distant_landscape",
+      "mask_accepted": true,
+      "reason": "树林地平线粗略对应；未使用派生数值。"
+    },
+    {
+      "frame_index": 48,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "所选区域含树木，未可靠分离实际构筑物；不采用派生统计。"
+    },
+    {
+      "frame_index": 52,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下端和装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 52,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地覆盖有漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 52,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "大量树木漏分，远景覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 52,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "覆盖框架后的背景块且遗漏右侧塔柱；不采用派生统计。"
+    },
+    {
+      "frame_index": 56,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下端和装备漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 56,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地区域不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 56,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "树木和山体覆盖零碎；不采用派生统计。"
+    },
+    {
+      "frame_index": 56,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "框架间空隙和背景被纳入，塔柱覆盖不足；不采用派生统计。"
+    },
+    {
+      "frame_index": 60,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下肢末端与装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 60,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "地面可见区域漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 60,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景树木漏分，覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 60,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "覆盖框架之间的背景带，遗漏框架及塔柱的必要轮廓；不采用派生统计。"
+    },
+    {
+      "frame_index": 64,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下端及携带物覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 64,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地可见区域漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 64,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景树木与山体漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 64,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "构筑物间背景大片纳入，边界不可靠；不采用派生统计。"
+    },
+    {
+      "frame_index": 68,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下端与装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 68,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "地面漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 68,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景树木覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 68,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "主要覆盖构筑物之间的背景区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 72,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下端与装备漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 72,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地存在漏分斑块；不采用派生统计。"
+    },
+    {
+      "frame_index": 72,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景树木、山体覆盖零碎；不采用派生统计。"
+    },
+    {
+      "frame_index": 72,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "构筑物间背景纳入，真实结构未被可靠分离；不采用派生统计。"
+    },
+    {
+      "frame_index": 73,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "下端与装备覆盖不完整；不采用派生统计。"
+    },
+    {
+      "frame_index": 73,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "地面覆盖漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 73,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "远景树木与山体漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 73,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "框架间背景被大块纳入；不采用派生统计。"
+    },
+    {
+      "frame_index": 76,
+      "object_id": "player",
+      "mask_accepted": false,
+      "reason": "漏下肢末端及装备；不采用派生统计。"
+    },
+    {
+      "frame_index": 76,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地区域漏分；不采用派生统计。"
+    },
+    {
+      "frame_index": 76,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "漏掉明显树冠，仅保留零碎远景；不采用派生统计。"
+    },
+    {
+      "frame_index": 76,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "结构间空隙与背景混入；不采用派生统计。"
+    },
+    {
+      "frame_index": 79,
+      "object_id": "grass_terrain",
+      "mask_accepted": false,
+      "reason": "草地覆盖存在漏块；不采用派生统计。"
+    },
+    {
+      "frame_index": 79,
+      "object_id": "distant_landscape",
+      "mask_accepted": false,
+      "reason": "树木漏分且混入其他环境区域；不采用派生统计。"
+    },
+    {
+      "frame_index": 79,
+      "object_id": "built_structures",
+      "mask_accepted": false,
+      "reason": "框架之间背景被纳入，不能代表构筑物mask；不采用派生统计。"
+    }
+  ],
+  "checks": [
+    {
+      "checkpoint_id": "P-L-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "人物持续位于中央附近。",
+      "impact": "未见观看目标误认。",
+      "context_support": "视角改变但主体连续。",
+      "exceptions_checked": [
+        "居中不直接加档"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-L-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0001",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "俯视人物变短，仍能辨认蓝衣人体和携带物。",
+      "impact": "未确认必要信息因占比丢失。",
+      "context_support": "没有必须辨认的精细操作。",
+      "exceptions_checked": [
+        "俯视缩短",
+        "bbox不作mask"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "携带物具体类别未知"
+    },
+    {
+      "checkpoint_id": "P-L-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0009",
+        "rgb-0012"
+      ],
+      "observation": "草和装备有局部交叠，主体仍可辨。",
+      "impact": "未见遮挡使必要内容无法理解。",
+      "context_support": "装备随人物投影变化。",
+      "exceptions_checked": [
+        "正常装备交叠",
+        "无amodal不算遮挡率"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不量化遮挡"
+    },
+    {
+      "checkpoint_id": "P-L-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012"
+      ],
+      "observation": "蓝衣、浅色肢体与暗草地可区分。",
+      "impact": "未确认主体背景混淆。",
+      "context_support": "中央人物跨帧连续。",
+      "exceptions_checked": [
+        "不采用错分色差"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-B-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "人物在视角变化中保持中央附近。",
+      "impact": "主体容易找到。",
+      "context_support": "同一人物连续呈现。",
+      "exceptions_checked": [
+        "位置本身不证明增强"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-B-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0001",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "可辨蓝衣人物及携带物的俯视形态。",
+      "impact": "足以理解当前人物呈现。",
+      "context_support": "未见精细操作任务。",
+      "exceptions_checked": [
+        "不要求面部细节",
+        "拒绝不完整mask面积"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "装备类型不确定"
+    },
+    {
+      "checkpoint_id": "P-B-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0009",
+        "rgb-0012"
+      ],
+      "observation": "局部草叶和装备交叠未抹去人物归属。",
+      "impact": "必要主体信息保留。",
+      "context_support": "前后帧可追踪同一人物。",
+      "exceptions_checked": [
+        "合理草丛遮挡",
+        "不计算遮挡百分比"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "完整人体区域未知"
+    },
+    {
+      "checkpoint_id": "P-B-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012"
+      ],
+      "observation": "衣服和肢体在草地中可辨。",
+      "impact": "主体与背景区分成立。",
+      "context_support": "RGB优先于覆盖图。",
+      "exceptions_checked": [
+        "不以低亮度候选直接扣档"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "中央位置主要维持主体追踪。",
+      "impact": "未证明进一步关系表达。",
+      "context_support": "无其他主体或关系变化。",
+      "exceptions_checked": [
+        "居中不自动高档"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不推断意图"
+    },
+    {
+      "checkpoint_id": "P-H-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "人物尺度随俯视投影改变。",
+      "impact": "未证明尺度变化传达额外处境。",
+      "context_support": "变化与相机俯仰一致。",
+      "exceptions_checked": [
+        "人物变小不等于孤独"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "局部交叠未形成可核对的隐藏或阻隔变化。",
+      "impact": "增强未获证明。",
+      "context_support": "只有视角与投影变化。",
+      "exceptions_checked": [
+        "正常装备交叠"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "颜色差异支持辨认人物。",
+      "impact": "未证明额外联系或分离含义。",
+      "context_support": "无对应交互变化。",
+      "exceptions_checked": [
+        "清晰区分仅支持基础"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-L-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "起始下肢贴下缘，俯视后人物位于框内。",
+      "impact": "未造成身体连接误读。",
+      "context_support": "俯视缩短可以由序列核对。",
+      "exceptions_checked": [
+        "第三人称常规下端裁切",
+        "俯视透视"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不采用姿态消失判裁切"
+    },
+    {
+      "checkpoint_id": "C-L-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0012"
+      ],
+      "observation": "人物头部没有被上边框截断。",
+      "impact": "未见头部呈现受损。",
+      "context_support": "头部处于画内。",
+      "exceptions_checked": [
+        "不用bbox顶代替头顶"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无精确头顶测量"
+    },
+    {
+      "checkpoint_id": "C-L-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "未确认观看行为及必须呈现的视线对象。",
+      "impact": "无适用观看关系。",
+      "context_support": "背面和俯视不足以确定凝视目标。",
+      "exceptions_checked": [
+        "不以相机朝向替代视线"
+      ],
+      "event_ids": [],
+      "uncertainty": "真实视线未知"
+    },
+    {
+      "checkpoint_id": "C-L-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0001",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "未确认人物沿世界路径移动。",
+      "impact": "无必要运动前方空间可评。",
+      "context_support": "主要变化来自俯视镜头。",
+      "exceptions_checked": [
+        "屏幕位移不等于世界运动"
+      ],
+      "event_ids": [],
+      "uncertainty": "细小步态不足以确定路径"
+    },
+    {
+      "checkpoint_id": "C-L-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0009",
+        "rgb-0012"
+      ],
+      "observation": "未见有明确对象和结果的关键动作。",
+      "impact": "无适用动作裁切失败。",
+      "context_support": "携带物投影改变不能确认操作。",
+      "exceptions_checked": [
+        "不以pose缺失判动作出框"
+      ],
+      "event_ids": [],
+      "uncertainty": "装备行为未知"
+    },
+    {
+      "checkpoint_id": "C-B-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "身体姿态可结合前后帧辨认。",
+      "impact": "下端贴边不影响人物关系理解。",
+      "context_support": "俯视形态与镜头变化相符。",
+      "exceptions_checked": [
+        "正常下端裁切",
+        "俯视缩短"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-B-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0012"
+      ],
+      "observation": "头部完整处于画内。",
+      "impact": "人物头部得到必要呈现。",
+      "context_support": "RGB可直接核对。",
+      "exceptions_checked": [
+        "无须精确头顶间距"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不提供数值头部空间"
+    },
+    {
+      "checkpoint_id": "C-B-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "无已确认的观看对象关系。",
+      "impact": "不要求补出视线对象。",
+      "context_support": "人物背面或俯视。",
+      "exceptions_checked": [
+        "不推断凝视方向"
+      ],
+      "event_ids": [],
+      "uncertainty": "真实视线未知"
+    },
+    {
+      "checkpoint_id": "C-B-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0001",
+        "rgb-0012"
+      ],
+      "observation": "没有可确认的世界运动路径。",
+      "impact": "不强制运动前方预留。",
+      "context_support": "相机俯仰是主要变化。",
+      "exceptions_checked": [
+        "不采用屏幕速度候选"
+      ],
+      "event_ids": [],
+      "uncertainty": "人物位移未确认"
+    },
+    {
+      "checkpoint_id": "C-B-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "无确定的关键操作、接触或结果。",
+      "impact": "无动作裁切必要条件。",
+      "context_support": "不能仅凭装备形态认定动作。",
+      "exceptions_checked": [
+        "pose消失不作裁切证据"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "身体取舍未突出特定手势或细节。",
+      "impact": "局部裁切增强未证明。",
+      "context_support": "以常规人物与俯视呈现为主。",
+      "exceptions_checked": [
+        "贴边本身无表达含义"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "头部上方空间随俯视变化。",
+      "impact": "未证明受限或其他处境。",
+      "context_support": "无环境阻隔或情节支持。",
+      "exceptions_checked": [
+        "空间多少不直接代表情绪"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0012"
+      ],
+      "observation": "没有可确认观看关系。",
+      "impact": "无适用视线空间表达。",
+      "context_support": "俯视不足以确定凝视。",
+      "exceptions_checked": [
+        "不推断人物关注目标"
+      ],
+      "event_ids": [],
+      "uncertainty": "真实视线未知"
+    },
+    {
+      "checkpoint_id": "C-H-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "无确定运动路径或目标。",
+      "impact": "无适用接近、逃离或受阻表达。",
+      "context_support": "镜头运动不能替代人物行动。",
+      "exceptions_checked": [
+        "不以屏幕位移推断行动"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "无已确认关键行为。",
+      "impact": "无法适用行为局部取舍增强。",
+      "context_support": "装备投影变化不证明操作。",
+      "exceptions_checked": [
+        "不补造动作"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-L-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "地面视角转俯视，人物与草地归属仍清楚。",
+      "impact": "未见必要路径或交互混淆。",
+      "context_support": "本阶段不需要判断远处目标距离。",
+      "exceptions_checked": [
+        "俯视不强求三层纵深",
+        "单目深度不作米"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无真实距离"
+    },
+    {
+      "checkpoint_id": "S-L-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "地平线退出，人物保留在草地中央。",
+      "impact": "上下安排未挤掉必要信息。",
+      "context_support": "符合可见相机俯仰。",
+      "exceptions_checked": [
+        "无天空不自动失败"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-L-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0009",
+        "rgb-0012"
+      ],
+      "observation": "装备与人物交叠但可跨帧确认附属关系。",
+      "impact": "未确认对象归属误读。",
+      "context_support": "携带物随同一人物变化。",
+      "exceptions_checked": [
+        "不重复计主体遮挡",
+        "接触率不等于误读"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "具体装备类别未知"
+    },
+    {
+      "checkpoint_id": "S-B-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "人物处于草地上，视角变化可读。",
+      "impact": "必要空间关系成立。",
+      "context_support": "没有必须判断的远近交互。",
+      "exceptions_checked": [
+        "俯视不强求纵深",
+        "不采用错误远景mask"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不量化距离"
+    },
+    {
+      "checkpoint_id": "S-B-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0012"
+      ],
+      "observation": "主体与地面的上下组织可辨。",
+      "impact": "支持当前人物所在空间理解。",
+      "context_support": "俯视阶段草地填满背景。",
+      "exceptions_checked": [
+        "天地比例无固定阈值"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-B-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s1",
+      "state": "met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0009",
+        "rgb-0012"
+      ],
+      "observation": "人物、草地和携带物的基本归属可辨。",
+      "impact": "没有必要连接关系误读。",
+      "context_support": "用连续RGB核对。",
+      "exceptions_checked": [
+        "装备交叠合理",
+        "不把bbox相交作遮挡"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-H-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0012",
+        "rgb-0013"
+      ],
+      "observation": "地面与俯视转换改变空间可见范围。",
+      "impact": "只证明视角展示，未证明深化主体处境。",
+      "context_support": "没有接近、阻隔或尺度关系的进一步结果。",
+      "exceptions_checked": [
+        "景别或视角变化不自动高档"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "不推断创作意图"
+    },
+    {
+      "checkpoint_id": "S-H-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "上下比例随俯视改变。",
+      "impact": "未证明环境规模或关系差异的额外表达。",
+      "context_support": "人物仍为相同呈现对象。",
+      "exceptions_checked": [
+        "上方位置不代表权威"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-H-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s1",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "交叠来自装备和草叶。",
+      "impact": "未证明依附、隔离或对照表达。",
+      "context_support": "没有可核对的关系变化。",
+      "exceptions_checked": [
+        "几何接触不独立加档"
+      ],
+      "event_ids": [
+        "E1"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-L-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "俯视居中不足以确认明确组织手法。",
+      "impact": "不因手法未识别扣档。",
+      "context_support": "没有确认的框架、引导线或对称对应。",
+      "exceptions_checked": [
+        "术语不替代手法识别"
+      ],
+      "event_ids": [],
+      "uncertainty": "手法未识别"
+    },
+    {
+      "checkpoint_id": "T-L-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "实际游戏帧为单画面。",
+      "impact": "无子画面混乱问题。",
+      "context_support": "附图拼图属于证据排版。",
+      "exceptions_checked": [
+        "证据拼图不算游戏分屏"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-B-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "没有足够证据确认具体手法。",
+      "impact": "基础由主体、裁切和空间点直接判断。",
+      "context_support": "居中仅能确认位置事实。",
+      "exceptions_checked": [
+        "无手法不扣档"
+      ],
+      "event_ids": [],
+      "uncertainty": "手法未识别"
+    },
+    {
+      "checkpoint_id": "T-B-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "无分屏或画中画。",
+      "impact": "无适用多画面基础条件。",
+      "context_support": "拼图不属于原视频组织。",
+      "exceptions_checked": [
+        "普通序列不算多画面"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-H-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0012"
+      ],
+      "observation": "明确单画面手法未识别。",
+      "impact": "不能据术语授予增强。",
+      "context_support": "没有已证明表达事件。",
+      "exceptions_checked": [
+        "手法不独立加分"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-H-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s1",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "observation": "没有同时并置的子画面。",
+      "impact": "无适用多画面表达。",
+      "context_support": "附图为采样证据。",
+      "exceptions_checked": [
+        "证据排版排除"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-L-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "人物持续在下方中央附近。",
+      "impact": "未见观看重点误认。",
+      "context_support": "环境转向时人物仍稳定可找。",
+      "exceptions_checked": [
+        "居中不直接决定档位"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-L-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "衣服、背部装备与肢体姿态可辨。",
+      "impact": "未确认占比导致必要信息丢失。",
+      "context_support": "无必须读取的精细手部操作。",
+      "exceptions_checked": [
+        "不采用不完整mask面积"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-L-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0060"
+      ],
+      "observation": "草叶遮住部分下肢，头和躯干保留。",
+      "impact": "未使当前人物或环境关系无法理解。",
+      "context_support": "未见下肢承担关键接触结果。",
+      "exceptions_checked": [
+        "正常草地遮挡",
+        "无amodal不算比例"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "不量化遮挡率"
+    },
+    {
+      "checkpoint_id": "P-L-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "蓝衣与浅裤能从草地、远景中区分。",
+      "impact": "未确认主体混淆。",
+      "context_support": "两张放大参考支持轮廓辨认。",
+      "exceptions_checked": [
+        "低亮度候选不是失败"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-B-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "人物在镜头转向中保持下方中央。",
+      "impact": "观看目标持续容易找到。",
+      "context_support": "前后是同一人物。",
+      "exceptions_checked": [
+        "不以中央位置认定主体，已结合连续性"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-B-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物背面、肢体及携带物基本可辨。",
+      "impact": "满足当前必要人物信息。",
+      "context_support": "没有精细动作要求。",
+      "exceptions_checked": [
+        "主体无需越大越好"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "装备具体类型不确定"
+    },
+    {
+      "checkpoint_id": "P-B-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "草叶局部遮挡下肢，主要形体保留。",
+      "impact": "不妨碍主体与草地空间理解。",
+      "context_support": "未确认必须看清的足部操作。",
+      "exceptions_checked": [
+        "合理环境遮挡",
+        "不使用可见mask推完整遮挡"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "完整下肢轮廓未知"
+    },
+    {
+      "checkpoint_id": "P-B-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "衣物、肢体的色彩和轮廓足以区分人物。",
+      "impact": "必要主体辨认成立。",
+      "context_support": "RGB直接支持，未使用mask色差统计。",
+      "exceptions_checked": [
+        "不要求背景虚化"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-a",
+      "indicator_id": "subject-position",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0060"
+      ],
+      "observation": "人物固定下中，景物横向变化。",
+      "impact": "主要作用为稳定展示，未证明额外关系表达。",
+      "context_support": "无其他主体或交互结果。",
+      "exceptions_checked": [
+        "位置稳定不自动高档"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "不推断意图"
+    },
+    {
+      "checkpoint_id": "P-H-b",
+      "indicator_id": "subject-area",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物与树木、远处结构形成常规近远尺度。",
+      "impact": "未证明环境包围或特定尺度处境的实质强化。",
+      "context_support": "开阔场地展示，无接近或受阻结果。",
+      "exceptions_checked": [
+        "树大人小不直接表意"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-c",
+      "indicator_id": "subject-occlusion",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "草地局部遮挡没有形成隐藏、隔离的变化。",
+      "impact": "未证明遮挡表达增强。",
+      "context_support": "主体持续显露。",
+      "exceptions_checked": [
+        "合理草叶遮挡不附加心理"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "P-H-d",
+      "indicator_id": "subject-separation",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "衣物和环境差异维持主体辨认。",
+      "impact": "未证明额外联系、分离或处境含义。",
+      "context_support": "没有对应关系变化。",
+      "exceptions_checked": [
+        "颜色对比本身仅支持可读"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-L-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物下肢接近或伸出下边框。",
+      "impact": "没有造成身体连接或必要姿态误读。",
+      "context_support": "常规背后第三人称取景，无足部关键动作。",
+      "exceptions_checked": [
+        "常规下端裁切",
+        "草叶遮挡区别于画框裁切"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "具体足部边界部分不可见"
+    },
+    {
+      "checkpoint_id": "C-L-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "头部完整，上方留有可见环境。",
+      "impact": "未见意外头部截断或干扰。",
+      "context_support": "放大参考可直接核对。",
+      "exceptions_checked": [
+        "不以bbox顶代头顶"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "不使用精确头部间距"
+    },
+    {
+      "checkpoint_id": "C-L-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "背面朝向可见，但无确定凝视对象或观看行为。",
+      "impact": "无必须入画的观看对象可检查。",
+      "context_support": "建筑不能默认是人物关注目标。",
+      "exceptions_checked": [
+        "头朝向不等于凝视对象",
+        "相机朝向不替代视线"
+      ],
+      "event_ids": [],
+      "uncertainty": "真实视线未知"
+    },
+    {
+      "checkpoint_id": "C-L-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "未确认持续世界移动、目标接近或路径交互。",
+      "impact": "无明确必要运动前方空间。",
+      "context_support": "景物横移主要伴随镜头转向。",
+      "exceptions_checked": [
+        "屏幕位移不作世界方向"
+      ],
+      "event_ids": [],
+      "uncertainty": "局部姿态变化不足以确认路径"
+    },
+    {
+      "checkpoint_id": "C-L-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0073"
+      ],
+      "observation": "无明确攻击、接触、操作及结果。",
+      "impact": "没有关键动作出框失败可确认。",
+      "context_support": "携带装备和姿态波动不是确定操作事件。",
+      "exceptions_checked": [
+        "不以pose缺失推动作裁切"
+      ],
+      "event_ids": [],
+      "uncertainty": "细微动作语义不确定"
+    },
+    {
+      "checkpoint_id": "C-B-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "背部、手臂和腿部连接基本可辨。",
+      "impact": "下端裁切不妨碍当前人物呈现。",
+      "context_support": "没有依赖足部的关键操作。",
+      "exceptions_checked": [
+        "第三人称常规裁切"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "足部不完整不等于失败"
+    },
+    {
+      "checkpoint_id": "C-B-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物头部得到完整呈现。",
+      "impact": "与上边框关系没有明显干扰。",
+      "context_support": "上方环境可见。",
+      "exceptions_checked": [
+        "不要求理想头顶比例"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-B-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "没有建立特定观看对象关系。",
+      "impact": "不强制所有朝向前方景物入画。",
+      "context_support": "仅背面取景。",
+      "exceptions_checked": [
+        "不推断关注建筑"
+      ],
+      "event_ids": [],
+      "uncertainty": "凝视目标未知"
+    },
+    {
+      "checkpoint_id": "C-B-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "无已确认的世界运动路径。",
+      "impact": "不设置运动前方空间要求。",
+      "context_support": "镜头转向与人物运动分开判断。",
+      "exceptions_checked": [
+        "不采用屏幕速度候选"
+      ],
+      "event_ids": [],
+      "uncertainty": "人物实际位移未确认"
+    },
+    {
+      "checkpoint_id": "C-B-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0073"
+      ],
+      "observation": "无确定的关键动作及作用对象。",
+      "impact": "无适用动作信息保留条件。",
+      "context_support": "人物主要被展示于环境中。",
+      "exceptions_checked": [
+        "不补造攻击或工具操作"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-a",
+      "indicator_id": "shot-crop-joint",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "下端取舍没有突出特定姿态或手势。",
+      "impact": "未证明裁切表达增强。",
+      "context_support": "维持常规人物背面取景。",
+      "exceptions_checked": [
+        "常规裁切不自动表意"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-b",
+      "indicator_id": "shot-crop-headroom",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "头顶上方保留天空和远景。",
+      "impact": "未证明受限、疏离或其他处境。",
+      "context_support": "无情节或阻隔支持。",
+      "exceptions_checked": [
+        "空间大不等于疏离"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-c",
+      "indicator_id": "shot-crop-look-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "无可确认的观看对象关系。",
+      "impact": "无适用关注或回避表达。",
+      "context_support": "人物背面不提供凝视目标。",
+      "exceptions_checked": [
+        "不从建筑位置推关注"
+      ],
+      "event_ids": [],
+      "uncertainty": "真实视线未知"
+    },
+    {
+      "checkpoint_id": "C-H-d",
+      "indicator_id": "shot-crop-lead-room",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "无确定接近、逃离或受阻行动。",
+      "impact": "无适用运动空间表达。",
+      "context_support": "可见草地不能独立证明行动目标。",
+      "exceptions_checked": [
+        "镜头运动不当人物行动"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "C-H-e",
+      "indicator_id": "shot-crop-action-crop",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "无确定关键接触或反应。",
+      "impact": "无适用行为裁切增强。",
+      "context_support": "装备携带状态持续。",
+      "exceptions_checked": [
+        "不赋予细微姿态剧情含义"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-L-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0060"
+      ],
+      "observation": "草地、人物、树木和远方结构的前后基本清楚。",
+      "impact": "未见场景或交互混淆。",
+      "context_support": "地面连续、尺度及遮挡提供空间线索。",
+      "exceptions_checked": [
+        "不把单目深度当米",
+        "不使用错选树的运动"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "真实距离未知"
+    },
+    {
+      "checkpoint_id": "S-L-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0079"
+      ],
+      "observation": "草地在下，树林山体与天空在上。",
+      "impact": "没有必要内容被上下分布挤压。",
+      "context_support": "人物及远处结构均可辨。",
+      "exceptions_checked": [
+        "地平线位置不单独判好坏"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-L-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0060"
+      ],
+      "observation": "人物与地平线交叠，树与塔柱局部邻接。",
+      "impact": "未造成对象连接或归属误读。",
+      "context_support": "RGB中树干、人物和结构仍可区分。",
+      "exceptions_checked": [
+        "mask错分不当画面错误",
+        "几何接触不等于误读"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "结构功能未知"
+    },
+    {
+      "checkpoint_id": "S-B-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0060"
+      ],
+      "observation": "近处草地和人物连接到中远景树木、框架与塔柱。",
+      "impact": "当前必要前后空间关系可读。",
+      "context_support": "地面延伸、遮挡和尺度共同支持。",
+      "exceptions_checked": [
+        "不依赖深度数值",
+        "不要求精确距离"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "不确认世界坐标"
+    },
+    {
+      "checkpoint_id": "S-B-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物在下方草地，远景带与天空在上方。",
+      "impact": "对象和位置关系容易理解。",
+      "context_support": "放大参考保留地面到远景联系。",
+      "exceptions_checked": [
+        "天地比例不设美学阈值"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-B-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0060"
+      ],
+      "observation": "人物、树木、水平物体和结构的基本边界可区分。",
+      "impact": "无必要归属混淆。",
+      "context_support": "跨帧变化帮助辨认景物独立性。",
+      "exceptions_checked": [
+        "不重复主体遮挡影响",
+        "不以错误mask重叠判失误"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-H-a",
+      "indicator_id": "spatial-depth",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          0,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0012",
+        "rgb-0013",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0060"
+      ],
+      "observation": "俯视恢复地面取景，随后转向展示树木及远处构筑物。",
+      "impact": "建立可读空间，但未证明进一步接近、阻隔或处境深化。",
+      "context_support": "主体没有与景物产生明确行动结果。",
+      "exceptions_checked": [
+        "视角转换和纵深可读不自动高档"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "不推断探索任务"
+    },
+    {
+      "checkpoint_id": "S-H-b",
+      "indicator_id": "spatial-vertical",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "天空、远景和草地形成横向层带。",
+      "impact": "未证明环境规模或人物感受获得实质强化。",
+      "context_support": "层带主要交代场景。",
+      "exceptions_checked": [
+        "天空多不等于宏大或孤独"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "S-H-c",
+      "indicator_id": "spatial-overlap",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0060"
+      ],
+      "observation": "对象交叠和分离随取景改变。",
+      "impact": "未形成可核对的依附、隔离或对照关系。",
+      "context_support": "无交互或关系转折支持。",
+      "exceptions_checked": [
+        "轮廓分离本身不算增强"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-L-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "地面延伸、人物遮挡远景和景物尺度形成层次组织。",
+      "impact": "未见该组织误导注意或损失必要信息。",
+      "context_support": "人物及周围空间均可读。",
+      "exceptions_checked": [
+        "手法问题须关联实际损害"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-L-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "实际帧没有分屏或画中画。",
+      "impact": "无多画面混乱问题。",
+      "context_support": "参考放大图和采样拼图为证据排版。",
+      "exceptions_checked": [
+        "排除证据拼图"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-B-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s2",
+      "state": "met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "人物、连续地面和远景通过遮挡及尺度形成可读层次。",
+      "impact": "组织方式支持主体与场景辨认。",
+      "context_support": "实际空间线索成立，非仅同时出现前后景。",
+      "exceptions_checked": [
+        "不把术语当加分"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-B-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "没有同时存在的子画面。",
+      "impact": "无适用多画面基础条件。",
+      "context_support": "原视频单画面。",
+      "exceptions_checked": [
+        "附图排版不算手法"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-H-a",
+      "indicator_id": "technique-single-frame",
+      "stage_id": "s2",
+      "state": "not_met",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "层次组织主要提供空间说明。",
+      "impact": "没有已证明的额外关系或处境表达事件。",
+      "context_support": "S-H-a、S-H-b、S-H-c均无实质增强依据。",
+      "exceptions_checked": [
+        "手法不独立升级"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "无"
+    },
+    {
+      "checkpoint_id": "T-H-b",
+      "indicator_id": "technique-multi-frame",
+      "stage_id": "s2",
+      "state": "not_applicable",
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "observation": "无子画面对照、同步或嵌套。",
+      "impact": "无适用多画面表达。",
+      "context_support": "实际为连续单画面取景。",
+      "exceptions_checked": [
+        "采样拼图排除"
+      ],
+      "event_ids": [],
+      "uncertainty": "无"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "object_ids": [
+        "player",
+        "grass_terrain",
+        "distant_landscape"
+      ],
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "arrangement": "起始地面取景迅速转为高位俯视，蓝衣人物保持中央附近，草地填满背景，人体和携带物出现俯视缩短。",
+      "basic_or_expressive_effect": "主体连续可辨、身体与装备归属基本可读；未确认必要信息损失，也未证明视角变化带来额外处境表达。",
+      "context_support": "rgb-0000、rgb-0001、rgb-0004、rgb-0006、rgb-0009、rgb-0012及恢复地面视角的rgb-0013可核对。正常俯视投影不作为遮挡或裁切失败。",
+      "checkpoint_ids": [
+        "P-B-a",
+        "P-B-b",
+        "P-B-c",
+        "P-B-d",
+        "C-B-a",
+        "C-B-b",
+        "S-B-a",
+        "S-B-b",
+        "S-B-c",
+        "S-H-a"
+      ]
+    },
+    {
+      "event_id": "E2",
+      "object_ids": [
+        "player",
+        "grass_terrain",
+        "large_tree",
+        "right_slab",
+        "distant_landscape",
+        "built_structures",
+        "overhead_shape"
+      ],
+      "time_ranges": [
+        [
+          3.25,
+          19.75
+        ]
+      ],
+      "arrangement": "人物保持下方中央，镜头转向使树木、右侧水平物体及远处构筑物依次显露，后段维持人物、草地和远景层带。",
+      "basic_or_expressive_effect": "人物突出、常规下端裁切不妨碍理解，地面延伸与遮挡尺度支持空间可读；没有确认的基础失败，未证明额外关系表达。",
+      "context_support": "rgb-0013、rgb-0020、rgb-0028、rgb-0032、rgb-0040、rgb-0048、rgb-0060、rgb-0079。草叶局部遮挡合理，未见足部关键动作；上缘深蓝形状不据其未知性质认定误导。",
+      "checkpoint_ids": [
+        "P-B-a",
+        "P-B-b",
+        "P-B-c",
+        "P-B-d",
+        "C-B-a",
+        "C-B-b",
+        "S-B-a",
+        "S-B-b",
+        "S-B-c",
+        "T-B-a",
+        "S-H-a",
+        "T-H-a"
+      ]
+    }
+  ],
+  "factors": [
+    {
+      "factor_id": "composition-prominence",
+      "grade": "middle",
+      "recognition": "present",
+      "reason": "两阶段人物均可找到和辨认；俯视缩短及草叶遮挡未造成必要信息损失，未证明位置、尺度或分离的额外表达。"
+    },
+    {
+      "factor_id": "composition-shot-size",
+      "grade": "middle",
+      "recognition": "present",
+      "reason": "头部与身体必要关系保留；地面阶段下端裁切属于可理解的第三人称呈现。无已确认观看、路径或关键操作关系，不强加相应条件。"
+    },
+    {
+      "factor_id": "composition-spatial-layering",
+      "grade": "middle",
+      "recognition": "present",
+      "reason": "俯视地面归属及地面视角的前后层次可读；环境转向建立场景，尚未证明接近、包围、阻隔或处境深化。"
+    },
+    {
+      "factor_id": "composition-techniques",
+      "grade": null,
+      "recognition": "present",
+      "reason": "地面阶段可识别由连续地面、遮挡与尺度构成的层次组织，仅解释基础可读机制；俯视居中不强定手法，无实际多画面组织，不独立计档。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "baseline_status": "按game_video_composition 2.1.1逐阶段检查，每阶段42个原子检查点；所有适用最低必要基础成立。",
+    "material_harm_status": "未确认关键理解损害。俯视缩短、草叶局部遮挡、下端常规裁切及景物正常进出均未造成必要主体或空间关系丢失。",
+    "expressive_enhancement_status": "未获证明。视角转换、稳定人物位置和环境层次主要完成清楚展示。",
+    "overall_condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_checkpoint_ids": [
+      "P-B-a",
+      "P-B-b",
+      "P-B-c",
+      "P-B-d",
+      "C-B-a",
+      "C-B-b",
+      "S-B-a",
+      "S-B-b",
+      "S-B-c",
+      "S-H-a",
+      "T-H-a"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2"
+    ],
+    "reason": "人物与所在草地持续可辨，视角转动后的树木、远景和构筑物关系可读。未确认最低必要条件失败；也没有足够上下文支持进一步关系、处境或含义表达，判中档。",
+    "adjacent_grade_explanation": "不判低：没有指出并确认必要内容的实际损失。不判高：可读层次、居中和视角变化尚未形成有依据的实质表达增强。",
+    "uncertainties": [
+      "仅使用所给80帧RGB拼图、两张内嵌放大参考和分割覆盖图；未调用工具或读取额外文件。原始帧尺寸与4FPS采样信息来自输入文本。",
+      "逐项审查全部列出的测量对象；拒绝项及派生面积、位置、颜色、深度、接触和运动统计均未用于判档。接受项也只作可见定位核对，最终依据RGB质性观察。",
+      "所有对象均无可靠amodal区域，不提供遮挡百分比；不把bbox面积当mask面积，不把单目深度当米。",
+      "rgb-0079人物在RGB中可见，但没有对应player测量项；不将测量漏项当作人物消失。",
+      "装备、右侧水平物体、构筑物功能及上缘深蓝形状性质未知，不据此补充剧情、动作目标或心理。",
+      "实际凝视目标、明确世界运动路径及关键操作未建立，因此相关检查点不适用；这不表示测量缺失自动等同不适用。",
+      "Rubric版本已提供；SHA256、输入哈希、提示与输出结构版本、实际模型标识、耗时和用量未提供，未编造运行记录。"
+    ]
+  }
+}

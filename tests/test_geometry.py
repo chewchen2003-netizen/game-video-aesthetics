@@ -3,9 +3,12 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 """Numerical invariants for the user's formulas, independent of aesthetic grades."""
 import unittest,numpy as np
-from cv_measure import pos,grid,separation,overlapping,forward_from_screen
+from cv_measure import pos,grid,separation,overlapping,forward_from_screen,hint
 from composition_math import occlusion,look_room
 class FormulaTests(unittest.TestCase):
+ def test_absent_subject_not_interpolated_across_cut(self):
+  o={'anchors':{'0':[0,0,10,10],'79':[0,0,10,10]},'active_frame_ranges':[[0,27],[55,79]]}
+  self.assertIsNone(hint(o,40));self.assertIsNotNone(hint(o,55))
  def test_visible_box_normalization(self):
   r=pos([20,10,80,50],100,100);self.assertEqual(r['center'],[.5,.3]);self.assertEqual(r['edge_distances'],{'left':.2,'right':.2,'top':.1,'bottom':.5})
  def test_grid_denominators_are_distinct(self):

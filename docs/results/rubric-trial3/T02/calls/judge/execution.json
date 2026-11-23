@@ -1,0 +1,16 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "transport": "Codex CLI, local authenticated session",
+  "actual_model": "see raw events; not independently certified",
+  "start_epoch": 1795434817.1392698,
+  "elapsed_seconds": 368.39913535118103,
+  "returncode": 0,
+  "human_answers_used": false,
+  "usage": {
+    "input_tokens": 216346,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 17814,
+    "reasoning_output_tokens": 263
+  }
+}

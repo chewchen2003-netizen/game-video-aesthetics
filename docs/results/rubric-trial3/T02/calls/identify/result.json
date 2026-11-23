@@ -1,0 +1,142 @@
+{
+  "objects": [
+    {
+      "id": "player",
+      "kind": "humanoid",
+      "description": "游戏人物，戴深色帽，穿蓝色短袖上衣和浅色裤子，背部有斜带及长条装备；地面视角主要呈背面或侧背面。",
+      "role": "subject",
+      "anchors": [
+        {"frame_index": 0, "box": [550, 325, 735, 720]},
+        {"frame_index": 1, "box": [558, 330, 730, 575]},
+        {"frame_index": 6, "box": [565, 320, 730, 620]},
+        {"frame_index": 12, "box": [570, 375, 720, 625]},
+        {"frame_index": 13, "box": [565, 340, 730, 720]},
+        {"frame_index": 20, "box": [560, 325, 730, 720]},
+        {"frame_index": 39, "box": [565, 330, 730, 720]},
+        {"frame_index": 40, "box": [555, 315, 730, 720]},
+        {"frame_index": 60, "box": [560, 325, 730, 720]},
+        {"frame_index": 79, "box": [560, 325, 730, 720]}
+      ]
+    },
+    {
+      "id": "grass_terrain",
+      "kind": "scene_region",
+      "description": "覆盖大量草丛的起伏地面，夹有深色裸地或阴影；俯视时占据整个画面，平视时形成前景和中景。",
+      "role": "foreground",
+      "anchors": [
+        {"frame_index": 0, "box": [0, 270, 1280, 720]},
+        {"frame_index": 1, "box": [0, 0, 1280, 720]},
+        {"frame_index": 12, "box": [0, 0, 1280, 720]},
+        {"frame_index": 13, "box": [0, 330, 1280, 720]},
+        {"frame_index": 20, "box": [0, 390, 1280, 720]},
+        {"frame_index": 60, "box": [0, 370, 1280, 720]},
+        {"frame_index": 79, "box": [0, 345, 1280, 720]}
+      ]
+    },
+    {
+      "id": "large_tree",
+      "kind": "object",
+      "description": "地面视角中较近的一棵高大树木，树冠宽，树干呈暖色；随取景转动横向移动并离开画面。",
+      "role": "supporting_element",
+      "anchors": [
+        {"frame_index": 16, "box": [975, 0, 1260, 425]},
+        {"frame_index": 20, "box": [715, 0, 1090, 430]},
+        {"frame_index": 28, "box": [570, 0, 875, 430]},
+        {"frame_index": 32, "box": [155, 0, 475, 430]},
+        {"frame_index": 33, "box": [0, 0, 170, 425]}
+      ]
+    },
+    {
+      "id": "right_slab",
+      "kind": "object",
+      "description": "大型浅褐色水平岩块状物，具有平坦上沿和较暗的下部。",
+      "role": "supporting_element",
+      "anchors": [
+        {"frame_index": 18, "box": [1120, 305, 1280, 435]},
+        {"frame_index": 20, "box": [1000, 305, 1280, 440]},
+        {"frame_index": 28, "box": [865, 300, 1280, 440]},
+        {"frame_index": 31, "box": [1000, 305, 1280, 440]}
+      ]
+    },
+    {
+      "id": "distant_landscape",
+      "kind": "scene_region",
+      "description": "远方蓝紫色山体、连续针叶树林及散布的较近树木组成的地平线景观。",
+      "role": "background",
+      "anchors": [
+        {"frame_index": 0, "box": [0, 0, 1280, 335]},
+        {"frame_index": 13, "box": [0, 180, 1280, 400]},
+        {"frame_index": 20, "box": [0, 210, 1280, 425]},
+        {"frame_index": 39, "box": [0, 180, 1280, 405]},
+        {"frame_index": 60, "box": [0, 135, 1280, 395]},
+        {"frame_index": 79, "box": [0, 170, 1280, 405]}
+      ]
+    },
+    {
+      "id": "built_structures",
+      "kind": "scene_region",
+      "description": "远处浅粉色塔柱和框架状构筑物所在区域；后段可见框架位于人物前方、塔柱偏右。",
+      "role": "supporting_element",
+      "anchors": [
+        {"frame_index": 20, "box": [825, 335, 885, 405]},
+        {"frame_index": 48, "box": [685, 285, 795, 400]},
+        {"frame_index": 60, "box": [665, 300, 1030, 390]},
+        {"frame_index": 79, "box": [675, 290, 1045, 395]}
+      ]
+    },
+    {
+      "id": "overhead_shape",
+      "kind": "object",
+      "description": "部分平视帧天空上缘出现的深蓝色不规则悬空形状，常被画面边缘截断。",
+      "role": "background",
+      "anchors": [
+        {"frame_index": 16, "box": [190, 0, 420, 110]},
+        {"frame_index": 19, "box": [380, 0, 650, 105]},
+        {"frame_index": 40, "box": [430, 0, 720, 95]},
+        {"frame_index": 47, "box": [410, 0, 690, 95]}
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "id": "s1",
+      "range": [0, 0.25],
+      "primary": ["player"],
+      "necessary_information": "起始为地面第三人称视角，紧接着转为明显俯视；主体仍是同一名蓝衣人物。",
+      "visible_content": "人物立于草地，远处可见树林和山体；随后地平线退出画面。",
+      "evidence_frames": [0, 1]
+    },
+    {
+      "id": "s2",
+      "range": [0.25, 3.25],
+      "primary": ["player"],
+      "necessary_information": "高位俯视阶段，草地填满背景，人物保持在画面中央附近，身体和所携长条装备的投影形态随视角变化。",
+      "visible_content": "密集草丛包围人物，无可辨认的其他人物；人物在画面中呈缩短的俯视形态。",
+      "evidence_frames": [1, 4, 6, 9, 12]
+    },
+    {
+      "id": "s3",
+      "range": [3.25, 8.25],
+      "primary": ["player"],
+      "necessary_information": "恢复地面第三人称取景，镜头围绕中央人物改变朝向；近处大树和右侧岩块状物成为重要陪体。",
+      "visible_content": "人物居于下方中央，草地延伸至树林和山体；大树由右向左移动，水平岩块状物在右侧出现，远处间有塔柱。",
+      "evidence_frames": [13, 16, 20, 28, 32]
+    },
+    {
+      "id": "s4",
+      "range": [8.25, 19.75],
+      "primary": ["player"],
+      "necessary_information": "继续以同一人物为主体，取景转向更开阔的草地和远处构筑物；后半段构图变化较小。",
+      "visible_content": "较近大树和岩块退出，人物仍位于下方中央。远景为树林、山体、框架状建筑和浅粉色塔柱；部分早期帧上缘可见深蓝色悬空形状。",
+      "evidence_frames": [33, 39, 40, 47, 48, 60, 79]
+    }
+  ],
+  "uncertainties": [
+    "坐标由序列缩略图及两张放大参考图估算并换算至1280×720；草丛遮挡人物下肢，框为可见范围的近似提示。",
+    "无法确认人物携带的长条物体具体属于何种武器或工具。",
+    "深蓝色悬空形状的性质无法确定，可能是场景物体、渲染异常或叠加元素，不能据此认定为飞行载具。",
+    "大型水平物体仅能判断为岩块状外形；远处塔柱和框架的功能无法确认。",
+    "序列中的帧号、时间及REFERENCE文字属于拼图标注，未作为游戏内界面识别。",
+    "阶段边界按4FPS采样定位；最后一帧时间为19.75秒。"
+  ]
+}

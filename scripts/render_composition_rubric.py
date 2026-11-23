@@ -8,8 +8,9 @@ out=ROOT/'docs/rubrics';out.mkdir(parents=True,exist_ok=True)
 def e(value):return html.escape(str(value))
 def lst(values):return '<ul>'+''.join('<li>'+e(v)+'</li>' for v in values)+'</ul>'
 body='<h1>构图 Rubric · v'+e(rubric['version'])+'</h1>'
-body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据；本次没有重新推理。</p>'
+body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。新版另有三条试跑，独立人工验证尚未完成。</p>'
 body+='<p><a href="composition_rubric.json">构图规则 JSON</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
+body+='<p><a href="../results/rubric-trial3/index.html">查看三条试跑的完整证据链</a></p>'
 body+='<h2>角色与评价范围</h2><p>'+e(rubric['role'])+'</p><p>由 GPT-6.1 Sol 承担VLM判档；不设置数值美学分数或因素权重。实际调用模型信息须随运行单独保存。</p>'
 body+='<h2>共同定义</h2><dl>'
 names={'expression':'表达','basic_presentation':'基本呈现','expressive_enhancement':'进一步表情达意','subject':'主体','supporting_element':'陪体','material_comprehension_harm':'关键理解损害','applicability':'适用性','evidence_insufficiency':'证据不足'}
@@ -44,7 +45,7 @@ for grade,title in labels.items():
     if grade=='high':body+='<p>每个增强效果还必须全部满足：</p>'+lst(guidance['all_required_for_each_effect'])+'<p>'+e(guidance['technical_mechanism'])+'</p>'
 for key in ['uncertain','not_applicable','unresolved_case']:body+='<p><strong>'+e({'uncertain':'无法判断','not_applicable':'不适用','unresolved_case':'矛盾或未解决情形'}[key])+'：</strong>'+e(rubric['overall_scoring_guidance'][key])+'</p>'
 body+='<h2>输出与运行证据</h2><p>逐点记录：检查点、唯一指标、阶段、状态、时间码、实际输入证据ID、观察、影响、上下文、例外、事件ID及不确定性。</p><p>整体记录：状态、档位、基础呈现、关键损害、进一步表达、整体条件编号、决定性检查点与事件、简洁理由、相邻档排除理由。</p>'+lst(rubric['run_record_requirements'])
-body+='<h2>验证状态与边界</h2>'+lst(rubric['known_limits'])+'<p class="hash">SHA256：'+e(lock['sha256'])+'</p>'
+body+='<h2>规则冻结时记录的验证状态与边界</h2>'+lst(rubric['known_limits'])+'<p class="hash">SHA256：'+e(lock['sha256'])+'</p>'
 style='*{box-sizing:border-box}body{max-width:1100px;margin:32px auto;padding:0 24px;font:16px/1.9 system-ui;color:#243746;background:#fbfcfd}h1{font-size:30px}h2{margin-top:48px;border-top:2px solid #365f72;padding-top:18px}h3{margin-top:26px;color:#244d61}a{color:#086b87}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d5e0e6;padding:12px;text-align:left;vertical-align:top}th{background:#edf3f6}td:first-child{white-space:nowrap}.table{overflow-x:auto}.notice{padding:16px;background:#fff2ce;border-left:4px solid #b98223}dt{font-weight:650;margin-top:15px}dd{margin-left:0}.hash{overflow-wrap:anywhere;font-size:13px}summary{cursor:pointer;margin-top:18px}@media(max-width:650px){body{padding:0 16px}h1{font-size:24px}table{min-width:600px}}'
 (out/'composition_rubric_v2.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>构图Rubric</title><style>'+style+'</style><nav><a href="../index.html">项目首页</a> · <a href="../report.html">原交付说明</a></nav>'+body+'</html>')
 for name in ['composition_rubric.json','composition_rubric.lock.json']:shutil.copyfile(ROOT/'rubrics'/name,out/name)

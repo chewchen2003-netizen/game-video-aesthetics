@@ -1,0 +1,361 @@
+{
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage_id": {
+            "type": "string"
+          },
+          "time_range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "subject_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "supporting_element_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "foreground_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "background_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "necessary_information": {
+            "type": "string"
+          },
+          "key_stage_reason": {
+            "type": "string"
+          },
+          "input_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "stage_id",
+          "time_range",
+          "subject_ids",
+          "supporting_element_ids",
+          "foreground_ids",
+          "background_ids",
+          "necessary_information",
+          "key_stage_reason",
+          "input_evidence_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "segmentation_review": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "frame_index": {
+            "type": "integer"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "mask_accepted": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "frame_index",
+          "object_id",
+          "mask_accepted",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "checkpoint_id": {
+            "type": "string"
+          },
+          "indicator_id": {
+            "type": "string"
+          },
+          "stage_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "met",
+              "not_met",
+              "insufficient_evidence",
+              "not_applicable"
+            ]
+          },
+          "time_ranges": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "input_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observation": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "context_support": {
+            "type": "string"
+          },
+          "exceptions_checked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertainty": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "checkpoint_id",
+          "indicator_id",
+          "stage_id",
+          "state",
+          "time_ranges",
+          "input_evidence_ids",
+          "observation",
+          "impact",
+          "context_support",
+          "exceptions_checked",
+          "event_ids",
+          "uncertainty"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "time_ranges": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "arrangement": {
+            "type": "string"
+          },
+          "basic_or_expressive_effect": {
+            "type": "string"
+          },
+          "context_support": {
+            "type": "string"
+          },
+          "checkpoint_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "event_id",
+          "object_ids",
+          "time_ranges",
+          "arrangement",
+          "basic_or_expressive_effect",
+          "context_support",
+          "checkpoint_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "factor_id": {
+            "type": "string"
+          },
+          "grade": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "low",
+              "middle",
+              "high",
+              null
+            ]
+          },
+          "recognition": {
+            "type": "string",
+            "enum": [
+              "present",
+              "not_identified",
+              "uncertain",
+              "not_applicable"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "factor_id",
+          "grade",
+          "recognition",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "overall": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "scored",
+            "uncertain",
+            "not_applicable"
+          ]
+        },
+        "grade": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "low",
+            "middle",
+            "high",
+            null
+          ]
+        },
+        "baseline_status": {
+          "type": "string"
+        },
+        "material_harm_status": {
+          "type": "string"
+        },
+        "expressive_enhancement_status": {
+          "type": "string"
+        },
+        "overall_condition_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decisive_checkpoint_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decisive_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string"
+        },
+        "adjacent_grade_explanation": {
+          "type": "string"
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "grade",
+        "baseline_status",
+        "material_harm_status",
+        "expressive_enhancement_status",
+        "overall_condition_ids",
+        "decisive_checkpoint_ids",
+        "decisive_event_ids",
+        "reason",
+        "adjacent_grade_explanation",
+        "uncertainties"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "sample_id",
+    "stages",
+    "segmentation_review",
+    "checks",
+    "events",
+    "factors",
+    "overall"
+  ],
+  "additionalProperties": false
+}

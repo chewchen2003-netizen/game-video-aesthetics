@@ -1,0 +1,12 @@
+{"stage": "start", "epoch_seconds": 1795434650.006148, "monotonic": 276844.415641583}
+{"stage": "models_loaded", "epoch_seconds": 1795434650.57829, "monotonic": 276844.987779541}
+{"stage": "sample_start", "epoch_seconds": 1795434650.583412, "monotonic": 276844.992901166, "blind_id": "T01"}
+{"stage": "sample_end", "epoch_seconds": 1795434699.959836, "monotonic": 276894.369057625, "blind_id": "T01"}
+{"stage": "end", "epoch_seconds": 1795434699.960481, "monotonic": 276894.369701708}
+{"stage": "start", "epoch_seconds": 1795434751.9973571, "monotonic": 276946.406298416}
+{"stage": "models_loaded", "epoch_seconds": 1795434752.527411, "monotonic": 276946.936350875}
+{"stage": "sample_start", "epoch_seconds": 1795434752.5320299, "monotonic": 276946.9409685, "blind_id": "T02"}
+{"stage": "sample_end", "epoch_seconds": 1795434791.497205, "monotonic": 276985.905934416, "blind_id": "T02"}
+{"stage": "sample_start", "epoch_seconds": 1795434791.502059, "monotonic": 276985.910787583, "blind_id": "T03"}
+{"stage": "sample_end", "epoch_seconds": 1795434832.86406, "monotonic": 277027.272566166, "blind_id": "T03"}
+{"stage": "end", "epoch_seconds": 1795434832.865781, "monotonic": 277027.274287708}

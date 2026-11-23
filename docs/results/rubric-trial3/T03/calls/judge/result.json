@@ -1,0 +1,1147 @@
+{
+  "sample_id": "T03",
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [0, 7.75],
+      "subject_ids": ["character"],
+      "supporting_element_ids": ["forest_path", "cyan_stones"],
+      "foreground_ids": ["foreground_canopy", "forest_rocks_trees"],
+      "background_ids": ["forest_rocks_trees"],
+      "necessary_information": "人物沿林间道路移动，树根、岩石和石柱提供位置参照；4至4.5秒树叶遮住人物，4.75秒后重新显露。覆盖图中的树冠不因面积大而成为主体。",
+      "key_stage_reason": "建立人物、道路及环境联系，并呈现从开阔地面进入岩石与横木之间的路径变化。短暂遮挡作为阶段内事件核查。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0008", "rgb-0015", "rgb-0016", "rgb-0017", "rgb-0018", "rgb-0019", "rgb-0020", "rgb-0024", "rgb-0028", "rgb-0031"]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [8, 10.5],
+      "subject_ids": ["character"],
+      "supporting_element_ids": ["forest_path", "cyan_stones", "orange_effect"],
+      "foreground_ids": ["foreground_canopy", "forest_rocks_trees"],
+      "background_ids": ["forest_rocks_trees"],
+      "necessary_information": "辨认人物继续移动及新增黄橙效果相对于人物、岩石和道路的位置。效果来源、触发者及攻击关系没有充分依据。",
+      "key_stage_reason": "黄橙效果进入并延展，形成新的显著对象关系；末段树叶再次遮住部分人物与地面。",
+      "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039", "rgb-0040", "rgb-0041", "rgb-0042"]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [10.75, 19.75],
+      "subject_ids": ["character"],
+      "supporting_element_ids": ["forest_path", "cyan_stones"],
+      "foreground_ids": ["foreground_canopy"],
+      "background_ids": ["forest_rocks_trees"],
+      "necessary_information": "效果退出后继续辨认人物沿路经过树根、石柱和岩壁的移动。12.75至15.25秒多次大幅遮挡，中间短暂显露；遮挡期间实际路径和姿态不可补推。",
+      "key_stage_reason": "承载效果退出后的持续移动及最终重新显露。树冠始终是前景环境，未见独立动作主题，因此将遮挡与恢复作为同一移动阶段内的关键事件。",
+      "input_evidence_ids": ["rgb-0043", "rgb-0045", "rgb-0048", "rgb-0050", "rgb-0051", "rgb-0052", "rgb-0053", "rgb-0054", "rgb-0056", "rgb-0057", "rgb-0058", "rgb-0059", "rgb-0060", "rgb-0061", "rgb-0062", "rgb-0064", "rgb-0068", "rgb-0073", "rgb-0076", "rgb-0079"]
+    }
+  ],
+  "segmentation_review": [
+    {"frame_index": 0, "object_id": "character", "mask_accepted": true, "reason": "覆盖主要人物轮廓；仅接受可见部分，不代表完整身体或遮挡率。"},
+    {"frame_index": 0, "object_id": "forest_path", "mask_accepted": false, "reason": "覆盖大片草地而非明确土路边界，不能采用路径面积及派生统计。"},
+    {"frame_index": 0, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "岩树合并且漏掉部分叶冠，无法可靠区分环境与前景层。"},
+    {"frame_index": 0, "object_id": "cyan_stones", "mask_accepted": true, "reason": "右侧纹样石构件的主要可见形状对应；不作同一石头追踪。"},
+    {"frame_index": 4, "object_id": "character", "mask_accepted": true, "reason": "人物可见身体区域基本对应，细肢边界仍粗略。"},
+    {"frame_index": 4, "object_id": "forest_path", "mask_accepted": false, "reason": "土路与草地被不稳定拆分，路径区域定义不可靠。"},
+    {"frame_index": 4, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "只覆盖部分岩壁树干，漏掉其余同类环境。"},
+    {"frame_index": 4, "object_id": "cyan_stones", "mask_accepted": true, "reason": "局部直立纹样石柱轮廓对应，仅接受该可见实例。"},
+    {"frame_index": 8, "object_id": "character", "mask_accepted": false, "reason": "人物仅局部着色，身体与相邻石构件分界不可靠。"},
+    {"frame_index": 8, "object_id": "forest_path", "mask_accepted": false, "reason": "主要覆盖地被，土路和地面范围混用。"},
+    {"frame_index": 8, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "大幅漏掉树干下部及右侧枝干，合并环境区域不完整。"},
+    {"frame_index": 8, "object_id": "cyan_stones", "mask_accepted": false, "reason": "覆盖人物附近的斜长形区域，不能确认是独立石构件。"},
+    {"frame_index": 12, "object_id": "character", "mask_accepted": false, "reason": "仅取人物下部附近区域，遗漏必要上身。"},
+    {"frame_index": 12, "object_id": "forest_path", "mask_accepted": false, "reason": "地被与路径混合，且被前景树干切割，不采用派生量。"},
+    {"frame_index": 12, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "前后景树干合并，不能支持层次统计。"},
+    {"frame_index": 12, "object_id": "cyan_stones", "mask_accepted": false, "reason": "着色与人物相交，未对应左侧明确纹样石柱。"},
+    {"frame_index": 16, "object_id": "character", "mask_accepted": false, "reason": "RGB中人物被叶片遮住，覆盖图却给出近完整人物区域，属于不可验证补分。"},
+    {"frame_index": 16, "object_id": "forest_path", "mask_accepted": false, "reason": "叶片遮住的地面仍被纳入，不能当作可见路径。"},
+    {"frame_index": 16, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "与前景树冠大范围重复覆盖，语义层次混淆。"},
+    {"frame_index": 16, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "前景叶片真实存在，但覆盖包含叶隙和地面；不采用其面积与深度。"},
+    {"frame_index": 16, "object_id": "cyan_stones", "mask_accepted": false, "reason": "覆盖受遮挡区域，不能可靠核对可见石柱轮廓。"},
+    {"frame_index": 20, "object_id": "character", "mask_accepted": true, "reason": "与5秒放大RGB的人物可见轮廓基本一致。"},
+    {"frame_index": 20, "object_id": "forest_path", "mask_accepted": false, "reason": "人物所在棕色路径大量漏分，主要选中下方草地。"},
+    {"frame_index": 20, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "岩石树木仅局部覆盖，无法作为完整环境区域。"},
+    {"frame_index": 20, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "将左侧横木、植被及石柱附近区域合并，非纯前景叶冠。"},
+    {"frame_index": 20, "object_id": "cyan_stones", "mask_accepted": true, "reason": "左下纹样石构件对应，主要可见轮廓可核对。"},
+    {"frame_index": 24, "object_id": "character", "mask_accepted": true, "reason": "人物身体主体对应，细部边界仅作估计。"},
+    {"frame_index": 24, "object_id": "forest_path", "mask_accepted": false, "reason": "主要覆盖下方地被而漏掉人物脚下路径。"},
+    {"frame_index": 24, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "明显漏掉画面右侧大块岩石及横木。"},
+    {"frame_index": 24, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "将上方叶片与其他植被碎片混合，前景归属不稳定。"},
+    {"frame_index": 24, "object_id": "cyan_stones", "mask_accepted": false, "reason": "仅覆盖左侧构件碎片，完整可见实例范围不可靠。"},
+    {"frame_index": 28, "object_id": "character", "mask_accepted": false, "reason": "只选中人物局部，下身附近小块不能代表可见人物。"},
+    {"frame_index": 28, "object_id": "forest_path", "mask_accepted": false, "reason": "前景岩石被大面积标成路径。"},
+    {"frame_index": 28, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "漏掉主要前景岩石，环境区域碎裂。"},
+    {"frame_index": 28, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "叶冠、枝条与石柱附近区域混分，不能作为单一前景区域。"},
+    {"frame_index": 28, "object_id": "cyan_stones", "mask_accepted": false, "reason": "左侧色块未呈现可靠石柱边界，混入地面或植被。"},
+    {"frame_index": 32, "object_id": "character", "mask_accepted": true, "reason": "主要人物身体轮廓对应；不包含完整工具与动作范围。"},
+    {"frame_index": 32, "object_id": "forest_path", "mask_accepted": false, "reason": "下方岩石混入路径，空间类别错误。"},
+    {"frame_index": 32, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "部分岩木可对应，但前后景及地面混合。"},
+    {"frame_index": 32, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "枝干和叶冠覆盖不完整且混入其他环境碎片。"},
+    {"frame_index": 32, "object_id": "cyan_stones", "mask_accepted": false, "reason": "左下大块色区不符合明确纹样石柱形状。"},
+    {"frame_index": 32, "object_id": "orange_effect", "mask_accepted": true, "reason": "左侧黄橙喷射的主要可见范围对应；不据此判断来源。"},
+    {"frame_index": 36, "object_id": "character", "mask_accepted": true, "reason": "人物主要轮廓可对应，邻近前景未明显吞入主体。"},
+    {"frame_index": 36, "object_id": "forest_path", "mask_accepted": false, "reason": "左下岩石标成路径，且实际人物脚下地面漏分。"},
+    {"frame_index": 36, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "与地面及前景树冠类别混叠，不能采用合并区域统计。"},
+    {"frame_index": 36, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "覆盖枝干及部分叶片，未构成可靠完整可见叶冠。"},
+    {"frame_index": 36, "object_id": "cyan_stones", "mask_accepted": false, "reason": "色区落在效果附近地面，缺少石构件轮廓依据。"},
+    {"frame_index": 36, "object_id": "orange_effect", "mask_accepted": false, "reason": "喷射可辨，但掩码包含其下方地面，边界外溢。"},
+    {"frame_index": 40, "object_id": "character", "mask_accepted": false, "reason": "主体受叶片遮挡，掩码仍选取身体附近连续块，不能核对完整可见边界。"},
+    {"frame_index": 40, "object_id": "forest_path", "mask_accepted": false, "reason": "混入效果覆盖及叶片遮挡区域，不能作为可见路径。"},
+    {"frame_index": 40, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "与前景树冠近乎重复，环境类别错分。"},
+    {"frame_index": 40, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "大块叶冠位置可对应，但叶隙、背景及枝条混入，不接受派生统计。"},
+    {"frame_index": 40, "object_id": "cyan_stones", "mask_accepted": false, "reason": "选中效果上方地面或叶片，未见可靠石柱实例。"},
+    {"frame_index": 40, "object_id": "orange_effect", "mask_accepted": false, "reason": "效果主体对应，但掩码与地面范围明显混合，边界不足以支持量化。"},
+    {"frame_index": 44, "object_id": "character", "mask_accepted": true, "reason": "人物主要可见身体与RGB对应。"},
+    {"frame_index": 44, "object_id": "forest_path", "mask_accepted": false, "reason": "棕色路径与地被被任意拆分，非可靠路径区域。"},
+    {"frame_index": 44, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "前景叶冠与后方树石合并，不能提供独立环境层统计。"},
+    {"frame_index": 44, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "右侧叶片整体位置对应，但混入叶隙与背景，拒绝其派生量。"},
+    {"frame_index": 44, "object_id": "cyan_stones", "mask_accepted": false, "reason": "主要覆盖地面块，缺少与纹样石构件一致的边界。"},
+    {"frame_index": 48, "object_id": "character", "mask_accepted": true, "reason": "人物主要身体可对应，局部末端粗略。"},
+    {"frame_index": 48, "object_id": "forest_path", "mask_accepted": false, "reason": "主要覆盖草地而非必要土路，局部漏分。"},
+    {"frame_index": 48, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "树干与岩石碎片覆盖不完整，无法支持整体环境量化。"},
+    {"frame_index": 48, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "右侧枝叶、横木与后方环境混分。"},
+    {"frame_index": 48, "object_id": "cyan_stones", "mask_accepted": false, "reason": "仅取人物左侧局部物件或工具附近区域，不能确认石柱语义。"},
+    {"frame_index": 52, "object_id": "character", "mask_accepted": false, "reason": "RGB被树叶覆盖，掩码区域不能辨认为人物。"},
+    {"frame_index": 52, "object_id": "forest_path", "mask_accepted": false, "reason": "明显把近景叶片标成地面。"},
+    {"frame_index": 52, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "红色区域主要对应近景叶冠，非可靠后景岩树区域。"},
+    {"frame_index": 52, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "输入已标记空缺或近全帧异常，覆盖图也无法提供独立可靠mask。"},
+    {"frame_index": 52, "object_id": "cyan_stones", "mask_accepted": false, "reason": "选中叶片形状，石构件不可核对。"},
+    {"frame_index": 56, "object_id": "character", "mask_accepted": false, "reason": "人物紧邻石柱，覆盖部分外溢且身体边界不完整。"},
+    {"frame_index": 56, "object_id": "forest_path", "mask_accepted": false, "reason": "草地与土路范围混用，不能作为路径量化区域。"},
+    {"frame_index": 56, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "仅选中粗树干，遗漏可见岩石与其余树木。"},
+    {"frame_index": 56, "object_id": "foreground_canopy", "mask_accepted": true, "reason": "右下近景叶片主体轮廓可对应；仅接受可见局部。"},
+    {"frame_index": 56, "object_id": "cyan_stones", "mask_accepted": false, "reason": "大块地面混入，石柱可见轮廓未被可靠分出。"},
+    {"frame_index": 60, "object_id": "character", "mask_accepted": false, "reason": "15秒放大RGB仅见枝叶，人物掩码实际取到叶片，明确拒绝。"},
+    {"frame_index": 60, "object_id": "forest_path", "mask_accepted": false, "reason": "15秒放大RGB中叶冠被误标为大片路径。"},
+    {"frame_index": 60, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "近景树叶及枝条被合并为背景岩树，层次错误。"},
+    {"frame_index": 60, "object_id": "foreground_canopy", "mask_accepted": false, "reason": "输入已标记空缺或近全帧异常，没有可采用的可靠mask。"},
+    {"frame_index": 60, "object_id": "cyan_stones", "mask_accepted": false, "reason": "标注落在近景叶片上，RGB无可核对石柱。"},
+    {"frame_index": 64, "object_id": "character", "mask_accepted": true, "reason": "重新显露的人物主要轮廓对应。"},
+    {"frame_index": 64, "object_id": "forest_path", "mask_accepted": false, "reason": "主要选择绿地，实际棕色路径大量漏掉。"},
+    {"frame_index": 64, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "仅覆盖局部树干岩块，漏掉其余环境。"},
+    {"frame_index": 64, "object_id": "cyan_stones", "mask_accepted": false, "reason": "人物左侧地面大块误入，未对应石构件边界。"},
+    {"frame_index": 68, "object_id": "character", "mask_accepted": true, "reason": "人物主要可见身体可核对。"},
+    {"frame_index": 68, "object_id": "forest_path", "mask_accepted": false, "reason": "土路主体漏分，地被被当作路径。"},
+    {"frame_index": 68, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "大块右上岩石对应，但环境合并区域漏分严重。"},
+    {"frame_index": 68, "object_id": "cyan_stones", "mask_accepted": false, "reason": "色块主要落在道路与阴影，未分出明确纹样石柱。"},
+    {"frame_index": 72, "object_id": "character", "mask_accepted": true, "reason": "人物身体主体对应；不代表完整工具与细肢。"},
+    {"frame_index": 72, "object_id": "forest_path", "mask_accepted": false, "reason": "地被覆盖广而土路漏掉，路径语义不稳定。"},
+    {"frame_index": 72, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "只覆盖部分右侧树岩，其他同类区域漏掉。"},
+    {"frame_index": 72, "object_id": "cyan_stones", "mask_accepted": true, "reason": "左侧石柱组的主要可见轮廓对应，按同类环境实例处理。"},
+    {"frame_index": 73, "object_id": "character", "mask_accepted": true, "reason": "人物可见主体轮廓基本对应，局部细肢未完整。"},
+    {"frame_index": 73, "object_id": "forest_path", "mask_accepted": false, "reason": "土路与绿地分割互相遗漏，不采用面积及位置统计。"},
+    {"frame_index": 73, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "仅局部树石着色，缺少可靠完整环境区域。"},
+    {"frame_index": 73, "object_id": "cyan_stones", "mask_accepted": true, "reason": "左侧直立石柱组基本对应，只接受其可见区域。"},
+    {"frame_index": 76, "object_id": "character", "mask_accepted": true, "reason": "人物主要身体轮廓对应，面积不用于细节可辨性阈值。"},
+    {"frame_index": 76, "object_id": "forest_path", "mask_accepted": false, "reason": "地面与植物碎片混分，土路边界不稳定。"},
+    {"frame_index": 76, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "覆盖扩展到人物附近地面，环境类别外溢。"},
+    {"frame_index": 79, "object_id": "character", "mask_accepted": true, "reason": "末帧人物主要可见身体可对应。"},
+    {"frame_index": 79, "object_id": "forest_path", "mask_accepted": false, "reason": "主要覆盖绿地，不能作为明确土路区域。"},
+    {"frame_index": 79, "object_id": "forest_rocks_trees", "mask_accepted": false, "reason": "岩石主体可对应，但合并区域包含地面碎片并漏掉部分环境。"}
+  ],
+  "checks": [
+    {
+      "checkpoint_id": "P-L-a", "indicator_id": "subject-position", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0031"],
+      "observation": "人物持续位于中部附近。", "impact": "未见位置本身导致目标误认。",
+      "context_support": "同一人物沿路移动。", "exceptions_checked": ["居中不直接加档", "遮挡另见E2"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-L-b", "indicator_id": "subject-area", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0028"],
+      "observation": "人物较小，显露时能辨认身体与行走。", "impact": "未发现当前必要细节因尺度而丢失。",
+      "context_support": "内容是沿路移动，无明确表情展示要求。", "exceptions_checked": ["小主体不自动失败", "不用bbox面积"],
+      "event_ids": ["E1"], "uncertainty": "微小手势不可确认。"
+    },
+    {
+      "checkpoint_id": "P-L-c", "indicator_id": "subject-occlusion", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[4, 4.5]], "input_evidence_ids": ["rgb-0015", "rgb-0016", "rgb-0017", "rgb-0018", "rgb-0019"],
+      "observation": "近景叶片短暂盖住人物，随后同一路径上重新显露。", "impact": "局部跟踪中断，但未见其间必须辨认的独立交互或转折。",
+      "context_support": "前后均为沿路移动。", "exceptions_checked": ["短暂合理前景", "不补推遮挡动作", "无amodal不算遮挡率"],
+      "event_ids": ["E2"], "uncertainty": "遮挡内具体姿态未知。"
+    },
+    {
+      "checkpoint_id": "P-L-d", "indicator_id": "subject-separation", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 3.75], [4.75, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0024"],
+      "observation": "浅色头部、蓝绿色衣装与棕绿地面可区分。", "impact": "显露时没有确认的主体背景混淆。",
+      "context_support": "连续人物外观一致。", "exceptions_checked": ["遮挡不重复当作色彩混淆"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-a", "indicator_id": "subject-position", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0031"],
+      "observation": "人物的中部位置保持稳定。", "impact": "显露时易于找到移动主体。",
+      "context_support": "镜头持续围绕同一人物展开。", "exceptions_checked": ["允许短暂遮挡"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-b", "indicator_id": "subject-area", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0008", "rgb-0020", "rgb-0028"],
+      "observation": "显露人物的尺度支持辨认行走及道路关系。", "impact": "满足当前移动内容的最低辨认需求。",
+      "context_support": "5秒放大参考能核对人物整体。", "exceptions_checked": ["不要求面部细节", "不用面积阈值"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-c", "indicator_id": "subject-occlusion", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0015", "rgb-0016", "rgb-0018", "rgb-0019", "rgb-0020"],
+      "observation": "4秒附近有短暂叶片遮挡，前后主体与道路可接续。", "impact": "整体行走关系仍可理解。",
+      "context_support": "未显示遮挡内发生必须读取的独立事件。", "exceptions_checked": ["合理前景", "不以每帧全身可见为要求"],
+      "event_ids": ["E2"], "uncertainty": "不声称遮挡期间人物持续可见。"
+    },
+    {
+      "checkpoint_id": "P-B-d", "indicator_id": "subject-separation", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 3.75], [4.75, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0024"],
+      "observation": "人物亮部和衣装轮廓区别于地面、岩石。", "impact": "主体身份与身体方向基本可读。",
+      "context_support": "前后外观可衔接。", "exceptions_checked": ["不采用错分mask的颜色统计"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-a", "indicator_id": "subject-position", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0031"],
+      "observation": "中部位置主要维持跟随观看。", "impact": "未证明位置进一步表达特定关系或处境。",
+      "context_support": "没有主体间位置对照。", "exceptions_checked": ["居中不自动增强"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-b", "indicator_id": "subject-area", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "环境明显大于人物，人物尺度总体相近。", "impact": "足以介绍场景，未证明尺度对比承担进一步含义。",
+      "context_support": "没有明确受困或孤立行为。", "exceptions_checked": ["人物小不等于孤独", "环境大不自动判高"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-c", "indicator_id": "subject-occlusion", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[4, 4.75]], "input_evidence_ids": ["rgb-0016", "rgb-0018", "rgb-0019"],
+      "observation": "叶片掠过后人物重新出现。", "impact": "未见遮显建立隐藏、隔离或受阻关系。",
+      "context_support": "人物仍沿路移动。", "exceptions_checked": ["自然遮挡不自动表达"],
+      "event_ids": ["E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-d", "indicator_id": "subject-separation", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "observation": "浅色与蓝绿色主要帮助识别人物。", "impact": "未证明色彩、轮廓差异进一步传达关系。",
+      "context_support": "只有基本人物与地面区分。", "exceptions_checked": ["清楚不等于增强"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-a", "indicator_id": "shot-crop-joint", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0028"],
+      "observation": "人物远离画框边界。", "impact": "未见关节出框造成身体连接误读。",
+      "context_support": "全身远景呈现。", "exceptions_checked": ["叶片遮挡不是画框裁切"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-b", "indicator_id": "shot-crop-headroom", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "observation": "人物头部显露时未接近画框顶部。", "impact": "没有意外头顶截断。",
+      "context_support": "高位斜俯视全身画面。", "exceptions_checked": ["不拿人物bbox顶当头顶"],
+      "event_ids": ["E1"], "uncertainty": "不计算头顶间距。"
+    },
+    {
+      "checkpoint_id": "C-L-c", "indicator_id": "shot-crop-look-room", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "未建立人物观看某一对象的独立关系。", "impact": "无必须保留的视线对象可检验。",
+      "context_support": "主要是行走。", "exceptions_checked": ["不从身体朝向推断视线"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0008", "rgb-0020", "rgb-0028"],
+      "observation": "显露时人物周围保留道路和近邻环境。", "impact": "未见画框排除必要路径导致运动误读。",
+      "context_support": "路径随人物连续显露。", "exceptions_checked": ["屏幕位移不是世界方向", "遮挡另见E2"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0024", "rgb-0028"],
+      "observation": "人物行走部位及附近地面在画框内。", "impact": "未见关键动作因出框而缺失。",
+      "context_support": "没有可确认的离框交互结果。", "exceptions_checked": ["遮挡区别于出框"],
+      "event_ids": ["E1"], "uncertainty": "小幅工具动作含义不确定。"
+    },
+    {
+      "checkpoint_id": "C-B-a", "indicator_id": "shot-crop-joint", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "observation": "显露身体完整置于框内。", "impact": "裁切不导致姿态或连接误读。",
+      "context_support": "远景全身跟随。", "exceptions_checked": ["不以遮挡替代裁切判断"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-b", "indicator_id": "shot-crop-headroom", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "observation": "头部显露时有充分框内空间。", "impact": "头部呈现不受画框干扰。",
+      "context_support": "人物在画面中部。", "exceptions_checked": ["仅作RGB质性判断"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-c", "indicator_id": "shot-crop-look-room", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "没有明确观看对象关系。", "impact": "不要求推测视线留空。",
+      "context_support": "行走内容。", "exceptions_checked": ["无观看行为不强行适用"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0008", "rgb-0020", "rgb-0028"],
+      "observation": "框内保留人物周围的路面和环境参照。", "impact": "当前移动及通道关系可理解。",
+      "context_support": "遮挡前后路径可衔接。", "exceptions_checked": ["不要求前方空间恒定"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0024"],
+      "observation": "行走身体、随身长柄物及附近地面未被画框切断。", "impact": "画框保留当前动作基本信息。",
+      "context_support": "人物沿路移动。", "exceptions_checked": ["不要求未知动作细节"],
+      "event_ids": ["E1"], "uncertainty": "长柄物具体功能未知。"
+    },
+    {
+      "checkpoint_id": "C-H-a", "indicator_id": "shot-crop-joint", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "没有身体局部取舍。", "impact": "未证明裁切强调表达性姿态。",
+      "context_support": "全身远景。", "exceptions_checked": ["全身呈现不自动增强"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-b", "indicator_id": "shot-crop-headroom", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "头上空间包含环境。", "impact": "未证明头部空间表达受限或其他处境。",
+      "context_support": "无相应行为变化。", "exceptions_checked": ["不从上下空间推断心理"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-c", "indicator_id": "shot-crop-look-room", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "未建立观看关系。", "impact": "无视线空间增强可评价。",
+      "context_support": "行走内容。", "exceptions_checked": ["不推断关注或回避"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[4.75, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028", "rgb-0031"],
+      "observation": "岩石和横木围出可见通道。", "impact": "说明路径变化，但未证明前方空间表达接近目标、逃离或受阻。",
+      "context_support": "人物没有明确受阻反应。", "exceptions_checked": ["通道较窄不自动表示受困"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0024"],
+      "observation": "画框保留整体行走。", "impact": "没有局部取舍强调接触或反应的证据。",
+      "context_support": "未建立具体交互。", "exceptions_checked": ["清楚呈现仅支持基础"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-a", "indicator_id": "spatial-depth", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0028"],
+      "observation": "路面承托人物，岩石树根围在周围，近景岩石进入下部。", "impact": "显露时必要前后与路径关系可读。",
+      "context_support": "连续环境变化可核对。", "exceptions_checked": ["不用单目深度当米", "短暂遮挡另见E2"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-b", "indicator_id": "spatial-vertical", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "人物落在地面区域，树木岩壁分布周围。", "impact": "上下分布未造成位置关系误读。",
+      "context_support": "斜俯视场景。", "exceptions_checked": ["不要求地平线", "不赋予上下位置心理含义"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-c", "indicator_id": "spatial-overlap", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0008", "rgb-0020", "rgb-0028"],
+      "observation": "人物、长柄物、石柱与树根虽邻近，显露时仍可分辨。", "impact": "未确认归属或连接误读。",
+      "context_support": "RGB优先于交叠的错误mask。", "exceptions_checked": ["几何接触不等于误读", "E2不重复评价"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-a", "indicator_id": "spatial-depth", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0028"],
+      "observation": "前景掠过与路面、岩木边界共同交代人物所在通道。", "impact": "基本远近和地面联系可理解。",
+      "context_support": "5秒参考图可核对空间。", "exceptions_checked": ["不采用错分深度统计"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-b", "indicator_id": "spatial-vertical", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "下方路面、中部人物及周围岩木关系一致。", "impact": "支持辨认人物所处地面和边界。",
+      "context_support": "高位斜俯视。", "exceptions_checked": ["无天地比例要求"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-c", "indicator_id": "spatial-overlap", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0024", "rgb-0028"],
+      "observation": "主体与环境显露轮廓基本有别。", "impact": "必要对象归属未混乱。",
+      "context_support": "局部遮挡后重新显露。", "exceptions_checked": ["不要求所有边界完全分离"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-a", "indicator_id": "spatial-depth", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0028", "rgb-0031"],
+      "observation": "环境由较开阔路面转为岩木之间通道。", "impact": "建立空间变化，未证明进一步深化受阻或其他处境。",
+      "context_support": "没有明确目标、阻挡反应或关系转折。", "exceptions_checked": ["景别及前景变化不自动判高"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-b", "indicator_id": "spatial-vertical", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "岩木占据上部和边缘，人物位于路面。", "impact": "未证明上下比例承担额外表达。",
+      "context_support": "常规场景空间展示。", "exceptions_checked": ["上方大物体不自动构成压迫"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-c", "indicator_id": "spatial-overlap", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "树根、岩石与人物交叠表现前后关系。", "impact": "未证明依附、隔离或对照含义。",
+      "context_support": "只有行走环境联系。", "exceptions_checked": ["交叠本身不是增强"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-a", "indicator_id": "technique-single-frame", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "可识别近景岩叶、人物和后景岩木的层次组织。", "impact": "除短暂遮挡外，未确认该组织造成关键损失。",
+      "context_support": "移动关系可衔接。", "exceptions_checked": ["E2作为同一遮挡事件", "不数手法"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-b", "indicator_id": "technique-multi-frame", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "observation": "未见游戏画面分屏或画中画。", "impact": "无子画面组织损害可检验。",
+      "context_support": "附图网格是证据排版。", "exceptions_checked": ["不将接触表当分屏"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-a", "indicator_id": "technique-single-frame", "stage_id": "s1", "state": "met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "显露时层次关系和中部观看重点可读。", "impact": "手法支持基本空间呈现。",
+      "context_support": "前景从边缘经过。", "exceptions_checked": ["短暂前景可容许", "不独立加档"],
+      "event_ids": ["E1", "E2"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-b", "indicator_id": "technique-multi-frame", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "单一游戏画面。", "impact": "无适用子画面关系。",
+      "context_support": "序列图仅供采样核查。", "exceptions_checked": ["排版不计手法"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-a", "indicator_id": "technique-single-frame", "stage_id": "s1", "state": "not_met",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020", "rgb-0028"],
+      "observation": "层次组织说明人物所在通道。", "impact": "未关联到已证明的实质增强事件。",
+      "context_support": "主体与环境关系停留在基本可读。", "exceptions_checked": ["不以手法名称升级"],
+      "event_ids": ["E1"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-b", "indicator_id": "technique-multi-frame", "stage_id": "s1", "state": "not_applicable",
+      "time_ranges": [[0, 7.75]], "input_evidence_ids": ["rgb-0020"],
+      "observation": "无多画面组织。", "impact": "无并置表达可评价。",
+      "context_support": "单一连续场景。", "exceptions_checked": ["采样网格不计"],
+      "event_ids": [], "uncertainty": ""
+    },
+
+    {
+      "checkpoint_id": "P-L-a", "indicator_id": "subject-position", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物仍在中部附近，效果位于其侧方并向下延展。", "impact": "亮效果未使主要人物身份发生误认。",
+      "context_support": "人物外观与前段接续。", "exceptions_checked": ["最亮对象不自动成为主体"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-L-b", "indicator_id": "subject-area", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0040"],
+      "observation": "人物较小，黄橙效果形状明显。", "impact": "未确认尺度本身造成必要动作信息损失。",
+      "context_support": "没有已建立的精细攻击动作要求。", "exceptions_checked": ["不将未知因果归咎于占比"],
+      "event_ids": ["E3"], "uncertainty": "效果来源不明。"
+    },
+    {
+      "checkpoint_id": "P-L-c", "indicator_id": "subject-occlusion", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[9.75, 10.5]], "input_evidence_ids": ["rgb-0039", "rgb-0040", "rgb-0041", "rgb-0042", "rgb-0043"],
+      "observation": "树叶遮住部分人物与地面，效果仍可见并退出。", "impact": "未确认遮挡遗漏了可建立的关键接触或结果。",
+      "context_support": "随后人物重新显露；效果因果原本也未建立。", "exceptions_checked": ["合理前景", "不推断攻击命中", "无遮挡百分比"],
+      "event_ids": ["E4"], "uncertainty": "遮挡内具体动作不能确认。"
+    },
+    {
+      "checkpoint_id": "P-L-d", "indicator_id": "subject-separation", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "浅色人物和黄橙效果都区别于暗色岩木。", "impact": "未确认人物与效果混为一体。",
+      "context_support": "两者存在可见位置间隔。", "exceptions_checked": ["遮挡不重复作为背景混淆"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-a", "indicator_id": "subject-position", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物位置延续中部跟随，效果从侧方进入。", "impact": "人物及新增效果均能定位。",
+      "context_support": "同一移动场景。", "exceptions_checked": ["允许次要亮点吸引注意"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-b", "indicator_id": "subject-area", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物行走形态与效果延展均可辨认。", "impact": "满足当前可确认内容的尺度需求。",
+      "context_support": "只要求识别移动与效果相对位置。", "exceptions_checked": ["不要求无法证实的战斗细节"],
+      "event_ids": ["E3"], "uncertainty": "不据此确认效果施放者。"
+    },
+    {
+      "checkpoint_id": "P-B-c", "indicator_id": "subject-occlusion", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0039", "rgb-0040", "rgb-0042", "rgb-0043"],
+      "observation": "阶段末段部分遮挡，前后仍能建立人物继续移动、效果出现并退出。", "impact": "已确认的基本内容保留。",
+      "context_support": "没有可核对的遮挡内独立交互。", "exceptions_checked": ["不补推不可见动作", "不要求每帧无遮挡"],
+      "event_ids": ["E3", "E4"], "uncertainty": "效果与人物因果仍不明。"
+    },
+    {
+      "checkpoint_id": "P-B-d", "indicator_id": "subject-separation", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 9.75]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物亮部、蓝绿色衣装和橙色效果分别可辨。", "impact": "主体及效果不会与岩木背景混淆。",
+      "context_support": "显露轮廓保持差别。", "exceptions_checked": ["不用错误mask颜色量"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-a", "indicator_id": "subject-position", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物与效果侧向分布。", "impact": "位置不足以证明对立、追逐或攻击关系。",
+      "context_support": "效果来源和作用对象未明。", "exceptions_checked": ["不从相邻位置推断因果"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-b", "indicator_id": "subject-area", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0040"],
+      "observation": "效果可见范围扩大并靠近画面下方。", "impact": "未证明扩大表达威胁或其他有依据的处境。",
+      "context_support": "人物反应及效果性质不明确。", "exceptions_checked": ["面积扩大不自动表示威胁"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-c", "indicator_id": "subject-occlusion", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[9.75, 10.5]], "input_evidence_ids": ["rgb-0039", "rgb-0040", "rgb-0042"],
+      "observation": "前景叶片遮住部分人物。", "impact": "未证明遮挡表达隐藏、隔离或关系变化。",
+      "context_support": "无相关行为依据。", "exceptions_checked": ["镜头穿叶不自动构成表达"],
+      "event_ids": ["E4"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-d", "indicator_id": "subject-separation", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "黄橙色与暗绿褐背景对比明显。", "impact": "提高效果可见性，未证明额外关系含义。",
+      "context_support": "效果身份及因果未建立。", "exceptions_checked": ["颜色鲜明不自动判高"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-a", "indicator_id": "shot-crop-joint", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "人物仍远离框边。", "impact": "无关节出框造成的身体误读。",
+      "context_support": "中部全身远景。", "exceptions_checked": ["前景覆盖不是裁切"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-b", "indicator_id": "shot-crop-headroom", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "头部显露时未触及框顶。", "impact": "未见意外头部裁断。",
+      "context_support": "人物位于中部。", "exceptions_checked": ["不计算无效头顶测量"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-c", "indicator_id": "shot-crop-look-room", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "未建立人物注视效果或其他对象的行为。", "impact": "无必要视线关系可检验。",
+      "context_support": "不能用邻近效果代替视线证据。", "exceptions_checked": ["不推断注视对象"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "框内仍保留人物附近通道与岩石。", "impact": "未确认必要路径被画框排除。",
+      "context_support": "持续沿环境通道移动。", "exceptions_checked": ["遮挡另记", "不从屏幕速度推算前方距离"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0040", "rgb-0042"],
+      "observation": "人物在框内；效果从边缘进入并向下退出。", "impact": "正常效果进出框未证明导致关键行为误读。",
+      "context_support": "没有明确需要完整展示的命中结果。", "exceptions_checked": ["正常进出画", "不虚构攻击结果"],
+      "event_ids": ["E3"], "uncertainty": "效果源头未显示充分。"
+    },
+    {
+      "checkpoint_id": "C-B-a", "indicator_id": "shot-crop-joint", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "显露身体位于画框内部。", "impact": "框边不破坏身体连接。",
+      "context_support": "全身远景。", "exceptions_checked": ["遮挡不当裁切"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-b", "indicator_id": "shot-crop-headroom", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "头部与框顶保持明显距离。", "impact": "头部未因取景受到干扰。",
+      "context_support": "中部人物。", "exceptions_checked": ["RGB质性判断"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-c", "indicator_id": "shot-crop-look-room", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "没有明确观看行为。", "impact": "无视线空间基础要求。",
+      "context_support": "人物与效果相邻不代表观看。", "exceptions_checked": ["不推测视线"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物周围通道仍在框内。", "impact": "取景足以理解当前移动。",
+      "context_support": "前后路径可接续。", "exceptions_checked": ["不要求恒定运动留空"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039", "rgb-0042"],
+      "observation": "框内保留人物与效果的主要可见形态。", "impact": "效果出现、延展和退出可理解。",
+      "context_support": "仅确认可见过程，不确认攻击因果。", "exceptions_checked": ["正常进出画不扣档"],
+      "event_ids": ["E3"], "uncertainty": "未知源头不被认定为裁切失败。"
+    },
+    {
+      "checkpoint_id": "C-H-a", "indicator_id": "shot-crop-joint", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "没有身体局部取景。", "impact": "未证明局部取舍强化姿态。",
+      "context_support": "整体远景。", "exceptions_checked": ["全身可见不自动增强"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-b", "indicator_id": "shot-crop-headroom", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "头上空间主要呈现枝干环境。", "impact": "未证明头部空间传达特定处境。",
+      "context_support": "没有对应动作反应。", "exceptions_checked": ["不由空间多少推断心理"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-c", "indicator_id": "shot-crop-look-room", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "无可靠观看关系。", "impact": "无视线表达可评价。",
+      "context_support": "无注视证据。", "exceptions_checked": ["不推断关注或回避"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0039"],
+      "observation": "路径与效果同时处于人物附近。", "impact": "未证明前方空间建立逃离、逼近或受阻。",
+      "context_support": "效果因果和人物意图未知。", "exceptions_checked": ["不将火焰外观自动解释为威胁"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0040", "rgb-0042"],
+      "observation": "效果经过框边，没有突出确定接触或反应的局部。", "impact": "未证明动作裁切带来表达增强。",
+      "context_support": "未建立命中关系。", "exceptions_checked": ["正常效果离框不等于表达性取舍"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-a", "indicator_id": "spatial-depth", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物所在路面、前景岩木及侧方效果基本有别。", "impact": "未确认必要前后关系被误读。",
+      "context_support": "沿前段通道继续移动。", "exceptions_checked": ["不要求推断效果物理距离", "不用单目深度米值"],
+      "event_ids": ["E3"], "uncertainty": "效果准确空间来源未知。"
+    },
+    {
+      "checkpoint_id": "S-L-b", "indicator_id": "spatial-vertical", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "人物处在地面中部，横木在上方、岩石进入下部。", "impact": "未见上下分布造成对象混淆。",
+      "context_support": "斜俯视关系一致。", "exceptions_checked": ["上下位置不自动赋义"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-c", "indicator_id": "spatial-overlap", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0040"],
+      "observation": "效果覆盖部分环境，尚未形成确定的错误连接。", "impact": "未确认归属或接触关系误读。",
+      "context_support": "不能从mask交叠推断命中。", "exceptions_checked": ["E4遮挡不重复评价", "几何接触不等于因果"],
+      "event_ids": ["E3", "E4"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-a", "indicator_id": "spatial-depth", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "主体路面与前景岩木、黄橙效果的位置基本可读。", "impact": "足以理解人物仍在林间通道内。",
+      "context_support": "环境连续。", "exceptions_checked": ["不强求效果来源可见"],
+      "event_ids": ["E3"], "uncertainty": "不确认效果与地面的精确距离。"
+    },
+    {
+      "checkpoint_id": "S-B-b", "indicator_id": "spatial-vertical", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "人物及地面保持中部关系，周围岩木形成边界。", "impact": "上下安排支持基本定位。",
+      "context_support": "斜俯视取景。", "exceptions_checked": ["无地平线要求"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-c", "indicator_id": "spatial-overlap", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "人物、效果和岩木能作为不同对象辨认。", "impact": "基本对象归属清楚。",
+      "context_support": "效果未被可靠解释为人物身体部分。", "exceptions_checked": ["遮挡另见E4"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-a", "indicator_id": "spatial-depth", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0039"],
+      "observation": "岩木围绕人物，效果侧向延展。", "impact": "未证明包围、阻隔或距离变化承担特定处境表达。",
+      "context_support": "无可靠威胁或互动结果。", "exceptions_checked": ["层次明确不自动判高"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-b", "indicator_id": "spatial-vertical", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0040"],
+      "observation": "效果向画面下部展开，树木占据上部。", "impact": "未证明上下安排深化主体关系。",
+      "context_support": "效果与人物因果未明。", "exceptions_checked": ["不以大面积推断压迫"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-c", "indicator_id": "spatial-overlap", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036", "rgb-0040"],
+      "observation": "效果与环境发生可见覆盖。", "impact": "未证明覆盖传达接触、依附或对照。",
+      "context_support": "没有确定作用对象。", "exceptions_checked": ["不从投影重叠推断命中"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-a", "indicator_id": "technique-single-frame", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0040"],
+      "observation": "近景岩叶与中部人物形成层次，黄橙效果提供局部亮点。", "impact": "未确认手法导致独立关键损失。",
+      "context_support": "基本对象关系可读。", "exceptions_checked": ["E4不重复计损害"],
+      "event_ids": ["E3", "E4"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-b", "indicator_id": "technique-multi-frame", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "没有游戏分屏或画中画。", "impact": "无子画面安排可检验。",
+      "context_support": "网格属于输入排版。", "exceptions_checked": ["排版不当游戏手法"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-a", "indicator_id": "technique-single-frame", "stage_id": "s2", "state": "met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "显露时前后层次与人物重点成立。", "impact": "支持人物和效果基本辨认。",
+      "context_support": "同一通道连续移动。", "exceptions_checked": ["不独立加分"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-b", "indicator_id": "technique-multi-frame", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "单一游戏画面。", "impact": "无适用子画面关系。",
+      "context_support": "连续场景。", "exceptions_checked": ["采样图不计"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-a", "indicator_id": "technique-single-frame", "stage_id": "s2", "state": "not_met",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0032", "rgb-0036"],
+      "observation": "层次及亮点有助识别效果。", "impact": "未关联已证实的表达增强。",
+      "context_support": "无可靠攻击、追逐或处境转折。", "exceptions_checked": ["亮点和层次不独立升级"],
+      "event_ids": ["E3"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-b", "indicator_id": "technique-multi-frame", "stage_id": "s2", "state": "not_applicable",
+      "time_ranges": [[8, 10.5]], "input_evidence_ids": ["rgb-0036"],
+      "observation": "没有多画面组织。", "impact": "无并置增强可评。",
+      "context_support": "单一场景。", "exceptions_checked": ["排版不计"],
+      "event_ids": [], "uncertainty": ""
+    },
+
+    {
+      "checkpoint_id": "P-L-a", "indicator_id": "subject-position", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0056", "rgb-0064", "rgb-0079"],
+      "observation": "人物显露时仍在中部附近。", "impact": "位置安排本身未造成观看目标误认。",
+      "context_support": "不可见主要由叶片覆盖造成。", "exceptions_checked": ["遮挡统一归E5", "不将叶片当主体"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-L-b", "indicator_id": "subject-area", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0076", "rgb-0079"],
+      "observation": "人物显露时尺度支持辨认沿路移动。", "impact": "未确认占比本身损失必要细节。",
+      "context_support": "持续行走内容，无精细表情要求。", "exceptions_checked": ["遮挡后错误mask面积不采用"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-L-c", "indicator_id": "subject-occlusion", "stage_id": "s3", "state": "met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0051", "rgb-0052", "rgb-0053", "rgb-0054", "rgb-0056", "rgb-0057", "rgb-0058", "rgb-0059", "rgb-0060", "rgb-0061", "rgb-0062"],
+      "observation": "树冠多次覆盖人物及其脚下路径；15秒放大图仅能辨认近景枝叶，中间显露未能维持连续跟踪。",
+      "impact": "无法辨认该移动阶段内人物正在如何经过树根、石柱及道路，实际姿态与路径联系丢失。",
+      "context_support": "遮挡前后仍围绕同一行走人物，未见内容转为树冠展示或隐藏行为的依据。",
+      "exceptions_checked": ["核对正常前景经过", "与4秒短暂遮挡区分", "中间短暂显露未恢复持续关系", "无amodal不计算遮挡率"],
+      "event_ids": ["E5"], "uncertainty": "不推断遮挡内发生攻击或其他独立动作。"
+    },
+    {
+      "checkpoint_id": "P-L-d", "indicator_id": "subject-separation", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 12.5], [15.5, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "显露人物的浅色头部与蓝绿色衣装仍区别于地面。", "impact": "没有额外确认的背景融合失败。",
+      "context_support": "严重不可见属于实体叶片遮挡。", "exceptions_checked": ["E5不重复算色彩混淆"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-a", "indicator_id": "subject-position", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0056", "rgb-0064", "rgb-0079"],
+      "observation": "显露时人物中部位置稳定，遮挡后在相近区域重现。", "impact": "位置没有独立造成重点混淆。",
+      "context_support": "人物持续是主要对象。", "exceptions_checked": ["E5遮挡不在位置项重复判失败"],
+      "event_ids": ["E6"], "uncertainty": "不把预期位置当作遮挡期间可见。"
+    },
+    {
+      "checkpoint_id": "P-B-b", "indicator_id": "subject-area", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 12.5], [13.5, 14], [15.5, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0056", "rgb-0064", "rgb-0076"],
+      "observation": "显露时人物尺度足够辨认身体和行走。", "impact": "占比满足当前必要内容，遮挡另判。",
+      "context_support": "末段能重新确认人物经过场景物件。", "exceptions_checked": ["不用错分面积", "不要求面部细节"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-B-c", "indicator_id": "subject-occlusion", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0051", "rgb-0052", "rgb-0053", "rgb-0057", "rgb-0058", "rgb-0059", "rgb-0060", "rgb-0061"],
+      "observation": "叶冠反复盖住必要人物轮廓和附近路面；15秒参考明确无可辨人物。",
+      "impact": "人物与当前通道的连续移动联系不能读取，最低遮挡容许条件不成立。",
+      "context_support": "前后保持跟随行走，未建立可解释这种信息隐藏的交互情境。",
+      "exceptions_checked": ["已检查短暂合理遮挡", "不是正常出画", "不是第一人称或局部特写", "不因mask补框认定可见"],
+      "event_ids": ["E5"], "uncertainty": "具体不可见动作保持未知。"
+    },
+    {
+      "checkpoint_id": "P-B-d", "indicator_id": "subject-separation", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 12.5], [15.5, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "重新显露人物与棕绿地面、灰岩可区分。", "impact": "背景区分本身支持基本辨认。",
+      "context_support": "遮挡消失后主体识别恢复。", "exceptions_checked": ["遮挡单独归E5", "拒绝叶片上的人物统计"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-a", "indicator_id": "subject-position", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "中部位置继续承担跟随功能。", "impact": "未证明位置深化人物与环境关系。",
+      "context_support": "无明确位置关系转折。", "exceptions_checked": ["稳定居中不自动增强"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-b", "indicator_id": "subject-area", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0076"],
+      "observation": "人物与大树岩壁的尺度差持续存在。", "impact": "未证明尺度传达孤独、受困或其他含义。",
+      "context_support": "行为只支持继续移动。", "exceptions_checked": ["小人物不自动表示孤独"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-c", "indicator_id": "subject-occlusion", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[12.75, 15.25]], "input_evidence_ids": ["rgb-0052", "rgb-0056", "rgb-0060", "rgb-0062"],
+      "observation": "叶冠遮住人物并在之后退去。", "impact": "遮显未建立可核对的隐藏或隔离意义，且已经损害基本读取。",
+      "context_support": "没有人物借叶片隐藏或受阻的可见行为。", "exceptions_checked": ["信息丢失不冒充表达增强"],
+      "event_ids": ["E5"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "P-H-d", "indicator_id": "subject-separation", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "衣装与环境的色明差异有助找人。", "impact": "未证明其进一步表达联系或分离。",
+      "context_support": "只确认基本识别功能。", "exceptions_checked": ["可辨不自动增强"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-a", "indicator_id": "shot-crop-joint", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "人物显露时远离框边，身体没有关节出框。", "impact": "未见裁切造成连接误读。",
+      "context_support": "遮挡发生于框内。", "exceptions_checked": ["E5不是关节裁切"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-b", "indicator_id": "shot-crop-headroom", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "显露头部与框顶相隔明显。", "impact": "没有头顶意外截断。",
+      "context_support": "中部全身远景。", "exceptions_checked": ["叶片盖头不等于框顶裁切"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-c", "indicator_id": "shot-crop-look-room", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "没有建立明确观看对象或注视行为。", "impact": "无必要视线对象缺失可检验。",
+      "context_support": "主要呈现行走。", "exceptions_checked": ["不从前进方向推断视线"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "显露时道路和近邻物件均在框内。", "impact": "未确认必要路径因框边排除而丢失。",
+      "context_support": "实际丢失来自框内叶冠。", "exceptions_checked": ["E5不重复算框边路径失败"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-L-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0076", "rgb-0079"],
+      "observation": "显露动作身体及附近工具保持框内。", "impact": "没有确认的动作出框损失。",
+      "context_support": "不可见期间是叶片遮挡。", "exceptions_checked": ["遮挡与裁切分开", "不推断不可见动作"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-a", "indicator_id": "shot-crop-joint", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "人物显露身体未被框边切断。", "impact": "身体连接不因画框取舍误读。",
+      "context_support": "全身远景。", "exceptions_checked": ["不声称遮挡时全身可见"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-b", "indicator_id": "shot-crop-headroom", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "显露头部位于框内中部区域。", "impact": "框顶关系没有明显干扰。",
+      "context_support": "跟随全身画面。", "exceptions_checked": ["不采用无效头部测量"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-c", "indicator_id": "shot-crop-look-room", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "未见需理解的观看关系。", "impact": "无视线空间基础点可应用。",
+      "context_support": "行走内容。", "exceptions_checked": ["无可靠视线不强行判断"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "取景保留人物周围路径，框边未排除必要通道。", "impact": "运动留空本身满足基本需求；E5遮挡仍独立失败。",
+      "context_support": "恢复可见后能读取沿路移动。", "exceptions_checked": ["不以遮挡冒充画框排除"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-B-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0076", "rgb-0079"],
+      "observation": "画框容纳显露人物整体行走。", "impact": "未见动作必要部分因出框缺失。",
+      "context_support": "遮挡问题统一记录E5。", "exceptions_checked": ["不将框内遮挡重复归裁切"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-a", "indicator_id": "shot-crop-joint", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "没有表达性身体局部取舍。", "impact": "未证明关节裁切增强。",
+      "context_support": "全身远景。", "exceptions_checked": ["没有局部取景不扣基础"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-b", "indicator_id": "shot-crop-headroom", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "头上空间持续容纳树岩环境。", "impact": "未证明受限、疏离等处境表达。",
+      "context_support": "无相关行为依据。", "exceptions_checked": ["空间多少不推断心理"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-c", "indicator_id": "shot-crop-look-room", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "无明确注视关系。", "impact": "无视线留空表达可评。",
+      "context_support": "行走内容。", "exceptions_checked": ["不虚构关注或回避"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-d", "indicator_id": "shot-crop-lead-room", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "人物前后路面随跟随镜头显露。", "impact": "未证明空间强化接近目标、逃离或受阻。",
+      "context_support": "没有明确目的地或阻挡反应。", "exceptions_checked": ["路面可见不自动增强"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "C-H-e", "indicator_id": "shot-crop-action-crop", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0076", "rgb-0079"],
+      "observation": "整体人物持续远景呈现。", "impact": "没有局部动作取舍强化接触或反应。",
+      "context_support": "未建立具体交互。", "exceptions_checked": ["不把叶冠遮挡当表达性裁切"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-a", "indicator_id": "spatial-depth", "stage_id": "s3", "state": "met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0051", "rgb-0052", "rgb-0053", "rgb-0057", "rgb-0058", "rgb-0059", "rgb-0060", "rgb-0061"],
+      "observation": "近景叶冠覆盖人物、石柱与实际路面，15秒仅剩枝叶近景。",
+      "impact": "当前人物与路径、石柱的前后联系无法判断；与主体遮挡属于同一信息损失。",
+      "context_support": "前后持续呈现沿路经过环境，未建立转向独立树冠主题。",
+      "exceptions_checked": ["同一E5不重复计影响", "并非要求每帧明显纵深", "不用错误地面mask推空间"],
+      "event_ids": ["E5"], "uncertainty": "不确定不可见人物相对于各石柱的精确位置。"
+    },
+    {
+      "checkpoint_id": "S-L-b", "indicator_id": "spatial-vertical", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0079"],
+      "observation": "显露时人物与地面、岩树上下关系一致。", "impact": "未确认上下分布独立导致混淆。",
+      "context_support": "E5损失来自叶冠实体遮挡。", "exceptions_checked": ["不重复归因", "无地平线要求"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-L-c", "indicator_id": "spatial-overlap", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0056", "rgb-0064", "rgb-0073", "rgb-0079"],
+      "observation": "人物紧邻石柱时边界局促，但RGB未证明错误连接或归属。", "impact": "没有独立于遮挡的确定形状误读。",
+      "context_support": "分割交叠有多处错分。", "exceptions_checked": ["错误mask重叠不当真实连接", "E5不重复评价"],
+      "event_ids": ["E5", "E6"], "uncertainty": "14秒局部细边界难辨。"
+    },
+    {
+      "checkpoint_id": "S-B-a", "indicator_id": "spatial-depth", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0052", "rgb-0053", "rgb-0058", "rgb-0059", "rgb-0060", "rgb-0061"],
+      "observation": "近景枝叶取代了可读的人物、通道与石柱联系。",
+      "impact": "当前需要的移动空间关系不能读取，最低空间功能在关键经过过程中失败。",
+      "context_support": "13.5至14秒短暂露出不足以补回随后再次消失的路径过程。",
+      "exceptions_checked": ["不补推隐藏路径", "E5只记一次损害", "合理前景不能自动豁免持续信息损失"],
+      "event_ids": ["E5"], "uncertainty": "无可靠深度或完整主体区域可恢复关系。"
+    },
+    {
+      "checkpoint_id": "S-B-b", "indicator_id": "spatial-vertical", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 12.5], [15.5, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "显露时地面、人物、岩木的上下分配清楚。", "impact": "上下分布支持基本对象定位。",
+      "context_support": "遮挡消退后空间读取恢复。", "exceptions_checked": ["E5不在上下分布重复判损"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-B-c", "indicator_id": "spatial-overlap", "stage_id": "s3", "state": "met",
+      "time_ranges": [[10.75, 12.5], [13.5, 14], [15.5, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0056", "rgb-0064", "rgb-0073"],
+      "observation": "显露对象的归属基本可辨，石柱与人物没有确定的错误连接。", "impact": "边界组织本身未造成额外误读。",
+      "context_support": "严重损失由遮挡统一记E5。", "exceptions_checked": ["不要求边界恒定分离", "拒绝错分交叠统计"],
+      "event_ids": ["E6"], "uncertainty": "局部细肢边界粗略。"
+    },
+    {
+      "checkpoint_id": "S-H-a", "indicator_id": "spatial-depth", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0048", "rgb-0060", "rgb-0064", "rgb-0079"],
+      "observation": "树冠覆盖后再次回到人物与道路。", "impact": "未证明遮显深化空间处境；关键空间基础反而中断。",
+      "context_support": "没有可支持隔离、隐藏或受阻的行为。", "exceptions_checked": ["景别被叶片占满不自动表达", "基础失败不能由局部层次抵消"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-b", "indicator_id": "spatial-vertical", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0068", "rgb-0079"],
+      "observation": "人物仍处路面中部，岩树围绕边缘。", "impact": "未证明上下比例深化规模或主体感受。",
+      "context_support": "只有环境经过。", "exceptions_checked": ["大树位于上方不自动压迫"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "S-H-c", "indicator_id": "spatial-overlap", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0056", "rgb-0064", "rgb-0073"],
+      "observation": "人物与石柱、树根发生邻近及投影交叠。", "impact": "未证明依附、隔离或对照表达。",
+      "context_support": "没有明确接触行为。", "exceptions_checked": ["不以重叠名称判高"],
+      "event_ids": ["E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-a", "indicator_id": "technique-single-frame", "stage_id": "s3", "state": "met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0052", "rgb-0053", "rgb-0058", "rgb-0060", "rgb-0061"],
+      "observation": "前景层次组织中，近景叶冠覆盖了主要人物及其通道。",
+      "impact": "手法机制关联E5：必要人物与移动空间丢失；不产生额外低档计数。",
+      "context_support": "15秒放大参考直接显示枝叶占据观看区域。",
+      "exceptions_checked": ["前景层次不自动有效", "同一事件不重复计损", "不是证据接触表的多画面问题"],
+      "event_ids": ["E5"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-L-b", "indicator_id": "technique-multi-frame", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0060", "rgb-0079"],
+      "observation": "无游戏分屏或画中画。", "impact": "无子画面损害可评。",
+      "context_support": "参考放大图是输入排版。", "exceptions_checked": ["不将参考图视为画中画"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-a", "indicator_id": "technique-single-frame", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "input_evidence_ids": ["rgb-0052", "rgb-0053", "rgb-0058", "rgb-0060", "rgb-0061"],
+      "observation": "近景枝叶层反复盖住当前观看重点。",
+      "impact": "该层次安排未保留必要人物与路径读取，基础不成立。",
+      "context_support": "仍在持续跟随同一行走人物，未建立新的景物主题。",
+      "exceptions_checked": ["E5同一损害", "不因术语成立认定运用有效"],
+      "event_ids": ["E5"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-B-b", "indicator_id": "technique-multi-frame", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "单一游戏场景。", "impact": "无子画面基础条件。",
+      "context_support": "序列网格仅用于证据展示。", "exceptions_checked": ["排版不计构图手法"],
+      "event_ids": [], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-a", "indicator_id": "technique-single-frame", "stage_id": "s3", "state": "not_met",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0060", "rgb-0064", "rgb-0079"],
+      "observation": "层次存在，但树冠占据镜前时破坏必要读取。", "impact": "未证明可继承基础的表达增强。",
+      "context_support": "重新显露只恢复基本观看。", "exceptions_checked": ["局部层次不能抵消E5", "不数手法"],
+      "event_ids": ["E5", "E6"], "uncertainty": ""
+    },
+    {
+      "checkpoint_id": "T-H-b", "indicator_id": "technique-multi-frame", "stage_id": "s3", "state": "not_applicable",
+      "time_ranges": [[10.75, 19.75]], "input_evidence_ids": ["rgb-0064", "rgb-0079"],
+      "observation": "没有多画面组织。", "impact": "无并置表达可评。",
+      "context_support": "单一连续场景。", "exceptions_checked": ["参考图不计"],
+      "event_ids": [], "uncertainty": ""
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "object_ids": ["character", "forest_path", "cyan_stones", "forest_rocks_trees"],
+      "time_ranges": [[0, 3.75], [4.75, 7.75]],
+      "arrangement": "人物保持中部附近，地面提供移动空间，岩木沿边缘及前景经过；后段通道较窄。",
+      "basic_or_expressive_effect": "支持人物、路径和环境基本辨认；没有足够上下文证明进一步处境表达。",
+      "context_support": "rgb-0000、rgb-0020、rgb-0028及rgb-0031可核对行走与通道变化。",
+      "checkpoint_ids": ["P-B-a", "P-B-b", "P-B-d", "C-B-a", "C-B-b", "C-B-d", "C-B-e", "S-B-a", "S-B-b", "S-B-c", "T-B-a"]
+    },
+    {
+      "event_id": "E2",
+      "object_ids": ["character", "foreground_canopy", "forest_path"],
+      "time_ranges": [[4, 4.5]],
+      "arrangement": "近景尖叶掠过，短暂覆盖人物及地面，随后人物在同一道路中重新显露。",
+      "basic_or_expressive_effect": "局部跟踪中断；前后移动关系可衔接，未确认遮挡内必要独立事件丢失，按短暂前景例外处理。",
+      "context_support": "rgb-0015至rgb-0019显示遮挡进入与退出；不推断叶后动作。",
+      "checkpoint_ids": ["P-L-c", "P-B-c", "P-H-c", "S-L-c", "T-L-a", "T-B-a"]
+    },
+    {
+      "event_id": "E3",
+      "object_ids": ["character", "orange_effect", "forest_path", "forest_rocks_trees"],
+      "time_ranges": [[8, 10.5]],
+      "arrangement": "黄橙效果在人物侧方及岩木附近延展，随后向画面下部退出；人物维持中部移动。",
+      "basic_or_expressive_effect": "人物与新增效果均可辨认；未证实效果来源、攻击对象或命中，不能将色彩对比解释为对立或威胁。",
+      "context_support": "rgb-0032、rgb-0036、rgb-0039至rgb-0042显示可见变化。",
+      "checkpoint_ids": ["P-B-a", "P-B-b", "P-B-d", "P-H-a", "P-H-b", "P-H-d", "C-B-e", "S-B-a", "S-B-c", "T-H-a"]
+    },
+    {
+      "event_id": "E4",
+      "object_ids": ["character", "foreground_canopy", "orange_effect"],
+      "time_ranges": [[9.75, 10.5]],
+      "arrangement": "树叶覆盖部分人物和效果附近地面，随后前景退出。",
+      "basic_or_expressive_effect": "造成局部可见性下降；未能确认其间丢失确定交互或结果，不另立关键损害。",
+      "context_support": "rgb-0039至rgb-0043；效果与人物因果本就未建立。",
+      "checkpoint_ids": ["P-L-c", "P-B-c", "P-H-c", "S-L-c", "T-L-a"]
+    },
+    {
+      "event_id": "E5",
+      "object_ids": ["character", "foreground_canopy", "forest_path", "cyan_stones"],
+      "time_ranges": [[12.75, 13.25], [14.25, 15.25]],
+      "arrangement": "镜前叶冠多次覆盖人物与其通道；13.5至14秒短暂露出后再次大幅覆盖，15秒放大参考仅见枝叶。",
+      "basic_or_expressive_effect": "已确认最低功能失败：持续移动阶段中，人物当前姿态、实际经过的路径及其与石柱树根的联系不可辨。主体遮挡、空间读取和手法问题均指向同一损害。",
+      "context_support": "rgb-0051至rgb-0053、rgb-0057至rgb-0061及rgb-0060放大参考；rgb-0054、rgb-0056和rgb-0062用于核对短暂显露与恢复。未见改以树冠为主题或人物主动隐藏的依据。",
+      "checkpoint_ids": ["P-L-c", "P-B-c", "S-L-a", "S-B-a", "T-L-a", "T-B-a", "P-H-c", "S-H-a", "T-H-a"]
+    },
+    {
+      "event_id": "E6",
+      "object_ids": ["character", "forest_path", "cyan_stones", "forest_rocks_trees"],
+      "time_ranges": [[10.75, 12.5], [13.5, 14], [15.5, 19.75]],
+      "arrangement": "叶冠间隙或退出后，人物重新出现在中部，沿路经过树根、纹样石柱和岩壁。",
+      "basic_or_expressive_effect": "恢复主体及基本空间读取；不能补回E5中不可见的移动过程，也未证明独立表达增强。",
+      "context_support": "rgb-0048、rgb-0054、rgb-0056、rgb-0064、rgb-0068、rgb-0073、rgb-0076及rgb-0079。",
+      "checkpoint_ids": ["P-B-a", "P-B-b", "P-B-d", "C-B-a", "C-B-b", "C-B-d", "C-B-e", "S-B-b", "S-B-c"]
+    }
+  ],
+  "factors": [
+    {
+      "factor_id": "composition-prominence",
+      "grade": "low",
+      "recognition": "present",
+      "reason": "显露时人物可定位、尺度够用；E5中叶冠反复覆盖必要人物与当前移动关系，P-B-c明确失败。"
+    },
+    {
+      "factor_id": "composition-shot-size",
+      "grade": "middle",
+      "recognition": "present",
+      "reason": "人物显露时整体处于框内，头部、身体与附近路径没有确认的框边裁切损失；无明确观看关系，视线项不适用。未证明裁切表达增强。"
+    },
+    {
+      "factor_id": "composition-spatial-layering",
+      "grade": "low",
+      "recognition": "present",
+      "reason": "多数显露画面可读；E5中人物、路径及近邻物件联系被叶冠遮掉，S-B-a失败，与主体遮挡共享同一损害。"
+    },
+    {
+      "factor_id": "composition-techniques",
+      "grade": null,
+      "recognition": "present",
+      "reason": "识别到前景、人物与后景的层次组织；E5说明其局部运用失效。手法只解释机制，不独立评分；未见游戏分屏或画中画。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "low",
+    "baseline_status": "未全部成立：s3的P-B-c、S-B-a在E5中明确失败；其余清楚片段不能抵消。",
+    "material_harm_status": "已确认：12.75至13.25秒及14.25至15.25秒的叶冠覆盖，使正在移动的人物及其与通道、石柱、树根的当前关系难以辨认。",
+    "expressive_enhancement_status": "未证实。层次、尺度及色彩差异主要承担基本呈现；遮挡没有获得隐藏、隔离或受阻行为的上下文支持。",
+    "overall_condition_ids": ["O-L-a", "O-L-c"],
+    "decisive_checkpoint_ids": ["P-L-c", "P-B-c", "S-L-a", "S-B-a"],
+    "decisive_event_ids": ["E5"],
+    "reason": "依据game_video_composition v2.1.1。人物沿林间道路移动是持续必要内容；后半段树冠反复遮住人物及当前路径，15秒放大RGB直接支持信息丢失。已排除短暂合理前景、正常出框及局部特写解释，判低。",
+    "adjacent_grade_explanation": "不能判中：关键移动过程的主体可辨与空间联系已明确失败。前后恢复清楚、局部层次完整不能补回不可见过程；也没有可继承完整基础的高档增强。",
+    "uncertainties": [
+      "依据仅为本次80帧RGB接触表、两张放大参考、分割覆盖图及所给文本；未使用工具或额外文件。",
+      "逐项审查了覆盖图所列对象。接受mask仅表示主要可见轮廓可对应；本次判档使用RGB质性事实，不以任何mask面积、颜色、位置或深度数值决定档位。",
+      "无可靠amodal区域，不报告遮挡比例；姿态、头顶、视线及世界运动方向测量不足，不补造数值。",
+      "黄橙效果来源、攻击属性及与人物的因果不明，不据此设置必须可见的命中或反应。",
+      "4FPS采样不能恢复帧间精细动作；这不撤销已被多帧及15秒放大参考确认的E5。",
+      "未提供Rubric SHA256、输入哈希、实际请求模型标识及运行耗时等元数据，不补造；Rubric声明的judge模型不能当作本次实际模型信息。"
+    ]
+  }
+}

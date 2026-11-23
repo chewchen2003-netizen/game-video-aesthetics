@@ -1,0 +1,24 @@
+{
+  "old50_overlap": 0,
+  "previous_1_to_11_overlap": 0,
+  "human_answers_in_input": false,
+  "input_sources": [
+    "RGB sequence sheets",
+    "RGB-only object assignments",
+    "CV measurements",
+    "rubric v2.1.1"
+  ],
+  "selection_seed": 2026112303,
+  "rule_sha256": "83aeaea79ef4fff7f930b479fbc057f84416d8e5416a2aed30dd0f9c3a18b583",
+  "code_sha256": {
+    "scripts/run_rubric_trial.py": "ae715566f36e04ab537bc0aa6824350211cfa43f8286fe4d49295e405bd5f33b",
+    "src/cv_measure.py": "e4509eafc78d726cbae61ba781beab9d47f050a427267530d39ed3df464cc72e",
+    "src/frames.py": "1d6289e1d9bd3c2bd0732996e1cf4288cc5186dd923d032a9ed154587ae753f6"
+  },
+  "reproduction_check": {
+    "frame_count": 240,
+    "hash_differences": 0
+  },
+  "independent_human_review": "pending",
+  "code_sha256_note": "Current execution-layer files after validation hardening; each CV runtime records its actual executed source hash. Raw prompts/schema are stored per call; this is not a claim that all subprocesses loaded this final code revision."
+}

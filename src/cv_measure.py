@@ -20,6 +20,7 @@ def bbox(mask):
 def iou(a,b):
  x=max(a[0],b[0]);y=max(a[1],b[1]);xx=min(a[2],b[2]);yy=min(a[3],b[3]);inter=max(0,xx-x)*max(0,yy-y);return inter/max(1,(a[2]-a[0])*(a[3]-a[1])+(b[2]-b[0])*(b[3]-b[1])-inter)
 def hint(o,idx):
+ if o.get('active_frame_ranges') and not any(lo<=idx<=hi for lo,hi in o['active_frame_ranges']):return None
  a=sorted((int(k),np.array(v,dtype=float)) for k,v in o['anchors'].items())
  if not a[0][0]<=idx<=a[-1][0]:return None
  if len(a)==1:return a[0][1].tolist()
@@ -74,7 +75,7 @@ def forward_from_screen(prev,b,t,W,H):
 
 def run():
  event('start');print('DEVICE',DEVICE,flush=True);models=Path(os.environ.get('GAME_EVAL_MODELS_DIR',D/'models'));models.mkdir(exist_ok=True);os.chdir(models);sam=SAM('mobile_sam.pt');pose=YOLO('yolo11n-pose.pt');personseg=YOLO('yolo11n-seg.pt');processor=AutoImageProcessor.from_pretrained('depth-anything/Depth-Anything-V2-Small-hf');depthmodel=AutoModelForDepthEstimation.from_pretrained('depth-anything/Depth-Anything-V2-Small-hf').to(DEVICE).eval();save(D/'runtime.json',{'device':DEVICE,'torch':torch.__version__,'config':CFG,'code_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'model_files':{x.name:hashlib.sha256(x.read_bytes()).hexdigest() for x in models.glob('*.pt')},'depth_config':depthmodel.config.to_dict()});event('models_loaded')
- for bid in CFG['samples']:
+ for bid in os.environ.get('GAME_EVAL_SAMPLE_IDS',','.join(CFG['samples'])).split(','):
   assignment=D/'assignments'/(bid+'.json')
   if not assignment.exists():raise FileNotFoundError('Missing RGB subject assignment: '+str(assignment))
   ass=json.loads(assignment.read_text());SEEDS[bid]=ass;HEAD[bid]=ass.get('head_hints',{});DIRECTIONS[bid]=ass.get('direction_evidence',[]);save(D/bid/'assignment-used.json',ass)

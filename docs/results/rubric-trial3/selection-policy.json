@@ -1,0 +1,10 @@
+{
+  "seed": 2026112303,
+  "pool": "Original 100 manifest, excluding original 50 and earlier 1–11",
+  "different_games": true,
+  "different_time_strata": true,
+  "selection_before_visual_review": true,
+  "human_grades_read": false,
+  "not_selected_to_force_grade_coverage": true,
+  "created_at_unix": 1795433578.993601
+}

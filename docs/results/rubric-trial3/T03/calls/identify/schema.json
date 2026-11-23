@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "properties": {
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "humanoid",
+              "vehicle",
+              "scene_region",
+              "object"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "subject",
+              "supporting_element",
+              "foreground",
+              "background"
+            ]
+          },
+          "anchors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "frame_index": {
+                  "type": "integer"
+                },
+                "box": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "required": [
+                "frame_index",
+                "box"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "description",
+          "role",
+          "anchors"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "primary": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "necessary_information": {
+            "type": "string"
+          },
+          "visible_content": {
+            "type": "string"
+          },
+          "evidence_frames": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "range",
+          "primary",
+          "necessary_information",
+          "visible_content",
+          "evidence_frames"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "objects",
+    "segments",
+    "uncertainties"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "input-1.jpg",
+    "path": "input-1.jpg",
+    "sha256": "4b57f13a3f8f8b51e19880b090e07d2351279b2fe91ba041d50bb00a848ffc80"
+  },
+  {
+    "id": "input-2.jpg",
+    "path": "input-2.jpg",
+    "sha256": "a85ade4892ed37aeda51d7155129734decd0f3af9a41d85a50e5f4348eb42171"
+  },
+  {
+    "id": "segmentation-contact-sheet.jpg",
+    "path": "segmentation-contact-sheet.jpg",
+    "sha256": "82eb1c865a12150230a54486d00771a9c903ae26a7a5ef9d546b747f689558d0"
+  }
+]

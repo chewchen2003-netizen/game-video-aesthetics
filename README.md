@@ -10,7 +10,7 @@
 
 也可以[直接在 GitHub 中阅读](REPORT.md)。
 
-**本轮优化：** [构图 Rubric v2.1.1（可读版）](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html) · [规则 JSON](rubrics/composition_rubric.json) · [版本与使用说明](rubrics/README.md)。已冻结用于验证，尚未复跑；下方50条仍为旧版结果。
+**本轮优化：** [构图 Rubric v2.1.1（可读版）](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html) · [规则 JSON](rubrics/composition_rubric.json) · [版本与使用说明](rubrics/README.md)。已完成[三条非原50样本试跑](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/rubric-trial3/index.html)，附内容识别、分割、测量、逐点证据及批注；独立人工验证待完成。下方50条仍为旧版结果。
 
 ## 查看评价标准与验证结果
 
