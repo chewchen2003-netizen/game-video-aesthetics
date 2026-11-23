@@ -4,6 +4,12 @@ import json
 
 FORMAT='composition_rubric_compact_v1'
 
+def load_rubric(path):
+    """Load the sole stored rubric and materialize shared evidence in memory."""
+    from pathlib import Path
+    value=json.loads(Path(path).read_text())
+    return expand_rubric(value) if '_storage' in value else value
+
 def compact_rubric(rubric):
     compact=deepcopy(rubric)
     if '_storage' in compact or '_checkpoint_evidence_defaults' in compact:

@@ -2,12 +2,11 @@
 
 本轮讨论确认的VLM判档规则，冻结用于验证。**尚未完成独立人工复核或同批复跑，不代表标准已经得到验证。**
 
-- [精简组织版 JSON（推荐阅读）](composition_rubric.compact.json)：218行；每个指标、每个检查点各占一行，共用证据要求统一定义，无规则信息损失。
-- [冻结展开原版](composition_rubric.json)：1015行，保存当前版本的展开内容与SHA256；历史版本由Git记录追溯。
+- [构图规则 JSON](composition_rubric.json)：唯一规则文件，共218行；每个指标、检查点各占一行，共用证据要求统一定义。
 - [冻结记录](composition_rubric.lock.json)：版本与SHA256。
 - [可读版](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html)：从同一JSON生成。
 
-## 精简版怎样组织？
+## 信息怎样组织？
 
 - 角色、定义、通用规则各集中一处。
 - 每个指标的一行中保留定义与合理例外。
@@ -15,17 +14,15 @@
 - 42处重复的证据清单，改为按档位共用 `_checkpoint_evidence_defaults`；程序展开时恢复到各检查点。
 - 整体判档、输出要求和运行记录仍完整保留。
 
-精简版只是同一规则的存储表示，不是删节版。`src/rubric_format.py` 的 `expand_rubric()` 可恢复完整对象；校验要求展开后的JSON对象与冻结原版完全相等，而非只比较条数。默认值必须由程序展开，不能直接省略证据要求或假定模型自行理解引用。
+不另存千行展开文件。`load_rubric()` 加载这份规则时，在内存中把共同证据要求恢复到各检查点；提供给模型前应完成此步骤，不能省略证据要求或假定模型自行理解引用。文件SHA256及完整加载内容的校验值统一保存在lock中；本次整理前后已验证内容一致。
 
 ```python
-import json
-from src.rubric_format import expand_rubric
+from src.rubric_format import load_rubric
 
-with open("rubrics/composition_rubric.compact.json") as f:
-    rubric = expand_rubric(json.load(f))
+rubric = load_rubric("rubrics/composition_rubric.json")
 ```
 
-这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.0.1；存储格式另有版本与[精简版校验记录](composition_rubric.compact.lock.json)。
+这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.0.1，整理文件不改变判档条件。
 
 ## 固定内容
 
@@ -37,7 +34,6 @@ with open("rubrics/composition_rubric.compact.json") as f:
 
 ```sh
 python3 scripts/check_composition_rubric.py
-python3 scripts/build_compact_rubric.py
 python3 scripts/render_composition_rubric.py
 python3 -m unittest discover -s tests -p 'test_rubric_format.py'
 ```

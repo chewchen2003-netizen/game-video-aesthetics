@@ -2,11 +2,11 @@
 from pathlib import Path
 import json,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
-from rubric_format import compact_rubric,expand_rubric,dumps_readable
+from rubric_format import compact_rubric,expand_rubric,dumps_readable,load_rubric
 
 class RubricFormatTests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):cls.original=json.loads((ROOT/'rubrics/composition_rubric.json').read_text())
+    def setUpClass(cls):cls.original=load_rubric(ROOT/'rubrics/composition_rubric.json')
     def test_serialized_round_trip_preserves_entire_contract(self):
         compact=compact_rubric(self.original)
         self.assertEqual(expand_rubric(json.loads(dumps_readable(compact))),self.original)
@@ -21,5 +21,7 @@ class RubricFormatTests(unittest.TestCase):
         before=json.dumps(self.original,sort_keys=True)
         expand_rubric(compact_rubric(self.original))
         self.assertEqual(before,json.dumps(self.original,sort_keys=True))
+    def test_stored_rubric_restores_all_checkpoint_evidence(self):
+        self.assertEqual(sum(bool(point['required_evidence']) for factor in self.original['factors'] for grade in factor['scoring_guidance'].values() for point in grade['checks']),42)
 
 if __name__=='__main__':unittest.main()

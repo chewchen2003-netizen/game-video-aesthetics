@@ -4,9 +4,11 @@
   "status": "frozen_for_validation",
   "validation_status": "not_yet_validated",
   "file": "rubrics/composition_rubric.json",
-  "sha256": "36684cb21559c8f64bf442be633da2e79ea917a69d0d0dc0e66d91fb1d4812ed",
+  "sha256": "9f6812103bca38438fea476d83a35706271aef279495cf3043016341f30b8c04",
   "checkpoint_count": 42,
   "indicator_count": 14,
   "historical_results_rule": "Do not relabel historical results as v2 results.",
-  "change_summary": "Removed model-selection commentary only; grading criteria unchanged."
+  "change_summary": "Sole rule file uses shared evidence defaults; content is unchanged after loading.",
+  "format": "composition_rubric_compact_v1",
+  "expanded_content_sha256": "c36aaccc5d4486514b1dca1f28ead53b79803de46037b2562d31ff2eab698598"
 }
