@@ -26,9 +26,13 @@ def call(work,prompt,schema,images,out):
  for p in images:cmd+=['-i',str(p)]
  cmd+=['-'];start=time.time()
  with (work/'events.jsonl').open('w') as f:
-  proc=subprocess.run(cmd,input=prompt,text=True,stdout=f,stderr=subprocess.STDOUT)
+  proc=subprocess.run(cmd,input=prompt,text=True,stdout=f,stderr=subprocess.STDOUT,timeout=1800)
  save(work/'execution.json',{'requested_model':'gpt-6.1-sol','transport':'Codex CLI, local authenticated session','actual_model':'see raw events; not independently certified','start_epoch':start,'elapsed_seconds':time.time()-start,'returncode':proc.returncode,'human_answers_used':False,'command':cmd})
  if proc.returncode:raise RuntimeError(str(work/'events.jsonl'))
+ for line in (work/'events.jsonl').read_text().splitlines():
+  try:ev=json.loads(line)
+  except ValueError:continue
+  if ev.get('item',{}).get('type') in ['command_execution','mcp_tool_call','web_search','file_change']:raise RuntimeError('Unexpected tool use: isolation violation')
  return json.loads(out.read_text())
 def validate(r,rule,frames,measured):
  points={p['id']:p for f in rule['factors'] for g in f['scoring_guidance'].values() for p in g['checks']};stages={s['stage_id'] for s in r['stages']};events={e['event_id'] for e in r['events']};ids=set(frames)|set(measured);seen=set()
@@ -60,8 +64,23 @@ def validate(r,rule,frames,measured):
  if o['grade']=='low':assert low_met or base_failed,'Low lacks confirmed baseline failure'
  if o['grade']=='high':assert any('-H-' in c['checkpoint_id'] and c['state']=='met' for c in r['checks']) and o['decisive_event_ids'],'High lacks enhancement/event evidence'
  return {'passed':True,'checks':len(r['checks']),'stages':len(stages),'note':'Structural/reference validation only; independent human review pending.'}
+def lean_row(row):
+ # Preserve numerical values without rounding. Omit repetitive model metadata and
+ # auxiliary histograms; full unabridged measurements remain saved separately.
+ packed={'frame_index':row['frame_index'],'time':row['time'],'dimensions':row['dimensions'],'primary_ids':row['primary_ids'],'objects':[],'overlap_pairs':row['overlap_pairs']}
+ for o in row['objects']:
+  v={k:o[k] for k in ['object_id','kind','valid','reason','mask_source','mask_bbox_seed_iou','position','area','occlusion','headroom','look_room','action_crop','motion_front'] if k in o}
+  sep=o.get('background_separation',{});v['background_separation']={k:sep[k] for k in ['valid','reason','color_JS_distance','boundary_Lstar'] if k in sep}
+  pose=o.get('pose',{});v['pose']=pose
+  dep=o.get('depth',{});v['depth']={k:dep[k] for k in ['valid','values','reason'] if k in dep}
+  # Per-contour sample coordinates and sensitivity sweeps are engineering diagnostics,
+  # not necessary for qualitative VLM decisions; keep pair-level minimum/ratio.
+  packed['objects'].append(v)
+ packed['overlap_pairs']=[{'objects':v['objects'],'valid':v.get('valid'), 'geometry':{k:{f:x for f,x in g.items() if f in ['min_distance_normalized','near_contour_ratio']} for k,g in v.get('geometry',{}).items()}} for v in row['overlap_pairs']]
+ return packed
+
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--run-dir',type=Path,required=True);ap.add_argument('--ids',default='T01,T02,T03');ap.add_argument('--phase',choices=['identify','measure','judge'],required=True);a=ap.parse_args();d=a.run_dir.resolve();rule=load_rubric(ROOT/'rubrics/composition_rubric.json')
+ ap=argparse.ArgumentParser();ap.add_argument('--run-dir',type=Path,required=True);ap.add_argument('--lean',action='store_true');ap.add_argument('--temporal',action='store_true');ap.add_argument('--ids',default='T01,T02,T03');ap.add_argument('--phase',choices=['identify','measure','judge'],required=True);a=ap.parse_args();d=a.run_dir.resolve();rule=load_rubric(ROOT/'rubrics/composition_rubric.json')
  existing=d/'rubric'/'active-expanded.json'
  if existing.exists():assert json.loads(existing.read_text())==rule,'Rubric changed during trial; start a new run directory'
  save(d/'rubric'/'active-expanded.json',rule);save(d/'rubric'/'active-lock.json',json.loads((ROOT/'rubrics/composition_rubric.lock.json').read_text()))
@@ -95,8 +114,24 @@ def main():
    qa=work/'segmentation-contact-sheet.jpg';qa.parent.mkdir(parents=True,exist_ok=True);canvas.save(qa,quality=92);images.append(qa)
    # Only selected overlay frames' measurements are sent; all raw rows remain in the run.
    subset=[x for x in rows if x['frame_index'] in [v['frame_index'] for v in chosen]];mids={f"measure-{x['frame_index']:04d}-{o['object_id']}":(x['frame_index'],o['object_id']) for x in subset for o in x['objects']}
-   evidence={'RGB_ids':list(frameids),'measurement_ids':list(mids),'measurement_rows':subset,'assignment':json.loads((d/'assignments'/(sid+'.json')).read_text())};save(work/'evidence.json',evidence)
+   evidence={'RGB_ids':list(frameids),'measurement_ids':list(mids),'measurement_rows':[lean_row(row) for row in subset] if a.lean else subset,'assignment':json.loads((d/'assignments'/(sid+'.json')).read_text())};save(work/'evidence.json',evidence)
    prompt='不要使用工具或读取额外文件，仅使用本次附图与文本。你是构图VLM评审。仅依据以下冻结Rubric和实际附图、测量。人工答案与历史预测未提供。先核对主体/陪体/环境和关键阶段；第一、二张为80帧RGB序列，第三张为分割覆盖图。原始图1280x720，4FPS，时间0..19.75秒。mask只是估计，必须逐项审查所给覆盖图中每个对象，记入segmentation_review；不可靠mask及其面积、位置、颜色/深度统计不得作为依据。bbox不是mask；无amodal不算遮挡率；单目深度不是米。画面可直接支持质性观察，不编造数值或心理。数值仅为证据，不是美学阈值。每一阶段必须输出完整42个原子检查点，各自一个indicator_id。基础中档是最低功能，高档继承基础且有实质表达，不平均不计数。已确认关键失败判低；缺失不等于失败。未证明增强而基础成立判中。手法未识别不扣档。引用rgb-0000等画面ID或measure-0000-对象ID，只能引用下面清单。简洁、可核查理由，不写隐含思维推演。样本：'+sid+'\nRubric:\n'+json.dumps(rule,ensure_ascii=False)+'\nEvidence:\n'+json.dumps(evidence,ensure_ascii=False)
-   r=call(work,prompt,RESULT,images,out);report=validate(r,rule,frameids,mids);save(work/'validation.json',report);save(d/sid/'prediction.json',r)
+   schema=json.loads(json.dumps(RESULT))
+   if a.temporal:
+    schema['properties']['temporal_analysis']=arr(obj(before_stage_id=S,after_stage_id=S,before_evidence_ids=arr(S),after_evidence_ids=arr(S),visible_change=S,spatial_or_attention_effect=S,expressive_effect=S,checkpoint_ids=arr(S),uncertainty=S))
+    schema['required'].append('temporal_analysis')
+    prompt+='\n时序分析为必填：每个相邻阶段给前后阶段ID、前后实际帧ID、可见安排变化、空间／注意效果及表达效果。若整段无阶段变化，前后可为同一阶段，比较开始／中段／结束并说明维持了什么。不要把A→B的主体切换当作同一主体的位置或面积变化；常规正反打建立空间关系，不自动等于情感增强。无需强行编造变化或情感；缺少时序证据应写不确定性。给出简洁可核查理由。'
+   if a.lean:prompt+='\n测量说明：位置/边距均按画宽高归一，可见占比为mask像素/(W×H)，遮挡率无amodal时无效。Lab直方图JS距离为0..1；轮廓L*差为0..100。深度为单目相对逆深度，非米。除已提供覆盖图对应对象外，其他原始测量未作为本次输入。重复模型元数据、九宫格分布和敏感性诊断已省略，不从省略内容作判断。'
+   r=call(work,prompt,schema,images,out);report=validate(r,rule,frameids,mids);
+   if a.temporal:
+    stage_ids={v['stage_id'] for v in r['stages']};assert r['temporal_analysis'],'Missing temporal analysis'
+    point_ids={v['checkpoint_id'] for v in r['checks']}
+    for t in r['temporal_analysis']:
+     assert t['before_stage_id'] in stage_ids and t['after_stage_id'] in stage_ids
+     assert t['before_evidence_ids'] and t['after_evidence_ids']
+     assert set(t['before_evidence_ids']+t['after_evidence_ids'])<=set(frameids)|set(mids)
+     assert set(t['checkpoint_ids'])<=point_ids
+    report['temporal_analysis_records']=len(r['temporal_analysis'])
+   save(work/'validation.json',report);save(d/sid/'prediction.json',r)
   print('DONE',sid,a.phase,flush=True)
 if __name__=='__main__':main()
