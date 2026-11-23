@@ -1,0 +1,281 @@
+{
+  "sample_id": "R49",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [0, 19.5],
+      "description": "白发、深色衣着、持钓竿的角色；连续画面主要呈现其沿镇内道路移动、到达草坡及转向。",
+      "uncertainty": "不推断任务目标或人物心理。"
+    },
+    {
+      "object_id": "rod",
+      "role": "supporting_element",
+      "time_range": [0, 19.5],
+      "description": "角色携带的钓竿，用于辨认持物状态；未见可确认的抛竿或垂钓交互。",
+      "uncertainty": "细杆在部分缩略帧中不清楚。"
+    },
+    {
+      "object_id": "town-route",
+      "role": "background",
+      "time_range": [0, 13.25],
+      "description": "建筑、石墙、铺装道路、岩体和廊棚共同界定行进通路；远处行人和长椅属于环境，未见其与主体发生必要交互。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "near-rock",
+      "role": "foreground",
+      "time_range": [7, 19.5],
+      "description": "道路和草坡侧面的近处岩体，随视角变化构成侧向边界。",
+      "uncertainty": "角色转向后岩体在画面的左右位置改变。"
+    },
+    {
+      "object_id": "waterside",
+      "role": "background",
+      "time_range": [13.5, 19.5],
+      "description": "草坡下的水渠、石岸、木桥及对岸房屋植被，建立坡地与水边的空间联系。",
+      "uncertainty": "末段转向后部分水边环境退出画面。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [0, 6.5],
+      "necessary_information": "主体从开阔街面沿石墙旁道路前进；需辨认角色、行进方向及墙边可通行区域。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0008", "rgb-0016", "rgb-0020", "rgb-0026"]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [7, 13.25],
+      "necessary_information": "主体经过岩体与建筑之间的通路，再绕向廊棚外侧；需理解道路如何延续及角色与侧面障碍的关系。",
+      "input_evidence_ids": ["rgb-0028", "rgb-0032", "rgb-0040", "rgb-0048", "rgb-0053"]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [13.5, 19.5],
+      "necessary_information": "主体进入草坡，视角逐步俯向水渠与木桥，末段转向建筑一侧；需辨认坡岸、水边及角色所处位置。",
+      "input_evidence_ids": ["rgb-0054", "rgb-0058", "rgb-0060", "rgb-0064", "rgb-0074", "rgb-0078"]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": true,
+      "reason": "QA掩码覆盖可见人物主体，与RGB身份和大致轮廓吻合；仅采纳人物定位及粗略可见区域。钓竿未完整包含，姿态关节点不作精确依据。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": true,
+      "reason": "QA人物区域与4秒RGB匹配，可用于粗略定位及尺度核对；不将bbox顶部当真实头顶，不采用关节点推断视线。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": true,
+      "reason": "QA人物与8秒RGB一致，主体区域基本完整；仅采纳粗略定位和可见尺度，不以关节点验证肢体连接。"
+    },
+    {
+      "measurement_id": "measure-0032-bench",
+      "accepted": true,
+      "reason": "QA区域对应8秒画面右侧长椅，未混入主体；可作环境对象定位，不据此认定长椅是陪体或赋予关系含义。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": true,
+      "reason": "12秒QA覆盖廊棚旁人物，与RGB吻合；支持人物位置及粗略尺度核对，不用色差或深度数值直接判增强。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": true,
+      "reason": "16秒QA对应俯视下的完整可见人物，形体投影变短有RGB支持；仅采纳粗略区域，不把投影变化认作身体尺度崩坏。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": true,
+      "reason": "19.5秒QA覆盖侧身人物，与清晰原帧吻合；细杆不在人物区域内属对象范围差异。深度为空，未采用。所有测量均无完整遮挡参照，不计算遮挡百分比。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["P-B-a", "P-H-a"],
+      "event_ids": ["E1", "E2", "E3"],
+      "uncertainty": "增强依据是角色、通路及水边的前后位置组织，非单纯居中。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-b"],
+      "event_ids": ["E1", "E3"],
+      "uncertainty": "环境展开时角色仍可辨；未证明占比变化本身产生额外效果。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-c"],
+      "event_ids": ["E2", "E3"],
+      "uncertainty": "未见必要身体部分持续被无效遮挡；不提供遮挡比例。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-d"],
+      "event_ids": ["E1", "E3", "E4"],
+      "uncertainty": "白发与深衣支持定位；局部深衣与阴影接近，未造成持续查找，也未证明关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-a"],
+      "event_ids": ["E4"],
+      "uncertainty": "依据RGB而非自动骨架；未见同一身体连接或尺度明显崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-b"],
+      "event_ids": ["E4"],
+      "uncertainty": "人物头部保留充分，未由头顶余量推断情绪。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-c"],
+      "event_ids": ["E4"],
+      "uncertainty": "没有可确认、必须理解的注视对象关系；背向行走和末段侧身不足以认定具体观看行为。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-d"],
+      "event_ids": ["E1", "E2", "E3"],
+      "uncertainty": "路径和坡地移动范围可读；未见迫近、逃离或受阻行动，留足空间本身不作增强。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-e"],
+      "event_ids": ["E4"],
+      "uncertainty": "行走、持物和转向必要部位保留；部分缩略帧细杆不清不等于动作被裁掉。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["S-B-a", "S-H-a"],
+      "event_ids": ["E2", "E3"],
+      "uncertainty": "以实际采样的道路延续、坡岸揭示和建筑回接为依据，不使用单目深度换算距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["S-B-b", "S-H-b"],
+      "event_ids": ["E3"],
+      "uncertainty": "俯向坡地后，角色所在岸坡与下方水渠、对岸被共同组织；不赋予上下位置权力含义。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-c"],
+      "event_ids": ["E2", "E3", "E4"],
+      "uncertainty": "墙、岩体、廊柱与人物边界基本清楚；没有可确认的交叠关系转折。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["T-B-a", "T-H-a"],
+      "event_ids": ["E2", "E3"],
+      "uncertainty": "识别到道路透视、两侧边界及坡岸分层的空间组织；效果沿用已证明的空间揭示，不另行加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["T-B-b"],
+      "event_ids": ["E4"],
+      "uncertainty": "联系表和QA拼图属于证据排版，不能认作原视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [[0, 6.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0008", "rgb-0016", "rgb-0020", "rgb-0026"],
+      "observation": "角色位于画面中下部，白发和深衣可辨；从开阔街面转入石墙旁道路。身体及脚部保留，前方铺装通路可见。",
+      "effect": "建立稳定观看锚点，角色与道路相对尺度适合辨认移动及周边环境；此处单独不足以证明增强。",
+      "exceptions_checked": "远处行人未持续抢占重点；建筑占画面较大不等于主体过小。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [[7, 13.25]],
+      "input_evidence_ids": ["rgb-0028", "rgb-0032", "rgb-0040", "rgb-0048", "rgb-0050", "rgb-0053"],
+      "observation": "7至8秒岩体与墙体界定通路，长椅在侧；10至12秒建筑廊棚转到右侧、岩体留在左侧，角色保持中下部，前方出口逐渐展开。",
+      "effect": "左右边界和铺装透视共同把注意从角色引向出口；前后位置变化说明道路绕过建筑与岩体继续延伸，形成超出单帧可辨的路线揭示。",
+      "exceptions_checked": "侧面大岩体未覆盖必要身体或封死可见通路；不把狭窄道路解释为受困。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [[13.5, 19.5]],
+      "input_evidence_ids": ["rgb-0054", "rgb-0058", "rgb-0060", "rgb-0064", "rgb-0074", "rgb-0076", "rgb-0078"],
+      "observation": "13.5秒角色进入岩体旁草坡；14.5至16秒视角俯向坡下，水渠、石岸、木桥和对岸陆续进入可见范围，角色保留在近处岸坡。18.5至19.5秒视角转回建筑侧，廊棚与草坡再次同框。",
+      "effect": "近处角色及岩体提供锚点，坡面把观看引向下方水渠，横向石岸和木桥补足两岸联系；末段建筑回到画面，进一步连接先前道路与水边草坡。增强在于逐步建立同一空间的地形联系，而非仅有前中后景。",
+      "exceptions_checked": "角色投影变短与俯视变化一致；未见坠落、垂钓、无法接近等行为，不推断这些情节。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [[0, 0], [5, 5], [10, 10], [15, 15], [19.5, 19.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0020", "rgb-0040", "rgb-0060", "rgb-0078"],
+      "observation": "清晰原帧及两张放大参考中，头、躯干、四肢连续，身体位于画框内；行走和末段侧向姿态可辨，手持钓竿与人物归属清楚。原视频画面未见独立子视区。",
+      "effect": "支持人物结构、头部、行走和持物呈现的基础成立；没有以局部裁切强调手势或交互的额外证据。",
+      "exceptions_checked": "不把自动关节点重合认作身体损坏；不把证据拼图分界认作视频内分界；不由身体朝向编造注视对象。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": ["rgb-0028", "rgb-0032"],
+      "after_evidence_ids": ["rgb-0040", "rgb-0048", "rgb-0053"],
+      "visible_change": "岩体与墙之间的道路转为岩体与廊棚之间的出口，前方环境逐渐打开。",
+      "spatial_or_attention_effect": "角色持续提供定位参照，两侧边界和道路透视引导观看沿通路向外延伸。",
+      "expressive_effect": "有效揭示绕行路径及建筑、岩体之间的联系，对应E2。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0054", "rgb-0058"],
+      "after_evidence_ids": ["rgb-0060", "rgb-0064"],
+      "visible_change": "由草坡近处逐渐显露坡下水渠、石岸和木桥，画面更俯向地面。",
+      "spatial_or_attention_effect": "近处角色、坡面、水渠和对岸形成可追踪的地形层次，木桥明确两岸连接位置。",
+      "expressive_effect": "把道路出口后的所在位置深化为水边岸坡，超出仅展示人物行走，对应E3。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0074"],
+      "after_evidence_ids": ["rgb-0076", "rgb-0078"],
+      "visible_change": "水边视角转向建筑侧，先前廊棚和草坡重新同框。",
+      "spatial_or_attention_effect": "将水边观察与此前经过的建筑位置回接，角色保持可定位。",
+      "expressive_effect": "补足道路、建筑和草坡的连续空间联系；不推断心理变化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d", "O-H-d", "P-H-a", "S-H-a", "S-H-b"],
+    "decisive_event_ids": ["E2", "E3"],
+    "reason": "适用基础均成立，未确认必要信息损失或形体结构破坏。道路两侧边界先引导角色绕出建筑，随后以角色和岩体为参照逐步揭示坡下水渠、桥与对岸，末段又回接建筑；这些前后安排有效深化同一环境的空间联系，满足有效视觉组织增强。",
+    "adjacent_grade_explanation": "高于中档的依据是可核查的路线展开、地形揭示与空间回接，不是居中、人物清晰或手法数量。未见足以判低的持续查找、无效遮挡、裁切干扰或空间误读。",
+    "uncertainties": [
+      "只评价给定采样画面，未声称看过采样间未提供的时刻。",
+      "本轮未重跑CV；接受的分割仅作粗略定位核对，未使用自动骨架、色差或相对深度决定档位，未计算遮挡百分比。",
+      "未提供可核验的Rubric哈希、输入图像哈希及运行用量，不补造运行记录。"
+    ]
+  }
+}

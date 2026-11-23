@@ -1,0 +1,113 @@
+{
+  "sample_id": "R05",
+  "roles": [
+    {"object_id": "env-track", "role": "subject", "time_range": [0, 1.75], "description": "开场主要呈现沙漠赛车场整体：环形路面、内场设施及观众席。", "uncertainty": ""},
+    {"object_id": "v1", "role": "subject", "time_range": [2, 19.5], "description": "先以外部近景展示、随后由后方跟随的越野车；后段黑色车架、浅色侧翼及红色头盔可辅助对应。", "uncertainty": "跨切镜身份由外观和连续呈现支持，不据缓存对象名确认。"},
+    {"object_id": "pack", "role": "supporting_element", "time_range": [4.5, 19.5], "description": "前方及两侧竞赛车辆；个别车辆接近、并行或驶至前方，形成比赛位置关系。", "uncertainty": "不把各时刻缓存v2视为同一辆对手车。"},
+    {"object_id": "h1", "role": "supporting_element", "time_range": [2, 19.5], "description": "车内戴头盔驾驶员；承担驾驶关系，主要观看对象仍是车辆及赛道。", "uncertainty": "后段身体多数被车辆结构正常遮住，无可靠眼神线索。"},
+    {"object_id": "env-near", "role": "foreground", "time_range": [0, 1.75], "description": "近处看台、栏杆和观众，构成观看赛车场的前景。", "uncertainty": ""},
+    {"object_id": "env-far", "role": "background", "time_range": [0, 19.5], "description": "赛道护墙、围网、观众、设施、灯杆及远处台地山体。缓存s1/s2只是混合环境区域。", "uncertainty": "不将混合区域当作单一实体或完整背景掩码。"}
+  ],
+  "stages": [
+    {"stage_id": "S1", "time_range": [0, 1.75], "necessary_information": "赛车场全景建立；需辨认赛道走向、内场与看台的相对关系，尚无唯一车辆主体。", "input_evidence_ids": ["rgb-0000", "rgb-0002", "rgb-0004", "rgb-0006", "rgb-0007", "Image #3"]},
+    {"stage_id": "S2", "time_range": [2, 4], "necessary_information": "车辆外部展示逐渐接近驾驶舱；需保留车辆形态、驾驶员和所在路面，局部裁切按近景判断。", "input_evidence_ids": ["rgb-0008", "rgb-0010", "rgb-0012", "rgb-0014", "rgb-0016"]},
+    {"stage_id": "S3", "time_range": [4.5, 14.75], "necessary_information": "后方跟车视角呈现车队行驶；需辨认主车、前方车辆、赛道弯向及两侧边界。", "input_evidence_ids": ["rgb-0018", "rgb-0020", "rgb-0032", "rgb-0040", "rgb-0048", "rgb-0059", "Image #4"]},
+    {"stage_id": "S4", "time_range": [15, 19.5], "necessary_information": "邻车近距离并行，随后车距和前后位置改变；需辨认主车与邻车的独立轮廓、相对位置及前方通路。", "input_evidence_ids": ["rgb-0060", "rgb-0061", "rgb-0062", "rgb-0063", "rgb-0064", "rgb-0066", "rgb-0072", "rgb-0074", "rgb-0076", "rgb-0078", "Image #5"]}
+  ],
+  "segmentation_review": [
+    {"measurement_id": "measure-0000-s1", "accepted": false, "reason": "掩码混合看台、观众、近地面及零散远处区域，不能代表单一主体或完整赛道路面；派生值不采用。"},
+    {"measurement_id": "measure-0000-s2", "accepted": false, "reason": "混合天空与山体，不能以统一对象解释面积、颜色或深度；派生值不采用。"},
+    {"measurement_id": "measure-0016-v1", "accepted": false, "reason": "车辆主要只被提取为车架等碎片，缺少车身与轮部；框和区域值不足以代表整车。"},
+    {"measurement_id": "measure-0016-h1", "accepted": false, "reason": "掩码未可靠覆盖驾驶员，混入座舱区域，不能据此判断人体面积、头部或裁切。"},
+    {"measurement_id": "measure-0016-s1", "accepted": false, "reason": "路面标签混入其他区域且边界破碎，派生值不采用。"},
+    {"measurement_id": "measure-0016-s2", "accepted": false, "reason": "上方混合天空、山体和设施，不是完整一致对象；派生值不采用。"},
+    {"measurement_id": "measure-0032-v1", "accepted": true, "reason": "QA中主车区域与RGB大体对应，可作位置和粗略尺度辅助；不视为完整无漏分轮廓，不推算遮挡率。"},
+    {"measurement_id": "measure-0032-v2", "accepted": false, "reason": "横跨多辆远车及其间路面，不是独立车辆实例；全部派生值弃用。"},
+    {"measurement_id": "measure-0032-s1", "accepted": false, "reason": "赛道区域含明显漏分和杂散边界，不使用其面积及颜色、深度派生值。"},
+    {"measurement_id": "measure-0032-s2", "accepted": false, "reason": "混合远景和天空，不能作为单一背景对象测量。"},
+    {"measurement_id": "measure-0048-v1", "accepted": false, "reason": "QA漏掉右轮等明显车体区域，框偏窄；不据其面积、边缘距离或区分度判断主车。"},
+    {"measurement_id": "measure-0048-v2", "accepted": false, "reason": "无有效掩码；RGB可见邻车，属于缺测，不能当作对象不存在。"},
+    {"measurement_id": "measure-0048-s1", "accepted": false, "reason": "路面混合区域缺乏可靠完整边界，派生值不采用。"},
+    {"measurement_id": "measure-0048-s2", "accepted": false, "reason": "天空、山体、看台和设施混合，派生值不采用。"},
+    {"measurement_id": "measure-0064-v1", "accepted": false, "reason": "与v2几乎完全重复覆盖同一主车，实例归属不可靠；拒绝据此形成两车关系测量。"},
+    {"measurement_id": "measure-0064-v2", "accepted": false, "reason": "重复标注主车而非独立邻车，派生值不采用。"},
+    {"measurement_id": "measure-0064-s1", "accepted": false, "reason": "地面区域混杂且漏分，不能作为完整路面面积或深度依据。"},
+    {"measurement_id": "measure-0064-s2", "accepted": false, "reason": "多个远景类别合并，不能解释为单一对象测量。"},
+    {"measurement_id": "measure-0078-v1", "accepted": false, "reason": "QA漏掉主车浅色侧翼和部分轮部，框未包住必要车体；面积与轮廓指标不采用。"},
+    {"measurement_id": "measure-0078-v2", "accepted": true, "reason": "左侧邻车实例与RGB对应，可辅助确认位置和粗略尺度；局部漏分使精确面积及遮挡判断不可靠。"},
+    {"measurement_id": "measure-0078-s1", "accepted": false, "reason": "路面标签存在明显不规则漏分，派生值不采用。"},
+    {"measurement_id": "measure-0078-s2", "accepted": false, "reason": "混合天空、山体和设施，不作为独立实体的面积或对比依据。"}
+  ],
+  "indicators": [
+    {"indicator_id": "subject-position", "baseline": "met", "enhancement": "met", "condition_ids": ["P-B-a", "P-H-a"], "event_ids": ["E1", "E2", "E3"], "uncertainty": ""},
+    {"indicator_id": "subject-area", "baseline": "met", "enhancement": "met", "condition_ids": ["P-B-b", "P-H-b"], "event_ids": ["E1", "E2"], "uncertainty": "尺度判断来自RGB景别，不使用拒绝的掩码面积。"},
+    {"indicator_id": "subject-occlusion", "baseline": "met", "enhancement": "not_met", "condition_ids": ["P-B-c"], "event_ids": ["E2", "E3"], "uncertainty": "无完整主体区域，不提供遮挡百分比；未证明遮显表达额外关系。"},
+    {"indicator_id": "subject-separation", "baseline": "met", "enhancement": "not_met", "condition_ids": ["P-B-d"], "event_ids": ["E2", "E3"], "uncertainty": "暗车与土路色调接近，但车架、车轮轮廓仍可跟随；未证明色彩或运动对照增强。"},
+    {"indicator_id": "shot-crop-joint", "baseline": "met", "enhancement": "not_met", "condition_ids": ["C-B-a"], "event_ids": ["E4"], "uncertainty": "只检查可见驾驶员和观众；不将车辆零件套用人体关节要求。"},
+    {"indicator_id": "shot-crop-headroom", "baseline": "met", "enhancement": "not_met", "condition_ids": ["C-B-b"], "event_ids": ["E4"], "uncertainty": "人物非后段主要呈现对象，车架顶部不充当人物头顶。"},
+    {"indicator_id": "shot-crop-look-room", "baseline": "not_applicable", "enhancement": "not_applicable", "condition_ids": ["C-B-c"], "event_ids": ["E4"], "uncertainty": "头盔与后脑视角不能确认眼神，也无必须理解的独立观看行为。"},
+    {"indicator_id": "shot-crop-lead-room", "baseline": "met", "enhancement": "not_met", "condition_ids": ["C-B-d"], "event_ids": ["E2", "E3"], "uncertainty": "路径与车队关系清楚；未证明前方空间压缩与实际受阻形成进一步效果。"},
+    {"indicator_id": "shot-crop-action-crop", "baseline": "met", "enhancement": "not_met", "condition_ids": ["C-B-e"], "event_ids": ["E2", "E3", "E4"], "uncertainty": "车辆行驶和相邻位置变化得到保留；边缘邻车局部出框未使必要动作丢失。"},
+    {"indicator_id": "spatial-depth", "baseline": "met", "enhancement": "met", "condition_ids": ["S-B-a", "S-H-a"], "event_ids": ["E1", "E2", "E3"], "uncertainty": "依据透视、车距和护墙联系，不将单目深度解释为实距。"},
+    {"indicator_id": "spatial-vertical", "baseline": "met", "enhancement": "not_met", "condition_ids": ["S-B-b"], "event_ids": ["E1", "E2"], "uncertainty": "近车、路面、远景上下安排清楚；未证明上下安排本身进一步强化规模或处境。"},
+    {"indicator_id": "spatial-overlap", "baseline": "met", "enhancement": "not_met", "condition_ids": ["S-B-c"], "event_ids": ["E3"], "uncertainty": "近车交叠可解释为并行透视；不足以确认接触、碰撞或额外依附关系。"},
+    {"indicator_id": "technique-single-frame", "baseline": "met", "enhancement": "met", "condition_ids": ["T-B-a", "T-H-a"], "event_ids": ["E1", "E2", "E3"], "uncertainty": "识别到赛道边界引导与车辆纵深排列；只解释既有空间效果，不独立加分。"},
+    {"indicator_id": "technique-multi-frame", "baseline": "not_applicable", "enhancement": "not_applicable", "condition_ids": ["T-B-b"], "event_ids": ["E5"], "uncertainty": "输入联系表及参考帧并排属于证据排版，不能当成视频分屏。"}
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [[0, 1.75], [2, 4], [4.5, 5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0007", "rgb-0008", "rgb-0014", "rgb-0016", "rgb-0018", "rgb-0020", "Image #3"],
+      "observation": "开场看台斜线与环形赛道围住内场设施，远山提供场地外缘；随后车辆近景把观看对象转入赛道内，5秒后方主车、前车、护墙和门架共同落在可读的行驶通路上。",
+      "effect": "先交代场地整体，再把观众带入车队内部；赛道边界与设施参照将大尺度环境和车辆行动连接起来，超出单纯让车变大的展示。对应P-H-b、S-H-a及T-H-a。",
+      "exceptions_checked": "不声称主车在开场已可定位，也不声称精确还原完整赛道地图；增强依据是场地到行驶空间的信息递进。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [[4.5, 14.75]],
+      "input_evidence_ids": ["rgb-0018", "rgb-0020", "rgb-0032", "rgb-0040", "rgb-0048", "rgb-0054", "rgb-0059", "Image #4"],
+      "observation": "主车保持在画面下部附近，前车以不同距离散布在上方路面，护墙和弯道边界向车队延伸；10秒清晰帧同时保留左右邻车、前车和门架。",
+      "effect": "稳定的近处主车构成跟随参照，观看可沿前车与路面透视追踪到前方弯道；同时交代自己的位置、邻车和后续道路，明确组织比赛空间与注意路径。支持P-H-a、S-H-a；前方余量本身仅满足C-B-d。",
+      "exceptions_checked": "主车位置有随弯道变化，未持续丢失；不把屏幕位移当成独立世界运动，不由色调接近判背景混杂。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [[15, 16], [16.5, 17.5], [18, 19.5]],
+      "input_evidence_ids": ["rgb-0060", "rgb-0061", "rgb-0062", "rgb-0063", "rgb-0064", "rgb-0066", "rgb-0070", "rgb-0072", "rgb-0074", "rgb-0076", "rgb-0078", "Image #5"],
+      "observation": "15秒左侧橙黑车靠近主车，车架局部交叠；16.5至17.5秒前方车列沿道路展开；18至19.5秒左邻车再次近距离出现，清晰末帧仍能区分两车轮廓、左右间隔及前车。",
+      "effect": "主车持续作为近景参照，邻车从侧方接近到前后错列的变化直接呈现车队关系；短时拥挤未造成主体归属或通路误读。为P-H-a的动态位置组织提供上下文，而不另行宣称碰撞或受困。",
+      "exceptions_checked": "排除正常并行、透视遮挡及邻车局部进出画；没有可靠接触证据，不把交叠解释为碰撞或形体连接崩坏。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [[0, 0], [2, 4], [10, 10], [19.5, 19.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0008", "rgb-0010", "rgb-0014", "rgb-0016", "rgb-0040", "rgb-0078", "Image #3", "Image #4", "Image #5"],
+      "observation": "开场人物作为看台群体分布；车辆近景保留头盔及座舱联系，后方视角中驾驶员身体被座椅和车架遮住，头盔仍在座舱内。未见需连接为同一身体的独立视区或明显尺度断裂。",
+      "effect": "人物呈现符合环境群体和驾驶关系所需；身体不完整属于远景、局部取景或正常车体遮挡，不影响车辆行驶这一必要动作。",
+      "exceptions_checked": "不要求驾驶员全身入画，不把车架边界当成人体裁切；眼神方向证据不足且无独立观看任务，视线空间不适用。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [[0, 19.5]],
+      "input_evidence_ids": ["Image #1", "Image #2", "Image #3", "Image #4", "Image #5"],
+      "observation": "提供的是有序单视区游戏画面及其证据联系表，未见视频本身同时并置多个视区。",
+      "effect": "多画面组织不适用；分割QA仅用于测量审查，彩色覆盖和标框不参与审美评价。",
+      "exceptions_checked": "区分取样排版、参考图与实际视频构图。"
+    }
+  ],
+  "temporal_analysis": [
+    {"before_evidence_ids": ["rgb-0000", "rgb-0007"], "after_evidence_ids": ["rgb-0008", "rgb-0016", "rgb-0020"], "visible_change": "场地全景转为车辆近景，再进入后方跟车视角。", "spatial_or_attention_effect": "环形道路与内场先建立环境，随后护墙、前车和路面把观看带入同类赛道空间，观看重点从场地转向车辆行动。", "expressive_effect": "支持E1的空间递进与主体环境联系，不推断心理。"},
+    {"before_evidence_ids": ["rgb-0040", "rgb-0059"], "after_evidence_ids": ["rgb-0060", "rgb-0064", "rgb-0066"], "visible_change": "前方分散车队转为侧方邻车贴近，随后前车纵向排列更明显。", "spatial_or_attention_effect": "稳定主车参照使侧方间隔及前后关系变化直接可见；暂时交叠没有抹去车体归属。", "expressive_effect": "强化比赛中的相对位置变化；不证明碰撞或无路可走。"},
+    {"before_evidence_ids": ["rgb-0072", "rgb-0074"], "after_evidence_ids": ["rgb-0076", "rgb-0078", "Image #5"], "visible_change": "左侧近车的相对位置和间隔变化，末帧与主车分开，前方仍有车辆和道路。", "spatial_or_attention_effect": "近车、前车和赛道边界共同保持可追踪的前后左右关系。", "expressive_effect": "补强E3的位置组织；不由单帧间隔推断超车完成或赛事结果。"}
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d", "O-H-d", "P-H-a", "P-H-b", "S-H-a", "T-H-a"],
+    "decisive_event_ids": ["E1", "E2", "E3"],
+    "reason": "依据game_video_composition v2.3.0-candidate，适用基础均成立。全景至跟车的组织将赛车场环境逐步联系到车辆行动；后段以稳定近车为参照，由护墙、路面和不同距离的竞赛车辆共同引导观看，并使并行与前后位置变化可直接追踪。该空间揭示和注意引导超过基本可辨，满足O-H-d。",
+    "adjacent_grade_explanation": "不是仅凭居中、纵深或普通切镜判高：增强来自场地—车辆—前方通路的信息递进，以及主车参照下邻车位置变化的持续可读。未见达到低档的必要信息损失；若只有车可辨而无这些前后组织证据，才应判中。",
+    "uncertainties": ["仅评价所给采样，未声称观察采样间未提供画面。", "缓存未重跑；拒绝项全部派生值不参与判档，接受项仅作粗略位置辅助。", "没有可靠遮挡百分比、实距或光流，不据此推断；也不确认碰撞、超车结果或驾驶员心理。"]
+  }
+}

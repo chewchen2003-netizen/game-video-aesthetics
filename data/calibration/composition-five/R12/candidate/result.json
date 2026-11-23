@@ -1,0 +1,275 @@
+{
+  "sample_id": "R12",
+  "roles": [
+    {
+      "object_id": "O1",
+      "role": "subject",
+      "time_range": [0, 17.5],
+      "description": "箱上带喇叭口、底座和转柄的机械装置；按RGB识别，早晚缓存名称对应同一对象。",
+      "uncertainty": "具体器物名称不影响构图判断。4—5.5秒主体暂转为环境。"
+    },
+    {
+      "object_id": "O2",
+      "role": "supporting_element",
+      "time_range": [0, 18],
+      "description": "承托装置的木箱、绳索与箱面纸张，提供装置的落点和尺度参照。",
+      "uncertainty": "纸张文字不可读，不作为必要信息。"
+    },
+    {
+      "object_id": "O3",
+      "role": "subject",
+      "time_range": [3, 19.5],
+      "description": "镜头转离装置时呈现的沙袋、瓦砾通路、火堆及废墟环境；主要承担3—5.5秒和18—19.5秒的观看重点。",
+      "uncertainty": "其余时段作为装置所在环境，不把整片区域视作单一实体。"
+    },
+    {
+      "object_id": "O4",
+      "role": "background",
+      "time_range": [0, 19.5],
+      "description": "雾中残墙、铁丝网、枯枝及远处废墟；沙袋位于装置后方，通路延伸其间。",
+      "uncertainty": "雾遮蔽远处细节，但近处空间参照可辨。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [0, 2.5],
+      "necessary_information": "建立箱上装置及其承托关系；辨认喇叭口、底座、转柄和后方沙袋。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0002", "rgb-0008", "rgb-0010"]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [3, 5.5],
+      "necessary_information": "镜头离开装置，展示通路、沙袋、残墙和火堆，再使装置在左侧重现；理解物件所在空间。",
+      "input_evidence_ids": ["rgb-0012", "rgb-0016", "rgb-0019", "rgb-0020", "rgb-0022"]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [6, 17.5],
+      "necessary_information": "返回装置近景，保留转柄不同朝向及其与底座、箱面的连接；无需推断操作者或用途。",
+      "input_evidence_ids": ["rgb-0024", "rgb-0032", "rgb-0036", "rgb-0040", "rgb-0048", "rgb-0060", "rgb-0064", "rgb-0070"]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [18, 19.5],
+      "necessary_information": "装置正常离框后，沿沙袋与瓦砾转向火堆、铁丝网和残墙，完成环境的再次展开。",
+      "input_evidence_ids": ["rgb-0072", "rgb-0074", "rgb-0076", "rgb-0077", "rgb-0078"]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-gramophone_early",
+      "accepted": true,
+      "reason": "QA掩码覆盖喇叭口、支座和转柄，边界与0秒RGB基本一致；位置、可见面积及区分度仅作辅助，不从相对逆深度推导距离。"
+    },
+    {
+      "measurement_id": "measure-0016-trench_scene",
+      "accepted": false,
+      "reason": "掩码拼合通路、瓦砾及后方结构，边界并非可靠主体区域；拒绝其面积、中心、色差与深度等全部派生数值。环境直接按RGB判断。"
+    },
+    {
+      "measurement_id": "measure-0032-gramophone_late",
+      "accepted": true,
+      "reason": "8秒QA包含装置及向右伸出的转柄，未明显吞入箱面；可辅助核对位置和可见轮廓。"
+    },
+    {
+      "measurement_id": "measure-0048-gramophone_late",
+      "accepted": true,
+      "reason": "12秒掩码随转柄向下的形态覆盖装置，箱体未被大范围并入；仅辅助验证可见区域，不推算遮挡百分比。"
+    },
+    {
+      "measurement_id": "measure-0064-gramophone_late",
+      "accepted": true,
+      "reason": "16秒QA轮廓与喇叭口、底座及回转后的柄部基本相符；无完整不可见区域，不能据此计算遮挡。"
+    },
+    {
+      "measurement_id": "measure-0078-campfire",
+      "accepted": false,
+      "reason": "掩码主要混入大片地面瓦砾和木料，未可靠限定火堆；拒绝全部派生数值，以19.5秒原帧判断火堆位置与环境关系。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["P-B-a", "P-H-a"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "主体离开中心与镜头转向环境同步，不属于持续定位失败。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["P-B-b", "P-H-b"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "增强依据近景与环境展开的关联，不以掩码面积变化直接证明效果。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-c"],
+      "event_ids": ["E1", "E3", "E4"],
+      "uncertainty": "装置自身部件的重叠和正常离框未造成必要信息损失；未见进一步阻隔表达。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-d"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "暗色装置与浅雾、火光与冷灰废墟便于辨认，但色调差异本身不证明额外含义。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-a"],
+      "event_ids": ["E1", "E3"],
+      "uncertainty": "无人物；机械连接不冒充人体连接检查。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-b"],
+      "event_ids": ["E1", "E4"],
+      "uncertainty": "无人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-c"],
+      "event_ids": ["E1", "E4"],
+      "uncertainty": "无人物观看行为；不把镜头朝向或喇叭口朝向当作视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-d"],
+      "event_ids": ["E2", "E4"],
+      "uncertainty": "没有可确认的主体沿路径行进；镜头位移不等于主体世界运动。转柄动作另记动作裁切。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-e"],
+      "event_ids": ["E3"],
+      "uncertainty": "转柄与连接部位得到呈现，但未见局部取舍强调额外交互或反应。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["S-B-a", "S-H-a"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "依据箱面、沙袋、通路与火堆的连续参照，不使用单目深度作米制空间。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-b"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "下部承托物与上部环境的分布清楚；未证明上下比例进一步强化规模或处境。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-c"],
+      "event_ids": ["E1", "E3", "E4"],
+      "uncertainty": "装置、箱面、绳索和沙袋归属可辨；未见交叠变化承担独立关系表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": ["T-B-a", "T-H-a"],
+      "event_ids": ["E2", "E4"],
+      "uncertainty": "识别为沙袋弧线、箱面边缘及通路共同形成的纵深引导；仅解释已记录的空间揭示效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["T-B-b"],
+      "event_ids": [],
+      "uncertainty": "原视频未见分屏或画中画；输入联系表与参考帧排版不属于视频构图。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [[0, 2.5], [6.5, 17.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0010", "rgb-0026", "rgb-0040", "rgb-0060", "rgb-0070"],
+      "observation": "O1的暗色喇叭口、支座和柄部位于近处箱面上，后方沙袋弧线再接浅雾中的瓦砾；装置主要轮廓完整，纸张和绳索未持续争夺重点。",
+      "effect": "装置易定位，承托和前后关系清楚，为后续环境展开提供稳定参照。",
+      "exceptions_checked": "无人物；火光较亮但未使装置持续难辨。雾降低远处细节，不妨碍当前物件关系。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [[2.5, 6.5]],
+      "input_evidence_ids": ["rgb-0010", "rgb-0012", "rgb-0016", "rgb-0019", "rgb-0020", "rgb-0022", "rgb-0024", "rgb-0026"],
+      "observation": "装置由主要位置退向左侧，4秒附近通路、残墙及沙袋展开；5秒画面中装置位于左下箱上，火堆在其后，通路向右侧雾中延伸；随后装置重新增大。",
+      "effect": "箱体、沙袋和火堆在前后取景中充当对应地标，把孤立的物件近景补成可追踪的环境关系；观看重点随空间展开再返回装置，超出单纯把物件拍清楚。",
+      "exceptions_checked": "装置暂时出框与内容转向环境一致，不是无效遮挡；不据此推断受困、孤独或任务目标。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [[8, 10], [12, 16]],
+      "input_evidence_ids": ["rgb-0032", "rgb-0036", "rgb-0038", "rgb-0040", "rgb-0048", "rgb-0054", "rgb-0060", "rgb-0064"],
+      "observation": "转柄在给定采样中呈向右、向上、向下等不同朝向，主体底座及其箱面落点持续可见；10秒清晰原帧也保留了柄部与支座。",
+      "effect": "柄部变化及机械连接可理解，未因动作裁切丢失必要部位；未见额外接触对象或反应支持增强。",
+      "exceptions_checked": "柄部与机身的自身重叠属于正常角度变化；无依据补造手部、操作者或精确运动轨迹。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [[17.5, 19.5]],
+      "input_evidence_ids": ["rgb-0070", "rgb-0072", "rgb-0074", "rgb-0076", "rgb-0077", "rgb-0078"],
+      "observation": "17.5秒仍以装置和箱面为主；18秒箱体退到画面边缘，18.5—19秒展开沙袋与废墟，19.25—19.5秒转向火堆。19.5秒原帧中左侧沙袋、中央瓦砾、后方火堆与右侧铁丝网残墙形成相连空间。",
+      "effect": "沿近处承托物到通路、再到火堆的顺序展开环境；与5秒出现的火堆及沙袋呼应，使装置所在位置与周围废墟的联系得到深化。",
+      "exceptions_checked": "正常转向与离框，不要求装置全程留画；火堆和地面虽受雾影响，仍有足够轮廓和光色定位。未将通路解释为人物实际行进。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": ["rgb-0010"],
+      "after_evidence_ids": ["rgb-0016", "rgb-0020", "rgb-0026"],
+      "visible_change": "装置近景转为环境展开，5秒装置与后方火堆同处画内，之后返回装置。",
+      "spatial_or_attention_effect": "凭箱体、沙袋和火堆建立物件与周围空间的对应，观看重点有可追踪的转移。",
+      "expressive_effect": "支持P-H-a、P-H-b、S-H-a：前后取景共同揭示环境联系，不只是尺度改变。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0032"],
+      "after_evidence_ids": ["rgb-0040", "rgb-0048", "rgb-0064"],
+      "visible_change": "柄部朝向变化，底座和箱面参照保持可辨。",
+      "spatial_or_attention_effect": "动作部位仍在有效视区，未发生关键裁切。",
+      "expressive_effect": "仅证明基本动作呈现，不据此推断额外关系。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0070", "rgb-0020"],
+      "after_evidence_ids": ["rgb-0074", "rgb-0077", "rgb-0078"],
+      "visible_change": "装置退出后，沙袋和瓦砾通路展开，火堆重新成为主要观看对象。",
+      "spatial_or_attention_effect": "近处物件区域与先前出现的火堆区域通过共同地标重新连接。",
+      "expressive_effect": "支持S-H-a与O-H-d的空间揭示；不附加心理或情节解释。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d", "P-H-a", "P-H-b", "S-H-a", "O-H-d"],
+    "decisive_event_ids": ["E2", "E4"],
+    "reason": "适用基础条件成立：装置、转柄及环境关系可读，正常转向和离框未造成必要信息损失。两次从装置近景展开环境，并以箱体、沙袋、通路和火堆建立前后对应，明确深化了物件所在空间的理解，达到有效视觉组织增强。",
+    "adjacent_grade_explanation": "高于中档的依据是可核查的空间揭示与注意转移，不是居中、色差或单纯远近变化。未见支持低档的持续竞争、无效遮挡、关键裁切或空间混乱。",
+    "uncertainties": [
+      "仅评实际提供的采样，未声称观察采样之间的连续运动。",
+      "环境与火堆分割不可靠，已拒绝其全部派生数值；不影响RGB所支持的空间判断。",
+      "无可靠遮挡百分比、米制深度或完整剧情，不作相关推断。"
+    ]
+  }
+}

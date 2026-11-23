@@ -1,0 +1,9 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "transport": "Codex CLI, local authenticated session",
+  "actual_model": "see raw events; not independently certified",
+  "start_epoch": 1795445932.852204,
+  "elapsed_seconds": 94.9409339427948,
+  "returncode": 0,
+  "human_answers_used": false
+}

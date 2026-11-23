@@ -1,0 +1,338 @@
+{
+  "sample_id": "R01",
+  "roles": [
+    {
+      "object_id": "player",
+      "role": "subject",
+      "time_range": [0, 19.5],
+      "description": "背向镜头、背包并持长形装备的人物；连续画面的主要跟随对象。",
+      "uncertainty": "不推断任务、身份或心理。"
+    },
+    {
+      "object_id": "animal",
+      "role": "supporting_element",
+      "time_range": [11, 17.5],
+      "description": "人物前方及左侧出现的犬形动物，与人物共享行进空间。",
+      "uncertainty": "物种及与人物的关系未确认；不据此认定追逐、攻击或陪伴。"
+    },
+    {
+      "object_id": "near_foliage",
+      "role": "foreground",
+      "time_range": [0, 2.5],
+      "description": "靠近镜头的枝叶，过渡阶段掠过画面。",
+      "uncertainty": "不能将全部上半幅树林归为近景枝叶。"
+    },
+    {
+      "object_id": "clearing",
+      "role": "background",
+      "time_range": [0, 19.5],
+      "description": "主体前方的草地、开阔砾石地及散布石块，提供行进空间参照。",
+      "uncertainty": "地面延伸到主体脚下及镜头近处，并非全部属于主体后方。"
+    },
+    {
+      "object_id": "forest",
+      "role": "background",
+      "time_range": [0, 19.5],
+      "description": "白色树干、黄绿色树冠与深绿针叶树构成的林缘和远处坡地。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [0, 2.5],
+      "necessary_information": "人物从枝叶附近向开阔地移动；需辨认人物姿态、前方地面以及枝叶与远林的区别。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0004", "rgb-0006", "rgb-0007", "rgb-0008", "rgb-0009", "rgb-0010"]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [3, 10.5],
+      "necessary_information": "人物在开阔砾石地持续前行；需保留人物、前方地面、石块与林缘的空间联系。",
+      "input_evidence_ids": ["rgb-0012", "rgb-0016", "rgb-0020", "rgb-0032", "rgb-0040", "rgb-0042"]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [11, 19.5],
+      "necessary_information": "人物继续接近林缘，犬形动物阶段性出现在前方和左侧；需辨认双方位置及通行空间，不补充未呈现的交互。",
+      "input_evidence_ids": ["rgb-0044", "rgb-0048", "rgb-0056", "rgb-0060", "rgb-0064", "rgb-0070", "rgb-0078"]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-player",
+      "accepted": true,
+      "reason": "掩码大体覆盖可见人物及背包，框触底符合原帧裁切。仅作粗略位置和范围辅助；关节点、色差及深度数值未独立验证，不参与判档。"
+    },
+    {
+      "measurement_id": "measure-0000-near_foliage",
+      "accepted": false,
+      "reason": "掩码混入大面积远林，与forest高度重复，无法可靠代表近景枝叶；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0000-forest",
+      "accepted": false,
+      "reason": "掩码混合近处枝叶与远林，不能支撑独立背景区域及深度判断；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-player",
+      "accepted": true,
+      "reason": "可见人物与背包覆盖基本完整，位置及触底范围符合RGB；仅采用粗略范围，不以色差或单目深度证明表达。"
+    },
+    {
+      "measurement_id": "measure-0016-clearing",
+      "accepted": true,
+      "reason": "主体前方开阔地的大体区域正确；石块及边界存在粗化，仅作空间区域辅助，不作精确面积或深度依据。"
+    },
+    {
+      "measurement_id": "measure-0016-forest",
+      "accepted": true,
+      "reason": "林带位置与RGB大致一致；包含树间空隙，仅采用区域分布，不采用精确面积、色差或深度推论。"
+    },
+    {
+      "measurement_id": "measure-0032-player",
+      "accepted": true,
+      "reason": "人物及背包可见区域基本覆盖，框与RGB一致；仅作粗略位置和范围辅助。"
+    },
+    {
+      "measurement_id": "measure-0032-clearing",
+      "accepted": true,
+      "reason": "开阔地范围基本对应RGB，局部石块和边缘不精确；仅支持粗略空间分区。"
+    },
+    {
+      "measurement_id": "measure-0032-forest",
+      "accepted": true,
+      "reason": "林带范围基本正确；不将粗分区面积当精确林木面积，不采用其深度数值判档。"
+    },
+    {
+      "measurement_id": "measure-0048-player",
+      "accepted": false,
+      "reason": "背包和下部可见身体明显漏分，框止于画内而原人物延伸至画底；不是实际遮挡或缩小，全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-clearing",
+      "accepted": true,
+      "reason": "地面分区大体正确，仅用于前方空间辨认；不采用精确面积及边界统计。"
+    },
+    {
+      "measurement_id": "measure-0048-forest",
+      "accepted": true,
+      "reason": "林缘大体对应RGB；仅采用粗略区域位置，不作尺度或深度测量依据。"
+    },
+    {
+      "measurement_id": "measure-0064-player",
+      "accepted": false,
+      "reason": "主要保留头部和一侧身体，背包、另一侧肢体及下部大量漏分，框与可见人物不符；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-clearing",
+      "accepted": true,
+      "reason": "地面大体分区可信，但动物和石块边缘不能据此精确评价；仅采用空间区域。"
+    },
+    {
+      "measurement_id": "measure-0064-forest",
+      "accepted": true,
+      "reason": "林带位置基本正确，树间空隙及低矮植被边界粗化；仅作区域辅助。"
+    },
+    {
+      "measurement_id": "measure-0078-player",
+      "accepted": false,
+      "reason": "背包及下部人物漏分，原帧中连续完整的可见躯干被掩码拆缺；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-clearing",
+      "accepted": true,
+      "reason": "开阔地大体区域正确；仅作区域辅助，缺失深度不补算。"
+    },
+    {
+      "measurement_id": "measure-0078-forest",
+      "accepted": true,
+      "reason": "林带区域基本对应RGB；不采用精确面积或缺失深度推断环境包围。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-a"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "下方偏左的持续位置便于找到人物，未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-b"],
+      "event_ids": ["e1", "e2", "e3", "e4"],
+      "uncertainty": "人物占比足以辨认姿态与装备；后段掩码面积下降不代表人物实际缩小。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-c"],
+      "event_ids": ["e1", "e2", "e3", "e4"],
+      "uncertainty": "未发现妨碍必要信息的外物遮挡；没有完整不可见区域模型，不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-d"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "迷彩与环境近色，但头肩、背包和手臂轮廓仍可辨；未证明超出辨认的分离含义。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-a"],
+      "event_ids": ["e1", "e2", "e3", "e4"],
+      "uncertainty": "下身在画底正常截出；RGB未见同一身体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-b"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "头部保留，上方环境空间充足；空间充足本身不证明处境表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-c"],
+      "event_ids": ["e2", "e3"],
+      "uncertainty": "背面画面没有可确认的独立观看行为或必须呈现的视线对象；身体朝前不能代替眼神。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-d"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "前方地面、石块与林缘可见，足以理解前行；没有可确认的受阻或逃离安排。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-e"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "躯干姿态、手臂及连续空间变化足以理解行进；未出现必须靠完整脚步或装备末端理解的关键交互。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-a"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "地面、石块与林带建立可读距离层次；从枝叶旁进入空地仍主要建立通路，未证明进一步处境。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-b"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "下方人物和地面、上方林带关系清楚；树木较高不自动构成环境压迫。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-c"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "人物、石块、树干与动物归属可辨；局部轮廓重合未造成连接误读，也未建立表达性分隔。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["T-B-a"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "可识别以背面人物、前方地面和林带组织纵深；机制支持上述基础可读性，未证明独立增强效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["T-B-b"],
+      "event_ids": ["e5"],
+      "uncertainty": "联系表及参考帧并置属于评审材料排版，并非游戏画面分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [[0, 2.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0004", "rgb-0006", "rgb-0007", "rgb-0008", "rgb-0009", "rgb-0010"],
+      "observation": "人物保持在画面下方偏左，头肩、背包及弯曲手臂可辨；近处枝叶在过渡采样中占据较多上部画面，随后前方开阔地显露。",
+      "effect": "人物和由植被旁通向空地的空间可读；枝叶变化未导致主要人物或路径信息丢失，亦不足以证明隐藏、隔离或紧张。",
+      "exceptions_checked": "枝叶掠过与合理前景；下身触底为跟随视角的正常裁切，未见结构断裂。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [[3, 10.5]],
+      "input_evidence_ids": ["rgb-0012", "rgb-0016", "rgb-0020", "rgb-0032", "rgb-0040", "rgb-0042"],
+      "observation": "开阔砾石地展开，石块分布于人物前方及两侧，远林连续可见；人物背面姿态由较低转为较直立，头部始终在框内，前方留有可见行进范围。",
+      "effect": "主体、行进方向和石块远近关系清楚；人物姿态变化可以辨认，没有因下身裁切损失必要动作含义。空间安排主要完成行进呈现。",
+      "exceptions_checked": "不要求完整双脚；不以身体朝向推断具体视线目标，不以镜头变化代替独立运动测量。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [[11, 19.5]],
+      "input_evidence_ids": ["rgb-0044", "rgb-0048", "rgb-0056", "rgb-0060", "rgb-0064", "rgb-0070", "rgb-0078"],
+      "observation": "人物仍在下方偏左，前方林缘和近侧石块逐渐变化；犬形动物在部分采样中位于人物前方或左侧，16秒采样可清楚区分动物与人物。",
+      "effect": "两者共享空间及相对位置可辨，人物头肩和背包持续可读；未见足以确认追逐、对立、依附或阻隔的构图与行动联系。",
+      "exceptions_checked": "不把动物阶段性进出画直接认作漏拍关键行为；不要求不存在证据的交互结果入画。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [[12, 12], [16, 16], [19.5, 19.5]],
+      "input_evidence_ids": ["rgb-0048", "rgb-0064", "rgb-0078", "measure-0048-player", "measure-0064-player", "measure-0078-player"],
+      "observation": "分割联系表的后段人物掩码漏掉背包和部分身体；对应RGB仍显示连续的头肩、背包与手臂，19.5秒清晰原帧可核对。",
+      "effect": "拒绝将漏分解释为遮挡增加、人物面积骤降、身体断裂或人物离开画底。",
+      "exceptions_checked": "错误分割与真实构图问题分开；拒绝项全部派生数值不参与判档。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [[0, 19.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0040", "rgb-0078"],
+      "observation": "原帧均为单一连续游戏视区；有序网格、QA网格及两张参考图是输入展示方式。",
+      "effect": "多画面组织不适用，不因材料排版认定分屏手法。",
+      "exceptions_checked": "评审联系表与作品内部子画面已区分。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": ["rgb-0000", "rgb-0007"],
+      "after_evidence_ids": ["rgb-0012", "rgb-0016"],
+      "visible_change": "近处枝叶占据上部的画面转为开阔砾石地与完整林缘；人物仍处于下方偏左。",
+      "spatial_or_attention_effect": "前方通行范围逐渐显露，主要关注对象连续可辨。",
+      "expressive_effect": "证明空间揭示和行进连续性；没有额外阻隔或解除限制的明确依据。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0020", "rgb-0040"],
+      "after_evidence_ids": ["rgb-0060", "rgb-0064", "rgb-0078"],
+      "visible_change": "人物呈较直立姿态，石块及林缘相对位置变化；后段部分采样出现左侧犬形动物。",
+      "spatial_or_attention_effect": "人物、动物与地面关系保持可读；环境联系随前行更新。",
+      "expressive_effect": "不足以确认关系转折、环境压迫或追逐含义，保持基础呈现判断。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d"],
+    "decisive_event_ids": ["e1", "e2", "e3", "e4"],
+    "reason": "按game_video_composition v2.2.0：各适用基础条件成立。人物、前行空间及阶段性动物位置可辨，正常画底裁切未破坏形体连接；后段漏分不构成画面损害。枝叶显露、纵深及前方空间主要支持基本辨认，尚未证明进一步关系或处境表达。",
+    "adjacent_grade_explanation": "无确认的必要信息损失或形体结构失败，故不判低；没有满足证据桥接要求的增强事件，故不判高。",
+    "uncertainties": [
+      "仅依据所提供的采样画面，不声称检查采样间未提供时刻；未调用工具或重跑CV。",
+      "动物身份、具体交互目的和人物视线目标未确认，不据此增减档。",
+      "掩码接受仅限记录中的粗略用途；未验证的关节点、色差和单目深度未参与判断，未计算遮挡百分比。",
+      "未提供可核验的Rubric哈希及完整运行元数据，不补造。"
+    ]
+  }
+}

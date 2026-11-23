@@ -1,0 +1,50 @@
+{
+  "origin": "Actual supplied attachment order; raw response unchanged",
+  "aliases": {
+    "Image #1": {
+      "id": "input-sequence.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-five-calibration/model-calls/R49/baseline/input-images/input-sequence.jpg",
+      "sha256": "bcb191b43f0f2737d2a79d078a6966b2537bb9377e70571fc399b57d321038d8",
+      "dimensions": [
+        1280,
+        1096
+      ]
+    },
+    "Image #2": {
+      "id": "mask-qa.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-five-calibration/model-calls/R49/baseline/input-images/mask-qa.jpg",
+      "sha256": "de9a501b2fb68c13a8ed5df81a0481ee66ef3338298c06961eb41d5600e19511",
+      "dimensions": [
+        1280,
+        1152
+      ]
+    },
+    "Image #3": {
+      "id": "frame-0001.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-five-calibration/model-calls/R49/baseline/input-images/frame-0001.jpg",
+      "sha256": "1fed94e9d77402f2df53c6b4808bb46c7acbb5902991339a91a8a64a5567977e",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "Image #4": {
+      "id": "frame-0041.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-five-calibration/model-calls/R49/baseline/input-images/frame-0041.jpg",
+      "sha256": "40760f537084822acd97c67303b33348e2dfd787f1dc9762efc2c5e55977fbb6",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "Image #5": {
+      "id": "frame-0079.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-five-calibration/model-calls/R49/baseline/input-images/frame-0079.jpg",
+      "sha256": "3be62f2ca21b776f82d676a0cdf7f1bf5a7c0cdcd6417b602d0eeec0596e5c64",
+      "dimensions": [
+        1280,
+        720
+      ]
+    }
+  }
+}

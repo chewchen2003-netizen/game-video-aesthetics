@@ -1,0 +1,277 @@
+{
+  "sample_id": "R11",
+  "roles": [
+    {
+      "object_id": "dog",
+      "role": "subject",
+      "time_range": [0, 19.5],
+      "description": "林间可辨的犬形动物，是镜头持续关注的移动对象；缓存中的early/middle/late不作为三只动物的证据。",
+      "uncertainty": "枝叶遮蔽期间无法逐帧核实身份连续性，也无法判定具体任务。"
+    },
+    {
+      "object_id": "rifle",
+      "role": "supporting_element",
+      "time_range": [0, 19.5],
+      "description": "下方近景的第一人称步枪及瞄准镜，同时提供观察者所在位置的空间参照。",
+      "uncertainty": "没有可确认的开枪或与动物直接交互。"
+    },
+    {
+      "object_id": "near_foliage",
+      "role": "foreground",
+      "time_range": [0, 19.5],
+      "description": "近处针叶枝条、树干及末段黄色阔叶，随视点变化掠过并遮住林间区域。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "forest",
+      "role": "background",
+      "time_range": [0, 19.5],
+      "description": "林地坡面、草丛、针叶树与黄叶白桦构成动物所在环境。",
+      "uncertainty": "相对动物的前后层次需结合具体树木判断，不能把整个森林统一视为单一深度面。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [0, 5.5],
+      "necessary_information": "建立第一人称林间观察：辨认动物、近景枪械及动物所在坡面；不要求辨认面部细节。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0016", "rgb-0020", "rgb-0022"]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [6, 14.5],
+      "necessary_information": "视点穿过较密枝叶，动物间歇出现；需要理解遮挡来自近景植被以及林地空间延续。",
+      "input_evidence_ids": ["rgb-0024", "rgb-0034", "rgb-0040", "rgb-0048", "rgb-0056", "rgb-0058"]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [15, 19.5],
+      "necessary_information": "动物在较开阔的白桦坡面重新显露，随后黄色近叶进入视野；辨认其与坡面、树木及观察者的相对位置。",
+      "input_evidence_ids": ["rgb-0060", "rgb-0064", "rgb-0074", "rgb-0078"]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-dog_early",
+      "accepted": true,
+      "reason": "QA小区域与0秒原帧的动物位置和可见轮廓相符，可作位置与小占比的辅助依据；不据此计算遮挡率或实际距离。"
+    },
+    {
+      "measurement_id": "measure-0016-dog_early",
+      "accepted": true,
+      "reason": "4秒QA标区对应林间小动物的可见部分，位置及尺度与RGB相容；仅支持可见区域，不代表完整身体。"
+    },
+    {
+      "measurement_id": "measure-0032-forest_context",
+      "accepted": false,
+      "reason": "掩码主要覆盖不规则草地和部分树木，不能代表完整森林环境或统一空间层；拒绝其面积、颜色及深度派生量。"
+    },
+    {
+      "measurement_id": "measure-0048-dog_middle",
+      "accepted": false,
+      "reason": "12秒标区主要落在近景枝叶遮蔽区，未能核实完整可靠的动物轮廓；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-dog_late",
+      "accepted": true,
+      "reason": "16秒QA标区对应开阔坡面上的小动物，可辅助确认位置和可见占比；单目深度不解释为米数。"
+    },
+    {
+      "measurement_id": "measure-0078-dog_late",
+      "accepted": false,
+      "reason": "19.5秒原帧及QA显示标区包含黄色叶片，不能可靠归属动物；拒绝其位置、面积和色差等派生量。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-a"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "密枝阶段短时难寻，但未见位置安排导致必要对象误认；位置变化未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-b"],
+      "event_ids": ["e1", "e3"],
+      "uncertainty": "动物较小，仍足以辨认其类别及林间位置；没有证据要求辨认更细动作，也不能由小占比推断孤独或弱势。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-c"],
+      "event_ids": ["e2", "e3", "e4"],
+      "uncertainty": "遮挡明显但与穿过林木的视点相符；未见遮挡时发生必须辨认的关键交互。没有可靠完整主体区域，不报遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-d"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "暗部枝叶降低局部辨识，显露时棕白轮廓可辨；色彩差异仅证明可辨，未证明表达增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-a"],
+      "event_ids": ["e5"],
+      "uncertainty": "无人类人物身体可供该人体连接项评价；枪械出框属于第一人称常规裁切。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-b"],
+      "event_ids": ["e5"],
+      "uncertainty": "未呈现需评价头顶空间的人物。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-c"],
+      "event_ids": ["e5"],
+      "uncertainty": "没有可靠的人物视线或必须理解的观看对象关系；枪管朝向不能代替人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-d"],
+      "event_ids": ["e1", "e2", "e3"],
+      "uncertainty": "林地与相邻坡面足以理解当前移动范围；不能将屏幕位移换算为动物的世界运动方向，未证明前方空间形成受阻或逃离表达。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-e"],
+      "event_ids": ["e1", "e3", "e5"],
+      "uncertainty": "动物显露时其姿态及所在位置可读，没有已显示的关键接触、射击或结果被画框排除；枝叶遮挡另见e2/e4。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-a"],
+      "event_ids": ["e1", "e2", "e3", "e5"],
+      "uncertainty": "近枪、近枝、动物与远树建立可读层次；遮显变化支持林间空间延续，但未证明进一步的包围、隔离或受限处境。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-b"],
+      "event_ids": ["e1", "e3", "e5"],
+      "uncertainty": "下方枪械与上方坡面、树木的分布清楚；高低位置不作为强弱关系证据。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-c"],
+      "event_ids": ["e2", "e4", "e5"],
+      "uncertainty": "枝叶叠压可以解释为前景覆盖，未形成对象连接或归属误读；与主体遮挡共用事件，不重复计损害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["T-B-a"],
+      "event_ids": ["e5"],
+      "uncertainty": "可识别前景枪械、枝叶与林间动物的层次组织；机制支持基本空间辨认，未建立超出基本呈现的效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["T-B-b"],
+      "event_ids": ["e5"],
+      "uncertainty": "联系表与参考图属于评审材料排版，不能认作视频中的分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [[0, 5.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0016", "rgb-0020", "rgb-0022", "measure-0000-dog_early", "measure-0016-dog_early"],
+      "observation": "0秒清晰原帧中，棕白动物位于枪械上方的林间草地；4秒标区较小，5秒参考图中枝叶增多。动物与近枪、坡面分属不同层次。",
+      "effect": "建立观察对象及其所在林地，动物小但类别和位置可辨；未见需要读取面部或微小动作的情节。",
+      "exceptions_checked": "未以最大面积的枪械替代主要观看对象；小占比不自动扣档，也不推断情绪。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [[6, 14.5]],
+      "input_evidence_ids": ["rgb-0024", "rgb-0034", "rgb-0040", "rgb-0048", "rgb-0056", "rgb-0058"],
+      "observation": "动物间歇出现在林间，8.5秒附近较易辨认；10秒原帧中大部视野为坡面和树枝，12秒QA不能可靠分出动物，14及14.5秒近枝覆盖较多。",
+      "effect": "局部可发现性下降，但近枝随视点变化的覆盖具有可核对的森林情境；未显示被遮住的关键动作或交互，不能确认最低必要信息损失。",
+      "exceptions_checked": "排除把自然前景遮挡直接判低；也不将遮挡本身解释为紧张、隐藏或无法接近。拒用12秒错误分割。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [[15, 18.5]],
+      "input_evidence_ids": ["rgb-0060", "rgb-0064", "rgb-0074", "measure-0064-dog_late"],
+      "observation": "15秒参考图中动物在右侧较开阔坡面显露，白桦树干和黄叶构成背景；16秒仍可在树间辨认动物。",
+      "effect": "恢复清楚的主体定位，前景枪械与动物所在坡面关系延续；显露主要完成基本辨认，未证明关系转折或环境制约。",
+      "exceptions_checked": "不把树木高大、动物较小或位于右侧直接转成表达增强。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [[19, 19.5]],
+      "input_evidence_ids": ["rgb-0076", "rgb-0078"],
+      "observation": "黄色近叶进入并覆盖上方及中部视野；19.5秒清晰原帧中缓存动物标区实际混入叶片。",
+      "effect": "末段主体局部难辨，但覆盖可归因于近处树叶，未见必须读取而被遗漏的结果；叶片不构成动物形体连接错误。",
+      "exceptions_checked": "不使用错误掩码补认动物或计算遮挡；不把末帧覆盖推断为剧情失败或受困。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [[0, 19.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0040", "rgb-0060", "rgb-0078"],
+      "observation": "第一人称枪械持续占据下方近景，林地及动物位于其上方和后方；提供的原帧未见视频内独立子画面或可评的人物身体。",
+      "effect": "前景与林地的层次提供稳定空间参照，常规枪械裁切没有已确认的动作信息损失；未证明额外表达。",
+      "exceptions_checked": "第一人称工具出框合理；不把参考图拼版当视频分屏，不从枪械朝向推断射击、追猎或人物心理。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": ["rgb-0000", "rgb-0020"],
+      "after_evidence_ids": ["rgb-0040", "rgb-0048", "rgb-0056", "rgb-0058"],
+      "visible_change": "由可辨动物和林地转为较密近枝覆盖，动物显露间歇化。",
+      "spatial_or_attention_effect": "观看对象暂时较难寻找，但近景覆盖与后方坡面仍可区分。",
+      "expressive_effect": "不足以确认隐藏、隔离或紧张表达，也未确认关键交互损失。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0056", "rgb-0058"],
+      "after_evidence_ids": ["rgb-0060", "rgb-0064"],
+      "visible_change": "密枝视野转向较开阔的白桦坡面，动物重新清楚显露。",
+      "spatial_or_attention_effect": "重新建立动物在观察者前方坡面的位置。",
+      "expressive_effect": "支持基本空间连续性，尚未构成有依据的处境深化。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0060", "rgb-0064"],
+      "after_evidence_ids": ["rgb-0076", "rgb-0078"],
+      "visible_change": "较开阔视野再次被近处黄色枝叶覆盖。",
+      "spatial_or_attention_effect": "主体辨识下降，近叶与林地形成明确前后覆盖。",
+      "expressive_effect": "未见覆盖配合关键行为形成额外含义。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d"],
+    "decisive_event_ids": ["e1", "e2", "e3", "e4", "e5"],
+    "reason": "按game_video_composition v2.2.0，动物、第一人称枪械及林地关系可理解。密枝和末段黄叶造成阶段性遮蔽，但有合理空间情境，未确认关键动作、结果或形体结构损失。适用基础成立；层次与显露变化主要服务基本辨认，增强表达未获证明，判中。",
+    "adjacent_grade_explanation": "不判低：没有确认最低必要条件失败。不判高：没有形成可核查的安排—上下文联系—额外表达证据链，不能凭森林层次、小主体或遮显升档。",
+    "uncertainties": [
+      "仅评价所给40个采样时刻及清晰原帧，不声称观察采样间动作。",
+      "12秒动物与19.5秒动物分割、8秒环境分割被拒绝；其派生量均未参与判断，本轮未重跑CV。",
+      "遮蔽期间身份及细微动作不可核实，但现有画面未显示这些细节是当前内容理解的必要条件。"
+    ]
+  }
+}

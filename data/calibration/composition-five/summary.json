@@ -1,0 +1,147 @@
+[
+  {
+    "id": "R01",
+    "baseline": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "按game_video_composition v2.2.0：各适用基础条件成立。人物、前行空间及阶段性动物位置可辨，正常画底裁切未破坏形体连接；后段漏分不构成画面损害。枝叶显露、纵深及前方空间主要支持基本辨认，尚未证明进一步关系或处境表达。",
+      "seconds": 116.1,
+      "usage": {
+        "input_tokens": 40609,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4938,
+        "reasoning_output_tokens": 117
+      }
+    },
+    "candidate": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "主体持续易于定位，常规底边裁切保留移动必要信息，枝叶外的空地及其后的林缘关系清楚；适用基础条件成立。前后变化主要完成行进空间的基本呈现，未充分证明超出基本可辨的有效引导、空间深化或关系强化。",
+      "seconds": 99.9,
+      "usage": {
+        "input_tokens": 40802,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3982,
+        "reasoning_output_tokens": 156
+      }
+    }
+  },
+  {
+    "id": "R05",
+    "baseline": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "依据game_video_composition v2.2.0，适用基础条件成立：阶段主体可辨，座舱局部裁切合理，车群密集时仍保留必要道路和车辆关系，未确认人体连接或尺度崩坏。远近切换、道路透视及近车交叠主要完成内容与空间交代，进一步表达尚未获证明，因此判中。",
+      "seconds": 132.6,
+      "usage": {
+        "input_tokens": 40500,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5754,
+        "reasoning_output_tokens": 152
+      }
+    },
+    "candidate": {
+      "grade": "high",
+      "status": "scored",
+      "reason": "依据game_video_composition v2.3.0-candidate，适用基础均成立。全景至跟车的组织将赛车场环境逐步联系到车辆行动；后段以稳定近车为参照，由护墙、路面和不同距离的竞赛车辆共同引导观看，并使并行与前后位置变化可直接追踪。该空间揭示和注意引导超过基本可辨，满足O-H-d。",
+      "seconds": 112.5,
+      "usage": {
+        "input_tokens": 42363,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5245,
+        "reasoning_output_tokens": 67
+      }
+    }
+  },
+  {
+    "id": "R11",
+    "baseline": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "按game_video_composition v2.2.0，动物、第一人称枪械及林地关系可理解。密枝和末段黄叶造成阶段性遮蔽，但有合理空间情境，未确认关键动作、结果或形体结构损失。适用基础成立；层次与显露变化主要服务基本辨认，增强表达未获证明，判中。",
+      "seconds": 95.3,
+      "usage": {
+        "input_tokens": 39543,
+        "cached_input_tokens": 12672,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4230,
+        "reasoning_output_tokens": 74
+      }
+    },
+    "candidate": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "按game_video_composition v2.3.0-candidate评审：第一人称林间行进、犬只与环境的必要关系基本可读，裁切和空间归属无确认的基础失败。遮挡虽多，但未见其损失当前必要交互；前后显露主要维持空间连续，尚不足以证明进一步视觉组织效果。",
+      "seconds": 94.2,
+      "usage": {
+        "input_tokens": 38066,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4305,
+        "reasoning_output_tokens": 82
+      }
+    }
+  },
+  {
+    "id": "R12",
+    "baseline": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "按game_video_composition v2.2.0，装置、曲柄变化及环境转换均可辨认，必要承托、前后和归属关系清楚，未确认适用基础失败。跨阶段展示建立了器物与废墟的空间联系，但尚未证明超出基本呈现的关系或处境增强，判中。",
+      "seconds": 97.1,
+      "usage": {
+        "input_tokens": 37920,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4448,
+        "reasoning_output_tokens": 56
+      }
+    },
+    "candidate": {
+      "grade": "high",
+      "status": "scored",
+      "reason": "适用基础条件成立：装置、转柄及环境关系可读，正常转向和离框未造成必要信息损失。两次从装置近景展开环境，并以箱体、沙袋、通路和火堆建立前后对应，明确深化了物件所在空间的理解，达到有效视觉组织增强。",
+      "seconds": 94.9,
+      "usage": {
+        "input_tokens": 39783,
+        "cached_input_tokens": 20096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4308,
+        "reasoning_output_tokens": 46
+      }
+    }
+  },
+  {
+    "id": "R49",
+    "baseline": {
+      "grade": "middle",
+      "status": "scored",
+      "reason": "按Rubric v2.2.0，所给关键阶段中主体、行走与转向、通路及坡地水渠关系可辨，身体连接合理，无已确认的最低必要条件失败。墙岩围合与后段俯视主要完成路线和空间交代，未证明超出基本呈现的表达增强。",
+      "seconds": 95.1,
+      "usage": {
+        "input_tokens": 39818,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4345,
+        "reasoning_output_tokens": 147
+      }
+    },
+    "candidate": {
+      "grade": "high",
+      "status": "scored",
+      "reason": "适用基础均成立，未确认必要信息损失或形体结构破坏。道路两侧边界先引导角色绕出建筑，随后以角色和岩体为参照逐步揭示坡下水渠、桥与对岸，末段又回接建筑；这些前后安排有效深化同一环境的空间联系，满足有效视觉组织增强。",
+      "seconds": 96.3,
+      "usage": {
+        "input_tokens": 40011,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4299,
+        "reasoning_output_tokens": 42
+      }
+    }
+  }
+]

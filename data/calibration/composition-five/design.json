@@ -1,0 +1,18 @@
+{
+  "samples": [
+    "R01",
+    "R05",
+    "R11",
+    "R12",
+    "R49"
+  ],
+  "arms": {
+    "baseline": "baseline-v2.2.0",
+    "candidate": "candidate-v2.3.0"
+  },
+  "same_inputs_between_arms": true,
+  "same_compact_output_between_arms": true,
+  "human_labels_in_model_inputs": false,
+  "selection": "Two current middles plus previously discussed human reference cases; calibration only, not independent test",
+  "timing_scope": "model calls plus evidence preparation; cached CV not rerun or claimed as newly measured"
+}

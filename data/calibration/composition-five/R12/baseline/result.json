@@ -1,0 +1,289 @@
+{
+  "sample_id": "R12",
+  "roles": [
+    {
+      "object_id": "horn_device",
+      "role": "subject",
+      "time_range": [0, 2.5],
+      "description": "木箱上的黑色喇叭状机械装置，有底座及曲柄；依据RGB识别，不由缓存名称确定器物种类。",
+      "uncertainty": "具体用途无法确认；early与late为同一可见装置，不作为两个主体。"
+    },
+    {
+      "object_id": "horn_device",
+      "role": "subject",
+      "time_range": [6, 17.5],
+      "description": "镜头返回并持续呈现该装置，曲柄在采样帧间改变朝向。",
+      "uncertainty": "不推断驱动者、声音或任务用途。"
+    },
+    {
+      "object_id": "crate_note",
+      "role": "supporting_element",
+      "time_range": [0, 18],
+      "description": "承托装置的绳绑木箱及纸张，提供器物放置关系和近景空间参照。",
+      "uncertainty": "纸张文字不可读，未见必须阅读文字的情节依据。"
+    },
+    {
+      "object_id": "ruined_trench",
+      "role": "background",
+      "time_range": [0, 19.5],
+      "description": "沙袋、碎砖、残墙、铁丝网及雾中的通道；在3至5.5秒和18至19.5秒转为主要呈现内容。",
+      "uncertainty": "不推断具体地点或战斗事件。"
+    },
+    {
+      "object_id": "fire",
+      "role": "supporting_element",
+      "time_range": [0, 17.5],
+      "description": "环境中的橙色火光及燃烧木料，与冷灰废墟形成可见色彩差异。",
+      "uncertainty": "早期部分时刻仅能辨认火光。"
+    },
+    {
+      "object_id": "fire",
+      "role": "subject",
+      "time_range": [19, 19.5],
+      "description": "镜头转向后，燃烧木料与周围碎砖成为主要观看目标。",
+      "uncertainty": "不把其缓存掩码视作可靠火焰区域。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [0, 2.5],
+      "necessary_information": "呈现装置及其在木箱、沙袋前的放置关系；需辨认喇叭、支架、曲柄和承托面。",
+      "input_evidence_ids": ["rgb-0000", "rgb-0002", "rgb-0004", "rgb-0006", "rgb-0008", "rgb-0010"]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [3, 5.5],
+      "necessary_information": "镜头移开装置，展示残墙、沙袋、碎砖通道与火光；需理解这是环境展开，装置离框不属于关键动作遗漏。",
+      "input_evidence_ids": ["rgb-0012", "rgb-0014", "rgb-0016", "rgb-0018", "rgb-0019", "rgb-0020", "rgb-0022"]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [6, 17.5],
+      "necessary_information": "返回装置近景，持续呈现曲柄朝向变化，以及底座、木箱和周围环境的联系。",
+      "input_evidence_ids": ["rgb-0024", "rgb-0028", "rgb-0032", "rgb-0036", "rgb-0040", "rgb-0048", "rgb-0054", "rgb-0060", "rgb-0064", "rgb-0070"]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [18, 19.5],
+      "necessary_information": "镜头再次移离装置，经过废墟空间转向火堆；需辨认火堆与碎砖、沙袋、残墙的空间关系。",
+      "input_evidence_ids": ["rgb-0072", "rgb-0074", "rgb-0076", "rgb-0077", "rgb-0078"]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-gramophone_early",
+      "accepted": true,
+      "reason": "QA掩码基本覆盖RGB中的喇叭、底座及曲柄，边界框与实际器物相符。仅作可见位置、面积和区分度辅助；不据此推算遮挡率或真实距离。"
+    },
+    {
+      "measurement_id": "measure-0016-trench_scene",
+      "accepted": false,
+      "reason": "掩码混合通道、残墙和地面，缺乏可核对的完整对象边界，不能代表整体场景主体；拒绝其全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-gramophone_late",
+      "accepted": true,
+      "reason": "掩码包含装置主体及右伸曲柄，轮廓与RGB基本对应；仅辅助可见区域判断，不将框面积当掩码面积。"
+    },
+    {
+      "measurement_id": "measure-0048-gramophone_late",
+      "accepted": true,
+      "reason": "喇叭、支架、底座和向下曲柄的区域基本匹配；可辅助定位，不提供完整遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0064-gramophone_late",
+      "accepted": true,
+      "reason": "掩码基本对应装置及当前曲柄轮廓，可用于位置和可见尺度核对；单目逆深度不解释为米或表达效果。"
+    },
+    {
+      "measurement_id": "measure-0078-campfire",
+      "accepted": false,
+      "reason": "掩码大量纳入火前碎砖、地面和木料，未可靠分出火堆边界；拒绝其面积、中心、颜色及边界差等全部派生数值。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-a"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "观看目标随镜头转向改变；未证明位置变化传达超出环境展示的关系。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-b"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "装置细部和火堆形态足以辨认；景别变化未证明尺度压迫或关系差异。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-c"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "无完整主体区域，不能给遮挡百分比；雾和少量飘浮颗粒未遮去必要信息。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["P-B-d"],
+      "event_ids": ["E1", "E3", "E4"],
+      "uncertainty": "深色器物与浅灰背景、橙色火光与废墟可区分；对比本身不足以证明关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-a"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "未见人物；器物不套用人体连接条件。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-b"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "未见人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-c"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "没有人物观看行为；不将喇叭朝向当作视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["C-B-d"],
+      "event_ids": ["E2", "E3", "E4"],
+      "uncertainty": "没有可确认的主体行进或必须理解的运动路径；镜头位移不当作主体行进。曲柄转动归动作裁切检查。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["C-B-e"],
+      "event_ids": ["E3", "E4"],
+      "uncertainty": "曲柄不同朝向及火焰均有足够呈现；未见取舍强调接触、反应或行为意义的证据。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-a"],
+      "event_ids": ["E1", "E2", "E3", "E4"],
+      "uncertainty": "木箱、沙袋、碎砖及残墙的前后关系清楚；跨阶段建立环境联系，但未证明进一步包围、阻隔或尺度处境。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-b"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "下方承托面和上方环境分布可读；无上下安排进一步制约主体或强化环境规模的充分依据。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["S-B-c"],
+      "event_ids": ["E1", "E3", "E4"],
+      "uncertainty": "装置与箱面、曲柄与底座、火堆与碎砖边界基本清楚；未见具有进一步含义的分隔或连接变化。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": ["T-B-a"],
+      "event_ids": ["E1", "E2", "E4"],
+      "uncertainty": "可识别以前景木箱、沙袋及雾中残墙组织层次；机制支持空间可读，未独立证明增强效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": ["T-B-b"],
+      "event_ids": [],
+      "uncertainty": "视频画面未见分屏或画中画；输入联系表和参考帧排版不是片内多画面手法。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [[0, 2.5]],
+      "input_evidence_ids": ["rgb-0000", "rgb-0004", "rgb-0008", "rgb-0010"],
+      "observation": "黑色喇叭状装置位于木箱上方近画面中部，底座和曲柄可辨；箱面在前，沙袋居后，远处碎砖和雾中残墙继续延伸。",
+      "effect": "建立装置、承托面及废墟环境的基本联系。深浅轮廓差异帮助发现装置，未证明额外的主体处境。",
+      "exceptions_checked": "纸张文字不可读，但没有必须阅读的依据；画面没有人物，器物轮廓不按人体截断评价。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [[3, 5.5]],
+      "input_evidence_ids": ["rgb-0012", "rgb-0016", "rgb-0019", "rgb-0020", "rgb-0022"],
+      "observation": "镜头转离装置，4秒附近装置只在边缘局部出现；5秒可见其侧面和木箱处于左前，沙袋、碎砖通道与火光占据更大范围。",
+      "effect": "观看重点转为环境，随后仍能以木箱和沙袋理解器物所在位置；离框没有造成必要主体或动作损失。",
+      "exceptions_checked": "这是连续环境展示中的正常移出画面，不把局部裁切判为遮挡失败；拒用trench_scene测量。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [[6, 17.5]],
+      "input_evidence_ids": ["rgb-0024", "rgb-0028", "rgb-0032", "rgb-0036", "rgb-0040", "rgb-0048", "rgb-0054", "rgb-0060", "rgb-0064", "rgb-0070"],
+      "observation": "镜头返回装置并保持近景；8、9、10、12、13.5、15、16秒等采样帧中曲柄朝向不同，喇叭、底座及曲柄所需范围基本留在画内，木箱承托关系稳定可读。",
+      "effect": "器物形态及曲柄朝向变化可理解，轮廓交叠没有造成零件归属误读；持续近景主要完成基本呈现。",
+      "exceptions_checked": "不从离散采样推断精确转速或驱动方式；不把镜头变化当装置整体运动，也不编造操作人物。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [[18, 19.5]],
+      "input_evidence_ids": ["rgb-0072", "rgb-0074", "rgb-0076", "rgb-0077", "rgb-0078"],
+      "observation": "18秒装置随镜头转向移至边缘，18.5秒呈现废墟；19至19.5秒火堆进入主要视区，左侧沙袋与箱体、中央碎砖和燃烧木料、右后残墙及铁丝网保持可辨。",
+      "effect": "注意从器物转向燃烧的废墟环境。暖火与冷灰雾景帮助辨认目标，但未见行动或关系变化足以证明更进一步的含义。",
+      "exceptions_checked": "装置正常离框不等于关键行为被裁掉；雾未使当前必要环境关系不可读；拒用campfire测量。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": ["rgb-0000", "rgb-0010"],
+      "after_evidence_ids": ["rgb-0016", "rgb-0020"],
+      "visible_change": "由装置近景转向废墟空间，装置缩小并移至左侧或画外。",
+      "spatial_or_attention_effect": "由器物形态转为观察其所在环境，木箱与沙袋提供连续参照。",
+      "expressive_effect": "证明环境联系的建立；未充分证明受困、孤立或环境压迫。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0020", "rgb-0022"],
+      "after_evidence_ids": ["rgb-0028", "rgb-0032", "rgb-0040", "rgb-0060"],
+      "visible_change": "镜头返回装置近景，曲柄在后续采样中改变朝向。",
+      "spatial_or_attention_effect": "重新集中于装置及其活动部件，前后环境位置可对应。",
+      "expressive_effect": "使对象和动作更清楚，未见进一步关系表达。"
+    },
+    {
+      "before_evidence_ids": ["rgb-0070"],
+      "after_evidence_ids": ["rgb-0072", "rgb-0074", "rgb-0078"],
+      "visible_change": "从装置移向残墙、碎砖和火堆，末帧装置不再入画。",
+      "spatial_or_attention_effect": "环境成为主要内容，火堆获得明确注意。",
+      "expressive_effect": "火与雾中废墟的对比可见；不足以将普通环境转向提升为已证明的表达增强。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": ["O-B-a", "O-B-b", "O-B-c", "O-B-d"],
+    "decisive_event_ids": ["E1", "E2", "E3", "E4"],
+    "reason": "按game_video_composition v2.2.0，装置、曲柄变化及环境转换均可辨认，必要承托、前后和归属关系清楚，未确认适用基础失败。跨阶段展示建立了器物与废墟的空间联系，但尚未证明超出基本呈现的关系或处境增强，判中。",
+    "adjacent_grade_explanation": "不判低：装置的阶段性离框有正常镜头转向解释，未损失关键动作信息。不判高：位置、景别、层次及冷暖差异虽可见，缺少进一步表达效果的充分证据桥接。",
+    "uncertainties": [
+      "仅依据提供的42个采样时刻及清晰原帧，不声称看过采样间过程。",
+      "两个环境掩码被拒绝，其派生数值全部排除；不影响RGB基础判断。",
+      "未重跑CV；没有可靠遮挡百分比、真实距离或器物用途信息。"
+    ]
+  }
+}
