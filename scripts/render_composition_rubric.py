@@ -8,7 +8,8 @@ out=ROOT/'docs/rubrics';out.mkdir(parents=True,exist_ok=True)
 def e(value):return html.escape(str(value))
 def lst(values):return '<ul>'+''.join('<li>'+e(v)+'</li>' for v in values)+'</ul>'
 body='<h1>构图 Rubric · v'+e(rubric['version'])+'</h1>'
-body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。三条试跑使用v2.1.1；当前v2.3.0已获用户确认并启动50条精简复跑，独立人工验证尚未完成。</p>'
+body+='<p>构图是为讲故事服务的，要关注各个画内元素（人、物、环境）的联结关系，以能否支持内容表达为依据，分为“低：妨碍表达、中：匹配表达、高：增强表达”三档。</p>'
+body+='<p class="notice">2026年11月24日更新：本规则v2.3.0已完成同批50题复跑及25题人工复核，一致率56%。前轮50题使用旧契约；三条试跑使用v2.1.1。下列判定条件保留本轮冻结版本，后续人工修订意见另行记录。</p>'
 body+='<p><a href="composition_rubric.json">构图规则 JSON</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
 body+='<p><a href="../results/rubric-trial3/index.html">查看三条试跑的完整证据链</a></p>'
 body+='<h2>角色与评价范围</h2><p>'+e(rubric['role'])+'</p><p>由 GPT-6.1 Sol 承担VLM判档；不设置数值美学分数或因素权重。实际调用模型信息须随运行单独保存。</p>'
@@ -21,7 +22,7 @@ for key,value in rubric['definitions'].items():
 body+='</dl><h2>通用规则</h2>'+lst(rubric['rules'])
 body+='<h2>评价前提</h2>'+lst(rubric['preconditions']['required'])+'<p>'+e(rubric['preconditions']['role_uncertainty'])+'</p>'
 body+='<h3>内容与关键阶段记录</h3><p>'+e(rubric['preconditions'].get('content_record',{}).get('method',''))+'</p><p>'+e(rubric['preconditions'].get('content_record',{}).get('key_stage',''))+'</p>'
-labels={'low':'低：基础呈现受损','middle':'中：基本呈现成立','high':'高：进一步表情达意'}
+labels={'low':'低：妨碍表达','middle':'中：匹配表达','high':'高：增强表达'}
 for factor in rubric['factors']:
     imap={x['id']:x for x in factor['indicators']}
     body+='<h2 id="'+e(factor['id'])+'">'+e(factor['name'])+'</h2><p>'+e(factor['criteria'])+'</p>'
