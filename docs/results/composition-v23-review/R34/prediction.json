@@ -1,0 +1,477 @@
+{
+  "sample_id": "R34",
+  "roles": [
+    {
+      "object_id": "jungle_landscape",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现热带林地及其通向水岸的空间；没有可见人物或明确角色动作。",
+      "uncertainty": "不推断游戏任务或镜头操作者意图。"
+    },
+    {
+      "object_id": "clearing_region",
+      "role": "supporting_element",
+      "time_range": [
+        2.5,
+        5.5
+      ],
+      "description": "林间亮沙地，是此阶段主要观看落点。",
+      "uncertainty": "0秒同名缓存实际覆盖草丛，不能视为同一有效区域。"
+    },
+    {
+      "object_id": "waterfront",
+      "role": "supporting_element",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "description": "蓝绿色水面及浅色岸地，与林内空间形成可见联系。",
+      "uncertainty": "不确认水体类型和岸边小型物件用途。"
+    },
+    {
+      "object_id": "palm_trunk",
+      "role": "foreground",
+      "time_range": [
+        8,
+        12
+      ],
+      "description": "8秒近处树干占据中部，12秒右侧可见较远细树干。",
+      "uncertainty": "不能由缓存同名确认两时刻是同一棵树。"
+    },
+    {
+      "object_id": "near_boulder",
+      "role": "foreground",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "description": "16秒近处岩石占据下部；后续岩面和大叶片共同形成近景遮挡。",
+      "uncertainty": "19.5秒同名掩码未可靠对应岩石。"
+    },
+    {
+      "object_id": "forest_background",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "远处树木、岩壁与林间透光区域提供空间参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "识别茂密林下植被及随后出现的亮沙地，建立林地与开敞地面的关系。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        6,
+        13.5
+      ],
+      "necessary_information": "辨认回到密林后的近处树干、林下地面和后方树木；没有必须跟踪的独立人物。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "necessary_information": "从植被间水色到近岩遮挡，再到水岸显露，理解林内与岸地、水面的前后联系。",
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-clearing_region",
+      "accepted": false,
+      "reason": "掩码主体为密集草丛，并非RGB中可确认的开敞沙地；拒绝该对象解释及全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-clearing_region",
+      "accepted": true,
+      "reason": "掩码大体对应4秒可见沙地，避开主要前景植被；可辅助定位，不能据其面积推断完整空地或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-palm_trunk",
+      "accepted": true,
+      "reason": "对应8秒中央近处树干，轮廓及上下出框关系可信；不把面积大当作主体身份依据。"
+    },
+    {
+      "measurement_id": "measure-0048-palm_trunk",
+      "accepted": true,
+      "reason": "对应12秒右侧细树干，定位基本可信；不与8秒树干直接进行同物尺度变化比较。"
+    },
+    {
+      "measurement_id": "measure-0064-near_boulder",
+      "accepted": true,
+      "reason": "主体区域对应16秒下方近岩，局部孔洞和叶片排除不改变对象识别；仅采用粗略位置，不依赖精确边界差异或深度数值。"
+    },
+    {
+      "measurement_id": "measure-0078-near_boulder",
+      "accepted": false,
+      "reason": "掩码跨越岸地、植被及树干，未隔离近岩；全部派生数值不用于判断。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "主体为景观整体，不以近处最大树干替代主体。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "依据RGB景观显露范围；未计算整体景观占比。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "遮显参与空间揭示，但不足以另证受阻、隔离或隐藏关系；无完整主体掩码，不报遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-d",
+        "P-H-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "不把镜头变化解释为景物自身运动。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "无人物形体。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "无人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "没有人物观看行为或可靠视线关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "可见取景变化，但没有需判断运动前方空间的行动主体；不从屏幕变化推断世界运动方向。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "没有关键角色动作、接触或作用结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "仅判断可见前后关系，不采用单目深度作实际距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "地面在下、树冠在上支持辨认；未证明上下比例另有规模或处境强化。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "叶片、树干与岩石自然交叠，未见造成归属误读的连接；不另行推断依附或隔离。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "可识别近景框取、明暗组织与纵深；仅解释已证明的空间揭示，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "联系表是评审输入排版，原画面没有分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          5.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ],
+      "observation": "开头下部是暗草丛，上方树叶与树干包围透光间隙；2.5—5.5秒亮沙地进入主要可见范围，5秒清楚显示近处沙地、边缘植被与后方树木。",
+      "effect": "亮地从密植被中展开，观看落点由林下细节转到开敞地面；沙地向林缘延伸，把前景与后方林木联系起来，超出单纯罗列景物。",
+      "exceptions_checked": "0秒不存在必须寻找的人物；暗部植被本身属于呈现内容。没有把错误空地掩码作为开头证据。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          6,
+          13.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054"
+      ],
+      "observation": "画面回到密林；8秒近树干居中，10秒右侧粗树干及藤蔓突出，12秒右侧还有细树干。林下草丛较暗，后方树木和透光间隙仍可区分。",
+      "effect": "此段主要提供林内空间延续。局部枝叶密集、树干截出画框，但没有丢失必须跟踪的独立对象，也未见通路或对象归属持续混乱；本段本身不足以证明额外增强。",
+      "exceptions_checked": "近树干不是因面积大就成为主体；自然植被重叠和树木正常出框不按人体裁切问题处理。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          14,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "observation": "14—15秒蓝绿色水面从树木间显露；16秒近岩占据下部，17.5—18.5秒近岩面与大叶片仍占显著范围，缝隙可见水岸；19.5秒左侧大叶形成暗边界，浅色岸地从下方向左中部水面延伸，远树与岩壁位于其后。",
+      "effect": "水色先作为林间线索出现，随后在近岩、叶片之间扩大显露；最终由暗叶边界、亮岸和水面形成具体观看路径，把林内近景与开放水岸联系起来。增强在跨时刻空间揭示及明暗色彩组织，不在遮挡本身。",
+      "exceptions_checked": "大叶和岩石确实压缩局部视域，但水岸线索反复可见，最终关系清楚；未见必须理解的动作或目标被持续无效遮住。拒绝19.5秒岩石掩码，不以其面积证明显露变化。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "原帧呈现连续景观视区，没有可见人物、明确角色动作、视线互动或同时并置的子画面。",
+      "effect": "人物形体、头部、视线、动作裁切及多画面组织无适用对象；镜头取景变化不足以单独建立行动主体的前方空间要求。",
+      "exceptions_checked": "未将联系表网格视为游戏分屏，未虚构第一人称身体或行动目标。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "密集暗草丛的观看范围转为亮沙地及其林缘。",
+      "spatial_or_attention_effect": "地面展开，亮沙地提供落点，并连接近处地面与后方森林。",
+      "expressive_effect": "支持环境空间逐步建立，无需推断情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048"
+      ],
+      "visible_change": "中央近树干占据明显范围，后续画面中右侧出现细树干及更完整的林下层次。",
+      "spatial_or_attention_effect": "不同近远树干提供林内层次参照。",
+      "expressive_effect": "仅支持空间延续；不能确认同一树干远离或由尺度变化表达关系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0064",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "林间小片水色经历近岩与叶片遮显，最终呈现较连贯的岸地和水面。",
+      "spatial_or_attention_effect": "暗近景限定视窗，浅色岸地把视线带向水面及远处森林，建立林内至水岸的联系。",
+      "expressive_effect": "构成可核查的渐进空间揭示；不推断悬念、受困或人物心理。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-c",
+      "O-B-d",
+      "P-H-a",
+      "P-H-b",
+      "P-H-d",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3"
+    ],
+    "reason": "景观主体及必要空间关系基本可读，无明确基础失败。尤其14—19.5秒，林间水色、近岩与叶片边界、亮岸及远处森林通过前后显露形成连续联系，明确引导观看并逐步揭示水岸空间，满足O-H-d。",
+    "adjacent_grade_explanation": "高于中档的依据是具体的前后空间揭示，而非植被漂亮、前景多或手法数量。密林阶段和近叶遮挡未造成必要对象持续丢失，因此不满足低档条件。",
+    "uncertainties": [
+      "仅评价给定采样时刻，不声称检查采样间全部画面。",
+      "两项错误分割已拒绝，其派生数值未参与判断；其余测量仅作有限定位辅助。",
+      "没有完整主体掩码，不报告遮挡百分比；不以缓存同名证明跨时刻对象一致性。",
+      "未提供的模型运行信息、图像哈希及人工复核记录不作补造。"
+    ]
+  }
+}

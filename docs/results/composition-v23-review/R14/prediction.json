@@ -1,0 +1,483 @@
+{
+  "sample_id": "R14",
+  "roles": [
+    {
+      "object_id": "player_buggy",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "后方跟随视角中的越野车；主要内容是车辆沿岩石道路爬升、转弯及其与路况的关系。",
+      "uncertainty": "沿用对象ID便于索引；玩家身份不由名称确认。"
+    },
+    {
+      "object_id": "route_markers",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "白色方向箭头、弯道指示牌和橙色围网，辅助辨认路线及道路边界。",
+      "uncertainty": "不推断具体任务规则。"
+    },
+    {
+      "object_id": "near_road",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "车辆下方及镜头近处的岩面、车辙和碎石。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "canyon_route",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "前方岩阶、两侧岩壁、植被，以及后段显露的临崖道路、远山和天空。",
+      "uncertainty": "环境各部分的前后角色随行进改变。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        6
+      ],
+      "necessary_information": "车辆在狭窄岩道上接近并越过岩阶；须辨认车身姿态、前方落脚路面和箭头指向。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        6.5,
+        11.5
+      ],
+      "necessary_information": "车辆继续爬升并转向；须辨认岩阶连续性、弯道标识及道路从岩壁间通向上方开口的关系。",
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0046"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        12,
+        19.5
+      ],
+      "necessary_information": "车辆驶入临崖道路，沿围网经过弯道并接近岩石旁的转折；须辨认可行路面、崖侧边界及前方路线变化。",
+      "input_evidence_ids": [
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-player_buggy",
+      "accepted": true,
+      "reason": "QA轮廓覆盖车顶、车身及轮胎，与rgb-0000相符，可作粗略位置与可见面积辅助；细部孔隙不精确。无完整主体区域，不支持遮挡率；颜色及单目深度不直接作美学证据。"
+    },
+    {
+      "measurement_id": "measure-0016-player_buggy",
+      "accepted": true,
+      "reason": "QA主要轮廓与rgb-0016一致，轮胎到达画底属原图裁切，可用于粗略位置及尺度核对；不把触底解释为遮挡，不采用深度数值推断真实距离。"
+    },
+    {
+      "measurement_id": "measure-0032-player_buggy",
+      "accepted": true,
+      "reason": "QA覆盖主要车体、侧翼和轮胎，与rgb-0032姿态及位置相符；仅接受粗粒度区域定位，内部空隙有简化，不据此计算遮挡或精细边界效果。"
+    },
+    {
+      "measurement_id": "measure-0048-player_buggy",
+      "accepted": false,
+      "reason": "QA在底部轮间及底盘空隙出现大片连片填充，混入应区分的路面区域，完整主体区域不可靠；该项面积、颜色、边界、深度及其余派生数值均不作为判断依据。"
+    },
+    {
+      "measurement_id": "measure-0064-player_buggy",
+      "accepted": false,
+      "reason": "QA明显漏掉真实车顶及上部框架，框顶落在车顶下方；位置、面积和边界统计均受影响，整项派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0078-player_buggy",
+      "accepted": false,
+      "reason": "QA左轮及底盘区域碎裂、漏分，局部轮廓与清晰原帧不符，无法作为可靠完整区域；整项派生数值不用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "增强依据车辆与通路的前后组织，非单凭居中。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "尺度足以辨认车辆和路面；没有充分证据表明占比变化承担进一步信息揭示。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "未见外物持续遮住必要车体；车内驾驶者受车架遮蔽不影响当前车辆呈现。不计算遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "暗车身在阴影中局部对比偏低，但外轮廓、侧翼和尾灯维持定位；未证明明暗差异另有关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "主呈现对象是车辆，未呈现需要检查的人体连接或跨视区身体。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "车顶不能替代人物真实头顶；驾驶者不是独立人物呈现。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "没有可可靠识别的人物视线及观看对象关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "由连续路面、车辆朝向与前后位置判断行进关系，不把屏幕位移当作世界运动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "部分轮胎贴底或出框，但车身倾斜、岩阶及可行路面仍可读；未见局部取舍进一步强调特殊交互。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "依据岩阶遮叠、通路延伸、围网和远山建立空间，不采用单目深度数值。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "增强来自爬升后道路与崖外远景的具体关系显露，非单凭地平线位置。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "车架与岩石局部重叠没有造成归属误读；无独立增强证据。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可识别道路及围网引导、纵深组织；仅解释已证明的空间揭示效果，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "联系表及参考图并列是评审输入排版，不是片内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          6
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024"
+      ],
+      "observation": "车辆位于画面下方中央，车身和轮胎占据近处，岩阶、方向箭头及两侧岩壁在前方展开；5秒参考图仍能看清车辆对应的前方岩阶。",
+      "effect": "主体定位稳定，车辆尺度兼顾姿态与路况；前方岩阶不是孤立背景，而与车轮所处路面连续连接。",
+      "exceptions_checked": "车内人物被框架遮挡属于车辆结构；轮胎贴底属于跟随视角局部裁切，没有丢失当前路线和车身姿态。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          6.5,
+          11.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046"
+      ],
+      "observation": "岩阶和弯道标识保留在车辆前方；8至10秒附近车身随路况倾斜，10秒清晰帧下部轮胎出框，但车体、弯道牌及前方岩面仍在；随后上方出现更大的天空开口。",
+      "effect": "仍能理解车辆转向、爬升与路面起伏的联系；从岩壁内道路到上方开口的推进，为后续空间展开提供连续参照。",
+      "exceptions_checked": "未把车身倾斜或短暂轮胎出框判作结构崩坏；阴影降低局部细节，但没有持续主体定位丢失。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          10.5,
+          16
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0042",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "observation": "道路由岩壁间的上坡通向开阔临崖路段。车辆保持在近处下方，左侧岩壁、右侧橙色围网及崖外远山同时出现；15秒参考图中围网沿道路向前延伸，清楚界定可行路面与外侧落差。",
+      "effect": "车辆位置稳定提供参照，前方道路和围网把注意带向下一段通路；上下分布从岩壁包围转为路面下方承托车辆、远山天空向外展开，逐步揭示车辆正在高处沿崖行驶的环境联系，超出单纯认出车辆。",
+      "exceptions_checked": "不是因天空增多或出现前后景便判增强；依据是同一路面延续、边界围网和车辆前进顺序共同揭示空间。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          16.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "车辆接近下一处弯道，19.5秒位于偏左下方；右前方大岩石、其左侧向上延伸的路面和远处围网仍可见。",
+      "effect": "近处车辆与前方岩石形成明确绕行关系，前方空间随转弯继续揭示路线，而非只展示一块孤立障碍；主体偏移后观看重点仍稳定。",
+      "exceptions_checked": "不能仅凭右侧空地断言具体操控路线；车轮下缘裁切未排除弯道对象、可行路面或车辆朝向。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "主要呈现车辆及道路，驾驶者仅为车架内的小范围可见形象；未见片内独立头像、分屏或画中画。",
+      "effect": "人物关节、人物头部空间、视线关系及多画面组织不构成本片必要检查对象。",
+      "exceptions_checked": "不把车辆框顶当人物头顶，也不把输入联系表当成视频分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "车辆由接近正后方呈现转为明显倾斜，前方岩阶逐步转向弯道标识所在区域。",
+      "spatial_or_attention_effect": "车身姿态与前方路面持续同框，保持越障和转向关系可读。",
+      "expressive_effect": "主要支持基础呈现；不把倾斜本身解释为紧张。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032",
+        "rgb-0042"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048",
+        "rgb-0060"
+      ],
+      "visible_change": "岩壁间的爬升道路逐渐展开为有围网、崖外远山和天空的临崖路段。",
+      "spatial_or_attention_effect": "近处车辆、连续路面及围网共同把观看从局部岩阶带向延伸路线，并说明道路外侧边界。",
+      "expressive_effect": "有依据地深化车辆与高处临崖环境的联系，支持e3的空间揭示增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0070"
+      ],
+      "after_evidence_ids": [
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "visible_change": "前方大岩石进入主要视区，车辆偏向左下方，岩石旁后续路面与围网仍保留。",
+      "spatial_or_attention_effect": "观看由沿围网前行转向辨认岩石旁的弯道路面，空间参照没有中断。",
+      "expressive_effect": "延续路线揭示；不推断尚未提供的后续通过结果。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立：车辆定位稳定，局部暗部及轮胎触底未造成必要信息损失。关键增强在于岩壁内爬升到临崖道路的连续揭示：下方车辆提供固定参照，前方路面、围网与崖外远景共同建立并深化车辆和路线边界的关系。",
+    "adjacent_grade_explanation": "高于中档的依据是可核查的前后空间揭示与观看引导，而非居中、纵深术语或手法数量；未见足以判低的持续混杂、无效遮挡或动作信息丢失。",
+    "uncertainties": [
+      "仅依据提供的采样画面，不声称检查采样间瞬时情况。",
+      "未重跑CV；三个拒绝项的派生数值均未使用，结论由RGB支撑。",
+      "没有完整主体区域，不报告遮挡比例；不使用颜色差异或单目深度数值直接推导表达效果。"
+    ]
+  }
+}

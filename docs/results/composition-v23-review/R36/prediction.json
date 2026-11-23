@@ -1,0 +1,525 @@
+{
+  "sample_id": "R36",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "背向镜头的金发蓝衣人物，背负镐状工具；全段主要观看对象。",
+      "uncertainty": "没有明确任务或叙事情境，不推断人物目的。"
+    },
+    {
+      "object_id": "carried_tool",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "横跨肩背的镐状工具，与人物身体关联清楚。",
+      "uncertainty": "未见明确使用工具的动作。"
+    },
+    {
+      "object_id": "left_platform",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "人物左侧的浅色平台或设施，部分时刻露出相邻阶梯与结构。",
+      "uncertainty": "无法确认设施用途；没有证据表明它是交互目标。"
+    },
+    {
+      "object_id": "near_grass",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "画面下部及两侧的近处草丛，局部覆盖人物下缘。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "terrain_horizon",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "草地、裸土间隙、石块、远处树线与雾中山体。",
+      "uncertainty": "裸土间隙不能直接认定为任务路线。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-1",
+      "time_range": [
+        0,
+        10.5
+      ],
+      "necessary_information": "建立人物背向站立及其周边草地、左侧设施的空间关系；取景有小幅变化，但主要内容未改变。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "stage-2",
+      "time_range": [
+        11,
+        15.5
+      ],
+      "necessary_information": "人物短暂抬臂后恢复背向姿态；需保留头肩、手臂与周边空间，不能凭此补出交互对象。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0062"
+      ]
+    },
+    {
+      "stage_id": "stage-3",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "necessary_information": "人物出现侧转、伸臂和回转，末段取景更紧；必要内容为上身姿态变化及其与环境的位置关系。",
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": false,
+      "reason": "QA掩码混入背负工具，且下部可见身体覆盖不完整；不采用该项面积、中心、边界及其派生差异和深度，关节仅由RGB核对姿态。"
+    },
+    {
+      "measurement_id": "measure-0000-left_platform",
+      "accepted": true,
+      "reason": "QA基本贴合左侧浅色平台可见区域；仅支持局部位置与轮廓，不将单目深度当距离。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": false,
+      "reason": "QA明显漏掉大部分蓝衣躯干，面积异常；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-left_platform",
+      "accepted": false,
+      "reason": "QA把相邻阶梯并入平台，区域归属不纯；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": false,
+      "reason": "QA混入肩背工具并截漏下部身体，不能视作可靠完整人物区域；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-left_platform",
+      "accepted": true,
+      "reason": "QA基本覆盖浅色平台可见表面，前景草遮挡边缘可辨；仅采用可见区域定位。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": false,
+      "reason": "工具与人物混分、身体下缘覆盖不完整；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-left_platform",
+      "accepted": false,
+      "reason": "QA主要落在平台下方草丛，漏掉浅色顶面，错分明显；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": false,
+      "reason": "侧转伸出的手臂明显超出人物掩码和框，关键动作部位漏分；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-left_platform",
+      "accepted": true,
+      "reason": "QA与左侧浅色平台可见表面基本一致；仅采用局部位置与轮廓。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": false,
+      "reason": "肩背工具混入且画面下缘可见躯干漏分；不采用面积、中心、边界与颜色差异等派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-left_platform",
+      "accepted": true,
+      "reason": "QA基本贴合左缘平台可见区域；深度缺失，不补造距离。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "稳定居中支持定位，未证明额外关系揭示。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "依据RGB定性比较；拒绝人物掩码面积，末段增大未对应新信息揭示。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "无完整主体区域，不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "蓝衣与亮发便于识别，未见进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "下肢离框属于一致的第三人称局部取景，未见形体连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "头部完整，上方环境保留；没有受限或疏离的上下文。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "背向及短暂侧转不足以确认具体观看对象或必须呈现的视线关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "取景变化不能单独证明世界中的持续行进；无明确路径目标关系。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可辨上身动作；未见需纳入画面的接触对象或动作结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E5",
+        "E4"
+      ],
+      "uncertainty": "远近与地面联系清楚，但前后变化未深化主体与环境关系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "上下分布保留人物和地形；天空及地平线位置本身不构成增强。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E5"
+      ],
+      "uncertainty": "工具、人物、草丛归属可辨，没有可核查的隔离或依附变化。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E5"
+      ],
+      "uncertainty": "可识别居中背向人物与环境层次组织；其效果限于稳定定位和空间可读。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "联系表与参考并排属于证据展示，原视频未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          10.5
+        ],
+        [
+          11.5,
+          15.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0046",
+        "rgb-0060"
+      ],
+      "observation": "人物持续位于下部中央，头肩和蓝衣轮廓清楚；左侧浅色设施始终处于侧缘，未持续压过人物。",
+      "effect": "主体容易定位，人物大小与可见环境兼容；居中、鲜明配色及充足头顶空间未进一步建立特定关系。",
+      "exceptions_checked": "不以居中、颜色鲜艳或主体面积单独判高；人物位置以RGB确认，不用拒绝的测量。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0032",
+        "rgb-0048",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "近处草丛与人物下缘局部交叠；肩背工具横跨衣服和背景，但头部、躯干与工具归属仍清楚。",
+      "effect": "局部遮挡没有造成持续主体丢失或连接误读，也未显示受阻、隐藏等进一步含义。",
+      "exceptions_checked": "排除正常草丛遮挡和背负工具重叠；不把CV漏分当作真实遮挡。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          11,
+          11.5
+        ],
+        [
+          16,
+          16.5
+        ],
+        [
+          18.5,
+          19
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0074",
+        "rgb-0076"
+      ],
+      "observation": "采样画面可见抬臂、侧转伸臂及回转；16秒伸出的手臂仍在画内，人物头肩和上身连续。",
+      "effect": "姿态变化能够辨认，没有关键手势被画框截断的明确证据；未见接触对象或结果，不能补出交互含义。",
+      "exceptions_checked": "不把分割漏掉的手臂认作出框；短暂侧转不等于已确认视线目标。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          10,
+          10
+        ],
+        [
+          17.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "与10秒相比，末段人物在画面中更大，下缘裁至更高的身体位置；头肩、躯干及前方地面仍可见。",
+      "effect": "取景收紧仍保留当前背向人物呈现所需信息；未出现新对象或空间关系的明确揭示，不能凭增大占比认定增强。",
+      "exceptions_checked": "正常第三人称身体裁切不视作结构断裂；无法仅据屏幕变化判定人物行进方向。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "近处深色草丛、人物与地面、侧方平台及石块、远处树线山体依次可辨；地面间隙朝远处延伸，但没有明确目标或阻挡变化。",
+      "effect": "远近、上下和元素归属基本清楚，支持理解人物所在场地；这些层次未形成超出环境交代的持续空间揭示。",
+      "exceptions_checked": "不以同时存在前中后景自动判高；不将证据联系表的多格布局视为视频手法。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060"
+      ],
+      "visible_change": "左缘设施露出范围和地面构图改变，人物仍保持下部中央的背向呈现。",
+      "spatial_or_attention_effect": "观看重点稳定，环境参照仍可辨。",
+      "expressive_effect": "未见由这些变化建立的新联系或揭示效果。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0062"
+      ],
+      "after_evidence_ids": [
+        "rgb-0064",
+        "rgb-0066"
+      ],
+      "visible_change": "背向姿态转为侧转伸臂，再恢复。",
+      "spatial_or_attention_effect": "动作主要部位在框内；分割漏臂不影响RGB中的可读性。",
+      "expressive_effect": "能确认姿态变化，不能确认对象关系或动作结果。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0078"
+      ],
+      "visible_change": "末帧人物取景更紧，身体下部裁切增加，头部仍完整。",
+      "spatial_or_attention_effect": "人物更显著，但前方地形仍有必要可见范围。",
+      "expressive_effect": "未证明景别变化带来额外关系强调或信息揭示。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "reason": "主体定位、局部动作、正常身体裁切及环境关系均基本可读，未确认适用基础条件失败。居中人物、环境层次与末段收紧取景主要完成基本呈现，尚无可核查的进一步注意组织或空间关系深化。",
+    "adjacent_grade_explanation": "不判低：草丛交叠及下肢裁切未造成必要信息损失或形体结构破坏。不判高：未证明位置、尺度或层次变化超出基本辨认与环境交代。",
+    "uncertainties": [
+      "仅评价所给采样画面，不声称看过采样间动作。",
+      "人物分割及两项平台分割被拒绝，其派生数值未参与判断；未重跑CV。",
+      "没有完整主体区域，不计算遮挡比例；不将单目深度解释为真实距离。",
+      "缺少明确视线目标、行进目标及交互结果，但这些缺失不妨碍当前已呈现内容的基础构图判断。"
+    ]
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "sample_id": "R42",
+  "roles": [
+    {
+      "object_id": "player_hands_weapon",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第一人称持枪手臂及枪械，是瞄准、射击与收回掩体动作的主要可见载体。",
+      "uncertainty": "不推断画外身体姿态或具体任务。"
+    },
+    {
+      "object_id": "combat_cues",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "远处射击方向、红色弹道、火光及近处撞击碎屑，共同建立交火关系。",
+      "uncertainty": "远处人物较小，不确认人数、身份或逐帧命中结果。"
+    },
+    {
+      "object_id": "cover_pillar",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处混凝土柱及墙边，后半段形成右侧主要遮挡边界。",
+      "uncertainty": "不同阶段不保证为同一根柱。"
+    },
+    {
+      "object_id": "construction_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "未完工建筑、楼板、脚手架、地面通道与设备；黄色设备是空间参照物，非默认主体。",
+      "uncertainty": "不采用缓存命名作为对象识别依据。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        4.5
+      ],
+      "necessary_information": "建立工地交火空间：持枪方向、前方开口与近处柱体的关系；射击火光及碎屑说明动作发生。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0018",
+        "Image #3"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        4.75,
+        9.5
+      ],
+      "necessary_information": "视野转向较开阔的脚手架和通道，随后靠近右侧柱边；需保留射击方向与可退入的遮蔽边界。",
+      "input_evidence_ids": [
+        "rgb-0019",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        10,
+        16
+      ],
+      "necessary_information": "近柱遮蔽占据右侧，左侧窄开口保留外部工地及红色弹道；理解外部射击与近处撞击、持枪动作之间的关系。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "Image #4"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        16.25,
+        19.5
+      ],
+      "necessary_information": "重新显露较宽通道并继续持枪交互；结尾柱边碎裂与近处枪械同时出现，保留环境接触结果。",
+      "input_evidence_ids": [
+        "rgb-0065",
+        "rgb-0066",
+        "rgb-0072",
+        "rgb-0078",
+        "Image #5"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-construction_region",
+      "accepted": false,
+      "reason": "绿色区域跨楼体、地面及局部物件，边界零碎，不能作为稳定完整对象；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-construction_region",
+      "accepted": false,
+      "reason": "建筑区域大面积漏分且混入不同空间层，无法与前次区域可靠比较；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-yellow_lift",
+      "accepted": false,
+      "reason": "掩码落在黄色设备下方的地面及杂物，未覆盖实际设备主体；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-cover_pillar",
+      "accepted": true,
+      "reason": "QA中的右侧大块掩码基本贴合近处柱面，避开下方持枪轮廓，可作粗略可见区域参考；不据此推算遮挡率或真实距离。"
+    },
+    {
+      "measurement_id": "measure-0048-yellow_lift",
+      "accepted": false,
+      "reason": "掩码落在近柱边局部表面，实际黄色设备位于更左侧；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0048-cover_pillar",
+      "accepted": false,
+      "reason": "右侧掩码大面积吞入枪械及相邻表面，未可靠分离柱体；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-yellow_lift",
+      "accepted": false,
+      "reason": "掩码位于柱边地面及遮挡区域，未对应可见黄色设备；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-cover_pillar",
+      "accepted": false,
+      "reason": "柱面漏分呈条带状，右侧相邻区域混入，轮廓不可靠；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-yellow_lift",
+      "accepted": false,
+      "reason": "绿色掩码标在地面，实际黄色设备在左上方；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-cover_pillar",
+      "accepted": false,
+      "reason": "混入持枪手臂、碎屑和柱后区域，无法恢复柱面有效边界；拒绝全部派生数值。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "远处目标身份不确定；枪口、外部开口与弹道足以建立主要观看方向。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "依据RGB中的宽窄视野变化，不采用不可靠面积测量；不推断人物权力或心理。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-c",
+        "P-H-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "没有完整主体掩码，不给遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "暗枪与暗环境局部接近，但手枪轮廓、火光及弹道维持辨认；未证明独立的区分增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "第一人称手臂正常出框；未见可确认的同一形体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1"
+      ],
+      "uncertainty": "没有承载主要信息的人物头部呈现；不把第一人称画外头部视为缺失。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "没有可靠的人物眼神线索；枪口朝向按动作及空间项评价。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "不把所有屏幕位移解释为人物世界运动；仅依据开口和柱边相对关系变化。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-e",
+        "C-H-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "枪械局部出框符合第一人称交互；不声称看到未提供的完整换弹或命中过程。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "空间依据柱边、脚手架、黄色设备及地面通道的前后对照；不使用单目深度作米制距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "上方楼板、下方地面和枪械位置可读；未证明上下分布产生额外规模或处境表达。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-c",
+        "S-H-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "柱体、枪械和外部空间归属清楚；与遮挡项共用同一事件，不重复计效。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "识别为近柱边界框取外部通道及纵深组织；仅解释已证实的遮显和空间效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "实际游戏画面未见分屏或画中画；输入联系表和参考拼接不属于片内手法。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          4.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0018",
+        "Image #3"
+      ],
+      "observation": "player_hands_weapon位于下方，前方柱体与楼体开口分开近远空间；2至2.5秒附近火光和碎屑、4.5秒枪口火光保留射击线索。",
+      "effect": "主要动作及方向可读，工地细节未持续抢走必要观看重点；支持主体、裁切与空间基础。",
+      "exceptions_checked": "按第一人称常规手臂裁切处理；远处目标细小不单独判失败，也不凭火光推断命中。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          4.75,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0019",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0038"
+      ],
+      "observation": "5秒附近较宽视野展示左侧脚手架、黄色设备及向内延伸的地面；8至9.5秒近柱进入右侧并扩大，枪械仍在下方，外部通道保留在左侧。",
+      "effect": "同一外部参照与逐渐扩大的近柱共同建立由暴露视野转向柱边遮蔽的位置变化；观看路径由枪口指向通道，再落实到近处遮蔽边界，超出孤立前后景陈列。",
+      "exceptions_checked": "不由机位变化推断具体步法或速度；8秒柱体掩码仅作粗略辅助，增强结论以RGB前后关系为依据。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          10,
+          16
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "Image #4"
+      ],
+      "observation": "近柱占据中央至右侧大部，枪械沿右侧竖起；左侧窄开口持续保留脚手架和黄色设备。13.5秒柱面亮起，15秒红色弹道横过开口并接近柱边，伴随碎屑。",
+      "effect": "开口与近柱的轮廓分隔将外部交火区域和当前遮蔽位置联系起来；收窄视野仍保留参照，弹道与柱边撞击使阻隔作用具体可见。局部取景同时强调枪械、遮蔽边界与交互结果。",
+      "exceptions_checked": "大面积墙面属于有交火上下文支持的遮蔽，不是无效遮挡；不要求此时持续显露远处人物，也不推断恐惧等心理。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          16.25,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0065",
+        "rgb-0066",
+        "rgb-0072",
+        "rgb-0078",
+        "Image #5"
+      ],
+      "observation": "16.25至16.5秒外部通道重新展开；18至19.5秒黄色设备、脚手架和近柱仍可对应。19.5秒枪械贴近右侧柱边，柱边破碎及飞散块体清楚可见。",
+      "effect": "开口重新展开补足此前受遮蔽的空间；结尾将近处枪械、柱边与破碎结果同框，维持交互归属，并使柱体作为实际阻隔及受击表面的关系更明确。",
+      "exceptions_checked": "不将碎屑视为肢体断裂；不确认具体射手、破坏原因或后续结果；正常枪械出框未损失必要动作关系。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "较宽的脚手架与通道视野转为右侧近柱显著扩大的窄开口。",
+      "spatial_or_attention_effect": "原有远处设备保持参照，近柱尺度变化将观看重点引向外部通道与遮蔽边界的关系。",
+      "expressive_effect": "支持空间揭示和阻隔关系；不由占比变化推断情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060"
+      ],
+      "visible_change": "相近柱边取景中出现柱面亮光、横穿开口的红色弹道及碎屑。",
+      "spatial_or_attention_effect": "弹道把外部空间与近处柱边接触位置连接起来。",
+      "expressive_effect": "为大面积近柱遮挡提供可见交互依据，使遮蔽作用超出一般前景装饰。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0066",
+        "rgb-0078",
+        "Image #5"
+      ],
+      "visible_change": "柱后狭窄视野重新展开，结尾近柱边出现清楚的破碎块体。",
+      "spatial_or_attention_effect": "重新显露通道并维持设备参照，随后把注意集中到枪械与柱边的接触区域。",
+      "expressive_effect": "形成遮蔽、显露与局部交互结果的连续空间组织。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-c",
+      "C-H-e",
+      "S-H-a"
+    ],
+    "decisive_event_ids": [
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。宽视野先建立脚手架、设备与通道，随后近柱压缩外部开口；弹道、撞击及重新显露又把遮蔽边界与外部交火联系起来。此安排有效引导注意并逐步揭示位置和阻隔关系，超过基本动作可辨。",
+    "adjacent_grade_explanation": "不判低：大面积柱体与手臂裁切有第一人称交互及遮蔽依据，未见必要信息持续丢失或形体连接崩坏。不停留于中：增强有5秒宽视野、10至16秒柱边取景及16.25秒后重新展开的具体前后证据，并非仅凭有前景或纵深术语。",
+    "uncertainties": [
+      "仅评价提供的采样画面，不声称采样间每帧均如此。",
+      "多数缓存分割不可靠，拒绝项的面积、颜色及深度数值均未用于判断；本轮未重跑CV。",
+      "远处人物身份、完整动作和命中结果不确定，不影响此处空间组织判断。"
+    ]
+  }
+}

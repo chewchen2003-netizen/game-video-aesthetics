@@ -1,0 +1,550 @@
+{
+  "sample_id": "R23",
+  "roles": [
+    {
+      "object_id": "cat_player",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "青绿色猫形装备角色；持续跟随呈现其移动、翻滚及近距离交互。",
+      "uncertainty": "依据RGB确认，非依据缓存命名。"
+    },
+    {
+      "object_id": "purple_enemy",
+      "role": "supporting_element",
+      "time_range": [
+        10,
+        19.5
+      ],
+      "description": "紫色大型生物，与角色靠近并发生攻击、闪光等交互；部分画面有多个紫色形体。",
+      "uncertainty": "不能确认各时刻是否始终为同一个体；不把多个形体合成单一身体。"
+    },
+    {
+      "object_id": "flying_object",
+      "role": "supporting_element",
+      "time_range": [
+        7.25,
+        9.75
+      ],
+      "description": "角色上方的飞行生物或物体，抬高的取景将其纳入画面。",
+      "uncertainty": "物种及具体交互机制不明。"
+    },
+    {
+      "object_id": "near_vegetation",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处枯枝、草丛及12秒附近密集紫色植被。",
+      "uncertainty": "局部植被与特效交叠。"
+    },
+    {
+      "object_id": "desert_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "沙地、岩台、峡谷、巨大骨骼、远山与天空；为移动和交互提供空间参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "floating_device",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "若干采样画面中位于角色附近的小型悬浮装置。",
+      "uncertainty": "功能不明，不认定为主要观看对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        7
+      ],
+      "necessary_information": "角色在沙地与岩台间移动；需辨认角色、前方空地及环境方位。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0008",
+        "rgb-0009",
+        "rgb-0010",
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0022",
+        "rgb-0024",
+        "rgb-0026",
+        "rgb-0028"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        7.25,
+        9.75
+      ],
+      "necessary_information": "取景向上，角色位于下方，上方飞行对象进入主要可见范围；需理解二者方向关系。",
+      "input_evidence_ids": [
+        "rgb-0029",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0039"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        10,
+        12.75
+      ],
+      "necessary_information": "角色翻滚，紫色生物进入近处；随后植被与特效增加。需辨认角色移动、对方位置及交互方向。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0049",
+        "rgb-0050",
+        "rgb-0051"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "角色与紫色生物近距离交互；需保留双方、攻击作用范围和可见反应。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0053",
+        "rgb-0054",
+        "rgb-0055",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-cat_player",
+      "accepted": true,
+      "reason": "QA掩码基本对应RGB中的猫形角色，边界近似可用；不由其推算完整身体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-cat_player",
+      "accepted": true,
+      "reason": "对应腾空角色主体，四肢边缘有遗漏；仅采纳粗略位置及尺度，不把掩码边缘当精确肢体边界。"
+    },
+    {
+      "measurement_id": "measure-0032-cat_player",
+      "accepted": true,
+      "reason": "覆盖下方角色，和仰视RGB相符；框底不是画框，不能据此判断脚部裁切。"
+    },
+    {
+      "measurement_id": "measure-0048-cat_player",
+      "accepted": true,
+      "reason": "小掩码基本对应植被前的角色；只能表示可见部分，不能表示完整面积或遮挡比例。"
+    },
+    {
+      "measurement_id": "measure-0048-purple_enemy",
+      "accepted": false,
+      "reason": "QA大掩码主要沿密集紫色植被成团覆盖，缺乏可靠生物轮廓；其面积、色差、边界和深度派生值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-cat_player",
+      "accepted": true,
+      "reason": "主要覆盖前景角色，与RGB基本对应；粗略定位可用，关节坐标未获独立确认，不用于结构判定。"
+    },
+    {
+      "measurement_id": "measure-0064-purple_enemy",
+      "accepted": false,
+      "reason": "掩码仅截取角色右上方交叠形体，未可靠分离完整紫色生物；派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-cat_player",
+      "accepted": false,
+      "reason": "掩码上部混入近处紫色生物，与角色身体未可靠分离；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-purple_enemy",
+      "accepted": false,
+      "reason": "仅覆盖局部紫色形体，遗漏延伸部分且与角色交叠；不能作为该生物的可靠区域，派生值弃用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "角色大多保持中下部，翻滚及遮显后仍可定位；位置变化主要服务跟随和交互，未证明额外关系强化。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "远近变化保留环境和近战信息；未把普通距离及机位变化视为增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "12秒附近植被遮蔽较重，但前后定位可接续，未确认持续无效丢失；没有可靠遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "青绿角色通常可从黄沙及紫色对方中分出；植被阶段较弱，未见由此持续寻找或误认。色彩差异本身只证明可辨。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "8秒附近下肢贴近或超出下沿属于仰视跟随的局部取景；翻滚姿态有清晰原帧支持，未见无法解释的同体连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "头部保留充分，仰视时上方空间容纳飞行对象；没有受限或其他处境强化证据。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "按角色身体及工具朝向判断，相关上方对象和近处对方可见；不推断背向镜头角色的精确眼神。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "沙地路径及近战范围基本入画；10秒附近镜头转动不等于角色世界运动方向，没有据此虚构路径压缩。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "翻滚身体、近战双方及主要闪光反应保留；个别边缘紫色形体不完整，未见必要动作因出框而失义。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "近草、角色、岩台和远峡谷提供稳定空间参照；尚未证明跨景别揭示形成超出基本导航与交互辨认的效果。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "天地比例随上方对象和地面交互调整，位置关系清楚；未由上下位置推断强弱或情绪。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "植被及近战交叠局部密集，但前后形体归属可恢复；未把错分掩码当成RGB中的身体融合。遮挡影响仅在e3统一记录。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "可识别近地草带、角色与远景岩层的层次组织及前方留白；支持阅读路径和交互，未获进一步表达证据。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "视频画面未见分屏或画中画；输入联系表及参考帧并排是证据排版，不是视频手法。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          7
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028",
+        "measure-0000-cat_player",
+        "measure-0016-cat_player"
+      ],
+      "observation": "角色位于中下方，前方沙地敞开，岩台、枯树及远处峡谷构成空间参照。转向过程中背景有模糊，角色主体仍可定位。",
+      "effect": "满足主体突出、路径可见和基本纵深；5秒参考画面给出环境范围，但没有显示空间对行动的特殊制约。",
+      "exceptions_checked": "大面积环境不等于主体过小；背景模糊不直接计为构图增强。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          7.25,
+          9.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0029",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0039",
+        "measure-0032-cat_player"
+      ],
+      "observation": "取景抬高，角色留在下方，飞行对象出现在天空区域；8秒附近角色下肢靠近画框下沿。",
+      "effect": "上方相关对象进入可见范围，角色与其方向关系可读；属于当前关注对象的基本揭示，尚不足证明更强关系或环境表达。",
+      "exceptions_checked": "正常局部取景并未造成同体连接断裂；不以低机位推断权威或英雄感。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          10,
+          12.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0042",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0049",
+        "rgb-0050",
+        "rgb-0051",
+        "measure-0048-cat_player"
+      ],
+      "observation": "10秒附近角色横向翻滚，粉色线状效果与左侧紫色生物相接近；清晰原帧保留完整翻滚姿态。12秒附近密集植被及特效覆盖交互区域，角色局部可见，12.75秒紫色形体再次显露。",
+      "effect": "翻滚方向和对方所在侧可辨；植被阶段可读性下降，但前后位置能接续，未确认关键关系持续丢失。该局部遮显不构成增强。",
+      "exceptions_checked": "排除正常翻滚姿态、镜头转动及植被交叠；不能用错误敌方掩码宣称严重遮挡或形体崩坏。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078",
+        "measure-0064-cat_player"
+      ],
+      "observation": "角色位于前景，紫色生物在其前方及侧前方，双方距离较近；黄沙、紫色地表边界和岩台保留方位。15秒参考及19.5秒清晰原帧可分辨双方身体，后者上方还有紫色盘状效果。",
+      "effect": "近距离交互、动作作用范围及主要反应可读；重叠符合接近交互，未见必要对象持续出框或归属误读。组织主要完成常规近战呈现。",
+      "exceptions_checked": "紫色形体可为多个个体，不能拼接判断尺度异常；盘状效果不当作同一身体部件，缓存串分不当作原画结构问题。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0028"
+      ],
+      "after_evidence_ids": [
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0036"
+      ],
+      "visible_change": "由面向沙地、岩台的取景转为天空占比增加，角色移至较低位置，上方飞行对象入画。",
+      "spatial_or_attention_effect": "注意从前方地面转向上方对象，方向关系得到基本补足。",
+      "expressive_effect": "可核查的是基本关注对象揭示，未证明进一步处境或关系强化。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0046"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048",
+        "rgb-0049",
+        "rgb-0051",
+        "rgb-0052"
+      ],
+      "visible_change": "翻滚和较开阔交互后，植被与特效密集遮蔽，随后紫色生物和角色重新较清楚地同框。",
+      "spatial_or_attention_effect": "中间阶段清晰度下降，前后位置仍可接续；不依赖拒绝的生物掩码判断。",
+      "expressive_effect": "没有证据把遮挡解释为隔离、受阻或悬念增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "visible_change": "从角色前方开阔的沙地环境，转为角色与紫色生物占据近处交互区域。",
+      "spatial_or_attention_effect": "观看重点由移动空间转向双方近距离动作，岩台和地表仍提供方位。",
+      "expressive_effect": "景别与内容匹配；尚未形成足以超过基本呈现的空间揭示证据。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "按game_video_composition v2.3.0评审。角色、路径、上方对象及近战双方的必要关系基本可读；12秒附近遮蔽属于局部不足，未确认持续无效定位丢失、关键裁切或同体结构失败。位置、景别和层次变化主要完成常规跟随与交互呈现，增强未获充分证明，判中。",
+    "adjacent_grade_explanation": "不判低：未确认任何适用最低必要条件明确失败。不判高：有环境层次和取景调整，但尚缺安排如何超出基本辨认、实质强化空间或对象关系的证据桥。",
+    "uncertainties": [
+      "仅评估实际附图可见采样，不声称观看连续视频或未展示的中间时刻。",
+      "缓存未重跑；拒绝项的全部派生值不参与判断。无完整主体掩码，不计算遮挡百分比。",
+      "多处紫色形体的个体身份不明，不影响当前双方交互及基本空间关系判断。"
+    ]
+  }
+}

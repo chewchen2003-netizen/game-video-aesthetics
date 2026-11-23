@@ -1,0 +1,452 @@
+{
+  "sample_id": "R31",
+  "roles": [
+    {
+      "object_id": "room_region",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现木屋内部：梁顶、墙面、地板、床及两扇通向室外景观的窗。此处角色指RGB中的房间，不等同于缓存同名掩码。",
+      "uncertainty": "没有任务或交互提示，不能确认床是唯一关注目标。"
+    },
+    {
+      "object_id": "bed",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "右下方木床，与墙窗共同说明房间布局。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "lantern",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "左下方第一人称手持灯，灯体与手部持续可辨。",
+      "uncertainty": "没有可见操作目标，不把持灯默认解释为探索任务。"
+    },
+    {
+      "object_id": "hand",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "从左边缘伸入、抓握灯提柄的手及前臂。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "exterior",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "两扇窗内可见树木与地面，为室内外空间提供参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-1",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "necessary_information": "持续呈现同一木屋内部与持灯视角；需辨认手与灯的连接、床所在位置、墙窗和地板的空间关系。采样画面只有灯体轻微摆动，未见主要内容或角色转变，因此不另拆阶段。末帧墙面出现短橙色竖条，作为局部例外记录。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-bed",
+      "accepted": true,
+      "reason": "可见床体与寝具轮廓基本吻合；仅接受可见区域几何，不推算画外部分或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0000-lantern",
+      "accepted": false,
+      "reason": "掩码主要覆盖灯体，遗漏提柄及上部连接；不能作为完整灯区域，全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0000-room_region",
+      "accepted": false,
+      "reason": "主要覆盖后墙局部，未覆盖房间的顶、左墙与地板；不能代表房间主体，派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-bed",
+      "accepted": true,
+      "reason": "床体与寝具覆盖基本可靠；只作可见区域参考。"
+    },
+    {
+      "measurement_id": "measure-0016-lantern",
+      "accepted": false,
+      "reason": "遗漏提柄及连接部分，完整对象分割不可靠；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-room_region",
+      "accepted": false,
+      "reason": "后墙局部被命名为房间，语义范围不符；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-bed",
+      "accepted": true,
+      "reason": "床的主要可见轮廓与RGB一致，少量边缘漏分不影响粗略位置参考；不据此比较微小面积变化。"
+    },
+    {
+      "measurement_id": "measure-0032-lantern",
+      "accepted": false,
+      "reason": "灯体之外的提柄漏分，不能代表完整手持灯；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-room_region",
+      "accepted": false,
+      "reason": "只覆盖部分后墙且边界不稳定，不是可靠房间区域；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-bed",
+      "accepted": false,
+      "reason": "寝具内部及右侧出现明显漏分，掩码面积与边界统计不可靠；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-lantern",
+      "accepted": false,
+      "reason": "提柄与上部连接漏分；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-room_region",
+      "accepted": false,
+      "reason": "局部后墙掩码不能代表房间，床边还有碎片误分；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-bed",
+      "accepted": false,
+      "reason": "寝具区域明显破碎漏分，无法支持面积或边界变化判断；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-lantern",
+      "accepted": false,
+      "reason": "仅灯体分割较完整，提柄仍遗漏；完整对象派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-room_region",
+      "accepted": false,
+      "reason": "覆盖范围局限于后墙且混有床边碎片，不是房间掩码；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-bed",
+      "accepted": true,
+      "reason": "床的主要可见轮廓基本吻合；仅支持粗略位置与可见区域，不补造缺失深度。"
+    },
+    {
+      "measurement_id": "measure-0078-lantern",
+      "accepted": false,
+      "reason": "提柄漏分，灯体还有局部缺口；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-room_region",
+      "accepted": false,
+      "reason": "仍仅是后墙局部，无法用于整个房间的面积、分离或深度判断；派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "event-room",
+        "event-end"
+      ],
+      "uncertainty": "主要呈现房间整体；没有证据证明位置安排形成额外的观看路径或信息揭示。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "event-room",
+        "event-hold"
+      ],
+      "uncertainty": "房间、床与灯均可读；不使用错误房间掩码，也不把轻微灯摆动解释为尺度关系变化。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "event-room",
+        "event-hold"
+      ],
+      "uncertainty": "无完整非模态区域，不提供遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "event-room"
+      ],
+      "uncertainty": "木质元素颜色接近，但轮廓和明暗足以区分；暖室内与冷窗景尚不足以证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "event-hold"
+      ],
+      "uncertainty": "适用于可见手臂；第一人称局部取景合理，未见同一形体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "event-hold"
+      ],
+      "uncertainty": "仅呈现第一人称手臂，没有需展示的头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "event-room"
+      ],
+      "uncertainty": "没有可核查的人物视线或观看对象关系，不以镜头朝向代替视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "event-hold"
+      ],
+      "uncertainty": "没有明确行进或需理解的运动路径；灯体摆动不构成前进方向证据。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "event-hold"
+      ],
+      "uncertainty": "持握的手、提柄和灯体均可辨；没有进一步操作、接触反应或结果需展示。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "event-room",
+        "event-hold"
+      ],
+      "uncertainty": "透视与遮挡建立基本室内布局，但未见沿通路展开或跨景别深化的空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "event-room"
+      ],
+      "uncertainty": "上部梁顶占比较大，下部床与灯仍可读；无可见行动支持环境压迫或受限解释。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "event-room",
+        "event-hold"
+      ],
+      "uncertainty": "床遮住部分墙面和右窗下部，手与灯提柄交接合理；没有归属误读或关系转变。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "event-room"
+      ],
+      "uncertainty": "可识别前景持灯、地板及梁顶透视构成的层次组织；其作用止于基本空间可读，未证明增强。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "event-room"
+      ],
+      "uncertainty": "原视频画面为单视区；输入联系表与参考帧并排是评审材料排版，不是视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-room",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "采样画面持续保持木屋全景式布局：梁顶在上，地板在下，床在右下，后墙两窗显露室外。床与窗、墙面的边界可辨，左侧持灯未挡住床或两窗的主要信息。",
+      "effect": "足以辨认房间用途线索和主要对象前后关系；没有必要对象持续被挤出或需要反复寻找。前中后景同时存在，但没有新增空间关系或信息揭示足以证明增强。",
+      "exceptions_checked": "不将大面积天花板、木材同色或床底贴边直接判为缺陷；床的可见结构与布局仍清楚。"
+    },
+    {
+      "event_id": "event-hold",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "左侧手臂伸入画面抓握提柄，灯体在左下轻微升降；部分采样时刻灯底贴边，另一些时刻露出底缘。手、提柄和灯的持握关系保持可辨，未见放下或操作其他对象。",
+      "effect": "第一人称持灯状态清楚，局部裁切没有丢失行为含义；轻微摆动没有改变观看任务，也未建立额外的交互关系。",
+      "exceptions_checked": "按第一人称常规身体裁切处理，不要求头部或全身入画；灯底贴边不是已确认的无效动作裁切。"
+    },
+    {
+      "event_id": "event-end",
+      "time_ranges": [
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0078"
+      ],
+      "observation": "末个提供时刻，后墙靠左、窗旁出现短橙色竖条；房间布局、床和持灯仍然可辨。",
+      "effect": "形成局部色彩干扰，但该帧不足以证明持续抢占重点或必要信息损失。",
+      "exceptions_checked": "不推断竖条来源、功能或在未提供时刻的持续情况；不据此确认基础失败。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060"
+      ],
+      "visible_change": "梁顶、床与窗的布局基本保持，灯体姿态有轻微变化，没有主要对象转换或景别切换。",
+      "spatial_or_attention_effect": "既有室内空间参照持续可读，没有可核查的逐步揭示。",
+      "expressive_effect": "未证明超出基本呈现的前后组织效果。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0078"
+      ],
+      "visible_change": "末帧灯底与下边缘间有余量，墙面新增可见橙色短竖条；床和双窗仍保留。",
+      "spatial_or_attention_effect": "局部细节变化未改变对象归属或房间布局理解。",
+      "expressive_effect": "未见由这些变化建立的交互、处境或关系强化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "event-room",
+      "event-hold",
+      "event-end"
+    ],
+    "reason": "房间、床与持灯关系持续可读，第一人称裁切合理，未确认必要信息损失或基础形体结构破坏。层次与透视支持基本空间理解，但采样序列未证明进一步的注意引导、空间揭示或关系强化。",
+    "adjacent_grade_explanation": "不判低：贴边、同色木质环境和末帧竖条均未造成明确基础失败。不判高：前景持灯、室内外色差及前后层次尚未形成超出基本可辨的证据桥。",
+    "uncertainties": [
+      "判断仅覆盖提供的采样图像，不声称观察过采样间隔内的动作。",
+      "房间与灯的缓存分割不可靠，已拒绝相关派生数值；RGB足以完成基础判断。",
+      "没有非模态掩码、可靠人物视线或明确行进证据，不估算遮挡率、不推断心理与运动目标。"
+    ]
+  }
+}

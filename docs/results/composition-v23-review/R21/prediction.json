@@ -1,0 +1,445 @@
+{
+  "sample_id": "R21",
+  "roles": [
+    {
+      "object_id": "fisher",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "戴尖帽、持钓竿的人物；前后通过服装、帽形与动作确认是同一主体。",
+      "uncertainty": "不推断身份、任务或心理。"
+    },
+    {
+      "object_id": "rod",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "人物手持钓竿及近景可见的虚线轨迹，共同说明举竿动作。",
+      "uncertainty": "未确认具体垂钓结果；远景工具细节有限。"
+    },
+    {
+      "object_id": "dock",
+      "role": "foreground",
+      "time_range": [
+        8.75,
+        18
+      ],
+      "description": "近处木板、立柱和栏杆延伸至人物脚下，显示人物站立的平台及其与水面的连接。",
+      "uncertainty": "近景中仅见局部木柱，不能据此补全平台。"
+    },
+    {
+      "object_id": "seascape",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "天空、水面、远处帆船及航标；提供海面环境和远近参照。",
+      "uncertainty": "远处小物不认定为人物交互对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        8.5
+      ],
+      "necessary_information": "近距离呈现人物反复举竿与放下手臂；必要信息是人物姿态、手与竿的联系。地平线贴近画面底部，尚未充分显示脚下空间。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0034"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        8.75,
+        17.5
+      ],
+      "necessary_information": "取景拉远并降低天空占比，显露全身、脚下码头和水面；必要信息转为人物站在伸向海面的木平台上。17秒附近姿态有变化，但不据此认定行走或起跳。",
+      "input_evidence_ids": [
+        "rgb-0035",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0068",
+        "rgb-0070"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        18,
+        19.5
+      ],
+      "necessary_information": "取景重新靠近并转向仰视，人物再次举竿；必要信息回到手臂与工具动作，同时保有此前建立的码头临海位置。",
+      "input_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0075",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-fisher",
+      "accepted": false,
+      "reason": "QA掩码漏掉部分帽檐和画面底部仍可见的身体，框底未到真实裁切边界。拒绝整项派生位置、面积、边距、颜色、边界和深度数值；关节不单独采信。"
+    },
+    {
+      "measurement_id": "measure-0016-fisher",
+      "accepted": false,
+      "reason": "QA漏掉帽尖及部分帽檐，框底也不对应真实身体出框处；不是完整可见人物区域。整项数值不作依据。"
+    },
+    {
+      "measurement_id": "measure-0032-fisher",
+      "accepted": false,
+      "reason": "QA帽尖在框外，底部人物仍延伸至画框边界，缓存区域不完整。整项数值不作依据。"
+    },
+    {
+      "measurement_id": "measure-0048-fisher",
+      "accepted": false,
+      "reason": "远景QA主要覆盖头部以下身体，漏掉显著帽尖及宽帽檐；无法代表完整人物面积、中心和头顶。整项数值不作依据。"
+    },
+    {
+      "measurement_id": "measure-0064-fisher",
+      "accepted": false,
+      "reason": "与12秒相同，帽形明显超出缓存框和掩码；身体较完整不能抵消头部区域漏分。整项数值不作依据。"
+    },
+    {
+      "measurement_id": "measure-0078-fisher",
+      "accepted": false,
+      "reason": "QA漏掉帽尖，底部身体未覆盖到原画裁切边界。整项数值不作依据；深度与遮挡率原本也未提供。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "增强来自平台线条与人物位置共同组织观看路径，不来自居中本身。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "仅依据RGB的景别变化，不采用被拒绝的面积数值。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "未见持续无效遮挡；身体出框归于裁切，不能当遮挡。无完整区域，不报遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "深色服装与蓝天、水面形成清楚轮廓，但未证明区分本身具有额外关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "近景下身出框可由局部取景解释；未见同一形体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "以RGB真实帽尖核对。近景上方天空较多，但未造成头部辨认干扰，也无受限等表达依据。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "背面与侧后方机位无法确认精确眼神；身体朝向与持竿方向足以理解面向海面，不认定其注视特定船只。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "未确认具有必要前进路径的人物位移；取景变化不等于人物运动，举竿范围由动作裁切项检查。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "手、握竿关系和抬臂姿态可读；竿尖出框未使举竿含义丢失。未见必须辨认而被遗漏的咬钩或收获结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "依据木板透视、脚底接触、水面及远船共同判断，不使用缓存单目深度。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "增强在于上下重新分配使脚下平台与前方水面同时显露，不把低机位或天空多解释为权威、孤独。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "手与竿、鞋与木板、立柱与栏杆归属可辨；未见交叠变化形成额外隔离或依附含义。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "识别到平台透视引导与纵深组织；仅解释已在主体位置、尺度和空间项证明的同一效果，不另加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表与参考帧是输入排版；游戏原帧未见同时分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          8.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0034"
+      ],
+      "observation": "人物位于画面左侧至中左，天空占据大部；近景保留帽形、躯干、手和握竿动作，下身与竿上端出框。举竿与手臂落下在已给采样中交替出现。海面、船和木柱主要挤在底部。",
+      "effect": "人物轮廓和动作重点容易辨认，完成基本呈现；脚下空间尚未充分建立。天空留白和仰视本身不证明额外表达。",
+      "exceptions_checked": "排除正常局部取景、持工具出框和身体自身遮叠；无同形体连接崩坏，无必须入画的特定动作结果证据。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          8.75,
+          17.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0035",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "observation": "由近景转为全身环境取景，人物靠近画面中央。近处木板斜向延伸至其脚下，两侧立柱、栏杆形成平台边界；人物前方水面与远船同时进入清楚的层次关系。12至16.5秒附近布局保持稳定。",
+      "effect": "木板的透视方向把观看路径从近处引向人物脚下，再接至前方海面；前后景别补出了先前缺失的站立支撑和临水位置。此处形成实际空间揭示，超出单纯让人物变小或交代有海。",
+      "exceptions_checked": "人物缩小后仍可识别帽形、全身和站立接触；栏杆未持续遮蔽必要身体部位。17秒姿态变化不足以确认移动路径，不推断受阻、孤独或危险。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          18,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0075",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "取景重新靠近、上仰，人物由全身转为局部，手臂与钓竿再次突出，水面和平台逐渐退出主要视区。19.5秒可清楚看到握竿手、另一只手及竿旁虚线。",
+      "effect": "观看重点从平台上的全身位置回到操作姿态；此前远景使这一近景动作有了可追溯的临海空间背景。没有新增可确认的人际或情绪含义。",
+      "exceptions_checked": "不把镜头变化当人物向前移动；竿尖和下身出框符合动作局部取景，未见关键接触关系或必要结果因此丢失。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0032",
+        "rgb-0034"
+      ],
+      "after_evidence_ids": [
+        "rgb-0035",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "visible_change": "从天空主导的局部人物取景转为显示全身、码头和水面的环境取景。",
+      "spatial_or_attention_effect": "先前仅在底部出现的木质元素被补全为脚下平台；近处木板透视、人物落脚点和远处海面连接成可沿线阅读的空间。",
+      "expressive_effect": "有效揭示人物与临海平台的关系，支持P-H-a、P-H-b、S-H-a、S-H-b及O-H-d；不延伸为心理含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "稳定环境全景后回到仰视局部，举竿手势重新占据观看重点。",
+      "spatial_or_attention_effect": "由站立位置转向手与工具，同时能用此前建立的平台环境理解同一人物的位置。",
+      "expressive_effect": "加强环境揭示与动作重点之间的前后联系；不单凭再次推近额外认定情感表达。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "reason": "适用基础条件成立，未见持续查找、无效遮挡、必要动作丢失或形体结构破坏。决定性增强是8.75秒起的空间揭示：从仅见人物上身与底部零散木柱，转为木板透视引向人物落脚点、平台边界通向海面的完整关系；随后返回举竿局部，使环境与动作重点形成可核查的前后组织。",
+    "adjacent_grade_explanation": "高于中档的依据是具体的空间补全和观看路径，而非居中、天空留白、远近切换等名称。近景竿尖及下身出框具有合理局部取景解释，不构成低档基础失败。",
+    "uncertainties": [
+      "六项缓存分割均存在可见人物漏分，全部拒绝，其派生数值不参与判档；本轮未重跑CV。",
+      "仅评价所给时间采样，不声称观察采样之间的连续运动。",
+      "眼神、具体垂钓目标及结果无法确认；不据此编造人物心理或漏拍结果。",
+      "未提供可核验的RGB哈希、Rubric哈希及运行用量，不补造运行记录。"
+    ]
+  }
+}

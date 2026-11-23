@@ -1,0 +1,1009 @@
+{
+  "sample_id": "R07",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 2058.3
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 2058.8
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 2059.3
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 2059.8
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 2060.3
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 2060.8
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 2061.3
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 2061.8
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 2062.3
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 2062.8
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 2063.3
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 2063.8
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 2064.3
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 2064.8
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 2065.3
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 2065.8
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 2066.3
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 2066.8
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 2067.3
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 2067.8
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 2068.3
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 2068.8
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 2069.3
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 2069.8
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 2070.3
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 2070.8
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 2071.3
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 2071.8
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 2072.3
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 2072.8
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 2073.3
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 2073.8
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 2074.3
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 2074.8
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 2075.3
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 2075.8
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 2076.3
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 2076.8
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 2077.3
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 2077.8
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-buggy",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        494,
+        342,
+        760,
+        557
+      ],
+      "center": [
+        0.48984375,
+        0.6243055555555556
+      ],
+      "edge_distances": {
+        "left": 0.3859375,
+        "right": 0.40625,
+        "top": 0.475,
+        "bottom": 0.2263888888888889
+      },
+      "visible_ratio": 0.03882378472222222,
+      "color_JS": 0.24678564072477424,
+      "boundary_Lstar_median": 5.60302734375,
+      "relative_inverse_depth_median": 4.576959609985352,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0000-track",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        313,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.7173611111111111
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.43472222222222223,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.3956792534722222,
+      "color_JS": 0.43294139759435574,
+      "boundary_Lstar_median": 4.4342041015625,
+      "relative_inverse_depth_median": 4.422957420349121,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0000-desert",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        269
+      ],
+      "center": [
+        0.5,
+        0.18680555555555556
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.6263888888888889
+      },
+      "visible_ratio": 0.3325075954861111,
+      "color_JS": 0.9021253483738194,
+      "boundary_Lstar_median": 9.619140625,
+      "relative_inverse_depth_median": 0.0,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0000-course_markers",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "course_markers",
+      "valid": true,
+      "bbox": [
+        849,
+        356,
+        1280,
+        672
+      ],
+      "center": [
+        0.831640625,
+        0.7138888888888889
+      ],
+      "edge_distances": {
+        "left": 0.66328125,
+        "right": 0.0,
+        "top": 0.49444444444444446,
+        "bottom": 0.06666666666666667
+      },
+      "visible_ratio": 0.050413411458333335,
+      "color_JS": 0.5636339004443944,
+      "boundary_Lstar_median": 5.4473876953125,
+      "relative_inverse_depth_median": 3.071420192718506,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-buggy",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        510,
+        330,
+        774,
+        550
+      ],
+      "center": [
+        0.5015625,
+        0.6111111111111112
+      ],
+      "edge_distances": {
+        "left": 0.3984375,
+        "right": 0.3953125,
+        "top": 0.4583333333333333,
+        "bottom": 0.2361111111111111
+      },
+      "visible_ratio": 0.036536458333333334,
+      "color_JS": 0.4417865976143923,
+      "boundary_Lstar_median": 12.640380859375,
+      "relative_inverse_depth_median": 4.474281311035156,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-track",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        290,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.7013888888888888
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.4027777777777778,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.4574283854166667,
+      "color_JS": 0.28122451722099456,
+      "boundary_Lstar_median": 2.01416015625,
+      "relative_inverse_depth_median": 4.430774688720703,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-desert",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        275
+      ],
+      "center": [
+        0.5,
+        0.1909722222222222
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.6180555555555556
+      },
+      "visible_ratio": 0.3438628472222222,
+      "color_JS": 0.8613203484367319,
+      "boundary_Lstar_median": 13.763427734375,
+      "relative_inverse_depth_median": 0.0,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-course_markers",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "course_markers",
+      "valid": true,
+      "bbox": [
+        832,
+        322,
+        1280,
+        528
+      ],
+      "center": [
+        0.825,
+        0.5902777777777778
+      ],
+      "edge_distances": {
+        "left": 0.65,
+        "right": 0.0,
+        "top": 0.44722222222222224,
+        "bottom": 0.26666666666666666
+      },
+      "visible_ratio": 0.08021592881944445,
+      "color_JS": 0.686925746473541,
+      "boundary_Lstar_median": 15.8294677734375,
+      "relative_inverse_depth_median": 2.324131727218628,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-buggy",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        440,
+        340,
+        720,
+        595
+      ],
+      "center": [
+        0.453125,
+        0.6493055555555556
+      ],
+      "edge_distances": {
+        "left": 0.34375,
+        "right": 0.4375,
+        "top": 0.4722222222222222,
+        "bottom": 0.1736111111111111
+      },
+      "visible_ratio": 0.053973524305555555,
+      "color_JS": 0.5094854573816661,
+      "boundary_Lstar_median": 4.81414794921875,
+      "relative_inverse_depth_median": 4.83042049407959,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-track",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        340,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.7361111111111112
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.4722222222222222,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.3919216579861111,
+      "color_JS": 0.4297551730672868,
+      "boundary_Lstar_median": 3.67889404296875,
+      "relative_inverse_depth_median": 4.490599155426025,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-desert",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        330
+      ],
+      "center": [
+        0.5,
+        0.22916666666666666
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.5416666666666666
+      },
+      "visible_ratio": 0.34472764756944446,
+      "color_JS": 0.8587001268605307,
+      "boundary_Lstar_median": 15.21453857421875,
+      "relative_inverse_depth_median": 0.0,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-course_markers",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "course_markers",
+      "valid": true,
+      "bbox": [
+        415,
+        337,
+        718,
+        606
+      ],
+      "center": [
+        0.442578125,
+        0.6548611111111111
+      ],
+      "edge_distances": {
+        "left": 0.32421875,
+        "right": 0.4390625,
+        "top": 0.46805555555555556,
+        "bottom": 0.15833333333333333
+      },
+      "visible_ratio": 0.05055989583333333,
+      "color_JS": 0.5328897725232385,
+      "boundary_Lstar_median": 17.010498046875,
+      "relative_inverse_depth_median": 4.835748672485352,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-event_area",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "event_area",
+      "valid": true,
+      "bbox": [
+        677,
+        227,
+        938,
+        325
+      ],
+      "center": [
+        0.630859375,
+        0.38333333333333336
+      ],
+      "edge_distances": {
+        "left": 0.52890625,
+        "right": 0.2671875,
+        "top": 0.31527777777777777,
+        "bottom": 0.5486111111111112
+      },
+      "visible_ratio": 0.011322699652777778,
+      "color_JS": 0.30464508612958147,
+      "boundary_Lstar_median": 5.682373046875,
+      "relative_inverse_depth_median": 0.16931308805942535,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-buggy",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        518,
+        344,
+        764,
+        599
+      ],
+      "center": [
+        0.50078125,
+        0.6548611111111111
+      ],
+      "edge_distances": {
+        "left": 0.4046875,
+        "right": 0.403125,
+        "top": 0.4777777777777778,
+        "bottom": 0.16805555555555557
+      },
+      "visible_ratio": 0.05150824652777778,
+      "color_JS": 0.39119602685205457,
+      "boundary_Lstar_median": 5.194091796875,
+      "relative_inverse_depth_median": 5.624824047088623,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-track",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        272,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.6888888888888889
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.37777777777777777,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.4067426215277778,
+      "color_JS": 0.4454616914208354,
+      "boundary_Lstar_median": 2.78778076171875,
+      "relative_inverse_depth_median": 5.190835952758789,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-desert",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        292
+      ],
+      "center": [
+        0.5,
+        0.20277777777777778
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.5944444444444444
+      },
+      "visible_ratio": 0.32920355902777776,
+      "color_JS": 0.627322415322614,
+      "boundary_Lstar_median": 3.10211181640625,
+      "relative_inverse_depth_median": 0.0,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-course_markers",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "course_markers",
+      "valid": true,
+      "bbox": [
+        302,
+        261,
+        428,
+        418
+      ],
+      "center": [
+        0.28515625,
+        0.47152777777777777
+      ],
+      "edge_distances": {
+        "left": 0.2359375,
+        "right": 0.665625,
+        "top": 0.3625,
+        "bottom": 0.41944444444444445
+      },
+      "visible_ratio": 0.0021473524305555556,
+      "color_JS": 0.1745451211847266,
+      "boundary_Lstar_median": 8.55255126953125,
+      "relative_inverse_depth_median": 0.9078257083892822,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-event_area",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "event_area",
+      "valid": true,
+      "bbox": [
+        1089,
+        217,
+        1280,
+        364
+      ],
+      "center": [
+        0.925390625,
+        0.40347222222222223
+      ],
+      "edge_distances": {
+        "left": 0.85078125,
+        "right": 0.0,
+        "top": 0.3013888888888889,
+        "bottom": 0.49444444444444446
+      },
+      "visible_ratio": 0.018036024305555554,
+      "color_JS": 0.2801952609589102,
+      "boundary_Lstar_median": 7.5408935546875,
+      "relative_inverse_depth_median": 1.9168000221252441,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-buggy",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        518,
+        287,
+        774,
+        587
+      ],
+      "center": [
+        0.5046875,
+        0.6069444444444444
+      ],
+      "edge_distances": {
+        "left": 0.4046875,
+        "right": 0.3953125,
+        "top": 0.39861111111111114,
+        "bottom": 0.18472222222222223
+      },
+      "visible_ratio": 0.054186197916666665,
+      "color_JS": 0.3141342340222381,
+      "boundary_Lstar_median": 3.875732421875,
+      "relative_inverse_depth_median": 4.832094192504883,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-track",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        283,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.6965277777777777
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.39305555555555555,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.36502387152777777,
+      "color_JS": 0.4631445522941863,
+      "boundary_Lstar_median": 2.05230712890625,
+      "relative_inverse_depth_median": 4.9873247146606445,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-desert",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        260
+      ],
+      "center": [
+        0.5,
+        0.18055555555555555
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.6388888888888888
+      },
+      "visible_ratio": 0.28785047743055553,
+      "color_JS": 0.8376298683594458,
+      "boundary_Lstar_median": 10.29815673828125,
+      "relative_inverse_depth_median": 0.0,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-course_markers",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "course_markers",
+      "valid": true,
+      "bbox": [
+        392,
+        192,
+        541,
+        310
+      ],
+      "center": [
+        0.364453125,
+        0.3486111111111111
+      ],
+      "edge_distances": {
+        "left": 0.30625,
+        "right": 0.57734375,
+        "top": 0.26666666666666666,
+        "bottom": 0.5694444444444444
+      },
+      "visible_ratio": 0.007979600694444445,
+      "color_JS": 0.2952088853653289,
+      "boundary_Lstar_median": 2.8076171875,
+      "relative_inverse_depth_median": 0.12033510208129883,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-event_area",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "event_area",
+      "valid": true,
+      "bbox": [
+        0,
+        176,
+        430,
+        399
+      ],
+      "center": [
+        0.16796875,
+        0.3993055555555556
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.6640625,
+        "top": 0.24444444444444444,
+        "bottom": 0.44583333333333336
+      },
+      "visible_ratio": 0.04898980034722222,
+      "color_JS": 0.3410625887847621,
+      "boundary_Lstar_median": 4.296875,
+      "relative_inverse_depth_median": 1.1368331909179688,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-buggy",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "buggy",
+      "valid": true,
+      "bbox": [
+        544,
+        338,
+        766,
+        537
+      ],
+      "center": [
+        0.51171875,
+        0.6076388888888888
+      ],
+      "edge_distances": {
+        "left": 0.425,
+        "right": 0.4015625,
+        "top": 0.46944444444444444,
+        "bottom": 0.25416666666666665
+      },
+      "visible_ratio": 0.03486328125,
+      "color_JS": 0.21423542518196098,
+      "boundary_Lstar_median": 6.695556640625,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-track",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "track",
+      "valid": true,
+      "bbox": [
+        0,
+        299,
+        1280,
+        720
+      ],
+      "center": [
+        0.5,
+        0.7076388888888889
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.4152777777777778,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.449990234375,
+      "color_JS": 0.38405196636228145,
+      "boundary_Lstar_median": 4.2694091796875,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-desert",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "desert",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        1280,
+        283
+      ],
+      "center": [
+        0.5,
+        0.19652777777777777
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.6069444444444444
+      },
+      "visible_ratio": 0.30622287326388886,
+      "color_JS": 0.8712150925428381,
+      "boundary_Lstar_median": 18.06488037109375,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "489dd62aa1038b983cefd04d8fe4437daf139edc97e6aad1c8248a18c0285d66",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-aesthetics/runs/composition-v22-batch50-fps2",
+    "cv_recomputed": false,
+    "sampled_frames": 40
+  }
+}

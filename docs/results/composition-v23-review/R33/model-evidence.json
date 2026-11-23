@@ -1,0 +1,595 @@
+{
+  "sample_id": "R33",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 1610.4
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 1610.9
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 1611.4
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 1611.9
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 1612.4
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 1612.9
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 1613.4
+    },
+    {
+      "id": "rgb-0013",
+      "frame_index": 13,
+      "time": 3.25,
+      "source_time": 1613.65
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 1613.9
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 1614.4
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 1614.9
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 1615.4
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 1615.9
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 1616.4
+    },
+    {
+      "id": "rgb-0025",
+      "frame_index": 25,
+      "time": 6.25,
+      "source_time": 1616.65
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 1616.9
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 1617.4
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 1617.9
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 1618.4
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 1618.9
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 1619.4
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 1619.9
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 1620.4
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 1620.9
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 1621.4
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 1621.9
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 1622.4
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 1622.9
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 1623.4
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 1623.9
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 1624.4
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 1624.9
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 1625.4
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 1625.9
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 1626.4
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 1626.9
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 1627.4
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 1627.9
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 1628.4
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 1628.9
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 1629.4
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 1629.9
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-man_first",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "man_first",
+      "valid": true,
+      "bbox": [
+        176,
+        143,
+        884,
+        692
+      ],
+      "center": [
+        0.4140625,
+        0.5798611111111112
+      ],
+      "edge_distances": {
+        "left": 0.1375,
+        "right": 0.309375,
+        "top": 0.1986111111111111,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.20891493055555554,
+      "color_JS": 0.5221712776978084,
+      "boundary_Lstar_median": 1.30615234375,
+      "relative_inverse_depth_median": 3.5480785369873047,
+      "joints": {
+        "nose": [
+          639.2653198242188,
+          374.02349853515625
+        ],
+        "left_eye": [
+          667.0924072265625,
+          320.51611328125
+        ],
+        "right_eye": [
+          573.114990234375,
+          318.1293640136719
+        ],
+        "right_ear": [
+          450.9298095703125,
+          364.3326416015625
+        ],
+        "left_shoulder": [
+          816.3372802734375,
+          665.3959350585938
+        ],
+        "right_shoulder": [
+          266.3912658691406,
+          662.0055541992188
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-armored_character",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "armored_character",
+      "valid": true,
+      "bbox": [
+        208,
+        30,
+        1224,
+        694
+      ],
+      "center": [
+        0.559375,
+        0.5027777777777778
+      ],
+      "edge_distances": {
+        "left": 0.1625,
+        "right": 0.04375,
+        "top": 0.041666666666666664,
+        "bottom": 0.03611111111111111
+      },
+      "visible_ratio": 0.4241493055555556,
+      "color_JS": 0.42969402991073485,
+      "boundary_Lstar_median": 1.263427734375,
+      "relative_inverse_depth_median": 3.8257126808166504,
+      "joints": {
+        "nose": [
+          569.7756958007812,
+          323.0457763671875
+        ],
+        "left_eye": [
+          630.33935546875,
+          253.13345336914062
+        ],
+        "right_eye": [
+          525.9385375976562,
+          262.1982116699219
+        ],
+        "left_ear": [
+          757.3890380859375,
+          231.00128173828125
+        ],
+        "left_shoulder": [
+          903.3253173828125,
+          503.661376953125
+        ],
+        "right_shoulder": [
+          311.7117004394531,
+          511.67340087890625
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-man_return",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "man_return",
+      "valid": true,
+      "bbox": [
+        160,
+        143,
+        884,
+        692
+      ],
+      "center": [
+        0.4078125,
+        0.5798611111111112
+      ],
+      "edge_distances": {
+        "left": 0.125,
+        "right": 0.309375,
+        "top": 0.1986111111111111,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.2084006076388889,
+      "color_JS": 0.5100446279277937,
+      "boundary_Lstar_median": 1.422119140625,
+      "relative_inverse_depth_median": 3.6662423610687256,
+      "joints": {
+        "nose": [
+          615.0894775390625,
+          372.9961242675781
+        ],
+        "left_eye": [
+          659.205078125,
+          322.8429260253906
+        ],
+        "right_eye": [
+          556.771728515625,
+          316.0247802734375
+        ],
+        "left_ear": [
+          706.5464477539062,
+          367.97821044921875
+        ],
+        "right_ear": [
+          460.08197021484375,
+          362.4584655761719
+        ],
+        "left_shoulder": [
+          826.6061401367188,
+          664.3507690429688
+        ],
+        "right_shoulder": [
+          275.1940002441406,
+          642.0999145507812
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-man_return",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "man_return",
+      "valid": true,
+      "bbox": [
+        126,
+        141,
+        826,
+        694
+      ],
+      "center": [
+        0.371875,
+        0.5798611111111112
+      ],
+      "edge_distances": {
+        "left": 0.0984375,
+        "right": 0.3546875,
+        "top": 0.19583333333333333,
+        "bottom": 0.03611111111111111
+      },
+      "visible_ratio": 0.20726996527777777,
+      "color_JS": 0.5470690025724575,
+      "boundary_Lstar_median": 1.336669921875,
+      "relative_inverse_depth_median": 3.8696932792663574,
+      "joints": {
+        "nose": [
+          588.9715576171875,
+          379.90264892578125
+        ],
+        "left_eye": [
+          617.7025146484375,
+          327.71820068359375
+        ],
+        "right_eye": [
+          524.3121337890625,
+          324.4926452636719
+        ],
+        "right_ear": [
+          400.2530517578125,
+          367.215576171875
+        ],
+        "left_shoulder": [
+          762.3408813476562,
+          667.442138671875
+        ],
+        "right_shoulder": [
+          214.71591186523438,
+          674.574462890625
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-man_return",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "man_return",
+      "valid": true,
+      "bbox": [
+        190,
+        150,
+        872,
+        692
+      ],
+      "center": [
+        0.41484375,
+        0.5847222222222223
+      ],
+      "edge_distances": {
+        "left": 0.1484375,
+        "right": 0.31875,
+        "top": 0.20833333333333334,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.20009765625,
+      "color_JS": 0.48629223899430696,
+      "boundary_Lstar_median": 1.4251708984375,
+      "relative_inverse_depth_median": 3.7256717681884766,
+      "joints": {
+        "nose": [
+          659.9630126953125,
+          378.8143310546875
+        ],
+        "left_eye": [
+          697.72021484375,
+          328.25531005859375
+        ],
+        "right_eye": [
+          600.2719116210938,
+          320.8439636230469
+        ],
+        "right_ear": [
+          490.1090393066406,
+          360.65765380859375
+        ],
+        "left_shoulder": [
+          828.671875,
+          668.1659545898438
+        ],
+        "right_shoulder": [
+          303.26080322265625,
+          642.11328125
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-man_return",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "man_return",
+      "valid": true,
+      "bbox": [
+        114,
+        137,
+        826,
+        692
+      ],
+      "center": [
+        0.3671875,
+        0.5756944444444444
+      ],
+      "edge_distances": {
+        "left": 0.0890625,
+        "right": 0.3546875,
+        "top": 0.19027777777777777,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.21010199652777778,
+      "color_JS": 0.5420655328772179,
+      "boundary_Lstar_median": 1.678466796875,
+      "relative_inverse_depth_median": null,
+      "joints": {
+        "nose": [
+          563.0859375,
+          374.9065856933594
+        ],
+        "left_eye": [
+          588.5635986328125,
+          320.382080078125
+        ],
+        "right_eye": [
+          495.653076171875,
+          321.4139709472656
+        ],
+        "right_ear": [
+          376.54620361328125,
+          372.23834228515625
+        ],
+        "left_shoulder": [
+          752.31201171875,
+          661.6397705078125
+        ],
+        "right_shoulder": [
+          200.8484649658203,
+          672.0225830078125
+        ]
+      },
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "86818acbb9bc2f3aaa8cc8da1a74074007df807a95cddc8eab96db36d9fed72c",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 42
+  }
+}

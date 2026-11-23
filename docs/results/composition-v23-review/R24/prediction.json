@@ -1,0 +1,471 @@
+{
+  "sample_id": "R24",
+  "roles": [
+    {
+      "object_id": "farmer",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "戴宽檐帽、穿紫色上衣的人物，在成排土块间移动并反复俯身操作。",
+      "uncertainty": "由RGB确认人物为主体；farmer仅沿用对象编号，不据此认定职业。"
+    },
+    {
+      "object_id": "tool",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "人物手边的绿色器具，与俯身操作及土块形成交互关系。",
+      "uncertainty": "具体器具名称及每次操作效果不能完全确认。"
+    },
+    {
+      "object_id": "plots",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "规则排列的深色土块及局部可见的小点，是人物移动和操作的对象。",
+      "uncertainty": "不推断所有小点的种类及操作完成状态。"
+    },
+    {
+      "object_id": "surroundings",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "土地区域、木建筑、坡道、石砌设施及散石，随视角变化出现在土块周围；雨线覆盖画面。",
+      "uncertainty": "未把雨线当作固定前景实体，也未把背景设施认定为行动目标。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-1",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "necessary_information": "建立人物、手持器具与土块的关系；人物在土块边缘移动和俯身，需看清姿态及相邻操作位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0008",
+        "rgb-0014"
+      ]
+    },
+    {
+      "stage_id": "stage-2",
+      "time_range": [
+        4,
+        12.5
+      ],
+      "necessary_information": "人物继续沿土块操作；视角改变后仍需辨认人物、当前土块及相邻行列。不是新的主体或独立情节。",
+      "input_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "stage-3",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "土块行列随视角转动改变投影方向，人物继续移动、俯身和站起；需保留交互范围及人物在地块中的位置。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-farmer",
+      "accepted": false,
+      "reason": "QA框及掩码未完整覆盖RGB中的下肢、鞋部，手边器具归属也未独立处理。拒绝该项派生面积、中心、边距、颜色、深度及关节数值作为判断依据。"
+    },
+    {
+      "measurement_id": "measure-0016-farmer",
+      "accepted": false,
+      "reason": "俯身姿态的掩码与器具区域混杂，人物下部覆盖不完整，不能作为可靠完整主体区域；该项全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-farmer",
+      "accepted": false,
+      "reason": "QA中帽部及下肢覆盖不足，给定踝点还落在框下方，框、掩码与完整形体不一致；该项全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-farmer",
+      "accepted": false,
+      "reason": "QA中头帽明显位于框和主要掩码之外，给定头部点也高于框顶，确认漏分；该项全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-farmer",
+      "accepted": false,
+      "reason": "俯身时QA掩码呈大块连片，下部形体及器具边界难以可靠对应；不能验证完整人物覆盖，该项全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-farmer",
+      "accepted": false,
+      "reason": "与清晰RGB对照，QA对下肢和手边器具的边界取舍不完整，不能支持全主体面积和边界测量；该项全部派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "位置随视角变化保持易找，但未证明超出常规跟随的注意组织效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "仅作RGB定性判断；不用被拒绝的掩码占比。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "没有完整主体区域，不计算遮挡比例；帽檐和俯身造成的局部不可见有正常姿态解释。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "紫色衣服有助于识别；深色帽裤与土块接近，但未造成持续查找，也未建立额外关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "RGB没有确认的形体连接或尺度崩坏；分割漏头、漏脚不视为原画面结构问题。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "人物头帽完整且距画框充足；没有受限处境的额外证据。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "背面、俯视和帽檐遮住可靠眼部视线，未呈现需要单独理解的观看对象关系；不把身体朝向直接当作视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "由人物与土块的相对变化判断局部移动，不将整个网格转动当作人物运动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可理解俯身操作及其土块对象；不声称看清每次落点和结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "行列透视和周边设施支持定位；视角变化主要维持既有空间，未证明进一步揭示关键通路或关系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "俯视地面分配适合当前操作；不从高机位推断人物强弱或情绪。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "人物投影于土块之上，结合衣色、姿态和地块间隙可辨归属；未见额外隔离或依附表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "可识别俯视、重复网格与透视行列组织；其已证实作用是保持人物及操作空间可读。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "联系表和参考帧是证据排版，不是视频内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ],
+        [
+          4,
+          12.5
+        ],
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0014",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "人物持续位于画面中部附近，紫衣与大片褐色土地、深色土块形成可辨差异；画内同时容纳周围数行土块。",
+      "effect": "人物无需反复寻找，大小足以辨认站立、俯身与手边器具；网格虽占大部，未抢走当前操作重点。该安排完成基本观看任务，尚无进一步尺度或关系表达。",
+      "exceptions_checked": "居中、小人物、重复图案均不自动加减档；未用缩略联系表中的人物大小代替原帧大小。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ],
+        [
+          4,
+          12.5
+        ],
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "站立与俯身时人物均留在画内，头帽、躯干和四肢没有被画框截断；帽檐、身体及雨线局部覆盖细节，深色衣物部分贴近土块颜色。",
+      "effect": "姿态和面向土块的操作关系仍可读，没有持续的无效遮挡、裁切损失或形体结构破坏。衣色提供基本分离，但未形成额外表达。",
+      "exceptions_checked": "排除俯身缩短投影、帽檐自遮挡、手臂正常交叠；缓存漏分不等于RGB肢体缺失。眼睛不可见，不推断具体视线。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ],
+        [
+          4,
+          12.5
+        ],
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0078"
+      ],
+      "observation": "人物在土块间移动并反复俯身；视角变化使网格由较正的行列变为斜向、再转回，周边木建筑、坡道和石砌设施随之改变画内位置。人物附近的土块及间隙持续可见。",
+      "effect": "行列透视、地面间隙和周边参照使人物与操作区域的联系保持清楚，移动前方及局部交互范围充足。前后变化未明确揭示新的关键目标、障碍或通路，故不据普通转动判增强。",
+      "exceptions_checked": "区分视角转动与世界内人物移动；未把画外设施当作漏掉的必要目标，也未推断受困、孤独或其他心理。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "所提供视频采样显示单一游戏视区，没有视频内部同时并置的子画面。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "Image #1的时序网格、参考帧及Image #2的QA拼图均属于输入材料编排。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "人物由较直立转为俯身，土块行列的投影方向随视角改变。",
+      "spatial_or_attention_effect": "人物仍易定位，相邻土块保留；变化支持理解连续操作，没有出现必要信息丢失。",
+      "expressive_effect": "未证明由空间变化产生额外处境或信息揭示。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "较横向的网格转成明显斜向，人物继续站立、俯身交替。",
+      "spatial_or_attention_effect": "行列及地块间隙维持人物与操作位置的联系；周边设施帮助理解视角改变。",
+      "expressive_effect": "空间维持清楚，但没有可核查的关键关系深化。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0070",
+        "rgb-0078"
+      ],
+      "visible_change": "人物由俯身回到直立，网格方向再次改变，最终仍处于地块中。",
+      "spatial_or_attention_effect": "姿态变化与相邻操作空间保持可见，人物没有因转动失去定位。",
+      "expressive_effect": "属于连续玩法呈现，未见构图强调的新结果或关系转折。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "reason": "适用基础条件成立：人物、俯身操作和土块关系可辨，画框保留必要身体及交互范围，视角改变时空间仍清楚；未确认基础损害。增强尚未获证明：居中跟随、衣色区分和网格透视主要完成基本呈现。",
+    "adjacent_grade_explanation": "不判低：未见持续查找、无效遮挡、必要信息出框或形体结构破坏。不判高：前后空间变化尚未形成超出基本可辨的明确观看引导、关键揭示或关系强化。",
+    "uncertainties": [
+      "六项缓存测量均拒绝，未使用其派生数值；RGB足以支持本次基础判断，因此不导致整体无法判断。",
+      "评价限于已提供的0至19.5秒采样，未声称检查采样间未展示的画面。",
+      "器具种类、每次操作的精细结果及可靠眼部视线不能确认，不据此补写剧情或表达。"
+    ]
+  }
+}

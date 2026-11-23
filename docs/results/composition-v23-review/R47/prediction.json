@@ -1,0 +1,517 @@
+{
+  "sample_id": "R47",
+  "roles": [
+    {
+      "object_id": "player_hands_tools",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第一人称双手、左侧问号装置与右侧橙色枪械，提供观察和交互参照。",
+      "uncertainty": "不推断装备功能或任务目标。"
+    },
+    {
+      "object_id": "rock_path_region",
+      "role": "subject",
+      "time_range": [
+        0,
+        9.5
+      ],
+      "description": "镜头沿浅色岩台及其旁的通路观察、推进；路径与周围环境为主要呈现内容。",
+      "uncertainty": "不是独立人物主体；缓存名称不等于准确材质分类。"
+    },
+    {
+      "object_id": "purple_vines",
+      "role": "foreground",
+      "time_range": [
+        9.5,
+        19.5
+      ],
+      "description": "卷曲紫色植物随取景变化进入近景，围绕通路及花朵分布。",
+      "uncertainty": "部分藤蔓位于中远景，角色随距离变化。"
+    },
+    {
+      "object_id": "orange_flower",
+      "role": "subject",
+      "time_range": [
+        13.25,
+        15.75
+      ],
+      "description": "橙黄色杯状花朵由中景进入近景，15秒附近与伸出的手共同构成局部呈现。",
+      "uncertainty": "可见接近和伸手，不能确认采集、触碰成功或具体机制。"
+    },
+    {
+      "object_id": "pillar_region",
+      "role": "subject",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "description": "抬起的视野呈现高耸岩柱及柱间空间。",
+      "uncertainty": "不将仰视解释为权威或心理感受。"
+    },
+    {
+      "object_id": "alien_landscape",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "浮岩、岩柱、粉紫雾、白色草丛和远处地形构成环境。",
+      "uncertainty": "雾中细小对象身份不确定，不作为必要角色。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-1",
+      "time_range": [
+        0,
+        9.5
+      ],
+      "necessary_information": "沿岩台与通路移动观察；需辨认近处装备、岩台边界、可见通道与周围植物的前后关系。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "stage-2",
+      "time_range": [
+        10,
+        13.25
+      ],
+      "necessary_information": "取景转向卷曲植物间的区域；需分清近处藤蔓、其间地面及随后进入观看重点的橙色花朵。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0043",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0053"
+      ]
+    },
+    {
+      "stage_id": "stage-3",
+      "time_range": [
+        13.5,
+        15.75
+      ],
+      "necessary_information": "接近橙色花朵并伸手；需保留花冠、手势及二者的空间关系，不能据此补写交互结果。",
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0063"
+      ]
+    },
+    {
+      "stage_id": "stage-4",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "necessary_information": "观看重点转向岩柱和柱间远景；需辨认近处藤蔓、岩柱高度及可见开口的层次。",
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-rock_path_region",
+      "accepted": true,
+      "reason": "QA覆盖中央下部可见通路，区域与RGB对应。仅作可见路径区域参考，不把名称理解为纯岩石，不用其面积代表完整主体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-rock_path_region",
+      "accepted": true,
+      "reason": "QA主要覆盖前方浅色岩台及延伸面，与4秒RGB相符；可辅助确认路径位置，不将单目深度解释为实际距离。"
+    },
+    {
+      "measurement_id": "measure-0032-rock_path_region",
+      "accepted": true,
+      "reason": "QA覆盖下部岩面及向前延伸区域，与8秒画面对应；支持局部路径范围，不能代表全场景通行性。"
+    },
+    {
+      "measurement_id": "measure-0048-orange_flower",
+      "accepted": false,
+      "reason": "12秒QA绿色掩码实际落在右手枪械上，未覆盖橙色花朵；该项位置、面积、色差及深度全部拒用。"
+    },
+    {
+      "measurement_id": "measure-0064-pillar_region",
+      "accepted": true,
+      "reason": "16秒QA主体区域沿中央岩柱延伸，形状与RGB基本对应；仅用于可见岩柱范围，不把框面积当掩码面积。"
+    },
+    {
+      "measurement_id": "measure-0078-pillar_region",
+      "accepted": false,
+      "reason": "19.5秒QA下部绿色区域混入前景手部及装置，未可靠排除遮挡物；该项所有派生数值拒用，岩柱关系直接依据RGB。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "主体随呈现内容转换，不能始终把装备当唯一主体。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "尺度变化来自接近和取景变化，不推断情绪或地位。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "藤蔓存在局部遮挡，但未证明隐藏、隔离等进一步效果；无完整掩码，不报遮挡比例。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "橙花、紫藤与浅色岩地易区分，但色彩对比本身不证明关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可见双手属于第一人称常规局部裁切；未见可确认的连接或尺度崩坏，也未证明局部取舍具有额外表达。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "没有需呈现头部的人物，不以岩柱顶端或装备上沿代替头顶。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "没有可靠人物视线线索；第一人称镜头朝向不冒充人物眼神关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可见空间足以理解接近路径与花朵；未证明被迫受阻或逃离，不把屏幕位移直接当世界运动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "花朵及伸手关系可读；输入不能确认接触成功，普通动作可读不足以单独证明增强。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "依据遮挡、透视及前后画面建立层次，不使用实际距离或未经提供的光流。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "增强限于岩柱和浮岩的垂直规模被进一步呈现，不推断压迫或英雄感。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "藤蔓、花朵、装备轮廓虽交叠，归属仍可分；未证明依附、隔离等关系变化。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可识别近景框取与纵深组织；仅解释已经成立的空间揭示效果，不另计加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表及参考帧并置是评审材料排版，原片未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0038",
+        "measure-0000-rock_path_region",
+        "measure-0016-rock_path_region",
+        "measure-0032-rock_path_region"
+      ],
+      "observation": "两侧前景手持装备之间保留中央观察区；浅色岩台、下方地面与后方紫藤提供连续空间参照。0秒紫雾遮去部分远景，5秒参考中岩台上方及右侧路径仍可分辨。",
+      "effect": "装备建立近处参照，中央路径与岩台边界支持基本方向理解；雾未遮掉当前必要的近处空间。",
+      "exceptions_checked": "第一人称手臂离框、装备贴边属合理裁切；不把雾中未辨认细物指定为必须识别的目标。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          10,
+          13.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0043",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052",
+        "rgb-0053"
+      ],
+      "observation": "10秒蓝紫亮点位于卷曲藤蔓之间；之后取景进入紫藤密集区域，近处藤圈变大，间隙仍显露地面与橙黄色花朵。12秒QA误把枪械当花，未采用。",
+      "effect": "前景藤圈与可见间隙把观察从开阔岩台引向植物内部，为随后近看花朵提供位置和层次依据；没有持续丢失观看重点。",
+      "exceptions_checked": "藤蔓掠过和局部遮挡符合近距离观察；不认定蓝紫亮点与花朵存在因果或任务联系。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          13.5,
+          15.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0057",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0063"
+      ],
+      "observation": "橙色花朵由环境中的中景对象变为中央近景；15秒参考保留杯状花冠、上方橙色瓣状部分及右侧伸出的手，岩石和紫藤仍提供后方参照。",
+      "effect": "此前植物间的花朵在接近后成为观看重点，环境到局部的尺度转换把花的位置与可接近关系连起来，超出单帧只见一朵大花的基本辨认。手部与花冠没有造成关键对象归属混淆。",
+      "exceptions_checked": "近景裁掉花的部分外缘属于局部观察，核心形状和手势仍可读；不声称完成采集、触碰或获得物品。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          16,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078",
+        "measure-0064-pillar_region"
+      ],
+      "observation": "离开花朵近景后视野抬向岩柱；19.5秒可见左侧高柱、中央较远岩柱及柱间远景，近处粗紫藤从右侧形成弧形边界，装备仍停留在下方两侧。",
+      "effect": "低处草地、近藤、岩柱与柱间远景共同建立从近到远及从地面向上的观看路径；相比花朵局部取景，环境垂直延伸和柱间开口得到进一步揭示。",
+      "exceptions_checked": "岩柱越出上沿不属于人物头部裁切失败；右侧藤蔓占据局部视野但未封死必要观察区。未采用19.5秒污染掩码。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0053"
+      ],
+      "visible_change": "观察区由浅色岩台及开阔路径转为密集卷曲植物之间，近藤面积增大。",
+      "spatial_or_attention_effect": "岩台边界提供初始参照，藤圈间隙随后将注意引入植物区域。",
+      "expressive_effect": "形成可核查的局部空间揭示；不赋予悬念或情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0053",
+        "rgb-0054"
+      ],
+      "after_evidence_ids": [
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062"
+      ],
+      "visible_change": "花朵从植物环境中的对象变为近景，手在其旁展开。",
+      "spatial_or_attention_effect": "先保留环境定位，再以尺度变化集中到花冠及接近关系。",
+      "expressive_effect": "支持P-H-a、P-H-b与S-H-a；不依赖误分的花朵测量。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0063"
+      ],
+      "after_evidence_ids": [
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "近看花朵后，取景转向高处岩柱及其间远景。",
+      "spatial_or_attention_effect": "近藤、低处地面与高柱共同把观看从局部对象扩展到环境尺度。",
+      "expressive_effect": "支持S-H-a、S-H-b及O-H-d；不把仰视本身当作增强。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立。关键增强是可追溯的空间和注意组织：从岩台通路进入藤蔓间隙，再把已有环境定位的橙花转为近景，随后抬向岩柱和柱间远景。位置、尺度与近远参照共同揭示局部对象及环境联系，超过单纯清楚或颜色鲜明。",
+    "adjacent_grade_explanation": "判高依据上述前后组织的具体作用，不靠手法数量。没有发现足以判低的持续查找、关键裁切损失或形体结构破坏；若仅有装备和景物清晰可见，则只能支持中档。",
+    "uncertainties": [
+      "仅评价实际展示的采样与清晰参考帧，不声称检查未展示的连续帧。",
+      "未确认花朵交互的具体机制及结果。",
+      "12秒花朵掩码与19.5秒岩柱掩码拒用；其派生数值未参与判档。",
+      "未提供的模型、耗时、用量及文件哈希等运行信息不补造。"
+    ]
+  }
+}

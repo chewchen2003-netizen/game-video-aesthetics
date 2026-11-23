@@ -1,0 +1,500 @@
+{
+  "sample_id": "R15",
+  "roles": [
+    {
+      "object_id": "player",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "背向镜头的绿衣人物，持续位于左侧近景；头、躯干与双手是主要人物信息。",
+      "uncertainty": "按RGB确认其主体角色，不由缓存名称推定玩家身份。"
+    },
+    {
+      "object_id": "lantern",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "前方地面上的提灯，与暖色光区共同标明人物前方的局部空间。",
+      "uncertainty": "没有可见交互，不推定其为任务目标。"
+    },
+    {
+      "object_id": "environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "泥土地面、两侧岩石及后方木结构，构成人物所在空间。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "left-timber",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "左侧近处木板与后段更明显的木柱，提供近景参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "right-person",
+      "role": "unknown",
+      "time_range": [
+        12,
+        19.5
+      ],
+      "description": "后段右边缘出现的局部人物，可见部分躯干、手及腿。",
+      "uncertainty": "身份及与主体的关系未建立，不能认定为必要陪体或交互对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        9.5
+      ],
+      "necessary_information": "建立绿衣人物背对镜头、前方有提灯及木结构的空间关系；画面基本保持稳定，无明确关键动作。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        10,
+        12.5
+      ],
+      "necessary_information": "取景发生缓慢调整，人物仍在左侧，灯及地面参照发生画面位移；需保持原有空间可连续辨认。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "调整后的取景趋于稳定，左侧木柱更突出，右边缘局部人物出现；主体与前方提灯关系延续，未显示双方交互。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-player",
+      "accepted": false,
+      "reason": "掩码在画内下肢处提前结束，未覆盖全部可见人物；不采用其派生面积、中心、边距、色差及深度，关节也不作裁切依据。"
+    },
+    {
+      "measurement_id": "measure-0000-lantern",
+      "accepted": true,
+      "reason": "QA框与掩码对应实际灯体，可作局部位置和可见面积参考；不据相对逆深度推算距离。"
+    },
+    {
+      "measurement_id": "measure-0016-player",
+      "accepted": false,
+      "reason": "下肢可见部分漏分，完整主体范围不可靠；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-lantern",
+      "accepted": true,
+      "reason": "QA定位与RGB灯体一致，可作局部位置和可见面积参考。"
+    },
+    {
+      "measurement_id": "measure-0032-player",
+      "accepted": false,
+      "reason": "掩码下缘截在画内人物腿部，漏掉可见部分；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-lantern",
+      "accepted": true,
+      "reason": "掩码仍对应实际灯体，未见后段的向上错位，可作局部位置参考。"
+    },
+    {
+      "measurement_id": "measure-0048-player",
+      "accepted": false,
+      "reason": "QA显示头顶及下肢覆盖不完整，不能代表完整可见主体；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-lantern",
+      "accepted": false,
+      "reason": "QA框位于真实提灯上方的木结构区域，错分；位置、面积、色差和深度均不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-player",
+      "accepted": false,
+      "reason": "QA掩码漏掉头顶轮廓及画内下肢部分；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-lantern",
+      "accepted": false,
+      "reason": "掩码落在灯上方木结构，未覆盖真实灯体；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-player",
+      "accepted": false,
+      "reason": "与16秒类似，头顶与下肢漏分；该项派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-lantern",
+      "accepted": false,
+      "reason": "框与掩码仍在真实灯体上方，属于错定位；全部派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "左侧主体和前方灯位置清楚；未证明位置调整形成超出基本定位的观看推进。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "仅依RGB判断人物与环境尺度适用，不使用被拒绝的人物面积；无有意义的景别递进。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "主体必要部分未被持续遮住；无完整区域及amodal依据，不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "深绿上衣局部接近暗地面，但头、袖口和身体外轮廓足以定位；后段轮廓更亮未建立额外关系。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "主角下肢为画框正常截取；右侧人物属于边缘局部呈现，未见同一身体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "主角真实头顶完整且留有空间；右侧人物不承担已建立的关键人物呈现。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "背面头身朝向可见，但缺乏眼神或观看行为，不能把提灯认定为视线对象。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "未确认人物有需要理解的定向移动；取景位移不能代替世界运动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "未显示具有明确对象和结果的关键动作，不能臆造动作裁切损失。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "近处人物与木材、延伸地面、前方灯和后方木结构构成清楚空间；调整仅补充边缘参照，未证明实质空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "俯视取景使地面灯和人物前方范围易读；无上下关系变化或环境制约的进一步依据。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "人物与左侧木板局部交叠，归属仍清楚；右边缘人物也未与主角形成连接误读，无关系转变证据。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2"
+      ],
+      "uncertainty": "可识别近景人物与前方亮区的纵深安排；机制支持基本空间读取，未证明更强表达。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表和参考图属于评审展示，游戏原帧未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0038",
+        "measure-0000-lantern",
+        "measure-0016-lantern",
+        "measure-0032-lantern"
+      ],
+      "observation": "绿衣人物背部占据左侧近景，头与双手可辨；前方提灯处于亮地面，左右岩石及后方木结构保持稳定参照。",
+      "effect": "主体无需寻找，人物所在位置与前方空间可直接建立；灯虽小仍能由轮廓和光区辨认。此安排主要完成基本呈现。",
+      "exceptions_checked": "灯的亮度未使主角失去辨识；不将人物背朝灯等同注视，不把木结构认定为必须通过的出口。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          10,
+          12.5
+        ],
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "画面调整后，灯移至更偏右的位置，左侧近木柱更明显；主体仍处左侧，原有地面、岩石和木结构连续可认。后段主体轮廓较亮。",
+      "effect": "保持空间连续，补充边缘环境；没有出现新的关键目标、交互或足以深化主体处境的空间关系，不能仅由位移和亮度变化认定增强。",
+      "exceptions_checked": "不将画面位移当成人物前进，也不把后段错位灯掩码当成灯的真实移动。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "主角腿部延伸至底边外，头、躯干和手保留，身体连接连贯；左侧木板与人物局部交叠。12秒及后段右边缘可见另一人物的局部身体。",
+      "effect": "正常近景裁切没有损失已显示的关键动作；木材与人物边界可分。边缘人物未建立关键关系，其局部入画不足以确认必要信息损失。",
+      "exceptions_checked": "区分画框裁切与人物分割漏分；未见同一形体连接崩坏。右侧局部人物不被默认赋予剧情重要性。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "所给序列主要是背面站立人物及取景微调，没有清楚的注视交互、定向行进或具有对象与结果的关键动作。",
+      "effect": "视线空间、运动前方空间和动作裁切缺少当前适用行为，不据此扣档或增加表达。",
+      "exceptions_checked": "不从背面朝向推断眼神；不以采样之间未提供的动作补全行为。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "清晰原帧均为连续单一游戏视区；多个缩略图和并排参考图属于输入材料编排。",
+      "effect": "多画面构图不适用。",
+      "exceptions_checked": "不将评审联系表误认为游戏内分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0038"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "visible_change": "前段稳定取景转为缓慢调整，灯与岩石在画框中的位置变化，主角仍在左侧。",
+      "spatial_or_attention_effect": "空间参照连续，没有主体定位中断；不认定为人物世界位移。",
+      "expressive_effect": "尚未证明超出基本空间保持的作用。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "visible_change": "左侧木柱占据更明显的边缘位置，右边缘局部人物保持可见，后段取景趋稳。",
+      "spatial_or_attention_effect": "补充近处环境和侧边信息，主角、灯及后方木结构仍可清楚区分。",
+      "expressive_effect": "未显示接触、隔离或空间揭示的实质进展，不推断人物关系或心理。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立：主角持续易辨，正常身体裁切未破坏连接，人物与前方灯、地面和木结构的空间关系清楚。取景调整保留了连续性，但没有充分证明进一步的注意组织、关键空间揭示或关系表达。",
+    "adjacent_grade_explanation": "无持续竞争、无效遮挡、必要信息损失或结构崩坏的明确证据，故不判低；常规前后层次及边缘环境显露尚不足以满足高档增强条件。",
+    "uncertainties": [
+      "仅使用给定40个采样时刻与三张清晰原帧，未观察采样间画面；本轮未重跑CV。",
+      "拒绝全部人物测量及12秒后的灯测量；相关派生数值未参与判断，未计算遮挡比例。",
+      "右侧人物的身份和叙事作用未知，但现有画面没有显示必须依靠其完整呈现才能理解的关键关系。"
+    ]
+  }
+}

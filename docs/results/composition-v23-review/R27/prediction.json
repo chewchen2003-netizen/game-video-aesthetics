@@ -1,0 +1,552 @@
+{
+  "sample_id": "R27",
+  "roles": [
+    {
+      "object_id": "bed_region",
+      "role": "subject",
+      "time_range": [
+        0,
+        1.5
+      ],
+      "description": "室内铺有兽皮状覆盖物的床铺区域；开场俯视它及旁侧箱子。",
+      "uncertainty": "不能仅由缓存名称确认床的完整边界。"
+    },
+    {
+      "object_id": "blue_door",
+      "role": "subject",
+      "time_range": [
+        2,
+        4.5
+      ],
+      "description": "转向出口时近距离经过的蓝色门板。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "camp_environment",
+      "role": "subject",
+      "time_range": [
+        4.5,
+        6
+      ],
+      "description": "出门后展示的林间河岸营地。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "drying_rack",
+      "role": "subject",
+      "time_range": [
+        6.5,
+        8.5
+      ],
+      "description": "带添加毛皮提示的晾晒架。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "camp_environment",
+      "role": "background",
+      "time_range": [
+        6.5,
+        19.5
+      ],
+      "description": "河流、岩壁、树林、种植箱、遮棚和营地地面。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "cooking_pot",
+      "role": "subject",
+      "time_range": [
+        11.5,
+        19.5
+      ],
+      "description": "前方三脚架下的烹饪锅及其燃料交互区域。",
+      "uncertainty": "12秒缓存仅覆盖炉灶局部，不能代替锅的完整区域。"
+    },
+    {
+      "object_id": "other_cooking_station",
+      "role": "supporting_element",
+      "time_range": [
+        10,
+        19.5
+      ],
+      "description": "目标锅后侧另一套锅架与石圈，为营地设施提供参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "crates_and_planters",
+      "role": "foreground",
+      "time_range": [
+        5,
+        11
+      ],
+      "description": "近处箱子、种植箱及遮棚，与河岸形成远近参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        4.5
+      ],
+      "necessary_information": "辨认室内床铺、箱子及出口；俯视后转向并经过蓝门。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        5,
+        8.5
+      ],
+      "necessary_information": "建立河岸营地位置，随后辨认晾晒架及添加毛皮的交互提示。",
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0022",
+        "rgb-0024",
+        "rgb-0026",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        9,
+        12.5
+      ],
+      "necessary_information": "从河岸设施转向两套锅架，辨认近侧目标锅与地面交互位置。",
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "持续看清目标锅、燃料状态和点燃／添加燃料提示；不能据提示认定已经点燃。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-bed_region",
+      "accepted": false,
+      "reason": "掩码主要对应兽皮状覆盖面，不能代表完整床铺；拒绝据此使用床铺占比、边界对比和深度派生量。"
+    },
+    {
+      "measurement_id": "measure-0016-blue_door",
+      "accepted": true,
+      "reason": "QA中门板可见区域与掩码基本吻合，贴边来自近距离经过；只接受可见门板测量，不解释为完整物体面积或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-drying_rack",
+      "accepted": true,
+      "reason": "掩码基本覆盖高亮架体及其晾晒面，边界与RGB相符；可辅助定位及可见区域判断，不将框面积当主体面积。"
+    },
+    {
+      "measurement_id": "measure-0048-cooking_pot",
+      "accepted": false,
+      "reason": "掩码落在石圈／燃料区局部，漏掉锅及架体，不能作为烹饪锅区域；全部派生量弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-cooking_pot",
+      "accepted": false,
+      "reason": "掩码混入锅下燃料、石圈并漏掉支架，语义边界不一致；占比、对比及深度量弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-cooking_pot",
+      "accepted": false,
+      "reason": "同样混合锅与炉灶基座，不能稳定表示同一完整对象；全部派生量弃用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "目标转换可读；居中及交互高亮未证明超出基本定位的效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "锅相关拒绝测量不参与判断；RGB足以确认设施及提示可读，普通接近未证明额外组织效果。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "门板短暂占据画面符合经过出口；未见持续无效遮挡，也无受阻关系证据。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "青色高亮和白色提示支持基本辨认；暗锅轮廓仍可读，未证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1"
+      ],
+      "uncertainty": "没有需要呈现的完整人物；开场下缘第一人称身体局部属正常裁切。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "没有人物头部呈现任务。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "没有可核查的人物视线及观看对象关系；不把镜头朝向当人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "出口与设施接近范围可理解；未见前方空间与行动共同强化受阻等处境。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "交互目标、提示和状态均保留；没有可确认的手部操作或点燃结果，不推断缺失动作。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "营地远近及锅架位置清楚，但跨景别主要完成设施巡视和目标接近，未充分证明进一步空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "从平视环境转俯视交互区符合任务；没有上下关系强化环境规模或处境的充分证据。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "架杆、锅、石圈及背景设施归属可分；未见交叠变化带来额外关系含义。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可识别近远层次和交互目标集中安排；效果以基本空间辨认和提示阅读为主。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "原视频未见分屏或画中画；输入联系表及参考图属于评审材料。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          4.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018"
+      ],
+      "observation": "开场向下呈现床铺覆盖物和右侧箱子，随后抬转视角到室内出口；3.5—4秒附近蓝门板占据大部视野，4.5秒可见门外营地。",
+      "effect": "当前局部物品与出口转换可以辨认；门板占屏是经过出口的短暂近景，没有确认的必要信息持续丢失。",
+      "exceptions_checked": "已排除第一人称身体局部、近距离门板裁切和正常进出画；不把开场局部覆盖物当形体崩坏。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          5,
+          8.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0020",
+        "rgb-0022",
+        "rgb-0024",
+        "rgb-0026",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034",
+        "measure-0032-drying_rack"
+      ],
+      "observation": "5秒附近河流、树木、营地设施同框；6.5—8秒晾晒架进入近处主要视区，青色高亮和添加毛皮文字标出交互对象，8.5秒视角开始离开。",
+      "effect": "环境定位与设施选择基本顺畅，架体及交互范围完整可读。由环境到设施的变化主要满足常规巡视与接近，未证明更强的空间关系揭示。",
+      "exceptions_checked": "高亮是正常交互反馈；不因颜色鲜艳或有前中后景直接认定增强。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          9,
+          12.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050"
+      ],
+      "observation": "视角沿河岸设施转向锅架；10秒原帧中近处箱子、斜棚、两套锅架及后方种植箱分别可辨，随后俯向近侧烹饪位置。",
+      "effect": "近远次序与目标位置基本清楚；箱子、架杆的交叠未造成设施归属误读。环境巡视尚不足以证明超出基本辨认的引导效果。",
+      "exceptions_checked": "正常转向造成对象出入画；不将屏幕位移当对象运动，不采用12秒错误锅掩码。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "目标锅及炉灶保持在画面中央附近，另一锅架位于右上；15秒参考图显示94%，19.5秒原帧显示100%，点燃与添加燃料提示可读。下方地面较宽但未排挤必要信息。",
+      "effect": "目标、状态和可执行交互范围得到持续保留；青色燃料区、白字与暗色锅体相互区分。画面稳定服务交互，未见由裁切或空间对照进一步传达关系变化。",
+      "exceptions_checked": "提示叠加是玩法信息，不当作无效遮挡；百分比变化不能证明已经点燃。拒绝的锅掩码及其派生量均未使用。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020"
+      ],
+      "visible_change": "由室内俯视物品，转到蓝门近景，再出现河岸营地。",
+      "spatial_or_attention_effect": "出口转换可读，门板占屏没有持续阻断后续定位。",
+      "expressive_effect": "支持基本空间转换；不足以确认门框阻隔或其他增强含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0024"
+      ],
+      "after_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032"
+      ],
+      "visible_change": "营地环境视野转向近处高亮晾晒架及文字提示。",
+      "spatial_or_attention_effect": "观看重点从环境转为具体交互设施。",
+      "expressive_effect": "主要是常规目标选择，尚未证明跨景别组织带来进一步空间理解。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0044"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "visible_change": "河岸设施同框转为俯视目标锅；后段保留另一锅架，燃料显示由94%到100%。",
+      "spatial_or_attention_effect": "目标位置和交互状态持续可读，背景锅架提供基本位置参照。",
+      "expressive_effect": "变化说明交互状态更新；不据此推断情绪、点燃结果或设施关系转折。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立：室内到营地的转换、晾晒架选择及锅炉交互均可辨认，必要目标、提示和空间关系得到保留。暗部、短暂门板占屏及地面余量未造成明确观看干扰。位置、景别和层次变化主要服务常规巡视与操作，尚未证明超出基本呈现的增强效果。",
+    "adjacent_grade_explanation": "不判低：没有确认的持续查找、无效遮挡、关键裁切损失或空间误读。不判高：现有层次、推近和高亮尚未形成充分的“可见安排—具体联系—进一步作用”证据链。",
+    "uncertainties": [
+      "床铺及三项锅区域测量被拒绝，相关派生数值全部弃用；RGB仍足以完成必要基础判断。",
+      "只依据给定采样画面；未声称看到采样间动作、光流或未展示的交互结果。"
+    ]
+  }
+}

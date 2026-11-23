@@ -1,0 +1,462 @@
+{
+  "sample_id": "R08",
+  "roles": [
+    {
+      "object_id": "taxi",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "蓝色出租车；连续后方跟随画面以其行驶、右转及进入窄巷为主要内容。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "road",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "大道、右侧入口及窄巷，构成主体行驶的通路。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "street-boundaries",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "路缘、栏杆、建筑墙面和绿化，建立道路边界及转弯后的空间收窄。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "nearby-streetscape",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "画面两侧近处树木、灯杆及街边设施；相对于车的远近随行驶变化。",
+      "uncertainty": "不能把全部街景固定视为前景。"
+    },
+    {
+      "object_id": "incidental-people-vehicles",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "街边行人、停放车辆和摩托车；未见与出租车形成必要交互的稳定陪体。",
+      "uncertainty": "不推断驾驶者、任务目标或人物关系。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "A",
+      "time_range": [
+        0,
+        10.5
+      ],
+      "necessary_information": "出租车沿宽阔大道前进；需辨认车辆、前方道路及右侧入口的位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "B",
+      "time_range": [
+        10.75,
+        13.5
+      ],
+      "necessary_information": "车辆右转进入建筑旁支路；需看清朝向变化、入口和两侧边界，理解大道与支路的连接。",
+      "input_evidence_ids": [
+        "rgb-0043",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0053",
+        "rgb-0054"
+      ]
+    },
+    {
+      "stage_id": "C",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "necessary_information": "车辆沿墙面与绿化之间的窄巷前进；需保留车身、通行余量和前方弯道。末帧未展示后续转弯结果。",
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-taxi",
+      "accepted": true,
+      "reason": "QA掩码覆盖车顶及车身，边界与RGB基本一致；可辅助位置和可见面积判断。色差、单目深度不直接证明构图效果；无完整形体掩码，不能推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-taxi",
+      "accepted": true,
+      "reason": "QA中车顶至车尾覆盖基本完整，未见影响判断的明显错分；仅作位置、尺度辅助，不将测量值当作美学阈值。"
+    },
+    {
+      "measurement_id": "measure-0032-taxi",
+      "accepted": true,
+      "reason": "掩码与车辆主要轮廓基本吻合，可辅助位置、可见面积判断；相对逆深度不解释为真实距离。"
+    },
+    {
+      "measurement_id": "measure-0048-taxi",
+      "accepted": true,
+      "reason": "转弯后车辆主要形体及车顶均有覆盖，未见明显整块漏分；可辅助主体位置、尺度，不据此声称遮挡百分比。"
+    },
+    {
+      "measurement_id": "measure-0064-taxi",
+      "accepted": false,
+      "reason": "QA仅覆盖车身后下部，漏掉明显可见的车顶及出租车标识；不是可靠完整主体区域。该项框、中心、面积、色差及深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-taxi",
+      "accepted": false,
+      "reason": "QA漏分车顶和上部形体，框顶落在实际车辆内部；拒绝该项及全部派生数值，改用RGB判断。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "增强依据是车辆与通路边界随转弯重新组织的联系，非仅居中。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "车辆大小足以读清朝向，并保留环境；没有明确以主体占比变化组织揭示的证据。后段不用漏分面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "所示采样未见车辆必要部分被持续遮挡；未见具有进一步作用的遮显，不计算遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "蓝色车身、尾灯和轮廓支持定位；入阴影后仍可辨。颜色突出本身未证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "主要呈现车辆，无需判断的人体局部或同一身体跨视区连接。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "非人物主体；不以车顶空间替代人物头部空间。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "未呈现可可靠辨识的人物视线及必要观看关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "前方从宽大道变为两侧边界紧邻的通路，配合实际右转和沿巷前进，强化路径受边界约束；不推断逃离或心理压力。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "车身、转向和入口保持在画内；未见局部取舍进一步强调交互。19.5秒之后的动作结果未知。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "依据道路透视、入口显露及连续转向建立空间连接，不使用单目深度数值证明纵深效果。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "车辆在下部、前方通路在上部的安排清楚；未证明上下分布本身产生额外效果。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "车身、路缘、墙面及绿化归属清楚；未见交叠变化独立传达关系。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可识别道路引导线及两侧边界形成的通路组织；增强仅解释已由P-H-a、C-H-d、S-H-a支持的同一空间揭示，不另行加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "联系表和参考图并置是评审材料形式，原视频所示画面未使用分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          10.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0042"
+      ],
+      "observation": "出租车保持在画面下方中部，完整车身与大片前方道路同时可见；车道线、路缘和树列延向远处，右侧建筑及入口逐步靠近。",
+      "effect": "车辆容易定位，尺度适合同时读取车与路线；大道的宽度、延伸方向和入口一侧先得到建立，为随后转入支路提供空间参照。",
+      "exceptions_checked": "居中、蓝色及透视线单独不作为增强；两侧街景虽繁杂，未持续抢占车辆或必要路径。所述连续性限于提供的采样。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          10.75,
+          13.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0043",
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052",
+        "rgb-0053",
+        "rgb-0054"
+      ],
+      "observation": "车辆朝向右侧改变，画面随转向将建筑旁入口带到车前；大道转向画面左侧，近墙、路缘与街边设施界定进入的支路。",
+      "effect": "车辆、入口及旧道路在同一转向过程中保持可追踪，观看由大道导向新通路；不只呈现车在转，还揭示两条道路的实际连接。",
+      "exceptions_checked": "转弯时环境斜向变化符合跟随视角，未造成必要路线丢失；不将镜头转动等同车辆速度或光流。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          14,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "车仍在下方中部；左侧绿化及花池边缘、右侧连续墙面夹出窄巷，前方可见道路继续延伸，末段出现左弯指示。近处两侧元素展开至画框边缘，车身保持完整。",
+      "effect": "与宽大道对照，边界贴近车辆行驶路径，明确车辆进入更受通路约束的空间。前方留量同时保留巷道与弯向，纵深线索把主体和下一段路径连接起来，超出孤立的车辆辨认。",
+      "exceptions_checked": "窄巷是可见环境收窄，不是裁切错误；未见车被墙或树持续遮住。末段阴影不妨碍车身定位；不声称已通过后续弯道，不采用两项漏分测量。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "主要内容为单一跟随视区中的车辆行驶；街边人物属于次要环境，没有必要的人物姿态、头部或视线关系。",
+      "effect": "人物专属裁切项及多画面组织项不适用；车辆运动仍通过前方空间与动作裁切项检查。",
+      "exceptions_checked": "未把评审联系表当成视频分屏，也未将车辆顶部当作人物头顶；没有将不适用误记为证据不足。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0042"
+      ],
+      "after_evidence_ids": [
+        "rgb-0043",
+        "rgb-0048",
+        "rgb-0054"
+      ],
+      "visible_change": "沿宽大道直行变为右转进入建筑旁支路，旧道路向左退开，新入口转至车前。",
+      "spatial_or_attention_effect": "保留车辆作为稳定参照，随转向把注意从大道纵深导入入口，建立道路连接。",
+      "expressive_effect": "空间揭示成立，支持P-H-a与S-H-a；不附加人物情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "visible_change": "前方开放的多车道环境变成墙面与绿化之间的单一窄通路，车辆仍完整留在画内。",
+      "spatial_or_attention_effect": "两侧边界与前方弯向共同突出可行驶范围的变化，主体和通路的联系持续清楚。",
+      "expressive_effect": "强化由开阔道路进入受边界约束空间的处境，支持C-H-d与S-H-a；不是由车辆小或墙面大单独推断。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-a",
+      "C-H-d",
+      "S-H-a"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "reason": "适用基础条件均成立。稳定保留车辆与前方路径，经过可追踪的右转，把大道、入口和窄巷连续联系起来；墙面、绿化及路缘进一步显现通行空间的收窄，形成有上下文支持的观看引导和主体环境关系。",
+    "adjacent_grade_explanation": "高于中档的依据是转弯前后通路的连续揭示及边界约束变化，非单凭居中、颜色或引导线名称。未见可确认的基础失败。",
+    "uncertainties": [
+      "未观察采样之间的全部瞬时画面及19.5秒之后的结果。",
+      "16秒与19.5秒主体分割漏掉车顶，已拒绝全部相关派生值；RGB足以完成本次构图判断。",
+      "未提供完整主体区域与真实距离，不报告遮挡百分比、光流或实际空间尺寸。"
+    ]
+  }
+}

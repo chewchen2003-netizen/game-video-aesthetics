@@ -1,0 +1,483 @@
+{
+  "sample_id": "R13",
+  "roles": [
+    {
+      "object_id": "rider",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "蓝衣骑手；前段主要呈现骑乘移动，末段被画框排除。",
+      "uncertainty": "末段不能确认具体操作目的。"
+    },
+    {
+      "object_id": "horse",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "骑手所乘红棕马，与骑手共同构成骑乘行动。",
+      "uncertainty": "horse_close是同一马匹及马具的近距离可见区域，不是新对象。"
+    },
+    {
+      "object_id": "grass_near",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处草地，提供地面与距离参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "landscape",
+      "role": "background",
+      "time_range": [
+        0,
+        18.25
+      ],
+      "description": "坡地、树列、远山与天空；用于理解骑乘所在空间。",
+      "uncertainty": "18.25秒没有提供采样，此处阶段终点仅表示18.5秒变化前的范围，不声称观察过该时刻。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        12
+      ],
+      "necessary_information": "后侧跟随骑乘：需辨认骑手坐于马背、马匹朝向及周围可行地面。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0048"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        12.25,
+        18
+      ],
+      "necessary_information": "视角转为较高的侧后方，骑乘组合仍完整可辨；需保留骑手与马匹连接、朝向及地面关系。",
+      "input_evidence_ids": [
+        "rgb-0049",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        18.5,
+        19.5
+      ],
+      "necessary_information": "画面突然逼近马匹，随后仅余马身、鞍具与骑手身体局部；需检查这种取景是否保留骑乘关系或揭示有意义的局部行为。",
+      "input_evidence_ids": [
+        "rgb-0074",
+        "rgb-0075",
+        "rgb-0076",
+        "rgb-0077",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-rider",
+      "accepted": false,
+      "reason": "QA骑手区域混入马头，人体区域不完整；拒绝其面积、中心、颜色、深度及关节点派生判断。"
+    },
+    {
+      "measurement_id": "measure-0000-horse",
+      "accepted": true,
+      "reason": "QA马匹区域与RGB大体对应，可辅助可见轮廓与边缘判断；不表示完整身体面积或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-rider",
+      "accepted": false,
+      "reason": "QA骑手区域混入马头，人体边界不可靠；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-horse",
+      "accepted": true,
+      "reason": "QA马身及腿尾区域大体对应RGB，可作粗略位置辅助；不使用其单目深度证明实际距离。"
+    },
+    {
+      "measurement_id": "measure-0032-rider",
+      "accepted": false,
+      "reason": "QA掩码混入马头且未可靠覆盖骑手肢体；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-horse",
+      "accepted": false,
+      "reason": "QA主要覆盖马躯与后部，漏掉明显可见的头颈，无法支持整匹马的面积及中心判断。"
+    },
+    {
+      "measurement_id": "measure-0048-rider",
+      "accepted": false,
+      "reason": "QA骑手掩码混入马头，肢体覆盖不可靠；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0048-horse",
+      "accepted": true,
+      "reason": "QA马匹可见区域大体成立，仅用于粗略轮廓与位置核对，不推导遮挡百分比。"
+    },
+    {
+      "measurement_id": "measure-0064-rider",
+      "accepted": false,
+      "reason": "QA骑手标签覆盖大量马身，明显人马混分；全部派生数值拒绝。"
+    },
+    {
+      "measurement_id": "measure-0064-horse",
+      "accepted": false,
+      "reason": "QA马匹区域混入骑手，两个对象区域近似重合；不能用于独立对象面积、中心或色彩比较。"
+    },
+    {
+      "measurement_id": "measure-0078-horse_close",
+      "accepted": true,
+      "reason": "QA大体覆盖马身与鞍具的可见局部，与RGB相符；仅作局部占框辅助，不解释为整匹马面积或遮挡比例。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a",
+        "P-L-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "末段局部取景的目的未知，但实际观看重点损失可见。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b",
+        "P-L-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "不使用被拒分割的骑手面积；依据RGB前后景别变化。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "末段主要是取景排除与过近占框，损失归于位置、尺度和裁切，不重复当作外物遮挡失败。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "蓝衣、浅色腿部与红棕马基本可分；末段对象离框不等于背景混杂。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "末段为连续近距离身体局部裁切，未确认同一形体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b",
+        "C-L-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "失败依据是末段骑手头部连同上身呈现丢失，不是前段头顶留空偏多。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2"
+      ],
+      "uncertainty": "骑手多为背侧面，没有可靠注视对象或必须判断的观看关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d",
+        "C-L-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "不能确认末段是否停止移动；可确认原先可读的马匹朝向和周边地面关系被近景排除。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e",
+        "C-L-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "未见末段新增手势、操作对象或结果足以支持独立动作特写解释。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "前段远近参照清楚；末段损失已归于裁切，不另认定远近关系误读。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "坡面与山脊上下变化没有造成对象位置混淆；不由倾斜推断情绪。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "骑手与马背的正常交叠可理解；末段没有确证错误连接，不重复处罚占框问题。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a",
+        "T-L-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "识别到居中跟随与草地—主体—远山层次；末段近距离取舍的信息损失关联e3，不另计损害。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "输入联系表与参考帧并置是证据排版，不能当作视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          12
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "observation": "骑手与马位于画面中下部，后侧跟随视角基本稳定。蓝衣、浅色腿与红棕马区分明确；草地延伸至树列和远山。0秒马腿触及下边缘，骑手头身与骑乘连接仍可读。",
+      "effect": "观看重点容易建立，骑乘姿态、马匹朝向及地面关系基本清楚。前景草地与远山形成距离参照，但尚不足以证明超出普通跟随呈现的增强。",
+      "exceptions_checked": "正常骑乘交叠、马腿短暂贴边和较多天空不单独扣档；没有以山峰位置或色彩鲜明直接判高。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          12.25,
+          18
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0049",
+        "rgb-0050",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072"
+      ],
+      "observation": "视角转到更高的侧后方，天空减少、坡地增多；骑乘组合仍处中下区域，马头朝画面左侧，骑手坐姿与马背联系清楚。",
+      "effect": "提供较完整的侧向骑乘轮廓，周边草地足以理解朝向与所在坡面。变化主要补充基本空间辨认，未出现明确目标、阻隔或关系变化支持增强。",
+      "exceptions_checked": "不将屏幕位置变化直接解释为世界运动方向；16秒人马混分不用于证明主体放大、融合或结构异常。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          18.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0074",
+        "rgb-0075",
+        "rgb-0076",
+        "rgb-0077",
+        "rgb-0078"
+      ],
+      "observation": "18.5秒起画面迅速贴近马匹，18.75—19秒马头、颈和鞍具大幅占框；19.25—19.5秒只见马躯、鞍具和浅色身体局部。19.5秒清晰原帧确认骑手头身、完整坐姿及前方地面已被排除。",
+      "effect": "连续末段采样中，原本明确的骑乘组合退化为难以追踪整体行动的局部纹理；尺度与裁切夺走必要主体、动作及方向参照。没有显露新的接触、操作或结果来补偿信息损失，确认基础失败。",
+      "exceptions_checked": "已检查局部特写、正常出画及第一人称裁切解释：该段由第三人称骑乘连续逼近，未见独立局部行为或明确视区转换支撑合理取舍。不是因为近景本身扣档，也未认定形体连接崩坏。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "视频采样均为单一游戏视区；联系表和放大参考图属于输入展示。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "未把图像联系表误认成片内分屏或画中画。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0049",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072"
+      ],
+      "visible_change": "由后侧跟随变为较高侧后视角，坡地占比增加，骑乘整体仍可辨。",
+      "spatial_or_attention_effect": "视角变化补充侧向轮廓与地面关系，没有破坏基本定位。",
+      "expressive_effect": "未见足够上下文证明环境揭示或关系强调超出基本呈现。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0072"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0075",
+        "rgb-0076",
+        "rgb-0077",
+        "rgb-0078"
+      ],
+      "visible_change": "从完整骑乘组合骤变为马头、马身及鞍具的极近局部，骑手头身和前方空间退出画框。",
+      "spatial_or_attention_effect": "原先可连续追踪的骑乘关系与方向参照丢失；末段观看重点被局部占框打断。",
+      "expressive_effect": "未见新增局部行为或关系揭示，不能把放大本身认作增强。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "low",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-L-a",
+      "O-L-b",
+      "P-L-a",
+      "P-L-b",
+      "C-L-b",
+      "C-L-d",
+      "C-L-e"
+    ],
+    "decisive_event_ids": [
+      "e3"
+    ],
+    "reason": "按Rubric 2.3.0，前0—18秒骑乘主体与空间基本可读；18.5—19.5秒连续逼近使骑手整体、骑乘动作及方向参照被排除，未提供有意义的局部行为替代。该末段变化构成明确的主体尺度与裁切基础失败，故判低。",
+    "adjacent_grade_explanation": "不能判中：末段损失经多个连续采样及19.5秒清晰原帧确认，超出单帧贴边瑕疵。前段层次和跟随稳定不能抵消此处必要信息损失。",
+    "uncertainties": [
+      "没有重跑CV；拒绝项的所有派生数值均未用于判断。",
+      "未提供完整主体掩码与遮挡比例，不推算遮挡百分比。",
+      "只依据清单采样判断，不声称看过未提供时刻；末段操作目的未知，但不影响已确认的可见信息损失。"
+    ]
+  }
+}

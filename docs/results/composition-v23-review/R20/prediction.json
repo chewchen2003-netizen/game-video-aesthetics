@@ -1,0 +1,551 @@
+{
+  "sample_id": "R20",
+  "roles": [
+    {
+      "object_id": "red_opponent",
+      "role": "subject",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "description": "门口出现并靠近的红色持械人物，是前段交互的主要观看对象。",
+      "uncertainty": "不由对象名称推定敌我身份。"
+    },
+    {
+      "object_id": "fallen_character",
+      "role": "subject",
+      "time_range": [
+        3.5,
+        7
+      ],
+      "description": "倾斜视野中地面的浅色人物及其姿态，成为当前观看重点。",
+      "uncertainty": "不能确认其与此前人物的身份对应，也不推定倒地原因。"
+    },
+    {
+      "object_id": "red_opponent",
+      "role": "supporting_element",
+      "time_range": [
+        3.5,
+        4
+      ],
+      "description": "倾斜画面上侧另有红色人物，与地面人物共同建立近旁位置关系。",
+      "uncertainty": "只确认采样画面中可见的共处关系。"
+    },
+    {
+      "object_id": "first_person_weapon",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "多数阶段下方的青黑色枪械及局部手臂，提供第一人称朝向参照；倒地视野阶段并非持续可见。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "architecture_and_route",
+      "role": "subject",
+      "time_range": [
+        7.5,
+        19.5
+      ],
+      "description": "主要呈现内容转为室内通路、楼梯、出口和庭院的连续空间关系。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "blue_panels",
+      "role": "supporting_element",
+      "time_range": [
+        7.5,
+        19.5
+      ],
+      "description": "蓝色发光矩形设施作为建筑边界及路径参照。",
+      "uncertainty": "画面不能确认其功能，不直接认定为传送门。"
+    },
+    {
+      "object_id": "courtyard_structure",
+      "role": "supporting_element",
+      "time_range": [
+        17,
+        19.5
+      ],
+      "description": "庭院低矮独立构筑物，与后方蓝色设施、右侧楼梯形成前后关系。",
+      "uncertainty": "不是由缓存命名确认的柱体。"
+    },
+    {
+      "object_id": "walls_trees_sky",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "墙体、树木、远处天空及建筑构成环境和远近参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "necessary_information": "辨认门口红色人物、其靠近及与第一人称武器的交互方向。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0005",
+        "rgb-0008",
+        "rgb-0011",
+        "rgb-0013"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        3.5,
+        7
+      ],
+      "necessary_information": "辨认视野倾斜后地面人物、附近红色人物及散落物的位置；不要求从采样图推断倒地因果。",
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        7.5,
+        14
+      ],
+      "necessary_information": "辨认恢复直立视野后的室内外衔接、楼梯、走廊和明亮出口。",
+      "input_evidence_ids": [
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0056"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        14.5,
+        19.5
+      ],
+      "necessary_information": "辨认出口外平台、转角及随后显露的庭院构筑物、后方设施和右侧楼梯的联系。",
+      "input_evidence_ids": [
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-red_opponent",
+      "accepted": true,
+      "reason": "QA区域对应门口小人物，位置、范围与RGB一致；仅接受可见区域定位，不将框面积当掩码面积或推导遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-fallen_character",
+      "accepted": true,
+      "reason": "QA主要覆盖地面浅色人物，与倾斜RGB中的对象对应；可辅助定位和可见尺度，不能据此推断完整身体遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-blue_portal",
+      "accepted": true,
+      "reason": "QA覆盖左侧蓝色矩形设施，范围基本相符；接受几何定位，不接受名称所暗示的功能。"
+    },
+    {
+      "measurement_id": "measure-0048-blue_portal",
+      "accepted": true,
+      "reason": "左缘截入的设施区域与RGB相符；贴边是设施局部出画，不是人物裁切。"
+    },
+    {
+      "measurement_id": "measure-0064-courtyard_column",
+      "accepted": false,
+      "reason": "QA实际覆盖左侧蓝色设施及邻近边缘，与后续庭院独立构筑物不是同一对象；拒绝该对象测量及其全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-courtyard_column",
+      "accepted": true,
+      "reason": "QA覆盖庭院低矮构筑物，与清晰原帧一致；接受区域定位，不据名称认定为柱体，不与已拒绝的16秒记录作同物尺度比较。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "人物及后段路径重点可定位；位置本身未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "开头人物虽小仍可辨，靠近后更清楚；未将普通透视大小变化解释为增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "门边和转角形成正常局部遮显，未见持续无效定位丢失；没有完整主体区域，不报遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "红色人物、浅色地面人物及蓝色设施均能与环境分开；色彩清楚本身不作增强证据。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "未见可确认的同一身体连接或尺度崩坏；第一人称局部手臂及人物正常进出画可合理解释。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2"
+      ],
+      "uncertainty": "关键人物头部得到必要呈现；倾斜阶段边缘人物局部离框未造成必要信息损失。后段环境呈现不强求人物头部空间。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1"
+      ],
+      "uncertainty": "持械朝向与对向交互范围可理解；不推断眼睛的精确视线，后段无须套用人物凝视关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "靠近和通行所需范围可见；留足路径支持基础，未据此推断逃离或受迫处境。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "持械交互、视野转变后的姿态和通行范围可读；采样不足以确认具体命中因果，不把因果缺失归咎裁切。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "增强依据是转角前后逐步建立的通路及遮挡关系，不使用单目深度数值作距离判断。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "倾斜阶段仍有地面、墙缘参照，楼梯高差可读；不由倾斜或上下位置推断情绪和强弱。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "枪械、人物、建筑的边界归属清楚；没有额外依附、隔离等关系证据。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可识别门框框取及建筑遮显、透视组织；增强仅引用e4已证明的空间揭示，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "输入联系表是评审排版，原视频未显示分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0005",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0011",
+        "rgb-0013"
+      ],
+      "observation": "红色人物从门口进入近处，门框限定入口；枪械位于下方及右侧，人物身体与持械方向仍可辨。",
+      "effect": "支持交互对象、入口和接近方向的基本辨认；红色与灰墙对比有助定位，但普通靠近和色彩突出不足以单独证明增强。",
+      "exceptions_checked": "已排除第一人称枪械裁切、正常进出画和近距离交互造成的短暂局部出框；未见持续抢占必要观看范围。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          3.5,
+          7
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0028"
+      ],
+      "observation": "视野明显倾斜，浅色人物位于地面，近旁可见红色人物和紫色物件；随后采样中地面人物位置关系保持可辨。",
+      "effect": "地面纹理、墙地边界和人物轮廓使姿态与邻近关系可读，倾斜没有构成已确认的空间混乱。",
+      "exceptions_checked": "不将倾斜自动认定为构图失败或情绪表达；不将不同人物身体拼接，不推断未展示的倒地因果。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          7.5,
+          14
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056"
+      ],
+      "observation": "直立第一人称视野中，蓝色设施、室外楼梯、室内弯曲走廊及明亮出口依次进入观看范围；枪械主要保留在下方。",
+      "effect": "墙缘、阶梯及出口提供通路参照，必要的前进范围清楚，主要支持基础空间理解。",
+      "exceptions_checked": "不据蓝色设施名称推断传送机制；不要求从采样间隔重建每一步移动，也不把枪械下缘出框作为动作损失。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          14.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "15秒附近近处墙缘限定外平台可见范围，左侧蓝色设施贴近画边；17秒后转角另一侧逐渐显露，至19.5秒形成左前方独立构筑物、后方蓝色设施、右侧上行楼梯的清楚层次。",
+      "effect": "近墙的遮显变化、地面连续边缘与最终分开的建筑层次共同把局部出口延展为庭院布局；观众可将新显露的构筑物及楼梯接入此前通路，构成有前后依据的空间揭示，超出单帧对象可辨。",
+      "exceptions_checked": "不把16秒蓝色设施与19.5秒独立构筑物当同物；不以普通前景存在、物体变大或留够行走空间单独判增强，不推断心理。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "所提供各阶段RGB均为单一第一人称视区；联系表和参考图属于输入展示。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "未把联系表多个缩略图误判成视频内分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0005",
+        "rgb-0010",
+        "rgb-0013"
+      ],
+      "visible_change": "红色人物由门口小比例变为近处较大比例并移动至侧方。",
+      "spatial_or_attention_effect": "入口与交互对象保持可定位，观看重点随可见接近变化。",
+      "expressive_effect": "支持基础交互理解，未证明大小变化具有额外关系含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0013"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "视野转为倾斜，主要观看对象变为地面浅色人物。",
+      "spatial_or_attention_effect": "地面、墙缘与人物轮廓继续提供位置参照。",
+      "expressive_effect": "可确认呈现内容转变，不由此补造受击过程或情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "由墙缘限制的外平台视野，转为独立构筑物、后方设施及右侧楼梯同时可见的庭院。",
+      "spatial_or_attention_effect": "连续地面和转角遮显将局部通路与庭院的前后、左右关系接起来。",
+      "expressive_effect": "e4提供S-H-a及T-H-a的空间揭示证据，不依赖不可靠的同物测量比较。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立：人物交互、倾斜地面视野及后段通路均可辨，未确认必要裁切损失或形体结构破坏。决定性增强在14.5—19.5秒：墙缘遮显、连续地面和最终庭院层次共同逐步揭示出口与构筑物、后方设施及楼梯的空间联系，满足有效视觉组织。",
+    "adjacent_grade_explanation": "高于中档的依据是e4可核查的前后空间揭示，而非颜色鲜艳、第一人称常规留位或手法数量；未发现足以触发低档的适用基础失败。",
+    "uncertainties": [
+      "仅判断提供的48个采样时刻及清晰原帧，不声称看过其间连续动作。",
+      "16秒courtyard_column测量被拒绝，其派生数值未参与判断；其余测量只作辅助定位，不使用美学阈值、遮挡百分比或单目深度距离。",
+      "未重跑CV；无法确认蓝色设施功能、地面人物身份及倒地因果，这些不改变本次构图结论。"
+    ]
+  }
+}

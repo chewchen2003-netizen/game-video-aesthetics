@@ -1,0 +1,453 @@
+{
+  "sample_id": "R18",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 433.26666666666665
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 433.76666666666665
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 434.26666666666665
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 434.76666666666665
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 435.26666666666665
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 435.76666666666665
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 436.26666666666665
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 436.76666666666665
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 437.26666666666665
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 437.76666666666665
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 438.26666666666665
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 438.76666666666665
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 439.26666666666665
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 439.76666666666665
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 440.26666666666665
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 440.76666666666665
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 441.26666666666665
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 441.76666666666665
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 442.26666666666665
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 442.76666666666665
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 443.26666666666665
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 443.76666666666665
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 444.26666666666665
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 444.76666666666665
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 445.26666666666665
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 445.76666666666665
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 446.26666666666665
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 446.76666666666665
+    },
+    {
+      "id": "rgb-0055",
+      "frame_index": 55,
+      "time": 13.75,
+      "source_time": 447.01666666666665
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 447.26666666666665
+    },
+    {
+      "id": "rgb-0057",
+      "frame_index": 57,
+      "time": 14.25,
+      "source_time": 447.51666666666665
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 447.76666666666665
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 448.26666666666665
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 448.76666666666665
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 449.26666666666665
+    },
+    {
+      "id": "rgb-0065",
+      "frame_index": 65,
+      "time": 16.25,
+      "source_time": 449.51666666666665
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 449.76666666666665
+    },
+    {
+      "id": "rgb-0067",
+      "frame_index": 67,
+      "time": 16.75,
+      "source_time": 450.01666666666665
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 450.26666666666665
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 450.76666666666665
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 451.26666666666665
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 451.76666666666665
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 452.26666666666665
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 452.76666666666665
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-forest_ground_region",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "forest_ground_region",
+      "valid": true,
+      "bbox": [
+        98,
+        232,
+        1064,
+        704
+      ],
+      "center": [
+        0.45390625,
+        0.65
+      ],
+      "edge_distances": {
+        "left": 0.0765625,
+        "right": 0.16875,
+        "top": 0.32222222222222224,
+        "bottom": 0.022222222222222223
+      },
+      "visible_ratio": 0.3641851128472222,
+      "color_JS": 0.34567400968151113,
+      "boundary_Lstar_median": 1.4556884765625,
+      "relative_inverse_depth_median": 2.509794235229492,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-forest_ground_region",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "forest_ground_region",
+      "valid": true,
+      "bbox": [
+        535,
+        280,
+        1128,
+        713
+      ],
+      "center": [
+        0.649609375,
+        0.6895833333333333
+      ],
+      "edge_distances": {
+        "left": 0.41796875,
+        "right": 0.11875,
+        "top": 0.3888888888888889,
+        "bottom": 0.009722222222222222
+      },
+      "visible_ratio": 0.20183051215277778,
+      "color_JS": 0.14814919511020744,
+      "boundary_Lstar_median": 1.123046875,
+      "relative_inverse_depth_median": 1.394022822380066,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-forest_ground_region",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "forest_ground_region",
+      "valid": true,
+      "bbox": [
+        442,
+        360,
+        1143,
+        588
+      ],
+      "center": [
+        0.619140625,
+        0.6583333333333333
+      ],
+      "edge_distances": {
+        "left": 0.3453125,
+        "right": 0.10703125,
+        "top": 0.5,
+        "bottom": 0.18333333333333332
+      },
+      "visible_ratio": 0.037824435763888886,
+      "color_JS": 0.1313809048980188,
+      "boundary_Lstar_median": 1.2969970703125,
+      "relative_inverse_depth_median": 0.4492854177951813,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-right_boulder",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "right_boulder",
+      "valid": true,
+      "bbox": [
+        894,
+        140,
+        1280,
+        403
+      ],
+      "center": [
+        0.84921875,
+        0.3770833333333333
+      ],
+      "edge_distances": {
+        "left": 0.6984375,
+        "right": 0.0,
+        "top": 0.19444444444444445,
+        "bottom": 0.44027777777777777
+      },
+      "visible_ratio": 0.04530056423611111,
+      "color_JS": 0.3885338734315778,
+      "boundary_Lstar_median": 4.1107177734375,
+      "relative_inverse_depth_median": 0.8317679166793823,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-right_boulder",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "right_boulder",
+      "valid": true,
+      "bbox": [
+        611,
+        0,
+        1280,
+        563
+      ],
+      "center": [
+        0.738671875,
+        0.3909722222222222
+      ],
+      "edge_distances": {
+        "left": 0.47734375,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.21805555555555556
+      },
+      "visible_ratio": 0.25445095486111113,
+      "color_JS": 0.8252119048389214,
+      "boundary_Lstar_median": 14.3035888671875,
+      "relative_inverse_depth_median": 2.754551410675049,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-right_boulder",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "right_boulder",
+      "valid": true,
+      "bbox": [
+        371,
+        252,
+        840,
+        720
+      ],
+      "center": [
+        0.473046875,
+        0.675
+      ],
+      "edge_distances": {
+        "left": 0.28984375,
+        "right": 0.34375,
+        "top": 0.35,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.11069552951388889,
+      "color_JS": 0.46383498288353875,
+      "boundary_Lstar_median": 1.66015625,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "4eb90d498bdb896ece3a3fe3e06191416cbd601589526d124648ee723d769a27",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 44
+  }
+}

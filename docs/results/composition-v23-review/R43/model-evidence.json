@@ -1,0 +1,424 @@
+{
+  "sample_id": "R43",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 2052.05
+    },
+    {
+      "id": "rgb-0001",
+      "frame_index": 1,
+      "time": 0.25,
+      "source_time": 2052.3
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 2052.55
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 2053.05
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 2053.55
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 2054.05
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 2054.55
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 2055.05
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 2055.55
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 2056.05
+    },
+    {
+      "id": "rgb-0017",
+      "frame_index": 17,
+      "time": 4.25,
+      "source_time": 2056.3
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 2056.55
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 2057.05
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 2057.55
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 2058.05
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 2058.55
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 2059.05
+    },
+    {
+      "id": "rgb-0029",
+      "frame_index": 29,
+      "time": 7.25,
+      "source_time": 2059.3
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 2059.55
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 2060.05
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 2060.55
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 2061.05
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 2061.55
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 2062.05
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 2062.55
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 2063.05
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 2063.55
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 2064.05
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 2064.55
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 2065.05
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 2065.55
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 2066.05
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 2066.55
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 2067.05
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 2067.55
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 2068.05
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 2068.55
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 2069.05
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 2069.55
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 2070.05
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 2070.55
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 2071.05
+    },
+    {
+      "id": "rgb-0077",
+      "frame_index": 77,
+      "time": 19.25,
+      "source_time": 2071.3
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 2071.55
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-robot_yellow",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "robot_yellow",
+      "valid": true,
+      "bbox": [
+        782,
+        180,
+        840,
+        323
+      ],
+      "center": [
+        0.63359375,
+        0.34930555555555554
+      ],
+      "edge_distances": {
+        "left": 0.6109375,
+        "right": 0.34375,
+        "top": 0.25,
+        "bottom": 0.5513888888888889
+      },
+      "visible_ratio": 0.006781684027777778,
+      "color_JS": 0.3581747310371715,
+      "boundary_Lstar_median": 3.509521484375,
+      "relative_inverse_depth_median": 0.07643851637840271,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-wall_region",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "wall_region",
+      "valid": true,
+      "bbox": [
+        0,
+        3,
+        994,
+        407
+      ],
+      "center": [
+        0.38828125,
+        0.2847222222222222
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.2234375,
+        "top": 0.004166666666666667,
+        "bottom": 0.43472222222222223
+      },
+      "visible_ratio": 0.36907552083333334,
+      "color_JS": 0.45440540511398037,
+      "boundary_Lstar_median": 0.982666015625,
+      "relative_inverse_depth_median": 0.5492405891418457,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-robot_blue",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "robot_blue",
+      "valid": true,
+      "bbox": [
+        583,
+        225,
+        734,
+        459
+      ],
+      "center": [
+        0.514453125,
+        0.475
+      ],
+      "edge_distances": {
+        "left": 0.45546875,
+        "right": 0.4265625,
+        "top": 0.3125,
+        "bottom": 0.3625
+      },
+      "visible_ratio": 0.0208984375,
+      "color_JS": 0.2624452719140486,
+      "boundary_Lstar_median": 0.6378173828125,
+      "relative_inverse_depth_median": 0.09528016299009323,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-end_door_region",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "end_door_region",
+      "valid": true,
+      "bbox": [
+        484,
+        197,
+        827,
+        358
+      ],
+      "center": [
+        0.512109375,
+        0.3854166666666667
+      ],
+      "edge_distances": {
+        "left": 0.378125,
+        "right": 0.35390625,
+        "top": 0.27361111111111114,
+        "bottom": 0.5027777777777778
+      },
+      "visible_ratio": 0.04017903645833333,
+      "color_JS": 0.5318112479321374,
+      "boundary_Lstar_median": 2.5115966796875,
+      "relative_inverse_depth_median": 0.028937416151165962,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-end_door_region",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "end_door_region",
+      "valid": true,
+      "bbox": [
+        764,
+        297,
+        1001,
+        573
+      ],
+      "center": [
+        0.689453125,
+        0.6041666666666666
+      ],
+      "edge_distances": {
+        "left": 0.596875,
+        "right": 0.21796875,
+        "top": 0.4125,
+        "bottom": 0.20416666666666666
+      },
+      "visible_ratio": 0.03340169270833333,
+      "color_JS": 0.3913563403830816,
+      "boundary_Lstar_median": 1.214599609375,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "b39e5c3142e72168fef28a61a6f45c7c4d7225a33e39ce55e8983b6a2ef6dde6",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 44
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "sample_id": "R43",
+  "roles": [
+    {
+      "object_id": "robots",
+      "role": "subject",
+      "time_range": [
+        0,
+        12.5
+      ],
+      "description": "熔融池旁及蓝色走廊内的机器人是射击交互对象；包括缓存所称robot_yellow、robot_blue，颜色命名不作为身份依据。",
+      "uncertainty": "无法跨全部采样确认个体对应；8秒爆炸中的完整形体不可可靠分割。"
+    },
+    {
+      "object_id": "player_weapon",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "右下第一人称枪械及局部手臂，提供射击方向和近距离空间参照。",
+      "uncertainty": "不是因面积最大而认定为主体。"
+    },
+    {
+      "object_id": "industrial_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "前段熔融池、栈道与金属墙；后段管线、走廊、门洞及相邻房间。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "end_door_region",
+      "role": "subject",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "description": "战斗后主要呈现走廊通路、端部门洞及随后显露的室内空间。",
+      "uncertainty": "19.5秒缓存同名掩码实际落在前景枪械，不能据其追踪门。"
+    },
+    {
+      "object_id": "combat_effects_and_props",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "射击光效、爆炸、机器人残骸以及末段桶罐，分别补充命中反馈和地面空间参照。",
+      "uncertainty": "不从残骸推断未见的具体动作。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "辨认熔融池旁机器人、枪口朝向及可站立栈道；4—5秒视角转向金属墙，不能将墙当作漏检的人物。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6,
+        12.5
+      ],
+      "necessary_information": "辨认蓝色走廊内近远机器人、射击作用位置及可见命中反馈。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0029",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "由地面残骸转向端部门洞，再建立门洞与相邻室内地面、桶罐的空间联系。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-robot_yellow",
+      "accepted": true,
+      "reason": "掩码位置与RGB远处机器人基本对应，可辅助确认位置及小占比；模糊使细轮廓不可靠，不用于关节或遮挡推断。"
+    },
+    {
+      "measurement_id": "measure-0016-wall_region",
+      "accepted": true,
+      "reason": "覆盖后方大块金属墙，与RGB对应；仅作为环境区域，不作为机器人主体面积或遮挡量。"
+    },
+    {
+      "measurement_id": "measure-0032-robot_blue",
+      "accepted": false,
+      "reason": "掩码混入爆炸、粒子及难以分离的形体，不能确认是完整单个机器人；其位置、面积、色差和深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-end_door_region",
+      "accepted": true,
+      "reason": "掩码基本对应远端门洞区域，可辅助定位通路终点；不等同精确门板轮廓，不用单目深度推断实际距离。"
+    },
+    {
+      "measurement_id": "measure-0078-end_door_region",
+      "accepted": false,
+      "reason": "掩码落在右侧前景枪械而非远处门洞；全部派生数值及同名追踪关系不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "战斗光效会瞬时竞争注意，但未见持续寻找主体。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "远处机器人较小仍可定位；近远尺度变化尚不足以单独证明进一步效果。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "爆炸遮住部分形体具有交互依据；没有可靠完整主体区域，不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "0秒暖色雾光降低区分，8秒光效压过轮廓；上下文仍可定位，无持续混杂证据。色彩突出本身不作增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "近处机器人局部出框及第一人称手臂裁切可合理解释，未见确认的连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "近战对象会局部贴边，未损害头部辨认；没有头顶空间表达处境的充分证据。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "没有足以独立评价的可靠眼神或观看对象关系；枪口朝向用于判断射击交互，不冒充人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "栈道与走廊交互范围得到保留；不将屏幕位移直接解释为机器人世界运动方向，也未证实受阻或逃离效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "枪械、作用位置及爆炸结果同框可读；近战取景尚主要服务动作辨认。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "依据透视、遮挡与采样前后变化，不使用单目深度作为米制距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "地面、机器人和顶棚层次可理解；未证明上下比例另行强化规模或处境。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "近枪、机器人及背景边界总体有归属；命中光效的暂时遮蔽不重复当作轮廓连接失败。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "识别到走廊透视引导及门洞框取；增强只解释已成立的空间揭示效果，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "联系表、QA拼图和参考大图是输入编排；原游戏画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          4
+        ],
+        [
+          5,
+          5.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022",
+        "measure-0000-robot_yellow",
+        "measure-0016-wall_region"
+      ],
+      "observation": "枪械在右下，栈道与熔融池分居可行走区域两侧，远处机器人位于栈道前方。4—5秒视角主要对墙，随后转向暗色区域。",
+      "effect": "前景枪械与栈道边缘共同建立近远及交互方向。0秒机器人虽小且受雾光影响，仍能定位；对墙阶段属于视角转换，不能把暂时无人当作主体组织失败。",
+      "exceptions_checked": "排除第一人称枪械常规裁切、环境阶段主体改变；不把暖色饱和直接判作低档或增强。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6,
+          12.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0029",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0050"
+      ],
+      "observation": "蓝色走廊内机器人分布于中景和近处；7.25—8秒爆炸覆盖部分形体，10秒清晰原帧中近处机器人、中央青色命中光效及右侧另一机器人可分辨，12秒地面已有残骸。",
+      "effect": "右下枪械指向中部交互区域，使武器、受击位置与结果形成可读联系；近远对象支持距离关系。爆炸会短时压过轮廓，但前后采样补足对象定位和战斗结果，没有证明持续无效遮挡。",
+      "exceptions_checked": "近身对象出框、第一人称工具裁切和命中光效均有交互依据；不将特效碎片认定为异常肢体，不采用被拒的8秒分割数值。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          13.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078",
+        "measure-0064-end_door_region"
+      ],
+      "observation": "战斗后地面中央腾出较完整通路，双侧管线、墙脚和顶棚线条朝远端蓝灯及门洞汇聚。15—16秒门洞居于走廊深处，17—18.5秒其周边结构逐步变大；19.5秒可见更开阔地面、左侧桶罐与后方红色门区。",
+      "effect": "空出的中央地面接续此前战斗位置，汇聚线将注意从残骸引向远端门洞；后续更大的门口结构和显露的室内地面把先前远处开口与可见的新空间联系起来，形成有前后依据的通路揭示，超出静态的前中后景罗列。",
+      "exceptions_checked": "不声称未采样时刻的完整行进轨迹或门的开闭动作；19.5秒仅按RGB判断新空间，不用错分枪械的同名门掩码。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "三张清晰原帧均为单一第一人称视区，枪械及局部手臂从右下入画；10秒近处机器人被画缘与光效局部截取，19.5秒枪械覆盖右侧部分环境。",
+      "effect": "局部身体与枪械裁切符合当前视点，必要交互或空间信息仍有独立可见区域；没有可确认的同一形体连接崩坏，也没有原视频多画面组织。",
+      "exceptions_checked": "将附件拼图与游戏画面区分；未以独立视区拼接身体，也未把常规近枪大面积占画认定为比例失衡。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0024",
+        "rgb-0040"
+      ],
+      "visible_change": "暖色熔融池旁的远处机器人与金属墙，转为蓝色走廊中的近远机器人交互。",
+      "spatial_or_attention_effect": "重点随枪口与交互对象转移；暖暗变化没有造成持续定位丢失。",
+      "expressive_effect": "确认阶段转换；不单凭色温反差推断情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0029",
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048",
+        "rgb-0056",
+        "rgb-0064"
+      ],
+      "visible_change": "中近景机器人及强烈命中光效，转为地面残骸和较空的中央通路。",
+      "spatial_or_attention_effect": "注意从近处交互区域转向走廊深处门洞。",
+      "expressive_effect": "主体位置与中央通路接续建立战斗区域和后续空间的联系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "远端门洞及其周边结构逐步扩大，末段显露室内地面和桶罐。",
+      "spatial_or_attention_effect": "透视线、门洞框取和连续尺度变化共同把远处开口联系到后续可见空间。",
+      "expressive_effect": "形成可核查的空间揭示，支持S-H-a、P-H-a与O-H-d。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "S-H-a"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立：战斗目标、射击反馈及通路基本可读，常规第一人称裁切和短暂爆炸遮蔽未造成确认的基础失败。13.5—19.5秒由近处残骸、空出地面、汇聚管线到门洞及室内空间的前后组织，明确引导注意并深化空间联系，满足有效视觉组织增强。",
+    "adjacent_grade_explanation": "高于中档的依据是同一通路在前后采样中的定向揭示，而非仅有纵深、门框或鲜明色彩；未见足以判低的持续定位困难、必要动作丢失或形体结构破坏。",
+    "uncertainties": [
+      "仅评价所给采样及清晰原帧，不声称看过采样间所有动作。",
+      "8秒机器人分割和19.5秒门区分割被拒，其派生数值均未参与判断。",
+      "未重跑CV，无完整主体掩码或可靠视线数据，不量化遮挡，也不推断心理与实际距离。"
+    ]
+  }
+}

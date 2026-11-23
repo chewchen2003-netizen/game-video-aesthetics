@@ -1,0 +1,518 @@
+{
+  "sample_id": "R45",
+  "roles": [
+    {
+      "object_id": "red_avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "红橙衣、黄色头饰、持长刃的可操作角色；前段参与交战，后段沿石路移动。",
+      "uncertainty": "草丛遮挡时不能连续确认完整身体轮廓。"
+    },
+    {
+      "object_id": "combatants",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        8
+      ],
+      "description": "与红衣角色近身交互的深色、浅色衣装角色，以及倒地对象。",
+      "uncertainty": "不推断阵营、身份及击倒的具体因果。"
+    },
+    {
+      "object_id": "near_grass_and_stream",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "贴近镜头的紫青色草叶及开头贯穿画面的亮黄色流柱。",
+      "uncertainty": "依各帧遮挡关系识别，不采用缓存中的combat_region命名。"
+    },
+    {
+      "object_id": "path_and_landscape",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "石路、白色岩块、树木、旗帜、水域和排流管共同构成行动环境；部分石路位于主体所在中景。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-combat",
+      "time_range": [
+        0,
+        8
+      ],
+      "necessary_information": "辨认红衣角色、近身交互对象、挥击接触及倒地状态；判断双方在石路上的相对位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032"
+      ]
+    },
+    {
+      "stage_id": "stage-grass-passage",
+      "time_range": [
+        8.5,
+        10.5
+      ],
+      "necessary_information": "辨认角色从交战区域继续移动的位置及可见路线；近景草叶在这一阶段明显侵入观看区域。",
+      "input_evidence_ids": [
+        "rgb-0034",
+        "rgb-0035",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "stage-path-travel",
+      "time_range": [
+        11,
+        14.5
+      ],
+      "necessary_information": "辨认红衣角色沿石路移动、转向及与岩块、树木的位置联系。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0054",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "stage-water-reveal",
+      "time_range": [
+        14.75,
+        19.5
+      ],
+      "necessary_information": "辨认草丛后的角色位置，以及石路、水岸、对岸地形与排流管之间的空间关系。",
+      "input_evidence_ids": [
+        "rgb-0059",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-combat_region",
+      "accepted": false,
+      "reason": "QA区域覆盖大块路面、草地与前景亮流柱，不能代表角色或可靠交战对象集合；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-combat_region",
+      "accepted": false,
+      "reason": "区域囊括大量环境，未分开主体与交互对象；面积、色差和深度不能归属于主体，全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-combat_region",
+      "accepted": false,
+      "reason": "区域包含广泛路面和草地，不能作为红衣角色或倒地角色的有效掩码；全部派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-red_avatar",
+      "accepted": false,
+      "reason": "框仅覆盖角色中下部附近，明显漏掉黄色头饰及部分上身、武器；不是完整可见主体区域，派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-red_avatar",
+      "accepted": false,
+      "reason": "框主要包围躯干，遗漏可见头饰与外伸部位；不满足完整主体测量要求，派生数值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-red_avatar",
+      "accepted": false,
+      "reason": "与清晰原帧对照，框遗漏头饰顶部及外伸长刃，主体掩码完整性不足；派生数值弃用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-grass",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "主体通常位于中下部可追随区域；定位中断主要归于遮挡，不重复认定位置失败。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "角色比例足以识别动作与行进；不采用被拒绝的面积测量，占比变化未证明额外表达。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "not_met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c",
+        "P-L-c"
+      ],
+      "event_ids": [
+        "event-opening",
+        "event-grass",
+        "event-second-grass"
+      ],
+      "uncertainty": "不计算遮挡率；失败依据为多个采样时刻连续出现的实际定位干扰。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "显露时红橙衣、黄头饰与紫色环境可区分；草叶覆盖造成的损失仅归于遮挡。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "可见身体与持刃姿态连贯；边缘交战者局部离框有正常进出画解释，未见同形体结构崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "主角头饰未被画框意外截断；较多上方环境空间未形成可核查的处境表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel"
+      ],
+      "uncertainty": "没有可可靠分离于攻击、行进朝向的观看行为；不以背向镜头推断视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "交互范围与行进前方道路基本入画；水岸出现但未见实际受阻动作，不能据此增强。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel"
+      ],
+      "uncertainty": "挥击对象及倒地状态位于画内；未确认画框裁掉关键结果。草遮损失不重复归于裁切。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "仅依据道路延伸、岸线、重叠与前后揭示；不采用单目深度数值。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-travel",
+        "event-water"
+      ],
+      "uncertainty": "角色下置、地形与树木上展支持方位理解，但未证明上下分布额外强化尺度或处境。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "event-combat",
+        "event-grass",
+        "event-water"
+      ],
+      "uncertainty": "可见角色、武器、岩块归属基本清楚；前景覆盖未被误判为肢体连接，遮挡损失不重复评价。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "not_met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-L-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "event-grass",
+        "event-second-grass",
+        "event-water"
+      ],
+      "uncertainty": "识别到道路引导及前中后层次；末段空间揭示有效，但全片前景组织存在已确认基础失败，增强不能抵消。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表和参考帧是评审排版；实际游戏画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-opening",
+      "time_ranges": [
+        [
+          0,
+          0.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0002"
+      ],
+      "observation": "亮黄色近景流柱横断交战观看区域；0秒清晰帧中红衣角色仍在右侧显露，左侧交互角色可见。",
+      "effect": "形成局部遮挡与注意竞争，但很快退出主要观看区域；该事件单独不足以判低。",
+      "exceptions_checked": "排除把亮流柱当主体；容许镜头经过环境物体的短暂遮挡。"
+    },
+    {
+      "event_id": "event-combat",
+      "time_ranges": [
+        [
+          1,
+          8
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032"
+      ],
+      "observation": "红衣角色与数名角色在石路及草边近身交互；5秒参考画面保留持刃角色和接触区域，8秒可见旁侧倒地对象。",
+      "effect": "主体、交互对象与动作区域大体可读；石路和岩块提供稳定空间参照。",
+      "exceptions_checked": "近身互遮、攻击光效及陪体正常进出画不直接扣档；不推断每次攻击的命中结果。"
+    },
+    {
+      "event_id": "event-grass",
+      "time_ranges": [
+        [
+          8.5,
+          10.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0034",
+        "rgb-0035",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0041"
+      ],
+      "observation": "连续采样中近景长草占据下部与中央观看区，红衣角色多次只剩零碎颜色或局部头饰；10秒清晰帧中粗大草叶横穿角色身体与脚下路线。",
+      "effect": "交战后继续移动阶段，主体落点、完整姿态和与路面的联系持续难以跟随，需要从草叶间重新寻找。构成P-L-c；前景层次在这里产生实际观看干扰，对应T-L-a。",
+      "exceptions_checked": "并非单帧草叶掠过；未见角色利用草丛隐藏、与草交互或遮挡后揭示特定对象的依据。正常地形经过不能消除这一连续定位损失。"
+    },
+    {
+      "event_id": "event-travel",
+      "time_ranges": [
+        [
+          10.5,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0054",
+        "rgb-0058"
+      ],
+      "observation": "角色重新显露，沿中下部石路移动；镜头跟随转向，岩块、树木与道路先后从两侧经过。",
+      "effect": "恢复角色与路线的对应关系，行进前方及身体得到必要呈现；证明前段定位损失来自遮挡，而非角色本身不可辨。",
+      "exceptions_checked": "不把屏幕位移直接当作世界运动方向；按道路与角色朝向共同确认行进关系。"
+    },
+    {
+      "event_id": "event-second-grass",
+      "time_ranges": [
+        [
+          14.75,
+          15.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0059",
+        "rgb-0060",
+        "rgb-0062"
+      ],
+      "observation": "角色再次进入密集近景草叶后的视区；15秒参考帧中道路仍在右侧可见，角色本体却难以从草丛中定位。",
+      "effect": "再次打断对角色位置的追随，与前一段草遮共同证明问题具有反复性；不是以偶然一帧概括全片。",
+      "exceptions_checked": "未见实际隐藏行为或遮显带来的关系变化；不从残余亮色推算完整身体和遮挡比例。"
+    },
+    {
+      "event_id": "event-water",
+      "time_ranges": [
+        [
+          16,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "observation": "角色回到清晰石路上；随后左侧水面展开，右侧双管及黄色排流进入视区，前方岸线与对岸道路同时显露。",
+      "effect": "道路从角色脚下延伸至水岸，水面横向展开，右侧管口定位水岸结构；随行进逐步补足角色、岸边及对岸地形的联系，形成S-H-a与T-H-a所指的空间揭示。",
+      "exceptions_checked": "增强依据是连续出现的道路、岸线与管口联系，不是仅有前中后景；未声称角色跳跃、受困或必将过河。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0040"
+      ],
+      "visible_change": "从角色、倒地对象与路面可辨，变为近景草叶反复覆盖主要行动区域。",
+      "spatial_or_attention_effect": "角色与脚下路径的对应关系变难追随，观看重点需要重新寻找。",
+      "expressive_effect": "未证明遮挡带来额外表达；支持基础遮挡失败。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0058"
+      ],
+      "after_evidence_ids": [
+        "rgb-0059",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064"
+      ],
+      "visible_change": "角色由显露进入草遮视区，16秒重新出现在石路上。",
+      "spatial_or_attention_effect": "主体定位再次中断后恢复，确认遮挡反复发生。",
+      "expressive_effect": "没有足够上下文支持隐藏、隔离或悬念效果。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068"
+      ],
+      "after_evidence_ids": [
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "较局部的石路视野逐步展开为水岸、水面、双排流管与对岸地形。",
+      "spatial_or_attention_effect": "脚下道路与岸线提供连续线索，将角色行进位置接入更大的地形结构。",
+      "expressive_effect": "形成可核查的空间揭示增强，但不能抵消前段反复遮挡。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "low",
+    "condition_ids": [
+      "P-B-c",
+      "P-L-c",
+      "T-L-a",
+      "O-L-a"
+    ],
+    "decisive_event_ids": [
+      "event-grass",
+      "event-second-grass"
+    ],
+    "reason": "8.5—10.25秒多个采样画面中，近景草叶持续侵占角色所在区域，使移动主体及其与路面的联系难以跟随；14.75—15.5秒再次出现定位中断。已排除单次短遮、近身交互及有依据的隐藏呈现，主体遮挡最低必要条件明确失败。",
+    "adjacent_grade_explanation": "不能判中：问题超过局部短暂瑕疵，连续并反复打断主体追随。末段道路与水岸的空间揭示具备增强，但高档须先满足适用基础条件。",
+    "uncertainties": [
+      "仅评估已提供的采样画面，不声称看过采样间的动作细节。",
+      "六项缓存测量均因区域不符或主体漏分拒绝，全部派生数值未参与判档；未重跑CV。",
+      "没有可靠视线行为、完整主体遮挡率或可用关节点；不据此补造数值或心理含义。"
+    ]
+  }
+}

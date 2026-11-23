@@ -1,0 +1,501 @@
+{
+  "sample_id": "R30",
+  "roles": [
+    {
+      "object_id": "held_tools",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第一人称双手、右侧橙色枪械及左手罐体、黄绿色物体和紫色物体；构成近处操作层。",
+      "uncertainty": "不推断物体用途或操作目标。"
+    },
+    {
+      "object_id": "pink_crystal",
+      "role": "subject",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "description": "起始近处粉色晶体及其旁罐体组成当前接近、绕看的局部场景。",
+      "uncertainty": "不能仅凭接近认定其为任务目标。"
+    },
+    {
+      "object_id": "nearby_cans",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "description": "晶体旁的成组罐体，为近景位置提供参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "ice_basin",
+      "role": "subject",
+      "time_range": [
+        4,
+        19.5
+      ],
+      "description": "转向后展开的冰雪盆地、地面冰柱及可见通路；扫描阶段仍呈现同一空间。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "ground_creatures",
+      "role": "supporting_element",
+      "time_range": [
+        9.25,
+        19.5
+      ],
+      "description": "盆地中的橙色与褐色小型生物，提供地面活动和尺度参照。",
+      "uncertainty": "不确认物种、敌我或与手持物的因果关系。"
+    },
+    {
+      "object_id": "floating_ice_island",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "上方悬浮冰台、垂挂冰锥及后方冰壁，与盆地形成上下、远近联系。",
+      "uncertainty": "缓存同名区域未必持续对应同一冰台。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "necessary_information": "呈现近处晶体、罐体与第一人称操作物；需辨认近景物体及其相对位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0014"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        4,
+        7.5
+      ],
+      "necessary_information": "视野从近景转向盆地，枪械短时抬起；需看清地面、冰柱与上方悬浮冰台的空间联系。",
+      "input_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0030"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        7.75,
+        8.5
+      ],
+      "necessary_information": "绿色扫描显示地面起伏及远处结构，随后恢复彩色；需保留空间方位连续性。",
+      "input_evidence_ids": [
+        "rgb-0031",
+        "rgb-0032",
+        "rgb-0034"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        8.75,
+        19.5
+      ],
+      "necessary_information": "盆地持续展开，前景左手由黄绿色物体换成紫色物体；需辨认操作物、地面生物与环境层次，不能据此补造交互结果。",
+      "input_evidence_ids": [
+        "rgb-0035",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-pink_crystal",
+      "accepted": true,
+      "reason": "QA区域与RGB左侧近处晶体群对应；仅作为可见晶体群的粗定位，不据边框推断完整形体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-floating_ice_island",
+      "accepted": true,
+      "reason": "4秒QA框可对应右上方悬浮冰台，粗定位可信；不据单目深度解释实际距离。"
+    },
+    {
+      "measurement_id": "measure-0032-floating_ice_island",
+      "accepted": false,
+      "reason": "扫描QA区域覆盖大片远景结构，无法隔离单一悬浮冰台；其面积、颜色、边界和深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-scan_landscape",
+      "accepted": false,
+      "reason": "只有宽泛场景区域及扫描显示，无法核验该掩码边界与对象定义；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-floating_ice_island",
+      "accepted": false,
+      "reason": "QA框跨入右侧冰柱、冰壁和悬浮结构，不能确认完整单一对象掩码；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-floating_ice_island",
+      "accepted": false,
+      "reason": "区域混含右侧多种冰体，不能保证与早期同名冰台一致；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-floating_ice_island",
+      "accepted": false,
+      "reason": "QA框仍覆盖多个结构，缺乏可靠单体分割及跨帧对应；全部派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "增强来自转向后操作物退居两侧、盆地联系展开，不来自中心位置本身。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "前景工具较大但未持续挤掉必要环境；不以错误掩码推算面积变化，未单独证明尺度变化的增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "工具抬起造成局部覆盖，未见持续定位丢失；没有完整掩码，不计算遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "粉色、橙色及紫色物体与冰雪背景易分；扫描仍保留结构轮廓，但这些区分未独立证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "适用于可见第一人称手部；边缘截断符合持物视角，未见同一形体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "第一人称人物头部不在呈现范围；远处生物无需要单独评价的头顶取景。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "没有可靠人物视线及观看对象关系；不将镜头朝向冒充人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "接近及转向中的前方地面、晶体和盆地可见；没有足够依据认定逃离、受阻等进一步效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "抬枪和持物变化的必要部位可见；正常工具出框不构成失败，亦未见接触及结果足以证明增强。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "由RGB的遮叠、透视和前后变化判断；不采用被拒测量的深度值。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "增强是上方悬浮冰台与下方活动地面的规模联系，不推断权威或压迫。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "手与持物接触、冰柱与远景交叠的归属清楚；未证明交叠本身传达关系变化。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "可识别分层与中部开放空间的组织；只解释已成立的空间揭示，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "实际视频画面未见分屏或画中画；输入联系表与QA拼图属于证据排版。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0014"
+      ],
+      "observation": "起始左侧晶体与成组罐体位于近处，双手和枪械在下缘；随接近、转向，近物在画面侧部放大或移出。",
+      "effect": "近景物体和周围地面关系可读，建立后续转向的局部起点；尚不将普通接近视为尺度增强。",
+      "exceptions_checked": "晶体贴边及第一人称手部裁切均有局部观看与正常进出画解释；未见必要对象被无效持续遮住。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          4,
+          7.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0030"
+      ],
+      "observation": "视野离开近处晶体，展开冰雪盆地；枪械曾斜向抬起，随后降低。地面冰柱位于中层，冰壁和悬浮冰台在后上方。",
+      "effect": "从局部近物转为可追踪的整体空间：开放地面连接冰柱间区域，后上方冰台补足垂直规模。工具没有持续封住这条观看路径。",
+      "exceptions_checked": "抬枪是短时前景覆盖；上方冰台局部出框仍保留悬浮、垂挂及与地面分离的关键关系。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          7.75,
+          8.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0031",
+        "rgb-0032",
+        "rgb-0034"
+      ],
+      "observation": "画面转为深色背景与绿色线网、轮廓，随后恢复彩色盆地。",
+      "effect": "扫描期间地面起伏和远景边界仍可辨，前后空间方向未出现明显断裂；不据扫描色彩推断具体目标或机制。",
+      "exceptions_checked": "显示模式变化不是多画面，也不把绿色低明暗边界直接判为主体混杂；拒绝的扫描分割数值未参与判断。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          8.75,
+          17.5
+        ],
+        [
+          18,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0035",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "恢复彩色后，左右下方持物夹出中部盆地视区；地面小生物、错落冰柱、后方冰壁及上方悬浮冰台同时可追踪。左手后由黄绿色物体换成紫色物体，盆地仍保持可见。",
+      "effect": "侧下方操作层让出中部地面观看区域；由小生物到冰柱、冰壁、悬浮冰台的连续尺度参照，深化了已展开盆地的空间规模，超出单纯罗列前中后景。",
+      "exceptions_checked": "手持物没有挡住全部地面活动范围；未将远处小生物偏小直接视为失败，也未将换物推断为投掷、命中或因果结果。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "after_evidence_ids": [
+        "rgb-0020",
+        "rgb-0030"
+      ],
+      "visible_change": "近处晶体和罐体主导的局部视野，转为冰柱间的盆地与后上方悬浮结构。",
+      "spatial_or_attention_effect": "注意由近物移向开放地面，再沿冰柱与后方冰台建立空间联系。",
+      "expressive_effect": "构成有前后依据的空间揭示，支持P-H-a、S-H-a；不附加心理含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0030"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0040"
+      ],
+      "visible_change": "彩色环境短时进入绿色扫描显示，再恢复彩色。",
+      "spatial_or_attention_effect": "起伏地面和结构轮廓维持方位连续；恢复后能接续辨认盆地层次。",
+      "expressive_effect": "确认基础空间可读；扫描本身不作为独立增强证据。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "左手黄绿色物体离开原持握位置，末段出现紫色物体；右侧枪械及中部盆地仍可见。",
+      "spatial_or_attention_effect": "近处操作变化没有中断地面生物与高处冰台的空间参照。",
+      "expressive_effect": "延续空间组织的有效性；未证明换物具有额外关系表达。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-a",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E4"
+    ],
+    "reason": "适用基础条件成立。关键增强是近景晶体转向盆地后的连续空间揭示：两侧操作物让出地面视区，小生物、冰柱、冰壁与上方悬浮冰台共同建立可追踪的尺度及上下联系，并在后段保持，超出基本可辨。",
+    "adjacent_grade_explanation": "高于中档的依据是具体前后组织及持续空间参照，而非色彩鲜艳、有前景或手法数量；未见足以判低的必要信息损失或形体结构破坏。",
+    "uncertainties": [
+      "仅使用所给采样画面；不声称检查采样间所有瞬间。",
+      "多项同名冰台及扫描分割不可靠，已拒绝全部相关派生数值；结论依靠RGB。",
+      "未确认任务目标、物体用途及持物变化与生物行为的因果关系。"
+    ]
+  }
+}

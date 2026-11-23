@@ -1,0 +1,544 @@
+{
+  "sample_id": "R19",
+  "roles": [
+    {
+      "object_id": "landscape",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现森林、山脊及后段展开的金黄色阔叶林地；并无明确人物或射击目标。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "crossbow",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "下缘第一人称弩具，提供观看位置参照；不是仅因体积大就认定的主体。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "cabin_wall",
+      "role": "foreground",
+      "time_range": [
+        3.25,
+        9
+      ],
+      "description": "左缘木屋与平台共同界定起始观看空间。",
+      "uncertainty": "0秒缓存中的同名区域不能确认是木屋。"
+    },
+    {
+      "object_id": "deck_rail",
+      "role": "foreground",
+      "time_range": [
+        0,
+        11.75
+      ],
+      "description": "平台、栏杆及10秒附近右侧座椅，建立近处平台与外部林地的联系。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "near_trees",
+      "role": "foreground",
+      "time_range": [
+        0,
+        17.5
+      ],
+      "description": "近处针叶树，相对远方林地构成遮显层；13—15.5秒附近枝叶明显掠入视区。",
+      "uncertainty": "缓存不同时间的树区域不保证是同一棵树。"
+    },
+    {
+      "object_id": "mountains_sky",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "远山、天空与雾气提供远景参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        3
+      ],
+      "necessary_information": "建立平台向森林与山脊眺望的关系；需辨认近处栏杆、弩具及外部景物。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0012"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        3.25,
+        8.5
+      ],
+      "necessary_information": "木屋左缘、平台与林地共同出现，理解当前观看位置及其外部空间。",
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0034"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        9,
+        12.75
+      ],
+      "necessary_information": "视区由平台和座椅转向平台外坡地、树木；需保留近远空间参照，不要求识别任务目标。",
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0051"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        13,
+        15.75
+      ],
+      "necessary_information": "经过近处枝叶遮显区，随后重新看到远方林地；判断遮挡是否造成持续无效信息损失。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0063"
+      ]
+    },
+    {
+      "stage_id": "s5",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "necessary_information": "展开金黄色林地及远山，理解其与此前近树、坡地的纵深联系。",
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-cabin_wall",
+      "accepted": false,
+      "reason": "RGB左缘不能可靠确认为木屋，QA仅见极窄边缘区域；拒绝其全部派生值。"
+    },
+    {
+      "measurement_id": "measure-0000-near_conifer",
+      "accepted": false,
+      "reason": "掩码合并多株针叶树及下部植被，不能作为单株near_conifer的完整可见区域；其中心、面积、边界和深度值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-cabin_wall",
+      "accepted": true,
+      "reason": "QA覆盖左侧木屋可见墙体及建筑边缘，与RGB对应；仅用于建筑位置参照，不把可见面积当完整建筑占比。"
+    },
+    {
+      "measurement_id": "measure-0016-near_conifer",
+      "accepted": true,
+      "reason": "QA主体对应木屋右侧近树，主要轮廓可核对；仅作粗略位置与可见范围辅助，不据此计算遮挡。"
+    },
+    {
+      "measurement_id": "measure-0032-cabin_wall",
+      "accepted": true,
+      "reason": "左侧建筑区域与RGB相符；认可可见建筑区域，不能据此推断完整建筑大小。"
+    },
+    {
+      "measurement_id": "measure-0032-near_conifer",
+      "accepted": true,
+      "reason": "掩码主要对应左侧近树，与4秒区域位置相近；不据命名保证跨帧同株身份，不以边界亮度决定分离效果。"
+    },
+    {
+      "measurement_id": "measure-0048-conifer_region",
+      "accepted": true,
+      "reason": "作为多株针叶树的区域掩码基本成立；不是单株完整掩码，区域中心与面积不能代表单个主体。"
+    },
+    {
+      "measurement_id": "measure-0064-conifer_region",
+      "accepted": true,
+      "reason": "QA大致覆盖右下针叶树群，可作树群区域参照；不与12秒区域当作同一对象比较尺度，单目逆深度不作距离。"
+    },
+    {
+      "measurement_id": "measure-0078-conifer_region",
+      "accepted": false,
+      "reason": "QA主要覆盖左侧阔叶树冠与树干，并非命名所指针叶树群，且混入下部植被；全部派生值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "主体为环境整体，不能用单株掩码中心替代主体位置。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "占比变化据RGB定性判断；未计算全景主体面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "枝叶遮显有空间依据，但不足以证明隐藏、隔离等进一步关系；无遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-d",
+        "P-H-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "仅据可见近树深色轮廓、后方金黄林地与雾化远山的对照，不使用运动差异或光流。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "无可检查的人体连接；弩具下缘裁切不属于人体结构问题。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "无人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "无可靠人物视线或观看对象关系，不能把第一人称机位当作人物眼神证据。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "坡地和邻近树木足以交代视点移动的局部空间；具体世界运动方向不由屏幕位移推断，未证明逃离或受阻处境。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "未见发射、命中、装填或其他需要检查动作部位及结果的明确交互。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可确认前后关系，不能确认米制距离或完整行进路线。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "弩具与坡地在下、树冠与山脊在上支持辨认；天地比例本身未证明额外效果。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "树木、栏杆与弩具归属清楚；遮显的空间揭示已归入同一事件，不另推依附或隔离关系。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "识别到平台透视、栏杆及树层共同组织纵深；增强仅解释已证明的空间揭示，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "联系表属于证据排版，视频本身未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          8.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032"
+      ],
+      "observation": "弩具留在下缘，木板透视与栏杆把近处平台接向中景树木；3.25秒后左侧木屋补足平台边界，远山仍可辨。",
+      "effect": "近处观看位置、林地与远山无需费力拼接；栏杆和木板的方向将注意从脚下平台引向外部森林，为后续环境展开建立参照。",
+      "exceptions_checked": "弩具常规第一人称裁切、建筑正常贴边；近树不是必须完整展示的单株主角。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          9,
+          12.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0051"
+      ],
+      "observation": "10秒右侧座椅与平台仍清楚，随后平台逐渐退离主要视区，坡地与近树占据前方，弩具保持下缘参照。",
+      "effect": "视区变化把平台外部空间接到邻近坡地，交代从建筑边缘向林地观看的关系；未出现必须理解却被排除的目标或动作结果。",
+      "exceptions_checked": "不由转向直接认定具体行走方向；座椅和木屋退出画面属于正常视区改变。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          13,
+          15.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0061",
+        "rgb-0062",
+        "rgb-0063"
+      ],
+      "observation": "近处树干与密集枝叶覆盖较多中上部远景，15秒最明显；15.5—15.75秒远山与明亮林地重新展开。",
+      "effect": "局部远景可读性下降，但遮挡随视点邻近树木的变化得到解释，随后恢复；未见必要目标定位持续丢失，不能据此判基础失败。",
+      "exceptions_checked": "已检查合理近景遮挡；不把枝叶掠过自动解释为紧张、隐藏或隔离，也不声称看过采样间隙。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          16,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "近处针叶树逐步移向侧缘，金黄色阔叶林、林间地面与后方山脊展开；弩具继续位于下缘，深色近景、金黄中景与雾化远山可区分。",
+      "effect": "与平台及枝叶遮蔽阶段对照，画面把观看范围从近处边界扩展到开阔林地；保留第一人称近景参照的同时揭示更大环境及层间距离，超出仅有前中后景的静态陈列。",
+      "exceptions_checked": "不把开阔自动解释为自由或愉悦；增强依据是前后空间展开及可见参照关系，不是景色漂亮或树群面积数值。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "可见单一第一人称视区、弩具和环境；未见人物、明确射击交互或同时并置的子画面。",
+      "effect": "人体裁切、头部空间、人物视线、关键交互动作裁切及多画面组织不适用。",
+      "exceptions_checked": "不把弩具截边认作肢体断裂，不把输入联系表当作视频分屏，不补造未见行动。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "visible_change": "木屋与平台边界明确后，座椅及平台外坡地先后进入主要视区。",
+      "spatial_or_attention_effect": "将起始平台与周围林地连接起来，观看位置参照持续可辨。",
+      "expressive_effect": "为后续由近到远的环境揭示建立上下文。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0063",
+        "rgb-0064"
+      ],
+      "visible_change": "密集近枝遮住远景，随后远山及林地重新显露。",
+      "spatial_or_attention_effect": "确认枝叶位于视点附近，远景遮挡是阶段性的；不构成持续无效定位丢失。",
+      "expressive_effect": "单凭遮挡不认定隐藏或隔离表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "从木屋平台边缘及近树遮蔽区，转为金黄林地与山脊占据主要视区。",
+      "spatial_or_attention_effect": "下缘弩具提供连续参照，近树退至侧缘后，中远景空间范围得到具体扩展。",
+      "expressive_effect": "前后组织有效揭示观看位置与更大环境的联系，支持S-H-a、P-H-a、P-H-b及O-H-d。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "P-H-d",
+      "S-H-a",
+      "T-H-a"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。平台透视和栏杆先建立近处观看位置，随后经过近树遮显，最终展开金黄林地与远山；下缘弩具持续提供位置参照。前后安排明确深化环境空间联系，构成有效视觉组织增强。枝叶遮挡有邻近树木与后续显露的依据，未确认必要信息持续损失。",
+    "adjacent_grade_explanation": "高于中档的依据是平台边界、近树遮显与后段开阔林地之间可核对的空间揭示链条，而非单帧层次、景色或手法数量；没有确认低档所需的基础失败。",
+    "uncertainties": [
+      "仅审阅所给采样，不声称采样间隙的连续动作。",
+      "拒绝的分割及全部派生值未参与判断；其余缓存仅作局部区域辅助。",
+      "没有可靠完整主体掩码、遮挡比例或真实距离；这些缺失不影响本次基于RGB的空间组织判断。"
+    ]
+  }
+}

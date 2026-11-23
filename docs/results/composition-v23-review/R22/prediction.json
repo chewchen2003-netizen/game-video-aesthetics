@@ -1,0 +1,528 @@
+{
+  "sample_id": "R22",
+  "roles": [
+    {
+      "object_id": "main_rider",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "跟随镜头前方、黑红衣着并持长柄武器的骑手；依据持续跟随及相邻交互确认，非依据缓存命名。",
+      "uncertainty": "背面视角不能可靠确认眼睛视线。"
+    },
+    {
+      "object_id": "main_motorcycle",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主体驾驶的红黑摩托车，与骑手共同构成主要行动对象。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "other_riders",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "道路两侧及前方其他骑手；其中右侧靠近骑手参与并行、挥击交互。",
+      "uncertainty": "不将不同时刻的其他骑手全部认定为同一人。"
+    },
+    {
+      "object_id": "road_traffic",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "道路上的汽车、货车等交通对象，为行进路径提供参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "desert_road",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "弯曲公路、车道线、路肩、山体、电杆、建筑及标牌构成连续行进环境；道路由近处延伸至远处。",
+      "uncertainty": "背景角色为总体记录，道路也延伸至主体近侧。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        6.5
+      ],
+      "necessary_information": "建立主体骑手及车辆、周围骑手与公路方向；必须能持续定位主体并辨认行进通路。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0026"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6.75,
+        12.5
+      ],
+      "necessary_information": "右侧骑手靠近并与主体并行，随后出现挥击和贴近路肩的交互；需辨认双方、武器动作及道路边界。",
+      "input_evidence_ids": [
+        "rgb-0027",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        13,
+        19.5
+      ],
+      "necessary_information": "主体离开近距离并行状态，沿弯道继续行进并再次接近其他骑手、交通车辆；末尾可见举起武器，不能据此补认后续击中结果。",
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-main_rider",
+      "accepted": false,
+      "reason": "QA掩码主要覆盖上身，未可靠覆盖骑手可见腿部；拒绝整条派生数值。"
+    },
+    {
+      "measurement_id": "measure-0000-main_motorcycle",
+      "accepted": true,
+      "reason": "可见车尾及后轮区域与RGB基本对应；仅接受可见区域定位辅助，不解释为完整车辆或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-main_rider",
+      "accepted": false,
+      "reason": "掩码未可靠覆盖完整可见骑手，骨架与骑乘姿态的对应不足；拒绝派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-main_motorcycle",
+      "accepted": true,
+      "reason": "QA中车尾、后轮可见区域基本对应主体车辆；不用于完整车体面积或遮挡判断。"
+    },
+    {
+      "measurement_id": "measure-0032-main_rider",
+      "accepted": false,
+      "reason": "上身与车辆交界及腿部覆盖不完整，不能作为完整骑手区域；拒绝派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-main_motorcycle",
+      "accepted": true,
+      "reason": "掩码与主体车尾、后轮可见部分基本吻合，相邻车辆仍可区分；仅作定位辅助。"
+    },
+    {
+      "measurement_id": "measure-0048-main_rider",
+      "accepted": false,
+      "reason": "双方紧邻时存在对象混入，给定面部及肩部关节点落向右侧骑手；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0048-main_motorcycle",
+      "accepted": false,
+      "reason": "掩码向上覆盖骑手区域，框体也包含明显非车辆部分；拒绝全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-main_rider",
+      "accepted": false,
+      "reason": "掩码未完整跟随主体向右伸出的身体轮廓，腿部覆盖亦不足；拒绝派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-main_motorcycle",
+      "accepted": true,
+      "reason": "倾斜车尾和后轮区域基本对应RGB；仅接受可见车辆区域的定位辅助。"
+    },
+    {
+      "measurement_id": "measure-0078-main_rider",
+      "accepted": false,
+      "reason": "RGB中举起的手臂与武器明确，缓存骨架却未对应该姿态，掩码也漏掉部分肢体；拒绝派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-main_motorcycle",
+      "accepted": true,
+      "reason": "车尾及后轮可见区域基本对应；深度为空，不补造深度或遮挡百分比。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "增强来自主体稳定位置与陪体靠近、分离的前后组织，不来自单纯居中。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "骑手完整面积测量不采用；RGB足以确认动作和环境兼顾，但没有明确的尺度揭示增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "交互中的局部重叠未造成主体定位丢失；无可靠完整主体区域，不报告遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "红色车尾、衣着与道路形成基本区分；不将清楚或鲜艳本身视为关系增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "清晰原帧中主体连接与骑乘姿态合理；缓存骨架错误不等于RGB形体崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "头部和举臂均有空间；较大天空区域未形成可证的受限或疏离表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "背面骑乘及身体转向不足以可靠建立独立的视线—观看对象关系；行进方向另由运动前方空间评价。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "弯道、邻车及路肩范围足够理解行进；未见前方空间压缩形成明确阻挡效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "挥击部位、相邻对象和末尾举臂均入画；尚不足以证明局部取舍带来额外表达。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "依据道路透视、邻车相对位置与前后变化，不采用单目深度数值推断实际距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "下部主体及道路、上部远山天空分配清楚，但没有独立的上下关系增强证据。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-c",
+        "S-H-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "增强限于交叠与实际并行挥击、随后分离共同明确的交互关系；不解释为心理关系。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "识别道路引导线及纵深组织；仅解释已成立的位置、空间增强，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表及参考图并置属于评审展示，不能认作片内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          6.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0026"
+      ],
+      "observation": "主体骑手与红黑车辆持续处于画面下部中央附近；其他骑手分布左右和前方。车道线从近处延伸向远处弯道，路肩、建筑和山体提供空间参照。",
+      "effect": "主体轮廓、头部、车辆和前路可读，形成稳定的观看起点；道路把主体与前方骑手串联，为后续靠近提供可比较的空间基础。",
+      "exceptions_checked": "宽阔环境和较多天空未挤掉必要动作；不以居中、地平线位置或透视大小本身证明高档。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6.75,
+          12.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0027",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0050"
+      ],
+      "observation": "右侧骑手由与主体有间隔转为紧邻并行；10秒原帧中双方上身、车辆及横向伸出的武器同框，右侧仍能看到路肩和混凝土管。12秒附近双方贴近路肩，轮廓局部重叠。",
+      "effect": "主体位置保持稳定，陪体从前右方进入近侧交互区，观看可沿位置变化从道路追踪转向双方挥击。实际动作赋予靠近、交叠以明确交互含义，同时保留道路边界参照。",
+      "exceptions_checked": "重叠符合近距离并行交互；双方头部、车尾与武器仍可区分。边缘红色效果没有持续遮蔽必要信息；不依错误掩码宣称融合或形体损坏。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          13,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "13秒后主体近侧空间重新打开；15秒参考帧中弯曲车道线连接主体、前方骑手和右侧车辆。16至19秒其他骑手再次分布于近侧与前方，19秒出现近侧蓝色车辆，19.5秒主体举起武器。",
+      "effect": "从贴近路肩的双车交互回到可见的弯道通路，随后近侧与远处交通重新进入同一空间结构。稳定主体与变化的道路、陪体共同揭示局部交互如何嵌入连续行进，而非仅陈列前中后景。",
+      "exceptions_checked": "19秒近侧车辆属于正常经过，未导致持续寻找主体；侧边骑手部分出框可由正常进出画解释。没有把19.5秒举臂补叙为已击中。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "三张清晰原帧中，主体骑乘连接合理；10秒挥击与相邻骑手同框，19.5秒上举手臂和武器得到保留。主体主要呈背面，眼睛视线不可确认。",
+      "effect": "核实必要人体结构和动作没有被画框破坏；支持动作裁切基础成立，但不建立独立视线表达。",
+      "exceptions_checked": "不把缓存骨架错位当作原画身体断裂；不以背面身体朝向冒充可靠目光。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "实际游戏画面为单一连续视区；联系表和底部参考图是输入材料的排版。",
+      "effect": "多画面构图不适用。",
+      "exceptions_checked": "排除将评审拼图误认成片内分屏或画中画。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "visible_change": "其他骑手从分散的道路位置转为主体右侧紧邻并行，并出现挥击。",
+      "spatial_or_attention_effect": "稳定主体位置使注意沿陪体靠近转入横向交互；路肩持续交代双方所处位置。",
+      "expressive_effect": "位置与交叠变化把一般同行转为具体交互，支持P-H-a、S-H-c。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048",
+        "rgb-0050"
+      ],
+      "after_evidence_ids": [
+        "rgb-0052",
+        "rgb-0060",
+        "rgb-0070",
+        "rgb-0078"
+      ],
+      "visible_change": "近侧双车重叠解除，道路弯曲和前方交通重新展开，随后其他骑手再次进入近侧。",
+      "spatial_or_attention_effect": "由局部交互回到弯道通路，再沿道路建立新的远近联系。",
+      "expressive_effect": "前后组织将主体交互与连续道路空间联系起来，支持S-H-a；不推断情绪或任务目标。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-a",
+      "O-H-d",
+      "P-H-a",
+      "S-H-a",
+      "S-H-c"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立。主体稳定可追踪，动作与道路必要范围保留；近侧交互的局部重叠没有造成持续辨认困难。增强依据是可核查的前后组织：分散骑手靠近主体形成并行挥击，随后近侧空间打开、弯道和交通重新展开，使观看重点在主体交互与连续通路之间有明确联系。",
+    "adjacent_grade_explanation": "高于中档的依据不是居中或存在道路引导线，而是稳定主体、陪体靠近与分离、道路通路持续可见共同完成注意转移和空间深化。未见足以判低的必要信息损失或形体结构破坏。",
+    "uncertainties": [
+      "仅依据所供采样图，不声称看过采样间动作连续细节。",
+      "拒绝的测量及其派生数值均未用于判档；接受的车辆掩码仅作可见区域定位辅助。",
+      "没有完整主体掩码，不报告遮挡百分比；未重跑CV。",
+      "背面视角不足以建立可靠视线关系；不影响其余适用基础判断。"
+    ]
+  }
+}

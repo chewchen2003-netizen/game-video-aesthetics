@@ -1,0 +1,514 @@
+{
+  "sample_id": "R32",
+  "roles": [
+    {
+      "object_id": "route_environment",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现第一人称移动中的场地与通路：红色建筑、岩石通道、紫色大厅及发光立柱区域。",
+      "uncertainty": "路线用途、游戏目标未提供，不推断任务。"
+    },
+    {
+      "object_id": "red_opponent",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        2
+      ],
+      "description": "画面左侧及随后近处短暂出现的红色装甲人物；不是贯穿全片的观看主体。",
+      "uncertainty": "名称不证明敌对身份，未确认其与玩家的具体交互。"
+    },
+    {
+      "object_id": "interior_pickup",
+      "role": "supporting_element",
+      "time_range": [
+        3.5,
+        4.5
+      ],
+      "description": "红色室内通道中的紫色发光物及底座。",
+      "uncertainty": "可见发光物，不确认可拾取功能。"
+    },
+    {
+      "object_id": "weapon_hands",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处白红枪械与局部手臂，提供第一人称方位参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "rock_path_region",
+      "role": "subject",
+      "time_range": [
+        6.5,
+        13.5
+      ],
+      "description": "岩石平台、地面及其与发光门洞之间的可见通路。",
+      "uncertainty": "缓存对象范围与实际通路不一致。"
+    },
+    {
+      "object_id": "portal_pillar",
+      "role": "subject",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "description": "大厅内发光面板立柱及周围阶梯、出口；末段红色环形开口成为局部重点。",
+      "uncertainty": "16秒缓存标出的对象实际是近侧墙面局部，不能与末段完整立柱直接做面积比较。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        2.75
+      ],
+      "necessary_information": "建立红色建筑外侧、门口与近处人物的位置；枪械属于近景，人物正常进出画。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0011",
+        "Image #3"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        3,
+        6
+      ],
+      "necessary_information": "辨认室内通道、紫色发光物、近处红柱与外侧出口的相对位置。",
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0024"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        6.5,
+        13.5
+      ],
+      "necessary_information": "辨认岩石平台、下方地面、发光门洞及转向后的洞内通路。",
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0039",
+        "rgb-0040",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0054",
+        "Image #4"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "necessary_information": "由大厅建立楼梯入口，经阶梯与柱间出口揭示外侧地形，再建立发光立柱和红色环形开口的联系。",
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078",
+        "Image #5"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-red_opponent",
+      "accepted": true,
+      "reason": "RGB左下确有小块红色装甲人物，框与可见局部相符；仅接受可见部分的位置和尺度线索，不代表完整人体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-interior_pickup",
+      "accepted": false,
+      "reason": "QA绿色区域主要覆盖紫色发光物后方的墙面或面板，未可靠分出发光物与底座；其面积、颜色及深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-rock_path_region",
+      "accepted": false,
+      "reason": "掩码跨岩壁、亮面板附近及地面零碎区域，没有形成可信的通路区域；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-rock_path_region",
+      "accepted": false,
+      "reason": "掩码主要覆盖门洞侧壁和发光门板，与岩石通路命名不符；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-portal_pillar",
+      "accepted": false,
+      "reason": "仅选中楼梯旁狭窄墙面及零碎部分，不能代表完整立柱；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-portal_pillar",
+      "accepted": true,
+      "reason": "绿色区域与左侧主要立柱的可见外轮廓和面板大致一致，可辅助定位及可见尺度判断；不据此认定传送功能，也不推算遮挡率。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "增强主要依据后段楼梯、出口与新空间的连续位置组织。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "接近门洞与立柱时面积变化清楚，但不足以单独证明尺度表达增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "近墙与柱体短暂遮住部分环境，未见必要目标持续丢失；不推断隐藏或受困关系。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "紫色发光物、亮门板及红色环可辨；色彩差异主要支持基本定位。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "局部手臂与短暂贴边人物按第一人称及正常进出画解释，未见同一身体连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1"
+      ],
+      "uncertainty": "仅适用于短暂出现的人物；贴边局部未造成持续人物辨认干扰，环境阶段不适用。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1"
+      ],
+      "uncertainty": "没有足以确认人物视线及其观看对象的线索，不把第一人称镜头朝向当作人物眼神。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "路径与转向后的入口得到必要呈现；未证明受阻、逃离等进一步处境。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "移动与持枪姿态变化可读；不把枪械局部出框视为动作损失，也不补称射击或拾取结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "依据可见透视、框取和前后揭示，不使用单目深度数值解释实际距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "俯看平台、向上阶梯与末段低处地面支持高差理解，未证明额外关系或感受。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "枪械、岩石、门框与柱体的前后归属清楚；未见交叠形成额外依附或隔离表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "识别到楼梯引导线和柱间框取，效果关联既有空间揭示事件，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表与参考放大图是评审排版；原游戏画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          2.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0011",
+        "Image #3",
+        "measure-0000-red_opponent"
+      ],
+      "observation": "枪械处于下方近景，红色人物在左侧局部出现，随后可见近处装甲；建筑门口和外侧地面保持可辨。",
+      "effect": "建立第一人称位置及近处人物关系。人物短暂贴边、小比例或接近画面均未证明持续注意干扰。",
+      "exceptions_checked": "排除把人物命名当成敌对关系；第一人称手臂裁切与正常人物进出画不是连接失败。无可靠眼神关系。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          3.5,
+          6
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0024"
+      ],
+      "observation": "红色门框围出室内通道，紫色发光物位于通道内；5秒近侧红柱占据右侧较大区域，6秒可见外侧出口。",
+      "effect": "通道目标和转角前后关系可理解；红柱局部遮挡属于绕行中的近景变化，没有把必要通路持续排除。",
+      "exceptions_checked": "不以单帧大面积红柱判无效遮挡；不声称发生拾取。拒绝的发光物分割不参与判断。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          6.5,
+          13.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0039",
+        "rgb-0040",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0054",
+        "Image #4"
+      ],
+      "observation": "岩石平台、亮门板和洞壁提供近远参照；10秒清晰帧可见脚下地面、右侧岩石与前方门洞，之后洞内地面和紫色晶体逐步进入画面。",
+      "effect": "高差、门洞位置与洞内延伸基本清楚。枪械倾斜占据局部近景，但未遮掉主要门洞和地面关系。",
+      "exceptions_checked": "不把枪械倾斜直接认定为换弹或射击；不采用错误通路掩码及其深度、面积值；不将镜头转动等同对象运动。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          14,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078",
+        "Image #5",
+        "measure-0078-portal_pillar"
+      ],
+      "observation": "14秒大厅先露出右侧阶梯入口；15秒近柱围出阶梯，踏步斜线通向上部开口；15.5至16.5秒开口逐渐展开并露出外侧地形。17.5至19.5秒地形、发光立柱与远处红环依次形成新的空间参照。",
+      "effect": "阶梯线条、近柱框取和出口展开共同把大厅、上行通路与外部区域串联；观看路径由侧面入口转向阶梯尽端，再进入新空间，构成超出单帧可辨的连续空间揭示。",
+      "exceptions_checked": "增强依据多个提供时刻的对应，不仅因存在门框或引导线；不声称穿越红环或具有传送功能，不推断压迫、权威或心理。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0024",
+        "rgb-0026"
+      ],
+      "visible_change": "室内通道转为近柱局部，再显露建筑外侧。",
+      "spatial_or_attention_effect": "柱体短暂占幅没有持续切断出口与移动方向的辨认。",
+      "expressive_effect": "支持基础成立，未独立证明遮挡表达增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0039",
+        "rgb-0040",
+        "Image #4"
+      ],
+      "after_evidence_ids": [
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0054"
+      ],
+      "visible_change": "俯见岩石地面与门洞，随后画面转向并展开洞内环境。",
+      "spatial_or_attention_effect": "平台、门洞、洞内地面之间有可追踪的前后参照。",
+      "expressive_effect": "主要证明路径与高差可理解，不添加受限或逃离含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0062",
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0078"
+      ],
+      "visible_change": "大厅右侧阶梯由局部入口成为主要通路，柱间尽端展开为外部地形及立柱区域。",
+      "spatial_or_attention_effect": "踏步透视、柱边与出口在连续取景中接续观看重点，建立跨区域空间联系。",
+      "expressive_effect": "支持P-H-a、S-H-a及其机制T-H-a，构成O-H-d所需的有效视觉组织。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "P-H-a",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e4"
+    ],
+    "reason": "适用基础条件成立，未确认持续注意竞争、必要路径损失或形体结构破坏。后段由大厅侧面阶梯入口，经踏步与柱间框取，到出口展开及外部立柱区域，前后组织明确接续观看路径并深化空间联系，满足有效空间揭示的增强条件。",
+    "adjacent_grade_explanation": "高于中档的依据是e4中可逐时刻核对的空间接续，并非仅有前中后景、鲜艳面板或常规留足前方空间。前段局部贴边、近柱占幅和枪械裁切均有合理第一人称解释，不构成低档基础失败。",
+    "uncertainties": [
+      "只评价实际可见的联系表采样和三张清晰帧；不声称检查过清单中未在附件展开的其他时刻细节。",
+      "四项分割被拒绝，其派生数值全部排除；本轮未重跑CV。",
+      "没有完整主体区域或遮挡百分比，不推算人物完整面积、实际距离或运动光流。",
+      "判档不依赖游戏任务、敌我身份、传送功能或人物心理。"
+    ]
+  }
+}

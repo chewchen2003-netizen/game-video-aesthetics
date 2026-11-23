@@ -1,0 +1,454 @@
+{
+  "sample_id": "R17",
+  "roles": [
+    {
+      "object_id": "hovercraft",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "具有船形船体、桅杆和蓝色发光部件的悬浮载具；连续画面主要呈现其沿建筑与岩体外围移动。",
+      "uncertainty": "不推断驾驶者、任务或目的地。"
+    },
+    {
+      "object_id": "architecture",
+      "role": "background",
+      "time_range": [
+        0,
+        9
+      ],
+      "description": "高塔、长墙及建筑平台，是载具移动的空间参照。",
+      "uncertainty": "局部建筑在载具侧方，不能全部理解为严格的后景。"
+    },
+    {
+      "object_id": "rocks",
+      "role": "background",
+      "time_range": [
+        7.5,
+        19.5
+      ],
+      "description": "高大岩柱、右侧岩壁及其基部，界定载具经过的空隙。",
+      "uncertainty": "不把画面邻近直接认定为碰撞或实际受困。"
+    },
+    {
+      "object_id": "ground_haze",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "金褐色地表、阴影与后段增强的黄色烟尘。",
+      "uncertainty": "烟尘来源未确认。无明确独立陪体。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "stage-1",
+      "time_range": [
+        0,
+        7
+      ],
+      "necessary_information": "识别载具及其沿塔楼、长墙外侧移动的关系；建筑规模与地面通行区域需要同时可见。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028"
+      ]
+    },
+    {
+      "stage_id": "stage-2",
+      "time_range": [
+        7.5,
+        16
+      ],
+      "necessary_information": "辨认载具转向及其与岩柱、右侧建筑和岩壁之间的可见间隔，理解从建筑外围到岩体间空地的空间延续。",
+      "input_evidence_ids": [
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064"
+      ]
+    },
+    {
+      "stage_id": "stage-3",
+      "time_range": [
+        16.5,
+        19.5
+      ],
+      "necessary_information": "在黄色烟尘中继续定位载具，辨认其与右侧岩壁、蓝光建筑入口及周围空地的关系。",
+      "input_evidence_ids": [
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-hovercraft",
+      "accepted": false,
+      "reason": "QA掩码把船后下方的尾迹块纳入主体，RGB可区分船体与尾迹。拒绝该项全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-hovercraft",
+      "accepted": false,
+      "reason": "QA掩码下方包含明显尾迹团块，不能作为可靠完整船体区域；不采用其位置、面积、色差和深度数值。"
+    },
+    {
+      "measurement_id": "measure-0032-hovercraft",
+      "accepted": true,
+      "reason": "QA轮廓基本对应横向船体、桅杆与突出部件，未明显串入建筑；只作可见区域的粗略辅助，不能推导遮挡率或真实距离。"
+    },
+    {
+      "measurement_id": "measure-0048-hovercraft",
+      "accepted": true,
+      "reason": "掩码与船体方向及外轮廓基本一致，与邻近岩柱分离；允许细杆漏分，仅辅助核对位置与可见尺度。"
+    },
+    {
+      "measurement_id": "measure-0064-hovercraft",
+      "accepted": true,
+      "reason": "掩码基本覆盖载具并与右侧岩壁分离；可辅助判断居中附近的位置及完整入框，不把单目深度当距离。"
+    },
+    {
+      "measurement_id": "measure-0078-hovercraft",
+      "accepted": true,
+      "reason": "烟尘降低边缘精度，但主要船体轮廓与RGB相符，未明显吞并大片地面；仅作粗略位置与尺度辅助，不据此精确量化轮廓或遮挡。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "增强来自持续定位载具并让环境依次展开，不来自居中本身。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2"
+      ],
+      "uncertainty": "载具较小但船形、朝向和环境间隔可读；尺度效果依据RGB，不采用被拒测量。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "后段烟尘削弱可见度，但未造成持续定位丢失；没有可靠遮挡百分比或具有进一步作用的遮显证据。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-3"
+      ],
+      "uncertainty": "蓝光、船体轮廓支持辨认；后段色调趋同，未证明色彩区分本身传达额外关系。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "event-4"
+      ],
+      "uncertainty": "无可供评价的人体连接或身体裁切。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "event-4"
+      ],
+      "uncertainty": "主体为载具，不能把桅杆上方空间作为人物头部空间。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "event-4"
+      ],
+      "uncertainty": "没有可靠人物视线或观看关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "船体转向、尾迹及环境变化支持移动判断；可见空间足够，但未确认前方通路被压缩或明确目标被逐步接近。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "移动和转向所需船体、尾迹及邻近环境均保留；未见具有额外作用的局部动作取舍。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "依据建筑基部、岩体、投影、地面间隔与时序变化，不使用单目深度值证明距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2"
+      ],
+      "uncertainty": "高耸结构与地面载具的完整并置强调环境规模，不推断权力、压迫或人物心理。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2",
+        "event-3"
+      ],
+      "uncertainty": "邻近建筑及岩壁未使船体归属或位置发生明显误读；无充分的交叠关系表达证据。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "event-1",
+        "event-2"
+      ],
+      "uncertainty": "识别到载具周围留白与高大环境的层次组织；效果引用已证明的空间揭示，不额外计分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "event-4"
+      ],
+      "uncertainty": "联系表与参考帧是评审材料编排，不能当作视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event-1",
+      "time_ranges": [
+        [
+          0,
+          7
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028"
+      ],
+      "observation": "载具位于画面中央附近，完整船体与地面空区可见；右侧高塔随后转为上方延伸的长墙。0秒清晰原帧可辨蓝光船体与塔基间隔，5秒参考画面同时保留船体、墙体基部及平台。",
+      "effect": "必要移动信息清楚。载具位置相对稳定，塔楼至长墙的连续展开把观看从载具带到沿途建筑；小船体与高大建筑、相连地面共同建立环境规模及沿墙行进关系，超出单纯突出主体。",
+      "exceptions_checked": "塔楼被画框裁切是环境局部取景；未见必要载具部件出框。近塔不等于实际受阻，蓝光本身不单独构成增强。"
+    },
+    {
+      "event_id": "event-2",
+      "time_ranges": [
+        [
+          7.5,
+          16
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "observation": "塔墙逐渐退到侧后，岩柱进入画面；10秒清晰原帧中，横向船体处于左侧岩柱与右侧大岩壁之间。15秒参考帧及16秒画面继续显示载具贴近右侧岩壁外围，地面空隙与岩体基部可辨。",
+      "effect": "围绕稳定可追踪的船体，建筑、岩柱、岩壁先后接替为空间参照，逐步揭示其经过的地面区域。高耸岩体与船体、可见间隔共同强化环境尺度，并使转向前后的空间联系易于建立。",
+      "exceptions_checked": "不把画面中间的空隙断言为唯一道路，不把邻近岩壁认定为碰撞、围困或行动受限。轮廓靠近未造成对象连接误读。"
+    },
+    {
+      "event_id": "event-3",
+      "time_ranges": [
+        [
+          16.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "observation": "黄色烟尘增浓，建筑和岩壁主要退至右侧及上方；载具仍在中央附近完整可见。19.5秒清晰原帧保留船体、尾迹、右侧岩壁与蓝光入口。",
+      "effect": "色调趋同使船体区分减弱，但连续位置、船形和周围留白仍支持定位；由结构密集处转入较开阔空地的变化可读。未见足以确认基础失败的查找或裁切干扰。",
+      "exceptions_checked": "烟尘属于可见环境变化，不直接认定为无效遮挡；入口是否为目标未知，不据此解释接近关系或目的。"
+    },
+    {
+      "event_id": "event-4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "主要呈现非人物载具与环境，未见可可靠识别的人体或人物观看关系；视频原帧为单一连续视区。",
+      "effect": "人体连接、头部空间、人物视线空间及多画面组织不适用。",
+      "exceptions_checked": "未把载具桅杆拟作头部，也未把输入联系表误作视频内分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032"
+      ],
+      "visible_change": "右侧近塔转为上方长墙，再出现岩体；载具保持中央附近并改变朝向。",
+      "spatial_or_attention_effect": "稳定的主体定位与接替出现的环境参照共同揭示沿建筑外围的空间延续。",
+      "expressive_effect": "高大结构与小型载具、连续地面间隔共同建立环境规模及主体所处位置。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "载具由两侧岩体间的空地转至右侧岩壁邻近区域，船体朝向变化。",
+      "spatial_or_attention_effect": "岩体基部和载具间隔持续可见，使前后移动关系能够连接。",
+      "expressive_effect": "加强对载具与高大岩体尺度关系的理解；不支持进一步的受困解释。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "黄色烟尘增强，右侧环境边缘保留，载具周围空区扩大。",
+      "spatial_or_attention_effect": "轮廓对比下降，但主体位置延续与空区仍维持观看重点。",
+      "expressive_effect": "延续从建筑岩体旁到开阔区域的空间揭示；没有充分证据推断情绪转折。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "event-1",
+      "event-2",
+      "event-3"
+    ],
+    "reason": "适用基础条件成立：载具完整、持续可定位，转向及邻近空间可读。增强在于稳定主体位置与塔楼—长墙—岩柱—开阔地的连续展开相互配合，通过建筑基部、地面间隔及尺度对照逐步揭示主体与沿途环境的联系，达到P-H-a、P-H-b、S-H-a、S-H-b所述效果。",
+    "adjacent_grade_explanation": "高于仅基本可辨的中档，因为环境接替展开与载具位置延续形成了明确的空间揭示链。后段烟尘降低对比但未造成持续查找或必要信息丢失，不支持低档。",
+    "uncertainties": [
+      "仅评价所给采样画面，不声称检查未提供时刻。",
+      "0秒和4秒分割被拒，全部派生数值未用于判断；其他分割仅作粗略辅助。",
+      "无可靠遮挡百分比、真实距离、明确目的地或人物心理依据；这些缺失不影响本次构图结论。"
+    ]
+  }
+}

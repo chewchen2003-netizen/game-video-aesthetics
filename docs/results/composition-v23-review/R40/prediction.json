@@ -1,0 +1,502 @@
+{
+  "sample_id": "R40",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "浅蓝白色持武器角色；随其移动与动作组织观看。",
+      "uncertainty": "不推断身份、任务及心理。"
+    },
+    {
+      "object_id": "central_obelisk",
+      "role": "foreground",
+      "time_range": [
+        0,
+        10.5
+      ],
+      "description": "中央尖片状岩体组；随机位变化处于角色前方或侧方，不能默认缓存始终对应同一完整物体。",
+      "uncertainty": "8秒缓存混入其他结构；其三维连接方式不完全可见。"
+    },
+    {
+      "object_id": "cage",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "场地边侧的悬笼及笼内人形；末段角色靠近此处。",
+      "uncertainty": "不能确认角色是否与笼内对象发生交互。"
+    },
+    {
+      "object_id": "arena",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "石板地、黑色植被、熔岩、红色柱墙与发光树状结构共同构成环绕场地。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "peripheral_figures",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "熔岩区域及场地外侧的多个人形，提供外围空间参照。",
+      "uncertainty": "未见充分证据将其认定为当前交互陪体或敌人。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        6.5
+      ],
+      "necessary_information": "角色在石板场地移动并经过中央尖片附近；需辨认角色、可行走地面与岩体的前后关系。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0026"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        7,
+        14.5
+      ],
+      "necessary_information": "角色与机位位置变化逐步露出场地外缘、熔岩及外围人形；需保持角色定位并理解地面边界。",
+      "input_evidence_ids": [
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        15,
+        17
+      ],
+      "necessary_information": "角色在外缘附近动作，16.5—17秒出现蓝色效果；需保留身体、武器效果及邻近地面。",
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        17.5,
+        19.5
+      ],
+      "necessary_information": "角色转至悬笼一侧，需辨认其与笼架、尖片及地面通路的位置联系。",
+      "input_evidence_ids": [
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": true,
+      "reason": "掩码落在RGB中央浅蓝角色上，可作粗略可见区域参考；不据此推导遮挡率或关节。"
+    },
+    {
+      "measurement_id": "measure-0000-central_obelisk",
+      "accepted": true,
+      "reason": "覆盖上方尖片状岩体的可见部分，类别与RGB相符；仅接受可见局部，不视为完整岩体范围。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": true,
+      "reason": "4秒QA中区域与岩体右下方角色基本吻合；只用于粗略位置和可见尺度核对。"
+    },
+    {
+      "measurement_id": "measure-0016-central_obelisk",
+      "accepted": true,
+      "reason": "4秒掩码基本贴合可见尖片主体；不以其边框解释角色头顶空间。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": true,
+      "reason": "8秒区域对应尖片下方浅蓝角色，身份与位置可核对；不提供完整遮挡信息。"
+    },
+    {
+      "measurement_id": "measure-0032-central_obelisk",
+      "accepted": false,
+      "reason": "8秒区域混入后方柱体并跨至另一尖片，未稳定分出所命名岩体；其面积、色差、边界和深度派生值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": false,
+      "reason": "12秒掩码落在角色下方暗地面，实际角色位于右上；位置、面积、色差和深度等派生值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": false,
+      "reason": "16秒掩码主要覆盖角色下方地面，漏掉实际身体；全部派生数值弃用，低边界差不能证明主体背景混杂。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": true,
+      "reason": "19.5秒掩码与清晰原帧的角色主体基本对应；轮廓仅作粗略参考，不能代替肢体或完整武器区域。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "角色保持中央附近便于追踪，但此位置本身尚不足以证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "角色较小仍可识别移动和动作；未见占比变化承担明确的信息递进，不能由小比例推断处境。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "尖片附近有轮廓交叠，但采样中仍可保持定位；不估算遮挡百分比，也不将交叠解释成隔离。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "浅蓝角色与褐黑地面可区分；暖冷差首先满足辨认，未另证关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "清晰帧未见同一身体连接或尺度崩坏；没有强调局部姿态的取景证据。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "角色头部远离真实画框边缘；不能把上方岩体或测量框当成画框压顶。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "未建立明确观看行为或必须理解的视线对象；身体朝向不足以认定视线关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "移动附近地面及障碍保持可见；没有充分证据显示前方空间随行动形成额外的逼近或受阻表达。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可见身体、武器及蓝色效果未被画框切掉；不推断效果对应的命中对象或结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "判断依据为地面连续性、遮叠及跨时刻位置变化，不采用单目深度作为实际距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "近处地面与上部熔岩、建筑分布支持定位；上下排列本身未另证关系差异。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "角色、尖片与笼架边界可区分；局部相切未造成归属误读，也未证实象征性连接。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "可识别以尖片、地面与外围建筑构成的纵深组织；仅解释S-H-a已证明的空间揭示，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "原视频画面未见分屏或画中画；输入联系表及参考图并置属于评审展示。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          6.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0026"
+      ],
+      "observation": "浅蓝角色处于中央附近，石板路向尖片延伸；4—5秒角色与高大尖片邻接，悬笼在其侧后。清晰0秒帧保留身体和周围地面。",
+      "effect": "建立角色、岩体和可行走地面的基本联系。角色虽小，颜色和连续位置支持定位；尖片附近交叠未造成持续丢失。",
+      "exceptions_checked": "正常环境遮叠；岩体顶端出框不属于人物裁切；无可靠完整主体区域，不计算遮挡率。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          7,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0058"
+      ],
+      "observation": "7—8秒尖片仍紧邻角色；10秒清晰帧中角色沿尖片一侧显露，前方黑色场地边缘、熔岩与外围人形同时可见。12—14.5秒尖片移向边侧，角色附近地面进一步展开。",
+      "effect": "前后画面把局部岩体旁的角色接入更完整的场地：近处尖片、脚下石地、外缘熔岩及更远建筑共同揭示内外层次。固定可追踪的角色参照使这种展开超出单帧基本辨认，支持S-H-a。",
+      "exceptions_checked": "未把屏幕位移直接当作世界运动；不宣称唯一出口或不可跨越；12秒错分不能作为角色混入背景的证据。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          15,
+          17
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068"
+      ],
+      "observation": "角色位于暗色地面外缘附近，熔岩在后；16.5—17秒蓝色效果在角色附近显现，身体和效果均保留在画内。",
+      "effect": "动作位置及效果范围可读，没有关键动作出框。蓝色效果短时提高显著性，但未证明构图使某个交互结果得到特别强调。",
+      "exceptions_checked": "不把效果大小当身体尺度异常；不推断攻击、受击或命中；16秒错位掩码及派生对比数据弃用。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          17.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "角色移至悬笼一侧；19.5秒清晰帧显示左前方笼架、中央角色、后方尖片及熔岩边缘。角色全身、武器和附近地面可见。",
+      "effect": "末段将此前出现的悬笼重新接入角色所在通路，与中段熔岩外缘共同补足场地各侧的联系；笼架虽占据前景，未遮掉主体或混淆身体归属。",
+      "exceptions_checked": "笼内人形与主角是独立对象，不拼接比较身体尺度；靠近笼架不能直接解释为救援、对视或受困。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0058"
+      ],
+      "visible_change": "尖片从角色前方显著结构逐步移向侧方，场地外缘及熔岩背景更充分显露。",
+      "spatial_or_attention_effect": "以持续可定位的角色和连续地面为参照，将局部障碍与外围空间连接起来。",
+      "expressive_effect": "形成有效空间揭示；不附加受困或恐惧等心理解释。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0066",
+        "rgb-0068"
+      ],
+      "visible_change": "角色附近出现蓝色效果。",
+      "spatial_or_attention_effect": "注意短时集中到角色动作区域，动作范围保持在框内。",
+      "expressive_effect": "支持基础动作可读，尚不足证明额外关系表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "以熔岩外缘为主的视区转为可清楚辨认悬笼、支架和尖片的视区。",
+      "spatial_or_attention_effect": "补足角色与场地另一侧设施的联系，前景设施没有造成主体定位丢失。",
+      "expressive_effect": "延续空间展开，不证明角色与笼内人形的剧情关系。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e4"
+    ],
+    "reason": "适用基础条件成立：角色及动作可辨、裁切保留必要信息、地面与障碍关系可读。进一步效果来自连续空间揭示：中央尖片旁的局部行动，经外缘熔岩展开，再接回悬笼一侧；角色、地面、障碍和外围结构提供共同参照，帮助建立场地联系，明确超出仅将主体拍清楚。",
+    "adjacent_grade_explanation": "高于中档的依据是e2与e4可核查的跨时刻空间连接，而非居中、暖冷配色或手法数量。未见足以判低的持续遮挡、关键裁切或结构破坏。",
+    "uncertainties": [
+      "只评估所展示采样与清晰原帧，不声称观察未提供的中间时刻。",
+      "拒绝的3项测量及其派生数值均未参与判档；未重跑CV。",
+      "没有可靠视线、完整遮挡区域或实际距离，相关关系与数值不作推断。"
+    ]
+  }
+}

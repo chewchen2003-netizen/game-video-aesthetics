@@ -1,0 +1,612 @@
+{
+  "sample_id": "R07",
+  "roles": [
+    {
+      "object_id": "buggy",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "后方跟随视角中的越野车；必要内容是车辆行驶、转向及其与可见道路的关系。",
+      "uncertainty": "不将车内驾驶者另列为人物主体。"
+    },
+    {
+      "object_id": "track",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "车辆所在砂石赛道及前方通路。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "course_markers",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "沿路警戒带、旗帜和护栏，辅助辨认赛道边界。",
+      "uncertainty": "缓存中同名区域多次错分，角色依据RGB确认。"
+    },
+    {
+      "object_id": "desert",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "荒漠山地、岩石、灌木及天空；道路两侧近处岩石和植被随行驶进入近景。",
+      "uncertainty": "缓存desert主要覆盖天空，不能代表此环境整体。"
+    },
+    {
+      "object_id": "event_area",
+      "role": "background",
+      "time_range": [
+        6,
+        17
+      ],
+      "description": "道路侧方逐渐显露并经过的看台、棚顶及赛事设施。",
+      "uncertainty": "边界和覆盖范围以RGB为准。"
+    },
+    {
+      "object_id": "spectators",
+      "role": "background",
+      "time_range": [
+        0,
+        0
+      ],
+      "description": "起始清晰帧右侧警戒带外的少量观众。",
+      "uncertainty": "仅记录已明确看清的时刻；不承担人物动作或视线关系。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "车辆沿开阔砂石路行驶；需看清整车、前方通路和路侧边界。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6,
+        11.5
+      ],
+      "necessary_information": "车辆经过有旗帜的弯道路段，车身朝向及道路弯曲共同说明转向；需保留车轮、车身及弯道空间。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0046"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        12,
+        16.5
+      ],
+      "necessary_information": "车辆接近并经过道路侧方赛事设施；需区分可行驶路面、路侧设施和岩石。",
+      "input_evidence_ids": [
+        "rgb-0048",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        17,
+        19.5
+      ],
+      "necessary_information": "设施退至侧后方，前方重新成为开阔道路；需持续辨认车辆与通路。",
+      "input_evidence_ids": [
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-buggy",
+      "accepted": false,
+      "reason": "掩码及框漏掉轮胎下部，与RGB整车边界不符；拒绝该项全部派生值。"
+    },
+    {
+      "measurement_id": "measure-0000-track",
+      "accepted": true,
+      "reason": "大体覆盖连续路面，可作通路位置的粗略辅助；不据细边界、色差或逆深度判档。"
+    },
+    {
+      "measurement_id": "measure-0000-desert",
+      "accepted": false,
+      "reason": "主要分到天空，非荒漠环境；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0000-course_markers",
+      "accepted": false,
+      "reason": "把警戒带下方大片地面纳入，未可靠分离标识；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-buggy",
+      "accepted": false,
+      "reason": "车轮及车体边缘覆盖不足，不能代表完整可见主体；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-track",
+      "accepted": true,
+      "reason": "道路主体区域与RGB基本一致，仅辅助确认道路布局，不采用精细边界及深度解释。"
+    },
+    {
+      "measurement_id": "measure-0016-desert",
+      "accepted": false,
+      "reason": "主体区域是天空，语义错分；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-course_markers",
+      "accepted": false,
+      "reason": "掩码覆盖右侧大片地面，非标识本体；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-buggy",
+      "accepted": false,
+      "reason": "与course_markers区域明显混淆，边缘及车轮覆盖不稳定；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-track",
+      "accepted": true,
+      "reason": "主要可行驶路面位置可信；仅作粗略空间辅助，不把覆盖面积作为美学阈值。"
+    },
+    {
+      "measurement_id": "measure-0032-desert",
+      "accepted": false,
+      "reason": "主要覆盖天空，非可靠荒漠分割；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-course_markers",
+      "accepted": false,
+      "reason": "主要覆盖越野车而非赛道标识；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-event_area",
+      "accepted": false,
+      "reason": "覆盖远处山体，未可靠对应赛事设施；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-buggy",
+      "accepted": true,
+      "reason": "整车主要轮廓及车轮覆盖基本吻合，可辅助定位；不将可见面积解释为遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0048-track",
+      "accepted": true,
+      "reason": "主要路面与RGB吻合，局部边缘粗糙不影响通路核对；不采用逆深度推算距离。"
+    },
+    {
+      "measurement_id": "measure-0048-desert",
+      "accepted": false,
+      "reason": "天空与山体混成同一区域，不能代表统一环境对象；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-course_markers",
+      "accepted": false,
+      "reason": "区域稀疏且与远处标识对应不足，不能验证对象覆盖；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-event_area",
+      "accepted": false,
+      "reason": "主要落在右侧山石，非赛事设施；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-buggy",
+      "accepted": true,
+      "reason": "车辆主体和轮胎轮廓基本吻合，可辅助定位及粗略可见尺度核对；不推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0064-track",
+      "accepted": true,
+      "reason": "主要道路覆盖合理，可辅助区分道路与右侧岩石；不以精细面积或色差判档。"
+    },
+    {
+      "measurement_id": "measure-0064-desert",
+      "accepted": false,
+      "reason": "主要覆盖天空，语义不符；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-course_markers",
+      "accepted": false,
+      "reason": "区域主要落在远山和设施上方，未可靠覆盖旗帜或护栏；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-event_area",
+      "accepted": true,
+      "reason": "左侧看台、棚顶及围挡的主要区域吻合；仅用于位置核对，不视为精确完整设施面积。"
+    },
+    {
+      "measurement_id": "measure-0078-buggy",
+      "accepted": false,
+      "reason": "框和掩码漏掉下部车轮及车体边缘；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-track",
+      "accepted": true,
+      "reason": "连续路面主体覆盖合理；仅辅助核对通路布局。"
+    },
+    {
+      "measurement_id": "measure-0078-desert",
+      "accepted": false,
+      "reason": "主要分到天空，非荒漠环境；全部派生值弃用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车辆稳定处于下部中央附近，位置随转向小幅变化；未证明超出常规跟随定位的注意组织效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "RGB可辨车身、轮胎及道路；未出现有明确揭示作用的景别或尺度转换，不采用被拒主体面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "路侧旗帜、岩石未持续挡住整车；尾部尘土不妨碍车辆定位。无完整遮挡模型，不报百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车身虽与环境同属灰褐色，较暗轮廓、车架和轮胎仍可辨；未证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "人物仅为边缘环境点缀，车内人物缺乏可独立判断的身体呈现；不把车辆结构套入人体连接项。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "没有承担必要人物呈现的头部空间关系。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "没有可靠且与内容有关的人物视线线索，不由车辆朝向推断人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "直路和弯道前方均有足够可见范围；未形成有依据的迫近、阻挡或其他进一步效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车轮、车身倾斜和接地附近区域得到必要呈现；无强调行为联系的局部取舍。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "路面、侧方边界及远山支持通路理解；赛事设施逐渐经过，但未证明比普通行驶空间更新更强的组织效果。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "道路在下、山地和天空在上，没有挤压必要路径；天空较空不自动构成基础失败或增强。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车体、路侧岩石和设施归属可辨；车架内部交叠是正常结构，未见关系误读或有依据的隔离表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可识别道路透视及路侧边界形成的引导线，服务常规路线阅读；未证明进一步增强，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "实际游戏画面为单视区；输入联系表与参考帧拼版不属于视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          5.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ],
+      "observation": "车辆持续位于下部中央附近，完整车体前方留有开阔道路；起始右侧警戒带和观众位于道路外侧，随后路侧环境变化。",
+      "effect": "主体容易定位，车辆与可行驶空间的关系清楚。路面纹理及边界向远处延伸，满足基本路线阅读。",
+      "exceptions_checked": "边缘观众和路侧物正常局部离框，不承担关键人物信息；未据居中或引导线本身认定增强。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6,
+          11.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0046"
+      ],
+      "observation": "弯道中车辆车身倾斜、朝向改变；旗帜从路侧近处经过，前方弯曲路面、内侧灌木和岩石仍在画内。10秒清晰帧保留整车及较宽的转向空间。",
+      "effect": "车辆转向与道路走向可以共同核对，无需仅靠屏幕位移猜测运动。旗帜经过未持续打断主体观看。",
+      "exceptions_checked": "车身倾斜和局部轮胎姿态变化属于行驶状态；近处旗帜贴边属于正常经过，不当作无效裁切或阻隔表达。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          12,
+          16.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0048",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066"
+      ],
+      "observation": "赛事棚顶、看台和护栏在道路侧方变得明显；15秒参考帧中设施位于左前侧，16秒附近右侧近处岩石靠近车辆，但道路和整车仍可辨。",
+      "effect": "路侧设施与行驶通路保持可理解的分离，近岩石未使车辆归属或路线混乱。设施显露主要提供地点信息，未证明额外的空间揭示效果。",
+      "exceptions_checked": "右侧岩石接近不等于道路受阻；设施较多也未见持续抢占主体注意的实际损害。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          17,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "赛事设施退至侧后方，车辆前方恢复开阔路面；19.5秒清晰帧中车身和车轮仍可定位，扬起的尘土位于车辆下后方。",
+      "effect": "从设施路段返回开阔路段，路线连续性和主体定位维持。没有尺度重组或遮显转折足以支持进一步表达。",
+      "exceptions_checked": "尘土及车轮附近细节变化不构成持续遮挡；不把单目深度缺失当作空间混乱。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "主要内容始终是单视区车辆行驶；起始路边人物为环境点缀，未建立必要的人物身体、头部或观看对象关系。",
+      "effect": "人体裁切、头部及视线空间项不承担当前必要信息；多画面组织不适用。",
+      "exceptions_checked": "输入RGB网格、分割QA拼版和两张参考帧是审阅材料，不是游戏视频中的分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "由较直的开阔道路进入弯道，车辆倾斜和朝向随道路改变，路侧旗帜经过近处。",
+      "spatial_or_attention_effect": "主体保持可定位，前方空间足以将车身状态与道路转向联系起来。",
+      "expressive_effect": "支持基本运动理解；未证明转向空间产生额外处境表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "赛事设施从远处侧方变得更明显，近处岩石进入右侧。",
+      "spatial_or_attention_effect": "设施、路侧障碍和通路分区仍清楚，没有遮掉必要车体或前方道路。",
+      "expressive_effect": "可辨认地点变化，但没有充分证据将常规经过认定为更强的环境揭示。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "设施退去，前方回到开阔砂石道路。",
+      "spatial_or_attention_effect": "道路与车辆的连续关系保持，末段无需重新寻找观看重点。",
+      "expressive_effect": "维持基础呈现，未出现足以改变判断的尺度、遮显或关系重组。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "各关键阶段均能辨认车辆、行驶动作及前方通路；转弯和经过设施时没有确认的裁切、遮挡或空间基础失败。道路透视、跟随位置及环境变化主要完成常规行驶呈现，未证明超出基本可辨的进一步组织效果。",
+    "adjacent_grade_explanation": "不判低：未发现持续寻找主体、必要路径丢失或结构破坏。不判高：居中跟随、道路引导线和设施经过尚不足以建立增强证据桥。",
+    "uncertainties": [
+      "缓存未重跑；错分项目及其全部派生值已弃用。",
+      "仅据输入采样画面判断，不声称看过采样间隙；不推算光流、遮挡率或真实距离。",
+      "accepted表示足以作所述粗略辅助，不代表精确像素边界或全部派生指标已验证。"
+    ]
+  }
+}

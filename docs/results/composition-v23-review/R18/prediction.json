@@ -1,0 +1,472 @@
+{
+  "sample_id": "R18",
+  "roles": [
+    {
+      "object_id": "forest_ground_region",
+      "role": "subject",
+      "time_range": [
+        0,
+        12
+      ],
+      "description": "主要呈现可行进的林地、草坡和逐渐显露的岩石地形；不是单株植物或人物。",
+      "uncertainty": "此名称只作为区域索引，不代表缓存掩码完整覆盖当前主体。"
+    },
+    {
+      "object_id": "rock_cluster",
+      "role": "subject",
+      "time_range": [
+        12,
+        19.5
+      ],
+      "description": "镜头接近的岩群及岩块之间的地面空间。",
+      "uncertainty": "不能仅凭缓存名称确认各时刻都是同一块岩石。"
+    },
+    {
+      "object_id": "right_boulder",
+      "role": "supporting_element",
+      "time_range": [
+        12,
+        19.5
+      ],
+      "description": "近处岩块参与组织岩间通路与遮显；16秒右侧岩面可可靠辨认。",
+      "uncertainty": "12秒与19.5秒同名分割实际落在草地或地面，不能用于追踪。"
+    },
+    {
+      "object_id": "trees_grass_distant_slope",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "林木、红草、远坡构成环境参照；部分树干和枝条经过近景。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "first_person_hand_tool",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "画面右下的第一人称工具，末段可见握持的手；提供机位参照。",
+      "uncertainty": "未见明确挥击、接触目标或动作结果，不推断战斗或采集。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        7.5
+      ],
+      "necessary_information": "呈现穿行红草林地：需辨认近地面、树木与前方空间，工具为近景参照。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0030"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        8,
+        13.5
+      ],
+      "necessary_information": "林地转向较开敞的岩坡；需辨认树干之后的坡面、岩台和行进方向。",
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        13.75,
+        19.5
+      ],
+      "necessary_information": "接近岩群并在近岩之间改变视向，末段重新显露林地；需理解近岩、间隙地面及其后的环境联系。",
+      "input_evidence_ids": [
+        "rgb-0055",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-forest_ground_region",
+      "accepted": true,
+      "reason": "QA掩码覆盖可见草地与地表，区域语义基本吻合；仅采为局部可见地面区域，不当作完整主体或遮挡比例。"
+    },
+    {
+      "measurement_id": "measure-0016-forest_ground_region",
+      "accepted": true,
+      "reason": "掩码基本落在右侧草地，近景植株未被整体吞入；可描述该局部区域，不能据面积变化推断整个林地主体缩小。"
+    },
+    {
+      "measurement_id": "measure-0032-forest_ground_region",
+      "accepted": false,
+      "reason": "掩码呈明显碎片和条带，不能可靠代表地面边界；其面积、中心、色差及深度派生值全部不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-right_boulder",
+      "accepted": false,
+      "reason": "标为岩石的掩码实际主要覆盖右上草丛，未覆盖前方岩面；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-right_boulder",
+      "accepted": true,
+      "reason": "QA中掩码基本贴合右侧大岩面，并与前方小岩分开；可辅助确认岩面占据近景，不把单目深度解释为实际距离。"
+    },
+    {
+      "measurement_id": "measure-0078-right_boulder",
+      "accepted": false,
+      "reason": "掩码落在岩间地面、草地及部分树木，未对应右侧岩块；全部派生值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "主体为环境空间，不将画面中心某株植物指定为主角。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "尺度变化依据RGB中岩群由远及近及两侧占框变化，不采用跨对象的掩码面积比较。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "枝干、近岩遮显可解释为经过环境；未证明隐藏、隔离等进一步关系，无遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "灰岩与红草、树干与天空基本可分；颜色差异本身不作为增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "只判断可见第一人称手部与工具；未见可确认的连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "无入画人物头部，第一人称未显示头部不构成裁切问题。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "没有可核查的人物眼神或观看对象关系，不将镜头朝向直接视为人物视线证据。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "前进及绕近岩的可见范围足以理解；近岩占框不等于行动被迫受限。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "未见具有目标与结果的工具操作；行进空间已在运动前方空间项检查。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "依据前后遮挡、岩石尺度及间隙显露判断空间，不推断米制距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "地面、岩坡、树冠和天空的分布清楚；没有额外证据将上下位置解释为压迫或权力关系。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "枝干交叉与岩块叠压未造成对象归属误读；空间揭示效果归入E3纵深组织，不重复作为关系表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "识别到岩台斜向排列、近岩两侧框取间隙的组织；仅解释已成立的空间揭示，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表是证据排版，不能当成原视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          7.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0030"
+      ],
+      "observation": "红草地面占据下部，树木和远坡建立前后参照；4秒附近高植株进入近景，5秒仍能看见地面延伸与林木间空间。",
+      "effect": "主要观看内容为环境穿行，近景植物变化未持续夺走必要空间信息；基础位置、尺度、区分与通路可读。",
+      "exceptions_checked": "没有必须从草丛中寻找的人物目标；合理植被遮挡不按主体丢失处理。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          8,
+          13.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0054"
+      ],
+      "observation": "8秒近枝干交叉；10秒粗树干位于右侧，左中部露出斜向岩台和上坡地面；12至13.5秒岩坡进入更开敞的主要视区，岩群逐渐接近。",
+      "effect": "枝干之后的岩台与坡面相接，将注意从林地引向岩群；远处岩坡成为随后接近的空间参照，超出孤立景物的基本辨认。",
+      "exceptions_checked": "近树干未持续封死地形；斜线效果来自实际坡面与岩台联系，不因存在斜线即判增强。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          13.75,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0055",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078",
+        "measure-0064-right_boulder"
+      ],
+      "observation": "13.75至15秒岩群由前方地形变为近处大块岩面；16秒左右两侧岩面与中间落叶地面形成近距离间隙；19.5秒左侧近岩、右侧工具之间重新露出延伸的地面与林木。",
+      "effect": "先建立岩群位置，再以岩面扩大的尺度和间隙框取，把观看路径收束到岩间地面，末段又连接回后方林地；形成可追随的空间深化与揭示。",
+      "exceptions_checked": "近岩填框是接近地形后的合理局部取景；不推断困住、逃离或心理紧张。19.5秒错误掩码不参与判断。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "工具从右下边缘入画，末帧可见手握工具柄；未展示完整人物，也未出现可确认的击打对象、接触或结果。",
+      "effect": "第一人称局部裁切维持近景参照，没有确认的形体连接破坏；头部、人物视线及具体工具动作裁切无适用对象。",
+      "exceptions_checked": "排除把正常第一人称手臂出框判为断肢，或把工具摆动推断为已发生交互。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "所提供RGB序列与清晰原帧均为单一第一人称视区。",
+      "effect": "没有可评价的同步子画面关系。",
+      "exceptions_checked": "联系表、参考帧和QA拼图属于输入展示方式，不是视频内多画面手法。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0054"
+      ],
+      "visible_change": "由植被较密的林地视区转向开敞岩坡，树干移至侧方，岩台和坡面联系显露。",
+      "spatial_or_attention_effect": "观看重点沿地面与斜向岩台转向前方岩群，建立下一阶段的空间参照。",
+      "expressive_effect": "支持有效空间揭示；不附加情绪或任务解释。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060"
+      ],
+      "after_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0078"
+      ],
+      "visible_change": "前方岩群扩大为两侧近岩，岩间地面成为主要可见空间，末段露出后方林地。",
+      "spatial_or_attention_effect": "远景参照转为近景边界，视线被具体间隙承接，并重新连接林地。",
+      "expressive_effect": "尺度、框取与前后显露共同深化环境联系，构成增强；不将单纯推近作为充分理由。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "S-H-a"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3"
+    ],
+    "reason": "适用基础条件成立。林地中的岩坡先被建立，随后岩群由前方参照转为两侧近景边界，岩间地面承接观看路径，末段再显露林地。位置、尺度与遮显共同产生可核查的空间揭示，超出基本可辨。",
+    "adjacent_grade_explanation": "高于中档的依据是E2至E3连续成立的环境联系与注意引导，不是红草颜色、前后景齐全或岩石变大本身。未见必要信息持续丢失或形体结构失败，故无低档依据。",
+    "uncertainties": [
+      "仅评价已提供采样时刻，不声称看过采样之间的全部动作。",
+      "三项错误分割已拒绝，其派生数值均未采用；缓存未重跑。",
+      "环境区域并非完整实体掩码，不报告遮挡百分比，也不据同名缓存认定跨帧岩块身份。"
+    ]
+  }
+}

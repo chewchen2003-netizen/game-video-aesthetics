@@ -1,0 +1,523 @@
+{
+  "sample_id": "R44",
+  "roles": [
+    {
+      "object_id": "rider",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "红盔骑手；前段骑行并与其他骑手交互，末段离开桥面向峡谷下落。",
+      "uncertainty": "末段人体很小，不据此诊断形体结构。"
+    },
+    {
+      "object_id": "motorcycle",
+      "role": "subject",
+      "time_range": [
+        0,
+        17.5
+      ],
+      "description": "红盔骑手所乘摩托，与骑手共同构成跟随对象。",
+      "uncertainty": "离桥后的车与人不再视为完整组合。"
+    },
+    {
+      "object_id": "other-riders",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        17
+      ],
+      "description": "左右并行、前行的其他骑手，提供追赶与近身交互关系。",
+      "uncertainty": "不确定各时刻骑手的连续身份。"
+    },
+    {
+      "object_id": "road-bridge",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "道路、车道线、桥面及桥架；末段桥体成为左侧近处空间参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "desert-canyon",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "荒漠山体与峡谷，末段成为主要环境。",
+      "uncertainty": "不把缓存canyon_region边界视为真实地理分区。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "necessary_information": "辨认红盔骑手与邻近骑手的并行、靠近及分开，保留道路行进方向。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0014"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        3.75,
+        14.5
+      ],
+      "necessary_information": "跟随红盔骑手经过直道、弯道，与前方及侧方骑手形成追赶关系。",
+      "input_evidence_ids": [
+        "rgb-0015",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        15,
+        17.5
+      ],
+      "necessary_information": "辨认桥梁入口、并行骑手、靠近桥侧及离开原行驶通路的变化。",
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0069",
+        "rgb-0070"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        17.75,
+        19.5
+      ],
+      "necessary_information": "辨认离桥下落的主体、桥与峡谷的高差及下落位置；无需继续辨认骑行细节。",
+      "input_evidence_ids": [
+        "rgb-0071",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-rider",
+      "accepted": true,
+      "reason": "QA覆盖红盔骑手主要可见区域，可辅助定位；不作完整人体或遮挡估计。"
+    },
+    {
+      "measurement_id": "measure-0000-motorcycle",
+      "accepted": true,
+      "reason": "与RGB车体位置相符，可辅助定位及可见尺度判断。"
+    },
+    {
+      "measurement_id": "measure-0016-rider",
+      "accepted": false,
+      "reason": "框及掩码主要覆盖上身，腿部范围不完整；其面积、边界、颜色和深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-motorcycle",
+      "accepted": true,
+      "reason": "QA主体车体轮廓与RGB基本对应，仅作可见区域辅助。"
+    },
+    {
+      "measurement_id": "measure-0032-rider",
+      "accepted": true,
+      "reason": "主要可见人体与框、掩码基本对应；不据关节点判断细部连接。"
+    },
+    {
+      "measurement_id": "measure-0032-motorcycle",
+      "accepted": true,
+      "reason": "车体与后轮定位基本一致，可见面积不等于完整车辆面积。"
+    },
+    {
+      "measurement_id": "measure-0048-rider",
+      "accepted": true,
+      "reason": "主要覆盖当前骑手，未见足以颠覆定位的背景吞入。"
+    },
+    {
+      "measurement_id": "measure-0048-motorcycle",
+      "accepted": true,
+      "reason": "QA与车体主要可见范围基本一致，仅辅助定位。"
+    },
+    {
+      "measurement_id": "measure-0064-rider",
+      "accepted": false,
+      "reason": "下界截在髋部附近，未完整覆盖可见腿部；拒绝该项全部派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-motorcycle",
+      "accepted": true,
+      "reason": "掩码与当前摩托主要可见车体相符，邻车分离基本可核对。"
+    },
+    {
+      "measurement_id": "measure-0078-canyon_region",
+      "accepted": false,
+      "reason": "掩码只取峡谷部分坡地且边界缺少稳定语义依据；其面积、颜色和边界值不用于环境尺度判断。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "末段凭连续位置变化定位小主体，不以单帧居中判增强。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "末段动作细节减少，但当前必要信息已转为下落与环境高差。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "桥侧短暂遮显未造成持续定位丢失；无完整主体掩码，不给遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "红色装备及末段深浅对比支持识别，未独立证明更进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "已提供清晰帧中骑行姿态连接合理；末段小人体与分离物体不足以确认连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "头部未见意外框切；留空本身不作处境表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "背面骑行无可靠眼神及独立观看对象线索；行驶朝向归运动前方空间。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "增强依据通路从道路转为桥侧外部下落空间的可见变化，不由屏幕位移推断世界方向。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "挥臂、并行及离桥结果可读；未证明通过局部取舍额外强调接触反应。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "依据透视、桥柱、坡面及前后变化判断，不把单目深度值解释为距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "桥位于上方、人体下落与峡谷展开共同支持高差关系，不推断心理。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车辆靠近和桥架交叠未造成持续归属误读；不重复将遮显计为增强。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "识别到道路透视引导与桥体空间参照；增强只关联已证明的空间揭示。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表及底部参考图是输入编排，不是视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0014"
+      ],
+      "observation": "红盔骑手位于近处偏中，与左右骑手并行和靠近；0秒清晰帧保留举臂、器械、车体及道路。",
+      "effect": "主体与交互对象容易对应，动作及车辆归属基本清楚；邻车未持续抢占主观看重点。",
+      "exceptions_checked": "正常并行和交互产生的局部交叠不作无效遮挡；未把器械与肢体混为连接异常。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          3.75,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0015",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ],
+      "observation": "跟随视角把红盔骑手保持在下部中间附近，道路延伸至前方骑手；弯道、山体和车道线同时提供方向参照。10秒清晰帧中右侧骑手与主体分开。",
+      "effect": "前景主体—侧前方对手—道路远端形成实际追赶观看路径，主体身份和前行通路连续可读；同时为后段离开道路建立参照。",
+      "exceptions_checked": "常规留足道路本身仅属基础；无可靠眼神，不另立视线关系。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          15,
+          17.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0069",
+        "rgb-0070"
+      ],
+      "observation": "桥入口在前方逐渐扩大，侧方骑手靠近；随后主体从道路中央关系转向桥侧，桥架进入近处画面。",
+      "effect": "桥口、车道线和近处桥侧结构把原先开放的前行路径具体化，随后偏离通路的变化可追踪。",
+      "exceptions_checked": "桥构件短暂遮显及邻车接近符合当前交互；未从稀疏帧断言确切碰撞机制。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          17.75,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0071",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "画面转向桥外峡谷，桥体留在左上及左侧，人体落在其下方开放坡谷中；19.5秒清晰帧主体显著缩小，桥柱、层叠坡面与远山同时展开。",
+      "effect": "由道路跟随到桥外远景的变化，将下落主体与桥面高度、谷地尺度直接联系起来。小主体仍能定位，环境展开说明离桥结果，超出单纯把人物拍清楚。",
+      "exceptions_checked": "主体缩小符合结果阶段；正常离桥、分离及下落不能直接当作裁切或人体结构失败。红色效果不作为遮挡百分比或碰撞证据。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008"
+      ],
+      "after_evidence_ids": [
+        "rgb-0020",
+        "rgb-0040"
+      ],
+      "visible_change": "由近距离并行交互转为道路跟随，邻车从侧方转至侧前或远处。",
+      "spatial_or_attention_effect": "主体位置稳定，道路透视将注意延伸至其他骑手及前方通路。",
+      "expressive_effect": "建立追赶对象与行进空间的连续关系，不推断敌意或人物心理。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "visible_change": "桥入口从前方目标变为近处桥侧结构，主体偏离原车道关系。",
+      "spatial_or_attention_effect": "先建立桥面通路，再让观众追踪向桥侧的变化。",
+      "expressive_effect": "前方可行通路与随后离桥行动形成明确空间转折。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "近处桥侧转为桥外峡谷远景，人体缩小，桥体保留在上方和左侧。",
+      "spatial_or_attention_effect": "桥柱与坡谷提供连续参照，明确主体已处桥下外侧并在下落。",
+      "expressive_effect": "尺度和上下关系共同揭示离桥的高差与环境规模；不以小人物推断孤独。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-b",
+      "C-H-d",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立，未见持续寻找主体、关键动作丢失或已确认的形体结构破坏。道路跟随先建立通路，桥入口与桥侧连续提供参照，随后远景保留上方桥体并展开下方峡谷，将缩小的下落主体与离桥高差、环境尺度联系起来，构成明确的空间揭示增强。",
+    "adjacent_grade_explanation": "高于中档的依据是桥面行进到桥外下落的前后组织及其空间结果，不是居中、引导线或环境大本身；未发现足以判低的基础失败。",
+    "uncertainties": [
+      "仅评价清单所列采样画面，不声称掌握采样间完整动作。",
+      "离桥的确切碰撞机制与末段人体细部无法确认，不据此补造损害。",
+      "拒绝项的派生数值全部未用于判档；其余测量只辅助定位，未采用遮挡百分比、光流或绝对深度。"
+    ]
+  }
+}

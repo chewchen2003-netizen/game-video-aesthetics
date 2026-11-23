@@ -1,0 +1,596 @@
+{
+  "sample_id": "R48",
+  "roles": [
+    {
+      "object_id": "canopy_environment",
+      "role": "subject",
+      "time_range": [
+        0,
+        4
+      ],
+      "description": "仰视树冠、枝干与雾中结构；开头枪械及短暂出现的人物为近景元素。",
+      "uncertainty": "不能据远小人物确认身份。"
+    },
+    {
+      "object_id": "weapon_hands",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第一人称青蓝枪械与持枪手臂；转向、交火和换弹时提供动作参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "arena_route",
+      "role": "subject",
+      "time_range": [
+        4.5,
+        10.5
+      ],
+      "description": "坡道、庭院入口和走廊构成当前主要呈现的行进空间。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "red_near",
+      "role": "subject",
+      "time_range": [
+        11,
+        13
+      ],
+      "description": "近处红色装甲人物，与前景枪口形成交火关系。",
+      "uncertainty": "不确认与其他时段红色人物为同一人。"
+    },
+    {
+      "object_id": "weapon_hands",
+      "role": "subject",
+      "time_range": [
+        13.5,
+        15.5
+      ],
+      "description": "靠墙时枪械抬起、手部操作，呈现换弹过程。",
+      "uncertainty": "仅确认所给采样中的动作。"
+    },
+    {
+      "object_id": "red_targets",
+      "role": "subject",
+      "time_range": [
+        15.75,
+        19.5
+      ],
+      "description": "通道内及柱侧出现的红色人物，是后段瞄准与交火对象。",
+      "uncertainty": "人物数量和跨帧身份不确定。"
+    },
+    {
+      "object_id": "architecture_orb",
+      "role": "background",
+      "time_range": [
+        4.5,
+        19.5
+      ],
+      "description": "木质墙体、发光面板、门柱与球形陈设提供路径、遮挡和距离参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "timer_sign",
+      "role": "supporting_element",
+      "time_range": [
+        16.5,
+        19.5
+      ],
+      "description": "左侧计时牌及上方文字标牌提供场地参照；不将其认作独立子画面。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "A",
+      "time_range": [
+        0,
+        4
+      ],
+      "necessary_information": "主要呈现仰视树冠和雾中结构；须辨认近枝与远处环境，不要求持续出现敌人。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0002",
+        "rgb-0010",
+        "rgb-0016"
+      ]
+    },
+    {
+      "stage_id": "B",
+      "time_range": [
+        4.5,
+        10.5
+      ],
+      "necessary_information": "由坡道转入庭院及侧廊；须保留入口、可行路径和转向后的空间参照。",
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "C",
+      "time_range": [
+        11,
+        13
+      ],
+      "necessary_information": "红色人物进入近处交火区域；须理解枪械朝向、人物位置和可见交火反应。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052"
+      ]
+    },
+    {
+      "stage_id": "D",
+      "time_range": [
+        13.5,
+        15.5
+      ],
+      "necessary_information": "靠墙操作枪械；须辨认手、枪械及其动作，墙面占据视野有当前动作解释。",
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062"
+      ]
+    },
+    {
+      "stage_id": "E",
+      "time_range": [
+        15.75,
+        19.5
+      ],
+      "necessary_information": "重新探入通道交火；须辨认门柱、球体、红色目标及枪口方向，区分遮挡和显露。",
+      "input_evidence_ids": [
+        "rgb-0063",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-tree_canopy_region",
+      "accepted": true,
+      "reason": "QA覆盖上方主要树冠，与rgb-0000相符；仅接受可见树冠区域描述，不解释为完整树体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-tree_canopy_region",
+      "accepted": false,
+      "reason": "QA中掩码呈大片格状、雾区填充，未沿真实树冠轮廓；位置、面积、色差和深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-passage_region",
+      "accepted": false,
+      "reason": "掩码跨越远端面板、近处路面并混入枪械，不能代表一致的通道对象；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-red_near",
+      "accepted": false,
+      "reason": "人物掩码缺失下部且边界不完整；关节点延伸至框外，无法共同验证完整姿态。面积、尺度、关节及其他派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-wall_region",
+      "accepted": false,
+      "reason": "掩码跨越面板、木墙、立柱并贴到枪械区域，不能可靠代表单一墙面；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-red_far",
+      "accepted": true,
+      "reason": "小区域对应柱旁显露的红色人物部分，与清晰原帧相符；只接受可见部分定位，不作完整人体尺度或遮挡比例依据。"
+    },
+    {
+      "measurement_id": "measure-0078-doorway_region",
+      "accepted": false,
+      "reason": "门洞区域与柱、后景和前景枪械混合，缺少一致对象边界；全部派生值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "目标在柱侧短暂偏离中心，但位置仍可由交互理解；未证明超出常规瞄准的位置表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "后段人物较小且局部显露，仍能辨认目标；不以残缺掩码推算人体占比。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "柱侧遮显与交火位置一致；尚不足以证明额外隔离或隐藏表达。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e5"
+      ],
+      "uncertainty": "红色人物、青蓝枪械与建筑基本可区分；鲜明颜色本身不证明增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "第一人称手臂和柱后人体均有合理裁切解释；未见可确认的同一形体连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e3",
+        "e5"
+      ],
+      "uncertainty": "适用于可见红色人物；未见头部被画框意外截断造成干扰。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e5"
+      ],
+      "uncertainty": "未见必须单独理解的人物视线行为；不把第一人称镜头朝向当作人物眼神证据。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e5"
+      ],
+      "uncertainty": "前方路径和探出位置可见；没有证据证明空间压缩进一步表达受阻或逃离。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "保留枪械操作、目标及可见反应；不把常规换弹近景自动视作表达增强。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "uncertainty": "透视、门框和遮挡足以支持路径理解；前后变化主要完成常规空间导航，未充分证明进一步揭示效果。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e5"
+      ],
+      "uncertainty": "仰视树冠和后续建筑上下关系可读；不由仰角推断环境压迫或主体权威。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "uncertainty": "枪械、门柱、球体和人物边界可分；柱侧遮挡的信息影响统一记于e5，不重复计损害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e5"
+      ],
+      "uncertainty": "识别到路径透视引导及门框框取，支持定位；尚无独立于基本可读性的增强证据。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e6"
+      ],
+      "uncertainty": "联系表是评审输入排版；游戏画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0002",
+        "rgb-0010",
+        "rgb-0016",
+        "measure-0000-tree_canopy_region"
+      ],
+      "observation": "暗色近枝横覆画面上部，雾中远树与结构较淡；枪械起初占右下，后续视野主要转为环境。",
+      "effect": "近远层次和当前环境主体可辨；没有必须保留而被树枝遮掉的关键交互。",
+      "exceptions_checked": "环境可作为主体；不因较长时间未出现交火扣档，不用失效的4秒树冠测量。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          4.5,
+          10.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0042"
+      ],
+      "observation": "坡道边缘通向建筑入口，随后庭院路面朝向面板，再转入窄廊；枪械主要留在下方。",
+      "effect": "行进方向、入口和转向后的通路能够接续理解；透视引导主要完成导航功能。",
+      "exceptions_checked": "不要求每次转向同时保留上一空间；拒绝通道掩码后仅据RGB判断。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          11,
+          13
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052"
+      ],
+      "observation": "红色人物由廊口较小形态变为近处较大形态，11.5秒出现明显红色交火效果，随后人物仍在枪口前方可见。",
+      "effect": "接近关系、交火对象和反应区域基本清楚；近景特效未在所给采样中造成持续目标丢失。",
+      "exceptions_checked": "近距离人物、特效及枪械重叠属于当前交互；不以异常关节点认定肢体断裂，不推断击杀结果。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          13.5,
+          15.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0062"
+      ],
+      "observation": "墙面占据主要背景，枪械抬起斜置，手部操作可见；15秒参考图清楚保留枪身及持握关系。",
+      "effect": "观看重点转为枪械操作；墙面减少外部空间信息，但不妨碍理解当前动作。",
+      "exceptions_checked": "第一人称身体和枪械正常出框；没有证据要求该阶段必须持续展示敌人。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [
+        [
+          15.75,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0063",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078",
+        "measure-0078-red_far"
+      ],
+      "observation": "视野由墙旁重新打开至通道；17.5秒交火效果短暂覆盖局部。19.5秒左有大计时牌，中间门柱后显露红色人物，右有球体，枪械朝向开口。",
+      "effect": "门柱、目标和枪械共同给出当前交火方位；计时牌虽醒目，未见持续迫使观众反复寻找目标。柱后显露属于可解释的空间遮挡。",
+      "exceptions_checked": "不将局部可见人物当成断肢，不虚构遮挡百分比；未证明球体或计时牌造成关键动作信息损失。"
+    },
+    {
+      "event_id": "e6",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "实际游戏视野为单一第一人称画面；计时和文字为场景或界面信息。",
+      "effect": "没有需要评价的同时并置子画面关系。",
+      "exceptions_checked": "排除将输入联系表和参考图拼版误认为视频分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020"
+      ],
+      "visible_change": "由树冠和雾中结构转向建筑坡道及入口。",
+      "spatial_or_attention_effect": "观看对象从上方环境转为前方路径，入口可辨。",
+      "expressive_effect": "支持内容转换，未证明额外尺度或处境表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0044",
+        "rgb-0046",
+        "rgb-0048"
+      ],
+      "visible_change": "由空通路转为廊口红色人物及近距离交火。",
+      "spatial_or_attention_effect": "环境建立后，注意转向枪口前方人物；近处尺度有动作上下文。",
+      "expressive_effect": "完成目标出现和接近关系的基本呈现。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0052"
+      ],
+      "after_evidence_ids": [
+        "rgb-0058",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "由交火转为靠墙操作枪械，再打开通道视野。",
+      "spatial_or_attention_effect": "注意从目标移到枪械操作，再回到前方路径。",
+      "expressive_effect": "动作阶段清楚，未证明局部取景进一步强调特殊反应或关系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "交火效果之后，门柱、球体和柱侧红色人物再次可辨。",
+      "spatial_or_attention_effect": "局部遮挡未持续破坏交火方位理解。",
+      "expressive_effect": "支持正常遮显和再定位，未充分建立额外隔离或受限表达。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "e2",
+      "e3",
+      "e4",
+      "e5"
+    ],
+    "reason": "适用基础条件成立：行进路径、交火对象和换弹动作可读，第一人称裁切及柱侧遮挡有合理解释；未确认持续查找负担、关键损失或形体结构破坏。空间透视与框取主要支持常规导航和瞄准，进一步表达尚未证明。",
+    "adjacent_grade_explanation": "不判低：醒目的枪械、计时牌及局部特效未被证实持续干扰必要信息。不判高：已有层次和前后变化，但证据不足以说明其产生超出基本辨认的空间揭示或关系强化。",
+    "uncertainties": [
+      "结论限于实际展示的采样及三张清晰原帧，不声称观察未展示时刻。",
+      "已拒绝五项分割及其全部派生数值；未重跑CV，无可靠完整人体掩码，不报告遮挡比例。",
+      "红色人物跨阶段身份及交火最终结果不能确认，均未用于判档。"
+    ]
+  }
+}

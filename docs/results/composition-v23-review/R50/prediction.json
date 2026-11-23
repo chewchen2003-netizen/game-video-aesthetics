@@ -1,0 +1,542 @@
+{
+  "sample_id": "R50",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "白发持武器人物；连续画面围绕其与周围敌人、绿雾区域的交互及移动展开。",
+      "uncertainty": "不推断具体身份或任务。"
+    },
+    {
+      "object_id": "enemies",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        16.5
+      ],
+      "description": "人物附近及绿雾中的骷髅状敌人，与攻击效果共同构成交互。",
+      "uncertainty": "缩略图不能逐一确认所有敌人的动作。"
+    },
+    {
+      "object_id": "hearth",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "圆形燃烧炉及其台座，是人物移动、绿雾分布和机位变化的稳定空间参照。",
+      "uncertainty": "不据亮度或面积将其认作主要行动主体。"
+    },
+    {
+      "object_id": "gas",
+      "role": "supporting_element",
+      "time_range": [
+        2,
+        16.5
+      ],
+      "description": "炉边逐步扩展的绿色雾区，覆盖部分敌人与地面。",
+      "uncertainty": "仅确认可见效果，不推断伤害机制。"
+    },
+    {
+      "object_id": "architecture",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "格栅、柱体、台阶与破损石地，建立室内场地和可行走区域。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "near-rubble",
+      "role": "foreground",
+      "time_range": [
+        7,
+        12
+      ],
+      "description": "较近的残墙、石块及柱体，与人物、炉台构成远近层次。",
+      "uncertainty": "角色随机位变化，不将其全程固定为前景。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "人物在炉边与敌人交互，绿雾扩大；需辨认人物、邻近敌人及炉缘位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        6,
+        11.5
+      ],
+      "necessary_information": "取景随人物移动改变，人物与炉台拉开画内距离；需辨认其所在通路和绿雾中的敌人位置。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0046"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        12,
+        16.5
+      ],
+      "necessary_information": "人物再次处于炉缘附近，炉台与绿雾重新占据较大画面；需保留人物与交互区的联系。",
+      "input_evidence_ids": [
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        17,
+        19.5
+      ],
+      "necessary_information": "绿雾消退后人物移至开阔石地，炉台退至画面上部；需辨认人物、地面路径与炉台的相对位置。",
+      "input_evidence_ids": [
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": false,
+      "reason": "掩码混入人物旁白色攻击效果，不能代表完整人物区域；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0000-hearth",
+      "accepted": true,
+      "reason": "掩码与圆形炉体基本对应，可作可见炉体位置和面积的辅助；不代表整座台座。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": false,
+      "reason": "绿雾与人物重合，联系表不足以确认人物轮廓完整、无效果混入；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0016-hearth",
+      "accepted": true,
+      "reason": "主要覆盖圆形炉体，贴底是实际取景结果；仅接受可见炉体范围，不外推完整面积或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": false,
+      "reason": "掩码主要落在人物下方地面及暗影，未覆盖实际白发人物；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0032-hearth",
+      "accepted": false,
+      "reason": "框与掩码指向右侧柱墙，实际炉体位于更左后方；全部派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": false,
+      "reason": "掩码包含青色发光物及地面，人物归属错误；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0048-hearth",
+      "accepted": false,
+      "reason": "框内主要是前方柱体及其附近地面，实际燃烧炉在左后方；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": false,
+      "reason": "人物下方炉缘和地面明显混入，不能代表人体面积和轮廓；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0064-hearth",
+      "accepted": true,
+      "reason": "掩码基本贴合可见圆形炉体；仅用于粗略位置、范围核对，不用于遮挡或真实距离。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": false,
+      "reason": "掩码大幅覆盖人物脚下地面、投影，真实人物仅占上部小段；派生数值不用。"
+    },
+    {
+      "measurement_id": "measure-0078-hearth",
+      "accepted": false,
+      "reason": "将炉体、整段台座、柱件及地面合并，与前面炉体口径不一致；派生数值不用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "不以居中本身作为增强；依据人物位置稳定而交互场地连续换位。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "人物较小但白发、身体和邻近交互仍可定位；拒绝人物掩码后不使用面积数值。尺度变化未单独证明增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "雾和攻击效果局部覆盖，未见持续无效定位丢失；没有完整主体掩码，不估算遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "白发与褐色地面形成定位线索；服装局部融入背景，未造成持续查找。颜色可辨本身不算进一步表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "清晰帧中人物身体连续，无画面分界造成的明显连接或尺度崩坏；细小肢体细节有限。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "人物头部均留在画内，没有必要头部信息损失；不将大面积上方环境解释为心理。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e2"
+      ],
+      "uncertainty": "没有足够明确且独立承载内容的观看行为；不从白发头部或身体朝向虚构视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "可见地面和炉台边缘足以理解移动；未证明前方空间形成进一步受阻或逃离表达。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "人物、邻近敌人与主要效果同框；远处局部敌人出框不构成当前关键动作损失。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "依据炉台、台阶、柱体和地面通路的连续对照；不用单目深度数值推断距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "炉台从下部转至上部仍有地面连接，不导致位置误读；上下换位本身不构成关系强化。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "绿雾内敌人局部轮廓交叠，但人物、炉体、建筑归属基本清楚；无依据将交叠解释为依附或隔离。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "识别为人物附近稳定取景与场地纵深组织；增强仅解释已确认的空间揭示，不另行计分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表及参考拼图是评审材料排版，原视频未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          5.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ],
+      "observation": "人物在炉体左上侧附近，敌人和紫白攻击效果围绕人物；绿雾逐步扩展。0秒清晰帧仍能区分白发、躯干、武器效果及炉缘。",
+      "effect": "人物与交互对象保持共同视区，炉体提供定位参照；效果虽亮且局部覆盖，未使主要行动位置持续失读。",
+      "exceptions_checked": "排除正常攻击效果、敌人接近和雾区覆盖；不将特效形状认作肢体断裂，不宣称精确命中结果。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          6,
+          11.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0046"
+      ],
+      "observation": "取景变化中人物保持在画面中部附近，炉体转至较远的上方；石地、柱体与绿雾区分出通路。10秒清晰帧显示人物在雾区前方，敌人留在雾内及炉台附近。",
+      "effect": "稳定的人物定位与变化的炉台参照共同把注意从炉边近身交互引向人物和雾区之间的可行走空间，进一步建立场地联系。",
+      "exceptions_checked": "未把屏幕位移直接当作世界运动方向；局部建筑遮挡没有持续掩去人物。无可靠眼神线索，不评价视线表达。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          12,
+          16.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0066"
+      ],
+      "observation": "炉体由后方重新转至人物近旁和画面下部，人物白发在炉缘与绿雾交界处仍可定位；圆台边缘持续可见。",
+      "effect": "圆台轮廓与人物附近的地面连接，使换位后的交互仍能接回同一场地；前后取景补充炉周空间，而非孤立展示背景。",
+      "exceptions_checked": "炉台局部贴边、出框属于环境取舍；没有据此判人物动作被裁断，也不把绿雾解释为实际墙体。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          17,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "绿雾消退，人物位于开阔石地，炉体及台座转到上方；19.5秒清晰帧同时保留人物、台阶、圆台与地面阴影。",
+      "effect": "此前被雾覆盖的地面关系变得清楚，人物与炉台的间隔通过通路和台阶得到确认，完成从炉边交互到开阔区域的空间揭示。",
+      "exceptions_checked": "炉体上缘局部出框不妨碍识别参照；地面长影不是人物肢体，不据此认定形体尺度崩坏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "炉体由人物近旁的下方转至较远上方，绿雾扩大，人物仍保持在中部附近。",
+      "spatial_or_attention_effect": "人物作为稳定定位点，炉体、柱体和石地共同揭示人物与雾区之间的通路。",
+      "expressive_effect": "支持P-H-a、S-H-a：前后组织使观看者能持续追踪人物并深化其与场地的联系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "炉体重新移至人物近旁和画面下部，人物接近炉缘与绿雾交界。",
+      "spatial_or_attention_effect": "同一圆台的连续参照将变化机位接回既有场地，保持交互区的可理解性。",
+      "expressive_effect": "补充炉周空间揭示；不推断人物心理或权力关系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064",
+        "rgb-0066"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "绿雾消退，人物与炉台间的裸露地面、台阶和距离关系显现。",
+      "spatial_or_attention_effect": "从雾中炉缘转为开阔通路，人物位置与炉台的前后联系更完整。",
+      "expressive_effect": "与前阶段共同支持有效空间揭示；消雾本身不单独构成构图增强。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "P-H-a",
+      "S-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。人物附近的稳定取景，与圆炉、柱体、台阶及地面通路的前后换位共同组织注意，连续揭示人物与炉周交互区域的空间联系，效果超出单纯把人物拍清楚。",
+    "adjacent_grade_explanation": "不判低：未见持续查找、无效遮挡、必要动作裁失或形体连接破坏。不止于中：增强来自6—19.5秒可对照的空间组织，非居中、绿色特效或纵深术语本身。",
+    "uncertainties": [
+      "仅评价已展示采样画面，不保证采样间每一瞬间均无短暂遮挡。",
+      "缓存分割未重跑，多项人物及炉体错分已拒绝，其派生数值均未参与判档。",
+      "缩略图不能确认细小动作、眼神及每个敌人的身份；这些细节不影响当前构图结论。"
+    ]
+  }
+}

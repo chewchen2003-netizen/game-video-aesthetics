@@ -1,0 +1,473 @@
+{
+  "sample_id": "R37",
+  "roles": [
+    {
+      "object_id": "route",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现第一人称对地面、开放料场及棚屋旁通路的观察和移动；观看对象随机位变化，并非固定人物。",
+      "uncertainty": "未提供任务目标，不能把路径区域命名解释为指定目的地。"
+    },
+    {
+      "object_id": "weapon",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "右下方第一人称枪械，后段抬起，占据右侧；提供操作视角参照。",
+      "uncertainty": "不能仅凭枪械抬起确认换弹或其他具体操作。"
+    },
+    {
+      "object_id": "landmarks",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "轮胎、木板、箱体、蓝色移动厕所、棚屋和门口，随阶段提供局部位置与通路参照。",
+      "uncertainty": "不推断其任务功能。"
+    },
+    {
+      "object_id": "yard",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "碎石坡、货运车厢及工业设施构成料场环境；后段棚屋墙面转为近处空间边界。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        2.5
+      ],
+      "necessary_information": "低头观察近处碎石、轮胎和木板，随后抬高视角；必要信息是近地物及其与料场的位置联系。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0008",
+        "rgb-0010"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        3,
+        10.5
+      ],
+      "necessary_information": "在开放料场转向、移动，箱体、蓝色厕所和货车提供方向参照；需保留绕行空间与地面。",
+      "input_evidence_ids": [
+        "rgb-0012",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        11,
+        14.5
+      ],
+      "necessary_information": "接近箱体及棚屋一侧，开放地面逐渐转为建筑旁通路；需辨认墙体、箱体与可见通行范围。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        15,
+        19.5
+      ],
+      "necessary_information": "沿棚屋边缘及结构间隙移动，先见明亮开口，再转向墙外碎石区域；需辨认近墙、支架、开口及落脚空间。",
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-ground_region",
+      "accepted": false,
+      "reason": "掩码把轮胎等独立物体并入局部地面，且没有形成与当前完整观看对象一致的区域；其占比、边界、色差和深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-navigation_region",
+      "accepted": false,
+      "reason": "掩码明显包含箱体立面并混入零碎地面，不能代表导航通路；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-navigation_region",
+      "accepted": false,
+      "reason": "箱旁地面掩码破碎、选择性漏分，不能代表可见通路的范围或边界；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-navigation_region",
+      "accepted": true,
+      "reason": "与箱前一块可见地面基本对应，可作为局部地面的位置与面积描述；不代表完整路径，不据此推断遮挡率、真实距离或美学效果。"
+    },
+    {
+      "measurement_id": "measure-0064-passage_region",
+      "accepted": true,
+      "reason": "基本覆盖墙体与右侧枪械之间的局部通行地面；仅接受该局部可见区域，不把其边界当作完整开口，也不以低亮度边界差直接判混淆。"
+    },
+    {
+      "measurement_id": "measure-0078-passage_region",
+      "accepted": false,
+      "reason": "掩码跨越后方岩壁与近处碎石地面，未区分不同朝向表面，不能作为通道区域；全部派生值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "观看重点随观察方向变化，未见固定目标的持续位置组织。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "枪械后段占幅增加，但未持续排除必要通路；无可靠完整主体面积测量。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "枪械和建筑造成局部遮挡，未证明遮显有超出移动所需的表达作用。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "后段暗部对比减弱，但轮廓及亮开口仍可辨；不以拒绝测量证明分离。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "没有需要评估完整连接或尺度的人物形体。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "没有入画人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "无人物视线及其观看关系；不把第一人称镜头朝向当成眼神证据。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "通路收窄来自接近建筑的正常移动，未见额外的受阻行动或特定目标揭示。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "可确认的是移动与枪械抬起；不能据缺少完整手部操作判具体动作信息丢失。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "连续地面、遮挡与建筑边界足以建立空间；未证明进一步围绕关键对象深化空间联系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "低头及抬高视角支持观察地面和前方，未见上下比例带来额外关系表达。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "枪械、墙体和支架的交叠未造成连接误读，也无充分的关系变化表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "e3"
+      ],
+      "uncertainty": "可识别建筑框取与透视纵深，作用主要为基本通路辨认，未独立构成增强。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "联系表和参考帧并置属于评审材料，原视频未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          2.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0010"
+      ],
+      "observation": "近地碎石、轮胎和斜向木板占主要视区，枪械处于右下；随后视角抬高，远处料场进入画面。",
+      "effect": "近处物体及地面关系可辨，低头取景与当前观察匹配；抬高视角补足环境，但没有明确关键对象揭示，增强未证明。",
+      "exceptions_checked": "第一人称近地观察不要求保留天空或人物；枪械贴边属于正常工具裁切。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          3,
+          10.5
+        ],
+        [
+          11,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0012",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0056",
+        "rgb-0058"
+      ],
+      "observation": "开放地面在箱体、蓝色厕所与货车之间展开，随后靠近棚屋；枪械从右下转为右侧抬起，10秒附近转向画面有模糊。",
+      "effect": "地面连续性及地标支持绕行方向和远近辨认；枪械虽增大，仍保留左中部地面及建筑边界。短暂模糊未形成持续寻找重点或必要路径丢失。",
+      "exceptions_checked": "不把正常转向当空间混乱；不由枪械姿态补写换弹动作；不把普通接近带来的尺度变化直接视为增强。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          15,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "近处棚屋墙体占左侧，支架及右侧枪械夹出局部通路，远处亮开口可见；末段转向墙外岩壁、碎石及细长设备。",
+      "effect": "墙、支架、地面与亮开口构成可读的近远层次，能够理解穿行和转向。框取主要支持当前移动，未见被阻断的行动、隐藏对象的关键显露或进一步空间关系，故不确认增强。",
+      "exceptions_checked": "暗部和局部遮挡符合建筑间穿行；末帧朝向岩壁不足以证明通路被意外裁掉或行动受阻；无须虚构遮挡百分比。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "呈现为单一第一人称视区，没有可供头部空间、人物视线和完整人体连接检查的角色，也未见原生多画面。",
+      "effect": "相关人物裁切指标及多画面组织不适用，不因此扣档。",
+      "exceptions_checked": "区分第一人称工具局部与人物结构异常；区分评审联系表与视频本身的分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016"
+      ],
+      "visible_change": "从近地轮胎、木板转为能见箱体、蓝色厕所和货车的开放料场。",
+      "spatial_or_attention_effect": "观看范围由局部地面扩展到环境地标，支持基本定位。",
+      "expressive_effect": "未见由局部对象引出的关键关系揭示，不能仅凭视角扩展确认增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "开放地面转为近墙与支架间的较窄视区；枪械保持右侧抬起。",
+      "spatial_or_attention_effect": "近墙与开口建立通行方向，枪械没有遮尽必要地面。",
+      "expressive_effect": "属于可理解的接近和穿行；尚无足够上下文将收窄解释为进一步受限表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064",
+        "rgb-0068"
+      ],
+      "after_evidence_ids": [
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "visible_change": "从建筑框内朝亮开口，转向墙外岩壁和碎石地面。",
+      "spatial_or_attention_effect": "遮挡边界随转向改变，近墙与外部地面仍可区分。",
+      "expressive_effect": "未出现可确认的关键对象或交互结果，不据此推断悬念或心理变化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3"
+    ],
+    "reason": "适用基础条件成立：观察对象、地标与通路基本可读，第一人称枪械及建筑遮挡没有持续破坏必要信息。近地到开放料场、再到建筑间穿行的变化建立了基本空间，但尚未证明超出正常导航的有效视觉增强。",
+    "adjacent_grade_explanation": "未发现足以判低的持续竞争、无效遮挡、关键裁切或空间误读；框取、纵深及尺度变化主要完成基本呈现，缺少可核查的进一步作用，因此不判高。",
+    "uncertainties": [
+      "仅依据提供的采样画面，不声称检查未提供时刻。",
+      "没有明确任务目标或完整枪械操作证据，不补写动作和情节。",
+      "缓存未重跑；拒绝测量的全部派生数值均未参与判档，接受的局部测量不作为增强依据。"
+    ]
+  }
+}

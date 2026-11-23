@@ -1,0 +1,559 @@
+{
+  "sample_id": "R48",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 2460.3
+    },
+    {
+      "id": "rgb-0001",
+      "frame_index": 1,
+      "time": 0.25,
+      "source_time": 2460.55
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 2460.8
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 2461.3
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 2461.8
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 2462.3
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 2462.8
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 2463.3
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 2463.8
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 2464.3
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 2464.8
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 2465.3
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 2465.8
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 2466.3
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 2466.8
+    },
+    {
+      "id": "rgb-0027",
+      "frame_index": 27,
+      "time": 6.75,
+      "source_time": 2467.05
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 2467.3
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 2467.8
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 2468.3
+    },
+    {
+      "id": "rgb-0033",
+      "frame_index": 33,
+      "time": 8.25,
+      "source_time": 2468.55
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 2468.8
+    },
+    {
+      "id": "rgb-0035",
+      "frame_index": 35,
+      "time": 8.75,
+      "source_time": 2469.05
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 2469.3
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 2469.8
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 2470.3
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 2470.8
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 2471.3
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 2471.8
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 2472.3
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 2472.8
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 2473.3
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 2473.8
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 2474.3
+    },
+    {
+      "id": "rgb-0057",
+      "frame_index": 57,
+      "time": 14.25,
+      "source_time": 2474.55
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 2474.8
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 2475.3
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 2475.8
+    },
+    {
+      "id": "rgb-0063",
+      "frame_index": 63,
+      "time": 15.75,
+      "source_time": 2476.05
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 2476.3
+    },
+    {
+      "id": "rgb-0065",
+      "frame_index": 65,
+      "time": 16.25,
+      "source_time": 2476.55
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 2476.8
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 2477.3
+    },
+    {
+      "id": "rgb-0069",
+      "frame_index": 69,
+      "time": 17.25,
+      "source_time": 2477.55
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 2477.8
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 2478.3
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 2478.8
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 2479.3
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 2479.8
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-tree_canopy_region",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "tree_canopy_region",
+      "valid": true,
+      "bbox": [
+        36,
+        0,
+        1178,
+        366
+      ],
+      "center": [
+        0.47421875,
+        0.25416666666666665
+      ],
+      "edge_distances": {
+        "left": 0.028125,
+        "right": 0.0796875,
+        "top": 0.0,
+        "bottom": 0.49166666666666664
+      },
+      "visible_ratio": 0.27845269097222225,
+      "color_JS": 0.5152290257000552,
+      "boundary_Lstar_median": 2.0294189453125,
+      "relative_inverse_depth_median": 1.8361608982086182,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-tree_canopy_region",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "tree_canopy_region",
+      "valid": true,
+      "bbox": [
+        407,
+        0,
+        1273,
+        713
+      ],
+      "center": [
+        0.65625,
+        0.4951388888888889
+      ],
+      "edge_distances": {
+        "left": 0.31796875,
+        "right": 0.00546875,
+        "top": 0.0,
+        "bottom": 0.009722222222222222
+      },
+      "visible_ratio": 0.18912434895833333,
+      "color_JS": 0.30582426922540806,
+      "boundary_Lstar_median": 0.0,
+      "relative_inverse_depth_median": 0.03682366758584976,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-passage_region",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "passage_region",
+      "valid": true,
+      "bbox": [
+        363,
+        125,
+        859,
+        673
+      ],
+      "center": [
+        0.47734375,
+        0.5541666666666667
+      ],
+      "edge_distances": {
+        "left": 0.28359375,
+        "right": 0.32890625,
+        "top": 0.1736111111111111,
+        "bottom": 0.06527777777777778
+      },
+      "visible_ratio": 0.17005750868055555,
+      "color_JS": 0.4378870613981274,
+      "boundary_Lstar_median": 8.00933837890625,
+      "relative_inverse_depth_median": 0.3366050720214844,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-red_near",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "red_near",
+      "valid": true,
+      "bbox": [
+        608,
+        173,
+        770,
+        437
+      ],
+      "center": [
+        0.53828125,
+        0.4236111111111111
+      ],
+      "edge_distances": {
+        "left": 0.475,
+        "right": 0.3984375,
+        "top": 0.24027777777777778,
+        "bottom": 0.39305555555555555
+      },
+      "visible_ratio": 0.025961371527777777,
+      "color_JS": 0.6528528117620456,
+      "boundary_Lstar_median": 5.46875,
+      "relative_inverse_depth_median": 2.0237579345703125,
+      "joints": {
+        "right_eye": [
+          713.9351806640625,
+          196.2498016357422
+        ],
+        "right_ear": [
+          696.7555541992188,
+          189.6023712158203
+        ],
+        "left_shoulder": [
+          671.2660522460938,
+          220.77902221679688
+        ],
+        "right_shoulder": [
+          658.681884765625,
+          220.53480529785156
+        ],
+        "left_elbow": [
+          694.71484375,
+          272.8429870605469
+        ],
+        "right_elbow": [
+          672.07421875,
+          282.2191467285156
+        ],
+        "right_wrist": [
+          709.0693359375,
+          278.64239501953125
+        ],
+        "left_hip": [
+          658.0009765625,
+          349.8969421386719
+        ],
+        "right_hip": [
+          648.98046875,
+          352.3093566894531
+        ],
+        "left_knee": [
+          685.5990600585938,
+          431.45892333984375
+        ],
+        "right_knee": [
+          674.1229858398438,
+          436.85711669921875
+        ],
+        "left_ankle": [
+          653.7943725585938,
+          508.2073974609375
+        ],
+        "right_ankle": [
+          650.7850952148438,
+          512.0729370117188
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-wall_region",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "wall_region",
+      "valid": true,
+      "bbox": [
+        681,
+        0,
+        1280,
+        720
+      ],
+      "center": [
+        0.766015625,
+        0.5
+      ],
+      "edge_distances": {
+        "left": 0.53203125,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.20869683159722222,
+      "color_JS": 0.749330326401518,
+      "boundary_Lstar_median": 35.41259765625,
+      "relative_inverse_depth_median": 9.815481185913086,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-red_far",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "red_far",
+      "valid": true,
+      "bbox": [
+        593,
+        344,
+        663,
+        516
+      ],
+      "center": [
+        0.490625,
+        0.5972222222222222
+      ],
+      "edge_distances": {
+        "left": 0.46328125,
+        "right": 0.48203125,
+        "top": 0.4777777777777778,
+        "bottom": 0.2833333333333333
+      },
+      "visible_ratio": 0.004039713541666667,
+      "color_JS": 0.4359925745558595,
+      "boundary_Lstar_median": 13.970947265625,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-doorway_region",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "doorway_region",
+      "valid": true,
+      "bbox": [
+        508,
+        13,
+        1088,
+        614
+      ],
+      "center": [
+        0.6234375,
+        0.4354166666666667
+      ],
+      "edge_distances": {
+        "left": 0.396875,
+        "right": 0.15,
+        "top": 0.018055555555555554,
+        "bottom": 0.14722222222222223
+      },
+      "visible_ratio": 0.17136393229166666,
+      "color_JS": 0.5126019982342278,
+      "boundary_Lstar_median": 7.86895751953125,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "e370ef5727ec7e2733430850adab9871286b6d591085efb672978fa7a75fc58b",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 48
+  }
+}

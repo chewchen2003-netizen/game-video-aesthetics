@@ -1,0 +1,515 @@
+{
+  "sample_id": "R10",
+  "roles": [
+    {
+      "object_id": "terrain",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现第一人称行进中的林地地形：起始岩面、草丘、林间地面及后段侧坡。",
+      "uncertainty": "缓存的早晚岩坡编号不证明是同一岩体。"
+    },
+    {
+      "object_id": "animals",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        0
+      ],
+      "description": "0秒清晰帧中部可见两只动物，是起始环境中的局部观看对象。",
+      "uncertainty": "后续未见可确认的持续交互，不将其设为全片主体。"
+    },
+    {
+      "object_id": "weapon",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "下部偏右的第一人称枪械及少量手部，提供稳定近景参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "vegetation",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "草、花及树木共同界定丘面、林间间隙与坡脚。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "distant_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "较远树木、山体与天空。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "necessary_information": "从初始岩面转向草地与树林；需辨认近地面、起始动物和前方地形，不能将枪械当作唯一主体。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0013"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        3.5,
+        9.5
+      ],
+      "necessary_information": "草丘成为主要观看区域，树木和远坡构成背景；需保留丘面起伏与可见前方范围。",
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        10,
+        15
+      ],
+      "necessary_information": "画面转向较密树林与坡脚，需辨认树干、林间地面和岩坡之间的前后关系。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        15.5,
+        19.5
+      ],
+      "necessary_information": "岩坡逐渐占据右侧大部，左侧保留树林与较低地面；需看清坡面倾向和侧向空间。",
+      "input_evidence_ids": [
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0073",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-rock_slope_early",
+      "accepted": false,
+      "reason": "掩码横跨蕨草、林地并纳入动物附近区域，未可靠对应清晰RGB中的裸露岩面；其位置、面积、色差和深度派生值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-grass_landform",
+      "accepted": true,
+      "reason": "掩码基本对应中央可见草丘，排除枪械；仅作为该局部可见草面区域，不代表完整地形或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-grass_landform",
+      "accepted": true,
+      "reason": "与前中景草丘大致吻合，枪械被排除；仅辅助确认可见区域及分布，不将其边缘当作地形完整边界。"
+    },
+    {
+      "measurement_id": "measure-0048-grass_landform",
+      "accepted": true,
+      "reason": "掩码基本覆盖树干间可见草地并绕开树干、枪械；是碎片化可见地面区域，不能据此计算完整主体遮挡比例。"
+    },
+    {
+      "measurement_id": "measure-0064-rock_slope_late",
+      "accepted": true,
+      "reason": "掩码贴合右侧岩坡主要可见部分，保留坡脚植被遮挡；仅用于局部岩坡，不与早期错误掩码作面积比较。"
+    },
+    {
+      "measurement_id": "measure-0078-rock_slope_late",
+      "accepted": true,
+      "reason": "与19.5秒清晰帧的右侧斜坡基本吻合，排除枪械及左下植被；深度缺失不补值。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "重点随可见地形改变，未证明位置变化具有超出正常行进观察的引导效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "后段坡面扩大但侧向参照仍可见；不由面积增长推断处境变化。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "植被、树干及枪械造成合理局部遮挡；无完整主体区域，不给遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "同色植被使局部边界较弱，但地形与树干关系仍可读；色差仅辅助，未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "仅少量第一人称手部适用，未见异常连接；没有强调手势或接触的证据。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "无需要呈现头部的人物；不能将树冠或动物套用人物头部空间条件。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "未见可确认的人物视线及观看对象关系，第一人称镜头朝向不冒充人物视线证据。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "前方地面和坡侧范围足以理解行进；没有证据证明通路被压缩到形成明确受阻关系。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E4",
+        "E5"
+      ],
+      "uncertainty": "可见行动主要是行进与转向，未出现必须入画的射击、命中或接触结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "枪械、草丘、树干、远坡形成可理解的距离参照，但未证明有更明确的空间揭示组织。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "天地比例及坡面斜向分布支持辨认高低；没有据此推断环境压迫或规模强化。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "树干、地面及枪械的交叠归属基本清楚，未见有依据的隔离、依附或关系转折。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可识别近景参照与地形层次、后段斜向坡面组织；效果支持空间辨认，未独立证明增强。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "联系表及参考帧是评审排版，不能当作原视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0013"
+      ],
+      "observation": "0秒清晰帧中动物位于中部林地，近处岩面与下部枪械可区分；随后所提供画面转向山坡和树林。",
+      "effect": "起始动物与所在环境可辨；动物未保持为后续重点，环境浏览的观看任务仍成立。",
+      "exceptions_checked": "动物未有后续持续交互依据，不将离开视区判为关键动作丢失；早期岩面错分数值未采用。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          3.5,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0038",
+        "measure-0016-grass_landform",
+        "measure-0032-grass_landform"
+      ],
+      "observation": "草丘横贯前中景，树木和远坡在其后，下部枪械保留近景参照；草丘及前方环境在多张采样帧中可辨。",
+      "effect": "形成基本地面起伏和远近关系；草面纹理密集但未造成持续寻找必要对象。",
+      "exceptions_checked": "草丘遮住其后低处是正常地形遮挡；未把可见掩码面积当作完整丘体面积，未把镜头变化称为独立主体运动。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          10,
+          15
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "measure-0048-grass_landform"
+      ],
+      "observation": "树干和树冠占据较多画面，草地、粉花在下部延伸，右后方岩坡逐渐进入关注范围；15秒参考图仍能辨认坡脚和林间间隙。",
+      "effect": "树干交叠未破坏地面、树林和岩坡的基本归属；空间可读，但未形成明确框取目标或依次揭示的关键对象。",
+      "exceptions_checked": "树木遮挡远景属于林地正常结构；不由较低边界色差直接认定主体混杂。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          15.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0073",
+        "rgb-0078",
+        "measure-0064-rock_slope_late",
+        "measure-0078-rock_slope_late"
+      ],
+      "observation": "右侧斜坡占据更大范围，左侧树林、坡脚植被和上方天空仍提供方向参照；19.5秒清晰帧可见坡面纹理及左侧较低空间。",
+      "effect": "坡面接近与侧向地形关系基本明确，没有持续挤掉理解行进所需的范围；尚不足以证明被包围、受阻或有目的的空间揭示。",
+      "exceptions_checked": "近坡占画面大部、画面倾斜不自动构成失衡；没有可核查的碰撞或退让，不推断行动受限。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "枪械稳定处于下部偏右并正常出框，可见少量手部；提供的原画面均是单一第一人称视区。",
+      "effect": "近景工具支持视角定位，没有遮住必须理解的操作或结果；人物头部、人物观看关系及多画面组织不适用。",
+      "exceptions_checked": "按第一人称正常身体与工具裁切处理；未发现足以确认的同一形体连接或尺度崩坏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "由俯见岩面、动物与林地转为较开阔草丘和远处树木。",
+      "spatial_or_attention_effect": "观看重点从起始局部对象转至前方地形，近处枪械保持视角参照。",
+      "expressive_effect": "支持连续环境观察，未证明动物与后续草丘存在额外叙事或构图联系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048",
+        "rgb-0060"
+      ],
+      "visible_change": "草丘前景转为树干更密集的林间地面，右侧岩坡更清楚。",
+      "spatial_or_attention_effect": "树干、坡脚与远坡共同维持基本远近关系。",
+      "expressive_effect": "未见可确认的目标揭示、关系转折或有意义的遮显。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0073",
+        "rgb-0078"
+      ],
+      "visible_change": "岩坡在右侧扩大，左侧树林及较低地面仍保留。",
+      "spatial_or_attention_effect": "近坡与低处树林的侧向关系更直接，但没有失去必要行进参照。",
+      "expressive_effect": "属于可读的接近与转向；没有充分证据把坡面扩大解释为受阻或显著增强的空间组织。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "reason": "主要内容是第一人称林地行进与地形浏览。各阶段必要地面、坡面及树林关系可辨，枪械裁切和植被遮挡具有合理解释，未确认适用基础条件失败。层次与后段坡面变化支持基本观看，但未证明超出正常环境辨认的注意引导或空间揭示。",
+    "adjacent_grade_explanation": "不判低：没有持续查找、关键裁切损失或空间误读的充分证据。不判高：前后变化虽清楚，但缺少将具体安排与进一步表达效果连接起来的证据。",
+    "uncertainties": [
+      "仅评价提供的采样时刻，不声称检查采样间全部帧。",
+      "早期岩坡分割被拒绝，全部派生值弃用；其他掩码只作可见局部区域的辅助。",
+      "没有完整主体掩码或可靠运动测量，不报告遮挡率、光流或世界运动方向数值；这些缺失不影响当前基础判断。"
+    ]
+  }
+}

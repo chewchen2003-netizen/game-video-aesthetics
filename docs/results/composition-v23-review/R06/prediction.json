@@ -1,0 +1,567 @@
+{
+  "sample_id": "R06",
+  "roles": [
+    {
+      "object_id": "hall",
+      "role": "subject",
+      "time_range": [
+        0.5,
+        13.0
+      ],
+      "description": "主要呈现对象为木饰面走廊、转角及可通行空间；不是人物场景。",
+      "uncertainty": "hall仅作为RGB空间角色使用，不沿用缓存掩码定义。"
+    },
+    {
+      "object_id": "opening_fixture",
+      "role": "subject",
+      "time_range": [
+        0.0,
+        0.5
+      ],
+      "description": "近处金属栅门与开口结构，随后显露后方走廊。",
+      "uncertainty": "具体设施用途不确定；不能据命名认定材质或功能。"
+    },
+    {
+      "object_id": "door",
+      "role": "foreground",
+      "time_range": [
+        4.5,
+        8.75
+      ],
+      "description": "近处门扇和门框随视点转动占据侧边，形成相邻空间的显露边界。",
+      "uncertainty": "不推断开门者或未见的手部动作。"
+    },
+    {
+      "object_id": "wooden_obstructions",
+      "role": "foreground",
+      "time_range": [
+        6.5,
+        19.5
+      ],
+      "description": "RGB可见弯曲木构件、立柱及框架，部分位于通道两侧或近处。",
+      "uncertainty": "缓存同名掩码多次覆盖墙面或通路，不能视为可靠对象区域；不确认全部构件实际封堵通路。"
+    },
+    {
+      "object_id": "telephone_table",
+      "role": "subject",
+      "time_range": [
+        10.5,
+        12.0
+      ],
+      "description": "靠墙小桌及绿色电话成为短暂观看重点，纸张为陪衬细节。",
+      "uncertainty": "未见拿取、拨号或其他交互。"
+    },
+    {
+      "object_id": "lamps_and_trim",
+      "role": "supporting_element",
+      "time_range": [
+        0.0,
+        19.5
+      ],
+      "description": "壁灯、墙裙与地板边线共同提供走廊方向和空间连续性。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "dark_passage",
+      "role": "subject",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "description": "较暗狭长通道及末端亮处；末端窗帘、壁灯与小架逐渐更清楚。",
+      "uncertainty": "暗部细节有限，不推断亮处之外的空间。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0.0,
+        4.0
+      ],
+      "necessary_information": "近处栅门转为走廊展示；需辨认开口、墙面与纵深方向。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0016"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        4.5,
+        10.0
+      ],
+      "necessary_information": "门边、转角和木构件之间的空间依次显露；需保留近处边界与后方通道的联系。",
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        10.5,
+        13.0
+      ],
+      "necessary_information": "从走廊转向桌上电话，再转回通道；需辨认电话所属桌面及其靠墙位置。",
+      "input_evidence_ids": [
+        "rgb-0042",
+        "rgb-0044",
+        "rgb-0045",
+        "rgb-0047",
+        "rgb-0048",
+        "rgb-0052"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "necessary_information": "进入较暗通道，沿边界与灯光辨认前方空间，末端陈设逐步显露。",
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-wooden_obstructions",
+      "accepted": false,
+      "reason": "无有效掩码或测量；不采用。"
+    },
+    {
+      "measurement_id": "measure-0000-opening_fixture",
+      "accepted": false,
+      "reason": "仅选中局部交叉栅条，未覆盖RGB主要栅门整体；不能代表设施占比、中心或完整边界，派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-hall",
+      "accepted": false,
+      "reason": "QA主要覆盖墙面、门等而排除地板，未形成完整走廊区域；整体占比及其派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-wooden_obstructions",
+      "accepted": false,
+      "reason": "掩码落在远侧墙面、灯及转角区域，不能对应明确木障碍物；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-hall",
+      "accepted": false,
+      "reason": "无有效区域；不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-wooden_obstructions",
+      "accepted": false,
+      "reason": "掩码覆盖开口后的墙面和地板，把可见通路当成障碍物；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-door",
+      "accepted": true,
+      "reason": "左侧门扇主体与RGB基本对应，可支持门扇位于左侧近处的粗略空间判断；不据边缘误差、颜色或单目深度推断遮挡率和美学效果。"
+    },
+    {
+      "measurement_id": "measure-0048-hall",
+      "accepted": false,
+      "reason": "走廊区域与墙面、桌后区域混合且边缘破碎，语义范围不足以代表完整空间；派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-wooden_obstructions",
+      "accepted": false,
+      "reason": "大量覆盖地板、门和远侧空间，未隔离木构件；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-dark_passage",
+      "accepted": false,
+      "reason": "主要覆盖两侧墙体而遗漏中央通路地面，不能代表完整暗通道；占比、区分度及深度等派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-dark_passage",
+      "accepted": false,
+      "reason": "无有效掩码；末端空间直接依据RGB判断。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "电话先由侧边进入重点，暗通道以末端灯光接续注意；不把亮度或居中本身当增强。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "仅作RGB定性比较；不采用被拒掩码面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "近处栅条与门框的遮显可由接近和转向解释，未证明额外隔离或受阻关系；无可靠遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-d",
+        "P-H-d"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "暗段细节减少，但末端亮处与近处暗框形成持续方向参照，随后出现对应陈设。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "未见需评价连接或尺度的人体。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "无人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "没有可核查的人物视线关系；镜头朝向不充当人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "序列支持视点沿通道推进或转向，前方范围足以理解路径；未证明逃离、受阻等进一步行动关系。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "没有需评价关键部位与结果的可见独立交互动作；不补造开门或电话操作。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "透视、近框遮显和跨景别回到通道共同支持空间联系，不依赖单目深度数值。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "地板、墙裙、壁灯的上下安排可读；倾斜与高低分布未单独建立额外关系。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "门框、木构件、桌面及墙体归属基本清楚；未见交叠本身传达依附或隔离关系。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "可识别门框框取及走廊线条引导；增强仅引用已证实的空间揭示，不另行加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [],
+      "uncertainty": "联系表及参考图是评审材料排版，原视频未见同时并置子画面。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0008",
+        "rgb-0012",
+        "rgb-0016"
+      ],
+      "observation": "起始金属栅条占据近处，随后视野转入走廊；地板、墙裙和连续壁灯延伸向后，走廊从局部显露转为主要内容。",
+      "effect": "近处开口与后方空间在序列中接续，观看由设施细部转到可延伸的通道，建立入口与内部空间的联系。",
+      "exceptions_checked": "栅条遮挡属于实际近景与转向显露，没有持续丢失必要对象；不将起始局部取景判为无效遮挡。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          4.5,
+          10.0
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0040",
+        "measure-0032-door"
+      ],
+      "observation": "4.5—5.0秒门边近景后显露侧向走廊；6.5—9.0秒门扇、弯曲木构件与通道交替进入画面。8.0秒左侧门扇和右侧开口仍可区分。",
+      "effect": "近框与后方地板、壁灯透视共同标明转角后的空间；视点变化补足局部遮挡后的通路联系，空间不是靠孤立远景猜接。",
+      "exceptions_checked": "近门占画面和画面倾斜符合贴近门边的视点变化；未见明确封堵、错误连接或持续路径误读，不推断木构件造成无法通行。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          10.5,
+          13.0
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0042",
+        "rgb-0043",
+        "rgb-0044",
+        "rgb-0045",
+        "rgb-0046",
+        "rgb-0047",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0052"
+      ],
+      "observation": "10.5秒桌子靠墙出现在走廊侧边，11.0—11.75秒桌面与绿色电话占据更大范围；12.0秒电话回到左近景，右侧通道重新展开，随后转回走廊。",
+      "effect": "先建立陈设在走廊中的位置，再呈现电话细部，最后以同框近桌与后方通道恢复环境联系；注意从空间收束到物件再返回空间。",
+      "exceptions_checked": "桌腿和部分桌面出框未损失电话识别与靠墙位置；没有可见电话操作，不评价其动作结果。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          13.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "observation": "进入暗通道后，两侧墙体和近处木框压暗，前方灯光及亮墙保留方向参照。15.0秒亮处较远，19.5秒可辨末端窗帘、壁灯与小架，近框仍在两侧。",
+      "effect": "近处暗边界、地面延伸和远处亮区共同把注意导向通道末端；随后放大的末端陈设兑现此前方向线索，逐步深化前景框架与终点空间的联系。",
+      "exceptions_checked": "17.0—18.0秒暗部辨认较弱，但可见边界与后续末端显露不足以支持持续定位失败；不据暗调推断人物心理，也不把镜头变化当对象运动。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0008",
+        "rgb-0016"
+      ],
+      "visible_change": "近处栅门细部让位于走廊及转角。",
+      "spatial_or_attention_effect": "由开口建立内部纵深，观看重点随空间显露转移。",
+      "expressive_effect": "支持有效空间揭示，不推断隔离含义。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0036"
+      ],
+      "visible_change": "近处门边之后，侧向走廊与木构件间的空间依次进入视野。",
+      "spatial_or_attention_effect": "局部边界与后方通路获得前后对应。",
+      "expressive_effect": "框取随转向揭示空间；未证明受阻行动。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0042"
+      ],
+      "after_evidence_ids": [
+        "rgb-0045",
+        "rgb-0047",
+        "rgb-0048"
+      ],
+      "visible_change": "侧边桌子转为电话近景，再出现近桌与远走廊的同框关系。",
+      "spatial_or_attention_effect": "从陈设位置到物件细部再回到环境，组织了观看顺序。",
+      "expressive_effect": "超出单纯放大物件，使细部保持明确的空间归属。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "远处亮区逐渐展开为可辨的窗帘、灯与小架。",
+      "spatial_or_attention_effect": "亮暗对照与近处框架持续指向同一末端区域。",
+      "expressive_effect": "方向引导与后续内容显露相互印证，形成有效纵深揭示。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "P-H-d",
+      "S-H-a"
+    ],
+    "decisive_event_ids": [
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。电话段由走廊侧边定位、近景细部再回到同框通道，暗通道段以近框和远处亮区引导，并逐步显露对应末端陈设；前后组织明确加强空间联系与观看顺序，达到O-H-d。",
+    "adjacent_grade_explanation": "高于中档的依据是可核查的连续空间揭示，而非门框、透视或暗调的存在。近门遮挡与暗部细节减少未造成已确认的持续观看干扰，因此不支持低档。",
+    "uncertainties": [
+      "缓存多数分割语义或覆盖范围不可靠，相关派生数值全部排除；结论主要来自RGB。",
+      "仅评价清单提供的采样时刻，不声称掌握采样间的完整动作。",
+      "没有可靠完整主体掩码，不计算遮挡率；未提供的哈希、模型运行信息不补造。"
+    ]
+  }
+}

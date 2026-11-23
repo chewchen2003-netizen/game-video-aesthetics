@@ -1,0 +1,519 @@
+{
+  "sample_id": "R39",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "蓝白发光的人形角色；连续画面主要呈现其沿岩坡移动、上行并到达草地。",
+      "uncertainty": "不推断任务、身份或心理。"
+    },
+    {
+      "object_id": "rock_terrain",
+      "role": "background",
+      "time_range": [
+        0,
+        18
+      ],
+      "description": "角色脚下及前方的岩坡、两侧岩壁与坡顶，是理解移动路径和高度变化的环境参照。",
+      "uncertainty": "缓存slope_region不等于经过确认的完整坡面。"
+    },
+    {
+      "object_id": "plateau_sky",
+      "role": "background",
+      "time_range": [
+        0.5,
+        19.5
+      ],
+      "description": "间歇显露的天空及后段出现的坡顶草地、树木和远处地形。",
+      "uncertainty": "没有明确独立陪体；草木不视为情节对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "necessary_information": "主体avatar在岩地中移动；需辨认角色、脚下坡面与前方地形。机位由较俯视转为较低角度，天空增多。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0011",
+        "rgb-0012",
+        "rgb-0013",
+        "rgb-0014"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        3.75,
+        10.5
+      ],
+      "necessary_information": "主体沿岩坡和岩壁边缘继续移动；需看清身体动作、接触坡面及侧方沟谷的空间关系。",
+      "input_evidence_ids": [
+        "rgb-0015",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        11,
+        17.5
+      ],
+      "necessary_information": "主体朝较陡的坡顶上行；需理解角色、近处岩面与上方草缘之间的连续关系。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        18,
+        19.5
+      ],
+      "necessary_information": "主体到达并继续穿行草地；坡面上方逐步展开为草地、树木和远景，构成前段上行的可见结果。",
+      "input_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": true,
+      "reason": "与rgb-0000的紧凑可见姿态基本吻合，可作可见位置、面积的辅助；关节点不作为精确解剖依据，不能推出遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0000-slope_region",
+      "accepted": false,
+      "reason": "掩码跨入角色并以任意边界截取连续地面，不能作为独立完整坡面；其面积、边界和深度派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": false,
+      "reason": "框及掩码未完整覆盖RGB可见下肢，关节点还延伸至框外；位置、面积、边距及其他派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-slope_region",
+      "accepted": false,
+      "reason": "混入角色，连续地形被不明边界截断，无法核实完整坡面归属；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": false,
+      "reason": "仅覆盖上半身，RGB中可见的髋腿明显在框外；全部派生值不采用，不能解释为真实遮挡。"
+    },
+    {
+      "measurement_id": "measure-0032-slope_region",
+      "accepted": false,
+      "reason": "坡面掩码吞入角色上身且区域边界缺少独立对象依据；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": false,
+      "reason": "下肢末端覆盖不足，框外仍有可见脚部，无法作为完整主体区域；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-slope_region",
+      "accepted": false,
+      "reason": "跨入主体，坡面上缘碎裂且区域截取不完整；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": false,
+      "reason": "RGB可见下肢延伸到框下，掩码漏掉腿脚；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-slope_region",
+      "accepted": false,
+      "reason": "混入主体，覆盖范围不能对应一个可靠完整坡面；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": true,
+      "reason": "框及可见掩码基本覆盖RGB中的角色，可辅助位置和可见面积判断；不采用精确关节解释，无深度值及遮挡率可用。"
+    },
+    {
+      "measurement_id": "measure-0078-slope_region",
+      "accepted": false,
+      "reason": "RGB主要是坡顶草地，掩码不能验证为命名所指的坡面，且混入角色；派生值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "角色持续处于易定位的中下部；稳定跟随本身未另证位置表达增强。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "大小变化未妨碍动作和环境理解；不将近大远小单独解释为关系增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "未见持续无效遮挡；草叶局部交叠未造成定位丢失，不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "蓝白发光轮廓使主体在暗岩和草地上可辨；这是有效突出，未独立证明更深关系。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "低角度阶段腿脚接近或经过下边界，属于跟随取景；未见同一身体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "头部完整且未贴框受损；坡顶边缘不是画框上缘，不据此推断压迫。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "没有可独立确认的注视对象或观看交互；身体朝向用于运动方向判断，不冒充视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "前方由近岩面和上沿转为展开的草地，配合上行动作明确呈现越过坡顶的空间变化；不推断逃离或情绪。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "移动、上行及到达草地的结果可读；短时腿脚贴下缘未截去必要交互结果，无特殊局部取舍增强。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "依据岩面、侧谷、草缘到开阔远景的连续显露判断，不采用被拒绝区域的单目深度。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "上方草缘与近处高占幅岩面先建立高度关系，越顶后岩壁退出、天空和地表远景展开，强化实际地形转换。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "角色与岩面接触及草木交叠归属清楚；没有另证交叠传达隔离或依附。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可识别岩壁、坡顶边界与远景的层次组织；增强仅解释已证明的空间揭示，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "原视频未见分屏或画中画；输入联系表和参考帧并置属于评审材料。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0011",
+        "rgb-0012",
+        "rgb-0013",
+        "rgb-0014"
+      ],
+      "observation": "角色位于中央附近，蓝白轮廓区别于暗岩；后续机位降低，天空面积增加，角色腿脚更接近下边界。",
+      "effect": "主体易定位，岩地移动可读；机位和大小变化本身不足以证明表达增强。",
+      "exceptions_checked": "低角度的局部腿脚出框按正常跟随取景检查，未见连接崩坏或关键动作含义丢失；首帧紧凑姿态不视作肢体缺失。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          3.75,
+          10.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0015",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0042"
+      ],
+      "observation": "角色沿近处岩面移动，5秒参考画面及10秒清晰帧可见角色、近岩面与右侧较低沟谷；身体和接触区域保持可读。",
+      "effect": "侧方沟谷与近岩面共同提供远近、高低参照，使贴坡移动的空间关系明确，并为后段越顶提供地形上下文。",
+      "exceptions_checked": "未把坡面接触当成无效遮挡；缓存漏腿不等于RGB中腿被遮挡，也不据其判断身体结构。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          11,
+          17.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "observation": "近岩坡占据大部画面，角色在中下部向上方草缘移动；15秒参考画面清楚显示身体面对岩坡及坡顶位置。",
+      "effect": "岩面、上沿和主体上行动作共同建立尚待越过的高度与前方边界；观看注意由角色沿坡面接至草缘。",
+      "exceptions_checked": "近岩面符合当前上行呈现，未见必须入画的目标被遗漏；不把岩壁占幅大或头顶空间单独解释为压迫。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          18,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "角色进入草地继续移动；原先挡在前方的近坡面退出主要视区，树木、较远地形和大范围天空显露，19.5秒清晰帧保留完整主要动作。",
+      "effect": "前段的上行和后段草地展开形成可核查的空间结果，观众能把岩坡上沿与坡顶地表连接起来，超出单帧角色可辨的基础功能。",
+      "exceptions_checked": "草叶与腿部局部重叠不妨碍定位；天空虽醒目，角色发光轮廓仍稳定可读；不由景观展开推断心理释放。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0011",
+        "rgb-0012",
+        "rgb-0013"
+      ],
+      "visible_change": "由较俯视的岩面取景转为较低角度，角色增大、天空增多。",
+      "spatial_or_attention_effect": "角色仍易定位，取景变化没有造成持续查找；不能仅由角度变化证明增强。",
+      "expressive_effect": "未独立确认。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "侧方沟谷参照转为近岩坡及上方草缘主导。",
+      "spatial_or_attention_effect": "观看路径从贴坡移动转向上沿，前方高度边界与上行动作相互支持。",
+      "expressive_effect": "明确主体与坡顶的地形关系，为越顶揭示建立上下文。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "近岩壁和草缘转为可穿行草地、树木及远景。",
+      "spatial_or_attention_effect": "前方可见范围展开，连续呈现从坡面到坡顶的空间连接。",
+      "expressive_effect": "上行过程获得明确可见结果，构成有效空间揭示；无须附加情绪解释。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "C-H-d",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立，未见持续主体查找、必要动作裁切损失或形体结构破坏。岩面、侧谷和坡顶草缘随主体上行逐步转换为开阔草地远景，具体建立并深化坡面与坡顶的空间联系，达到有效空间揭示的增强。",
+    "adjacent_grade_explanation": "高于中档的依据是E2—E4中地形参照、行动与显露结果共同组织空间，而非居中、发光或天空漂亮。局部低角度裁切未形成明确基础失败。",
+    "uncertainties": [
+      "仅判断所提供的采样画面，不声称观察采样间全部瞬时状态。",
+      "被拒绝测量及其派生值均未用于判档；无可靠遮挡百分比。",
+      "未重跑CV；角色精确关节、注视对象及地形真实距离未确认。"
+    ]
+  }
+}

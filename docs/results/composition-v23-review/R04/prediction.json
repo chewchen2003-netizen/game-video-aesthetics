@@ -1,0 +1,611 @@
+{
+  "sample_id": "R04",
+  "roles": [
+    {
+      "object_id": "o1",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第一人称手臂、腕部圆形装置；开头蓝色发光，后段间歇露手。不是全片唯一主体。",
+      "uncertainty": "后段缓存多次把地面或植物当作手。"
+    },
+    {
+      "object_id": "o2",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "当前观察和移动经过的近处地面、沙地及林间通路。",
+      "uncertainty": "缓存区域常混入植被，只作为宽泛空间对象编号。"
+    },
+    {
+      "object_id": "o3",
+      "role": "subject",
+      "time_range": [
+        0,
+        12
+      ],
+      "description": "开头岩壁缺口后方的水面、岸线，转向后移至画面左侧。",
+      "uncertainty": "部分掩码混入沙岸，不能等同完整水面。"
+    },
+    {
+      "object_id": "o4",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "开头左侧岩壁，随后所见岩体与较远环境。",
+      "uncertainty": "后段编号发生语义漂移，不能视为同一岩体的可靠跟踪。"
+    },
+    {
+      "object_id": "o5",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "树干、藤蔓、蕨类等包围观察空间的植被。",
+      "uncertainty": "远近角色随转向变化；缓存后段混入地面和远景。"
+    },
+    {
+      "object_id": "o6",
+      "role": "background",
+      "time_range": [
+        12,
+        16
+      ],
+      "description": "林内局部植被与横斜树干所在区域。",
+      "uncertainty": "未确认独立、连续可跟踪的对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        7.5
+      ],
+      "necessary_information": "呈现发光手腕与热带岸边环境；须辨认手部、岩壁与树干之间的水岸开口。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0030"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        8,
+        12.5
+      ],
+      "necessary_information": "视点转动，岩体、近树和沙岸先后进入主要视区；须辨认近处通行范围及水岸与树林的方位变化。",
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0042",
+        "rgb-0048",
+        "rgb-0050"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        12.75,
+        19.5
+      ],
+      "necessary_information": "转向林内并逐渐俯看地面；须辨认植被、横斜树干、近处落脚区域与间歇入画的手。无可确认的拾取或接触结果。",
+      "input_evidence_ids": [
+        "rgb-0051",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-o1",
+      "accepted": true,
+      "reason": "手与腕部装置区域基本吻合；仅采用可见区域，不推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0000-o2",
+      "accepted": false,
+      "reason": "通路掩码跨入周围植物，不能作为完整对象面积或边界。"
+    },
+    {
+      "measurement_id": "measure-0000-o3",
+      "accepted": false,
+      "reason": "混入岸边沙地，水面边界不可靠。"
+    },
+    {
+      "measurement_id": "measure-0000-o4",
+      "accepted": true,
+      "reason": "左侧岩壁主轮廓基本对应RGB；只作粗略空间佐证。"
+    },
+    {
+      "measurement_id": "measure-0000-o5",
+      "accepted": false,
+      "reason": "合并主树干与后方棕榈，不能代表单一树体。"
+    },
+    {
+      "measurement_id": "measure-0016-o1",
+      "accepted": true,
+      "reason": "手腕与装置基本对应；左下裁切是正常第一人称取景。"
+    },
+    {
+      "measurement_id": "measure-0016-o2",
+      "accepted": false,
+      "reason": "近地面与植被混分，派生面积及分离值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-o3",
+      "accepted": false,
+      "reason": "水面、沙岸边界混合。"
+    },
+    {
+      "measurement_id": "measure-0016-o4",
+      "accepted": true,
+      "reason": "岩壁主体区域可对应；不将漏掉的附着植被解释为遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-o5",
+      "accepted": false,
+      "reason": "多个远近树干合并且轮廓不完整。"
+    },
+    {
+      "measurement_id": "measure-0032-o1",
+      "accepted": false,
+      "reason": "RGB已无该范围手臂，掩码落在地面和植被。"
+    },
+    {
+      "measurement_id": "measure-0032-o2",
+      "accepted": false,
+      "reason": "地面与前景植物混合，区域归属不稳定。"
+    },
+    {
+      "measurement_id": "measure-0032-o3",
+      "accepted": false,
+      "reason": "转向后选中岸地，不能沿用水面对象测量。"
+    },
+    {
+      "measurement_id": "measure-0032-o4",
+      "accepted": true,
+      "reason": "左侧大岩体基本对应，可作粗略位置参考。"
+    },
+    {
+      "measurement_id": "measure-0032-o5",
+      "accepted": false,
+      "reason": "远景、树木和近处地面大范围合并。"
+    },
+    {
+      "measurement_id": "measure-0048-o1",
+      "accepted": false,
+      "reason": "沙地被识别成手臂。"
+    },
+    {
+      "measurement_id": "measure-0048-o2",
+      "accepted": true,
+      "reason": "近处连续沙地区域基本对应；仅作地面范围佐证。"
+    },
+    {
+      "measurement_id": "measure-0048-o3",
+      "accepted": false,
+      "reason": "左侧水岸混分且不完整。"
+    },
+    {
+      "measurement_id": "measure-0048-o4",
+      "accepted": false,
+      "reason": "暗处植被与远景被合为岩体，语义和边界不可靠。"
+    },
+    {
+      "measurement_id": "measure-0048-o5",
+      "accepted": false,
+      "reason": "把多个树干及横斜树体合并，不能作单对象尺度依据。"
+    },
+    {
+      "measurement_id": "measure-0048-o6",
+      "accepted": false,
+      "reason": "林内碎片区域，未对应清楚的独立物体。"
+    },
+    {
+      "measurement_id": "measure-0064-o1",
+      "accepted": false,
+      "reason": "右下植物被识别成手。"
+    },
+    {
+      "measurement_id": "measure-0064-o2",
+      "accepted": false,
+      "reason": "地面掩码混入蕨叶，完整范围不可靠。"
+    },
+    {
+      "measurement_id": "measure-0064-o4",
+      "accepted": false,
+      "reason": "树干、岩体和远景混合，不能沿用岩体跟踪。"
+    },
+    {
+      "measurement_id": "measure-0064-o5",
+      "accepted": false,
+      "reason": "覆盖大片地面，与植被对象不符。"
+    },
+    {
+      "measurement_id": "measure-0064-o6",
+      "accepted": false,
+      "reason": "远景碎片与树体合并，缺少独立对象边界。"
+    },
+    {
+      "measurement_id": "measure-0078-o1",
+      "accepted": false,
+      "reason": "缓存框在右下；清晰RGB的手位于下方偏左，明显错位。"
+    },
+    {
+      "measurement_id": "measure-0078-o2",
+      "accepted": true,
+      "reason": "下部近地面基本吻合；不用于推断手部关系。"
+    },
+    {
+      "measurement_id": "measure-0078-o4",
+      "accepted": false,
+      "reason": "上部地面被沿用为岩体，语义漂移。"
+    },
+    {
+      "measurement_id": "measure-0078-o5",
+      "accepted": false,
+      "reason": "大片地面混入植被类别。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "环境为主要呈现对象；转向时重点随视区改变，无持续查找问题，但未证明额外的位置表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "手、水岸及近地面大小适合各阶段观察；景物占比变化尚不足以证明进一步关系。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "树叶和岩体局部遮挡符合林间视点，没有必要对象持续丢失；不计算遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "蓝光手与暗地面、明沙与暗林基本可分；光色对比首先服务辨认。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "入画手臂为正常第一人称局部，未见同一形体连接崩坏；无接触关系增强证据。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "未呈现需要评估头顶空间的人物。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "相机转向不等于已确认的人物视线关系，无可核查的人物观看对象。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "转向及前移时近处地面范围可读；未见路径压缩与受阻行动形成明确联系。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "发光手部和末段伸手局部得到保留；未确认拾取、施放目标或结果，不能假设关键结果遭裁切。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "树干遮叠、岸线和地面连续变化支持远近辨认；尚未形成超出常规环境巡视的明确空间揭示效果。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "前段下地面、上树冠，末段俯看地表，符合观察内容；无规模或处境关系的额外证明。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "横斜树干与竖树、蕨叶与地面基本可区分，未见连接归属误读，也未证明依附或隔离表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "insufficient_evidence",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "可识别岩壁与树干框取水岸、前后层次；机制成立，但术语与局部漂亮不足以证明增强。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "联系表属于评审材料，不是游戏片内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          7.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0030",
+        "measure-0000-o1",
+        "measure-0000-o4",
+        "measure-0016-o1",
+        "measure-0016-o4"
+      ],
+      "observation": "左下发光手腕、左侧暗岩与右侧藤树共同围出中间水岸开口；构图在这些已提供采样中基本稳定。",
+      "effect": "手部和水岸均易辨认，近地面到远岸关系清楚；框取与蓝光提供基础观看重点，缺少进一步交互或关系变化佐证。",
+      "exceptions_checked": "第一人称手臂正常截出画框；岩树遮挡水岸边缘并未抹去必要开口。不将发光推断为攻击或任务行为。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          8,
+          12.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0041",
+        "rgb-0042",
+        "rgb-0048",
+        "rgb-0050",
+        "measure-0032-o4",
+        "measure-0048-o2"
+      ],
+      "observation": "视点转过暗岩和近树，10秒附近岩体占右侧，10.5秒后明沙及左侧水岸重新显露，随后转向树林。",
+      "effect": "局部暗景仍保留树干、沙地与岩体参照，转向后通行范围可读。变化能交代巡视方位，但不足以证明特别的受阻、接近或空间关系强化。",
+      "exceptions_checked": "相机转动造成的屏幕位移不当作对象自身运动；未见必须持续保持入画的目标，水岸移出不构成信息丢失。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          12.75,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0051",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078",
+        "measure-0078-o2"
+      ],
+      "observation": "林内蕨类占前景，竖树与横斜树干在后方交叠；后段视区逐渐转向近地面，19.5秒可见地表石块、明暗带和下缘偏左的手。",
+      "effect": "环境巡视转为近处地表观察，地面范围和植物归属基本可读；未见明确接触对象及结果，不能把俯视或伸手解释为特定关系表达。",
+      "exceptions_checked": "近叶遮挡属环境内合理遮叠；手出入画与下缘裁切符合第一人称，不存在已确认的结构破坏。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "游戏RGB均为单一连续视区；网格、参考放大图和分割联系表是输入展示形式。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "不把评审排版判成片内分屏或画中画。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0028",
+        "rgb-0030"
+      ],
+      "after_evidence_ids": [
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040"
+      ],
+      "visible_change": "发光手离开主要视区，水岸开口转为岩体、树干与近处沙地。",
+      "spatial_or_attention_effect": "注意由手及水岸转向环境方位和近处空间；保留基本参照。",
+      "expressive_effect": "可确认内容重心改变，未证明额外关系表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0041"
+      ],
+      "after_evidence_ids": [
+        "rgb-0042",
+        "rgb-0048"
+      ],
+      "visible_change": "右侧大块暗岩退至画外，明亮沙岸及水边进入视区。",
+      "spatial_or_attention_effect": "可见地面扩展，明暗区及岸线使空间重新易读。",
+      "expressive_effect": "支持环境呈现，未见行动与阻隔建立更强联系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "林中树体与蕨叶为主的视区逐渐变为近地表，手在末段入画。",
+      "spatial_or_attention_effect": "观看重点收向近处石块、地表纹理及落脚区域。",
+      "expressive_effect": "没有清楚的目标接触或结果，不能将普通俯看升级为行为意义强化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3"
+    ],
+    "reason": "适用基础成立：手部与环境重点可读，转向期间仍有岩体、岸线、树干和地面参照；第一人称裁切合理，未确认持续无效遮挡或形体结构破坏。框取、层次与俯看变化尚只证明基本呈现，未形成足够明确的进一步表达证据。",
+    "adjacent_grade_explanation": "不判低：没有可核查的必要信息损失或持续辨认负担。不判高：常规巡视与局部框取尚不足以证明超出基本可辨的关系强化或空间揭示。",
+    "uncertainties": [
+      "缓存未经重跑；拒绝项的派生数值全部不采用。",
+      "无完整主体区域和无模态掩码，不报告遮挡百分比；单目逆深度不作为真实距离。",
+      "判断限于所给采样和清晰原帧，不声称观察采样间瞬时动作；未提供可核验的具体任务目标。"
+    ]
+  }
+}

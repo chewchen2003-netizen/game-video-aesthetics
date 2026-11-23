@@ -1,0 +1,496 @@
+{
+  "sample_id": "R41",
+  "roles": [
+    {
+      "object_id": "front_white_car",
+      "role": "subject",
+      "time_range": [
+        0,
+        13.25
+      ],
+      "description": "第一人称驾驶画面正前方的白车，是道路观看重点。",
+      "uncertainty": "不推断其任务身份；下部受座舱正常遮挡。"
+    },
+    {
+      "object_id": "dashboard_region",
+      "role": "foreground",
+      "time_range": [
+        0,
+        13.25
+      ],
+      "description": "方向盘、仪表与中控构成近处座舱参照。",
+      "uncertainty": "缓存区域并非完整仪表台。"
+    },
+    {
+      "object_id": "navigation_screen",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        13.25
+      ],
+      "description": "中控导航屏补充道路与路线信息。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "street_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        13.25
+      ],
+      "description": "街道、其他车辆、建筑和树木建立道路环境。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "map_land_region",
+      "role": "subject",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "description": "全屏城市地图；道路、港区及后段路线与车辆标记共同构成观看内容。",
+      "uncertainty": "陆地区域不等于完整地图主体；不确认与驾驶画面中具体街道的对应。"
+    },
+    {
+      "object_id": "map_water",
+      "role": "background",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "description": "右侧水域与港湾轮廓提供地图方位参照。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        13.25
+      ],
+      "necessary_information": "呈现座舱内向前观察的道路场景；须辨认前方白车、道路范围、座舱与导航屏的空间归属。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0053"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        13.5,
+        19.5
+      ],
+      "necessary_information": "切为城市地图；须辨认陆水边界、道路与港区，以及后段出现的路线和车辆标记。无需将平面地图解释为三维空间。",
+      "input_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-front_white_car",
+      "accepted": true,
+      "reason": "QA区域与正前方白车可见上部基本对应；仅作可见区域的位置和尺度辅助，不代表完整车体或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0000-dashboard_region",
+      "accepted": false,
+      "reason": "掩码混合方向盘、中控和下方零散区域，并漏掉大部仪表台；拒用其面积、颜色和深度等派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-front_white_car",
+      "accepted": true,
+      "reason": "4秒QA与RGB位置对应，可用于可见车身定位；不据此推算完整车体面积或遮挡。"
+    },
+    {
+      "measurement_id": "measure-0016-dashboard_region",
+      "accepted": false,
+      "reason": "仍为破碎的方向盘与中控混合区域，不能代表完整仪表台；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-front_white_car",
+      "accepted": true,
+      "reason": "8秒QA的可见车辆区域与RGB基本吻合；只接受可见区域几何辅助。"
+    },
+    {
+      "measurement_id": "measure-0032-dashboard_region",
+      "accepted": false,
+      "reason": "存在大片漏分和不连续区域，语义覆盖不完整；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-front_white_car",
+      "accepted": true,
+      "reason": "12秒QA仍能对应前车可见部分；正常下部遮挡不能转成遮挡百分比。"
+    },
+    {
+      "measurement_id": "measure-0048-dashboard_region",
+      "accepted": false,
+      "reason": "中控掩码明显破碎且覆盖随帧改变，不能将面积变化解释为构图变化；全部派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-map_land_region",
+      "accepted": true,
+      "reason": "QA基本沿陆地与水域区分，可辅助判断平面分布；不把陆地面积当完整主体面积，单目深度不用于地图空间判断。"
+    },
+    {
+      "measurement_id": "measure-0078-map_land_region",
+      "accepted": true,
+      "reason": "QA与19.5秒陆地轮廓基本对应；仅作陆水几何辅助，不承担路线识别或遮挡判断。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "前车与地图观看重点均可定位；未证明位置变化形成额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "前车虽占比不大但清楚，地图道路与路线可辨；界面切换本身不足以证明增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "不计算遮挡率；正常座舱遮挡未导致前车持续丢失。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "白车与暗背景、彩色路线与灰色地图的区分支持基本阅读，未见进一步表达依据。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "无承担必要内容的人体呈现，不能把车辆和座舱裁切当肢体连接问题。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "无适用人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "第一人称视野不等于可核查的人物视线行为，未见需要评价的观看关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "适用于可见邻车经过的道路交互；不据画面位移断言本车行进方向。地图阶段不适用。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "邻车经过与地图路线显示的必要对象均保留；不要求显示操作地图的手部。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "座舱到街道的层次清楚，地图通路可读；未证明地图与前段具体街道的连续空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "下方座舱与上方道路分工清楚；地图上下分布未挤掉必要路线信息，也未证明额外效果。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "方向盘、车辆及地图图标边界基本可辨；不将同一正常遮挡重复视为损害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "可识别座舱框取、透视层次及地图路线引导；其效果止于当前可证明的基本空间阅读。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "仅评价实际游戏中的导航屏与镜面嵌套；联系表及底部参考并置不是视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          13.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0053"
+      ],
+      "observation": "白车位于挡风玻璃中央偏右，方向盘和中控在下方，建筑与树木分列街道两侧；座舱边框限定向前视野。",
+      "effect": "白车、道路与近处座舱归属明确，前中后层次可直接建立。框取和透视尚未提供超出基本驾驶视野的关系表达。",
+      "exceptions_checked": "方向盘遮住前车下部、座舱在底部出框均属第一人称正常取景；没有必要人体结构可评。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          10.5,
+          13.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0042",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0053"
+      ],
+      "observation": "左侧邻车进入近处侧窗区域，前方白车仍留在挡风玻璃视区内。",
+      "effect": "侧向车辆变化与正前方观看重点可以同时理解，未见必要道路交互因裁切丢失；没有可证实的迫近或受困表达。",
+      "exceptions_checked": "邻车局部离框属正常经过；不从相对位移推断本车速度，也不把正常前景变化判作无效遮挡。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          13.25,
+          13.5
+        ],
+        [
+          13.5,
+          16
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0053",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "observation": "13.25秒仍为座舱，13.5秒已切成全屏地图；陆地道路集中于左侧及中部，右侧为水域，港湾形状清楚。",
+      "effect": "观看任务从道路观察转为城市平面定位；界面切换清楚，陆水分区有助于识别港区，但不能据此认定前段街道的具体位置已被揭示。",
+      "exceptions_checked": "地图采用二维表示，不要求透视纵深；此处是前后切换，不是同时分屏。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          16,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "observation": "对照地图后段，19.5秒清晰帧中蓝紫路线沿港区道路连接底部车辆标记与右上方橙色标记；周围道路与陆水边界仍可辨。",
+      "effect": "路线颜色建立起点至目标的基本阅读路径。未见更充分的前后空间对应，不能仅凭路线引导将其认定为超出功能呈现的增强。",
+      "exceptions_checked": "地图边缘裁去部分城市符合局部地图视区；可见路线没有因裁切而失去关键连接。未推断任何未展示的选点过程。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          13.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "observation": "中控导航屏嵌在右下座舱，侧镜和后视镜显示反射视区；各区与正前方道路有明确边框。0秒与10秒导航屏的文字覆盖不同，道路线形仍在。",
+      "effect": "嵌套视区补充导航及周边信息，没有持续争抢主视野；未证明反射内容与当前行动形成进一步的同步关系或反差。",
+      "exceptions_checked": "镜中对象与实际对象分属不同视区，不拼接为同一形体；评审联系表不作为视频多画面手法。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0053"
+      ],
+      "visible_change": "前车位置总体稳定，左侧近处交通发生变化，导航屏覆盖信息有所变化。",
+      "spatial_or_attention_effect": "正前方观看重点持续可定位，侧向交通未破坏主要道路关系。",
+      "expressive_effect": "没有充分依据从这些变化推断额外关系或情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0053"
+      ],
+      "after_evidence_ids": [
+        "rgb-0054",
+        "rgb-0060"
+      ],
+      "visible_change": "座舱视野切为全屏城市地图。",
+      "spatial_or_attention_effect": "从局部道路观看转为城市和港区平面浏览。",
+      "expressive_effect": "未确认同一地点的跨景别对应，普通界面切换不足以支持空间揭示增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0078"
+      ],
+      "visible_change": "后段清晰地图可见蓝紫路线及底部车辆标记。",
+      "spatial_or_attention_effect": "路线与灰色路网区分，连接关系可读。",
+      "expressive_effect": "证明功能性定位成立，尚不足证明进一步表达。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "reason": "两个阶段的必要对象与空间关系均可读；正常座舱遮挡、邻车经过和地图边缘裁切未造成基础失败。地图路线及嵌套导航提供基本信息组织，但未证明超出基本辨认的有效关系或空间揭示。",
+    "adjacent_grade_explanation": "无持续查找、关键裁切损失或结构崩坏支持低档；框取、层次和路线存在，但缺少进一步效果的证据桥，故不判高。",
+    "uncertainties": [
+      "未重跑CV；四条仪表台测量拒绝，判断以RGB为准。",
+      "接受的分割仅用于其可信可见几何范围，不采用遮挡百分比或地图单目深度。",
+      "联系表不足以确认所有细小图标含义及路线出现的精确瞬间；这些缺失不影响基础成立与增强未证明的结论。"
+    ]
+  }
+}

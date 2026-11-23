@@ -1,0 +1,547 @@
+{
+  "sample_id": "R25",
+  "roles": [
+    {
+      "object_id": "cat_player",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "蓝绿头部、紫色手套与靴子的拟人角色；连续进行滑行、攀升和跨台跳跃。",
+      "uncertainty": "角色身份依据RGB外观和动作连续性确认，不依赖缓存命名。"
+    },
+    {
+      "object_id": "traversal_targets",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "发光路径、蓝色节点及先后接近的岩台；与角色移动直接关联。",
+      "uncertainty": "不确定每个节点的玩法名称。"
+    },
+    {
+      "object_id": "floating_companion",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "角色侧方反复可见的悬浮机械物。",
+      "uncertainty": "具体功能未提供。"
+    },
+    {
+      "object_id": "near_rocks",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近镜岩壁、石柱和平台边缘，提供跨越与遮叠参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "canyon_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "峡谷岩壁、黄色沙坡、天空星体及后段植被平台。",
+      "uncertainty": "岩台随镜头推进转换为行动目标，角色随阶段变化。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        6
+      ],
+      "necessary_information": "角色沿发光轨迹接近并到达岩台；须看清角色、路径、落点及间隔。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022",
+        "rgb-0024"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6.5,
+        9.75
+      ],
+      "necessary_information": "角色转向上方岩台并攀升；须保留身体姿态、上方节点和岩壁层级。",
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0027",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0039"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        10,
+        17.5
+      ],
+      "necessary_information": "角色穿越石柱间隙、逐步接近植被高台；须理解当前跨越间隔、目标高度及落点关系。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        17.75,
+        19.5
+      ],
+      "necessary_information": "角色抵达植被平台并继续向前；须看清落地结果、平台边界与后续可行区域。",
+      "input_evidence_ids": [
+        "rgb-0071",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-cat_player",
+      "accepted": false,
+      "reason": "QA与清晰RGB对照，掩码及框遗漏上举手臂等外伸部位；不采用其中心、面积、边距及其他派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-cat_player",
+      "accepted": false,
+      "reason": "QA主体区域未可靠包含外伸肢体和尾部，且与强亮轨迹交接；不作为完整主体测量采用，全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-landing_platform",
+      "accepted": false,
+      "reason": "掩码明显并入右侧竖直岩壁，未独立分出落脚平台；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-cat_player",
+      "accepted": false,
+      "reason": "QA未覆盖向上伸出的手臂，主体还在画面下边缘发生正常裁切；不足以代表完整可见形体，全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-cat_player",
+      "accepted": false,
+      "reason": "QA对紫色外伸靴部、尾部等覆盖不完整；不将局部掩码作为主体面积或边距依据，全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-cat_player",
+      "accepted": false,
+      "reason": "掩码下部明显并入角色下方岩石，形成非人体块状延伸；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-cat_player",
+      "accepted": false,
+      "reason": "掩码过窄，遗漏两侧手臂等可见部分；全部派生值弃用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": ""
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "仅比较RGB中的相对景别，不使用拒绝掩码的占比。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "未证明遮显具有额外表达作用；不报告遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "颜色与轮廓支持定位，尚不足以证明额外关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "近镜下缘裁切可由跟随攀升解释；未见连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": ""
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "背向角色没有可靠独立视线线索；身体朝向与目标关系归入运动前方空间。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": ""
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "动作与目标得到保留，未发现局部取舍额外强调接触或反应。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "依据遮叠、平台间隔与连续接近，不使用缓存单目深度。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": ""
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "石柱与角色的局部轮廓交叠未造成归属误读，也未证明独立增强效果。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "识别到轨迹引导和岩柱层次组织；仅解释已成立的空间效果，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表是取证排版，不能当作原视频分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          6
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0001",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022",
+        "rgb-0024"
+      ],
+      "observation": "角色处于画面中下区域，发光轨迹从角色附近伸向前方岩台；4—5秒岩台与角色上下对应，5.5—6秒角色出现在台面。蓝绿、紫色身体可从棕黄环境中辨出。",
+      "effect": "轨迹、台面和前后位置共同把注意从角色带向落点，并以抵达结果确认二者的通行联系；不是仅因角色居中而判增强。",
+      "exceptions_checked": "亮白轨迹及亮点局部抢眼，但与移动方向和目标相联系；未见持续主体丢失。角色局部叠在岩壁前不等于无效遮挡。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6.5,
+          9.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0027",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0036",
+        "rgb-0038",
+        "rgb-0039"
+      ],
+      "observation": "镜头转为贴近岩壁的仰向取景。8秒角色下部靠近并越出下缘，上举手臂、连向上方的线索及目标岩沿仍可见；随后角色继续上升，身体与岩台关系重新展开。",
+      "effect": "上方目标、竖直岩壁与实际攀升共同建立高度差；临近角色的景别突出当前攀升段，同时保留行动所需上方空间。",
+      "exceptions_checked": "下身裁切属于近距离跟随攀升的局部取景，未截去理解此动作所需的手臂和目标；未见同一形体异常连接。不能据身体朝向推定眼睛视线。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          10,
+          17.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0042",
+        "rgb-0048",
+        "rgb-0054",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070"
+      ],
+      "observation": "角色在近侧石柱与远侧植被平台之间移动。10秒附近保留完整跳跃姿态；12—16秒主体下方与两侧留出沙坡、石柱间隙，上方偏前的植被高台持续作为空间参照；17—17.5秒接近其边缘。",
+      "effect": "近柱、角色、远台的遮叠与尺度递进，把分离的落脚点组织成跨越序列；黄色沙坡提供较简洁的间隔背景，上方目标与不断接近的动作明确呈现攀高及跨越距离，超过单纯看清角色。",
+      "exceptions_checked": "角色与岩柱偶有轮廓相叠，但手足与躯干归属仍清楚；间隔大小随透视变化，不换算真实距离。天空星体不持续取代行动重点。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          17.75,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0071",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "先前远处的植被高台展开为近处可行走台面，角色跨过边缘进入草地区域；19.5秒角色、台阶和两侧植被同时可辨。",
+      "effect": "远处目标转换为角色脚下环境，补全前段高度差与通路的空间揭示；视野由空中跨越转为平台内继续前进，明确落地结果与后续区域。",
+      "exceptions_checked": "植被增加背景细节，但未持续遮住主体或必要落脚区；完整身体及平台边界可读。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "原始清晰帧为单一连续游戏视区，没有可确认的分屏或画中画。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "排除RGB联系表、分割QA联系表和参考帧拼版产生的伪多画面。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0022",
+        "rgb-0024"
+      ],
+      "visible_change": "角色由岩台下方接近，转为出现在台面。",
+      "spatial_or_attention_effect": "前方落点获得动作结果验证，轨迹与岩台不再只是并列景物。",
+      "expressive_effect": "支持E1的观看引导与通路建立。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0036",
+        "rgb-0040"
+      ],
+      "visible_change": "贴近角色、下身出框的仰向取景，转为较完整身体与多层岩台同框。",
+      "spatial_or_attention_effect": "从当前攀升动作展开到下一段跨越空间；局部裁切没有持续遮蔽路径。",
+      "expressive_effect": "支持E2至E3的高度关系及空间展开，不推断人物情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "远侧上方植被平台逐步接近，最终成为角色所在台面。",
+      "spatial_or_attention_effect": "固定目标参照与角色接近共同连接石柱间隙、平台边缘和可行走区域。",
+      "expressive_effect": "支持E3、E4的连续空间揭示，是整体增强的主要依据。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "C-H-d",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立，未确认关键裁切、定位或形体结构失败。增强主要来自连续空间组织：轨迹先引向岩台，仰向攀升建立高度差，近柱与远侧植被高台形成跨越序列，最终远台展开为脚下环境；这些前后联系有效引导观看并深化角色与通路的关系。",
+    "adjacent_grade_explanation": "高于中档的依据是可核查的目标建立、接近与抵达形成连续空间揭示，而非角色居中、色彩鲜明或手法数量。8秒附近的正常下身裁切没有损失当前攀升所需信息，不构成低档依据。",
+    "uncertainties": [
+      "七项缓存测量均未采用；结论依据RGB，不使用其面积、边距、色差或深度派生数值。",
+      "仅评价实际展示的采样画面，不声称检查了未展示的清单时刻或采样间连续帧。",
+      "未提供可靠眼部视线、完整遮挡区域或真实距离，不推断相应数值及心理含义。",
+      "本轮未重跑CV。"
+    ]
+  }
+}

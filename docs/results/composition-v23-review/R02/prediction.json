@@ -1,0 +1,603 @@
+{
+  "sample_id": "R02",
+  "roles": [
+    {
+      "object_id": "initial_character",
+      "role": "subject",
+      "time_range": [
+        0,
+        3
+      ],
+      "description": "草地场景中站在圆形装置旁的人物；随后亮束出现，人物不再可见。",
+      "uncertainty": "消失过程仅据采样画面，不推断具体操作。"
+    },
+    {
+      "object_id": "platform",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        3
+      ],
+      "description": "人物脚边的青色圆形装置。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "platform",
+      "role": "subject",
+      "time_range": [
+        3.25,
+        19.25
+      ],
+      "description": "人物离开可见画面后，持续呈现的圆形装置及其所在场地成为观看中心。",
+      "uncertainty": "不将空场解释为人物被遮挡。"
+    },
+    {
+      "object_id": "foreground_rock",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.25
+      ],
+      "description": "承托圆形装置的浅色岩台。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "grassland",
+      "role": "background",
+      "time_range": [
+        0,
+        19.25
+      ],
+      "description": "金黄色草地、树木及褐色路径。",
+      "uncertainty": "缓存同名掩码主要落在褐色地面，不能代表草地。"
+    },
+    {
+      "object_id": "floating_landscape",
+      "role": "background",
+      "time_range": [
+        0,
+        19.25
+      ],
+      "description": "云层间的远处悬浮岩柱与山体。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "right_structure",
+      "role": "background",
+      "time_range": [
+        0,
+        19.25
+      ],
+      "description": "右边缘局部入画的机械结构，作为场地参照。",
+      "uncertainty": "相对人物的精确距离不确定。"
+    },
+    {
+      "object_id": "lava_character",
+      "role": "subject",
+      "time_range": [
+        19.5,
+        19.5
+      ],
+      "description": "熔岩场景中背向镜头站立的人物。",
+      "uncertainty": "外观与初始人物相似，不能仅凭单帧确认身份连续性。"
+    },
+    {
+      "object_id": "lava_platform",
+      "role": "supporting_element",
+      "time_range": [
+        19.5,
+        19.5
+      ],
+      "description": "人物脚下、下缘部分出框的青色圆形装置。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "lava_environment",
+      "role": "background",
+      "time_range": [
+        19.5,
+        19.5
+      ],
+      "description": "熔岩、岩壁、落流和向远处延伸的石块。",
+      "uncertainty": "仅有末尾一个采样时刻。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "A",
+      "time_range": [
+        0,
+        3
+      ],
+      "necessary_information": "辨认人物站在圆形装置旁，以及亮束出现前后人物可见性的变化；保留人物与装置的接触位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0012"
+      ]
+    },
+    {
+      "stage_id": "B",
+      "time_range": [
+        3.25,
+        19.25
+      ],
+      "necessary_information": "辨认亮束、人物不再可见后的装置及稳定场地；不需要持续寻找已消失的人物。",
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0077"
+      ]
+    },
+    {
+      "stage_id": "C",
+      "time_range": [
+        19.5,
+        19.5
+      ],
+      "necessary_information": "辨认人物站在圆形装置上，周围场景已变为熔岩与岩石空间；末帧不能证明后续移动。",
+      "input_evidence_ids": [
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-grassland",
+      "accepted": false,
+      "reason": "QA掩码主要覆盖褐色地面而非金黄草地；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0000-platform",
+      "accepted": true,
+      "reason": "可见装置区域基本吻合；仅采用可见范围，不推算遮挡。"
+    },
+    {
+      "measurement_id": "measure-0000-initial_character",
+      "accepted": true,
+      "reason": "QA轮廓基本覆盖人物，与清晰原帧一致；不以框顶代替头顶。"
+    },
+    {
+      "measurement_id": "measure-0000-right_structure",
+      "accepted": true,
+      "reason": "右侧机械结构可见部分基本吻合；出框部分不外推。"
+    },
+    {
+      "measurement_id": "measure-0000-floating_landscape",
+      "accepted": true,
+      "reason": "远景岩柱、山体区域基本对应；作为集合掩码使用，深度不解释为米。"
+    },
+    {
+      "measurement_id": "measure-0000-foreground_rock",
+      "accepted": true,
+      "reason": "浅色承台可见区域基本吻合；排除其上人物与装置合理。"
+    },
+    {
+      "measurement_id": "measure-0016-grassland",
+      "accepted": false,
+      "reason": "仍主要分出褐色地面，未覆盖实际草地；派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0016-platform",
+      "accepted": true,
+      "reason": "装置边界和位置基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0016-right_structure",
+      "accepted": true,
+      "reason": "右侧结构可见区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0016-floating_landscape",
+      "accepted": true,
+      "reason": "远景集合区域基本对应；不据此精确比较单个岩柱。"
+    },
+    {
+      "measurement_id": "measure-0016-foreground_rock",
+      "accepted": true,
+      "reason": "承台区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0032-grassland",
+      "accepted": false,
+      "reason": "掩码对象与金黄草地不符；派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-platform",
+      "accepted": true,
+      "reason": "圆形装置轮廓基本吻合，特效局部不影响定位。"
+    },
+    {
+      "measurement_id": "measure-0032-right_structure",
+      "accepted": true,
+      "reason": "结构区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0032-floating_landscape",
+      "accepted": true,
+      "reason": "远景集合区域基本对应。"
+    },
+    {
+      "measurement_id": "measure-0032-foreground_rock",
+      "accepted": true,
+      "reason": "承台可见区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0048-grassland",
+      "accepted": false,
+      "reason": "主要覆盖道路和裸地，不能作为草地测量；派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-platform",
+      "accepted": true,
+      "reason": "装置范围基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0048-right_structure",
+      "accepted": true,
+      "reason": "右侧结构可见部分基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0048-floating_landscape",
+      "accepted": true,
+      "reason": "远景岩体集合基本对应。"
+    },
+    {
+      "measurement_id": "measure-0048-foreground_rock",
+      "accepted": true,
+      "reason": "承台区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0064-grassland",
+      "accepted": false,
+      "reason": "同样错将裸地作为草地；派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-platform",
+      "accepted": true,
+      "reason": "装置轮廓基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0064-right_structure",
+      "accepted": true,
+      "reason": "机械结构可见区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0064-floating_landscape",
+      "accepted": true,
+      "reason": "主要远景区域吻合，细小边界遗漏不影响定性定位；不采用其范围变化证明景别变化。"
+    },
+    {
+      "measurement_id": "measure-0064-foreground_rock",
+      "accepted": true,
+      "reason": "承台区域基本吻合。"
+    },
+    {
+      "measurement_id": "measure-0078-lava_environment",
+      "accepted": true,
+      "reason": "熔岩与岩壁的集合环境区域基本对应；不将集合面积当作单一对象尺度。"
+    },
+    {
+      "measurement_id": "measure-0078-lava_character",
+      "accepted": false,
+      "reason": "框底及QA区域未完整覆盖原帧鞋脚，关节定位亦与可见肩部不一致；人物面积、边距和关节等派生值均弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-lava_platform",
+      "accepted": true,
+      "reason": "入画装置部分基本吻合；仅代表可见部分，不推算完整面积。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "位置便于定位，但未证明进一步的关系组织效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "人物、装置和场地均可读；末帧人物尺度依据RGB，弃用其缓存面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "亮束与消失不作为无效遮挡；无完整区域支持遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "青色装置、人物轮廓可辨；明亮熔岩有竞争但未造成持续查找，色彩区分本身不证明增强。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "人物全身连接合理；末帧装置出框不等于人体结构断裂。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "真实头顶完整，留出的环境空间无明确挤压或辨认干扰。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "背向人物未呈现可靠眼神或明确观看对象；不将朝向直接解释为注视关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "未见可确认的定向行进；消失及场景切换不提供运动路径依据。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "人物站位、亮束及消失结果可见；未推断未展示的操作，也未见强调接触反应的局部取舍。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "岩台、道路和远景，以及末帧石块的远近可读；尚不足以证明逐步深化的空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "下部装置与上部环境分布清楚；岩柱或岩壁高大本身不证明规模关系得到进一步强化。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "人物站在装置上的叠合合理，物体边界与归属可辨；无可核查的隔离或依附变化。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可识别前景承台、中景场地、远景岩体的层次组织；仅解释基本可读性，不另行加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "视频画面未见分屏或画中画；输入联系表属于证据排版。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0012"
+      ],
+      "observation": "人物位于下部中央附近、装置右侧；头脚及身体连接可见，青色圆面与浅色岩台有明确边界。",
+      "effect": "人物与装置的站位关系清楚，环境留在其上方；支持主体突出及裁切基础，未见进一步的姿态或关系强调。",
+      "exceptions_checked": "右侧机械结构出框属于环境局部取景；不将其裁切算作人体裁切。未见明确观看或行进目标。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          3.25,
+          19.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0077"
+      ],
+      "observation": "亮束出现在装置附近，随后人物不再可见；装置、岩台、道路、树木与远处岩柱的布局基本保持。5秒与15秒参考画面均为空场装置。",
+      "effect": "观看中心转为装置和场地，层次清楚；长时间固定展示未出现足以证明空间或关系被进一步揭示的变化。",
+      "exceptions_checked": "人物不在画面不能直接视作遮挡失败；空场具有可辨物体主体。金黄草地识别依据RGB，不采用错分掩码。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0078"
+      ],
+      "observation": "场景变为熔岩空间；人物背向镜头站在下部圆形装置上，身体完整，装置下缘出框。前方石块延向岩壁间的远处开口，两侧可见熔岩落流。",
+      "effect": "人物、立足点与周围环境关系可读，场景差异明确；仅此末帧不能证明沿石块前进、受阻或跨镜头的深入空间揭示。",
+      "exceptions_checked": "装置局部裁切未丢失人物脚部或站立关系；熔岩虽亮但未遮去必要轮廓。拒绝不完整人物测量，以原帧判断。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012"
+      ],
+      "after_evidence_ids": [
+        "rgb-0013",
+        "rgb-0014",
+        "rgb-0016"
+      ],
+      "visible_change": "人物站在装置旁转为亮束出现、人物不再可见；装置及环境位置基本不变。",
+      "spatial_or_attention_effect": "原站位为消失位置提供参照，注意中心可以转向装置。",
+      "expressive_effect": "过程与结果基本清楚；未据此推断心理、遮隔含义或额外空间关系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0077"
+      ],
+      "visible_change": "空场装置及周围草地布局基本稳定。",
+      "spatial_or_attention_effect": "保持同一场地参照，未见新的观看目标或关系揭示。",
+      "expressive_effect": "未证明超出基本展示的增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0077"
+      ],
+      "after_evidence_ids": [
+        "rgb-0078"
+      ],
+      "visible_change": "草地空场转为熔岩场景，人物重新可见，圆形青色装置仍处下部。",
+      "spatial_or_attention_effect": "相似装置提供跨场景辨认线索；新环境与人物立足点清楚。",
+      "expressive_effect": "场景转换明确，但缺少后续动作或持续对应，不能仅凭切换与环境反差认定高档。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "reason": "人物、装置和阶段变化均可辨，适用裁切及空间基础成立，无明确结构破坏或持续观看干扰。层次、亮色装置与末尾换景支持基本呈现，但未证明超出辨认需要的注意组织或主体环境关系增强。",
+    "adjacent_grade_explanation": "不判低：人物消失有亮束及空场前后依据，末帧装置裁切不损害站立关系。不判高：稳定层次、色彩突出及普通场景转换尚未建立充分的增强证据链。",
+    "uncertainties": [
+      "末尾熔岩场景仅19.5秒一个采样时刻，不能推断后续路径与行动。",
+      "所有草地测量及末帧人物测量被拒绝，相关派生值未参与判断；其余测量仅作区域核对，无重新运行CV。",
+      "未提供可靠视线、定向行进或完整遮挡区域，不补造对应关系或百分比。"
+    ]
+  }
+}

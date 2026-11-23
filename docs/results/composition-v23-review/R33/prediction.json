@@ -1,0 +1,476 @@
+{
+  "sample_id": "R33",
+  "roles": [
+    {
+      "object_id": "man",
+      "role": "subject",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "description": "灰衬衫男子，胸部以上取景，面朝画面右侧；主要呈现面部及口部变化。",
+      "uncertainty": "不据此推断台词或心理。"
+    },
+    {
+      "object_id": "armored_character",
+      "role": "subject",
+      "time_range": [
+        3.5,
+        6.25
+      ],
+      "description": "银色装甲人物，胸部以上取景，朝向画面左侧。",
+      "uncertainty": "头盔遮眼属于角色装束，不能当作无效环境遮挡。"
+    },
+    {
+      "object_id": "man",
+      "role": "subject",
+      "time_range": [
+        6.5,
+        19.5
+      ],
+      "description": "返回同一男子的近景，持续呈现面部、口部和轻微头部变化；缓存中的man_first与man_return为同一可见人物。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "garage",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "维修空间、举升车辆及车轮；男子镜头左侧有黄色立柱，人物与后方车辆层次可辨。",
+      "uncertainty": "立柱与人物的精确纵深距离无法确定；没有确认的同框陪体。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        3.25
+      ],
+      "necessary_information": "辨认灰衬衫男子的面部、朝向及维修环境。近景保留头肩，右侧留有空间。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0013",
+        "Image #3"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        3.5,
+        6.25
+      ],
+      "necessary_information": "主体切换为装甲人物，需要辨认其头盔、露出的下半脸、胸肩和相反朝向；与前镜头构成基本对向观看关系。",
+      "input_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0025"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        6.5,
+        19.5
+      ],
+      "necessary_information": "返回男子近景，辨认面部和口部变化及朝向；持续的胸上取景没有出现必须展示的手部交互或移动路径。",
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0064",
+        "rgb-0078",
+        "Image #4",
+        "Image #5"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-man_first",
+      "accepted": false,
+      "reason": "QA掩码下缘在画内横向终止，RGB中的衣服仍延伸至画底，未完整覆盖可见主体。拒绝其主体面积及边距等派生值；位置改由RGB判断。"
+    },
+    {
+      "measurement_id": "measure-0016-armored_character",
+      "accepted": false,
+      "reason": "QA装甲掩码同样在画底之前截断，胸甲仍继续出框，不能作为完整可见主体区域。其面积、边距等派生值不采用；头盔也不支持采用眼部关键点解释视线。"
+    },
+    {
+      "measurement_id": "measure-0032-man_return",
+      "accepted": false,
+      "reason": "QA下缘截去仍然可见的衬衫部分，主体区域不完整；该项分割及派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-man_return",
+      "accepted": false,
+      "reason": "QA下缘存在画内截断，衣服继续延伸至画底；不采用面积、边距和其他派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-man_return",
+      "accepted": false,
+      "reason": "QA主体掩码未延伸到实际可见衣服的画底边界；不采用该项分割及派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-man_return",
+      "accepted": false,
+      "reason": "QA下缘仍截去可见衣服，区域不完整；分割及派生数值不采用。深度为空，亦无可靠遮挡比例。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "主体切换容易跟随，但常规对向切镜未证明超出基本辨认的注意组织效果。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "以RGB确认近景适合面部呈现；不用拒绝的面积数值，也不将装甲较宽解释为地位差异。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "没有确认的无效遮挡；不计算遮挡百分比，头盔属于装束。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "面部清晰、背景较虚及装甲亮暗差异支持基本突出，未建立进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "胸下出框符合近景；可见头、颈、肩连接连续，无已确认的连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "装甲头顶余量较少但完整，未形成明确干扰；没有与行动配合的受限表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "男子朝右、装甲人物朝左提供基本对向线索；装甲精确眼向不可见，未据此推断情绪关系。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "已提供采样没有需要判断前方路径的行走、追逐或定向位移。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可见动作主要为口部与头部变化，必要部位保留；没有证据表明出框双手承载关键行为。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "人物、立柱与后方车辆可分，维修场所可理解；未展示更完整通路或跨景别空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "举升车辆位于人物后上方，归属清楚；仅凭上下位置不能证明包围、制约或规模表达。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "车轮与头部有投影交叠，但虚实和轮廓仍可区分，未造成连接误读；也未证明依附或隔离。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "可识别右侧留白和人物清晰、背景较虚的组织；左侧单根立柱不足以确认完整框架构图。效果限于基础观看。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E2"
+      ],
+      "uncertainty": "素材是先后切镜；输入联系表和参考图并排属于证据排版，不是片内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0013",
+        "Image #3"
+      ],
+      "observation": "男子位于中部偏左，头肩完整，胸部在画底正常出框；面部朝右，右侧为较暗且信息较少的区域，口部变化可辨。",
+      "effect": "观看重点和面部动作直接可读，视向侧有空间；未见必须补入的手部动作或观看对象。",
+      "exceptions_checked": "排除把胸下正常裁切判为结构破坏；立柱没有遮去必要面部信息，不把留白直接解释成情绪。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          3.25,
+          3.5
+        ],
+        [
+          3.5,
+          6.25
+        ],
+        [
+          6.25,
+          6.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0013",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0025",
+        "rgb-0026"
+      ],
+      "observation": "男子镜头切为装甲人物近景，随后返回男子。装甲人物朝左，头盔完整、胸肩宽度较大，下半脸可见；男子朝右。",
+      "effect": "主体替换清楚，对向朝向支持基本的交替呈现关系；未提供同框接近、接触或环境揭示，不能进一步解释关系强弱。",
+      "exceptions_checked": "头盔遮眼为角色造型；胸甲出框是近景取舍。前后切镜不等于分屏，也不据不同身体宽度判断比例失衡。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          6.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0064",
+        "rgb-0078",
+        "Image #4",
+        "Image #5"
+      ],
+      "observation": "返回男子后维持相近景别；头部与肩部位置略变，脸和口部始终可读，后方车轮与左侧立柱仍在。",
+      "effect": "持续提供面部变化，没有因位置变化丢失主体，也没有新增必须理解的移动路径或手部交互；未见构图随行为形成进一步揭示。",
+      "exceptions_checked": "不把轻微屏幕位移当作世界行走，不把采样间未提供的画面补为已观察事实。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          3.25
+        ],
+        [
+          3.5,
+          6.25
+        ],
+        [
+          6.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0060",
+        "rgb-0078",
+        "Image #3",
+        "Image #4",
+        "Image #5"
+      ],
+      "observation": "男子前方清晰，后方举升车辆及车轮较虚；黄色立柱沿左缘延伸。车轮在头部后上方，部分轮廓投影邻接或交叠；装甲人物则通过银亮表面与暗背景区分。",
+      "effect": "支持辨认人物与维修环境的前后、上下和对象归属；车轮虽显眼，未持续夺走面部观看重点。没有可见受阻行动来支持环境制约或隔离含义。",
+      "exceptions_checked": "不把背景交叠判作人体连接；不把有前后景、虚化或车辆在上方本身当成增强。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0013"
+      ],
+      "after_evidence_ids": [
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "3.25至3.5秒间，主体由男子切换为装甲人物，朝向由右侧转为左侧，胸肩轮廓更宽。",
+      "spatial_or_attention_effect": "观看重点明确转移至另一人物；基本对向关系可理解。",
+      "expressive_effect": "普通交替近景，未证明进一步关系表达或空间深化。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0025"
+      ],
+      "after_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032"
+      ],
+      "visible_change": "6.25至6.5秒间返回男子，立柱和车轮背景再次出现。",
+      "spatial_or_attention_effect": "恢复前段人物及其维修环境参照，主体重定位不费力。",
+      "expressive_effect": "环境连续性成立，没有新增的空间揭示。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "Image #4"
+      ],
+      "after_evidence_ids": [
+        "rgb-0078",
+        "Image #5"
+      ],
+      "visible_change": "10至19.5秒维持相近胸上取景，男子横向位置和口部状态有所变化，头顶均完整。",
+      "spatial_or_attention_effect": "面部持续可读，背景归属稳定，位置变化未造成观看干扰。",
+      "expressive_effect": "没有可核查的构图转折或增强效果。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立：交替近景中的主体与面部动作易辨，头肩连接及裁切合理，维修环境和对象归属清楚。未确认持续竞争、无效遮挡、必要信息损失或形体结构破坏。",
+    "adjacent_grade_explanation": "不判低：车轮交叠和胸下出框均未造成明确干扰。不判高：对向切镜、留白及虚实差异完成基本呈现，尚未证明超出基本可辨的关系强化或空间揭示。",
+    "uncertainties": [
+      "六项缓存分割均拒绝，未采用其派生数值；RGB足以支持本次基础判断。",
+      "没有完整台词及未采样时刻，不推断人物心理、出框动作或额外剧情。",
+      "本轮未重跑CV；时间范围判断仅覆盖输入清单提供的采样证据。"
+    ]
+  }
+}

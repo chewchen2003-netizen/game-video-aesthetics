@@ -1,5 +1,7 @@
 # 游戏视频美学评价标准与构图验证
 
+**最新50题审核：** [打开审核页](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-v23-review/index.html) · 视频、完整证据链、人工批注与导出。
+
 本项目包括游戏视频美学评价标准、构图算子代码，以及50条真实游戏视频的构图验证结果。
 
 ## 📖 先看交付说明

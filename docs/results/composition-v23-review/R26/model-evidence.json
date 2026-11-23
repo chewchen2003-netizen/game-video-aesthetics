@@ -1,0 +1,429 @@
+{
+  "sample_id": "R26",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 2288.883333333333
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 2289.383333333333
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 2289.883333333333
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 2290.383333333333
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 2290.883333333333
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 2291.383333333333
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 2291.883333333333
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 2292.383333333333
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 2292.883333333333
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 2293.383333333333
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 2293.883333333333
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 2294.383333333333
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 2294.883333333333
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 2295.383333333333
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 2295.883333333333
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 2296.383333333333
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 2296.883333333333
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 2297.383333333333
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 2297.883333333333
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 2298.383333333333
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 2298.883333333333
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 2299.383333333333
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 2299.883333333333
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 2300.383333333333
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 2300.883333333333
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 2301.383333333333
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 2301.883333333333
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 2302.383333333333
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 2302.883333333333
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 2303.383333333333
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 2303.883333333333
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 2304.383333333333
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 2304.883333333333
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 2305.383333333333
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 2305.883333333333
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 2306.383333333333
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 2306.883333333333
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 2307.383333333333
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 2307.883333333333
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 2308.383333333333
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-gridded_window",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "gridded_window",
+      "valid": true,
+      "bbox": [
+        0,
+        5,
+        955,
+        621
+      ],
+      "center": [
+        0.373046875,
+        0.43472222222222223
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.25390625,
+        "top": 0.006944444444444444,
+        "bottom": 0.1375
+      },
+      "visible_ratio": 0.5380360243055555,
+      "color_JS": 0.24467927499072378,
+      "boundary_Lstar_median": 3.173828125,
+      "relative_inverse_depth_median": 2.2735958099365234,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-gridded_window",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "gridded_window",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        708,
+        720
+      ],
+      "center": [
+        0.2765625,
+        0.5
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.446875,
+        "top": 0.0,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.49401475694444447,
+      "color_JS": 0.4017298451012575,
+      "boundary_Lstar_median": 0.836181640625,
+      "relative_inverse_depth_median": 3.4756107330322266,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-rollup_door",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "rollup_door",
+      "valid": true,
+      "bbox": [
+        577,
+        0,
+        1280,
+        720
+      ],
+      "center": [
+        0.725390625,
+        0.5
+      ],
+      "edge_distances": {
+        "left": 0.45078125,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.0
+      },
+      "visible_ratio": 0.5197645399305556,
+      "color_JS": 0.4000619417397308,
+      "boundary_Lstar_median": 2.9754638671875,
+      "relative_inverse_depth_median": 5.046487331390381,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-forklift",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "forklift",
+      "valid": true,
+      "bbox": [
+        17,
+        216,
+        345,
+        425
+      ],
+      "center": [
+        0.14140625,
+        0.44513888888888886
+      ],
+      "edge_distances": {
+        "left": 0.01328125,
+        "right": 0.73046875,
+        "top": 0.3,
+        "bottom": 0.4097222222222222
+      },
+      "visible_ratio": 0.033324652777777776,
+      "color_JS": 0.22715455322863806,
+      "boundary_Lstar_median": 0.152587890625,
+      "relative_inverse_depth_median": 2.2556581497192383,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-forklift",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "forklift",
+      "valid": true,
+      "bbox": [
+        0,
+        172,
+        129,
+        505
+      ],
+      "center": [
+        0.050390625,
+        0.4701388888888889
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.89921875,
+        "top": 0.2388888888888889,
+        "bottom": 0.2986111111111111
+      },
+      "visible_ratio": 0.039629991319444446,
+      "color_JS": 0.25789384014002553,
+      "boundary_Lstar_median": 0.7080078125,
+      "relative_inverse_depth_median": 1.529158353805542,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-gridded_window_return",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "gridded_window_return",
+      "valid": true,
+      "bbox": [
+        0,
+        0,
+        945,
+        717
+      ],
+      "center": [
+        0.369140625,
+        0.4979166666666667
+      ],
+      "edge_distances": {
+        "left": 0.0,
+        "right": 0.26171875,
+        "top": 0.0,
+        "bottom": 0.004166666666666667
+      },
+      "visible_ratio": 0.5609884982638889,
+      "color_JS": 0.3243037185037258,
+      "boundary_Lstar_median": 0.982666015625,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "5bdbde4d4b135de278b3b380451bce9a4b811f2bbb48a0a3d25791dd266440e5",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 40
+  }
+}

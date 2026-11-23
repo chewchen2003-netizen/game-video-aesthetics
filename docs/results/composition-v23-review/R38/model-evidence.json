@@ -1,0 +1,881 @@
+{
+  "sample_id": "R38",
+  "RGB_frames": [
+    {
+      "id": "rgb-0000",
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 544.55
+    },
+    {
+      "id": "rgb-0002",
+      "frame_index": 2,
+      "time": 0.5,
+      "source_time": 545.05
+    },
+    {
+      "id": "rgb-0004",
+      "frame_index": 4,
+      "time": 1.0,
+      "source_time": 545.55
+    },
+    {
+      "id": "rgb-0006",
+      "frame_index": 6,
+      "time": 1.5,
+      "source_time": 546.05
+    },
+    {
+      "id": "rgb-0008",
+      "frame_index": 8,
+      "time": 2.0,
+      "source_time": 546.55
+    },
+    {
+      "id": "rgb-0010",
+      "frame_index": 10,
+      "time": 2.5,
+      "source_time": 547.05
+    },
+    {
+      "id": "rgb-0012",
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 547.55
+    },
+    {
+      "id": "rgb-0014",
+      "frame_index": 14,
+      "time": 3.5,
+      "source_time": 548.05
+    },
+    {
+      "id": "rgb-0016",
+      "frame_index": 16,
+      "time": 4.0,
+      "source_time": 548.55
+    },
+    {
+      "id": "rgb-0018",
+      "frame_index": 18,
+      "time": 4.5,
+      "source_time": 549.05
+    },
+    {
+      "id": "rgb-0020",
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 549.55
+    },
+    {
+      "id": "rgb-0022",
+      "frame_index": 22,
+      "time": 5.5,
+      "source_time": 550.05
+    },
+    {
+      "id": "rgb-0024",
+      "frame_index": 24,
+      "time": 6.0,
+      "source_time": 550.55
+    },
+    {
+      "id": "rgb-0026",
+      "frame_index": 26,
+      "time": 6.5,
+      "source_time": 551.05
+    },
+    {
+      "id": "rgb-0028",
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 551.55
+    },
+    {
+      "id": "rgb-0030",
+      "frame_index": 30,
+      "time": 7.5,
+      "source_time": 552.05
+    },
+    {
+      "id": "rgb-0032",
+      "frame_index": 32,
+      "time": 8.0,
+      "source_time": 552.55
+    },
+    {
+      "id": "rgb-0034",
+      "frame_index": 34,
+      "time": 8.5,
+      "source_time": 553.05
+    },
+    {
+      "id": "rgb-0036",
+      "frame_index": 36,
+      "time": 9.0,
+      "source_time": 553.55
+    },
+    {
+      "id": "rgb-0038",
+      "frame_index": 38,
+      "time": 9.5,
+      "source_time": 554.05
+    },
+    {
+      "id": "rgb-0040",
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 554.55
+    },
+    {
+      "id": "rgb-0042",
+      "frame_index": 42,
+      "time": 10.5,
+      "source_time": 555.05
+    },
+    {
+      "id": "rgb-0044",
+      "frame_index": 44,
+      "time": 11.0,
+      "source_time": 555.55
+    },
+    {
+      "id": "rgb-0046",
+      "frame_index": 46,
+      "time": 11.5,
+      "source_time": 556.05
+    },
+    {
+      "id": "rgb-0048",
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 556.55
+    },
+    {
+      "id": "rgb-0050",
+      "frame_index": 50,
+      "time": 12.5,
+      "source_time": 557.05
+    },
+    {
+      "id": "rgb-0052",
+      "frame_index": 52,
+      "time": 13.0,
+      "source_time": 557.55
+    },
+    {
+      "id": "rgb-0054",
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 558.05
+    },
+    {
+      "id": "rgb-0056",
+      "frame_index": 56,
+      "time": 14.0,
+      "source_time": 558.55
+    },
+    {
+      "id": "rgb-0058",
+      "frame_index": 58,
+      "time": 14.5,
+      "source_time": 559.05
+    },
+    {
+      "id": "rgb-0060",
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 559.55
+    },
+    {
+      "id": "rgb-0062",
+      "frame_index": 62,
+      "time": 15.5,
+      "source_time": 560.05
+    },
+    {
+      "id": "rgb-0064",
+      "frame_index": 64,
+      "time": 16.0,
+      "source_time": 560.55
+    },
+    {
+      "id": "rgb-0066",
+      "frame_index": 66,
+      "time": 16.5,
+      "source_time": 561.05
+    },
+    {
+      "id": "rgb-0068",
+      "frame_index": 68,
+      "time": 17.0,
+      "source_time": 561.55
+    },
+    {
+      "id": "rgb-0070",
+      "frame_index": 70,
+      "time": 17.5,
+      "source_time": 562.05
+    },
+    {
+      "id": "rgb-0072",
+      "frame_index": 72,
+      "time": 18.0,
+      "source_time": 562.55
+    },
+    {
+      "id": "rgb-0074",
+      "frame_index": 74,
+      "time": 18.5,
+      "source_time": 563.05
+    },
+    {
+      "id": "rgb-0076",
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 563.55
+    },
+    {
+      "id": "rgb-0078",
+      "frame_index": 78,
+      "time": 19.5,
+      "source_time": 564.05
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measure-0000-avatar",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        238,
+        169,
+        580,
+        698
+      ],
+      "center": [
+        0.31953125,
+        0.6020833333333333
+      ],
+      "edge_distances": {
+        "left": 0.1859375,
+        "right": 0.546875,
+        "top": 0.23472222222222222,
+        "bottom": 0.030555555555555555
+      },
+      "visible_ratio": 0.12934244791666666,
+      "color_JS": 0.46337788979217703,
+      "boundary_Lstar_median": 2.00653076171875,
+      "relative_inverse_depth_median": 5.134979248046875,
+      "joints": {
+        "left_ear": [
+          342.9271545410156,
+          232.75711059570312
+        ],
+        "right_ear": [
+          419.41943359375,
+          229.6408233642578
+        ],
+        "left_shoulder": [
+          287.47149658203125,
+          352.89898681640625
+        ],
+        "right_shoulder": [
+          457.7582092285156,
+          339.92706298828125
+        ],
+        "left_elbow": [
+          262.0179748535156,
+          497.174072265625
+        ],
+        "right_elbow": [
+          511.39874267578125,
+          469.8434753417969
+        ],
+        "left_wrist": [
+          303.97003173828125,
+          569.1949462890625
+        ],
+        "right_wrist": [
+          555.9654541015625,
+          574.3095703125
+        ],
+        "left_hip": [
+          338.7652587890625,
+          603.239990234375
+        ],
+        "right_hip": [
+          452.501708984375,
+          602.015380859375
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0000-rock_region",
+      "frame_index": 0,
+      "time": 0.0,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        722,
+        196,
+        1280,
+        578
+      ],
+      "center": [
+        0.78203125,
+        0.5375
+      ],
+      "edge_distances": {
+        "left": 0.5640625,
+        "right": 0.0,
+        "top": 0.2722222222222222,
+        "bottom": 0.19722222222222222
+      },
+      "visible_ratio": 0.14652669270833332,
+      "color_JS": 0.4533266489826092,
+      "boundary_Lstar_median": 1.416015625,
+      "relative_inverse_depth_median": 1.6157994270324707,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-avatar",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        258,
+        197,
+        604,
+        692
+      ],
+      "center": [
+        0.33671875,
+        0.6173611111111111
+      ],
+      "edge_distances": {
+        "left": 0.2015625,
+        "right": 0.528125,
+        "top": 0.27361111111111114,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.12196397569444445,
+      "color_JS": 0.41924944074405873,
+      "boundary_Lstar_median": 2.25830078125,
+      "relative_inverse_depth_median": 4.0510406494140625,
+      "joints": {
+        "left_ear": [
+          376.0002746582031,
+          253.42608642578125
+        ],
+        "right_ear": [
+          458.8218688964844,
+          255.6175537109375
+        ],
+        "left_shoulder": [
+          307.78558349609375,
+          349.32489013671875
+        ],
+        "right_shoulder": [
+          499.12255859375,
+          356.906494140625
+        ],
+        "left_elbow": [
+          276.9566650390625,
+          472.4168701171875
+        ],
+        "right_elbow": [
+          539.0607299804688,
+          493.714111328125
+        ],
+        "left_wrist": [
+          325.55853271484375,
+          545.4013061523438
+        ],
+        "right_wrist": [
+          570.021728515625,
+          598.6599731445312
+        ],
+        "left_hip": [
+          346.9781494140625,
+          604.1741333007812
+        ],
+        "right_hip": [
+          476.568115234375,
+          610.0724487304688
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0016-rock_region",
+      "frame_index": 16,
+      "time": 4.0,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        670,
+        170,
+        1280,
+        608
+      ],
+      "center": [
+        0.76171875,
+        0.5402777777777777
+      ],
+      "edge_distances": {
+        "left": 0.5234375,
+        "right": 0.0,
+        "top": 0.2361111111111111,
+        "bottom": 0.15555555555555556
+      },
+      "visible_ratio": 0.2218381076388889,
+      "color_JS": 0.35584376475592716,
+      "boundary_Lstar_median": 1.79443359375,
+      "relative_inverse_depth_median": 1.9858267307281494,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-avatar",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        98,
+        289,
+        586,
+        692
+      ],
+      "center": [
+        0.2671875,
+        0.68125
+      ],
+      "edge_distances": {
+        "left": 0.0765625,
+        "right": 0.5421875,
+        "top": 0.4013888888888889,
+        "bottom": 0.03888888888888889
+      },
+      "visible_ratio": 0.10059678819444444,
+      "color_JS": 0.23792002944622015,
+      "boundary_Lstar_median": 1.8768310546875,
+      "relative_inverse_depth_median": 3.281094551086426,
+      "joints": {
+        "left_ear": [
+          413.263671875,
+          328.4253845214844
+        ],
+        "right_ear": [
+          467.67047119140625,
+          328.2529296875
+        ],
+        "left_shoulder": [
+          353.87347412109375,
+          394.5822448730469
+        ],
+        "right_shoulder": [
+          496.041748046875,
+          390.2306213378906
+        ],
+        "left_elbow": [
+          261.5184631347656,
+          481.7192687988281
+        ],
+        "right_elbow": [
+          552.556884765625,
+          469.7433776855469
+        ],
+        "left_wrist": [
+          152.2542724609375,
+          599.5887451171875
+        ],
+        "right_wrist": [
+          554.2420043945312,
+          539.86181640625
+        ],
+        "left_hip": [
+          374.8222351074219,
+          612.41748046875
+        ],
+        "right_hip": [
+          465.66595458984375,
+          611.05712890625
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0032-rock_region",
+      "frame_index": 32,
+      "time": 8.0,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        821,
+        147,
+        1280,
+        707
+      ],
+      "center": [
+        0.820703125,
+        0.5930555555555556
+      ],
+      "edge_distances": {
+        "left": 0.64140625,
+        "right": 0.0,
+        "top": 0.20416666666666666,
+        "bottom": 0.018055555555555554
+      },
+      "visible_ratio": 0.1930837673611111,
+      "color_JS": 0.34593284246910905,
+      "boundary_Lstar_median": 1.5045166015625,
+      "relative_inverse_depth_median": 3.8018312454223633,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-avatar",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        234,
+        257,
+        594,
+        694
+      ],
+      "center": [
+        0.3234375,
+        0.6604166666666667
+      ],
+      "edge_distances": {
+        "left": 0.1828125,
+        "right": 0.5359375,
+        "top": 0.35694444444444445,
+        "bottom": 0.03611111111111111
+      },
+      "visible_ratio": 0.09278862847222222,
+      "color_JS": 0.5211219716112367,
+      "boundary_Lstar_median": 1.57470703125,
+      "relative_inverse_depth_median": 4.657989978790283,
+      "joints": {
+        "left_ear": [
+          431.5572509765625,
+          291.4736328125
+        ],
+        "right_ear": [
+          495.1880187988281,
+          304.46405029296875
+        ],
+        "left_shoulder": [
+          375.84161376953125,
+          340.9379577636719
+        ],
+        "right_shoulder": [
+          531.529541015625,
+          365.9911804199219
+        ],
+        "left_elbow": [
+          290.8940124511719,
+          410.3555908203125
+        ],
+        "right_elbow": [
+          569.0457763671875,
+          448.11932373046875
+        ],
+        "left_wrist": [
+          256.11199951171875,
+          491.83843994140625
+        ],
+        "right_wrist": [
+          532.3355712890625,
+          494.01800537109375
+        ],
+        "left_hip": [
+          374.3207092285156,
+          552.8108520507812
+        ],
+        "right_hip": [
+          468.9729309082031,
+          559.5574340820312
+        ],
+        "left_knee": [
+          377.9167785644531,
+          675.4365844726562
+        ],
+        "right_knee": [
+          444.7498474121094,
+          688.6839599609375
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0048-rock_region",
+      "frame_index": 48,
+      "time": 12.0,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        976,
+        185,
+        1280,
+        689
+      ],
+      "center": [
+        0.88125,
+        0.6069444444444444
+      ],
+      "edge_distances": {
+        "left": 0.7625,
+        "right": 0.0,
+        "top": 0.2569444444444444,
+        "bottom": 0.043055555555555555
+      },
+      "visible_ratio": 0.13702690972222223,
+      "color_JS": 0.08295202222755463,
+      "boundary_Lstar_median": 2.1575927734375,
+      "relative_inverse_depth_median": 3.826322555541992,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-avatar",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        320,
+        270,
+        608,
+        694
+      ],
+      "center": [
+        0.3625,
+        0.6694444444444444
+      ],
+      "edge_distances": {
+        "left": 0.25,
+        "right": 0.525,
+        "top": 0.375,
+        "bottom": 0.03611111111111111
+      },
+      "visible_ratio": 0.06770616319444445,
+      "color_JS": 0.2901855078950419,
+      "boundary_Lstar_median": 3.070068359375,
+      "relative_inverse_depth_median": 5.743203163146973,
+      "joints": {
+        "left_ear": [
+          480.1300048828125,
+          297.9558410644531
+        ],
+        "right_ear": [
+          535.8932495117188,
+          308.8193359375
+        ],
+        "left_shoulder": [
+          436.92608642578125,
+          345.1047058105469
+        ],
+        "right_shoulder": [
+          559.4328002929688,
+          367.5931396484375
+        ],
+        "left_elbow": [
+          361.33782958984375,
+          408.0794982910156
+        ],
+        "right_elbow": [
+          581.940673828125,
+          439.0140380859375
+        ],
+        "left_wrist": [
+          354.7047119140625,
+          461.6136169433594
+        ],
+        "right_wrist": [
+          540.876220703125,
+          456.08251953125
+        ],
+        "left_hip": [
+          434.270751953125,
+          532.8521728515625
+        ],
+        "right_hip": [
+          509.5627746582031,
+          540.3756103515625
+        ],
+        "left_knee": [
+          443.36981201171875,
+          659.081787109375
+        ],
+        "right_knee": [
+          489.7321472167969,
+          674.6776123046875
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0064-rock_region",
+      "frame_index": 64,
+      "time": 16.0,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        618,
+        19,
+        1033,
+        394
+      ],
+      "center": [
+        0.644921875,
+        0.28680555555555554
+      ],
+      "edge_distances": {
+        "left": 0.4828125,
+        "right": 0.19296875,
+        "top": 0.02638888888888889,
+        "bottom": 0.4527777777777778
+      },
+      "visible_ratio": 0.09596137152777778,
+      "color_JS": 0.4739157193244047,
+      "boundary_Lstar_median": 1.953125,
+      "relative_inverse_depth_median": 1.641178011894226,
+      "joints": {},
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-avatar",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "avatar",
+      "valid": true,
+      "bbox": [
+        318,
+        284,
+        596,
+        694
+      ],
+      "center": [
+        0.35703125,
+        0.6791666666666667
+      ],
+      "edge_distances": {
+        "left": 0.2484375,
+        "right": 0.534375,
+        "top": 0.39444444444444443,
+        "bottom": 0.03611111111111111
+      },
+      "visible_ratio": 0.061506076388888886,
+      "color_JS": 0.5081041280534767,
+      "boundary_Lstar_median": 4.60357666015625,
+      "relative_inverse_depth_median": null,
+      "joints": {
+        "left_ear": [
+          465.1645812988281,
+          322.9480285644531
+        ],
+        "right_ear": [
+          523.222412109375,
+          327.56683349609375
+        ],
+        "left_shoulder": [
+          423.3895568847656,
+          380.07232666015625
+        ],
+        "right_shoulder": [
+          553.61865234375,
+          389.9886474609375
+        ],
+        "left_elbow": [
+          365.7911071777344,
+          440.6009216308594
+        ],
+        "right_elbow": [
+          577.8983154296875,
+          459.1771240234375
+        ],
+        "left_wrist": [
+          360.559326171875,
+          458.1768798828125
+        ],
+        "right_wrist": [
+          532.3763427734375,
+          482.27130126953125
+        ],
+        "left_hip": [
+          433.4557189941406,
+          538.7603759765625
+        ],
+        "right_hip": [
+          519.0363159179688,
+          543.1614379882812
+        ],
+        "left_knee": [
+          453.8184509277344,
+          604.9788818359375
+        ],
+        "right_knee": [
+          526.2250366210938,
+          611.7451782226562
+        ],
+        "left_ankle": [
+          460.3144226074219,
+          682.8693237304688
+        ],
+        "right_ankle": [
+          519.3533935546875,
+          690.568359375
+        ]
+      },
+      "occlusion_ratio": null
+    },
+    {
+      "id": "measure-0078-rock_region",
+      "frame_index": 78,
+      "time": 19.5,
+      "object_id": "rock_region",
+      "valid": true,
+      "bbox": [
+        837,
+        0,
+        1280,
+        515
+      ],
+      "center": [
+        0.826953125,
+        0.3576388888888889
+      ],
+      "edge_distances": {
+        "left": 0.65390625,
+        "right": 0.0,
+        "top": 0.0,
+        "bottom": 0.2847222222222222
+      },
+      "visible_ratio": 0.09912434895833333,
+      "color_JS": 0.6883053644606422,
+      "boundary_Lstar_median": 4.443359375,
+      "relative_inverse_depth_median": null,
+      "joints": {},
+      "occlusion_ratio": null
+    }
+  ],
+  "units": "center/edge/area normalized to frame; visible mask area is not bbox area; Lab JS 0..1, L* difference 0..100; relative monocular inverse depth, not meters; no amodal mask, no occlusion percent",
+  "provenance": {
+    "measurement_cache_sha256": "577d78d8d61e87ebf13e50fad7fe8fe43d72bc83f67fce8713375830f47ce9cb",
+    "measurement_cache_kind": "raw, uncurated CV results; no old accept/reject decisions or grades supplied",
+    "cache_origin": "/Users/minimax/game-video-review/composition-eval/operator-run-50-v1",
+    "cv_recomputed": false,
+    "sampled_frames": 40
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "sample_id": "R09",
+  "roles": [
+    {
+      "object_id": "build_preview",
+      "role": "subject",
+      "time_range": [
+        0,
+        5
+      ],
+      "description": "绿色半透明搭建结构；从较完整外观转为贴近观察的杆件局部。",
+      "uncertainty": "按可见外观命名，不推断具体建造操作或任务。"
+    },
+    {
+      "object_id": "wooden_interior",
+      "role": "subject",
+      "time_range": [
+        5.5,
+        19.5
+      ],
+      "description": "木构室内空间，包括地面、斜撑、墙面、屋顶和开口；7.75—8.25秒绿色杆件再次占据近景。",
+      "uncertainty": "环境本身是主要呈现对象，不能把缓存中的局部区域当作完整主体。"
+    },
+    {
+      "object_id": "hands_tools",
+      "role": "foreground",
+      "time_range": [
+        12,
+        17
+      ],
+      "description": "第一人称手部、伞及弯曲工具，位于画面下部和顶部近景。",
+      "uncertainty": "可见持握，未确认具体工具操作或动作结果。"
+    },
+    {
+      "object_id": "exterior",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "开口外的暖色地形和植被，提供内外空间参照。",
+      "uncertainty": "仅部分采样时刻可见，非全程显露。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "A",
+      "time_range": [
+        0,
+        5
+      ],
+      "necessary_information": "辨认绿色搭建结构、木墙及外部开口的关系；接近后转为杆件与墙体局部。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020"
+      ]
+    },
+    {
+      "stage_id": "B",
+      "time_range": [
+        5.5,
+        8.5
+      ],
+      "necessary_information": "视野转入室内，辨认地面、支柱和斜撑；近景绿色杆件短暂重新覆盖视野后离开。",
+      "input_evidence_ids": [
+        "rgb-0022",
+        "rgb-0028",
+        "rgb-0031",
+        "rgb-0032",
+        "rgb-0033",
+        "rgb-0034"
+      ]
+    },
+    {
+      "stage_id": "C",
+      "time_range": [
+        9,
+        12
+      ],
+      "necessary_information": "呈现较开阔的内部布局，保留地面、后墙、左侧斜撑及小开口的空间联系。",
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048"
+      ]
+    },
+    {
+      "stage_id": "D",
+      "time_range": [
+        12.5,
+        19.5
+      ],
+      "necessary_information": "第一人称持物进入近景，视野经过室外开口后转向上方屋顶与墙梁连接。",
+      "input_evidence_ids": [
+        "rgb-0050",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-build_preview",
+      "accepted": true,
+      "reason": "QA掩码基本覆盖RGB中绿色杆件，位置和可见面积可作辅助；底部为画框裁切。逆深度不作实际距离，未据此推算遮挡。"
+    },
+    {
+      "measurement_id": "measure-0016-build_preview",
+      "accepted": false,
+      "reason": "QA把大块木墙纳入绿色结构，和4秒RGB不符；其面积、边界、色差及深度派生值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-interior_region",
+      "accepted": false,
+      "reason": "8秒QA只选取右下局部并混入近景杆件，不能代表室内空间主体；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0048-interior_region_late",
+      "accepted": false,
+      "reason": "12秒掩码呈矩形局部和墙面碎片，遗漏主要屋顶、地面及斜撑，无可靠完整对象边界；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-interior_region_late",
+      "accepted": false,
+      "reason": "16秒仅覆盖部分墙面且孔洞、截断明显，不能代表当前室内环境主体；全部派生值弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-interior_region_late",
+      "accepted": false,
+      "reason": "19.5秒掩码遗漏主要屋顶与右侧结构，只是局部墙面区域；全部派生值弃用，低色差不能证明主体混杂。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "主要对象随观察方向改变，未见需持续寻找的独立目标；位置变化未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "局部放大适合近距离观察；没有可靠证据表明景别变化形成超出基本浏览的信息揭示。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "近景杆件与伞有遮挡，但未确认必要对象持续丢失；不计算遮挡比例。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "绿色结构和木墙可分；后段同色木构依靠轮廓、透视仍可辨，未证明进一步表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "仅适用于可见第一人称手部；持握与手腕入框方式合理，未见连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "没有需呈现头部的人物；第一人称视角不要求头部入画。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E4"
+      ],
+      "uncertainty": "没有可核查的人物视线及观看对象关系，不把镜头朝向等同人物眼神。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "视点接近、转向时邻近结构与地面仍提供参照；不从屏幕位移推断角色行走方向。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "可确认的持握信息保留；没有证据表明出框工具遗漏了必要打击、接触或结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可建立局部内外与前后关系，但普通转视、贴近和仰看尚不足证明深化主体环境联系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "地面到屋顶的上下关系清楚；屋顶占幅大符合仰看，不能据此推断压迫或受限。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "交叉杆件、木梁和工具的边界归属基本清楚，未见由交叠造成的连接误读。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "识别到建筑开口框取及梁柱透视层次；其作用主要为基本空间定位，未作为独立升级依据。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "联系表和参考图为评审排版，原视频未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0006",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "measure-0000-build_preview"
+      ],
+      "observation": "起始绿色结构位于木墙旁，右侧可见外部地面；随后结构增大并局部出框，3.5—4.5秒木墙占据主要视野，5秒绿色竖杆与横杆再次明确可见。",
+      "effect": "颜色和交叉杆件使对象可辨，近景转为材质与结构局部。未见必须保持完整外形的动作或对象关系被遗漏，也未证明尺度变化带来额外表达。",
+      "exceptions_checked": "排除把正常贴近、局部取景及画框截断直接当作主体过大或无效遮挡；不把绿色预览视为人物。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          5.5,
+          8.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0022",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0031",
+        "rgb-0032",
+        "rgb-0033",
+        "rgb-0034"
+      ],
+      "observation": "室内地面、支柱和倾斜木构依次显露；7.75—8秒近景绿色杆件大幅覆盖视野，8.25秒为近距离木墙，8.5秒重新出现内部地面。",
+      "effect": "短时可见范围收窄，但前后仍能辨认是在同类木构空间中转视；没有已确认的关键交互因此丢失。近景经过本身不足证明隐藏、隔离或阻碍行动。",
+      "exceptions_checked": "核对补采样时刻；区分相机贴近结构与结构主动运动，未推断碰撞、穿墙或受阻行为。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          9,
+          12
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0044",
+        "rgb-0048"
+      ],
+      "observation": "地面占据下部，屋顶覆盖上部，左侧斜撑通向小开口，后墙及立柱提供距离与方向参照；10秒清晰原帧可核对这些关系。",
+      "effect": "内部局部布局容易建立，未见持续空间拼接负担。梁柱与开口提供基本纵深，尚未与特定主体、目标或后续结果形成进一步揭示。",
+      "exceptions_checked": "室内环境即当前主体，不因缺少人物扣档；低屋顶外观不等于人物受到压迫。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          12.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0050",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "伞面占上缘，手握伞杆在下部，弯曲工具位于右侧；15秒右侧开口显露外部。此后视野转向上方，17.5—19.5秒主要呈现屋顶横木、纵梁及右侧立柱。",
+      "effect": "持物与环境归属清楚，后段屋顶虽大幅占画但保留墙梁连接，符合上方结构观察。未显示必须保持可见的地面目标或工具作用结果，因此不能确认关键裁切损害；也未证明仰看带来尺度处境表达。",
+      "exceptions_checked": "排除第一人称正常手腕裁切、工具出框和伞的合理近景遮挡；不要求完整身体或头部入画。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "RGB序列呈单一第一人称视区；附图中的网格、QA面板和两张参考图属于证据编排。",
+      "effect": "多画面组织不适用，不把证据联系表当作视频手法。",
+      "exceptions_checked": "未把普通前后画面变化认作分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0010",
+        "rgb-0020"
+      ],
+      "visible_change": "绿色搭建结构由较完整外观变为贴近杆件局部。",
+      "spatial_or_attention_effect": "注意从对象整体移向邻近结构，仍可借木墙定位；不采用4秒错误分割解释占比。",
+      "expressive_effect": "确认基本观察尺度变化，未证明额外关系表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0031",
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0034",
+        "rgb-0040"
+      ],
+      "visible_change": "近景杆件及墙面离开主要视野，较完整的室内地面和墙顶关系恢复。",
+      "spatial_or_attention_effect": "由局部遮满转为室内布局可读；没有持续的主体定位丢失。",
+      "expressive_effect": "空间恢复可辨，尚不足认定有组织的递进揭示。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "持物及右侧外部开口转为以屋顶、横梁和立柱为主。",
+      "spatial_or_attention_effect": "注意转向上部建筑连接，地面退出不妨碍当前结构观察。",
+      "expressive_effect": "未见行动与上方空间共同支持受限、压迫或规模强化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "片段主要呈现绿色搭建结构与木构室内的第一人称观察。贴近、转视和后段仰看保留了当前对象及局部空间参照；未确认持续查找、无效遮挡、必要动作丢失或形体结构破坏。适用基础成立，进一步表达未获证明，判中。",
+    "adjacent_grade_explanation": "不判低：近景覆盖和工具裁切可由局部观察及第一人称持物解释，缺少实际必要信息损失。不判高：颜色区分、梁柱层次和景别变化主要支持基本辨认，未形成可核查的进一步关系或空间揭示。",
+    "uncertainties": [
+      "仅依据所供采样图像；未声称观察采样间动作，也未重跑CV。",
+      "五项缓存分割拒绝，其全部派生数值不参与判断；无可靠遮挡百分比。",
+      "未提供明确任务或交互目标，不补造目标、心理、光流或实际距离。"
+    ]
+  }
+}

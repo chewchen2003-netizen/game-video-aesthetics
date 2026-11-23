@@ -1,0 +1,457 @@
+{
+  "sample_id": "R11",
+  "roles": [
+    {
+      "object_id": "dog",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "林地前方的犬，是反复出现的主要活动对象；early/middle/late仅为缓存名称，RGB未证明是不同犬。",
+      "uncertainty": "枝叶遮挡期间无法逐帧确认犬的位置与动作。"
+    },
+    {
+      "object_id": "rifle",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "下方第一人称步枪及瞄准镜，提供观察者视点和近景尺度参照。",
+      "uncertainty": "没有可见射击或其他必须辨认的武器操作。"
+    },
+    {
+      "object_id": "near_foliage",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处针叶枝与末段黄色阔叶，随视点变化进入画面并遮挡前方。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "forest",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "草坡、树干、林间空隙和黄色树冠构成犬所在环境。",
+      "uncertainty": "相对犬而言，部分地面与树木也处于同一中景层。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        7.5
+      ],
+      "necessary_information": "第一人称沿林地观察前方犬；需辨认犬与草坡、树木的基本位置，未见必须读清的精细交互。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0030"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        8,
+        14.5
+      ],
+      "necessary_information": "视点经过更密枝叶，犬间歇显露；需保留林地前进空间及犬的大致方位，不能把遮挡处推断为具体动作。",
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0056",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        15,
+        19.5
+      ],
+      "necessary_information": "较开阔的白桦与黄叶林中犬重新清楚出现，随后近叶再次进入视野；需理解犬仍在前方地面空间。",
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-dog_early",
+      "accepted": true,
+      "reason": "QA小区域与rgb-0000可见犬的位置、外形范围相符；仅采用可见区域定位，不推算完整面积或遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0016-dog_early",
+      "accepted": true,
+      "reason": "QA标区与rgb-0016前方小犬显露位置相符，可作定位辅助；小尺寸下轮廓精度有限，色差和深度不作决定依据。"
+    },
+    {
+      "measurement_id": "measure-0032-forest_context",
+      "accepted": false,
+      "reason": "大块草地掩码不能代表完整森林环境，边界也不对应稳定的单一对象；其占比、色差及深度派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-dog_middle",
+      "accepted": false,
+      "reason": "QA填充区域主要落在近处针叶枝上，没有可靠犬轮廓；定位、面积、色差及深度均不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-dog_late",
+      "accepted": true,
+      "reason": "QA窄小区域与rgb-0064可见犬相符，可辅助确认其位于前方偏右；不把可见面积等同完整主体面积。"
+    },
+    {
+      "measurement_id": "measure-0078-dog_late",
+      "accepted": false,
+      "reason": "原帧与QA标区对应黄色近叶，未可靠圈出犬；所有派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "枝叶密集处定位短暂困难，但没有证据确认持续无效查找；位置变化未形成明确增强。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "犬比例小，足以呈现其在前方林地的位置；未见要求读清面部或细节动作的阶段。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "遮挡明显但与经过近枝的空间关系一致；不据此推断隐藏、紧张或隔离，也无可靠遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "显露时犬的棕白色块可辨；中段弱区分主要伴随枝叶遮挡，未确认长期无效混杂。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "无人类人物身体可供该项检查；第一人称武器出框不是人体连接崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "无人类人物头部呈现。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "没有可靠人物视线及必须理解的观看对象关系；不以镜头朝向冒充人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "前方地面与林间空间基本保留；不能从屏幕位移确定犬的完整世界运动方向，未证明空间压缩与受阻行动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "可见内容为林地行进与犬的移动，没有已确认因出框而丢失的关键接触、操作或结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "近枪、近枝、地面犬和远树提供清楚层次；密林到开阔地的变化尚未明确揭示新的目标或关键通路关系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "下方武器、上方地面与树木的安排可理解；末段叶片占上部较大范围，但未见必要上下关系误读或额外表达。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "枝叶交叠可解释为近景遮挡，没有已确认对象连接误读；主体显隐损失统一记录于E2、E3，不重复计害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "可识别近景武器与林地的层次组织，效果为基础空间参照；未证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "联系表和参考帧是输入展示方式；游戏画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          7.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0030"
+      ],
+      "observation": "犬在草坡中以小比例出现，0秒清晰原帧可见棕白身体，4秒处更小；下方步枪持续占据近景，前方仍保留地面及树间空隙。",
+      "effect": "建立第一人称视点与前方犬的基本距离、方位关系。犬较小，但当前没有必须读清的精细动作，未确认尺度导致的关键损失。",
+      "exceptions_checked": "不以大枪等同主体抢占，不把犬小解释为孤独；5秒参考图是实际提供的rgb-0020放大展示。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          8,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0032",
+        "rgb-0034",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0050",
+        "rgb-0056",
+        "rgb-0058"
+      ],
+      "observation": "犬在8.5秒附近显露，随后前方针叶枝更密；10秒清晰原帧只见枝叶间很小的棕色片段，12至14.5秒若干采样中近枝遮挡明显。",
+      "effect": "犬的连续可见性下降，但前景遮挡与穿行林地一致，仍可理解观察方向与树林层次。没有可核查的交互或结果因遮挡被误读，也未证明遮显具有增强作用。",
+      "exceptions_checked": "按正常经过枝叶解释；不声称所有中间帧均丢失主体，不采用错误dog_middle掩码，不推断悬念或犬的受阻行为。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          15,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "15秒参考帧犬在前方偏右地面清楚显露，16秒仍可定位；白桦、黄叶和坡面更开敞。19至19.5秒近处黄叶横入上方和中央，19.5秒原帧未清楚呈现完整犬。",
+      "effect": "重新建立犬与地面、树木的联系，末段再被自然近景打断；前后变化说明显隐随林木遮挡变化，没有确认持续无效遮挡或关键动作裁切。",
+      "exceptions_checked": "不把末帧叶片认作犬；不从环境开阔自动推断情绪转折、逃离或新的路径目标。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "步枪沿下边缘形成稳定近景，枝叶位于其前方视野，犬及草坡处在更远层次；没有人类全身、独立头像或游戏内子画面。",
+      "effect": "空间层次与对象归属基本清楚，武器常规裁切保留观察前方的视野。可识别层次组织，但其作用尚停留在视点和距离说明。",
+      "exceptions_checked": "排除第一人称常规裁切；不把输入联系表认作游戏分屏，不把自然枝叶交叠当作形体连接错误。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0034",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "visible_change": "犬从较完整显露转为间歇显露，近处针叶枝增加。",
+      "spatial_or_attention_effect": "主体辨认更依赖显露间隙，林地前后层次仍可理解；无法据采样确认连续丢失时长。",
+      "expressive_effect": "没有证据把普通枝叶遮挡解释为隐藏或隔离。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0056",
+        "rgb-0058"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "密枝遮挡后，犬在更开阔的白桦草坡中重新显露。",
+      "spatial_or_attention_effect": "犬与前方地面的位置关系重新清楚，但未揭示明确的新交互对象或关键通路。",
+      "expressive_effect": "支持基本空间连续性，尚不足证明超出基本辨认的组织增强。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "visible_change": "较开阔视野转为近处黄叶覆盖上部和部分中央。",
+      "spatial_or_attention_effect": "前景竞争增加，末帧犬不清楚；地面与近枪仍提供空间参照。",
+      "expressive_effect": "未见可核查的动作结果因遮挡丢失，也未证明有表达性的遮显关系。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "按Rubric 2.3.0，犬、第一人称视点与林地空间基本可理解。中后段枝叶明显降低主体连续可见性，但采样未证明持续无效查找、关键行为损失或结构破坏；自然穿行遮挡的解释成立。适用基础成立，增强未获证明，判中。",
+    "adjacent_grade_explanation": "不判低：没有确认必要信息受损或持续无效遮挡。不判高：层次与显隐尚未形成超出基本空间说明的明确引导、关系或揭示效果。",
+    "uncertainties": [
+      "仅依据提供的40个采样时刻、QA联系表及三张清晰原帧；未读取其他材料，未重跑CV。",
+      "密枝期间犬的完整轮廓、动作和连续遮挡时长不明；未推算遮挡百分比或光流。",
+      "拒绝的三项测量及全部派生数值均未参与判档；其余测量仅辅助核对可见定位。"
+    ]
+  }
+}

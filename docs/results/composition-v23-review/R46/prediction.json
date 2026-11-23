@@ -1,0 +1,557 @@
+{
+  "sample_id": "R46",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "红衣、黄色顶饰的第三人称角色；连续奔跑与转向是主要呈现内容。",
+      "uncertainty": "不从背向姿态推断眼睛视线。"
+    },
+    {
+      "object_id": "statue_view_a",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        6
+      ],
+      "description": "入口前方后转至左侧的浅色巨像，提供接近过程中的空间参照。",
+      "uncertainty": "无证据证明与角色发生交互。"
+    },
+    {
+      "object_id": "statue_view_b",
+      "role": "supporting_element",
+      "time_range": [
+        15.5,
+        19
+      ],
+      "description": "后段正前方再转向侧面的浅色巨像，是路线转折的视觉参照。",
+      "uncertainty": "不能仅凭缓存名称确定是否与前段为同一座雕像。"
+    },
+    {
+      "object_id": "near_walls",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "画面两侧及转角近处的石墙、立柱；随转向改变框取范围。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "route_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "石板通路、墙体、阶梯、亮处开口、青色符号和沿路灯柱。",
+      "uncertainty": "亮处开口之后的可行路线及用途未得到确认。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        6
+      ],
+      "necessary_information": "角色沿狭长入口接近巨像并进入较宽区域；需看清角色、入口通路与巨像的前后关系。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6.5,
+        10.5
+      ],
+      "necessary_information": "角色转向内侧墙面及转角；需辨认行进地面、墙体边界与转向后的空间。",
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        11,
+        13.5
+      ],
+      "necessary_information": "侧向转动后显露明亮开口及远处建筑，再转回暗处；需区分近处行进地面、边界与远景。",
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0045",
+        "rgb-0048",
+        "rgb-0051",
+        "rgb-0054"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        14,
+        19.5
+      ],
+      "necessary_information": "角色穿过较暗转角，巨像重新进入前方视区，随后显露通向阶梯的走廊；需持续追踪角色及路线方向变化。",
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": true,
+      "reason": "QA覆盖红衣角色及顶饰，与原帧一致；仅采用可见区域、位置和尺度线索，不推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0000-statue_view_a",
+      "accepted": true,
+      "reason": "QA对应远处巨像，角色与雕像分别成区；只作可见轮廓及相对位置辅助。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": true,
+      "reason": "QA主体区域与RGB一致；区域可用，但自动人体关节点未获逐点确认，不用于结构或视线判断。"
+    },
+    {
+      "measurement_id": "measure-0016-statue_view_a",
+      "accepted": true,
+      "reason": "QA对应左上方被画框裁切的巨像；可见区域可用，顶边为零不能解释成完整雕像头部空间。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": true,
+      "reason": "QA覆盖中央偏下角色，未见显著串入环境；不采用未验证关节点或遮挡推算。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": true,
+      "reason": "QA与亮处开口前的角色吻合；可见面积与位置可作辅助，不把边框面积当掩码面积。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": true,
+      "reason": "QA仍能定位暗处角色，区域与RGB一致；较低边界亮度差不能单独证明主体混杂或定位失败。"
+    },
+    {
+      "measurement_id": "measure-0064-statue_view_b",
+      "accepted": false,
+      "reason": "QA将巨像旁符号石及其间大块背景并入目标，不能可靠代表雕像区域；该项面积、颜色、边界差和相对深度等派生数值全部弃用。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": true,
+      "reason": "QA对应末段转向角色，位置及可见尺度可用；关节点不作姿态精确依据，空缺深度不补造。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "中央偏下位置持续便于追踪；位置本身未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "角色较小但奔跑轮廓、方向及环境参照可读；不由巨像较大推断地位或受限。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "可见采样未出现持续无效遮挡；没有完整主体模型，不能量化遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "暗处躯干区分减弱，但红衣、黄色顶饰及稳定位置仍维持定位；色彩突出未构成进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E4",
+        "E5"
+      ],
+      "uncertainty": "角色连接未见明确崩坏；巨像局部出框属于环境陪体的正常裁切。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4",
+        "E5"
+      ],
+      "uncertainty": "主角头部与顶饰始终保留；未见头顶安排进一步表达处境。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "没有可确认的注视行为或必须交代的观看对象；背向奔跑的朝向按运动空间评价。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "前方地面和转角得到保留；未见可确认的逼近阻挡、逃离或前方空间压缩效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "奔跑及转向所需身体和落脚区域可见，没有局部取舍强化特定交互的证据。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "增强依据为转角遮显、近处地面与远景开口的连续联系，不使用单目深度数值证明真实距离。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "下方角色和地面、上方墙体及开口分工清楚；不足以证明上下分布带来额外处境表达。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4",
+        "E5"
+      ],
+      "uncertainty": "墙体、巨像和角色的归属清楚；环境遮显的空间效果统一记入E3及纵深项，不重复算作隔离表达。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "识别到墙体框取和通路透视；增强仅解释S-H-a已证实的空间揭示机制，不独立加档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "联系表与参考并排属于评审材料；游戏RGB本身未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          6
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "measure-0000-avatar",
+        "measure-0000-statue_view_a",
+        "measure-0016-avatar",
+        "measure-0016-statue_view_a"
+      ],
+      "observation": "角色位于下方中央，两侧石墙向前方巨像收束；接近后巨像变大并移向左侧，角色仍完整、可追踪，通路转入较宽空间。",
+      "effect": "保持奔跑动作可读；墙体透视、巨像的相对位置变化共同把入口和内部区域联系起来，为后续转向提供空间参照。",
+      "exceptions_checked": "巨像上端出框是接近和取景变化，未遮断主角必要动作；巨像不因较大就被当成主要行动主体。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6.5,
+          10.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0026",
+        "rgb-0032",
+        "rgb-0036",
+        "rgb-0040",
+        "rgb-0042",
+        "measure-0032-avatar"
+      ],
+      "observation": "角色跑向内侧墙面后转向，青色符号、墙根灯柱和连续石板地面标明空间边界；角色稳定处于画面下部。",
+      "effect": "动作方向与地面范围可读，墙面没有被误认成另一视区；尚不能仅凭面向墙体认定行动受阻。",
+      "exceptions_checked": "转向造成的背景位移不当作独立主体运动；未观察到必须入画却被裁去的交互目标。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          11,
+          13.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0044",
+        "rgb-0045",
+        "rgb-0046",
+        "rgb-0048",
+        "rgb-0051",
+        "rgb-0052",
+        "rgb-0054",
+        "measure-0048-avatar"
+      ],
+      "observation": "近侧墙缘逐渐让出视区，明亮开口及更远的建筑结构显露；角色与近处地面保留在下方，随后视区再次转向暗处。",
+      "effect": "墙缘的遮显顺序、连续地面和明暗远近对照共同将局部暗室联系到更大的外部空间；观众能随转向逐步建立空间，超出单纯看清角色。",
+      "exceptions_checked": "不把亮处直接称为任务出口，也不认定角色已经通过开口；明亮远景未导致主角持续丢失。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          14,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0074",
+        "rgb-0078",
+        "measure-0064-avatar",
+        "measure-0078-avatar"
+      ],
+      "observation": "暗处转角间主角躯干较暗，黄色顶饰仍清楚；前方巨像随后移向侧面，末段墙缘后显露阶梯走廊，角色奔跑及转向保持在框内。",
+      "effect": "近墙、巨像参照与最后显露的阶梯把多个转向连接成可跟随的环境展开；暗部没有造成持续搜寻或动作信息丢失。",
+      "exceptions_checked": "不使用错误的measure-0064-statue_view_b派生数值；未把暗部直接解释为隐藏、恐惧或隔离。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0040",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "observation": "清晰原帧与序列显示主角为同一游戏视区内的完整背向角色；部分巨像被上边框截取，角色未见不合理肢体拼接。无可靠眼睛视线或游戏内子画面。",
+      "effect": "支持形体及头部呈现的基础成立；视线空间和多画面组织不适用。",
+      "exceptions_checked": "评审联系表、QA网格及放大参考不当作视频内分屏；正常陪体裁切不当作同一形体结构崩坏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "visible_change": "远处巨像接近后增大并移向左侧，狭长入口展开为较宽区域。",
+      "spatial_or_attention_effect": "墙体透视与同一巨像的连续位置变化连接入口和内部空间。",
+      "expressive_effect": "建立角色穿行环境的空间关系，不推断情绪或地位。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0044"
+      ],
+      "after_evidence_ids": [
+        "rgb-0048",
+        "rgb-0051",
+        "rgb-0054"
+      ],
+      "visible_change": "内侧墙面视区转为明亮开口与远景，再回到暗处。",
+      "spatial_or_attention_effect": "近墙让出的可见范围逐步揭示更远结构，角色与近处地面持续作为锚点。",
+      "expressive_effect": "明确深化局部通路与更大环境的联系，是主要增强证据。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "暗处巨像前方视区经转向后显露阶梯走廊。",
+      "spatial_or_attention_effect": "墙缘遮显和连续地面将新通路接到角色当前所在区域。",
+      "expressive_effect": "延续逐步展开空间的组织效果；不声称已到达阶梯或完成路线。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立：角色、动作与路线边界可读，未见持续无效遮挡或结构破坏。11—13.5秒的墙缘让出、亮处远景显露，以及后段转角至阶梯的展开，结合持续保留的角色和地面参照，形成可核查的空间揭示，满足O-H-d。",
+    "adjacent_grade_explanation": "高于中档的依据是前后关联的环境展开，而非居中、色彩鲜艳或手法数量；未发现足以触发低档的基础失败。",
+    "uncertainties": [
+      "仅评价实际提供的采样画面，不声称检查过采样之间的所有瞬间。",
+      "拒绝16秒雕像错分及全部派生数值；其余测量只作辅助，未重跑CV。",
+      "缺乏可靠视线、完整遮挡模型和真实距离，不作相应推断；这些缺失不影响已成立的空间增强判断。"
+    ]
+  }
+}

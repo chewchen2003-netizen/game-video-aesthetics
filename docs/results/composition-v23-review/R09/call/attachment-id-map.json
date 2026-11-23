@@ -1,0 +1,50 @@
+{
+  "aliases": {
+    "Image #1": {
+      "id": "input-sequence.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-v23-compact50-clean/model-calls/R09/judge/input-images/input-sequence.jpg",
+      "sha256": "c40cf3fbb8b9b90be6355f66325bc2bf259a659f07dc6620990c4cce31a02dc8",
+      "dimensions": [
+        1280,
+        1096
+      ]
+    },
+    "Image #2": {
+      "id": "mask-qa.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-v23-compact50-clean/model-calls/R09/judge/input-images/mask-qa.jpg",
+      "sha256": "96bdd7a3445ac4bd510d47c65f20b6ee69746d4556ce812c8dfbab247cb11e03",
+      "dimensions": [
+        1280,
+        1152
+      ]
+    },
+    "Image #3": {
+      "id": "frame-0001.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-v23-compact50-clean/model-calls/R09/judge/input-images/frame-0001.jpg",
+      "sha256": "aa2d5a4e4ea47f8bef92802155f7be14e4c9578771047440e0d4850e29d8b36b",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "Image #4": {
+      "id": "frame-0041.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-v23-compact50-clean/model-calls/R09/judge/input-images/frame-0041.jpg",
+      "sha256": "eb1dfb955102bf45e0a5e95f85b8e0f65a25f70043ece2ea9adb100ff8839a37",
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "Image #5": {
+      "id": "frame-0079.jpg",
+      "path": "/Users/minimax/game-video-aesthetics/runs/composition-v23-compact50-clean/model-calls/R09/judge/input-images/frame-0079.jpg",
+      "sha256": "33bd95d21cc66378340c8e66096a1af0e7b8c8c9f27d3041a6110aa3382a90a5",
+      "dimensions": [
+        1280,
+        720
+      ]
+    }
+  },
+  "origin": "Actual supplied attachment order"
+}

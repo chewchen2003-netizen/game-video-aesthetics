@@ -1,0 +1,515 @@
+{
+  "sample_id": "R26",
+  "roles": [
+    {
+      "object_id": "warehouse_space",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "主要呈现工业仓储空间及其内部布局，没有可确认的人物主体。",
+      "uncertainty": "不推断任务、剧情或镜头操作者身份。"
+    },
+    {
+      "object_id": "gridded_window",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "起始及返回阶段的网格办公室窗，提供内外空间参照；gridded_window_return按RGB理解为返回同类窗区。",
+      "uncertainty": "末段视角不同，不依据缓存名称单独确认对象身份。"
+    },
+    {
+      "object_id": "rollup_door",
+      "role": "supporting_element",
+      "time_range": [
+        4.5,
+        17.5
+      ],
+      "description": "带标识及黄色灯块的卷帘门，是墙面和转向过程中的定位参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "forklift",
+      "role": "supporting_element",
+      "time_range": [
+        10,
+        16
+      ],
+      "description": "黄色叉车，先近距离出现，随后与货箱、楼梯及仓库地面共同呈现。",
+      "uncertainty": "未见可靠的叉车自主运动或操作行为。"
+    },
+    {
+      "object_id": "near_frames_crates",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处窗框、墙柱、货箱和覆盖物，随视角变化构成边缘遮挡及距离参照。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "stairs_mezzanine_floor",
+      "role": "background",
+      "time_range": [
+        8,
+        17.5
+      ],
+      "description": "楼梯、上层栏杆、梁架、远墙及地面亮区，呈现仓库的水平与垂直结构。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        4
+      ],
+      "necessary_information": "隔着网格窗呈现办公室，再沿窗面转向；必要信息是窗框、室内陈设及内外分界。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        4.5,
+        9.5
+      ],
+      "necessary_information": "近看卷帘门及灯块，再显露相邻仓库区域；需要保留墙面参照及转向后的空间联系。",
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        10,
+        15.5
+      ],
+      "necessary_information": "由叉车近景转为货箱、楼梯、上层结构和开敞地面的组合视野，建立设备与仓库布局的关系。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0060",
+        "rgb-0062"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        16,
+        19.5
+      ],
+      "necessary_information": "视角沿亮区及远墙返回办公室窗，利用重复出现的窗格与内部陈设重新定位。",
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-gridded_window",
+      "accepted": true,
+      "reason": "QA覆盖区域基本对应RGB中的窗格整体，边缘少量漏分不影响粗略位置和可见范围判断。只接受窗面范围，不把它当作完整仓库主体，也不据深度值推断实际距离。"
+    },
+    {
+      "measurement_id": "measure-0016-gridded_window",
+      "accepted": true,
+      "reason": "左侧近窗及裁切范围与RGB相符，可用于确认窗面移至左侧并出框；不能由面积变化推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-rollup_door",
+      "accepted": true,
+      "reason": "右侧卷帘门的主要区域与RGB对应，可支持粗略位置及贴边情况；明暗、色差和单目深度数值不承担审美或真实距离结论。"
+    },
+    {
+      "measurement_id": "measure-0048-forklift",
+      "accepted": false,
+      "reason": "QA仅标出左侧暗处的局部不规则区域，无法可靠对应完整叉车，缺少可辨识的车架与车体轮廓；全部派生位置、面积、色差及深度数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-forklift",
+      "accepted": false,
+      "reason": "掩码只是左边缘局部块状区域，未可靠分出叉车结构，无法区分车体、覆盖物及背景；全部派生数值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-gridded_window_return",
+      "accepted": false,
+      "reason": "掩码明显吞入窗左侧大面积实墙，窗格内部又存在漏分，不能代表返回窗区的可靠可见面积或边界；全部派生数值不采用。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "主体是空间展示，不能把每一时刻最亮或最大的单件物品固定为主体。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "依据RGB中的近远景变化，不使用被拒绝的叉车及返回窗面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "窗格和货箱属于合理空间遮挡；未见支持受阻行动或关系变化的证据，不计算遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "黄色设备、灯块及亮区能辅助辨认，但色彩和明暗区别本身不足以证明进一步关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "未见可确认的人体，不把设备裁切套用人体连接条件。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "无人物头部。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "没有人物观看行为，镜头朝向不替代人物视线。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "可确认的是视角移动，未确认独立对象的行进及必要目标；不以屏幕位移推断世界运动。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "未见需要保留作用对象和结果的操作或交互动作。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "纵深根据透视、遮挡及前后视野建立，不将缓存逆深度换算为米。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "E3"
+      ],
+      "uncertainty": "增强限于楼梯、上层平台与地面设备的层级联系及环境高度，不推断权威或压迫心理。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "窗格、车架及货箱的重叠未造成对象归属误读；未证明依附、隔离等进一步关系。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "识别到窗框框取与透视层次；只解释已证实的空间揭示，不独立增加档位。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "联系表是输入展示形式，原视频没有可确认的分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "measure-0000-gridded_window",
+        "measure-0016-gridded_window"
+      ],
+      "observation": "网格窗及后方桌椅、柜体构成内外两层；随后窗面斜向移至左侧，近框与墙柱的遮挡随视角变化。",
+      "effect": "办公室内部仍可辨认，窗框明确给出内外分界，并为后续仓库展开留下可返回的空间参照。窗格没有持续掩没必要内容。",
+      "exceptions_checked": "窗格是环境实体，贴边和出框符合近距离转向；不把遮挡解释为人物无法接近，也不推断情绪。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          4.5,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0038",
+        "measure-0032-rollup_door"
+      ],
+      "observation": "卷帘门及黄色灯块先占据近处主要视野，随后门面偏至边侧，地面亮区、远墙与上方梁架逐步进入可见范围。",
+      "effect": "近处墙面没有孤立成为无关画面：门面和灯块充当转向参照，使观看从局部表面过渡到更开阔的仓库空间。暗部细节有限，但没有持续的必要对象定位丢失。",
+      "exceptions_checked": "近墙和局部取景符合空间浏览；没有必须同时呈现的角色动作或操作目标，不能仅因门占比大判失败。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          10,
+          15.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056",
+        "rgb-0060",
+        "rgb-0062"
+      ],
+      "observation": "10秒附近黄色叉车车架近距离占据左中部；12秒附近货箱与楼梯构成近远参照；13—15.5秒的展开视野把叉车、两侧货物、地面通路、上层栏杆和梁架放入同一空间。",
+      "effect": "叉车由局部设备转为仓库布局中的定位点。货箱边缘及地板透视引向开敞区，楼梯连接地面与上层平台；这些前后关联深化了设备、通路和建筑层级的关系，超过单纯把叉车拍清楚。",
+      "exceptions_checked": "近景叉车局部出框、后续移至边缘均符合视角转换；货箱与车架有重叠但归属清楚。未见叉车运动，不解释为接近或受阻行动。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          16,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0064",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "开敞地面及远墙先保留在视野中，之后网格办公室窗重新成为主要呈现对象；末帧能辨认窗后柜体、桌椅与照明区域。",
+      "effect": "回到窗区使此前的办公室局部与仓库全貌形成可核查的前后定位联系；末段近景补足窗内陈设，而非另起一个无法联系的空间。",
+      "exceptions_checked": "不要求返回视角与起始完全一致；只认定可见的重复窗区和陈设联系，不声称精确复原镜头路径。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "observation": "所给序列以环境和静置设备为主要内容，没有可确认的人物、独立主体行进、关键操作动作或视频内同时并置的子画面。",
+      "effect": "人体裁切、头部空间、人物视线、动作裁切及多画面检查不适用；镜头浏览的空间效果由主体安排和空间项评价。",
+      "exceptions_checked": "未把办公室陈设或叉车车架误认作人物；未把输入联系表误认作原片分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0038"
+      ],
+      "visible_change": "窗内办公室转为近门面，再显露仓库地面、远墙及上方结构。",
+      "spatial_or_attention_effect": "窗框、卷帘门和灯块作为连续可辨的局部参照，帮助从室内框取转向仓库空间。",
+      "expressive_effect": "形成由局部到环境的渐进揭示；不附加隐藏或隔离情绪。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "after_evidence_ids": [
+        "rgb-0052",
+        "rgb-0060"
+      ],
+      "visible_change": "叉车近景与楼梯局部，转为叉车、货物、地面及上层结构共同可见的展开视野。",
+      "spatial_or_attention_effect": "近景建立的设备随后成为全景定位点，楼梯和栏杆把地面层与上层联系起来。",
+      "expressive_effect": "明确深化设备与仓库规模、通路及层级的关系，是主要增强证据。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "visible_change": "从仓库开敞区返回网格办公室窗。",
+      "spatial_or_attention_effect": "重复窗区将末段与起始联系，支持重新定位。",
+      "expressive_effect": "环境浏览形成前后关联，增强空间整体性。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "P-H-a",
+      "P-H-b",
+      "S-H-a",
+      "S-H-b",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立，无确认的持续查找、无效遮挡或空间误读。叉车近景随后嵌入货箱、通路、楼梯及上层平台的展开视野，末段又返回起始窗区；具体参照把局部设备与整体建筑布局连接起来，形成超出基本辨认的空间揭示。",
+    "adjacent_grade_explanation": "高于中档的依据是前后视野共同建立并深化空间联系，不是黄色设备突出、存在前景或识别到框架手法。近墙取景及设备贴边有合理浏览上下文，不构成低档基础失败。",
+    "uncertainties": [
+      "结论限于所给0—19.5秒采样图像，不声称看过未提供的中间时刻。",
+      "三项分割被拒绝，相关派生数值均未参与判断；未重跑CV。",
+      "没有可靠完整主体区域，不给遮挡率，也不由单目深度推断实际距离。"
+    ]
+  }
+}

@@ -1,0 +1,489 @@
+{
+  "sample_id": "R38",
+  "roles": [
+    {
+      "object_id": "avatar",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "第三人称背视人物；先短暂停留、转向，随后穿过植被并沿林地坡面跑动。",
+      "uncertainty": "无可靠眼部视线，不能把身体朝向直接当作注视关系。"
+    },
+    {
+      "object_id": "terrain",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "落叶坡地、岩壁和林木构成行进空间；没有确认与人物互动的独立陪体。",
+      "uncertainty": "缓存rock_region不是可靠、连续的岩石对象。"
+    },
+    {
+      "object_id": "near_vegetation",
+      "role": "foreground",
+      "time_range": [
+        5,
+        9.5
+      ],
+      "description": "近处枝叶在人物前方及镜头附近交叠，部分采样画面遮住人物。",
+      "uncertainty": "仅依据有序RGB中的遮显变化，不推算遮挡比例。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "建立背视人物与林地、右侧覆草岩坡的位置；必要信息为人物所在位置及前方空间。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6,
+        9.5
+      ],
+      "necessary_information": "人物开始穿行近处植被并重新显露；需能接续其位置和移动方向。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0026",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0038"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        10,
+        19.5
+      ],
+      "necessary_information": "人物沿坡面跑动、绕过树木，右侧岩壁及坡地逐步改变相对位置；需辨认动作、落脚地形与前方范围。",
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-avatar",
+      "accepted": false,
+      "reason": "QA人物区域未覆盖原帧中延伸至底边的腿部，轮廓及下界不完整；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0000-rock_region",
+      "accepted": false,
+      "reason": "区域混入岩坡前枝叶，不能代表独立岩石完整轮廓；不采用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-avatar",
+      "accepted": false,
+      "reason": "人物下部被掩码截短，不能作为完整主体区域；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0016-rock_region",
+      "accepted": false,
+      "reason": "掩码跨覆草坡体和前方植被，岩石边界未可靠分离；不采用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-avatar",
+      "accepted": false,
+      "reason": "QA虽保留上身和伸臂，但下身区域不完整；不采用面积、边距或其他派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-rock_region",
+      "accepted": false,
+      "reason": "右侧区域主要混有近景枝叶及坡面，不是可靠岩石对象；不采用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0048-avatar",
+      "accepted": false,
+      "reason": "掩码在画面底部前终止，漏掉人物下部；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0048-rock_region",
+      "accepted": false,
+      "reason": "QA右侧区域覆盖落叶坡面，未对应明确岩石；不采用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-avatar",
+      "accepted": false,
+      "reason": "主体下部掩码仍被截短，与RGB可见人体不完整对应；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0064-rock_region",
+      "accepted": false,
+      "reason": "仅覆盖岩壁局部且夹杂树木及空隙，无法代表岩壁完整尺度或边界；不采用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-avatar",
+      "accepted": false,
+      "reason": "QA人物下界及脚部覆盖不完整，与清晰原帧不符；不采用该项派生数值。"
+    },
+    {
+      "measurement_id": "measure-0078-rock_region",
+      "accepted": false,
+      "reason": "标记转为树干旁远处林木与雾背景，明显不是岩石；不采用派生数值。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "人物位置稳定支持跟随观看；没有证明位置变化产生进一步关系表达。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "仅作RGB定性比较；后段人物稍小并露出更多坡地，尚不足证明有组织的信息揭示增强。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "植被局部遮显未形成持续定位丢失；未证明隐藏或隔离表达，不给遮挡百分比。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "服装与地面色调接近，但近处体量、头肩轮廓和姿态仍可辨；不以低明暗差直接判失败。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E4"
+      ],
+      "uncertainty": "下肢贴底或出框属于背后跟随取景；未见同一身体连接或尺度崩坏。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "头部完整，上方空间呈现树林；没有与实际受限动作相联系的头顶空间表达。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "背视行进中没有可确认的独立观看行为或必要注视对象；前方空间归入运动项。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "坡面与树木间的行进范围可读；未见前方压缩、目标揭示等进一步效果。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "摆臂、躯干姿态与地形足以辨认跑动；未出现必须依赖脚部细节才能理解的接触或结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "近人物、中景坡面和远树间的前后关系清楚；变化主要服务常规行进定位，未证明超出基础辨认。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "人物下方坡地与上方树木、岩壁支持高低关系；不把高岩壁直接解释为压迫。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "枝叶及树干交叠未造成身体归属或连接误读；遮挡影响统一记录于E2，不重复计损害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "可识别近人物、坡地与远林的层次组织；其作用为基础定位，不能仅凭纵深命名升档。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表及参考帧并置属于证据排版，不能当作视频内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          5.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ],
+      "observation": "avatar位于画面偏左下，头肩及手臂清楚；右侧覆草岩坡、前方地面和远处林木同时可见。",
+      "effect": "人物易定位，人物与周围林地的基本空间关系成立；环境占据较多画面仍未挤掉必要人物信息。",
+      "exceptions_checked": "色调接近不等于主体混杂；没有证据支持受困、孤独等心理解释。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          6,
+          9.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0026",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0032",
+        "rgb-0038"
+      ],
+      "observation": "近处枝叶在6.5、7及7.5秒采样中明显掠入并遮住部分人物，8秒后人物重新较完整显露。",
+      "effect": "局部观看清晰度下降，但前后采样可接续同一人物及移动，未确认持续无效遮挡或关键动作信息丢失。",
+      "exceptions_checked": "符合穿行植被时的阶段性遮显；未把树叶遮挡解释为隐藏叙事，也未从采样推断逐帧持续时间。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          10,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0072",
+        "rgb-0078"
+      ],
+      "observation": "人物保持下部偏左的跟随位置沿坡面跑动；右侧岩壁先较突出，末端近树干进入右侧，树后林地继续可见。",
+      "effect": "前方坡地、树木及岩壁的位置变化使当前行进空间可理解。未见清楚的目标揭示、通路封闭或行动结果，增强证据不足。",
+      "exceptions_checked": "不把普通跟随取景与环境相对位移自动算作有效空间揭示增强；末端树干没有遮掉必要人物部位。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "清晰原帧中人物头顶完整，躯干与肢体连接连续；0秒及10秒下肢延伸至底边，19.5秒可见更多腿部。",
+      "effect": "裁切仍保留人物姿态和跑动辨识所需内容，没有基础形体结构破坏。",
+      "exceptions_checked": "按正常第三人称跟随裁切判断；分割掩码的截短不当作原画身体断裂。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "所给原帧均为单一连续游戏视区。",
+      "effect": "没有需要评审的同时并置子画面关系。",
+      "exceptions_checked": "排除联系表、QA及参考图的材料排版。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0024"
+      ],
+      "after_evidence_ids": [
+        "rgb-0026",
+        "rgb-0028",
+        "rgb-0030",
+        "rgb-0032"
+      ],
+      "visible_change": "由人物基本完整可见，变为近叶遮掩，再于8秒采样重新显露。",
+      "spatial_or_attention_effect": "短暂降低清晰度，前后位置连续性仍支持追踪人物。",
+      "expressive_effect": "未证明遮显产生超出植被穿行的关系表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0078"
+      ],
+      "visible_change": "由靠近覆草岩坡的背视站立，转为坡面跑动；后段更多地面进入画面，岩壁及树干相对位置改变。",
+      "spatial_or_attention_effect": "人物持续可定位，前方地形与移动关系基本清楚。",
+      "expressive_effect": "属于可核查的基础空间接续；未见足以支持增强的目标、阻隔或关系变化。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "适用基础条件成立：人物与跑动姿态可辨，前方坡地及环境位置可理解，裁切未破坏形体结构。植被遮显是局部穿行现象，未确认持续观看干扰。位置、尺度与空间变化主要满足跟随行进的基本呈现，未证明进一步表达，判中。",
+    "adjacent_grade_explanation": "不判低：没有确认的必要信息损失或结构失败。不判高：纵深、环境占比及前后移动本身不能替代增强证据，尚未形成明确超出基础定位的视觉组织效果。",
+    "uncertainties": [
+      "全部12项缓存测量被拒绝，未采用其派生数值；RGB足以支持本次基础判断。",
+      "仅评价提供的采样与清晰原帧，不声称观察未提供的中间时刻。",
+      "无可靠视线对象关系，不推断人物心理、任务目标或创作意图。"
+    ]
+  }
+}

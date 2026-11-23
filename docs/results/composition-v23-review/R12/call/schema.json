@@ -1,0 +1,309 @@
+{
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "object_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "subject",
+              "supporting_element",
+              "foreground",
+              "background",
+              "unknown"
+            ]
+          },
+          "time_range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "uncertainty": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "object_id",
+          "role",
+          "time_range",
+          "description",
+          "uncertainty"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage_id": {
+            "type": "string"
+          },
+          "time_range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "necessary_information": {
+            "type": "string"
+          },
+          "input_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "stage_id",
+          "time_range",
+          "necessary_information",
+          "input_evidence_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "segmentation_review": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "measurement_id": {
+            "type": "string"
+          },
+          "accepted": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "measurement_id",
+          "accepted",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "indicator_id": {
+            "type": "string"
+          },
+          "baseline": {
+            "type": "string",
+            "enum": [
+              "met",
+              "not_met",
+              "insufficient_evidence",
+              "not_applicable"
+            ]
+          },
+          "enhancement": {
+            "type": "string",
+            "enum": [
+              "met",
+              "not_met",
+              "insufficient_evidence",
+              "not_applicable"
+            ]
+          },
+          "condition_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertainty": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "indicator_id",
+          "baseline",
+          "enhancement",
+          "condition_ids",
+          "event_ids",
+          "uncertainty"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "time_ranges": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "input_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "observation": {
+            "type": "string"
+          },
+          "effect": {
+            "type": "string"
+          },
+          "exceptions_checked": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "time_ranges",
+          "input_evidence_ids",
+          "observation",
+          "effect",
+          "exceptions_checked"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "temporal_analysis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "before_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "after_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "visible_change": {
+            "type": "string"
+          },
+          "spatial_or_attention_effect": {
+            "type": "string"
+          },
+          "expressive_effect": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "before_evidence_ids",
+          "after_evidence_ids",
+          "visible_change",
+          "spatial_or_attention_effect",
+          "expressive_effect"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "overall": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "scored",
+            "uncertain",
+            "not_applicable"
+          ]
+        },
+        "grade": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "low",
+            "middle",
+            "high",
+            null
+          ]
+        },
+        "condition_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decisive_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string"
+        },
+        "adjacent_grade_explanation": {
+          "type": "string"
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "grade",
+        "condition_ids",
+        "decisive_event_ids",
+        "reason",
+        "adjacent_grade_explanation",
+        "uncertainties"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "sample_id",
+    "roles",
+    "stages",
+    "segmentation_review",
+    "indicators",
+    "events",
+    "temporal_analysis",
+    "overall"
+  ],
+  "additionalProperties": false
+}

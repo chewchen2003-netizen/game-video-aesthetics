@@ -1,0 +1,541 @@
+{
+  "sample_id": "R28",
+  "roles": [
+    {
+      "object_id": "red_player",
+      "role": "subject",
+      "time_range": [
+        0,
+        18.25
+      ],
+      "description": "红衣持剑角色；前段移动、交战，后段沿通道朝蓝色大型角色所在空间前进。",
+      "uncertainty": "青色半透明形体与其部分重合，但不能据此认定都是该角色身体。"
+    },
+    {
+      "object_id": "cyan_figures",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        16.5
+      ],
+      "description": "随红衣角色出现的青色半透明人形，与移动、交战画面共同呈现。",
+      "uncertainty": "具体身份及机制无法确认。"
+    },
+    {
+      "object_id": "combat_targets",
+      "role": "supporting_element",
+      "time_range": [
+        4,
+        14.5
+      ],
+      "description": "与红衣角色近身交互的形体及粉白、青色效果。",
+      "uncertainty": "密集效果中个别对象身份不清，不据此推断战斗结果。"
+    },
+    {
+      "object_id": "large_blue_character",
+      "role": "supporting_element",
+      "time_range": [
+        15,
+        18.25
+      ],
+      "description": "通道远端可见的蓝色大型角色，是前进方向上的对象。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "large_blue_character",
+      "role": "subject",
+      "time_range": [
+        18.5,
+        19.5
+      ],
+      "description": "切镜后主要呈现的蓝色大型角色，坐于机械装置中。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "near_architecture",
+      "role": "foreground",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "近处墙柱、悬链、管道及末段地面格栅，提供遮挡和空间参照。",
+      "uncertainty": "具体前后角色随机位变化。"
+    },
+    {
+      "object_id": "chamber",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "蓝灰石砌通道与房间、紫色壁灯、绿色液体及机械设施。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        3.5
+      ],
+      "necessary_information": "辨认红衣角色、青色人形及转角通道，理解移动方向和相邻位置。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0014"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        4,
+        14.5
+      ],
+      "necessary_information": "辨认红衣角色与近身交互对象、攻击作用区域；效果出现后仍能重新定位。",
+      "input_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0052",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        15,
+        18.25
+      ],
+      "necessary_information": "建立近处角色、通道与远端蓝色角色的联系，理解朝远端空间前进。",
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0073"
+      ]
+    },
+    {
+      "stage_id": "s4",
+      "time_range": [
+        18.5,
+        19.5
+      ],
+      "necessary_information": "辨认蓝色大型角色、座椅装置与周围管道、悬链和格栅的空间关系。",
+      "input_evidence_ids": [
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-red_player",
+      "accepted": true,
+      "reason": "QA框及可见区域对应红衣角色主体，RGB一致；仅作可见身体位置与粗略区分的辅助，不代表完整持剑轮廓。关节点不用于判断形体连接，深度不作距离依据。"
+    },
+    {
+      "measurement_id": "measure-0016-red_player",
+      "accepted": false,
+      "reason": "4秒QA框主要包围前方粉青色效果，红衣角色在其下方，发生目标错分；全部派生位置、面积、色差和深度弃用。"
+    },
+    {
+      "measurement_id": "measure-0032-red_player",
+      "accepted": false,
+      "reason": "缓存无有效区域；8秒RGB仍有交战主体，不能将检测失败当作主体消失。"
+    },
+    {
+      "measurement_id": "measure-0048-red_player",
+      "accepted": false,
+      "reason": "12秒QA区域混入青色形体及交互效果，未可靠隔离红衣身体；全部派生数值和关节点弃用。"
+    },
+    {
+      "measurement_id": "measure-0064-red_player",
+      "accepted": false,
+      "reason": "16秒框主要覆盖近处青色人形，红衣角色只部分可见，身份混分；触底、面积、色差、深度及关节点均不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-large_blue_character",
+      "accepted": true,
+      "reason": "框取对象与19.5秒蓝色角色一致，可辅助定位和粗略可见尺度；边缘及手部完整性不足以支持精确面积解释，无完整形体与遮挡百分比结论。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-a",
+        "P-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "效果峰值有局部定位波动，未见持续无效查找。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "P-B-b",
+        "P-H-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "尺度判断依据RGB前后对照，不采用错分面积。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "仅确认交互中的阶段性覆盖；无完整主体区域，不估算遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "红衣与蓝灰环境区分有效；末段青绿近色仍靠轮廓和装置位置可辨，未证明额外关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "16秒近处人形触底属于近景出框，未见同一身体连接或尺度崩坏；不以缓存关节点判定。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "角色头部均得到必要呈现；未见头顶空间与实际受限行动形成增强联系。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "没有可靠眼神及独立观看行为；身体朝向与前进目标归运动空间检查。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "C-B-d",
+        "C-H-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "增强限于15至18.25秒朝远端对象接近的空间联系，不推断受困或威胁。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "近身作用区域和移动目标留在画内；效果遮蔽不等于裁切损失，未见局部取舍额外强调接触反应。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "凭透视、遮挡和跨镜头对应判断，不使用单目深度作米制或尺度证明。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-b",
+        "S-H-b"
+      ],
+      "event_ids": [
+        "e2",
+        "e4"
+      ],
+      "uncertainty": "末段上下组织强化装置与环境规模；不把仰拍解释为权威。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "攻击效果与青色人形局部重叠，仍未形成稳定错误连接；未证明重叠本身传达依附或隔离。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "可识别通道透视、建筑框取及末段低机位层次；仅解释已由空间项证明的效果。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e5"
+      ],
+      "uncertainty": "联系表与参考并列是证据展示，不是视频内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0004",
+        "rgb-0008",
+        "rgb-0014"
+      ],
+      "observation": "红衣角色位于近处墙柱旁，与青色人形相邻；墙柱占据较大区域，转角另一侧仍露出地面、管道和前行空间。",
+      "effect": "主体尺度允许同时读取身体与环境，红衣轮廓容易找到，柱体建立近远关系；尚不足以证明遮挡具有额外表达。",
+      "exceptions_checked": "墙柱是合理转角遮挡；小比例并未使移动方向或角色身份持续难辨。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          4,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0053",
+        "rgb-0058"
+      ],
+      "observation": "4至5秒前方粉白效果膨胀；6至12秒红衣角色及交互形体主要处于走廊中央区域。10秒清晰帧保留持剑姿态与作用区域；12.5至14.5秒青色和白色碎片再次覆盖局部身体。",
+      "effect": "效果峰值降低身体细节可读性，但前后样本仍在相同交互区域重新显露角色，攻击范围保留在画内；墙面、地砖和管道继续提供空间参照。",
+      "exceptions_checked": "属于动作相接及效果覆盖，未见持续无效遮挡或必要动作出框；不能由稀疏采样声称峰值间每帧均清晰，也不据效果推断击败结果。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          15,
+          18.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0060",
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0073"
+      ],
+      "observation": "15秒参考画面以近处墙体和角色框出向前延伸的通道，蓝色大型角色位于远端；16秒青色人形占据下方近景。17至18.25秒红衣角色背向镜头居下，前方房间及蓝色对象持续保留。",
+      "effect": "近处角色、地面透视与远端对象形成明确观看路径；前方空间不只容纳移动，还提前标出接近对象，为随后切近同一对象建立空间依据。",
+      "exceptions_checked": "下缘近景裁切未切断必要目标关系；不以屏幕位移计算世界速度，不把身体朝向当眼神。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          18.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "切为蓝色角色的低机位近景：地面格栅铺在下方，角色和座椅装置占据中部，悬链、管道和顶架伸向上部；绿色液体从侧方垂落。19.5秒清晰帧显示角色身体与座椅、机械臂的区别。",
+      "effect": "承接远端预览，将观看重点从通道行进转到角色与机械设施；格栅、座椅、顶部结构共同揭示其所在房间的立体规模和装置联系，超出单纯把角色拍大。",
+      "exceptions_checked": "不由仰拍或体型推断地位、心理；角色青绿配色与环境接近但轮廓仍可辨，无确认的身体结构断裂。"
+    },
+    {
+      "event_id": "e5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "有序RGB样本呈现单一游戏视区，末段为前后切镜；未见视频内部同时并置的子画面。",
+      "effect": "多画面组织不适用。",
+      "exceptions_checked": "Image #1、Image #2的网格和参考并列属于评审材料排版。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0016",
+        "rgb-0020"
+      ],
+      "after_evidence_ids": [
+        "rgb-0024",
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "前方粉白效果覆盖转为走廊内较小的近身交互区域，红衣身体重新显露。",
+      "spatial_or_attention_effect": "定位有波动但未持续丢失，走廊参照保持。",
+      "expressive_effect": "支持基础成立；不足以把遮显解释为隐藏或隔离。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0053"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0073"
+      ],
+      "visible_change": "密集青白效果后，画面转向纵向通道，远端蓝色对象出现并保持在前进方向。",
+      "spatial_or_attention_effect": "观看由局部交互转向近处行动者与远端对象的联系。",
+      "expressive_effect": "可见通路与实际朝向共同强化接近关系。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0068",
+        "rgb-0073"
+      ],
+      "after_evidence_ids": [
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "远端较小的蓝色角色转为低机位主要对象，座椅、管道、悬链及格栅展开。",
+      "spatial_or_attention_effect": "先以通道定位对象，再揭示其与房间设施的联系，观看重点连续转移。",
+      "expressive_effect": "尺度变化与环境揭示共同构成有效视觉组织，而非仅有普通推近。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "O-H-b",
+      "O-H-d",
+      "P-H-a",
+      "P-H-b",
+      "C-H-d",
+      "S-H-a",
+      "S-H-b"
+    ],
+    "decisive_event_ids": [
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。交战效果造成局部覆盖，但未确认持续定位困难、必要动作裁切或形体结构失败。15至18.25秒以近处角色和通道建立远端蓝色对象，18.5至19.5秒再展开该对象及机械房间；位置、尺度和空间线索共同完成有依据的目标引导与环境揭示，达到增强条件。",
+    "adjacent_grade_explanation": "高于中档的依据是远端预览、沿通道接近和末段装置空间揭示之间的具体联系；并非因居中、仰拍或手法数量升级。未见足以判低的基础失败。",
+    "uncertainties": [
+      "只评价所给48个采样时刻与清晰参考帧，不声称覆盖采样间连续画面。",
+      "4、8、12、16秒缓存区域拒绝使用；未重跑CV，未计算遮挡百分比或光流。",
+      "青色人形与交战对象具体身份不确定，不影响可见位置及通路判断。"
+    ]
+  }
+}

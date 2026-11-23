@@ -1,0 +1,683 @@
+{
+  "sample_id": "R03",
+  "roles": [
+    {
+      "object_id": "player_rider",
+      "role": "subject",
+      "time_range": [
+        0,
+        14
+      ],
+      "description": "背向镜头的玩家骑手，与摩托共同构成行驶主体。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "player_motorcycle",
+      "role": "subject",
+      "time_range": [
+        0,
+        14
+      ],
+      "description": "玩家骑乘的摩托，需与骑手联合判断转向和道路位置。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "failure_overlay",
+      "role": "subject",
+      "time_range": [
+        14.25,
+        16.25
+      ],
+      "description": "失败结果界面，成为当前主要信息。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "player_rider",
+      "role": "subject",
+      "time_range": [
+        16.5,
+        19.5
+      ],
+      "description": "界面消失后重新呈现的骑手。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "player_motorcycle",
+      "role": "subject",
+      "time_range": [
+        16.5,
+        19.5
+      ],
+      "description": "随骑手继续沿公路行驶的摩托。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "other_racers",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "前方及侧方骑手，建立同路行驶和相对位置。",
+      "uncertainty": "远处个体身份不可逐一确认，不将错误合并掩码当作多人主体范围。"
+    },
+    {
+      "object_id": "traffic_cars",
+      "role": "supporting_element",
+      "time_range": [
+        5,
+        10.5
+      ],
+      "description": "道路上可见车辆，补充道路交通关系。",
+      "uncertainty": "不据缓存认定8秒的车辆范围。"
+    },
+    {
+      "object_id": "road",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "从近处延至远方的公路及路肩，为路线和远近提供参照。",
+      "uncertainty": "近处路面也构成前景；角色不等于固定深度层。"
+    },
+    {
+      "object_id": "desert_environment",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "荒漠、山体、电杆、建筑及护栏。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "rearview_HUD",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        14
+      ],
+      "description": "上方后视镜为独立视区，周边为状态界面。",
+      "uncertainty": "未见其与主画面形成决定性对照效果。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1",
+      "time_range": [
+        0,
+        5.5
+      ],
+      "necessary_information": "骑手从路外靠近并进入道路，与前方骑手、车辆的相对位置可读。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0010",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0022"
+      ]
+    },
+    {
+      "stage_id": "S2",
+      "time_range": [
+        6,
+        10.5
+      ],
+      "necessary_information": "骑手位于右侧路肩附近，随后回到公路；需保留道路边界、前方路线及骑手位置。",
+      "input_evidence_ids": [
+        "rgb-0024",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0038",
+        "rgb-0040",
+        "rgb-0042"
+      ]
+    },
+    {
+      "stage_id": "S3",
+      "time_range": [
+        10.75,
+        14
+      ],
+      "necessary_information": "主骑手与左右、前方骑手共同出现在道路上，行驶与相对位置需清楚。",
+      "input_evidence_ids": [
+        "rgb-0043",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056"
+      ]
+    },
+    {
+      "stage_id": "S4",
+      "time_range": [
+        14.25,
+        16.25
+      ],
+      "necessary_information": "呈现失败提示、名次、收益与加载状态；背景行驶不再是必须完整观看的信息。",
+      "input_evidence_ids": [
+        "rgb-0057",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0065"
+      ]
+    },
+    {
+      "stage_id": "S5",
+      "time_range": [
+        16.5,
+        19.5
+      ],
+      "necessary_information": "结果界面消失，重新建立骑手、弯曲道路与远方环境的联系。",
+      "input_evidence_ids": [
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-player_rider",
+      "accepted": true,
+      "reason": "主体位置及主要躯干范围对应RGB；仅作粗定位，不采用关节点或完整人体面积解释。"
+    },
+    {
+      "measurement_id": "measure-0000-player_motorcycle",
+      "accepted": false,
+      "reason": "尘雾中的车辆轮廓覆盖不足，不能可靠量化车体面积和边界。"
+    },
+    {
+      "measurement_id": "measure-0000-other_racers",
+      "accepted": false,
+      "reason": "标至右侧大块地面，实际其他骑手主要在左侧道路，明显错分。"
+    },
+    {
+      "measurement_id": "measure-0000-road",
+      "accepted": false,
+      "reason": "掩码大范围覆盖路外地面，不能代表公路区域。"
+    },
+    {
+      "measurement_id": "measure-0000-desert_environment",
+      "accepted": false,
+      "reason": "框与掩码包含大量天空并漏掉主要近处荒漠，整体对象范围不可靠。"
+    },
+    {
+      "measurement_id": "measure-0016-player_rider",
+      "accepted": true,
+      "reason": "4秒QA中主骑手位置和躯干大致吻合；仅采用粗定位。"
+    },
+    {
+      "measurement_id": "measure-0016-player_motorcycle",
+      "accepted": true,
+      "reason": "4秒车辆主体位置大致对应，供定性位置核对，不推导遮挡比例。"
+    },
+    {
+      "measurement_id": "measure-0016-other_racers",
+      "accepted": false,
+      "reason": "范围跨越大片路面且漏掉分散骑手，混入非对象区域。"
+    },
+    {
+      "measurement_id": "measure-0016-road",
+      "accepted": false,
+      "reason": "QA显示大片路面漏分，右侧荒地混入，面积及边界派生值不用。"
+    },
+    {
+      "measurement_id": "measure-0016-desert_environment",
+      "accepted": false,
+      "reason": "框包含天空和界面区域，不能可靠代表环境整体。"
+    },
+    {
+      "measurement_id": "measure-0032-player_rider",
+      "accepted": false,
+      "reason": "框与可见骑手范围偏移且截漏躯体，关节点也明显超出框，不用派生数值。"
+    },
+    {
+      "measurement_id": "measure-0032-player_motorcycle",
+      "accepted": true,
+      "reason": "8秒QA中下方车体定位基本对应；只作定性定位。"
+    },
+    {
+      "measurement_id": "measure-0032-other_racers",
+      "accepted": false,
+      "reason": "左侧条带范围与微小远方骑手不吻合，混入环境。"
+    },
+    {
+      "measurement_id": "measure-0032-road",
+      "accepted": true,
+      "reason": "8秒公路位于画面左侧，掩码主要走势对应；仅支持粗略道路方位。"
+    },
+    {
+      "measurement_id": "measure-0032-desert_environment",
+      "accepted": true,
+      "reason": "右侧荒地与远山主要范围对应；仅支持粗略空间区域，不解释深度数值。"
+    },
+    {
+      "measurement_id": "measure-0032-traffic_cars",
+      "accepted": false,
+      "reason": "左侧大块范围不能在RGB中确认为车辆，拒绝其面积、位置与深度。"
+    },
+    {
+      "measurement_id": "measure-0048-player_rider",
+      "accepted": true,
+      "reason": "12秒QA中主骑手位置大致对应；武器和肢体边缘不足以精确量化，仅作定位。"
+    },
+    {
+      "measurement_id": "measure-0048-player_motorcycle",
+      "accepted": true,
+      "reason": "主车下部轮廓与位置基本对应，保留粗定位用途。"
+    },
+    {
+      "measurement_id": "measure-0048-other_racers",
+      "accepted": false,
+      "reason": "实际分散的骑手被合并为大片道路区域，掩码不可信。"
+    },
+    {
+      "measurement_id": "measure-0048-road",
+      "accepted": false,
+      "reason": "仅覆盖局部道路并混入邻接区域，不能据此量化整体路面。"
+    },
+    {
+      "measurement_id": "measure-0048-desert_environment",
+      "accepted": true,
+      "reason": "远山及路旁荒漠带大致吻合，限于粗区域判断。"
+    },
+    {
+      "measurement_id": "measure-0064-other_racers",
+      "accepted": true,
+      "reason": "右缘骑手的可见部分对应；正常边缘裁切，不代表完整对象面积。"
+    },
+    {
+      "measurement_id": "measure-0064-road",
+      "accepted": false,
+      "reason": "覆盖结果界面及加载区域，无法作为物理道路掩码。"
+    },
+    {
+      "measurement_id": "measure-0064-desert_environment",
+      "accepted": false,
+      "reason": "包含界面遮盖区及天空，不能作为可靠可见环境面积。"
+    },
+    {
+      "measurement_id": "measure-0064-failure_overlay",
+      "accepted": true,
+      "reason": "矩形结果面板与RGB对应；只采用界面范围，不采用其单目深度。"
+    },
+    {
+      "measurement_id": "measure-0078-player_rider",
+      "accepted": true,
+      "reason": "骑手主要躯干范围对应原帧，限粗定位与可见范围核对。"
+    },
+    {
+      "measurement_id": "measure-0078-player_motorcycle",
+      "accepted": false,
+      "reason": "明显漏掉接近画面底边的后轮，框底与原帧不符，边距和面积不用。"
+    },
+    {
+      "measurement_id": "measure-0078-road",
+      "accepted": true,
+      "reason": "主要公路区域对应，局部孔洞不影响定性路线判断，不采用精确面积。"
+    },
+    {
+      "measurement_id": "measure-0078-desert_environment",
+      "accepted": true,
+      "reason": "远山带及路旁环境基本对应，仅作粗区域参照。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "稳定跟随和居中使重点可找，但未证明超出基本跟随的注意组织。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "骑手与车的联合尺度适合读路；结尾增大未形成明确的信息揭示。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E3"
+      ],
+      "uncertainty": "尘雾与结果面板有上下文解释；无完整主体掩码，不计算遮挡率。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "背部、头盔、车体轮廓可追踪；亮地和尘雾局部降低对比，没有持续丢失主体。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "无已确认的同体连接崩坏；后视镜及结果头像为独立视区。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "骑手头部完整，头上道路空间足够；没有进一步处境表达证据。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "背面骑行未提供可靠独立视线与观看对象关系；行驶方向在运动空间项检查。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "前方道路、弯向与其他骑手可见；尚无通过余量变化强化受阻或接近的充分证据。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "骑乘、倾斜转向及道路位置可理解；未据小图推断击打或接触结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "道路透视、远方骑手和山体建立路线，主要完成常规行驶空间呈现，未证明进一步空间揭示。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "近路在下、远山在上，界面切换后重点明确；天地比例未显示额外关系效果。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "骑手及道路边界归属清楚；结果面板覆盖背景属于信息阶段转换，不重复视为损害。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "present：道路边线与纵深组织成立，效果主要为基本路线引导。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "present：上方后视镜为画中画；未证明同步对照带来进一步关系理解。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          5.5
+        ],
+        [
+          6,
+          10.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0020",
+        "rgb-0028",
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "observation": "骑手与摩托保持下方近中部；0秒在荒地，5秒沿弯道，7—8秒在右侧路外，10秒回到公路。道路与前方骑手仍可见，头部、背部和车体足以辨认。",
+      "effect": "位置、尺度和前方空间保留了行驶及路内外关系；尘雾没有造成持续查找。道路透视提供基本路线引导。",
+      "exceptions_checked": "初始倾斜与骑乘姿态相符；尘雾不是无效物件遮挡。小图不能确认的攻击细节不作判断。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          10.75,
+          14
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0043",
+        "rgb-0048",
+        "rgb-0052",
+        "rgb-0056"
+      ],
+      "observation": "主骑手居下方，其他骑手分布在前方左右；车道线通向远处，彼此主要轮廓可分。",
+      "effect": "可读出道路中的前后和左右关系，动作范围未被意外裁去；没有证据表明此排列进一步强化对抗或特定关系变化。",
+      "exceptions_checked": "正常透视尺度差异和骑手局部交叠不等同失衡或错误连接。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          14.25,
+          16.25
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0057",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0065"
+      ],
+      "observation": "中央黑色结果面板出现，失败标题、6th及收益项目可读；背景骑手被部分遮盖，下方另有头像和加载信息。",
+      "effect": "观看任务由行驶切换为结果读取。面板对比与位置支持此重点，背景遮挡没有损失当前必需的结果信息。",
+      "exceptions_checked": "结果界面是当前主体，不能将其遮盖背景骑手判作持续无效遮挡；头像与背景人体属于独立视区。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          16.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0066",
+        "rgb-0070",
+        "rgb-0078"
+      ],
+      "observation": "面板消失，骑手与摩托回到画面下部中心；道路向远处弯曲，两侧护栏、山体和电杆提供参照。19.5秒后轮接近或触及底边，骑手头身保持完整。",
+      "effect": "重新建立行驶方向与环境联系；后轮局部边缘裁切未妨碍骑乘姿态及路线理解。主体增大主要提高可见性，未证实进一步表达。",
+      "exceptions_checked": "正常跟随取景的车轮局部裁切不等同人体结构断裂；画面纹理覆盖未持续抹去主体。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          14
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0048"
+      ],
+      "observation": "顶部中央后视镜显示后方道路或路旁环境，主画面显示骑手及前方路线。",
+      "effect": "子视区边界明确，与主视区不混淆；可补充后方空间，但没有可核查的特定追近或行动后果对照。",
+      "exceptions_checked": "后视镜中的景物不与主画面拼接为同一空间连续边界；联系表本身不算视频分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000"
+      ],
+      "after_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040"
+      ],
+      "visible_change": "荒地行驶、道路弯道、右侧路外及重新上路依次可见。",
+      "spatial_or_attention_effect": "跟随主体的位置较稳定，道路边界变化使路内外关系可读。",
+      "expressive_effect": "主要支持基本行驶理解，未证明额外处境表达。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0056"
+      ],
+      "after_evidence_ids": [
+        "rgb-0057",
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "visible_change": "道路骑行画面上出现失败结果面板。",
+      "spatial_or_attention_effect": "中心观看重点转为结果文字，背景行动降为次要。",
+      "expressive_effect": "清楚传达结果，但属于界面的基本信息呈现。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0065"
+      ],
+      "after_evidence_ids": [
+        "rgb-0066",
+        "rgb-0078"
+      ],
+      "visible_change": "结果面板消失，恢复道路行驶画面，结尾骑手与车体较大。",
+      "spatial_or_attention_effect": "重新定位骑手和前方道路，无需持续寻找。",
+      "expressive_effect": "没有足够证据把尺度变化解释为进一步的关系或环境揭示。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "reason": "按game_video_composition v2.3.0，适用基础条件成立：主体、路线、同行骑手及失败结果均可辨，裁切与界面切换没有确认的必要信息损失或形体结构破坏。道路引导、稳定跟随和后视镜主要完成基本信息组织，未证明超出基本可辨的增强效果。",
+    "adjacent_grade_explanation": "不判低：尘雾、结果面板遮挡和结尾车轮贴边均有合理上下文，未形成持续干扰。不判高：尚缺少具体前后安排与行动共同深化空间或关系的证据，不能仅凭纵深、居中或引导线升档。",
+    "uncertainties": [
+      "仅依据所给采样图像，不推断采样间的瞬时动作。",
+      "缓存未重跑；拒绝项及其全部派生数值未参与判断。接受项也仅按QA注明的粗定位用途使用，未采用精确面积、关节、色差、深度或遮挡百分比。",
+      "原图尺寸、哈希及运行元信息未完整提供，不补造；这些缺失不影响本次基础构图判断。"
+    ]
+  }
+}

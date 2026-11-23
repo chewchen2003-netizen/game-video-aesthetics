@@ -1,0 +1,524 @@
+{
+  "sample_id": "R29",
+  "roles": [
+    {
+      "object_id": "rider",
+      "role": "subject",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "背向镜头的骑乘人物；RGB确认其为持续跟随对象。缓存mounted_rider命名不代表完整人马联合区域。",
+      "uncertainty": "不推断身份、任务或心理。"
+    },
+    {
+      "object_id": "horse",
+      "role": "supporting_element",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "人物骑乘的马，与骑手共同构成前进动作。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "distant_building",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "前方白色建筑，初期经树隙可见，后期逐渐扩大并显露立面。",
+      "uncertainty": "仅确认空间参照，不认定为剧情任务目标。"
+    },
+    {
+      "object_id": "forest",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "树林、草地与远山建立骑行环境；近处树干、枝叶在相应时刻充当前景。",
+      "uncertainty": ""
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "s1",
+      "time_range": [
+        0,
+        5
+      ],
+      "necessary_information": "建立骑手与马的关系、林间行进方向及前方建筑参照；近树经过时仍须能跟踪主体。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0012",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0019",
+        "rgb-0020"
+      ]
+    },
+    {
+      "stage_id": "s2",
+      "time_range": [
+        5.5,
+        15
+      ],
+      "necessary_information": "持续呈现骑行和树林间的前方空间，建筑间歇由小树后显露；辨认人物、坐骑及其与建筑的前后关系。",
+      "input_evidence_ids": [
+        "rgb-0022",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0060"
+      ]
+    },
+    {
+      "stage_id": "s3",
+      "time_range": [
+        15.5,
+        19.5
+      ],
+      "necessary_information": "建筑由树后局部显露到左前方较完整立面，保留骑行主体并交代接近后的环境关系。",
+      "input_evidence_ids": [
+        "rgb-0062",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-mounted_rider",
+      "accepted": false,
+      "reason": "QA掩码连包骑手躯干与马身，漏掉真实头部；区域身份混杂，拒绝全部派生值和关节点。"
+    },
+    {
+      "measurement_id": "measure-0000-horse",
+      "accepted": false,
+      "reason": "与上一掩码近乎重合，包含骑手上身，不能作为独立马区域；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-mounted_rider",
+      "accepted": false,
+      "reason": "近树遮挡处只取得局部骑手，无法确认完整对象范围；关节点及其余派生值均不采用。"
+    },
+    {
+      "measurement_id": "measure-0016-horse",
+      "accepted": true,
+      "reason": "QA中下方马身可见区域基本对应RGB；仅采用可见区域定位，贴底属画框裁切，不作遮挡率或完整马体面积解释。"
+    },
+    {
+      "measurement_id": "measure-0032-mounted_rider",
+      "accepted": false,
+      "reason": "掩码主要覆盖躯干，未完整保留头部与骑乘腿部，关节点也明显伸出该对象区域；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-horse",
+      "accepted": false,
+      "reason": "QA马掩码上延至骑手躯干并向右扩张，人与马混分；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0032-distant_building",
+      "accepted": false,
+      "reason": "QA主要落在建筑前方暗树区域，未可靠覆盖可见白色建筑；面积、色差和深度等均不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-mounted_rider",
+      "accepted": false,
+      "reason": "主要取得上身，未形成完整骑手区域；不能用其框顶、面积或关节点评价人物裁切，派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0048-horse",
+      "accepted": true,
+      "reason": "下方马躯干掩码基本吻合可见轮廓；只接受可见区域定位，不将贴底理解为异常或推算遮挡。"
+    },
+    {
+      "measurement_id": "measure-0048-distant_building",
+      "accepted": false,
+      "reason": "建筑框内以暗树为主，可见建筑区域未被可靠分离；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0064-mounted_rider",
+      "accepted": false,
+      "reason": "上身掩码与完整骑手范围不一致，头部及腿部覆盖不足；拒绝其面积、框顶和关节点等派生依据。"
+    },
+    {
+      "measurement_id": "measure-0064-horse",
+      "accepted": true,
+      "reason": "马身可见掩码基本吻合；仅作可见马体定位参考，不据此判断完整体积或遮挡比例。"
+    },
+    {
+      "measurement_id": "measure-0064-distant_building",
+      "accepted": false,
+      "reason": "建筑与前方树冠交叠，QA不足以确认微小掩码的建筑归属；拒绝派生面积、色差及深度。"
+    },
+    {
+      "measurement_id": "measure-0078-mounted_rider",
+      "accepted": false,
+      "reason": "掩码再次贯通骑手上身与马身，且遗漏真实头部，语义范围不一致；派生值不采用。"
+    },
+    {
+      "measurement_id": "measure-0078-horse",
+      "accepted": true,
+      "reason": "下方独立马身掩码基本合理；接受可见轮廓定位，画框外部分不作估算。"
+    },
+    {
+      "measurement_id": "measure-0078-distant_building",
+      "accepted": true,
+      "reason": "框与掩码基本对应清晰白色建筑立面，可辅助确认位置和显露规模；不把单目深度当距离，末帧深度本身缺失。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "骑手持续位于中下部，易跟踪；居中本身不构成增强。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "人物与马的呈现尺度适合跟随骑行；建筑扩大主要在空间揭示项评价，不把错误主体面积用于比较。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "近树短时遮挡不构成持续定位丢失；未证明骑手遮显具有额外关系表达。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "衣服色块、白色裤腿和马身轮廓维持基本区分，局部暗部相近但无需持续寻找；不推断运动差异。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "清晰RGB中骑乘姿态与连接合理；缓存关节点错误不作为形体崩坏证据。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "真实头顶完整入画，上方空间同时容纳树林与建筑；未见处境强化。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "主要为背面骑行，无可核实的注视行为或必须解释的视线对象；身体朝前不等于确认注视建筑。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "前方林间地面与树木间隔可见，足以理解行进；未出现有依据的受阻或逃离安排。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "e1",
+        "e4"
+      ],
+      "uncertainty": "骑手坐姿、马身及环境相对变化保留骑行必要信息；马下部常规出框未损失必须辨认的交互结果。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "S-B-a",
+        "S-H-a"
+      ],
+      "event_ids": [
+        "e2",
+        "e3"
+      ],
+      "uncertainty": "依据RGB遮显、相对尺度和前后连续变化建立接近关系，不使用缓存深度或声称测得光流。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "e1",
+        "e3"
+      ],
+      "uncertainty": "地面承载骑行，建筑与树冠处于上方远处，位置可理解；天地比例未单独证明额外效果。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "uncertainty": "骑乘接触和树木遮挡的归属清楚；建筑遮显的空间效果统一计入e3，不另作关系象征。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "met",
+      "condition_ids": [
+        "T-B-a",
+        "T-H-a"
+      ],
+      "event_ids": [
+        "e3"
+      ],
+      "uncertainty": "识别为跟随视角中的纵深层次组织；增强仅解释S-H-a已成立的连续环境揭示，不独立加分。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "e4"
+      ],
+      "uncertainty": "联系表和参考图并排属于取证排版，视频画面未见分屏或画中画。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e1",
+      "time_ranges": [
+        [
+          0,
+          3.5
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          17,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0014",
+        "rgb-0020",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0068",
+        "rgb-0078"
+      ],
+      "observation": "骑手与马持续占据中下部，人物头部和躯干可辨，前方地面、树间空隙及远处建筑保留；衣服色块、裤腿与马身帮助辨认。",
+      "effect": "观看重点稳定，骑乘关系及前进方向无需反复查找；尺度、头部空间和前方范围满足基本呈现。",
+      "exceptions_checked": "暗色马身局部融入地面，但未形成持续寻找；不以居中、鲜艳或较大比例自动判增强。"
+    },
+    {
+      "event_id": "e2",
+      "time_ranges": [
+        [
+          3,
+          5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016",
+        "rgb-0018",
+        "rgb-0019",
+        "rgb-0020"
+      ],
+      "observation": "近树干在骑行视区附近经过，4秒附近与主体轮廓邻接并遮住局部，4.5至4.75秒大树干占据侧方，5秒主体重新处于较开阔的可见区域。",
+      "effect": "局部遮挡可由穿行树林的前后关系解释；前后采样中骑手仍可跟踪，近树经过也提供近远参照。",
+      "exceptions_checked": "排除把短时合理前景遮挡当持续无效遮挡；不据此宣称隐藏、紧张或测量遮挡百分比。"
+    },
+    {
+      "event_id": "e3",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          15,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0068",
+        "rgb-0072",
+        "rgb-0078",
+        "measure-0078-distant_building"
+      ],
+      "observation": "初期白色建筑仅在远处树隙出现；8至10秒仍被小树切分；15至16秒树后屋顶与立面较明显，17至19.5秒建筑在左前方持续扩大，末帧显露屋顶、立面及前方围栏。骑手保持中下部参照，近树与中景小树分别穿插。",
+      "effect": "稳定主体参照、不同距离树木的遮显和建筑逐步展开共同把零碎远景连接成可理解的左前方建筑空间。观众随骑行逐渐获得更完整环境布局，超出单帧前后景的基本可辨，支持S-H-a及O-H-d。",
+      "exceptions_checked": "不将建筑认定为任务终点，不把普通扩大单独当增强；依据其与树层、骑手参照及连续显露的共同作用，不推断权力或情绪。"
+    },
+    {
+      "event_id": "e4",
+      "time_ranges": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          19.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "三张清晰原帧中人物头部完整，躯干、坐姿与马背连接合理；马下部延出底框。背面人物未呈现明确注视对象；每帧均为单一连续游戏视区。",
+      "effect": "常规跟随裁切保留骑乘动作所需信息，没有确认的肢体连接或尺度破坏；视线关系与多画面组织不适用。",
+      "exceptions_checked": "排除将马腿出框当动作失败、将缓存误分当人体异常，以及将输入联系表误当视频分屏。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0012",
+        "rgb-0016"
+      ],
+      "after_evidence_ids": [
+        "rgb-0019",
+        "rgb-0020"
+      ],
+      "visible_change": "近树由主体邻近区域经过至侧方，主体恢复较完整显露。",
+      "spatial_or_attention_effect": "短时局部遮挡未破坏主体跟踪，并支持树干在前、骑手在后的穿行关系。",
+      "expressive_effect": "未证明独立遮挡表达；主要满足基础并提供空间参照。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0040"
+      ],
+      "after_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064",
+        "rgb-0078"
+      ],
+      "visible_change": "远处受树遮挡的白色建筑逐渐扩大，最终在左前方显露较完整立面与围栏；主体保持稳定的跟随参照。",
+      "spatial_or_attention_effect": "从树隙中的局部线索到明确建筑布局，前后变化深化骑手与环境的空间联系。",
+      "expressive_effect": "形成有效的渐进空间揭示；不附加任务、心理或情感含义。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "high",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d",
+      "S-H-a",
+      "T-H-a",
+      "O-H-d"
+    ],
+    "decisive_event_ids": [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+    ],
+    "reason": "适用基础条件成立。关键增强是稳定骑行主体与多层树木遮显共同组织建筑的连续展开：远处碎片信息逐步成为左前方可理解的建筑布局，有效深化主体与环境的空间联系。依据game_video_composition v2.3.0判断，未按手法数量或指标投票。",
+    "adjacent_grade_explanation": "区别于中档的证据是e3的前后组织效果，而非仅有前景、主体居中或建筑变大。近树局部遮挡与马体常规出框未造成已确认的基础损害，因此无低档依据。",
+    "uncertainties": [
+      "本轮仅核对已提供RGB、QA及缓存文本，未重跑CV；拒绝测量的全部派生值未参与判断。",
+      "无完整主体掩码，不估算遮挡百分比；无可靠注视线索，不推断人物看向建筑。",
+      "结论限于清单中的采样时刻及其可支持的阶段变化，不声称检查过采样间的所有帧。"
+    ]
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "sample_id": "R05",
+  "roles": [
+    {
+      "object_id": "env-track",
+      "role": "subject",
+      "time_range": [
+        0,
+        1.75
+      ],
+      "description": "开场主要呈现沙地赛场及其与看台、围栏、营地和台地的空间关系。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "v1",
+      "role": "subject",
+      "time_range": [
+        2,
+        19.5
+      ],
+      "description": "由近距离侧前展示转为后方跟随的深色越野车；通过连续外观与机位确认，非按缓存命名认定。",
+      "uncertainty": "4秒局部近景不能仅凭分割确定完整车体边界。"
+    },
+    {
+      "object_id": "racers",
+      "role": "supporting_element",
+      "time_range": [
+        4.5,
+        19.5
+      ],
+      "description": "前方及侧方其他参赛车，构成车群、并行与前后位置关系；缓存v2不具备全程一致身份。",
+      "uncertainty": "不追认每辆车的跨帧身份。"
+    },
+    {
+      "object_id": "drivers",
+      "role": "supporting_element",
+      "time_range": [
+        2,
+        19.5
+      ],
+      "description": "车架内驾驶者，红色头盔较明显；当前必要内容以车辆行进为主。",
+      "uncertainty": "手部、视线和被车体遮住的身体不能可靠细查。"
+    },
+    {
+      "object_id": "env-near",
+      "role": "foreground",
+      "time_range": [
+        0,
+        1.75
+      ],
+      "description": "近处看台、观众、栏杆和灯杆构成俯瞰赛场的前层。",
+      "uncertainty": ""
+    },
+    {
+      "object_id": "env-far",
+      "role": "background",
+      "time_range": [
+        0,
+        19.5
+      ],
+      "description": "围栏、观众席、场边设施、灯杆和远处岩壁；追车阶段沙地赛道提供行动空间。",
+      "uncertainty": "缓存s1、s2不直接等同这些语义对象。"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "A",
+      "time_range": [
+        0,
+        1.75
+      ],
+      "necessary_information": "建立赛场、看台与场边设施的位置；此时不要求寻找某辆主车。",
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0007"
+      ]
+    },
+    {
+      "stage_id": "B",
+      "time_range": [
+        2,
+        4
+      ],
+      "necessary_information": "辨认被展示的越野车及驾驶者；侧前近景转到车架与座舱局部。",
+      "input_evidence_ids": [
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016"
+      ]
+    },
+    {
+      "stage_id": "C",
+      "time_range": [
+        4.5,
+        14.5
+      ],
+      "necessary_information": "后方跟随主车，辨认前方车群、弯道和道路边界。",
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ]
+    },
+    {
+      "stage_id": "D",
+      "time_range": [
+        14.75,
+        19.5
+      ],
+      "necessary_information": "辨认侧方近车、主车与前方车辆的间距、并行及分离，保持道路走向可读。",
+      "input_evidence_ids": [
+        "rgb-0059",
+        "rgb-0060",
+        "rgb-0061",
+        "rgb-0062",
+        "rgb-0063",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ]
+    }
+  ],
+  "segmentation_review": [
+    {
+      "measurement_id": "measure-0000-s1",
+      "accepted": false,
+      "reason": "混合看台、观众、栏杆等，不是可靠独立对象区域；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0000-s2",
+      "accepted": false,
+      "reason": "混合天空、岩壁等环境，语义及边界不明确；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-v1",
+      "accepted": false,
+      "reason": "局部车架分割碎漏且无法代表完整主车；拒用面积、中心等派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-h1",
+      "accepted": false,
+      "reason": "框内主要是座舱局部，未可靠圈定驾驶者；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-s1",
+      "accepted": false,
+      "reason": "道路与车辆、围挡交界错杂；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0016-s2",
+      "accepted": false,
+      "reason": "上方区域由设施和环境共同构成，不是可靠对象分割；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0032-v1",
+      "accepted": true,
+      "reason": "主体车轮、车架与车尾区域总体对应RGB，可作粗略位置和可见面积辅助；不推算遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0032-v2",
+      "accepted": false,
+      "reason": "横跨道路的大块区域并非独立车辆；拒用全部派生值。"
+    },
+    {
+      "measurement_id": "measure-0032-s1",
+      "accepted": false,
+      "reason": "环境掩码有明显碎漏和跨对象污染；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0032-s2",
+      "accepted": false,
+      "reason": "天空、岩壁和设施混合，不能作为单一空间层测量；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0048-v1",
+      "accepted": true,
+      "reason": "主要车体对应后方主车，边缘局部漏分；仅作粗略位置、尺度辅助，不作完整形体或遮挡测量。"
+    },
+    {
+      "measurement_id": "measure-0048-v2",
+      "accepted": false,
+      "reason": "无有效掩码和数值，不把未检测解释为车辆不存在。"
+    },
+    {
+      "measurement_id": "measure-0048-s1",
+      "accepted": false,
+      "reason": "道路掩码夹杂碎漏，边界不足以支持精确空间量化；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0048-s2",
+      "accepted": false,
+      "reason": "混合多种远景对象，拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0064-v1",
+      "accepted": false,
+      "reason": "与v2几乎重复且轮廓覆盖不稳，无法作为可靠独立实例测量；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0064-v2",
+      "accepted": false,
+      "reason": "实际覆盖主车，与v1重复，不能解释成另一辆陪车；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0064-s1",
+      "accepted": false,
+      "reason": "道路与车辆边缘存在污染，拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0064-s2",
+      "accepted": false,
+      "reason": "复合背景区域不能可靠对应单一对象或深度层；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0078-v1",
+      "accepted": true,
+      "reason": "主要对应右下主车，可辅助粗略中心与尺度判断；局部漏分不支持精确轮廓和遮挡率。"
+    },
+    {
+      "measurement_id": "measure-0078-v2",
+      "accepted": true,
+      "reason": "对应左侧独立近车，可用于该时刻相对位置与尺度；不证明跨时刻身份一致。"
+    },
+    {
+      "measurement_id": "measure-0078-s1",
+      "accepted": false,
+      "reason": "道路掩码存在对象混入和边缘碎漏；拒用派生值。"
+    },
+    {
+      "measurement_id": "measure-0078-s2",
+      "accepted": false,
+      "reason": "天空与远景混合且覆盖不完整；拒用派生值。"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "subject-position",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "追车重点稳定，但位置变化尚不足以证明超出常规跟随的观看引导。"
+    },
+    {
+      "indicator_id": "subject-area",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "远景到近车再到追车有景别变化，但未证明有额外信息揭示效果。"
+    },
+    {
+      "indicator_id": "subject-occlusion",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E4"
+      ],
+      "uncertainty": "不提供遮挡百分比；近车交叠未显示持续定位丢失。"
+    },
+    {
+      "indicator_id": "subject-separation",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "P-B-d"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "主车虽与泥地色调接近，轮廓、尺度与固定跟随位置仍可辨；未证明关系表达。"
+    },
+    {
+      "indicator_id": "shot-crop-joint",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "驾驶者下身由车辆正常遮住；没有可见的连接或尺度崩坏，细部姿态无法完整核验。"
+    },
+    {
+      "indicator_id": "shot-crop-headroom",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-b"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "可见驾驶者头盔未被画框意外截断，头部不是独立人物肖像呈现重点。"
+    },
+    {
+      "indicator_id": "shot-crop-look-room",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "C-B-c"
+      ],
+      "event_ids": [
+        "E2",
+        "E3"
+      ],
+      "uncertainty": "未建立需独立判断的人物观看对象关系；不把行车方向当可靠眼神。"
+    },
+    {
+      "indicator_id": "shot-crop-lead-room",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-d"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "道路及近车交互位置得到保留，未见有依据的前方空间压缩表达。"
+    },
+    {
+      "indicator_id": "shot-crop-action-crop",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "C-B-e"
+      ],
+      "event_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "车辆行进、并行位置及分离可读；侧车局部出框属正常近距离进出画。"
+    },
+    {
+      "indicator_id": "spatial-depth",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "围栏、道路透视和车群尺度建立前后关系；跨景别未充分深化特定主体与场地联系。"
+    },
+    {
+      "indicator_id": "spatial-vertical",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-b"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "追车阶段下方主车、上方前路与远景分配可读；倾斜随弯道变化未造成位置误读。"
+    },
+    {
+      "indicator_id": "spatial-overlap",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "S-B-c"
+      ],
+      "event_ids": [
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "近车交叠仍能区分独立车架和车轮；不把偶然轮廓靠近解释为依附或对立。"
+    },
+    {
+      "indicator_id": "technique-single-frame",
+      "baseline": "met",
+      "enhancement": "not_met",
+      "condition_ids": [
+        "T-B-a"
+      ],
+      "event_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "uncertainty": "识别到道路与围栏透视引导、近远车层次；作用主要是基本导航及位置交代。"
+    },
+    {
+      "indicator_id": "technique-multi-frame",
+      "baseline": "not_applicable",
+      "enhancement": "not_applicable",
+      "condition_ids": [
+        "T-B-b"
+      ],
+      "event_ids": [
+        "E5"
+      ],
+      "uncertainty": "输入联系表与参考图是审阅排版，不是视频内分屏。"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E1",
+      "time_ranges": [
+        [
+          0,
+          1.75
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0002",
+        "rgb-0004",
+        "rgb-0006",
+        "rgb-0007"
+      ],
+      "observation": "近处看台与栏杆、中部赛道及营地、远处台地形成俯瞰全景；该阶段主要对象是场地。",
+      "effect": "赛场边界与设施分区可读，建立环境基本布局；没有把小型车辆误判为应突出的主体。",
+      "exceptions_checked": "远景观众较小符合场地展示；前景栏杆未遮去必要赛道关系。"
+    },
+    {
+      "event_id": "E2",
+      "time_ranges": [
+        [
+          2,
+          4
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0008",
+        "rgb-0010",
+        "rgb-0012",
+        "rgb-0014",
+        "rgb-0016"
+      ],
+      "observation": "主车由侧前近景转到座舱和车架局部，红色头盔可见，4秒车体大部离框。",
+      "effect": "局部展示仍能与前序同一车辆相接；没有必要车群交互被这一取景明确漏掉。",
+      "exceptions_checked": "按车辆及座舱近景理解，不能把车架遮住驾驶者下身视为人体断裂；不采用该时刻不可靠的人车分割。"
+    },
+    {
+      "event_id": "E3",
+      "time_ranges": [
+        [
+          4.5,
+          14.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0018",
+        "rgb-0020",
+        "rgb-0032",
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ],
+      "observation": "主车保持画面下部附近，前车分布在上方道路；门架、围栏和弯道边缘提供方向参照。10秒清晰原帧中主车与左右前车边界可辨。",
+      "effect": "无需持续寻找主车，道路方向、前后车距和行进关系基本清楚；保留前路主要服务常规追车阅读。",
+      "exceptions_checked": "车辆车轮偶有贴近下缘，未使关键行进信息丢失；低色差不等于背景混淆。"
+    },
+    {
+      "event_id": "E4",
+      "time_ranges": [
+        [
+          14.75,
+          16
+        ],
+        [
+          16.5,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0059",
+        "rgb-0060",
+        "rgb-0061",
+        "rgb-0062",
+        "rgb-0063",
+        "rgb-0064",
+        "rgb-0066",
+        "rgb-0068",
+        "rgb-0070",
+        "rgb-0072",
+        "rgb-0074",
+        "rgb-0076",
+        "rgb-0078"
+      ],
+      "observation": "15秒附近橙黑近车位于主车左侧并发生轮廓交叠，随后分离；18至19.5秒左侧近车与右下主车同时可见，前方仍有独立车辆与道路。",
+      "effect": "密集车群中主车及侧车的相对位置仍可读，未见持续无效遮挡、车体归属误读或必要前路丢失；并行变化尚未形成超出基本竞争位置交代的增强。",
+      "exceptions_checked": "正常并行、近车进出画及透视尺度差异；不据单帧断言碰撞结果，不将重复v1/v2掩码当双车证据。"
+    },
+    {
+      "event_id": "E5",
+      "time_ranges": [
+        [
+          0,
+          19.5
+        ]
+      ],
+      "input_evidence_ids": [
+        "rgb-0000",
+        "rgb-0016",
+        "rgb-0040",
+        "rgb-0078"
+      ],
+      "observation": "所给视频样本为单一视区；联系表与两张放大参考由评审材料排版形成。",
+      "effect": "多画面构图不适用。",
+      "exceptions_checked": "普通前后切镜不计分屏，分割QA覆盖层不视为视频内容。"
+    }
+  ],
+  "temporal_analysis": [
+    {
+      "before_evidence_ids": [
+        "rgb-0000",
+        "rgb-0007"
+      ],
+      "after_evidence_ids": [
+        "rgb-0008",
+        "rgb-0016",
+        "rgb-0018"
+      ],
+      "visible_change": "俯瞰场地转为单车近景，再进入后方追车视角。",
+      "spatial_or_attention_effect": "关注点从赛场转到车辆，随后展开前方道路和车群。",
+      "expressive_effect": "内容转换可理解；未证明远景与该车具体位置形成超出基本交代的空间揭示。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0020",
+        "rgb-0032"
+      ],
+      "after_evidence_ids": [
+        "rgb-0040",
+        "rgb-0048",
+        "rgb-0058"
+      ],
+      "visible_change": "前车在弯道中横向位置变化，主车保持下部跟随位置。",
+      "spatial_or_attention_effect": "稳定主车参照与变化的车群位置共同支持行进阅读。",
+      "expressive_effect": "常规追车组织有效，未据此自动升档。"
+    },
+    {
+      "before_evidence_ids": [
+        "rgb-0060",
+        "rgb-0064"
+      ],
+      "after_evidence_ids": [
+        "rgb-0068",
+        "rgb-0074",
+        "rgb-0078"
+      ],
+      "visible_change": "左侧近车与主车从靠近交叠转为可见分离，后段再次出现左侧并行车。",
+      "spatial_or_attention_effect": "近车关系改变时，主车与前方路径仍可追踪。",
+      "expressive_effect": "支持位置与车群密度变化的辨认；不足以推断受困、冲突升级或其他情绪含义。"
+    }
+  ],
+  "overall": {
+    "status": "scored",
+    "grade": "middle",
+    "condition_ids": [
+      "O-B-a",
+      "O-B-b",
+      "O-B-c",
+      "O-B-d"
+    ],
+    "decisive_event_ids": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "reason": "按Rubric 2.3.0，适用基础条件成立：近景局部取舍、持续追车及密集并行阶段都保留必要对象与行动空间，未确认关键裁切损失、主体持续丢失或形体结构破坏。道路透视和车群层次有效，但可核查作用主要是基本辨认与导航，增强未获证明。",
+    "adjacent_grade_explanation": "不判低：近车交叠和局部出框可由正常追车、并行与近景解释，没有实际持续干扰证据。不判高：景别切换、居中跟随及层次本身不足以证明额外观看引导或空间关系深化。",
+    "uncertainties": [
+      "仅依据提供的采样画面，不声称观察采样间连续动作。",
+      "未重跑CV；拒绝项全部派生值均未采用，接受项仅作粗略位置与尺度辅助。",
+      "无完整主体区域和可靠视线测量，不报告遮挡率、人物心理、光流或真实距离。"
+    ]
+  }
+}
