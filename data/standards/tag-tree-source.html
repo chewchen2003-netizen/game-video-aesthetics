@@ -317,6 +317,7 @@ function renderDetail(){
  group('模型与成本',[['模型',rule.model],['成本',rule.cost]]);return;
  }
  if(n.id==='color-tone'&&n.overallScoring){
+ const colorKnowledgeLink=document.createElement('a');colorKnowledgeLink.href='rubrics/color_tone_rubric.html#observation-knowledge';colorKnowledgeLink.target='_blank';colorKnowledgeLink.rel='noopener';colorKnowledgeLink.textContent='色调 Rubric · 评价因素与观察依据';colorKnowledgeLink.style.cssText='display:block;margin:12px 0;color:#78c5ff';panel.append(colorKnowledgeLink);
  const rule=n.overallScoring;const group=(label,items)=>{const el=document.createElement('details');el.className='detail-group';el.open=true;const summary=document.createElement('summary');summary.textContent=label;el.append(summary);const content=document.createElement('div');content.className='detail-group-content';el.append(content);for(const [title,value] of items){const h=document.createElement('h4');h.textContent=title;const p=document.createElement('p');p.textContent=value;content.append(h,p);}panel.append(el);};
  group('评价概述',[['定义与边界',n.description],['综合原则',rule.principle]]);
  group('各因素的影响条件',[['扣分项与加分项',rule.conditions]]);
