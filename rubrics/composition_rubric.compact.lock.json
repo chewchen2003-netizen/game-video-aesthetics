@@ -1,9 +1,9 @@
 {
   "format": "composition_rubric_compact_v1",
-  "rubric_version": "2.0.0",
+  "rubric_version": "2.0.1",
   "compact_file": "rubrics/composition_rubric.compact.json",
-  "compact_sha256": "3ffc76992e23cdc9954a00faa81b3190a699f9bb3b4cec04ad6f72608e60bba1",
+  "compact_sha256": "9f6812103bca38438fea476d83a35706271aef279495cf3043016341f30b8c04",
   "expands_to": "rubrics/composition_rubric.json",
-  "frozen_source_sha256": "3c5428dcba5ccf31ee35f7389ebfb8e4fdb705b3e185e2b343857915d0da55f9",
+  "frozen_source_sha256": "36684cb21559c8f64bf442be633da2e79ea917a69d0d0dc0e66d91fb1d4812ed",
   "semantic_equivalence": "Parsed JSON objects equal after expansion; original frozen source unchanged."
 }

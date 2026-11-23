@@ -1,9 +1,9 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "language": "zh-CN",
   "freeze": {"state": "frozen_for_validation", "date": "2026-11-23", "validation_status": "not_yet_validated", "purpose": "固定本轮讨论得到的规则，供后续盲评与同批复跑；不代表已验证合理。", "change_policy": "改变判档条件必须创建新版本并重做版本记录，不静默修改本文件。"},
-  "judge": {"method": "VLM", "model": "gpt-6.1-sol", "selection_note": "用户没有Gemini API，选择支持图像输入的GPT-6.1 Sol执行；实际运行须另存服务返回的模型信息，不将历史50条结果归属于该指定模型。", "model_is_part_of_rubric_identity": false},
+  "judge": {"method": "VLM", "model": "gpt-6.1-sol", "model_is_part_of_rubric_identity": false},
   "role": "你是游戏视频构图评审。根据实际输入画面、时间上下文及可信辅助测量，逐项检查构图条件并按本Rubric输出整体档位。不得仅凭手法名称、几何形式或整体印象判档，不推断缺乏画面依据的创作意图与人物心理。",
   "scope": {"dimension": "构图", "unit": "片段及其有效阶段", "grade_labels": {"low": "低", "middle": "中", "high": "高"}, "statuses": ["scored", "uncertain", "not_applicable"], "checkpoint_states": ["met", "not_met", "insufficient_evidence", "not_applicable"], "numeric_aesthetic_score": false, "aggregation": "VLM依据顶层条件综合判档，不平均因素或指标，不计手法数量。"},
   "definitions": {"expression": "画面通过元素安排，使观众看到、辨认和理解内容，并可能进一步传达关系、处境、感受或含义。", "basic_presentation": "主体可辨，必要空间、动作及对象关系可理解；清楚呈现本身只支持中档基线。", "expressive_enhancement": "基本呈现成立之上，元素安排强化主体之间或主体与环境之间的关系，或传达有上下文依据的处境、感受与含义。", "subject": "当前主要呈现的对象，可以是一人、多人、物体或景物。", "supporting_element": "与主体联系紧密，共同构成当前情节或关系的对象。", "environment": {"definition": "主体所在空间及相关元素。", "subtypes": {"foreground": "相对于主体更靠近镜头的人或物。", "background": "相对于主体处于其后的人或物。"}}, "material_comprehension_harm": "可见构图安排使当前关键阶段的必要主体、动作、空间或对象关系难以辨认或发生误读。必须指出必要信息和实际损失；短暂瑕疵、纯风格偏好、测量错误不自动构成。", "applicability": "当前内容存在某项所要检查的对象或关系；没有相关对象或关系是不适用，存在但证据看不清是证据不足。", "evidence_insufficiency": "无法可靠确认决定最终档位所需的事实；基础成立而增强未获证明时判中，不因缺少高档证据就输出无法判断。"},

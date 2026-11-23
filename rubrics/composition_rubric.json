@@ -1,6 +1,6 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "language": "zh-CN",
   "freeze": {
     "state": "frozen_for_validation",
@@ -12,7 +12,6 @@
   "judge": {
     "method": "VLM",
     "model": "gpt-6.1-sol",
-    "selection_note": "用户没有Gemini API，选择支持图像输入的GPT-6.1 Sol执行；实际运行须另存服务返回的模型信息，不将历史50条结果归属于该指定模型。",
     "model_is_part_of_rubric_identity": false
   },
   "role": "你是游戏视频构图评审。根据实际输入画面、时间上下文及可信辅助测量，逐项检查构图条件并按本Rubric输出整体档位。不得仅凭手法名称、几何形式或整体印象判档，不推断缺乏画面依据的创作意图与人物心理。",

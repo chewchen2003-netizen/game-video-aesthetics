@@ -1,9 +1,9 @@
-# 构图 Rubric v2.0.0
+# 构图 Rubric v2.0.1
 
 本轮讨论确认的VLM判档规则，冻结用于验证。**尚未完成独立人工复核或同批复跑，不代表标准已经得到验证。**
 
 - [精简组织版 JSON（推荐阅读）](composition_rubric.compact.json)：218行；每个指标、每个检查点各占一行，共用证据要求统一定义，无规则信息损失。
-- [冻结展开原版](composition_rubric.json)：1016行，保留原始冻结字节与SHA256。
+- [冻结展开原版](composition_rubric.json)：1015行，保存当前版本的展开内容与SHA256；历史版本由Git记录追溯。
 - [冻结记录](composition_rubric.lock.json)：版本与SHA256。
 - [可读版](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html)：从同一JSON生成。
 
@@ -25,13 +25,13 @@ with open("rubrics/composition_rubric.compact.json") as f:
     rubric = expand_rubric(json.load(f))
 ```
 
-这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本仍为2.0.0；存储格式另有版本与[精简版校验记录](composition_rubric.compact.lock.json)。
+这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.0.1；存储格式另有版本与[精简版校验记录](composition_rubric.compact.lock.json)。
 
 ## 固定内容
 
 评价采用低、中、高，无法判断与不适用单列。基本呈现对应中档；高档还需要有上下文依据的关系、处境、感受或含义。每个检查点只关联一个指标。前三个因素检查呈现结果，构图手法记录识别与效果证据，不独立加分。没有数值权重或平均分。
 
-判档模型计划使用GPT-6.1 Sol，原因是用户没有Gemini API。每次执行需另外记录请求模型与服务返回的可获得模型信息。
+判档模型计划使用GPT-6.1 Sol。每次执行需另外记录请求模型与服务返回的可获得模型信息。
 
 ## 校验与生成可读版
 
