@@ -1,0 +1,11 @@
+{
+  "rubric_id": "game_video_composition",
+  "version": "2.0.0",
+  "status": "frozen_for_validation",
+  "validation_status": "not_yet_validated",
+  "file": "rubrics/composition_rubric.json",
+  "sha256": "3c5428dcba5ccf31ee35f7389ebfb8e4fdb705b3e185e2b343857915d0da55f9",
+  "checkpoint_count": 42,
+  "indicator_count": 14,
+  "historical_results_rule": "Do not relabel historical results as v2 results."
+}
