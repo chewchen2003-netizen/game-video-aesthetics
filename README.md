@@ -6,7 +6,7 @@
 
 **[阅读11月24日报告](https://chewchen2003-netizen.github.io/game-video-aesthetics/report.html)** · [GitHub文字版](REPORT.md)
 
-本轮依旧采用构图维度作为真实样本验证。
+本轮依旧采用构图维度作为真实样本验证。构图是为讲故事服务的，要关注各个画内元素（人、物、环境）的联结关系，以能否支持内容表达为依据，分为“低：妨碍表达、中：匹配表达、高：增强表达”三档。
 
 模型选用说明：由于暂无 Gemini API 资源，本轮采用 GPT-6.1 Sol 作为视觉语言模型（VLM）替代方案。
 
