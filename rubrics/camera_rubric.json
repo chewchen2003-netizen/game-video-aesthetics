@@ -1,0 +1,662 @@
+{
+  "rubric_id": "game_video_camera",
+  "version": "0.1.0",
+  "status": "draft_not_executed",
+  "role": "结合有序画面与时间上下文评价镜头；区分观察事实、运动解释及作用判断。",
+  "input": {
+    "frames": "有序抽帧与时间码，覆盖起幅、过程、落幅；2FPS仅作初始输入。",
+    "supplement": "快速甩镜、短时失焦、抖动和运动模糊必须局部提高采样率或核对原视频；证据不足不判稳定性成立。",
+    "audio": "本维度不要求音频；未提供声音时不判断声画动机或音乐节奏配合。"
+  },
+  "rules": [
+    "观察知识融入现有四个评价因素；运镜的叙事与情绪功能不是另加的必选手法。",
+    "固定镜头也可以成立；风格化、游戏操控与角色视角需纳入可见上下文，不预设创作意图。",
+    "摄影机移动、主体移动、变焦、剪辑及焦点变化分别记录；无法区分时保留不确定性。"
+  ],
+  "factors": [
+    {
+      "id": "camera-motion-rationality",
+      "name": "镜头运动合理性",
+      "questions": [
+        "镜头安排是否支持当前必要信息？",
+        "时序变化带来了什么新增信息或观看效果？"
+      ],
+      "indicators": [
+        {
+          "id": "camera-motion-stability",
+          "name": "运动稳定性",
+          "observation": "观察画面抖动、主体相对位移和地平线变化。",
+          "judgement": "区分有依据的呼吸感与无意振动，说明是否妨碍必要信息。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "emotion",
+            "embodiment"
+          ]
+        },
+        {
+          "id": "camera-motion-transitions",
+          "name": "启停与转向",
+          "observation": "观察启动、停止和转向前后的速度、落幅及目标变化。",
+          "judgement": "判断是否能顺利找到新重点，还是无解释跳转、过冲或突然停顿。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "reveal",
+            "emotion",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-motion-speed",
+          "name": "移动速度",
+          "observation": "按时间比较移动速度、信息密度和观众可辨认时间。",
+          "judgement": "判断速度是否匹配展示任务与节奏，不能仅用快慢决定好坏。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-motion-tracking",
+          "name": "目标跟随",
+          "observation": "记录跟随对象、面部／动作可见性、主体位置和沿途环境。",
+          "judgement": "判断能否持续定位目标，是否有效交代行动、反应或路线。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "embodiment"
+          ]
+        },
+        {
+          "id": "camera-motion-obstacles",
+          "name": "镜头避障",
+          "observation": "观察镜头经过障碍物时的遮挡、穿透与位置变化。",
+          "judgement": "区分有作用的遮挡揭示与丢失主体、穿模或空间连续性破坏。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "overview",
+            "reveal"
+          ]
+        }
+      ],
+      "observation_knowledge": [
+        {
+          "id": "detail",
+          "name": "看清重点：推近与跟随",
+          "observable_cues": "比较起幅、运动过程和落幅中主体尺寸、细节、表情及可见范围，记录跟随对象是否变化。",
+          "possible_effect": "推近可突出细节与反应；持续跟随可建立观看重点；前跟在面部可见时有助观察表情。",
+          "boundaries": "推近不必引发紧张；前跟并非总能看清表情。区分主体靠近、摄影机移动和变焦，不能确认时记录歧义。"
+        },
+        {
+          "id": "overview",
+          "name": "看全环境与多角度揭示",
+          "observable_cues": "核对摇、横移、升降、环绕或跟随沿途新增的空间信息，以及局部与整体能否连接。",
+          "possible_effect": "可逐步介绍环境，连接入口、路径和目的地；跟随角色游走可以维持空间连续。",
+          "boundaries": "运动更大或角度更多不等于信息更多；遮挡、重复绕行和方向混乱可能妨碍理解。"
+        },
+        {
+          "id": "reveal",
+          "name": "信息揭示与悬念",
+          "observable_cues": "列出起幅未知信息、过程中的线索、落幅新信息，核对其并列、对比、因果或其他联系。",
+          "possible_effect": "控制可见范围与揭示时机，可引发期待、形成转折或解释前面的信息。",
+          "boundaries": "没有新增或重新组织的信息时，不把移动本身解释为悬念；因果和隐喻不能仅凭镜头运动推断。"
+        },
+        {
+          "id": "emotion",
+          "name": "速度、稳定性与情绪",
+          "observable_cues": "比较速度、加减速、方向、振动及主体行动的配合，并观察前后节奏。",
+          "possible_effect": "平缓或急促、平稳或晃动可结合内容形成从容、紧迫、失衡等感受；旋转可能放大已有动感。",
+          "boundaries": "快速不必紧张、平稳不必优秀、晃动不必缺陷；必须指出内容依据及实际观看效果。"
+        },
+        {
+          "id": "embodiment",
+          "name": "观察方式与代入",
+          "observable_cues": "观察摇镜是否像搜索／转头、移镜是否像边走边看、背跟是否沿角色路线，是否有视线和行动依据。",
+          "possible_effect": "可模拟发现、搜索、追踪等观察活动，建立跟随感与主观体验。",
+          "boundaries": "背跟不等于人物第一人称；只给RGB时不能确认由声音引发转头。变焦不等于真实走近。"
+        },
+        {
+          "id": "scale",
+          "name": "景别、透视与动态构图",
+          "observable_cues": "对照主体尺寸、背景相对变化、遮挡及构图重心，区分移动推拉与变焦的可见特征。",
+          "possible_effect": "移动可重组前后景关系；变焦可改变取景范围，快速变焦可能强调主观注意或戏剧转折。",
+          "boundaries": "焦距不能仅由画面可靠反推；长焦与侧面并非表现运动的通用最佳方案；景别变化不自动增强表达。"
+        }
+      ]
+    },
+    {
+      "id": "camera-depth",
+      "name": "焦点与景深",
+      "questions": [
+        "镜头安排是否支持当前必要信息？",
+        "时序变化带来了什么新增信息或观看效果？"
+      ],
+      "indicators": [
+        {
+          "id": "camera-depth-allocation",
+          "name": "清晰区域分配",
+          "observation": "观察主体、陪体、环境分别处于何种清晰状态。",
+          "judgement": "判断必要信息是否可辨、清晰区域是否有助观看重点。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "focus",
+            "detail"
+          ]
+        },
+        {
+          "id": "camera-depth-holding",
+          "name": "焦点保持",
+          "observation": "沿主体与机位运动跟踪同一对象清晰度。",
+          "judgement": "区分有意失去清晰和无法解释的焦点漂移。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "focus",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-depth-transition",
+          "name": "焦点转换",
+          "observation": "核对焦点转移起止对象及转移时间。",
+          "judgement": "判断是否支持注意转移、人物联系或新信息揭示。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "focus",
+            "relation",
+            "reveal"
+          ]
+        },
+        {
+          "id": "camera-depth-boundaries",
+          "name": "虚化边界与过渡",
+          "observation": "观察虚化轮廓、前后景过渡及随运动的边界变化。",
+          "judgement": "判断是否产生异常光晕、穿帮或必要形体丢失。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "focus",
+            "scale"
+          ]
+        }
+      ],
+      "observation_knowledge": [
+        {
+          "id": "detail",
+          "name": "看清重点：推近与跟随",
+          "observable_cues": "比较起幅、运动过程和落幅中主体尺寸、细节、表情及可见范围，记录跟随对象是否变化。",
+          "possible_effect": "推近可突出细节与反应；持续跟随可建立观看重点；前跟在面部可见时有助观察表情。",
+          "boundaries": "推近不必引发紧张；前跟并非总能看清表情。区分主体靠近、摄影机移动和变焦，不能确认时记录歧义。"
+        },
+        {
+          "id": "relation",
+          "name": "建立整体、局部与人物联系",
+          "observable_cues": "记录运动前后人物距离、朝向、共同画面、环境尺度及主次关系的变化。",
+          "possible_effect": "推拉可建立整体与局部关系；环绕与调度在有互动依据时可增强团队、亲近、对立等关系。",
+          "boundaries": "环绕不自动等于亲密或团队感；推拉也不天然代表故事开端或结束。须说明运动实际揭示了哪种联系。"
+        },
+        {
+          "id": "reveal",
+          "name": "信息揭示与悬念",
+          "observable_cues": "列出起幅未知信息、过程中的线索、落幅新信息，核对其并列、对比、因果或其他联系。",
+          "possible_effect": "控制可见范围与揭示时机，可引发期待、形成转折或解释前面的信息。",
+          "boundaries": "没有新增或重新组织的信息时，不把移动本身解释为悬念；因果和隐喻不能仅凭镜头运动推断。"
+        },
+        {
+          "id": "emotion",
+          "name": "速度、稳定性与情绪",
+          "observable_cues": "比较速度、加减速、方向、振动及主体行动的配合，并观察前后节奏。",
+          "possible_effect": "平缓或急促、平稳或晃动可结合内容形成从容、紧迫、失衡等感受；旋转可能放大已有动感。",
+          "boundaries": "快速不必紧张、平稳不必优秀、晃动不必缺陷；必须指出内容依据及实际观看效果。"
+        },
+        {
+          "id": "scale",
+          "name": "景别、透视与动态构图",
+          "observable_cues": "对照主体尺寸、背景相对变化、遮挡及构图重心，区分移动推拉与变焦的可见特征。",
+          "possible_effect": "移动可重组前后景关系；变焦可改变取景范围，快速变焦可能强调主观注意或戏剧转折。",
+          "boundaries": "焦距不能仅由画面可靠反推；长焦与侧面并非表现运动的通用最佳方案；景别变化不自动增强表达。"
+        },
+        {
+          "id": "focus",
+          "name": "焦点如何分配注意",
+          "observable_cues": "核对清晰区域、焦点保持／转移时刻与当前信息需求，区分失焦和风格化模糊。",
+          "possible_effect": "清晰度变化可从一人或物转向另一对象，帮助建立联系与揭示信息。",
+          "boundaries": "焦点变化不是摄影机移动；必要信息可读即可，不要求全画面始终清晰。"
+        }
+      ]
+    },
+    {
+      "id": "camera-techniques",
+      "name": "特殊运镜手法",
+      "questions": [
+        "镜头安排是否支持当前必要信息？",
+        "时序变化带来了什么新增信息或观看效果？"
+      ],
+      "indicators": [
+        {
+          "id": "camera-techniques-special-1",
+          "name": "希区柯克变焦",
+          "observation": "核对“希区柯克变焦”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-2",
+          "name": "格莱美慢镜头",
+          "observation": "核对“格莱美慢镜头”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。该名称须结合项目示例定义；仅凭名称不能确定技术机制。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-3",
+          "name": "穿梭跟随",
+          "observation": "核对“穿梭跟随”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-4",
+          "name": "子弹时间",
+          "observation": "核对“子弹时间”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-5",
+          "name": "长镜头场面调度",
+          "observation": "核对“长镜头场面调度”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-6",
+          "name": "手持呼吸感",
+          "observation": "核对“手持呼吸感”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-7",
+          "name": "幽灵跟拍",
+          "observation": "核对“幽灵跟拍”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-8",
+          "name": "甩",
+          "observation": "核对“甩”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-9",
+          "name": "环绕",
+          "observation": "核对“环绕”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-techniques-special-10",
+          "name": "升降",
+          "observation": "核对“升降”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        },
+        {
+          "id": "camera-expressive",
+          "name": "表现性镜头",
+          "observation": "核对“表现性镜头”的可见运动／时间特征，逐段记录起幅、过程、落幅的主体和环境变化。",
+          "judgement": "先确认观察到的表现，再说明它在看清、看全、建立联系、信息揭示或节奏上的实际作用。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "detail",
+            "overview",
+            "relation",
+            "reveal",
+            "time",
+            "emotion",
+            "embodiment",
+            "scale"
+          ]
+        }
+      ],
+      "observation_knowledge": [
+        {
+          "id": "detail",
+          "name": "看清重点：推近与跟随",
+          "observable_cues": "比较起幅、运动过程和落幅中主体尺寸、细节、表情及可见范围，记录跟随对象是否变化。",
+          "possible_effect": "推近可突出细节与反应；持续跟随可建立观看重点；前跟在面部可见时有助观察表情。",
+          "boundaries": "推近不必引发紧张；前跟并非总能看清表情。区分主体靠近、摄影机移动和变焦，不能确认时记录歧义。"
+        },
+        {
+          "id": "overview",
+          "name": "看全环境与多角度揭示",
+          "observable_cues": "核对摇、横移、升降、环绕或跟随沿途新增的空间信息，以及局部与整体能否连接。",
+          "possible_effect": "可逐步介绍环境，连接入口、路径和目的地；跟随角色游走可以维持空间连续。",
+          "boundaries": "运动更大或角度更多不等于信息更多；遮挡、重复绕行和方向混乱可能妨碍理解。"
+        },
+        {
+          "id": "relation",
+          "name": "建立整体、局部与人物联系",
+          "observable_cues": "记录运动前后人物距离、朝向、共同画面、环境尺度及主次关系的变化。",
+          "possible_effect": "推拉可建立整体与局部关系；环绕与调度在有互动依据时可增强团队、亲近、对立等关系。",
+          "boundaries": "环绕不自动等于亲密或团队感；推拉也不天然代表故事开端或结束。须说明运动实际揭示了哪种联系。"
+        },
+        {
+          "id": "reveal",
+          "name": "信息揭示与悬念",
+          "observable_cues": "列出起幅未知信息、过程中的线索、落幅新信息，核对其并列、对比、因果或其他联系。",
+          "possible_effect": "控制可见范围与揭示时机，可引发期待、形成转折或解释前面的信息。",
+          "boundaries": "没有新增或重新组织的信息时，不把移动本身解释为悬念；因果和隐喻不能仅凭镜头运动推断。"
+        },
+        {
+          "id": "time",
+          "name": "时空连续与时间变化",
+          "observable_cues": "沿时间记录角色、环境、路径及可见事件的变化，检查是否有切镜或时间压缩线索。",
+          "possible_effect": "长镜头调度可在连续空间中呈现事件展开；运动结合场景变化可表现时间流逝。",
+          "boundaries": "运镜自身不能证明时间流逝；不从抽帧连续性直接断言全段没有剪辑。"
+        },
+        {
+          "id": "emotion",
+          "name": "速度、稳定性与情绪",
+          "observable_cues": "比较速度、加减速、方向、振动及主体行动的配合，并观察前后节奏。",
+          "possible_effect": "平缓或急促、平稳或晃动可结合内容形成从容、紧迫、失衡等感受；旋转可能放大已有动感。",
+          "boundaries": "快速不必紧张、平稳不必优秀、晃动不必缺陷；必须指出内容依据及实际观看效果。"
+        },
+        {
+          "id": "embodiment",
+          "name": "观察方式与代入",
+          "observable_cues": "观察摇镜是否像搜索／转头、移镜是否像边走边看、背跟是否沿角色路线，是否有视线和行动依据。",
+          "possible_effect": "可模拟发现、搜索、追踪等观察活动，建立跟随感与主观体验。",
+          "boundaries": "背跟不等于人物第一人称；只给RGB时不能确认由声音引发转头。变焦不等于真实走近。"
+        },
+        {
+          "id": "scale",
+          "name": "景别、透视与动态构图",
+          "observable_cues": "对照主体尺寸、背景相对变化、遮挡及构图重心，区分移动推拉与变焦的可见特征。",
+          "possible_effect": "移动可重组前后景关系；变焦可改变取景范围，快速变焦可能强调主观注意或戏剧转折。",
+          "boundaries": "焦距不能仅由画面可靠反推；长焦与侧面并非表现运动的通用最佳方案；景别变化不自动增强表达。"
+        }
+      ]
+    },
+    {
+      "id": "camera-techniques-properties",
+      "name": "特殊镜头效果",
+      "questions": [
+        "镜头安排是否支持当前必要信息？",
+        "时序变化带来了什么新增信息或观看效果？"
+      ],
+      "indicators": [
+        {
+          "id": "camera-techniques-properties-1",
+          "name": "色散",
+          "observation": "记录“色散”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-2",
+          "name": "暗角",
+          "observation": "记录“暗角”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-3",
+          "name": "红外摄影",
+          "observation": "记录“红外摄影”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-4",
+          "name": "X光透视",
+          "observation": "记录“X光透视”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-5",
+          "name": "镜头炫光",
+          "observation": "记录“镜头炫光”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-6",
+          "name": "鱼眼",
+          "observation": "记录“鱼眼”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-7",
+          "name": "运动模糊",
+          "observation": "记录“运动模糊”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-8",
+          "name": "移轴",
+          "observation": "记录“移轴”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-9",
+          "name": "微距",
+          "observation": "记录“微距”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-10",
+          "name": "过曝",
+          "observation": "记录“过曝”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        },
+        {
+          "id": "camera-techniques-properties-11",
+          "name": "双重曝光",
+          "observation": "记录“双重曝光”的可见区域、强度变化、持续时间及其与主体行动的关系。",
+          "judgement": "确认效果后判断是否帮助注意与表达，或妨碍必要信息；不能确认具体机制时仅描述可见现象。",
+          "effect_and_boundary": "不按手法数量加档；增强须引用前后证据与具体作用。该指标不适用时标记不适用，不作为基础失败。",
+          "knowledge_refs": [
+            "effects",
+            "detail",
+            "emotion"
+          ]
+        }
+      ],
+      "observation_knowledge": [
+        {
+          "id": "detail",
+          "name": "看清重点：推近与跟随",
+          "observable_cues": "比较起幅、运动过程和落幅中主体尺寸、细节、表情及可见范围，记录跟随对象是否变化。",
+          "possible_effect": "推近可突出细节与反应；持续跟随可建立观看重点；前跟在面部可见时有助观察表情。",
+          "boundaries": "推近不必引发紧张；前跟并非总能看清表情。区分主体靠近、摄影机移动和变焦，不能确认时记录歧义。"
+        },
+        {
+          "id": "emotion",
+          "name": "速度、稳定性与情绪",
+          "observable_cues": "比较速度、加减速、方向、振动及主体行动的配合，并观察前后节奏。",
+          "possible_effect": "平缓或急促、平稳或晃动可结合内容形成从容、紧迫、失衡等感受；旋转可能放大已有动感。",
+          "boundaries": "快速不必紧张、平稳不必优秀、晃动不必缺陷；必须指出内容依据及实际观看效果。"
+        },
+        {
+          "id": "effects",
+          "name": "镜头效果的作用",
+          "observable_cues": "指出色散、暗角、炫光、畸变、模糊等覆盖区域、持续时间和受影响信息。",
+          "possible_effect": "可组织注意或形成特定观看体验，也可能干扰必要信息。",
+          "boundaries": "效果名不等于质量；没有某个效果不扣档，不凭二维画面断定实际镜头或制作设备。"
+        }
+      ]
+    }
+  ],
+  "overall_scoring_guidance": {
+    "low": "确认镜头运动、焦点或效果在关键时刻／持续妨碍定位、必要信息或时空连续性，并引用具体证据。",
+    "middle": "适用基础成立，能够完成当前观看任务，但未证实进一步增强效果。",
+    "high": "满足中档基础，且镜头安排有效加强信息揭示、空间理解、注意组织、关系、代入或节奏表达；不强制情感寓意。",
+    "uncertain": "抽帧遗漏快速事件或运动机制不明等证据不足时，不硬选档。",
+    "not_applicable": "单一手法未使用则标记不适用；固定镜头仍可评价观看功能。"
+  },
+  "evidence_requirements": [
+    "每项判断记录时间范围、镜头／事件阶段、当前观看任务、对应指标与原始证据帧。",
+    "时序解释按起幅已知信息→过程变化→落幅新增信息→实际作用记录；至少引用前后两时刻，不能由单帧推断运镜效果。",
+    "可辅助记录主体相对位置、尺寸、遮挡及帧间运动，但须区分摄影机运动与对象运动；不以测量值直接换算审美分数。"
+  ],
+  "validation_plan": "先以固定镜头、有效运动及明显跟丢／遮挡等片段小规模试标；快速事件核对原视频，再做独立人工复核、一致率与误判分析。本草案未执行。"
+}
