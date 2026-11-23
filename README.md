@@ -15,7 +15,7 @@
 |内容|入口|
 |---|---|
 |构图 Rubric|[可读版](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html) · [规则JSON](rubrics/composition_rubric.json)|
-|主体提取、分割、测量到判档的全过程|[流程说明](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-workflow.html) · [50题审核页](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-v23-review/index.html)|
+|主体提取、分割、测量到判档的全过程|[流程说明](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-workflow.html) · [50题机标详细记录与审核页](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-v23-review/index.html)|
 |两轮50题前后对照|[逐题来源、截取时间、原片哈希与判档对照](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-two-round-comparison.html)|
 |高、中、低典型案例|[R49高／R01中／R13低：机器过程与人工comments](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-v23-selected-cases.html)|
 |人工复核一致率与典型误判|[一致率、11题分歧及批注、典型问题与归因](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/composition-v23-human25-agreement.html)|
