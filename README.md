@@ -6,6 +6,8 @@
 
 **[阅读11月24日报告](https://chewchen2003-netizen.github.io/game-video-aesthetics/report.html)** · [GitHub文字版](REPORT.md)
 
+本轮依旧采用构图维度作为真实样本验证。
+
 模型选用说明：由于暂无 Gemini API 资源，本轮采用 GPT-6.1 Sol 作为视觉语言模型（VLM）替代方案。
 
 构图 Rubric v2.3.0：50题机标为 **27高、20中、3低**；人工复核25题，一致14题，**一致率56%**。
