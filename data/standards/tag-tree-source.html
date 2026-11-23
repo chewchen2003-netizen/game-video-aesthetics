@@ -309,6 +309,7 @@ function renderDetail(){
  }
  if(n.id==='lighting'&&n.overallScoring){
  const rule=n.overallScoring;const group=(label,items)=>{const el=document.createElement('details');el.className='detail-group';el.open=true;const summary=document.createElement('summary');summary.textContent=label;el.append(summary);const content=document.createElement('div');content.className='detail-group-content';el.append(content);for(const [title,value] of items){const h=document.createElement('h4');h.textContent=title;const p=document.createElement('p');p.textContent=value;content.append(h,p);}panel.append(el);};
+ const knowledgeLink=document.createElement('a');knowledgeLink.className='lighting-knowledge-link';knowledgeLink.href='rubrics/lighting_rubric.html#observation-knowledge';knowledgeLink.target='_blank';knowledgeLink.rel='noopener';knowledgeLink.textContent='光影 Rubric · 观察知识（性质、方向、来源、功能）';knowledgeLink.style.cssText='display:block;margin:12px 0;color:#78c5ff';panel.append(knowledgeLink);
  group('评价概述',[['定义与边界',n.description],['综合原则',rule.principle]]);
  group('各因素的影响条件',[['光照逻辑、体积塑造与光影手法',rule.conditions]]);
  group('光影综合评分',[['综合流程',rule.fusion],['事件与效果去重',rule.dedup]]);

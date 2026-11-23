@@ -9,7 +9,7 @@ def snapshot(run):
  except OSError:d['process_alive']=False
  d.pop('grades',None)
  for sid,v in d['cases'].items():
-  v.pop('grade',None)
+  if v['state']!='complete':v.pop('grade',None)
   if v['state']=='measure':
    logs=sorted((run/'logs').glob(f'{sid}-measure-*.log'))
    if logs:

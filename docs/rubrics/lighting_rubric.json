@@ -1,0 +1,48 @@
+{
+  "rubric_id": "game_video_lighting",
+  "version": "0.1.0",
+  "status": "design_draft_not_executed",
+  "role": "依据有序画面观察光影，沿用标签树指标；类型识别不直接决定好坏。",
+  "input": {"modality": "带时间码的有序RGB抽帧，不需要音频", "sampling": "方案：基础抽帧与必要的局部补帧；快速光照变化需足够时序证据，当前未针对本维度实测采样率。", "detail": "局部结构或光型不清时补清晰局部，不能把缩略图未显示的细节写成已见。"},
+  "rules": ["性质、方向、来源与功能是不同分类轴，同一光可兼具多个属性。", "光型、情绪、人物性格之间无固定一对一映射；不据光型推断道德、性别或创作意图。", "常见布光位置及比例仅为实现经验，不是分档阈值；不得从RGB臆造灯具功率或精确照度比。", "先区分基础合理性与艺术表现；没有缺陷不自动是高档，使用手法也不自动加档。", "场景中不必看见全部光源；按可见关系、环境动机、风格及前后时序综合判断。", "同一现象跨指标引用时用同一事件记录，不重复累加；证据不足与不适用分开。"],
+  "factors": [
+    {"id": "lighting-logic", "name": "光照逻辑", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-logic-3"], "questions": ["光源线索与受光方向是否相容？", "投影与遮挡关系是否具有可解释联系？", "主体、机位或光源变化时，光照是否连续，异常是否可由火光、闪灯、风格化等解释？"], "knowledge_groups": ["light_direction", "light_source", "light_function"]},
+    {"id": "lighting-volume", "name": "体积塑造", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "lighting-volume-3"], "questions": ["明暗面是否支持当前主体形态辨认？", "过渡是否与表面转折相容？", "局部结构是否被有效呈现；不强求所有风格明显立体。"], "knowledge_groups": ["light_quality", "light_direction", "light_function"]},
+    {"id": "light-techniques", "name": "光影手法", "indicator_ids": ["light-tech-0", "light-tech-1", "light-tech-2", "light-tech-3", "light-tech-4", "light-tech-5", "light-tech-7"], "questions": ["是否存在手法对应的可见特征？", "是否产生超出基础辨认的观看重点、空间、处境或氛围效果？", "前后画面是否支持该效果，而不是仅凭术语联想？"], "knowledge_groups": ["light_direction", "light_function"]}
+  ],
+  "overall_scoring_guidance": {"low": "任一适用基础失败已确认：光源、受光、投影或时间变化存在无法合理解释的矛盾，或明暗安排损害必要内容；排除有依据的剪影、平面化、戏剧化等例外。", "middle": "全部适用基础成立，支持当前形体和内容呈现，但没有充分证明进一步表现效果。", "high": "继承中档基础；有画面及必要时序证据证明光影进一步组织观看重点、空间，或强化有依据的关系、处境或氛围；不按手法数量或光比机械升级。", "uncertain": "决定档位的光影事实或前后关系无法可靠确认。", "not_applicable": "当前内容没有本维度适用的评价对象。"},
+  "observation_knowledge": {
+    "light_quality": [
+      {"id": "quality-hard", "name": "硬光", "observable_cues": "观察阴影边缘较锐利、局部转折较突然，以及表面纹理是否被强调；不以画面整体反差单独认定。", "possible_effect": "可强调结构、粗糙纹理和鲜明明暗造型；强硬、沉重等感受必须结合主体、环境与情节。", "boundaries": "硬光不等于高光比，也不等于人物坚毅或善恶；补光可以降低硬光画面的反差。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "lighting-volume-3"]},
+      {"id": "quality-soft", "name": "软光", "observable_cues": "观察阴影边缘较柔、明暗交界过渡渐进；软光仍可以具有方向性。", "possible_effect": "可弱化纹理、形成细腻过渡或安静柔和的观感。", "boundaries": "软光不等于低光比、无方向或人物善良弱小；没有硬阴影不构成缺陷。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "lighting-volume-3"]}
+    ],
+    "light_direction": [
+      {"id": "direction-reference", "name": "方向判断前提", "observable_cues": "先确定当前机位与主体朝向，再观察受光面、背光面、投影和轮廓；镜头或主体转向时重新核对。", "possible_effect": "为光照逻辑与形体塑造提供可见依据。", "boundaries": "不把画面左右等同世界左右，不从二维帧武断估计精确三维角度。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2"]},
+      {"id": "direction-front", "name": "顺光／正面光", "observable_cues": "光主要来自机位附近方向，镜头所见表面受光较充分、可见阴影较少。", "possible_effect": "可清楚交代样貌与表面颜色，也可能减弱明暗塑形。", "boundaries": "不保证饱和度高或皮肤完美；正面较平不自动低档。", "indicator_ids": ["lighting-logic-1", "lighting-volume-1", "lighting-volume-2"]},
+      {"id": "direction-back", "name": "逆光", "observable_cues": "主体朝镜头一侧较暗，背后亮源、边缘亮线或剪影关系可见。", "possible_effect": "可分离主体、勾勒轮廓、呈现透光材质；也可结合情境形成神秘感。", "boundaries": "剪影可为合理取舍；逆光不自动悬疑或高档，轮廓光是可产生的一种效果。", "indicator_ids": ["lighting-logic-1", "light-tech-0", "light-tech-1"]},
+      {"id": "direction-side", "name": "侧光", "observable_cues": "光从主体一侧入射，可见左右或不同表面明暗分配与形体转折。", "possible_effect": "可加强结构、体积与纹理，也可形成对照。", "boundaries": "明暗各半不是必要条件；不由一半明暗推断人物亦正亦邪。", "indicator_ids": ["lighting-logic-1", "lighting-volume-1", "lighting-volume-2"]},
+      {"id": "direction-frontside", "name": "前侧光／侧顺光", "observable_cues": "较多受光面朝向镜头，同时保留侧面阴影与过渡。", "possible_effect": "可兼顾辨认与立体塑造；特定安排可形成伦勃朗式脸部光型。", "boundaries": "不自动是最好看的人像；欢乐、团圆或哲学含义都需上下文，不由光型直接确定。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "light-tech-3"]},
+      {"id": "direction-rearside", "name": "侧逆光／后侧光", "observable_cues": "主体大部可能处于暗面，一侧或两侧边缘受到来自后方的光。", "possible_effect": "可突出轮廓、景物层次及主体与环境的分离关系。", "boundaries": "软光诗意、硬光不安只是可能效果，不能作为固定情绪标签。", "indicator_ids": ["lighting-volume-2", "light-tech-0", "light-tech-1"]},
+      {"id": "direction-top", "name": "顶光", "observable_cues": "光主要自上方来，检查眼窝、鼻下、下颌及向下投影。", "possible_effect": "可强化上下面差异或特定气氛；也可能符合室外天光、室内顶灯等环境。", "boundaries": "顶光不等于反派、丑化或不合理；不把所有天空光都视为纯顶向。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-volume-3"]},
+      {"id": "direction-butterfly", "name": "前上方光／蝴蝶光", "observable_cues": "主光在面部正前上方，鼻下出现近蝶形阴影；结合面部朝向确认。", "possible_effect": "可突出面部结构，形成特定人像造型。", "boundaries": "不等同任意顶侧光；瘦脸、骨感或性别审美不能作为强制评分标准。", "indicator_ids": ["light-tech-4", "lighting-volume-3"]},
+      {"id": "direction-bottom", "name": "低位光／脚光", "observable_cues": "光自下方向上塑造面部，阴影方向区别于常见上方来光。", "possible_effect": "可形成陌生、夸张或恐怖观感，也可能由地面灯、火焰等可见光源解释。", "boundaries": "不是见低位光就判恐怖或低档；先核对光源、风格和当前内容。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-volume-3"]}
+    ],
+    "light_source": [
+      {"id": "source-natural", "name": "自然光样式", "observable_cues": "观察日光、天光、月光等拟态，以及光色、受光、投影与天气／时间线索是否相容。", "possible_effect": "可交代时间、天气与环境氛围。", "boundaries": "亮度、方向和色温不保证均匀稳定；受时段、天气、地理及季节影响。游戏画面只能记录可见拟态，不反推真实拍摄过程。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-logic-3"]},
+      {"id": "source-artificial", "name": "人工光样式", "observable_cues": "观察灯具、发光屏、火焰或其他可见／有情境依据的光源及其作用范围。", "possible_effect": "可控制局部重点、空间分区、颜色及戏剧化表现。", "boundaries": "钨丝灯、镝灯、LED及柔光罩、蜂巢、柔光板、反光板、束光筒、滤光片、硫酸纸、减光板只是布光实现知识；没有可见证据时不推断实际设备。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-logic-3"]}
+    ],
+    "light_function": [
+      {"id": "function-key", "name": "主光", "observable_cues": "识别主要决定主体明暗结构、形态及质感的照明作用；依据受光与阴影判断，而非找最亮像素。", "possible_effect": "建立主要影调与造型方向，也可能影响气氛。", "boundaries": "主光可硬可软，不固定在左侧或高位；低调画面不等于主光绝对亮度必须低，须看曝光结果、暗部比例与明暗组织。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-volume-1", "lighting-volume-2", "lighting-volume-3"]},
+      {"id": "function-fill", "name": "辅光／补光", "observable_cues": "观察主光阴影区域是否被抬亮，是否保留必要细节和原有明暗结构。", "possible_effect": "主要控制反差与暗部层次，可避免必要信息被无意吞没。", "boundaries": "没有必须低于主光一半、固定放右侧或低于头部的硬要求；画面亮度不能直接反推灯具功率比。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "lighting-volume-3"]},
+      {"id": "function-negative-fill", "name": "减光／负补光", "observable_cues": "观察对某一区域反射光的抑制是否加强阴影；只能确认画面效果，无法从RGB断言用了减光板。", "possible_effect": "可增加明暗反差并改变造型。", "boundaries": "减光板不是一种发光的辅光；加深阴影不自动优秀，仍须保留当前内容所需信息。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2"]},
+      {"id": "function-rim", "name": "轮廓光／分离光", "observable_cues": "检查来自后方或侧后方的边缘亮线是否与主体轮廓相符，并区别反光、描边特效和过曝光晕。", "possible_effect": "可将主体与背景分离，增加可读层次。", "boundaries": "不限定深色背景，不要求比主光高半档至一档或固定灯位；越亮越好不成立。", "indicator_ids": ["light-tech-0", "lighting-volume-2"]},
+      {"id": "function-background", "name": "背景光", "observable_cues": "观察背景自身的明暗、色调与层次，及其同主体的关系。", "possible_effect": "可交代环境与时地，分离主体，或通过前后变化支持情绪／处境。", "boundaries": "背景光按照明对象定义，不完全等同环境光；背景比主体亮并非自动错误，应判断观看重点及表达效果。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "lighting-logic-3"]},
+      {"id": "function-ambient", "name": "环境光", "observable_cues": "观察场景范围内的基础照明或反射／间接照明对不同表面的共同作用。", "possible_effect": "支持场景整体可见度与统一感。", "boundaries": "不把所有照亮背景的光都叫环境光，也不从画面反推出引擎环境光参数。", "indicator_ids": ["lighting-logic-1", "lighting-logic-2", "lighting-logic-3", "lighting-volume-1", "lighting-volume-2"]},
+      {"id": "function-accent", "name": "修饰光／装饰光", "observable_cues": "观察眼神光、头发亮部或局部高光是否与表面及光源关系相容；关注具体作用对象。", "possible_effect": "可强调眼神、发丝、局部结构或观看重点。", "boundaries": "不是必选项；头发光不限定顶部硬光。眼睛反光由表面与光源关系产生，不自动证明情感丰富。", "indicator_ids": ["lighting-volume-3", "light-tech-0"]},
+      {"id": "function-three-point", "name": "三点布光", "observable_cues": "将主光、补光与轮廓／分离光理解为常见的功能组合，检查三者在画面中的共同作用。", "possible_effect": "可兼顾主体塑形、暗部细节及背景分离。", "boundaries": "并非必用模板，不要求固定左右高低或亮度比例；与伦勃朗式脸部亮三角分别识别。", "indicator_ids": ["lighting-volume-1", "lighting-volume-2", "light-tech-0"]},
+      {"id": "pattern-rembrandt", "name": "伦勃朗光与明暗对照", "observable_cues": "观察鼻影与面颊阴影关系、暗侧面颊的亮三角，以及画面的亮暗取舍。", "possible_effect": "可塑造脸部结构，结合情境形成戏剧化明暗关系。", "boundaries": "不等同三点布光、不限定硬光；不自动代表善恶、生死等主题。舞台化／戏剧化光不因缺少画内灯具就被判不合理，但须检查内部关系及风格依据。", "indicator_ids": ["light-tech-3", "lighting-volume-2", "lighting-volume-3"]}
+    ]
+  },
+  "evidence_requirements": ["实际输入帧ID与时间码", "观察到的明暗、投影、轮廓或光色关系", "关联指标与事件", "基本呈现影响或增强效果及上下文", "前后画面对照（相关时）", "合理例外与不确定性"],
+  "validation_plan": "小规模覆盖自然／人工样式、硬／软光、不同方向、剪影及风格化反例；固定预测后做独立人工复核，检查一致率及典型误判。本维度尚未执行。"
+}

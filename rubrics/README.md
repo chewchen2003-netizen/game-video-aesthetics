@@ -47,3 +47,5 @@ python3 -m unittest discover -s tests -p 'test_rubric_format.py'
 本次只固定标准，不运行VLM。新版输入封装、逐点输出结构、独立人工复核和同批复跑需在后续接入；未完成前不能报告v2准确率或改进幅度。
 
 执行入口与证据记录说明见 [EXECUTION.md](EXECUTION.md)。
+
+光影的简版方法草案及两批观察知识见 [lighting_rubric.json](lighting_rubric.json)，[可读版](../docs/rubrics/lighting_rubric.html)；尚未运行或验证。
