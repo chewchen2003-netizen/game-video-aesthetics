@@ -8,12 +8,12 @@ out=ROOT/'docs/rubrics';out.mkdir(parents=True,exist_ok=True)
 def e(value):return html.escape(str(value))
 def lst(values):return '<ul>'+''.join('<li>'+e(v)+'</li>' for v in values)+'</ul>'
 body='<h1>构图 Rubric · v'+e(rubric['version'])+'</h1>'
-body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。新版另有三条试跑，独立人工验证尚未完成。</p>'
+body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。三条试跑使用v2.1.1；本页v2.2.0根据事后复核修订，尚未复跑，独立人工验证未完成。</p>'
 body+='<p><a href="composition_rubric.json">构图规则 JSON</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
 body+='<p><a href="../results/rubric-trial3/index.html">查看三条试跑的完整证据链</a></p>'
 body+='<h2>角色与评价范围</h2><p>'+e(rubric['role'])+'</p><p>由 GPT-6.1 Sol 承担VLM判档；不设置数值美学分数或因素权重。实际调用模型信息须随运行单独保存。</p>'
 body+='<h2>共同定义</h2><dl>'
-names={'expression':'表达','basic_presentation':'基本呈现','expressive_enhancement':'进一步表情达意','subject':'主体','supporting_element':'陪体','material_comprehension_harm':'关键理解损害','applicability':'适用性','evidence_insufficiency':'证据不足'}
+names={'expression':'表达','basic_presentation':'基本呈现','expressive_enhancement':'进一步表情达意','subject':'主体','supporting_element':'陪体','material_comprehension_harm':'关键理解损害','applicability':'适用性','evidence_insufficiency':'证据不足','enhancement_evidence_bridge':'增强效果的证据链'}
 for key,value in rubric['definitions'].items():
     if key=='environment':
         body+='<dt>环境</dt><dd>'+e(value['definition'])+lst([k+'：'+v for k,v in value['subtypes'].items()])+'</dd>'
@@ -21,16 +21,19 @@ for key,value in rubric['definitions'].items():
 body+='</dl><h2>通用规则</h2>'+lst(rubric['rules'])
 body+='<h2>评价前提</h2>'+lst(rubric['preconditions']['required'])+'<p>'+e(rubric['preconditions']['role_uncertainty'])+'</p>'
 body+='<h3>内容与关键阶段记录</h3><p>'+e(rubric['preconditions'].get('content_record',{}).get('method',''))+'</p><p>'+e(rubric['preconditions'].get('content_record',{}).get('key_stage',''))+'</p>'
-labels={'low':'低：妨碍理解','middle':'中：基本呈现成立','high':'高：进一步表情达意'}
+labels={'low':'低：基础呈现受损','middle':'中：基本呈现成立','high':'高：进一步表情达意'}
 for factor in rubric['factors']:
     imap={x['id']:x for x in factor['indicators']}
     body+='<h2 id="'+e(factor['id'])+'">'+e(factor['name'])+'</h2><p>'+e(factor['criteria'])+'</p>'
     if factor['effect_only']:body+='<p>先确认手法是否存在；未识别到明确手法不扣档、不强制定为中。效果证据关联到整体，不独立加分。</p>'
     for grade,title in labels.items():
         guidance=factor['scoring_guidance'][grade]
-        logic={'low':'任一问题确认且造成关键理解损害。','middle':'无确认的关键理解损害，全部适用基础点成立。','high':'继承中档全部适用条件，再证明至少一种实质表达效果；不按命中数量加分。'}[grade]
-        body+='<h3>'+e(title)+'</h3><p>'+e(logic)+'</p><div class="table"><table><thead><tr><th>检查点</th><th>唯一关联指标</th><th>判断条件</th></tr></thead><tbody>'
-        for point in guidance['checks']:body+='<tr><td>'+e(point['id'])+'</td><td>'+e(point['letter']+'．'+imap[point['indicator_id']]['name'])+'</td><td>'+e(point['condition'])+'</td></tr>'
+        logic={'low':'任一问题确认且造成关键理解损害或基础形体结构破坏。','middle':'无确认的关键理解损害或基础形体结构破坏，全部适用基础点成立。','high':'继承中档全部适用条件，再证明至少一种实质表达效果；不按命中数量加分。'}[grade]
+        body+='<h3>'+e(title)+'</h3><p>'+e(logic)+'</p><div class="table"><table><thead><tr><th>检查点</th><th>唯一关联指标</th><th>判断条件</th><th>如何观察与判别</th></tr></thead><tbody>'
+        for point in guidance['checks']:
+            guide=point.get('observation_guidance',{})
+            observation=('<b>观察：</b>'+e(guide['observe'])+'<br><b>有条件的例子：</b>'+e(guide['conditional_example'])+'<br><b>不足以判高：</b>'+e(guide['not_sufficient'])) if guide else '按该项最低功能、实际证据及合理例外判断。'
+            body+='<tr><td>'+e(point['id'])+'</td><td>'+e(point['letter']+'．'+imap[point['indicator_id']]['name'])+'</td><td>'+e(point['condition'])+'</td><td>'+observation+'</td></tr>'
         body+='</tbody></table></div>'
     if 'technique_reference' in factor:
         body+='<h3>手法识别参考</h3>'+lst([x['name']+'：'+x['recognition'] for x in factor['technique_reference']])+'<p>'+e(factor['reference_usage'])+'</p>'

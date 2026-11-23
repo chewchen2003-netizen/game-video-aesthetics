@@ -1,20 +1,20 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "language": "zh-CN",
-  "freeze": {"state": "frozen_for_validation", "date": "2026-11-23", "validation_status": "not_yet_validated", "purpose": "固定本轮最低必要条件衔接修订，用于三条非原50样本试跑及后续验证。", "change_policy": "改变判档条件必须创建新版本并重做版本记录，不静默修改本文件。"},
+  "freeze": {"state": "frozen_for_validation", "date": "2026-11-23", "validation_status": "not_yet_validated", "purpose": "根据三条事后复核修订结构底线及增强效果观察说明；待新一轮验证，不追改v2.1.1机标。", "change_policy": "改变判档条件必须创建新版本并重做版本记录，不静默修改本文件。"},
   "judge": {"method": "VLM", "model": "gpt-6.1-sol", "model_is_part_of_rubric_identity": false},
   "role": "你是游戏视频构图评审。根据实际输入画面、时间上下文及可信辅助测量，逐项检查构图条件并按本Rubric输出整体档位。不得仅凭手法名称、几何形式或整体印象判档，不推断缺乏画面依据的创作意图与人物心理。",
   "scope": {"dimension": "构图", "unit": "片段及其有效阶段", "grade_labels": {"low": "低", "middle": "中", "high": "高"}, "statuses": ["scored", "uncertain", "not_applicable"], "checkpoint_states": ["met", "not_met", "insufficient_evidence", "not_applicable"], "numeric_aesthetic_score": false, "aggregation": "VLM依据顶层条件综合判档，不平均因素或指标，不计手法数量。"},
-  "definitions": {"expression": "画面通过元素安排，使观众看到、辨认和理解内容，并可能进一步传达关系、处境、感受或含义。", "basic_presentation": "主体可辨，必要空间、动作及对象关系可理解；清楚呈现本身只支持中档基线。", "expressive_enhancement": "基本呈现成立之上，元素安排强化主体之间或主体与环境之间的关系，或传达有上下文依据的处境、感受与含义。", "subject": "当前主要呈现的对象，可以是一人、多人、物体或景物。", "supporting_element": "与主体联系紧密，共同构成当前情节或关系的对象。", "environment": {"definition": "主体所在空间及相关元素。", "subtypes": {"foreground": "相对于主体更靠近镜头的人或物。", "background": "相对于主体处于其后的人或物。"}}, "material_comprehension_harm": "可见构图安排使当前关键阶段的必要主体、动作、空间或对象关系难以辨认或发生误读。必须指出必要信息和实际损失；短暂瑕疵、纯风格偏好、测量错误不自动构成。", "applicability": "当前内容存在某项所要检查的对象或关系；没有相关对象或关系是不适用，存在但证据看不清是证据不足。", "evidence_insufficiency": "无法可靠确认决定最终档位所需的事实；基础成立而增强未获证明时判中，不因缺少高档证据就输出无法判断。"},
+  "definitions": {"expression": "画面通过元素安排，使观众看到、辨认和理解内容，并可能进一步传达关系、处境、感受或含义。", "basic_presentation": "主体可辨，必要空间、动作及对象关系可理解，形体与画面分界的连接具有合理一致性；能够辨认五官不代表其余基础结构自动成立。", "expressive_enhancement": "基本呈现成立之上，元素安排强化主体之间或主体与环境之间的关系，或传达有上下文依据的处境、感受与含义。", "subject": "当前主要呈现的对象，可以是一人、多人、物体或景物。", "supporting_element": "与主体联系紧密，共同构成当前情节或关系的对象。", "environment": {"definition": "主体所在空间及相关元素。", "subtypes": {"foreground": "相对于主体更靠近镜头的人或物。", "background": "相对于主体处于其后的人或物。"}}, "material_comprehension_harm": "可见构图安排使当前关键阶段的必要主体、动作、空间或对象关系难以辨认或发生误读。必须指出必要信息和实际损失；短暂瑕疵、纯风格偏好、测量错误不自动构成。基础失败也包含已确认、无法以合理裁切或独立视区解释的同一形体连接／尺度崩坏；无需再证明剧情已看不懂。不同视区的独立头像与人物不可直接拼成同一身体比较尺度。", "applicability": "当前内容存在某项所要检查的对象或关系；没有相关对象或关系是不适用，存在但证据看不清是证据不足。", "evidence_insufficiency": "无法可靠确认决定最终档位所需的事实；基础成立而增强未获证明时判中，不因缺少高档证据就输出无法判断。", "enhancement_evidence_bridge": "增强点必须给出：可见安排→由动作、视线、空间或前后变化支持的具体联系→超出基本辨认的效果。例子只说明证据组织方式，不是见到某个位置、占比或手法就自动判高。"},
   "rules": [
     "先确认呈现内容、主体、陪体与环境，按角色或内容变化划分阶段；这些识别是评价前提，不是加分项。",
     "没有完整剧情或没有人物不能直接扣档；景物、物体和环境同样可以形成关系、尺度和氛围。",
     "每个检查点只对应一个indicator_id；分别给状态与证据，不以组合描述替代逐点检查。",
     "ANY与ALL仅说明条件组合，不把检查点换算为数值分数。ALL只包含当前适用的基础点，不把证据不足当作不适用。",
-    "中档各检查点均解释为当前关键阶段最低必要功能，不要求每帧理想或毫无瑕疵。不影响必要内容理解的短暂贴边、位置波动或局部不足允许记为基础成立。",
-    "证据充分时，任一适用最低必要条件明确不成立即低档；该不成立本身须说明必要信息的实际损失，不再另设独立损害门槛。没有证据证明成立不等于确认不成立。",
-    "低档问题须确认且造成关键理解损害；高档须继承中档适用基础，并证明进一步表达；局部漂亮不能抵消关键损害。",
+    "中档各检查点均解释为当前关键阶段最低必要功能，不要求每帧理想或毫无瑕疵。不影响必要内容理解且未破坏基础形体结构的短暂贴边、位置波动或局部不足允许记为基础成立。",
+    "证据充分时，任一适用最低必要条件明确不成立即低档；该不成立本身须说明必要信息的实际损失或已确认的形体结构破坏，不再另设独立损害门槛。没有证据证明成立不等于确认不成立。",
+    "低档问题须确认且造成关键理解损害或基础形体结构破坏；高档须继承中档适用基础，并证明进一步表达；局部漂亮不能抵消关键损害。",
     "位置、占比、遮挡等是事实线索；居中、三分点、大面积、虚化或运动差异不单独决定好坏。",
     "人物小不自动等于孤独、距离远不自动等于疏离、位于上方不自动等于权威；不得编造心理或创作意图。",
     "高档证据必须同时说明真实安排、表达解释、上下文依据及对关键内容的实质作用；只交代事实清楚不够。",
@@ -26,7 +26,8 @@
     "无法确认关键基础时输出uncertain；与不适用区分。只有次要测量缺失且不影响必要判断时不强制整段uncertain。",
     "所有声称参与判断的图片、时间码、测量必须在实际输入清单中；不把事后添加材料写成模型已见证据。",
     "评分输入不得含人工答案或既有预测。仅提供可核查的简洁理由，不要求冗长内部推演。",
-    "若已有充分证据确认适用最低必要条件失败，则判low；其他检查点的缺失不撤销这一结论。只有缺失证据可能改变最终档位、且尚不能确定最终档位时，才判uncertain。"
+    "若已有充分证据确认适用最低必要条件失败，则判low；其他检查点的缺失不撤销这一结论。只有缺失证据可能改变最终档位、且尚不能确定最终档位时，才判uncertain。",
+    "先区分同一形体的连接崩坏、独立头像／界面视区及正常裁切。若两种解释会改变低／中结论而输入无法区分，应输出uncertain并指出所缺证据，不能因脸可辨认就默认基础成立。"
   ],
   "preconditions": {"required": ["当前呈现内容及必要信息", "各阶段时间范围", "主体、陪体、环境角色及对象编号", "已提供画面与测量的清单、有效性和缺失项"], "role_uncertainty": "无法可靠确认的角色写明不确定性；不能默认最大、最亮或居中的对象就是主体。", "content_record": {"order": "逐点评价与判档之前先记录；后续引用，不按预期档位倒推。", "fields": ["stage_id", "time_range", "visible_content", "subject_ids", "supporting_element_ids", "environment_ids", "necessary_information", "input_evidence_ids"], "method": "依据实际画面中的动作、交互、视线及前后变化，说明当前主要呈现什么、理解它必须辨认哪些对象和关系。角色或主要呈现内容变化时划分阶段；多人主体逐一记录。不得凭空补充剧情、任务或心理。", "key_stage": "承载上述必要信息建立、变化或结果的阶段，须引用可见证据说明重要性；不能仅因画面漂亮或存在瑕疵而选为关键。"}},
   "factors": [
@@ -67,16 +68,16 @@
             {"id": "P-B-c", "letter": "c", "indicator_id": "subject-occlusion", "condition": "必要信息保留；遮挡不妨碍理解，或具有可核对的合理情境。"},
             {"id": "P-B-d", "letter": "d", "indicator_id": "subject-separation", "condition": "主体能从背景中辨认，未造成理解混淆。"}
           ],
-          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解的局部不足。不适用项排除，证据不足不冒充不适用。"
+          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解且不破坏基础形体结构的局部不足。不适用项排除，证据不足不冒充不适用。"
         },
         "high": {
           "operator": "ANY_SUBSTANTIATED_EXPRESSIVE_EFFECT",
           "inherits": "middle",
           "checks": [
-            {"id": "P-H-a", "letter": "a", "indicator_id": "subject-position", "condition": "位置关系或其变化进一步强化主体之间、主体与环境之间的关系或处境。"},
-            {"id": "P-H-b", "letter": "b", "indicator_id": "subject-area", "condition": "尺度对比或占比变化进一步传达关系差异、环境包围或其他有依据的含义。"},
-            {"id": "P-H-c", "letter": "c", "indicator_id": "subject-occlusion", "condition": "遮挡与显露进一步传达受阻、隔离、隐藏或关系变化。"},
-            {"id": "P-H-d", "letter": "d", "indicator_id": "subject-separation", "condition": "虚实、明暗、色彩、轮廓或运动差异进一步强化主体与环境的联系、分离或其他有依据的表达。"}
+            {"id": "P-H-a", "letter": "a", "indicator_id": "subject-position", "condition": "位置关系或其变化进一步强化主体之间、主体与环境之间的关系或处境。", "observation_guidance": {"observe": "记录主体彼此及与环境的相对位置、间隔、朝向和变化，区分身体靠近与画面排列靠近。", "conditional_example": "双方相向靠近且一人持续退至墙角，位置与可见行动共同强化逼近／受限关系。", "not_sufficient": "居中、站在上方或彼此分开，本身不证明主导、权威或疏离。"}},
+            {"id": "P-H-b", "letter": "b", "indicator_id": "subject-area", "condition": "尺度对比或占比变化进一步传达关系差异、环境包围或其他有依据的含义。", "observation_guidance": {"observe": "比较同框主体与陪体／环境的相对可见面积，或跨镜头同一对象占比；同时说明机位、距离及景别变化，不能把占比变化直接等同关系变化。", "conditional_example": "人物保持小比例，而建筑、围墙或巨物持续占据大部并限制可见去路，尺度与阻隔共同强调主体所处的受限环境；或两人相对尺度差异配合一方逼近、另一方退让强化不对等。", "not_sufficient": "普通推近只让脸更清楚、两人因透视距离而一大一小，不足以证明情感／地位差异；小人物不自动等于孤独。"}},
+            {"id": "P-H-c", "letter": "c", "indicator_id": "subject-occlusion", "condition": "遮挡与显露进一步传达受阻、隔离、隐藏或关系变化。", "observation_guidance": {"observe": "记录谁遮挡谁、被遮挡的部分、显露顺序，以及其与当前交互的联系。", "conditional_example": "隔着门框、栏杆或人群的遮显配合无法接近的行动，强化可见阻隔；需指出具体阻隔关系。", "not_sufficient": "树叶掠过或主体偶然被挡，不自动表示隐藏、紧张或隔离。"}},
+            {"id": "P-H-d", "letter": "d", "indicator_id": "subject-separation", "condition": "虚实、明暗、色彩、轮廓或运动差异进一步强化主体与环境的联系、分离或其他有依据的表达。", "observation_guidance": {"observe": "指出虚实、亮暗、颜色或运动差异把谁与谁区分，以及这种区分怎样改变关系理解。", "conditional_example": "人群同向运动而主体逆向／停留，持续可见的运动对照配合情境强化主体与群体的分离。", "not_sufficient": "单纯背景虚化、颜色鲜艳、轮廓清楚只是突出主体，不自动构成关系表达。"}}
           ]
         }
       }
@@ -87,7 +88,7 @@
       "criteria": "画框裁切与空间预留是否保留必要信息；局部取舍是否进一步表情达意。",
       "effect_only": false,
       "indicators": [
-        {"id": "shot-crop-joint", "name": "关节截断", "letter": "a", "definition": "人体在画框边缘的关节及肢体连接关系。", "exceptions": ["非人物不适用；特写局部、第一人称身体和正常进出画不直接扣档。"]},
+        {"id": "shot-crop-joint", "name": "形体截断与连接", "letter": "a", "definition": "画框及可见画面分界处的人体截断、肢体连接与同一形体的尺度连贯性。", "exceptions": ["非人物不适用；特写局部、第一人称身体和正常进出画不直接扣档。", "独立对话头像、画中画与另一视区身体不要求尺度一致；须先确认是否为独立视区。不得用该项把一般渲染、卡顿等全部技术质量问题混入构图。"]},
         {"id": "shot-crop-headroom", "name": "头部空间", "letter": "b", "definition": "人物头顶与画框之间的空间及裁切关系。", "exceptions": ["非人物不适用；紧取景本身不证明压迫感；人物框顶不能冒充真实头顶。"]},
         {"id": "shot-crop-look-room", "name": "视线空间", "letter": "c", "definition": "人物视线方向上的可见范围及观看对象关系。", "exceptions": ["无可靠视线线索时不强行推断；没有观看行为或相关关系时不适用。"]},
         {"id": "shot-crop-lead-room", "name": "运动前方空间", "letter": "d", "definition": "当前运动方向上的可见路径、目标及交互范围。", "exceptions": ["没有相关运动时不适用；屏幕位移不等于世界运动方向。"]},
@@ -98,7 +99,7 @@
           "operator": "ANY_CONFIRMED_REQUIRED_BASELINE_FAILURE",
           "inherits": null,
           "checks": [
-            {"id": "C-L-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "关节附近出框造成肢体连接或姿态误读，且无合理情境解释。"},
+            {"id": "C-L-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "裁切或画面分界使同一形体的肢体连接、姿态或尺度明显断裂，且已排除独立视区、正常裁切等合理解释；即使面部仍可辨认，也属于基础结构失败。"},
             {"id": "C-L-b", "letter": "b", "indicator_id": "shot-crop-headroom", "condition": "头顶与画框的安排造成意外截断、辨认困难或明确干扰，影响当前人物呈现。"},
             {"id": "C-L-c", "letter": "c", "indicator_id": "shot-crop-look-room", "condition": "遗漏必须理解的观看对象或关系，使人物关注什么难以理解。"},
             {"id": "C-L-d", "letter": "d", "indicator_id": "shot-crop-lead-room", "condition": "必要路径、目标或交互位置被意外排除，影响运动理解。"},
@@ -116,23 +117,23 @@
           "operator": "ALL_APPLICABLE",
           "inherits": null,
           "checks": [
-            {"id": "C-B-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "裁切不造成身体关系误读，出框符合当前情境。"},
+            {"id": "C-B-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "裁切与分界处的身体连接、姿态及同一形体尺度具有合理一致性；独立视区分别判断，不把可辨认五官当成结构合理的充分证据。"},
             {"id": "C-B-b", "letter": "b", "indicator_id": "shot-crop-headroom", "condition": "头部得到必要呈现，与画框关系没有明显干扰。"},
             {"id": "C-B-c", "letter": "c", "indicator_id": "shot-crop-look-room", "condition": "当前观看关系可理解，不要求所有视线对象都入画。"},
             {"id": "C-B-d", "letter": "d", "indicator_id": "shot-crop-lead-room", "condition": "可见范围足以理解当前运动及交互。"},
             {"id": "C-B-e", "letter": "e", "indicator_id": "shot-crop-action-crop", "condition": "动作必要信息得到呈现。"}
           ],
-          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解的局部不足。不适用项排除，证据不足不冒充不适用。"
+          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解且不破坏基础形体结构的局部不足。不适用项排除，证据不足不冒充不适用。"
         },
         "high": {
           "operator": "ANY_SUBSTANTIATED_EXPRESSIVE_EFFECT",
           "inherits": "middle",
           "checks": [
-            {"id": "C-H-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "身体局部取舍突出有表达意义的姿态、手势或细节。"},
-            {"id": "C-H-b", "letter": "b", "indicator_id": "shot-crop-headroom", "condition": "空间安排与环境、上下文共同强化人物受限、疏离或其他处境。"},
-            {"id": "C-H-c", "letter": "c", "indicator_id": "shot-crop-look-room", "condition": "视线空间的保留、压缩或揭示进一步传达关注、回避、对立等关系。"},
-            {"id": "C-H-d", "letter": "d", "indicator_id": "shot-crop-lead-room", "condition": "前方空间与行动共同强化接近、受阻、逃离等有依据的处境或感受。"},
-            {"id": "C-H-e", "letter": "e", "indicator_id": "shot-crop-action-crop", "condition": "局部取舍进一步强调具有表达意义的行为、接触或反应。"}
+            {"id": "C-H-a", "letter": "a", "indicator_id": "shot-crop-joint", "condition": "身体局部取舍突出有表达意义的姿态、手势或细节。", "observation_guidance": {"observe": "指出身体局部取舍保留了什么姿态、手势及其与对方的联系。", "conditional_example": "双手的抓握与松开被局部取景连续保留，动作及接触对象共同呈现关系变化。", "not_sufficient": "切到一只手或截去腿部本身不表示亲密或紧张。"}},
+            {"id": "C-H-b", "letter": "b", "indicator_id": "shot-crop-headroom", "condition": "空间安排与环境、上下文共同强化人物受限、疏离或其他处境。", "observation_guidance": {"observe": "观察头顶空间与边界／环境是否共同形成可见挤压或疏远关系。", "conditional_example": "人物头顶紧贴低矮障碍且身体动作受限，环境与取景共同强化受限处境。", "not_sufficient": "头顶空间小不自动表示压迫，空间大也不自动表示孤独。"}},
+            {"id": "C-H-c", "letter": "c", "indicator_id": "shot-crop-look-room", "condition": "视线空间的保留、压缩或揭示进一步传达关注、回避、对立等关系。", "observation_guidance": {"observe": "对照视线／身体朝向、观看对象及其间空间，分清空间建立与情感表达。", "conditional_example": "两人由相互对视变为背离，视线空间及前后行为共同强化关系转折。", "not_sufficient": "常规正反打以相反视线／身体朝向建立双方位置，通常支持中档；仅知道两人面对面不证明亲密或对立。"}},
+            {"id": "C-H-d", "letter": "d", "indicator_id": "shot-crop-lead-room", "condition": "前方空间与行动共同强化接近、受阻、逃离等有依据的处境或感受。", "observation_guidance": {"observe": "观察行动前方的目标、障碍、余量及其变化与实际行动的对应。", "conditional_example": "前方道路被逐渐压缩并出现可见阻挡，行动与空间共同强化迫近的受限处境。", "not_sufficient": "给行走者留够前方空间属于基本呈现，不自动增强表达。"}},
+            {"id": "C-H-e", "letter": "e", "indicator_id": "shot-crop-action-crop", "condition": "局部取舍进一步强调具有表达意义的行为、接触或反应。", "observation_guidance": {"observe": "观察局部取舍是否强调动作、接触对象和反应之间的联系。", "conditional_example": "保留触碰及对方退缩的局部反应，取舍使交互关系的变化更明确。", "not_sufficient": "只把普通动作拍清楚属于基础条件。"}}
           ]
         }
       }
@@ -166,19 +167,19 @@
           "operator": "ALL_APPLICABLE",
           "inherits": null,
           "checks": [
-            {"id": "S-B-a", "letter": "a", "indicator_id": "spatial-depth", "condition": "当前需要的空间关系可读，不强求明显纵深。"},
+            {"id": "S-B-a", "letter": "a", "indicator_id": "spatial-depth", "condition": "当前需要的空间关系可读，不强求明显纵深。正反打中可借相互对应的身体／视线朝向及环境参照建立双方位置；仅建立位置属于基础，不自动证明进一步情感关系。"},
             {"id": "S-B-b", "letter": "b", "indicator_id": "spatial-vertical", "condition": "上下分布支持理解当前对象及位置关系。"},
             {"id": "S-B-c", "letter": "c", "indicator_id": "spatial-overlap", "condition": "元素边界和归属基本清楚。"}
           ],
-          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解的局部不足。不适用项排除，证据不足不冒充不适用。"
+          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解且不破坏基础形体结构的局部不足。不适用项排除，证据不足不冒充不适用。"
         },
         "high": {
           "operator": "ANY_SUBSTANTIATED_EXPRESSIVE_EFFECT",
           "inherits": "middle",
           "checks": [
-            {"id": "S-H-a", "letter": "a", "indicator_id": "spatial-depth", "condition": "距离、包围、阻隔等空间联系进一步传达接近、疏离或主体处境。跨阶段由远及近、从环境到主体等景别安排，若帮助建立并深化主体与环境的空间联系、尺度或处境，也在此检查；须引用前后阶段及具体效果。单纯切镜或仅看清空间不自动判高，无景别变化不扣档。"},
-            {"id": "S-H-b", "letter": "b", "indicator_id": "spatial-vertical", "condition": "主体、陪体、环境及天地比例的安排进一步强化关系差异、环境规模或主体感受。"},
-            {"id": "S-H-c", "letter": "c", "indicator_id": "spatial-overlap", "condition": "交叠、分离或连接进一步传达依附、隔离、对照等有依据的关系。"}
+            {"id": "S-H-a", "letter": "a", "indicator_id": "spatial-depth", "condition": "距离、包围、阻隔等空间联系进一步传达接近、疏离或主体处境。跨阶段由远及近、从环境到主体等景别安排，若帮助建立并深化主体与环境的空间联系、尺度或处境，也在此检查；须引用前后阶段及具体效果。单纯切镜或仅看清空间不自动判高，无景别变化不扣档。", "observation_guidance": {"observe": "对照距离、前后、通路及阻隔；跨景别需说明远景建立的空间如何与近景主体联系起来。", "conditional_example": "先展示巨大封闭空间及唯一通路，再切近被包围的主体；前后镜头共同强化主体与环境的尺度和处境。", "not_sufficient": "有前中后景、普通远近切换，或正反打仅建立两人位置，不自动代表情感关系更深。"}},
+            {"id": "S-H-b", "letter": "b", "indicator_id": "spatial-vertical", "condition": "主体、陪体、环境及天地比例的安排进一步强化关系差异、环境规模或主体感受。", "observation_guidance": {"observe": "记录具体对象上下关系、天地比例及可见环境，不能只描述画面上／下。", "conditional_example": "主体被高耸环境和上方结构包围，比例与行动空间共同强调环境对主体的制约。", "not_sufficient": "高机位／低机位和地平线三分位置本身不证明强弱或壮观。"}},
+            {"id": "S-H-c", "letter": "c", "indicator_id": "spatial-overlap", "condition": "交叠、分离或连接进一步传达依附、隔离、对照等有依据的关系。", "observation_guidance": {"observe": "观察哪些轮廓相连／分离、是否有实际接触或遮隔，并核对动作和上下文。", "conditional_example": "人物由同框接触变为被可见门框分隔，前后行动共同支持关系分离。", "not_sufficient": "偶然轮廓相切、重叠，不等于依附或对立。"}}
           ]
         }
       }
@@ -212,14 +213,14 @@
             {"id": "T-B-a", "letter": "a", "indicator_id": "technique-single-frame", "condition": "手法关系成立，必要内容及观看重点可读，没有确认的基础失败。"},
             {"id": "T-B-b", "letter": "b", "indicator_id": "technique-multi-frame", "condition": "子画面及其必要关系可读，没有确认的基础失败。"}
           ],
-          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解的局部不足。不适用项排除，证据不足不冒充不适用。"
+          "interpretation": "当前关键阶段最低必要功能；容许不影响必要内容理解且不破坏基础形体结构的局部不足。不适用项排除，证据不足不冒充不适用。"
         },
         "high": {
           "operator": "ANY_SUBSTANTIATED_EXPRESSIVE_EFFECT",
           "inherits": "middle",
           "checks": [
-            {"id": "T-H-a", "letter": "a", "indicator_id": "technique-single-frame", "condition": "手法强化主体关系、环境关系、处境或感受，并有明确依据。"},
-            {"id": "T-H-b", "letter": "b", "indicator_id": "technique-multi-frame", "condition": "对照、同步、补充或嵌套进一步传达关系、反差或含义。"}
+            {"id": "T-H-a", "letter": "a", "indicator_id": "technique-single-frame", "condition": "手法强化主体关系、环境关系、处境或感受，并有明确依据。", "observation_guidance": {"observe": "先指出手法的具体元素安排，再引用主体、裁切或空间项已证明的效果。", "conditional_example": "框架构图以可见门框隔开人物，并与无法接近的交互共同形成阻隔表达。", "not_sufficient": "三分点、对称或引导线被识别到，不自动升高。"}},
+            {"id": "T-H-b", "letter": "b", "indicator_id": "technique-multi-frame", "condition": "对照、同步、补充或嵌套进一步传达关系、反差或含义。", "observation_guidance": {"observe": "说明同时并置的子画面各显示什么、之间如何对照／同步并产生具体联系。", "conditional_example": "同步子画面分别呈现行动与其后果，对照补足观众对两者联系的理解或反差表达。", "not_sufficient": "存在分屏／画中画，或普通正反打切镜，不自动构成高档。"}}
           ]
         }
       },
@@ -280,8 +281,8 @@
   ],
   "overall_scoring_guidance": {
     "evaluation_order": ["applicability_and_evidence", "required_baseline_conditions", "expressive_enhancement"],
-    "low": {"operator": "ANY_CONFIRMED_REQUIRED_BASELINE_FAILURE", "checks": [{"id": "O-L-a", "factor_id": "composition-prominence", "references": ["P-L-a", "P-L-b", "P-L-c", "P-L-d"], "condition": "对应最低必要基础条件明确不成立；必须说明因此丢失或误读了什么关键内容。主体突出问题成立并使关键主体或必要信息难以获取。", "baseline_condition_id": "O-B-a"}, {"id": "O-L-b", "factor_id": "composition-shot-size", "references": ["C-L-a", "C-L-b", "C-L-c", "C-L-d", "C-L-e"], "condition": "对应最低必要基础条件明确不成立；必须说明因此丢失或误读了什么关键内容。裁切问题成立并造成必要部位、动作、对象或结果缺失或误读。", "baseline_condition_id": "O-B-b"}, {"id": "O-L-c", "factor_id": "composition-spatial-layering", "references": ["S-L-a", "S-L-b", "S-L-c"], "condition": "对应最低必要基础条件明确不成立；必须说明因此丢失或误读了什么关键内容。空间组织问题成立并造成必要位置、远近、归属或联系混淆。", "baseline_condition_id": "O-B-c"}], "technique_problem_routing": "T-L-a/T-L-b如成立，必须关联到上述实际损害事件，不重复计算。"},
-    "middle": {"operator": "ALL_APPLICABLE", "checks": [{"id": "O-B-a", "references": ["P-B-a", "P-B-b", "P-B-c", "P-B-d"], "condition": "当前关键主体及必要信息能够发现和辨认。"}, {"id": "O-B-b", "references": ["C-B-a", "C-B-b", "C-B-c", "C-B-d", "C-B-e"], "condition": "画框保留当前内容理解所需信息。"}, {"id": "O-B-c", "references": ["S-B-a", "S-B-b", "S-B-c"], "condition": "当前必要空间、动作与对象关系能够理解。"}, {"id": "O-B-d", "references": ["O-L-a", "O-L-b", "O-L-c"], "condition": "已核对所有适用最低必要条件；无明确基础失败。允许不影响必要内容理解的局部不足。"}]},
+    "low": {"operator": "ANY_CONFIRMED_REQUIRED_BASELINE_FAILURE", "checks": [{"id": "O-L-a", "factor_id": "composition-prominence", "references": ["P-L-a", "P-L-b", "P-L-c", "P-L-d"], "condition": "对应最低必要基础条件明确不成立；必须说明因此丢失或误读了什么关键内容。主体突出问题成立并使关键主体或必要信息难以获取。", "baseline_condition_id": "O-B-a"}, {"id": "O-L-b", "factor_id": "composition-shot-size", "references": ["C-L-a", "C-L-b", "C-L-c", "C-L-d", "C-L-e"], "condition": "裁切或画面分界造成必要信息损失、误读，或同一形体连接／尺度出现无法以合理裁切、独立视区解释的明显崩坏；引用C-L-a等相应检查点。", "baseline_condition_id": "O-B-b"}, {"id": "O-L-c", "factor_id": "composition-spatial-layering", "references": ["S-L-a", "S-L-b", "S-L-c"], "condition": "对应最低必要基础条件明确不成立；必须说明因此丢失或误读了什么关键内容。空间组织问题成立并造成必要位置、远近、归属或联系混淆。", "baseline_condition_id": "O-B-c"}], "technique_problem_routing": "T-L-a/T-L-b如成立，必须关联到上述实际损害事件，不重复计算。"},
+    "middle": {"operator": "ALL_APPLICABLE", "checks": [{"id": "O-B-a", "references": ["P-B-a", "P-B-b", "P-B-c", "P-B-d"], "condition": "当前关键主体及必要信息能够发现和辨认。"}, {"id": "O-B-b", "references": ["C-B-a", "C-B-b", "C-B-c", "C-B-d", "C-B-e"], "condition": "画框保留当前内容理解所需信息，且相关形体截断与连接不存在已确认的基础结构破坏。"}, {"id": "O-B-c", "references": ["S-B-a", "S-B-b", "S-B-c"], "condition": "当前必要空间、动作与对象关系能够理解。"}, {"id": "O-B-d", "references": ["O-L-a", "O-L-b", "O-L-c"], "condition": "已核对所有适用最低必要条件；无明确基础失败。允许不影响必要内容理解且不破坏基础形体结构的局部不足。"}]},
     "high": {"inherits": "middle", "operator": "ANY_SUBSTANTIATED_EXPRESSIVE_EFFECT", "checks": [{"id": "O-H-a", "effect_type": "subject_relationship", "condition": "构图强化主体之间的联系、隔离、对立、依附或其他有依据的关系。"}, {"id": "O-H-b", "effect_type": "subject_environment_relationship", "condition": "构图强化主体与环境的尺度、包围、阻隔或处境关系。"}, {"id": "O-H-c", "effect_type": "feeling_atmosphere_meaning", "condition": "构图传达有上下文依据的感受、氛围或含义。"}], "all_required_for_each_effect": ["构图安排在实际输入中真实可见", "画面上下文支持所述含义而非术语联想", "对关键内容或阶段有实质作用", "引用下层增强检查点、事件和时间码"], "technical_mechanism": "T-H-a/T-H-b只能关联已证明的表达事件，不作为额外计数或独立升级券。"},
     "uncertain": "已有充分证据确认最低必要条件失败时判low；基础明确成立但增强未证明时判middle。只有缺失证据可能改变最终档位且尚不能确定档位时输出uncertain。",
     "not_applicable": "当前片段不具备构图评价条件，给出具体范围理由。",
@@ -289,11 +290,11 @@
   },
   "evidence_requirements": {"per_check": ["checkpoint_id", "indicator_id", "stage_id", "state", "time_ranges", "input_evidence_ids", "observation", "impact", "context_support", "exceptions_checked", "event_ids", "uncertainty"], "per_event": ["event_id", "object_ids", "time_ranges", "arrangement", "basic_or_expressive_effect", "context_support", "checkpoint_ids"], "overall": ["status", "grade", "baseline_status", "material_harm_status", "expressive_enhancement_status", "overall_condition_ids", "decisive_checkpoint_ids", "decisive_event_ids", "reason", "adjacent_grade_explanation", "uncertainties"], "grade_status_consistency": "status=scored时grade为low/middle/high；uncertain或not_applicable时grade=null。", "indicator_scope": "每个per_check只使用一个indicator_id；整体条件可以引用多个原子检查点。", "missing_evidence": "无证据时time_ranges/input_evidence_ids可为空，但必须标记并解释；不能补造时间码或画面。", "time_convention": "frame_index从0开始；片内时间与原会话时间分别标识；实际采样率由输入清单记录，不在Rubric中假定。", "technique_recognition": ["present", "not_identified", "uncertain"], "technique_non_scoring": "未识别到明确手法时可保留factor grade=null及识别状态，不据此改变总体档位。"},
   "run_record_requirements": ["rubric_id与version", "Rubric SHA256", "Prompt与输出结构版本", "请求模型和实际可获得模型信息", "所有实际输入图像/测量的ID、时间码、尺寸、采样方式及哈希", "测量采用与拒绝记录", "原始请求、原始响应、耗时及可获得用量", "人工复核结果单独保存"],
-  "known_limits": ["已按最低必要条件衔接低、中档，用于三条新样本试跑；尚未完成独立人工一致性验证。", "跨阶段景别对空间构建的增强纳入S-H-a；不要求景别变化，不以切镜数量加档。", "历史50条结果来自旧契约，不属于本Rubric的复跑结果；旧执行入口仍读取data/standards/composition-frozen-contracts.json。", "本次仅固定规则，不调用模型、不生成新档位、不计算人工一致率。"],
+  "known_limits": ["v2.2.0基于看过机标后的三条讨论修订，尚未复跑或取得独立人工一致率；原三条机标继续使用v2.1.1，不追改。", "跨阶段景别对空间构建的增强纳入S-H-a；不要求景别变化，不以切镜数量加档。", "历史50条结果来自旧契约，不属于本Rubric的复跑结果；旧执行入口仍读取data/standards/composition-frozen-contracts.json。", "本轮保存事后复核意见并细化规则；不调用模型生成新档位。"],
   "_storage": {"format": "composition_rubric_compact_v1", "meaning": "Only repeated evidence lists are inherited by grade; expand before model input. No assessment text or conditions changed."},
   "_checkpoint_evidence_defaults": {
-    "low": ["对应时间码及实际输入画面", "具体对象与可见关系", "该现象对必要信息理解的影响", "例外检查及不确定性"],
-    "middle": ["对应时间码及实际输入画面", "具体对象与可见关系", "该现象对必要信息理解的影响", "例外检查及不确定性"],
+    "low": ["对应时间码及实际输入画面", "具体对象与可见关系", "该现象对必要信息理解或基础形体结构的影响", "例外检查及不确定性"],
+    "middle": ["对应时间码及实际输入画面", "具体对象与可见关系", "该现象对必要信息理解或基础形体结构的影响", "例外检查及不确定性"],
     "high": ["对应时间码及实际输入画面", "具体对象与可见关系", "表达含义、上下文依据及对关键阶段的实质作用", "例外检查及不确定性"]
   }
 }

@@ -1,14 +1,14 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "status": "frozen_for_validation",
   "validation_status": "not_yet_validated",
   "file": "rubrics/composition_rubric.json",
-  "sha256": "83aeaea79ef4fff7f930b479fbc057f84416d8e5416a2aed30dd0f9c3a18b583",
+  "sha256": "ee6c0dd281a73608955d976c194f82c407d9b214398e9e8694941a662bc44161",
   "checkpoint_count": 42,
   "indicator_count": 14,
   "historical_results_rule": "Do not relabel historical results as v2 results.",
-  "change_summary": "澄清高档继承基础、确定低档与证据不足优先级、固定内容识别记录；将景别组织纳入空间增强，并补充手法识别参考。",
+  "change_summary": "Add observable enhancement bridges and conditional examples; clarify structural continuity baseline and distinguish legitimate separate viewports; retain historical v2.1.1 trial outputs.",
   "format": "composition_rubric_compact_v1",
-  "expanded_content_sha256": "5d84ce6edfb2839f75399f0b933981d6f2a4e50e2c65fbcb45b1b33380aa4b01"
+  "expanded_content_sha256": "0469d842e365c5c5aad222cee47a54b866b1cd7c58f83eeb3de2cdb49bda7ec7"
 }
