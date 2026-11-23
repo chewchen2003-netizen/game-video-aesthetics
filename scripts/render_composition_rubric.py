@@ -8,7 +8,7 @@ out=ROOT/'docs/rubrics';out.mkdir(parents=True,exist_ok=True)
 def e(value):return html.escape(str(value))
 def lst(values):return '<ul>'+''.join('<li>'+e(v)+'</li>' for v in values)+'</ul>'
 body='<h1>构图 Rubric · v'+e(rubric['version'])+'</h1>'
-body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。三条试跑使用v2.1.1；本页v2.2.0根据事后复核修订，尚未复跑，独立人工验证未完成。</p>'
+body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据。三条试跑使用v2.1.1；当前v2.3.0已获用户确认并启动50条精简复跑，独立人工验证尚未完成。</p>'
 body+='<p><a href="composition_rubric.json">构图规则 JSON</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
 body+='<p><a href="../results/rubric-trial3/index.html">查看三条试跑的完整证据链</a></p>'
 body+='<h2>角色与评价范围</h2><p>'+e(rubric['role'])+'</p><p>由 GPT-6.1 Sol 承担VLM判档；不设置数值美学分数或因素权重。实际调用模型信息须随运行单独保存。</p>'

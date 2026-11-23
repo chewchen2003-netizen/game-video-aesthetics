@@ -1,14 +1,14 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "status": "frozen_for_validation",
   "validation_status": "not_yet_validated",
   "file": "rubrics/composition_rubric.json",
-  "sha256": "ee6c0dd281a73608955d976c194f82c407d9b214398e9e8694941a662bc44161",
+  "sha256": "c557c981bc7f91a6f14b426f75f7a0b7d06a98f35e3f4bdb6b4290db44760e9c",
   "checkpoint_count": 42,
   "indicator_count": 14,
   "historical_results_rule": "Do not relabel historical results as v2 results.",
-  "change_summary": "Add observable enhancement bridges and conditional examples; clarify structural continuity baseline and distinguish legitimate separate viewports; retain historical v2.1.1 trial outputs.",
+  "change_summary": "User adopted candidate boundaries after five paired comparisons; freeze v2.3.0 for compact-output, cached-CV 50-case rerun.",
   "format": "composition_rubric_compact_v1",
-  "expanded_content_sha256": "0469d842e365c5c5aad222cee47a54b866b1cd7c58f83eeb3de2cdb49bda7ec7"
+  "expanded_content_sha256": "17aead5bf2abcfc31ae29beedd28fb6ce3cc0cce7205104e643f173c2b0c2a03"
 }

@@ -38,7 +38,7 @@ class Handler(BaseHTTPRequestHandler):
    if path=='/api/progress':data=json.dumps(snapshot(self.server.run_dir),ensure_ascii=False).encode();mime='application/json; charset=utf-8'
    elif path=='/comparison':
     from render_five_comparison import render
-    data=render(self.server.run_dir).encode();mime='text/html; charset=utf-8'
+    data=render(self.server.run_dir if (self.server.run_dir/'design.json').exists() else ROOT/'runs/composition-five-calibration').encode();mime='text/html; charset=utf-8'
    elif path in ['/','/index.html']:data=(ROOT/'tools/batch-progress/index.html').read_bytes();mime='text/html; charset=utf-8'
    else:self.send_error(404);return
    self.send_response(200);self.send_header('Content-Type',mime);self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(data)));self.end_headers();self.wfile.write(data)
