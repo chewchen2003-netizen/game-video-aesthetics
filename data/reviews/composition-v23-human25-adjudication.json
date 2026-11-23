@@ -1,0 +1,36 @@
+{
+  "review_date": "2026-11-24",
+  "authority": "user_adjudication",
+  "frozen_machine_predictions_modified": false,
+  "rule_changes_applied": false,
+  "findings": [
+    {
+      "cases": [
+        "R17",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "human_grade": "middle",
+      "machine_grade": "high",
+      "conclusion": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "positive_reference": "R05"
+    },
+    {
+      "cases": [
+        "R16"
+      ],
+      "human_grade": "middle",
+      "machine_grade": "low",
+      "conclusion": "典型问题：机器对短暂裁切造成的画面不好看判得过严。抽帧可能捕获动作中的过渡状态，个别截图构图不好看不能直接代表整段构图失败；应结合相邻采样及视频上下文核对连续性、出现频度和实际观看影响。若不是连续、大量出现，不应仅据此判低。人工裁定R16应为中档。"
+    },
+    {
+      "cases": [
+        "R05"
+      ],
+      "human_grade": "high",
+      "machine_grade": "middle",
+      "conclusion": "人工确认的空间揭示正向参照：开头大远景建立卡丁车比赛场景，随后带出主体。"
+    }
+  ]
+}

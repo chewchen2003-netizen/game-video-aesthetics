@@ -1,0 +1,98 @@
+{
+  "human_review_basis": "user_confirmed_blind_annotation",
+  "total": 25,
+  "agreement_count": 14,
+  "agreement_rate": 0.56,
+  "confusion_matrix": {
+    "high": {
+      "high": 5,
+      "middle": 3,
+      "low": 0
+    },
+    "middle": {
+      "high": 5,
+      "middle": 8,
+      "low": 1
+    },
+    "low": {
+      "high": 1,
+      "middle": 1,
+      "low": 1
+    }
+  },
+  "disagreements": [
+    {
+      "id": "R05",
+      "human": "high",
+      "machine": "middle",
+      "analysis": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R07",
+      "human": "high",
+      "machine": "middle",
+      "analysis": "人工认可持续道路引导、天地比例和辽阔感；机器认为仅满足常规行驶观看。需区分形式存在与持续有效引导的增强。"
+    },
+    {
+      "id": "R09",
+      "human": "low",
+      "machine": "middle",
+      "analysis": "人工认为贴墙与仰拍缺少观看价值；机器以第一人称局部观察为合理例外。需核对实际观看干扰，不能仅以没有明确任务目标自动豁免，也不能仅因单调就判低。"
+    },
+    {
+      "id": "R14",
+      "human": "middle",
+      "machine": "high",
+      "analysis": "人工认为15秒引导短暂，机器强调10.5秒后临崖路线逐步展开。核心是局部增强对全段判高的充分性。"
+    },
+    {
+      "id": "R16",
+      "human": "middle",
+      "machine": "low",
+      "analysis": "典型问题：机器对短暂裁切造成的画面不好看判得过严。抽帧可能捕获动作中的过渡状态，个别截图构图不好看不能直接代表整段构图失败；应结合相邻采样及视频上下文核对连续性、出现频度和实际观看影响。若不是连续、大量出现，不应仅据此判低。人工裁定R16应为中档。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R17",
+      "human": "middle",
+      "machine": "high",
+      "analysis": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R18",
+      "human": "middle",
+      "machine": "high",
+      "analysis": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R19",
+      "human": "middle",
+      "machine": "high",
+      "analysis": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R20",
+      "human": "middle",
+      "machine": "high",
+      "analysis": "典型问题：机器把全景的空间揭示作用判得过宽，将主体普通移动带来的画面信息增加当作构图加分项。归因：高档规则对空间揭示的作用约束过松，没有限制普通移动。人工裁定R17、R18、R19、R20应为中档；正向参照为R05，开头的大远景构图揭示卡丁车赛的场景，建立环境后再带出主体，应认可为空间揭示的增强。",
+      "adjudication": "machine_error_confirmed_by_user"
+    },
+    {
+      "id": "R21",
+      "human": "low",
+      "machine": "high",
+      "analysis": "最典型跨两档分歧。输入序列确认0—8.5秒大部天空与人物局部，8.75—17.5秒显露平台和海面，18秒后回到仰拍。人工重视开头持续单调无意义，机器重视中段空间补全。须先裁定开头是否造成基础观看干扰，再评价中段能否升高；若基础失败成立，中段漂亮不能抵消。"
+    },
+    {
+      "id": "R23",
+      "human": "high",
+      "machine": "middle",
+      "analysis": "人工认可7秒仰拍、10秒俯拍带出动作，机器将其视为对上方对象及翻滚动作的基本跟随。可用于校准“角度丰富、动作呈现”与增强的边界。"
+    }
+  ],
+  "adjudication_file": "composition-v23-human25-adjudication.json"
+}

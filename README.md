@@ -12,7 +12,7 @@
 
 也可以[直接在 GitHub 中阅读](REPORT.md)。
 
-**本轮优化：** [构图 Rubric v2.3.0（可读版）](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html) · [规则 JSON](rubrics/composition_rubric.json) · [版本与使用说明](rubrics/README.md)。已完成[三条非原50样本试跑](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/rubric-trial3/index.html)，机标使用v2.1.1；当前v2.3.0已启动50条精简复跑，结果及独立人工验证待完成。页面附内容识别、分割、测量、逐点证据及复核批注；独立人工验证待完成。下方50条仍为旧版结果。
+**2026年11月24日更新：** 构图v2.3.0已完成同批50题复跑（27高／20中／3低）；人工复核25题，一致率56%。新增完整流程、两轮样本核验、典型案例、误判归因及其他维度方法草案。
 
 ## 查看评价标准与验证结果
 
@@ -23,7 +23,7 @@
 |逐条结果与整体分布|[结果表](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/构图-50条结果表.html) · [分布图](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/构图-结果分布.svg) · [下载CSV](data/results/composition-results.csv)|
 |分档参照与误判分析|[查看案例](https://chewchen2003-netizen.github.io/game-video-aesthetics/results/构图-分档示例与误判分析.html)，包含3例高、3例中、1例低及人工复核意见|
 
-**第一部分的完整标准在标签树及各节点右侧面板中。** 本轮完成样本验证的维度是构图，原机标为高20条、中29条、低1条。其他维度的完成情况见说明文档。
+**第一部分的完整标准在标签树及各节点右侧面板中。** 已完成样本验证的维度是构图。下表旧版50题结果为前轮历史记录（20高／29中／1低），本轮结果与新增材料请见上方完整报告。
 
 最终评价采用低、中、高；无法判断、不适用单列。不输出数值美学分数，也不对各因素做简单平均。原机标与人工复核意见分开保存。
 

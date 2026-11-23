@@ -1,0 +1,189 @@
+{
+  "schema": "composition-v23-clean50-review-v1",
+  "exported_at": "2026-11-23T16:58:08.081Z",
+  "reviews": {
+    "R01": {
+      "machine_seen_at": "2026-11-23T15:46:18.991Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:31:04.336Z",
+      "machine_seen_before_grade": true
+    },
+    "R02": {
+      "machine_seen_at": "2026-11-23T15:48:36.918Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:31:49.072Z",
+      "machine_seen_before_grade": true,
+      "note": "这case中间有点莫名其妙的，但是构图上没什么bug，因为景别也没怎么变。"
+    },
+    "R49": {
+      "machine_seen_at": "2026-11-23T15:50:01.823Z"
+    },
+    "R04": {
+      "machine_seen_at": "2026-11-23T15:50:55.147Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:35:50.801Z",
+      "machine_seen_before_grade": true
+    },
+    "R06": {
+      "machine_seen_at": "2026-11-23T15:51:03.335Z",
+      "grade": "high",
+      "updated_at": "2026-11-23T16:39:06.047Z",
+      "machine_seen_before_grade": true,
+      "note": "无基础问题，3s、15s时构图中存在光线的引导，纵深构图；7s时门框定了一个空间，第一视角的框架式构图，带出房间的布景"
+    },
+    "R07": {
+      "machine_seen_at": "2026-11-23T15:52:20.814Z",
+      "grade": "high",
+      "updated_at": "2026-11-23T16:41:06.225Z",
+      "machine_seen_before_grade": true,
+      "note": "无基础问题，两侧道路构成持续视线引导，上中下景划分合理，地平线位于画面上三分之一，增加画面广度与辽阔感。"
+    },
+    "R08": {
+      "machine_seen_at": "2026-11-23T15:52:55.154Z",
+      "grade": "high",
+      "updated_at": "2026-11-23T16:42:17.746Z",
+      "machine_seen_before_grade": true,
+      "note": "无基础问题，道路持续视线引导"
+    },
+    "R09": {
+      "machine_seen_at": "2026-11-23T15:55:01.311Z",
+      "grade": "low",
+      "updated_at": "2026-11-23T15:55:39.563Z",
+      "machine_seen_before_grade": true,
+      "note": "第一视角，一些画面贴紧木屋，存在很多无意义构图画面，如何13-14s，18-20s"
+    },
+    "R03": {
+      "machine_seen_at": "2026-11-23T15:55:06.050Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:32:57.430Z",
+      "machine_seen_before_grade": true
+    },
+    "R05": {
+      "machine_seen_at": "2026-11-23T15:55:06.728Z",
+      "grade": "high",
+      "updated_at": "2026-11-23T16:36:00.366Z",
+      "machine_seen_before_grade": true,
+      "note": "开头远景构图，建立辽阔的空间感，然后切到卡丁车，带出主体，表示要在这个场景下进行卡丁车比赛，这个构图的顺序能表意，推进叙事，所以给高。"
+    },
+    "R10": {
+      "machine_seen_at": "2026-11-23T15:57:06.428Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:43:01.390Z",
+      "machine_seen_before_grade": true,
+      "note": "无基础问题，但是构图也没啥美感。人物一直跳跃，构图一直跳动，只知道人物要一直往前进，周围也没带出更有意思的空间信息。"
+    },
+    "R13": {
+      "machine_seen_at": "2026-11-23T15:57:15.258Z",
+      "selected": true,
+      "grade": "low",
+      "updated_at": "2026-11-23T16:47:06.652Z",
+      "machine_seen_before_grade": true,
+      "note": "这个天空还有压缩纹"
+    },
+    "R14": {
+      "machine_seen_at": "2026-11-23T16:03:37.047Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:47:58.292Z",
+      "machine_seen_before_grade": true,
+      "note": "15s左右存在短暂的视线引导，但主要的片段比较无功无过"
+    },
+    "R15": {
+      "machine_seen_at": "2026-11-23T16:04:10.987Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:49:09.727Z",
+      "machine_seen_before_grade": true
+    },
+    "R20": {
+      "machine_seen_at": "2026-11-23T16:10:32.987Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:51:30.118Z",
+      "machine_seen_before_grade": true,
+      "note": "基础没啥问题，噼里啪啦的。"
+    },
+    "R18": {
+      "machine_seen_at": "2026-11-23T16:10:35.304Z",
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:50:37.025Z",
+      "machine_seen_before_grade": true,
+      "note": "基础没问题"
+    },
+    "R50": {
+      "machine_seen_at": "2026-11-23T16:16:18.622Z"
+    },
+    "R47": {
+      "machine_seen_at": "2026-11-23T16:16:20.541Z"
+    },
+    "R46": {
+      "machine_seen_at": "2026-11-23T16:16:28.099Z"
+    },
+    "R44": {
+      "machine_seen_at": "2026-11-23T16:16:32.545Z"
+    },
+    "R43": {
+      "machine_seen_at": "2026-11-23T16:16:41.335Z"
+    },
+    "R42": {
+      "machine_seen_at": "2026-11-23T16:16:46.999Z"
+    },
+    "R41": {
+      "machine_seen_at": "2026-11-23T16:16:53.431Z"
+    },
+    "R11": {
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:44:06.716Z",
+      "machine_seen_before_grade": false,
+      "note": "构图没啥问题，角色意图很明确，追狗狗，狗狗是这段视频的主体，角色的目标，主体若隐若现，其实还挺有意思的。"
+    },
+    "R12": {
+      "grade": "high",
+      "updated_at": "2026-11-23T16:45:10.275Z",
+      "machine_seen_before_grade": false,
+      "note": "11s的构图非常突出主体，主体位于正中心，而且被左侧的自然火光照亮，颜色和其他物体不一样，更突出了。5s的画面美感也很好，整个画面都是雾、偏冷，只有中景的暖色火光突出，位于画面左三分之一左右，占据视觉中心。"
+    },
+    "R16": {
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:49:39.254Z",
+      "machine_seen_before_grade": false,
+      "note": "基础没什么问题，视频质量有点崩。"
+    },
+    "R17": {
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:50:22.756Z",
+      "machine_seen_before_grade": false
+    },
+    "R19": {
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:50:56.634Z",
+      "machine_seen_before_grade": false,
+      "note": "基础没啥问题，也不好看。"
+    },
+    "R21": {
+      "grade": "low",
+      "updated_at": "2026-11-23T16:51:59.375Z",
+      "machine_seen_before_grade": false,
+      "note": "开头的持续仰拍非常无意义，没有带来新的画面信息，整个画面单调，只有人、天空、竹竿。"
+    },
+    "R22": {
+      "grade": "high",
+      "updated_at": "2026-11-23T16:53:14.414Z",
+      "machine_seen_before_grade": false,
+      "note": "马路持续引导，纵深感，一点透视，天空位于上三分之一，广度。"
+    },
+    "R23": {
+      "grade": "high",
+      "updated_at": "2026-11-23T16:54:50.734Z",
+      "machine_seen_before_grade": false,
+      "note": "构图非常丰富，10s的时候大俯拍、7s的时候大仰拍，带出人物的动作，"
+    },
+    "R24": {
+      "grade": "middle",
+      "updated_at": "2026-11-23T16:56:11.424Z",
+      "machine_seen_before_grade": false
+    },
+    "R25": {
+      "grade": "high",
+      "updated_at": "2026-11-23T16:56:28.456Z",
+      "machine_seen_before_grade": false
+    }
+  }
+}

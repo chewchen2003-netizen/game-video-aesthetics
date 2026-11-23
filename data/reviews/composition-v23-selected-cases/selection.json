@@ -1,0 +1,77 @@
+{
+  "rubric_version": "2.3.0",
+  "run": "composition-v23-compact50-clean",
+  "cases": {
+    "R13": {
+      "selected_grade": "low",
+      "selection_role": "typical_low_case",
+      "reviewer": "user",
+      "review_date": "2026-11-24",
+      "review_type": "post_machine_result_review_not_blind",
+      "machine_grade": "low",
+      "screenshots": [
+        {
+          "clip_time_seconds": 18,
+          "image": "R13-18.00s.png",
+          "source": "user_supplied_screenshot"
+        },
+        {
+          "clip_time_seconds": 18.5,
+          "image": "R13-18.50s.png",
+          "source": "user_supplied_screenshot"
+        },
+        {
+          "clip_time_seconds": 19.25,
+          "image": "R13-19.25s.png",
+          "source": "user_supplied_screenshot"
+        },
+        {
+          "clip_time_seconds": 19.5,
+          "image": "R13-19.50s.png",
+          "source": "user_supplied_screenshot"
+        }
+      ],
+      "original_comment": "构图评分 低，前18s可通过全景建立第三视角观看主体骑马的关系，18s景别突然变小，接近马的近景又到特写，给人从第三视角突然切换到第一视角的突兀感，截图分别是18.00s，18.50s，19.25s，19.50s。后三张图的构图紧、歪斜、丑，且时间轴上来看，这样会让观众对空间产生困惑。这个是低的典型case。",
+      "organized_comment": "前段通过较完整的骑乘全景建立骑手、马匹与环境的空间关系。18.00秒仍保留骑乘整体；18.50秒突然逼近马身与鞍具，19.25秒及19.50秒进一步收紧为局部特写，骑手整体与周围方向参照丢失。紧迫、歪斜的取景在时间上缺少清楚过渡，产生由第三人称突然转入近似第一人称观看的突兀感，打断原有空间理解，因此选为低档典型样本。",
+      "interpretation_boundary": "近似第一人称是观看感受，不认定游戏确实切换到第一人称模式；近景、特写或倾斜本身不构成低档，核心是时序中突然收紧造成的空间关系与必要信息损失。",
+      "usage": "后续报告本轮更新的低档示例；高档、中档仍由用户选择。冻结机标与规则不修改。",
+      "comment_times": [
+        18,
+        18.5,
+        19.25,
+        19.5
+      ],
+      "source": "original_chat_user_comments",
+      "machine_evidence_source": "docs/results/composition-v23-review/R13/prediction.json"
+    },
+    "R49": {
+      "selected_grade": "high",
+      "machine_grade": "high",
+      "original_comment": "构图评分 高，主体突出、景别合理、空间关系明确。画面中存在持续的构图引导线 p1 3.50s，两侧的低矮石墙形成纵深的引导线，且前中后景清晰，有层次。p2 12s，天空位于上三分之一，上中下分明，画左还有石墙，画右有木屋，构图平衡，但是中景有条边缘线横穿主体脖子，这个不太好。构图整体不错。p3 14.50s，随着主体跳下画面左下方的石阶，镜头自然转向俯视，带出画面上方的村落，自然带出更多的空间信息",
+      "comment_times": [
+        3.5,
+        12,
+        14.5,
+        16
+      ],
+      "review_type": "post_machine_result_review_not_blind",
+      "source": "original_chat_user_comments",
+      "machine_evidence_source": "docs/results/composition-v23-review/R49/prediction.json"
+    },
+    "R01": {
+      "selected_grade": "middle",
+      "machine_grade": "middle",
+      "original_comment": "构图评分 中，主体清晰；景别裁切合理，持续中景，在背后跟随主体；空间清晰可辨位于草地森林，树叶短暂遮挡视线，但不影响辨别主体位置，无特殊构图手法。构图整体无功无过。p1 0s，p2 1.75s，p3 3s，p4 8s，p5 16s。这个是中的典型case。",
+      "comment_times": [
+        0,
+        1.75,
+        3,
+        8,
+        16
+      ],
+      "review_type": "post_machine_result_review_not_blind",
+      "source": "original_chat_user_comments",
+      "machine_evidence_source": "docs/results/composition-v23-review/R01/prediction.json"
+    }
+  }
+}
