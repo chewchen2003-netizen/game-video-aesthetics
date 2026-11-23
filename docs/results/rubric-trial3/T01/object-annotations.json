@@ -1,0 +1,1399 @@
+{
+  "version": "display-overlay-v1",
+  "provenance": "事后展示层：主体／陪体框来自原RGB定位提示；背景及地面仅用另画的可见局部窗口示意。不是像素分割，不修改角色识别原记录，不曾作为本次机标输入。",
+  "uncertainty": "下方人物与上方头像的身份对应、陪体角色及地面的前景归属待确认。未强行合并为同一身体。",
+  "frames": {
+    "0": {
+      "frame_index": 0,
+      "time": 0.0,
+      "source_time": 2924.2,
+      "stage_id": "stage_1",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0000.jpg",
+      "annotated_url": "T01/evidence/objects-0000.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "12": {
+      "frame_index": 12,
+      "time": 3.0,
+      "source_time": 2927.2,
+      "stage_id": "stage_1",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0012.jpg",
+      "annotated_url": "T01/evidence/objects-0012.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "20": {
+      "frame_index": 20,
+      "time": 5.0,
+      "source_time": 2929.2,
+      "stage_id": "stage_1",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0020.jpg",
+      "annotated_url": "T01/evidence/objects-0020.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "27": {
+      "frame_index": 27,
+      "time": 6.75,
+      "source_time": 2930.95,
+      "stage_id": "stage_1",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0027.jpg",
+      "annotated_url": "T01/evidence/objects-0027.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "28": {
+      "frame_index": 28,
+      "time": 7.0,
+      "source_time": 2931.2,
+      "stage_id": "stage_2",
+      "subject_id": "person_b",
+      "raw_url": "T01/evidence/rgb-0028.jpg",
+      "annotated_url": "T01/evidence/objects-0028.svg",
+      "objects": [
+        {
+          "object_id": "person_b",
+          "label": "主体 B",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "camp_background",
+          "label": "背景局部示意 · 营地",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            28,
+            65,
+            350,
+            380
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "40": {
+      "frame_index": 40,
+      "time": 10.0,
+      "source_time": 2934.2,
+      "stage_id": "stage_2",
+      "subject_id": "person_b",
+      "raw_url": "T01/evidence/rgb-0040.jpg",
+      "annotated_url": "T01/evidence/objects-0040.svg",
+      "objects": [
+        {
+          "object_id": "person_b",
+          "label": "主体 B",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "camp_background",
+          "label": "背景局部示意 · 营地",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            28,
+            65,
+            350,
+            380
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "48": {
+      "frame_index": 48,
+      "time": 12.0,
+      "source_time": 2936.2,
+      "stage_id": "stage_2",
+      "subject_id": "person_b",
+      "raw_url": "T01/evidence/rgb-0048.jpg",
+      "annotated_url": "T01/evidence/objects-0048.svg",
+      "objects": [
+        {
+          "object_id": "person_b",
+          "label": "主体 B",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "camp_background",
+          "label": "背景局部示意 · 营地",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            28,
+            65,
+            350,
+            380
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "54": {
+      "frame_index": 54,
+      "time": 13.5,
+      "source_time": 2937.7,
+      "stage_id": "stage_2",
+      "subject_id": "person_b",
+      "raw_url": "T01/evidence/rgb-0054.jpg",
+      "annotated_url": "T01/evidence/objects-0054.svg",
+      "objects": [
+        {
+          "object_id": "person_b",
+          "label": "主体 B",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            385.0,
+            0.0,
+            1250.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "camp_background",
+          "label": "背景局部示意 · 营地",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            28,
+            65,
+            350,
+            380
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "55": {
+      "frame_index": 55,
+      "time": 13.75,
+      "source_time": 2937.95,
+      "stage_id": "stage_3",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0055.jpg",
+      "annotated_url": "T01/evidence/objects-0055.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "60": {
+      "frame_index": 60,
+      "time": 15.0,
+      "source_time": 2939.2,
+      "stage_id": "stage_3",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0060.jpg",
+      "annotated_url": "T01/evidence/objects-0060.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "76": {
+      "frame_index": 76,
+      "time": 19.0,
+      "source_time": 2943.2,
+      "stage_id": "stage_3",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0076.jpg",
+      "annotated_url": "T01/evidence/objects-0076.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    },
+    "79": {
+      "frame_index": 79,
+      "time": 19.75,
+      "source_time": 2943.95,
+      "stage_id": "stage_3",
+      "subject_id": "person_a",
+      "raw_url": "T01/evidence/rgb-0079.jpg",
+      "annotated_url": "T01/evidence/objects-0079.svg",
+      "objects": [
+        {
+          "object_id": "person_a",
+          "label": "主体 A",
+          "color": "#149b87",
+          "dashed": false,
+          "box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "original_role": "subject",
+          "original_seed_box": [
+            120.0,
+            0.0,
+            915.0,
+            548.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "lower_character",
+          "label": "陪体候选 · 身份未确认",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            220.0,
+            540.0,
+            585.0,
+            720.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "shield",
+          "label": "陪体候选 · 盾状物",
+          "color": "#d28b16",
+          "dashed": true,
+          "box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "original_role": "supporting_element",
+          "original_seed_box": [
+            140.0,
+            540.0,
+            330.0,
+            670.0
+          ],
+          "geometry_source": "original RGB-only localization seed, interpolated within active stage",
+          "is_mask": false
+        },
+        {
+          "object_id": "fence_foliage",
+          "label": "背景局部示意 · 栅栏/绿植",
+          "color": "#805ad5",
+          "dashed": true,
+          "box": [
+            960,
+            90,
+            1250,
+            390
+          ],
+          "original_role": "background",
+          "original_seed_box": [
+            0.0,
+            0.0,
+            1280.0,
+            545.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        },
+        {
+          "object_id": "ground",
+          "label": "环境 · 下方地面 / 前景归属待确认",
+          "color": "#367bc2",
+          "dashed": true,
+          "box": [
+            840,
+            585,
+            1245,
+            690
+          ],
+          "original_role": "foreground",
+          "original_seed_box": [
+            0.0,
+            545.0,
+            1280.0,
+            720.0
+          ],
+          "geometry_source": "posthoc illustrative visible-region window",
+          "is_mask": false
+        }
+      ]
+    }
+  }
+}
