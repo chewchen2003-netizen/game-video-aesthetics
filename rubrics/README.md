@@ -48,4 +48,4 @@ python3 -m unittest discover -s tests -p 'test_rubric_format.py'
 
 执行入口与证据记录说明见 [EXECUTION.md](EXECUTION.md)。
 
-光影的简版方法草案及两批观察知识见 [lighting_rubric.json](lighting_rubric.json)，[可读版](../docs/rubrics/lighting_rubric.html)；尚未运行或验证。
+光影的简版方法草案及两批观察知识见 [lighting_rubric_draft.json](lighting_rubric_draft.json)，[可读版](../docs/rubrics/lighting_rubric.html)；尚未运行或验证。
