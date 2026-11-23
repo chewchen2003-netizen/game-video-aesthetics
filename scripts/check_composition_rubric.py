@@ -1,8 +1,10 @@
 """Verify frozen rubric identity, atomic checks and reference integrity (stdlib)."""
 from pathlib import Path
-import hashlib,json
+import hashlib,json,sys
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'src'))
+from rubric_format import expand_rubric
 
 def check():
     path=ROOT/'rubrics/composition_rubric.json'
@@ -35,6 +37,14 @@ def check():
     assert rubric['scope']['numeric_aesthetic_score'] is False
     public=ROOT/'docs/rubrics/composition_rubric.json'
     if public.exists():assert public.read_bytes()==path.read_bytes(),'Public rule copy differs'
+    compact_path=ROOT/'rubrics/composition_rubric.compact.json'
+    if compact_path.exists():
+        compact_lock=json.loads((ROOT/'rubrics/composition_rubric.compact.lock.json').read_text())
+        assert hashlib.sha256(compact_path.read_bytes()).hexdigest()==compact_lock['compact_sha256'],'Compact copy changed'
+        assert compact_lock['frozen_source_sha256']==lock['sha256']
+        assert expand_rubric(json.loads(compact_path.read_text()))==rubric,'Compact copy is not semantically identical'
+        public_compact=ROOT/'docs/rubrics'/compact_path.name
+        if public_compact.exists():assert public_compact.read_bytes()==compact_path.read_bytes()
     return rubric,lock
 
 if __name__=='__main__':

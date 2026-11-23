@@ -9,7 +9,7 @@ def e(value):return html.escape(str(value))
 def lst(values):return '<ul>'+''.join('<li>'+e(v)+'</li>' for v in values)+'</ul>'
 body='<h1>构图 Rubric · v'+e(rubric['version'])+'</h1>'
 body+='<p class="notice">已冻结用于验证，尚未完成验证。此页是新规则，不是原50条结果的判档依据；本次没有重新推理。</p>'
-body+='<p><a href="composition_rubric.json">下载完整规则 JSON</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
+body+='<p><a href="composition_rubric.compact.json">精简组织版 JSON（推荐阅读）</a> · <a href="composition_rubric.json">冻结展开原版</a> · <a href="composition_rubric.lock.json">版本与校验记录</a></p>'
 body+='<h2>角色与评价范围</h2><p>'+e(rubric['role'])+'</p><p>由 GPT-6.1 Sol 承担VLM判档；不设置数值美学分数或因素权重。选择原因：用户没有Gemini API。实际调用模型信息须随运行单独保存。</p>'
 body+='<h2>共同定义</h2><dl>'
 names={'expression':'表达','basic_presentation':'基本呈现','expressive_enhancement':'进一步表情达意','subject':'主体','supporting_element':'陪体','material_comprehension_harm':'关键理解损害','applicability':'适用性','evidence_insufficiency':'证据不足'}
