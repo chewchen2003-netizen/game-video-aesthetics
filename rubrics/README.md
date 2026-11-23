@@ -1,8 +1,8 @@
-# 构图 Rubric v2.0.1
+# 构图 Rubric v2.1.1
 
 本轮讨论确认的VLM判档规则，冻结用于验证。**尚未完成独立人工复核或同批复跑，不代表标准已经得到验证。**
 
-- [构图规则 JSON](composition_rubric.json)：唯一规则文件，共218行；每个指标、检查点各占一行，共用证据要求统一定义。
+- [构图规则 JSON](composition_rubric.json)：唯一规则文件，采用逐条紧凑格式；每个指标、检查点各占一行，共用证据要求统一定义。
 - [冻结记录](composition_rubric.lock.json)：版本与SHA256。
 - [可读版](https://chewchen2003-netizen.github.io/game-video-aesthetics/rubrics/composition_rubric_v2.html)：从同一JSON生成。
 
@@ -22,7 +22,7 @@ from src.rubric_format import load_rubric
 rubric = load_rubric("rubrics/composition_rubric.json")
 ```
 
-这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.0.1，整理文件不改变判档条件。
+这是规则加载示例，并未切换旧评测入口或启动新版推理。规则版本为2.1.1，整理文件不改变判档条件。
 
 ## 固定内容
 

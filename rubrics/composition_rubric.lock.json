@@ -1,14 +1,14 @@
 {
   "rubric_id": "game_video_composition",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "status": "frozen_for_validation",
   "validation_status": "not_yet_validated",
   "file": "rubrics/composition_rubric.json",
-  "sha256": "9f6812103bca38438fea476d83a35706271aef279495cf3043016341f30b8c04",
+  "sha256": "83aeaea79ef4fff7f930b479fbc057f84416d8e5416a2aed30dd0f9c3a18b583",
   "checkpoint_count": 42,
   "indicator_count": 14,
   "historical_results_rule": "Do not relabel historical results as v2 results.",
-  "change_summary": "Sole rule file uses shared evidence defaults; content is unchanged after loading.",
+  "change_summary": "澄清高档继承基础、确定低档与证据不足优先级、固定内容识别记录；将景别组织纳入空间增强，并补充手法识别参考。",
   "format": "composition_rubric_compact_v1",
-  "expanded_content_sha256": "c36aaccc5d4486514b1dca1f28ead53b79803de46037b2562d31ff2eab698598"
+  "expanded_content_sha256": "5d84ce6edfb2839f75399f0b933981d6f2a4e50e2c65fbcb45b1b33380aa4b01"
 }

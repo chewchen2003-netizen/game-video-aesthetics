@@ -19,6 +19,7 @@ for key,value in rubric['definitions'].items():
     else:body+='<dt>'+e(names.get(key,key))+'</dt><dd>'+e(value)+'</dd>'
 body+='</dl><h2>通用规则</h2>'+lst(rubric['rules'])
 body+='<h2>评价前提</h2>'+lst(rubric['preconditions']['required'])+'<p>'+e(rubric['preconditions']['role_uncertainty'])+'</p>'
+body+='<h3>内容与关键阶段记录</h3><p>'+e(rubric['preconditions'].get('content_record',{}).get('method',''))+'</p><p>'+e(rubric['preconditions'].get('content_record',{}).get('key_stage',''))+'</p>'
 labels={'low':'低：妨碍理解','middle':'中：基本呈现成立','high':'高：进一步表情达意'}
 for factor in rubric['factors']:
     imap={x['id']:x for x in factor['indicators']}
@@ -30,6 +31,8 @@ for factor in rubric['factors']:
         body+='<h3>'+e(title)+'</h3><p>'+e(logic)+'</p><div class="table"><table><thead><tr><th>检查点</th><th>唯一关联指标</th><th>判断条件</th></tr></thead><tbody>'
         for point in guidance['checks']:body+='<tr><td>'+e(point['id'])+'</td><td>'+e(point['letter']+'．'+imap[point['indicator_id']]['name'])+'</td><td>'+e(point['condition'])+'</td></tr>'
         body+='</tbody></table></div>'
+    if 'technique_reference' in factor:
+        body+='<h3>手法识别参考</h3>'+lst([x['name']+'：'+x['recognition'] for x in factor['technique_reference']])+'<p>'+e(factor['reference_usage'])+'</p>'
     body+='<details><summary>指标定义与合理例外</summary><dl>'
     for indicator in factor['indicators']:body+='<dt>'+e(indicator['letter']+'．'+indicator['name'])+'</dt><dd>'+e(indicator['definition'])+lst(indicator['exceptions'])+'</dd>'
     body+='</dl></details>'
