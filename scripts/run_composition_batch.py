@@ -17,8 +17,8 @@ def main():
   if not (runtime/name).exists():shutil.copytree(ROOT/name,runtime/name,ignore=shutil.ignore_patterns('__pycache__'))
  (runtime/'data').mkdir(exist_ok=True);shutil.copyfile(ROOT/'data/measurement-config.json',runtime/'data/measurement-config.json')
  selection=json.loads((ROOT/'data/sources/selection.json').read_text());sources={x['blind_id']:x for x in json.loads((ROOT/'data/sources/sources.json').read_text())};save(d/'selection.json',selection)
- cfg=json.loads((ROOT/'data/measurement-config.json').read_text());cfg.update(input_batch='inputs',samples=[s['blind_id'] for s in selection],human_answers_used=False);save(d/'config.json',cfg);(d/'assignments').mkdir(exist_ok=True)
- lock=json.loads((runtime/'rubrics/composition_rubric.lock.json').read_text());save(d/'run-contract.json',{'rubric_version':lock['version'],'rubric_sha256':lock['sha256'],'model':'gpt-6.1-sol','workers':3,'model_parallelism':2,'cv_parallelism':1,'fps':4,'human_answers_used':False,'old_predictions_used':False,'same_original_50':True,'input_mode':'lean-measurements-v1; full raw measurements saved; original RGB sequence retained','temporal_analysis_required':True,'notification_every':5})
+ cfg=json.loads((ROOT/'data/measurement-config.json').read_text());cfg.update(measurement_fps=2,adaptive_sampling=True,input_batch='inputs',samples=[s['blind_id'] for s in selection],human_answers_used=False);save(d/'config.json',cfg);(d/'assignments').mkdir(exist_ok=True)
+ lock=json.loads((runtime/'rubrics/composition_rubric.lock.json').read_text());save(d/'run-contract.json',{'rubric_version':lock['version'],'rubric_sha256':lock['sha256'],'model':'gpt-6.1-sol','workers':3,'model_parallelism':2,'cv_parallelism':1,'fps':2,'adaptive_fps':4,'max_frames':56,'human_answers_used':False,'old_predictions_used':False,'same_original_50':True,'input_mode':'lean-measurements-v1; full raw measurements saved; original RGB sequence retained','temporal_analysis_required':True,'notification_every':5})
  mu=threading.Lock();llm=threading.Semaphore(2);gpu=threading.Lock();notify_lock=threading.Lock();state={x['blind_id']:{'state':'queued'} for x in selection};start=time.time();notified=set();events=d/'progress-events.jsonl'
  def update(sid,phase_state,**extra):
   with mu:
@@ -56,10 +56,19 @@ def main():
    update(sid,'prepare')
    raw=Path('/Users/minimax/game-video-review')/s['video'];assert hashlib.sha256(raw.read_bytes()).hexdigest()==sources[sid]['original_sha256'],'Source video differs'
    old_inputs=Path('/Users/minimax/game-video-review/composition-eval/operator-run-50-v1/inputs')/sid
-   if not (d/'inputs'/sid).exists():shutil.copytree(old_inputs,d/'inputs'/sid)
-   frames=json.loads((d/'inputs'/sid/'frames.json').read_text());assert len(frames)==80 and all(abs(x['time']-i/4)<1e-6 for i,x in enumerate(frames))
+   sys.path.insert(0,str(runtime/'src'))
+   from adaptive_frames import prepare,supplement
+   if not (d/'inputs'/sid/'frames.json').exists():prepare(old_inputs,d,sid)
+   frames=json.loads((d/'inputs'/sid/'frames.json').read_text());assert 40<=len(frames)<=56 and all(e['frame_index']%2==0 for e in frames if e.get('sampling_reason')=='base_2fps')
    # No old assignments, predictions, accepted/rejected decisions or human notes copied.
-   invoke(sid,'identify');invoke(sid,'measure');invoke(sid,'judge')
+   invoke(sid,'identify')
+   assfile=d/'assignments'/f'{sid}.json';ass=json.loads(assfile.read_text());requests=ass.get('supplemental_frame_requests',[])
+   if requests:
+    added=supplement(old_inputs,d,sid,requests)
+    for o in ass['objects']:
+     if o['role']=='subject':o['active_frame_ranges']=[[min(f['frame_index'] for f in added if seg['range'][0]<=f['time']<seg['range'][1]),max(f['frame_index'] for f in added if seg['range'][0]<=f['time']<seg['range'][1])] for seg in ass['segments'] if o['id'] in seg['primary'] and any(seg['range'][0]<=f['time']<seg['range'][1] for f in added)]
+    save(assfile,ass)
+   invoke(sid,'measure');invoke(sid,'judge')
    r=json.loads((d/sid/'prediction.json').read_text());update(sid,'complete',grade=r['overall']['grade'],status=r['overall']['status'])
   except Exception as exc:update(sid,'failed',error=str(exc));(d/'logs'/f'{sid}-error.txt').write_text(traceback.format_exc())
  update('batch','starting')

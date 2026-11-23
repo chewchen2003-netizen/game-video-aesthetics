@@ -15,7 +15,8 @@ def snapshot(run):
    if logs:
     lines=logs[-1].read_text(errors='replace').splitlines();line=next((x for x in reversed(lines) if re.match(r'^R\d+ \d+ objects',x)),None)
     if line:
-     frame=int(line.split()[1]);v['detail']=f'测量到第{frame}帧 / 80（仅测量阶段）'
+     match=re.search(r'sampled_count (\d+) total (\d+)',line)
+     v['detail']=f'已测量 {match[1]} / {match[2]} 个采样时刻' if match else f'测量到原网格第{line.split()[1]}帧'
     else:v['detail']='正在加载模型或处理首批帧'
   elif v['state'] in ['identify','judge']:
    folder=run/'model-calls'/sid/v['state'];out=folder/'result.json'

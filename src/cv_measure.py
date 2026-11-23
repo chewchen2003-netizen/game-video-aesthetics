@@ -65,7 +65,7 @@ def pose_measure(result,seed,S,W,H):
 def forward_from_screen(prev,b,t,W,H):
  if prev is None:return {'valid':False,'reason':'no previous valid same-subject box'}
  pb,pt=prev;dt=t-pt
- if dt<=0 or dt>.3:return {'valid':False,'reason':'trajectory gap'}
+ if dt<=0 or dt>1.2/CFG.get('measurement_fps',4):return {'valid':False,'reason':'trajectory gap'}
  c=np.array([(b[0]+b[2])/2,(b[1]+b[3])/2]);pc=np.array([(pb[0]+pb[2])/2,(pb[1]+pb[3])/2]);v=(c-pc)/dt;speed=float(np.linalg.norm(v));r={'screen_velocity_px_s':v.tolist(),'screen_speed_px_s':speed,'actual_direction_valid':False,'front_distance':None,'reason':'screen displacement alone is not confirmed motion direction; camera compensation unavailable'}
  if speed<CFG['parameters']['screen_velocity_floor_pixels_per_second']:r['reason']='low screen displacement; does not imply no action or no world movement';return r
  u=v/speed;half=np.array([(b[2]-b[0])/2,(b[3]-b[1])/2]);support=c+np.sign(u)*half;ds=[]
@@ -142,8 +142,8 @@ def run():
     for j in range(k+1,len(records)):
      if records[k].get('valid') and records[j].get('valid'):pairs.append({'objects':[objects[k]['id'],objects[j]['id']],**overlapping(masks[k],masks[j])})
    row={'blind_id':bid,'frame_index':idx,'time':entry['time'],'dimensions':[W,H],'objects':records,'overlap_pairs':pairs,'primary_ids':next((s['primary'] for s in SEEDS[bid]['segments'] if s['range'][0]<=entry['time']<=s['range'][1]),[])};save(dest,row);rows.append(row)
-   if idx%4==0 or idx in [20,44,52,60,68,73,76,79]:cv2.imwrite(str(out/f'overlay-{idx:04d}.jpg'),cv2.cvtColor(overlay,cv2.COLOR_RGB2BGR))
-   if idx%8==0:print(bid,idx,'objects',len(records),'valid',sum(r['valid'] for r in records),flush=True)
+   if idx%4==0 or entry.get('adaptive') or idx==frames[-1]['frame_index'] or (not CFG.get('adaptive_sampling') and idx in [20,44,52,60,68,73,76,79]):cv2.imwrite(str(out/f'overlay-{idx:04d}.jpg'),cv2.cvtColor(overlay,cv2.COLOR_RGB2BGR))
+   if idx%8==0:print(bid,idx,'objects',len(records),'valid',sum(r['valid'] for r in records),'sampled_count',len(rows),'total',len(frames),flush=True)
   save(out/'measurements.json',rows);event('sample_end',blind_id=bid);print('DONE',bid,flush=True)
  event('end');print('ALL MEASUREMENTS COMPLETE',flush=True)
 if __name__=='__main__':run()

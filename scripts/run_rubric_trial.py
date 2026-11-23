@@ -19,7 +19,11 @@ RESULT=obj(sample_id=S,stages=arr(obj(stage_id=S,time_range=RANGE,subject_ids=ar
 def save(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def call(work,prompt,schema,images,out):
- work.mkdir(parents=True,exist_ok=True);save(work/'schema.json',schema);(work/'prompt.txt').write_text(prompt)
+ work.mkdir(parents=True,exist_ok=True);snap=work/'input-images';snap.mkdir(exist_ok=True);copies=[]
+ for p in images:
+  q=snap/p.name;shutil.copyfile(p,q);copies.append(q)
+ images=copies
+ save(work/'schema.json',schema);(work/'prompt.txt').write_text(prompt)
  from PIL import Image
  manifest=[{'id':p.name,'path':str(p),'sha256':sha(p),'dimensions':list(Image.open(p).size)} for p in images];save(work/'input-images.json',manifest)
  cmd=[CLI,'exec','--ignore-user-config','--ephemeral','--sandbox','read-only','--skip-git-repo-check','-C',str(work),'--model','gpt-6.1-sol','--output-schema',str(work/'schema.json'),'--json','-o',str(out)]
@@ -93,10 +97,16 @@ def main():
    if a.phase=='identify' and not (d/'assignments'/(sid+'.json')).exists():raise RuntimeError('Output exists without converted assignment; inspect before resume')
    if a.phase=='judge' and not (work/'validation.json').exists():raise RuntimeError('Unvalidated output exists; inspect before resume')
    print('REUSE',sid,a.phase,flush=True);continue
-  images=[inp/'input-1.jpg',inp/'input-2.jpg'];frame_rows=json.loads((inp/'frames.json').read_text());frameids={f"rgb-{x['frame_index']:04d}":x for x in frame_rows}
+  manifest_file=inp/'input-manifest.json'
+  images=[inp/name for name in json.loads(manifest_file.read_text())['images']] if manifest_file.exists() else [inp/'input-1.jpg',inp/'input-2.jpg'];frame_rows=json.loads((inp/'frames.json').read_text());frameids={f"rgb-{x['frame_index']:04d}":x for x in frame_rows}
   if a.phase=='identify':
    prompt='不要使用工具或读取额外文件，仅使用本次附图与文本。你只做画面内容识别与定位，不判美学档位。两张序列图共80帧，4FPS，帧号0..79，时间0..19.75秒。坐标使用原图1280x720。识别主体、陪体、环境前景背景，按实际呈现内容变化划分必要阶段，并记录必要信息和证据帧。主体可以多人、物体或景物，不默认最大最亮为主体；没有完整剧情也可评价。不猜测人物心理。为主要主体及少量重要陪体/环境提供可见范围框，每个对象至少在其存在阶段的起止及变化处给稀疏anchors；不要跨主体切换线性追踪。框只是分割提示，不是像素mask。场景区域kind=scene_region；人物humanoid。疑似界面叠加或异常需保留不确定性。角色可在segments注明变化。仅返回schema JSON。样本编号：'+sid
-   r=call(work,prompt,ASSIGN,images,out)
+   schema=json.loads(json.dumps(ASSIGN))
+   if manifest_file.exists():
+    prompt=prompt.replace('两张序列图共80帧，4FPS，帧号0..79，时间0..19.75秒。',f'当前共{len(frame_rows)}帧：2FPS基础，关键时刻补4FPS。frame_index沿用原4FPS网格编号、不连续；时间以以下清单为准。'+json.dumps([{'frame_index':f['frame_index'],'time':f['time']} for f in frame_rows]))
+    schema['properties']['supplemental_frame_requests']=arr(obj(time_range=arr(N),reason=S));schema['required'].append('supplemental_frame_requests')
+    prompt+='如快速切换、遮挡或结构不清需要局部补4FPS，提出最多2段、每段不超过1秒的supplemental_frame_requests；无需要则空数组。预算最多8个额外时刻，若仍不足需保留不确定性。定位锚点必须引用当前清单实际存在的帧号。'
+   r=call(work,prompt,schema,images,out)
    for k,seg in enumerate(r['segments']):
     seg['reported_range']=list(seg['range']);seg['range']=[seg['range'][0],r['segments'][k+1]['range'][0] if k+1<len(r['segments']) else 20]
    r['range_convention']='Half-open ranges, end at next start, final end=20; reported_range retained.'
@@ -121,6 +131,7 @@ def main():
     schema['properties']['temporal_analysis']=arr(obj(before_stage_id=S,after_stage_id=S,before_evidence_ids=arr(S),after_evidence_ids=arr(S),visible_change=S,spatial_or_attention_effect=S,expressive_effect=S,checkpoint_ids=arr(S),uncertainty=S))
     schema['required'].append('temporal_analysis')
     prompt+='\n时序分析为必填：每个相邻阶段给前后阶段ID、前后实际帧ID、可见安排变化、空间／注意效果及表达效果。若整段无阶段变化，前后可为同一阶段，比较开始／中段／结束并说明维持了什么。不要把A→B的主体切换当作同一主体的位置或面积变化；常规正反打建立空间关系，不自动等于情感增强。无需强行编造变化或情感；缺少时序证据应写不确定性。给出简洁可核查理由。'
+   if manifest_file.exists():prompt=prompt.replace('第一、二张为80帧RGB序列，第三张为分割覆盖图。原始图1280x720，4FPS，时间0..19.75秒。',f'前{len(images)-1}张为RGB序列，最后一张为分割覆盖图。共{len(frame_rows)}个实际采样时刻，基础2FPS，局部补4FPS；frame_index为原4FPS网格编号并不连续，以输入证据中的time为准。源图1280x720，片段0至20秒。')
    if a.lean:prompt+='\n测量说明：位置/边距均按画宽高归一，可见占比为mask像素/(W×H)，遮挡率无amodal时无效。Lab直方图JS距离为0..1；轮廓L*差为0..100。深度为单目相对逆深度，非米。除已提供覆盖图对应对象外，其他原始测量未作为本次输入。重复模型元数据、九宫格分布和敏感性诊断已省略，不从省略内容作判断。'
    r=call(work,prompt,schema,images,out);report=validate(r,rule,frameids,mids);
    if a.temporal:
